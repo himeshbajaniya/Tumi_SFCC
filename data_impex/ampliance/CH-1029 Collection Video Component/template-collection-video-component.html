@@ -1,0 +1,41 @@
+<div data-creative-name="{{content-asset-id}}" class="collection-video-component">
+    <div class="container ">
+        <div class="row no-gutters">
+            <div class="col-12">
+                <div
+                    class="col-md-4 col-sm-6 col-12 text-center offset-sm-3 offset-md-4 title"
+                >
+                    {{title}}
+                </div>
+
+                <div class="col-md-8 col-12 text-center offset-md-2 copy">
+                    {{copy}}
+                </div>
+                {{#if (eq selectionOfMedia "Image")}}
+                <picture>
+                    <source
+                        media="(max-width:640px)"
+                        srcset="{{s7ImageMobile}}"
+                    />
+                    <img
+                        class="img-fluid w-100"
+                        src="{{s7ImageDesktop}}"
+                        alt="{{imageAltDesktop}}"
+                    />
+                </picture>
+                {{/if}} {{#if (eq selectionOfMedia "Video")}}
+                <video
+                    class="video-desktop removeFocusIndicator w-100"
+                    autoplay=""
+                    muted=""
+                    loop=""
+                    playsinline=""
+                >
+                    <source media="(max-width:640px)" src="{{s7VideoMobile}}" />
+                    <source src="{{s7VideoDesktop}}" />
+                </video>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+</div>

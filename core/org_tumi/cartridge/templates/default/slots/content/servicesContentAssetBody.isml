@@ -1,0 +1,15 @@
+<isif condition="${slotcontent != null}">
+    <div class="container-fluid service-hightlights-rfk">
+    <div class="container">
+        <isif condition="${slotcontent.custom.title}">
+            <h2 class="content-slot-title">${slotcontent.custom.title}</h2>
+        </isif>
+        <isif condition="${slotcontent.custom.subTitle}">
+            <h6 class="content-slot-sub-title">${slotcontent.custom.subTitle}</h6>
+        </isif>
+        <isloop items="${slotcontent.content}" var="contentAsset">
+            <isprint value="${contentAsset.custom.body}" encoding="off"/>
+        </isloop>
+</div>
+    </div>
+</isif>

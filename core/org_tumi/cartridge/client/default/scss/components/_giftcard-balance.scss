@@ -1,0 +1,106 @@
+.giftcard-balance {
+    margin: 0 auto 60px;
+    counter-reset: step;
+
+    @include media-breakpoint-up(sm) {
+        max-width: 334px;
+    }
+
+    @include media-breakpoint-up(md) {
+        margin-bottom: 0;
+    }
+
+    &__title,
+    &__form-label {
+        color: $eerie-black;
+    }
+
+    &__title {
+        @include sizeWeightLh(24px, 300, 24px);
+    }
+
+    &__form-label {
+        @include sizeWeightLh(15px, 600, 24px);
+
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .form-group {
+        padding-left: 30px;
+
+        label {
+            left: 36px;
+        }
+
+        &::before {
+            @include sizeWeightLh(13px, 600, 20px);
+
+            width: 20px;
+            height: 20px;
+            display: block;
+            position: absolute;
+            top: 13px;
+            left: 0;
+            text-align: center;
+            background-color: $american-red;
+            border-radius: 20px;
+            counter-increment: step;
+            color: $white;
+            content: counter(step);
+        }
+    }
+
+    .button {
+        margin-top: 40px;
+
+        .check-balance-cta {
+            margin-top: 30px;
+        }
+    }
+
+    .check-balance-details p {
+        @include sizeWeightLh(15px, 600, 16px);
+
+        color: $bg-dark;
+    }
+}
+
+.giftcard-balancecheck {
+    .dwfrm_giftCard_balance_pinNumber {
+        margin: 0;
+    }
+}
+
+.giftcard-balance-sample {
+
+    @include media-breakpoint-up(sm) {
+        max-width: 334px;
+    }
+
+    @include media-breakpoint-only(sm) {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .figure-img {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .figure-caption {
+        color: $davy-grey;
+        @include sizeWeightLh(13px, 400, 18px);
+    }
+}
+
+.giftcard-container {
+    margin-bottom: 80px;
+
+    @include media-breakpoint-up(md) {
+        margin-bottom: 130px;
+    }
+}

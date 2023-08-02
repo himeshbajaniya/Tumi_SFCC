@@ -1,0 +1,267 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+[class^=tt-c-], [class^=tt-l-], [class^=tt-o-], [class^=tt-u-], [class^=tt-w-] {
+    font-family: 'ProximaNova';
+}
+.pdp-review-section {
+    width: 100%;
+    background: #fafafa;
+    padding: 100px 0;
+    font-family: 'ProximaNova';
+    color:#1B1C1E;
+}
+
+@media (min-width: 1024px) and (max-width: 1280px) {
+    .pdp-review-section .container {
+        padding-left:120px;
+        padding-right: 120px
+    }
+}
+
+@media (min-width: 1281px) {
+    .pdp-review-section .container {
+        padding-left:72px;
+        padding-right: 72px
+    }
+}
+
+.pdp-review-section .tt-c-reviews-summary__heading {
+    font-size: 30px;
+    font-weight: 300;
+    line-height: 34px;
+    margin-bottom: 30px;
+    font-family: 'ProximaNovaLight';
+    text-align: center;
+}
+
+@media screen and (min-width: 640px) {
+    .pdp-review-section .tt-c-reviews-summary__heading {
+        margin-bottom: 60px;
+    }
+}
+
+.pdp-review-section  .tt-c-reviews-summary__grid-header { border: none;}
+
+.pdp-review-section .tt-c-reviews-summary__rating-number ,
+.pdp-review-section .tt-c-reviews-summary__rating-text {
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: 400;
+}
+.pdp-review-section .tt-c-ratings-breakdown__heading,
+.pdp-review-section .tt-c-summary-dim__heading,
+.pdp-review-section .tt-c-summary-dim__heading {
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 400;
+}
+
+.pdp-review-section .tt-c-rating__star .tt-o-icon--xl {
+    width: 18px;
+    height: 18px;
+}
+
+.pdp-review-section button.tt-o-button--primary {
+    background: #fafafa;
+    color: #000;
+    border: 1px solid #000;
+    text-transform: capitalize;
+}
+
+.pdp-review-section button.tt-o-button--primary:hover {
+    background: #000;
+    color: #fff;
+    text-transform: capitalize;
+}
+
+.pdp-review-section .tt-c-ratings-breakdown__bar,
+.pdp-review-section .tt-c-summary-dim-range__bar {
+    height: 5px;
+    border-radius: unset;
+}
+
+.pdp-review-section .tt-c-ratings-breakdown__percent,
+.pdp-review-section .tt-c-ratings-breakdown__rating-number{
+    color: #595959;
+}
+
+.pdp-review-section .tt-c-summary-dim-range__dot {
+    border-radius: 0;
+    height: 5px;
+    width: 15px;
+}
+
+.pdp-review-section .tt-o-button--link, .pdp-review-section button.tt-o-button--link {
+    padding: 0;
+    margin: 0 0 10px;
+    display: block;
+}
+
+.pdp-review-section .tt-c-reviews-list__heading {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;    
+    font-family: 'ProximaNova';
+}
+
+.pdp-review-section .tt-c-reviews-list-utilities {
+    border: none;
+    clear: both;
+    width: 100%;
+    float: left;
+    margin: 0 0 40px;
+}
+
+.pdp-review-section .tt-c-reviews-toolbar {
+    width: 100%;
+    display: block;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.pdp-review-section .tt-o-listbox {
+    float: right;
+    width: 180px;
+    margin: 0;
+    left: 0;
+    right: 0;
+    background: transparent;
+}
+
+.pdp-review-section .tt-c-reviews-toolbar .tt-o-listbox button.tt-o-listbox__btn {
+    width: 100%;
+    position: static;
+    left: 0;
+    padding: 10px;
+    margin: 0;
+    min-width: unset;
+    background: transparent;
+    border: none;
+}
+.pdp-review-section .tt-c-reviews-toolbar__search {
+    float: left;
+    width: 42%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+.pdp-review-section .tt-o-listbox__label, .tt-o-listbox__btn-label {
+    font-weight: 400;
+    text-transform: capitalize;
+    font-size: 15px;
+    margin-right: 5px;
+    display: inline;
+}
+
+.pdp-review-section .tt-c-reviews-toolbar__search input[type=text].tt-o-search-field__input {
+    width: 100%;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #1B1C1E;
+}
+
+.pdp-review-section .tt-c-reviews-toolbar__search .tt-o-icon--search {
+    left: unset;
+}
+
+.pdp-review-section .tt-c-reviews-list__content {
+    clear: both;
+    width: 100%;
+}
+
+.pdp-review-section .tt-c-review {
+    padding: 40px 0;
+    border-bottom: 1px solid #CCC;
+}
+
+.pdp-review-section .tt-c-rating__star .tt-o-icon--lg {
+    width: 18px;
+    height: 18px;
+}
+
+.pdp-review-section .tt-o-byline__author {
+    font-weight: 400;
+    font-size: 14px;
+    font-family: 'ProximaNova';
+}
+
+.pdp-review-section .tt-c-review__grid-row {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.pdp-review-section .tt-c-review__content .tt-c-review__heading,
+.pdp-review-section .tt-c-review__content .tt-c-review__text {
+    text-align: left;
+}
+
+.pdp-review-section .tt-c-review__content .tt-c-review__heading {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;    
+    font-family: 'ProximaNova';
+}
+
+.pdp-review-section .tt-c-product-about {
+    flex-direction: column;
+}
+
+.pdp-review-section .tt-c-product-about > a {
+    margin: 0;
+}
+
+.pdp-review-section .tt-c-reviews-summary__no-reivews-body {
+    border: none;
+}
+
+.tt-o-search-field__clear {
+    margin-right: 30px;
+}
+
+.tt-c-review__text-content {
+    color: #595959;
+}
+
+.tt-c-review__heading-text {
+    font-weight: 400;
+    color: #1b1c1e;
+    font-family: 'ProximaNovaSemiBold';
+    font-size: 18px;
+}
+
+.tt-c-review__text-content {
+    font-weight: 400;
+    color: #595959;
+    font-family: 'ProximaNova';
+}
+
+.tt-c-reviews-summary__rating-number {
+    margin-right: 0;
+}
+
+.tt-c-reviews-summary__grid-col--1, .tt-c-reviews-summary__grid-header {
+    text-align: center;
+}
+
+@media screen and (min-width: 640px) {
+    .tt-c-reviews-summary__write-review-wrap {
+        max-width: 50%;
+        margin: auto;
+    }
+}
+
+.tt-c-reviews-list__heading, .tt-c-product-about, .tt-c-review__purchased {
+    display: none;
+}
+
+.tt-c-review-form-header__heading {
+    font-family: 'ProximaNovaLight' !important;
+}
+
+.tt-o-button--primary, button.tt-o-button--primary {
+    text-transform: none;
+}
+

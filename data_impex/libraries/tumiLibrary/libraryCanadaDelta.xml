@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="tumiLibrary">
+    <folder folder-id="root">
+        <online-flag>true</online-flag>
+        <page-attributes>
+            <page-title xml:lang="x-default">Tumi Online Store</page-title>
+            <page-description xml:lang="x-default">Online shopping with the leader in on-demand eCommerce solutions.</page-description>
+            <page-keywords xml:lang="x-default">new arrivals,mens,womens,electronics</page-keywords>
+        </page-attributes>
+        <refinement-definitions>
+            <refinement-definition type="folder" bucket-type="none">
+                <display-name xml:lang="x-default">Folder</display-name>
+                <sort-mode>folder-position</sort-mode>
+                <cutoff-threshold>5</cutoff-threshold>
+            </refinement-definition>
+        </refinement-definitions>
+    </folder>
+
+    <content content-id="footer-copyright">
+      <display-name xml:lang="x-default">Footer Copyright</display-name>
+      <online-flag>true</online-flag>
+      <searchable-flag>true</searchable-flag>
+      <custom-attributes>
+        <custom-attribute attribute-id="body" xml:lang="x-default">&lt;div class=&quot;row footer-copyright&quot;&gt;&#13;&lt;div class=&quot;col-md-8 col-sm-12 col-12 order-2 order-md-1&quot;&gt;&#13;&lt;ul class=&quot;footer-copyright-links&quot;&gt;&#13;	&lt;li&gt;&lt;a href=&quot;/&quot;&gt;&amp;copy;2022 Tumi, Inc.&lt;/a&gt;&lt;/li&gt;&#13;	&lt;li&gt;&lt;a href=&quot;/&quot;&gt;Tumi Canada, ULC&lt;/a&gt;&lt;/li&gt;&#13;	&lt;li&gt;&lt;a href=&quot;$httpsURL('Page-Show', 'cid', 'terms-and-conditions')$&quot;&gt;Terms &amp;amp; Conditions&lt;/a&gt;&lt;/li&gt;&#13;	&lt;li&gt;&lt;a href=&quot;/&quot;&gt;Transparency in Supply Chain Act&lt;/a&gt;&lt;/li&gt;&#13;	&lt;li&gt;&lt;a href=&quot;$httpsURL('Page-Show', 'cid', 'web-accessibility-statement')$&quot;&gt;Web Accessibility Statement&lt;/a&gt;&lt;/li&gt;&#13;	&lt;li&gt;&lt;a href=&quot;$httpsURL('Page-Show', 'cid', 'modern-slavery-statement')$&quot;&gt;Modern Slavery Statement&lt;/a&gt;&lt;/li&gt;&#13;	&lt;li&gt;&lt;a href=&quot;$httpsURL('Page-Show', 'cid', 'privacy-policy')$&quot;&gt;Privacy Policy&lt;/a&gt;&lt;/li&gt;&#13;	&lt;li&gt;&lt;a href=&quot;/&quot;&gt;Sitemap&lt;/a&gt;&lt;/li&gt;&#13;&lt;/ul&gt;&#13;&lt;/div&gt;&#13;&lt;div class=&quot;col-md-4 text-md-right text-left order-1 order-md-2 ship-to&quot;&gt;&lt;span class=&quot;flag&quot;&gt;Ship to: &lt;/span&gt;&lt;svg width=&quot;27&quot; height=&quot;16&quot; viewBox=&quot;0 0 27 16&quot; fill=&quot;none&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;&#13;&lt;path d=&quot;M0 14.0869H27V15.2609H0V14.0869Z&quot; fill=&quot;white&quot;/&gt;&#13;&lt;path d=&quot;M0 11.7393H27V12.9132H0V11.7393Z&quot; fill=&quot;white&quot;/&gt;&#13;&lt;path d=&quot;M0 9.39111H27V10.5651H0V9.39111Z&quot; fill=&quot;white&quot;/&gt;&#13;&lt;path d=&quot;M2.34766 2.34766H3.52162V3.52162H2.34766V2.34766Z&quot; fill=&quot;white&quot;/&gt;&#13;&lt;path d=&quot;M9.39062 3.52113H10.5646V2.34717H9.39062V3.52113Z&quot; fill=&quot;white&quot;/&gt;&#13;&lt;path d=&quot;M0 2.34766H1.17396V3.52162H0V2.34766Z&quot; fill=&quot;white&quot;/&gt;&#13;&lt;path d=&quot;M11.7393 2.34766H27.0002V3.52162H11.7393V2.34766Z&quot; fill=&quot;white&quot;/&gt;&#13;&lt;path d=&quot;M7.04297 2.34766H8.21693V3.52162H7.04297V2.34766Z&quot; fill=&quot;white&quot;/&gt;&#13;&lt;path d=&quot;M4.69531 2.34766H5.86928V3.52162H4.69531V2.34766Z&quot; fill=&quot;white&quot;/&gt;&#13;&lt;path d=&quot;M2.34766 4.69531H3.52162V5.86928H2.34766V4.69531Z&quot; fill=&quot;white&quot;/&gt;&#13;&lt;path d=&quot;M9.39062 5.86906H10.5646V4.69531H9.39062V5.86906Z&quot; fill=&quot;white&quot;/&gt;&#13;&lt;path d=&quot;M0 4.69531H1.17396V5.86928H0V4.69531Z&quot; fill=&quot;white&quot;/&gt;&#13;&lt;path d=&quot;M11.7393 4.69531H27.0002V5.86928H11.7393V4.69531Z&quot; fill=&quot;white&quot;/&gt;&#13;&lt;path d=&quot;M7.04297 4.69531H8.21693V5.86928H7.04297V4.69531Z&quot; fill=&quot;white&quot;/&gt;&#13;&lt;path d=&quot;M4.69531 4.69531H5.86928V5.86928H4.69531V4.69531Z&quot; fill=&quot;white&quot;/&gt;&#13;&lt;path d=&quot;M2.34766 7.04297H3.52162V8.21693H2.34766V7.04297Z&quot; fill=&quot;white&quot;/&gt;&#13;&lt;path d=&quot;M9.39062 8.21742H10.5646V7.04346H9.39062V8.21742Z&quot; fill=&quot;white&quot;/&gt;&#13;&lt;path d=&quot;M0 7.04297H1.17396V8.21693H0V7.04297Z&quot; fill=&quot;white&quot;/&gt;&#13;&lt;path d=&quot;M11.7393 7.04297H27.0002V8.21693H11.7393V7.04297Z&quot; fill=&quot;white&quot;/&gt;&#13;&lt;path d=&quot;M7.04395 7.04297H8.21791V8.21693H7.04395V7.04297Z&quot; fill=&quot;white&quot;/&gt;&#13;&lt;path d=&quot;M4.69531 7.04297H5.86928V8.21693H4.69531V7.04297Z&quot; fill=&quot;white&quot;/&gt;&#13;&lt;path d=&quot;M2.34766 0H3.52162V1.17396H2.34766V0Z&quot; fill=&quot;white&quot;/&gt;&#13;&lt;path d=&quot;M10.5656 0H9.3916V1.17375H10.5656V0Z&quot; fill=&quot;white&quot;/&gt;&#13;&lt;path d=&quot;M0 0H1.17396V1.17396H0V0Z&quot; fill=&quot;white&quot;/&gt;&#13;&lt;path d=&quot;M11.7393 0H27.0002V1.17396H11.7393V0Z&quot; fill=&quot;white&quot;/&gt;&#13;&lt;path d=&quot;M7.04395 0H8.21791V1.17396H7.04395V0Z&quot; fill=&quot;white&quot;/&gt;&#13;&lt;path d=&quot;M4.69531 0H5.86928V1.17396H4.69531V0Z&quot; fill=&quot;white&quot;/&gt;&#13;&lt;/svg&gt;&#13;&lt;a href=&quot;$httpsURL('Page-Show', 'cid', 'country-select')$&quot; class=&quot;country&quot;&gt; United States &lt;/a&gt;&lt;/div&gt;&#13;&lt;/div&gt;</custom-attribute>
+        <custom-attribute attribute-id="body" xml:lang="en-CA">&lt;div class=&quot;row footer-copyright&quot;&gt;&#13;        &lt;div class=&quot;col-md-8 col-sm-12 col-12 order-2 order-md-1&quot;&gt;&#13;        &lt;ul class=&quot;footer-copyright-links&quot;&gt;&#13;            &lt;li&gt;&lt;a href=&quot;/&quot;&gt;&amp;copy;2022 Tumi, Inc.&lt;/a&gt;&lt;/li&gt;&#13;            &lt;li&gt;&lt;a href=&quot;/&quot;&gt;Tumi Canada, ULC&lt;/a&gt;&lt;/li&gt;&#13;            &lt;li&gt;&lt;a href=&quot;$httpsURL('Page-Show', 'cid', 'terms-and-conditions')$&quot;&gt;Terms &amp;amp; Conditions&lt;/a&gt;&lt;/li&gt;&#13;            &lt;li&gt;&lt;a href=&quot;$httpsURL('Page-Show', 'cid', 'modern-slavery-statement')$&quot;&gt;Modern Slavery Statement&lt;/a&gt;&lt;/li&gt;&#13;            &lt;li&gt;&lt;a href=&quot;$httpsURL('Page-Show', 'cid', 'privacy-policy')$&quot;&gt;Privacy Policy&lt;/a&gt;&lt;/li&gt;&#13;            &lt;li&gt;&lt;a href=&quot;/&quot;&gt;Sitemap&lt;/a&gt;&lt;/li&gt;&#13;        &lt;/ul&gt;&#13;        &lt;/div&gt;&#13;        &lt;div class=&quot;col-md-4 text-md-right text-left order-1 order-md-2 ship-to&quot;&gt;Ship to: &lt;a href=&quot;$httpsURL('Page-Show', 'cid', 'country-select')$&quot;&gt; United States &lt;/a&gt;&lt;/div&gt;&#13;        &lt;/div&gt;</custom-attribute>
+      </custom-attributes>
+      <folder-links>
+      </folder-links>
+    </content>
+
+    <content content-id="footer-links">
+        <display-name xml:lang="x-default">Footer Links</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;div class="row" data-creative-name="footer-links"&gt;
+    &lt;div class="col-md-6"&gt;
+      &lt;ul class="footer-menu-links"&gt;
+        &lt;li&gt;
+          &lt;a href="/customer-service" class="title" id="footer-customer-service"&gt;Customer Service&lt;/a&gt;
+          &lt;ul class="footer-menu-sub-links" aria-labelledby="footer-customer-service"&gt;
+            &lt;li&gt;&lt;a href="/shipping"&gt;Shipping&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="/return"&gt;Returns&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="/payment-methods"&gt;Payment Methods&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="/service-repairs"&gt;Service &amp;amp; Repairs&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="/product-info"&gt;Product Info and Warranty&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="/airline-carry-on-guide"&gt;Airline Carry-On Guide&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="/faq"&gt;FAQs&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="/replacement-parts"&gt;Replacement Parts&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="/setting-your-tumi-lock"&gt;Setting Your TUMI Lock&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+
+    &lt;div class="col-md-6"&gt;
+      &lt;div class="row"&gt;
+        &lt;div class="col-md-12 order-2 order-md-1 order-sm-2 mb-32"&gt;
+          &lt;ul class="footer-menu-links"&gt;
+            &lt;li&gt;
+              &lt;a href="/my-account" class="title" id="footer-my-account"&gt;My Account&lt;/a&gt;
+              &lt;ul class="footer-menu-sub-links mb" aria-labelledby="footer-my-account"&gt;
+                &lt;li&gt;&lt;a href="/sign-in"&gt;Sign In&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="/track-orders"&gt;Track Orders&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="$url('Tracer-Show')$"&gt;Register Your Tumi&lt;/a&gt;&lt;/li&gt;
+              &lt;/ul&gt;
+            &lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/div&gt;
+
+        &lt;div class="col-md-12 order-1 order-md-2 order-sm-1"&gt;
+
+          &lt;ul class="footer-menu-links"&gt;
+            &lt;li&gt;
+              &lt;a href="/about-tumi" class="title border-0" id="footer-about-tumi"&gt;About TUMI&lt;/a&gt;
+              &lt;ul class="footer-menu-sub-links" aria-labelledby="footer-about-tumi"&gt;
+                &lt;li&gt;&lt;a href="/tumi-diff"&gt;TUMI Difference&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="/careers"&gt;Careers&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;/li&gt;
+          &lt;/ul&gt;
+
+        &lt;/div&gt;
+        
+      &lt;/div&gt;
+      &lt;/div&gt;
+  &lt;/div&gt;</custom-attribute>
+            <custom-attribute attribute-id="body" xml:lang="en-CA">&lt;div class="row" data-creative-name="footer-links"&gt;&#13;
+    &lt;div class="col-md-6"&gt;&#13;
+      &lt;ul class="footer-menu-links"&gt;&#13;
+        &lt;li&gt;&#13;
+          &lt;a href="/customer-service" class="title" id="footer-customer-service"&gt;Customer Service&lt;/a&gt;&#13;
+          &lt;ul class="footer-menu-sub-links" aria-labelledby="footer-customer-service"&gt;&#13;
+            &lt;li&gt;&lt;a href="/shipping"&gt;Shipping&lt;/a&gt;&lt;/li&gt;&#13;
+            &lt;li&gt;&lt;a href="/return"&gt;Returns&lt;/a&gt;&lt;/li&gt;&#13;
+            &lt;li&gt;&lt;a href="/payment-methods"&gt;Payment Methods&lt;/a&gt;&lt;/li&gt;&#13;
+            &lt;li&gt;&lt;a href="/service-repairs"&gt;Service &amp;amp; Repairs&lt;/a&gt;&lt;/li&gt;&#13;
+            &lt;li&gt;&lt;a href="/product-info"&gt;Product Info and Warranty&lt;/a&gt;&lt;/li&gt;&#13;
+            &lt;li&gt;&lt;a href="/airline-carry-on-guide"&gt;Airline Carry-On Guide&lt;/a&gt;&lt;/li&gt;&#13;
+            &lt;li&gt;&lt;a href="/faq"&gt;FAQs&lt;/a&gt;&lt;/li&gt;&#13;
+            &lt;li&gt;&lt;a href="/replacement-parts"&gt;Replacement Parts&lt;/a&gt;&lt;/li&gt;&#13;
+            &lt;li&gt;&lt;a href="/setting-your-tumi-lock"&gt;Setting Your TUMI Lock&lt;/a&gt;&lt;/li&gt;&#13;
+          &lt;/ul&gt;&#13;
+        &lt;/li&gt;&#13;
+      &lt;/ul&gt;&#13;
+    &lt;/div&gt;&#13;
+&#13;
+    &lt;div class="col-md-6"&gt;&#13;
+      &lt;div class="row"&gt;&#13;
+        &lt;div class="col-md-12 order-2 order-md-1 order-sm-2 mb-32"&gt;&#13;
+          &lt;ul class="footer-menu-links"&gt;&#13;
+            &lt;li&gt;&#13;
+              &lt;a href="/my-account" class="title" id="footer-my-account"&gt;My Account&lt;/a&gt;&#13;
+              &lt;ul class="footer-menu-sub-links mb" aria-labelledby="footer-my-account"&gt;&#13;
+                &lt;li&gt;&lt;a href="/sign-in"&gt;Sign In&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;li&gt;&lt;a href="/track-orders"&gt;Track Orders&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;li&gt;&lt;a href="/register-your-tumi"&gt;Register Your Tumi&lt;/a&gt;&lt;/li&gt;&#13;
+              &lt;/ul&gt;&#13;
+            &lt;/li&gt;&#13;
+          &lt;/ul&gt;&#13;
+        &lt;/div&gt;&#13;
+&#13;
+        &lt;div class="col-md-12 order-1 order-md-2 order-sm-1"&gt;&#13;
+&#13;
+          &lt;ul class="footer-menu-links"&gt;&#13;
+            &lt;li&gt;&#13;
+              &lt;a href="/about-tumi" class="title border-0" id="footer-about-tumi"&gt;About TUMI&lt;/a&gt;&#13;
+              &lt;ul class="footer-menu-sub-links" aria-labelledby="footer-about-tumi"&gt;&#13;
+                &lt;li&gt;&lt;a href="/tumi-diff"&gt;TUMI Difference&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;li&gt;&lt;a href="/careers"&gt;Careers&lt;/a&gt;&lt;/li&gt;&#13;
+            &lt;/ul&gt;&#13;
+            &lt;/li&gt;&#13;
+          &lt;/ul&gt;&#13;
+&#13;
+        &lt;/div&gt;&#13;
+        &#13;
+      &lt;/div&gt;&#13;
+      &lt;/div&gt;&#13;
+  &lt;/div&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+  <content content-id="included-purchase">
+        <display-name xml:lang="x-default">Included Purchase</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;div class="included-purchase"&gt;&#13;    &lt;h4&gt;Included with this Purchase&lt;/h4&gt;&#13;    &lt;p&gt;An outstanding ownership experience with TUMI’s comprehensive product coverage, perks and our commitment to your ongoing satisfaction.&lt;/p&gt;&#13;    &lt;div class="image-content"&gt;&#13;    &lt;ul&gt;&#13;		&lt;li&gt;&lt;img alt="ship to united states" src="https://demo-na01-tumi.demandware.net/on/demandware.static/-/Sites-tumi-site-catalog-US/default/dw7bdc62e2/nav-image.png" title="" /&gt; &lt;a href="/"&gt;Free Returns&lt;/a&gt;&lt;/li&gt;&#13;		&lt;li&gt;&lt;img alt="we're here to help" src="https://demo-na01-tumi.demandware.net/on/demandware.static/-/Sites-tumi-site-catalog-US/default/dw7bdc62e2/nav-image.png" title="" /&gt; &lt;a href="/"&gt;Worry-Free Warranty&lt;/a&gt;&lt;/li&gt;&#13;		&lt;li&gt;&lt;img alt="TUMI Perimeter Mall" src="https://demo-na01-tumi.demandware.net/on/demandware.static/-/Sites-tumi-site-catalog-US/default/dw7bdc62e2/nav-image.png" title="" /&gt;&lt;a href="/"&gt;TUMI Tracer® Recovery Program&lt;/a&gt;&lt;/li&gt;&#13;    &lt;/ul&gt;&#13;    &lt;/div&gt;&#13;&lt;/div&gt;</custom-attribute>
+            <custom-attribute attribute-id="body" xml:lang="en-CA">&lt;div class="included-purchase"&gt;&#13;
+    &lt;h4&gt;Included with this Purchase&lt;/h4&gt;&#13;
+    &lt;p&gt;An outstanding ownership experience with TUMI’s comprehensive product coverage, perks and our commitment to your ongoing satisfaction.&lt;/p&gt;&#13;
+    &lt;div class="image-content"&gt;&#13;
+    &lt;ul&gt;&#13;
+		&lt;li&gt;&lt;img alt="we're here to help" src="https://demo-na01-tumi.demandware.net/on/demandware.static/-/Sites-tumi-site-catalog-US/default/dw7bdc62e2/nav-image.png" title="" /&gt; &lt;a href="/"&gt;Worry-Free Warranty&lt;/a&gt;&lt;/li&gt;&#13;
+		&lt;li&gt;&lt;img alt="TUMI Perimeter Mall" src="https://demo-na01-tumi.demandware.net/on/demandware.static/-/Sites-tumi-site-catalog-US/default/dw7bdc62e2/nav-image.png" title="" /&gt;&lt;a href="/"&gt;TUMI Tracer® Recovery Program&lt;/a&gt;&lt;/li&gt;&#13;
+    &lt;/ul&gt;&#13;
+    &lt;/div&gt;&#13;
+&lt;/div&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+</library>

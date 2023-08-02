@@ -1,0 +1,257 @@
+.totals,
+.desktop-summary {
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    color: $eerie-black;
+    background-color: $lotion;
+
+    .order-summary {
+        max-width: 100%;
+
+        @include media-breakpoint-up(md) {
+            max-width: 241px;
+            margin-left: 40px;
+        }
+
+        @include media-breakpoint-up(lg) {
+            max-width: 334px;
+            margin-left: 89px;
+        }
+
+        .order-review-title {
+            display: none;
+        }
+
+        .coupons-and-promos {
+            margin-bottom: 20px !important;
+            padding-right: 0;
+            padding-left: 0;
+        }
+
+        .btn-continue-shopping {
+            padding-bottom: 38px;
+        }
+
+        .sub-total {
+            font-weight: 400;
+        }
+    }
+
+    h3 {
+        @include sizeWeightLh(24px, 300, 24px);
+
+        margin-top: 30px;
+        margin-bottom: 36px;
+
+        @include media-breakpoint-up(sm) {
+            @include sizeWeightLh(24px, 400, 28px);
+
+            margin-top: 37px;
+            margin-bottom: 10px;
+        }
+
+        @include media-breakpoint-up(md) {
+            margin-top: 60px;
+        }
+    }
+
+    .sub-text {
+        display: none;
+
+        @include media-breakpoint-up(sm) {
+            display: block;
+
+            @include sizeWeightLh(11px, 400, 20px);
+
+            margin-bottom: 30px;
+        }
+
+        @include media-breakpoint-up(md) {
+            @include sizeWeightLh(13px, 400, 20px);
+        }
+
+        img {
+            margin-right: 8px;
+        }
+    }
+
+    p {
+        @include sizeWeightLh(15px, 400, 20px);
+
+        margin-bottom: 12px;
+
+        &.promo,
+        &.order-discount-total {
+            @include sizeWeightLh(15px, 600, 20px);
+
+            font-family: $font-tumi-sbold;
+        }
+    }
+
+    .m-12 {
+        margin-top: 0;
+        margin-bottom: 12px;
+    }
+
+    .empty-msg {
+        @include sizeWeightLh(18px, 400, 18px);
+    }
+
+    .text-create-account {
+        display: none;
+
+        span.block {
+            display: block;
+        }
+
+        @include media-breakpoint-up(sm) {
+            display: block;
+            @include sizeWeightLh(13px, 400, 21px);
+
+            margin-bottom: 16px;
+        }
+
+        a {
+            text-decoration: underline;
+        }
+    }
+
+    .subtotal-text,
+    .shipping-text {
+        @include sizeWeightLh(15px, normal, 20px);
+    }
+
+    .grand-total-text {
+        @include sizeWeightLh(15px, 600, 20px);
+
+        font-weight: 600;
+    }
+
+    .promo-text {
+        color: $american-red;
+        @include sizeWeightLh(15px, 600, 20px);
+    }
+
+    .grand-total {
+        margin-bottom: 20px;
+
+        @include media-breakpoint-up(sm) {
+            margin-bottom: 30px;
+        }
+    }
+
+    .checkout-continue-wrap {
+        .checkout-continue {
+            z-index: 0 !important;
+            position: relative;
+            background-color: transparent;
+            padding-left: 1rem;
+            padding-right: 1rem;
+
+            &.active {
+                position: fixed;
+                background-color: $eerie-black;
+                bottom: -16px;
+                z-index: 5 !important;
+                padding: 0;
+                left: 0;
+            }
+
+            div {
+                padding: 0;
+            }
+        }
+    }
+
+    .paypal-content {
+        z-index: 0;
+    }
+
+    a.checkout-btn {
+        margin-bottom: 16px;
+
+        &:hover {
+            color: $white;
+            text-decoration: none;
+        }
+    }
+
+    .promo-code-container {
+        .promo-code-form {
+            display: block !important;
+        }
+
+        .form-group {
+            margin-bottom: 0 !important;
+
+            .coupon-error-message {
+                margin-bottom: 20px !important;
+            }
+        }
+
+        .promo-code {
+            position: relative;
+
+            input[type="text"] {
+                padding: 0 !important;
+                margin-bottom: 20px;
+                border-bottom: 1px solid $spanish-gray;
+                background-color: transparent;
+
+                @include media-breakpoint-up(sm) {
+                    margin-bottom: 20px;
+                }
+            }
+
+            .is-invalid,
+            [aria-describedby='invalidCouponCode'] {
+                margin-bottom: 0 !important;
+                border-bottom: 1px solid $pink-red !important;
+            }
+
+            .promo-code-btn {
+                position: absolute;
+                right: 0;
+                top: 14px;
+                background: transparent;
+                border: none;
+                padding: 0;
+                cursor: pointer;
+                @include sizeWeightLh(13px, 400, 20px);
+            }
+        }
+    }
+
+    .paypal-button.paypal-button-shape-rect {
+        border-radius: unset !important;
+        height: 44px !important;
+    }
+
+    .btn-continue-shopping {
+        @include sizeWeightLh(15px, 400, 28px);
+
+        margin-top: 20px;
+        display: block;
+        text-align: center;
+        letter-spacing: 0.5px;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    .paypal-credit-msg {
+        @include sizeWeightLh(13px, 400, 24px);
+
+        font-family: $font-tumi;
+        margin-top: 26px;
+        color: $davy-grey;
+    }
+}
+
+.message__headline {
+    span {
+        @include sizeWeightLh(13px, 400, 24px);
+    }
+}

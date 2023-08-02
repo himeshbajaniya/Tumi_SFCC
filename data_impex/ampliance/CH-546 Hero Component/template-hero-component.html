@@ -1,0 +1,446 @@
+
+<div data-creative-name="{{content-asset-id}}">
+
+  {{#compare carouselContent.length "==" 1}} 
+  
+  {{#each carouselContent}}
+  
+  <div class="container-fluid hero-banner position-relative
+  {{#if (eq gradientOrBackgroundSelection "Light Gradient")}}
+  gradient-light
+  {{/if}}
+  
+  {{#if (eq gradientOrBackgroundSelection "Dark Gradient")}}
+ gradient-dark
+  {{/if}}
+  
+  
+  {{#if (eq gradientOrBackgroundSelection "Light Background")}}
+background-light
+  {{/if}}
+  
+  {{#if (eq gradientOrBackgroundSelection "Dark Background")}}
+ background-dark
+  {{/if}}
+  
+  ">
+      {{#if (eq selectionOfMedia "Image")}}
+      <picture>
+          <source media="(max-width:640px)" srcset="{{s7ImageMobile}}">
+          <img class="img-fluid w-100" src="{{s7ImageDesktop}}" alt="{{imageAltDesktop}}">
+          </picture>
+      {{/if}}
+  
+      {{#if (eq selectionOfMedia "Video")}}
+      <video class="video-desktop removeFocusIndicator lazy-video" autoplay="" muted="" loop="" playsinline=""data-mv="{{s7VideoMobile}}" data-dv="{{s7VideoDesktop}}">
+            <source src="">
+        </video>
+      {{/if}}
+   
+    
+      <div class="gradient 
+    {{#if (eq positionOfTextContentDesktop "Left Aligned")}}  gradient-left {{/if}}
+    {{#if (eq positionOfTextContentDesktop "Right Aligned")}}  gradient-right {{/if}}
+    {{#if (eq positionOfTextContentDesktop "Center Aligned")}}  gradient-center {{/if}}
+    {{#if (eq positionOfTextContentMobile "Top Aligned")}}  gradient-top {{/if}}
+    {{#if (eq positionOfTextContentMobile "Bottom Aligned")}}  gradient-bottom {{/if}}
+    ">
+    </div>
+    
+  
+    {{#if (eq positionOfTextContentDesktop "Left Aligned")}}
+    <div class="
+     {{#if (eq positionOfTextContentMobile "Bottom Aligned")}} content-text text-content position-absolute d-flex align-items-end align-items-sm-center justify-content-sm-start justify-content-center bottom-padding text-align-left {{/if}} 
+    {{#if (eq positionOfTextContentMobile "Center Aligned")}} content-text text-content position-absolute d-flex align-items-center align-items-sm-center justify-content-sm-start justify-content-center text-align-left {{/if}}
+    {{#if (eq positionOfTextContentMobile "Top Aligned")}} content-text text-content position-absolute d-flex align-items-start align-items-sm-center justify-content-sm-start justify-content-center text-align-left {{/if}}
+    ">
+    {{#if landingPageURI}}
+    <a href="{{landingPageURI}}" class="anchorClass">
+    </a>
+
+
+    {{/if}}
+      <div class="text-collection" tabindex="0">
+       <div>
+      {{#if themeName}}    
+      <p class="collection-name">{{themeName}}</p>
+      {{/if}}
+      {{#if mainTagLine}}
+      <p class="banner-header">{{mainTagLine}}</p>
+      {{/if}}
+      {{#if lockupImage}}
+          <picture>
+              <source media="(max-width:640px)" srcset="{{lockupImage}}" width="{{lockupImageWidthMobile}}">
+              <img class="img lockup-image mw-100" src="{{lockupImage}}" alt="{{lockupImageAlt}}" width="{{lockupImageWidthDesktop}}">
+              </picture>
+      {{/if}}
+      {{#if description}}    
+      <p class="description">{{description}}</p>
+      {{/if}}
+    </div>
+      
+      {{#if (eq ctaToBeShown "Primary CTA")}}
+      <div class="button-redirect {{#if (eq positionOfCTA "Center")}} justify-content-center {{/if}}">
+        <a class="button button--secondary single-cta"href="{{cta1LandingURI}}" >{{cta1}}</a>
+        </div>
+      {{/if}}
+
+      {{#if (eq ctaToBeShown "Primary and Secondary CTA")}}
+      <div class="button-redirect {{#if (eq positionOfCTA "Center")}} justify-content-center {{/if}}">
+        <a class="button button--primary"href="{{cta1LandingURI}}" >{{cta1}}</a>
+        <a class="button button--secondary"href="{{cta2LandingURI}}" >{{cta2}}</a>
+      </div>
+      {{/if}}
+      </div>
+      
+      </div>
+      <div class="disclaimer position-absolute d-flex align-items-center justify-content-sm-start justify-content-center">
+        {{disclaimer}}
+      </div>
+      {{/if}}
+      
+      {{#if (eq positionOfTextContentDesktop "Right Aligned")}}
+    <div class="
+    {{#if (eq positionOfTextContentMobile "Bottom Aligned")}} content-text text-content position-absolute d-flex align-items-end align-items-sm-center justify-content-sm-end justify-content-center bottom-padding text-align-right right-padding {{/if}} 
+    {{#if (eq positionOfTextContentMobile "Center Aligned")}} content-text text-content position-absolute d-flex align-items-center align-items-sm-center justify-content-sm-end justify-content-center text-align-right right-padding {{/if}}
+    {{#if (eq positionOfTextContentMobile "Top Aligned")}} content-text text-content position-absolute d-flex align-items-start align-items-sm-center justify-content-sm-end justify-content-center text-align-right right-padding {{/if}}
+    ">
+    {{#if landingPageURI}}
+    <a href="{{landingPageURI}}" class="anchorClass">
+    </a>
+
+
+
+    {{/if}}
+      <div class="text-collection" tabindex="0">
+       <div>
+          {{#if themeName}}    
+          <p class="collection-name">{{themeName}}</p>
+          {{/if}}
+          {{#if mainTagLine}}
+          <p class="banner-header">{{mainTagLine}}</p>
+          {{/if}}
+          {{#if lockupImage}}
+          <picture>
+              <source media="(max-width:640px)" srcset="{{lockupImage}}" width="{{lockupImageWidthMobile}}">
+              <img class="img lockup-image mw-100" src="{{lockupImage}}" alt="{{lockupImageAlt}}" width="{{lockupImageWidthDesktop}}">
+              </picture>
+          {{/if}}
+          {{#if description}}    
+          <p class="description">{{description}}</p>
+          {{/if}}
+    </div>
+      
+    {{#if (eq ctaToBeShown "Primary CTA")}}
+    <div class="button-redirect {{#if (eq positionOfCTA "Center")}} justify-content-center {{/if}}">
+      <a class="button button--secondary single-cta"href="{{cta1LandingURI}}" >{{cta1}}</a>
+      </div>
+    {{/if}}
+
+    {{#if (eq ctaToBeShown "Primary and Secondary CTA")}}
+    <div class="button-redirect {{#if (eq positionOfCTA "Center")}} justify-content-center {{/if}}">
+      <a class="button button--primary"href="{{cta1LandingURI}}" >{{cta1}}</a>
+      <a class="button button--secondary"href="{{cta2LandingURI}}" >{{cta2}}</a>
+    </div>
+    {{/if}}
+      
+      </div>
+     
+      </div>
+      <div class="disclaimer position-absolute d-flex align-items-center justify-content-sm-end justify-content-center right-padding">
+        {{disclaimer}}
+      </div>
+      {{/if}}
+  
+      {{#if (eq positionOfTextContentDesktop "Center Aligned")}}
+    <div class="
+    {{#if (eq positionOfTextContentMobile "Bottom Aligned")}} content-text text-content position-absolute d-flex align-items-end align-items-sm-center justify-content-sm-center justify-content-center bottom-padding text-align-center {{/if}} 
+        {{#if (eq positionOfTextContentMobile "Center Aligned")}} content-text text-content position-absolute d-flex align-items-center align-items-sm-center justify-content-sm-center justify-content-center text-align-center {{/if}}
+        {{#if (eq positionOfTextContentMobile "Top Aligned")}} content-text text-content position-absolute d-flex align-items-start align-items-sm-center justify-content-sm-center justify-content-center text-align-center {{/if}}
+    ">
+    {{#if landingPageURI}}
+    <a href="{{landingPageURI}}" class="anchorClass">
+    </a>
+
+
+
+    {{/if}}
+      <div class="text-collection" tabindex="0">
+       <div>
+          {{#if themeName}}    
+          <p class="collection-name">{{themeName}}</p>
+          {{/if}}
+          {{#if mainTagLine}}
+          <p class="banner-header">{{mainTagLine}}</p>
+          {{/if}}
+          {{#if lockupImage}}
+          <picture>
+              <source media="(max-width:640px)" srcset="{{lockupImage}}" width="{{lockupImageWidthMobile}}">
+              <img class="img lockup-image mw-100" src="{{lockupImage}}" alt="{{lockupImageAlt}}" width="{{lockupImageWidthDesktop}}">
+              </picture>
+          {{/if}}
+          {{#if description}}    
+          <p class="description">{{description}}</p>
+          {{/if}}
+    </div>
+      
+    {{#if (eq ctaToBeShown "Primary CTA")}}
+    <div class="button-redirect {{#if (eq positionOfCTA "Center")}} justify-content-center {{/if}}">
+      <a class="button button--secondary single-cta"href="{{cta1LandingURI}}" >{{cta1}}</a>
+      </div>
+    {{/if}}
+
+    {{#if (eq ctaToBeShown "Primary and Secondary CTA")}}
+    <div class="button-redirect {{#if (eq positionOfCTA "Center")}} justify-content-center {{/if}}">
+      <a class="button button--primary"href="{{cta1LandingURI}}" >{{cta1}}</a>
+      <a class="button button--secondary"href="{{cta2LandingURI}}" >{{cta2}}</a>
+    </div>
+    {{/if}}
+      
+      </div>
+      
+      </div>
+      <div class="disclaimer position-absolute d-flex align-items-center justify-content-sm-center justify-content-center text-align-center">
+        {{disclaimer}}
+      </div>
+
+      {{/if}}
+  
+    </div>
+    {{/each}}
+  
+  {{else}}
+  
+
+  <!-- swiper code-->
+
+  <div class="swiper  hero-swiper">
+      <div class="swiper-wrapper">
+          {{#each carouselContent}}
+          <div class="swiper-slide">
+              <div class="container-fluid hero-banner position-relative
+    {{#if (eq gradientOrBackgroundSelection "Light Gradient")}}
+gradient-light
+    {{/if}}
+  
+    {{#if (eq gradientOrBackgroundSelection "Dark Gradient")}}
+  gradient-dark
+    {{/if}}
+  
+  
+    {{#if (eq gradientOrBackgroundSelection "Light Background")}}
+ background-light
+    {{/if}}
+  
+    {{#if (eq gradientOrBackgroundSelection "Dark Background")}}
+background-dark
+    {{/if}}
+  
+    ">
+        {{#if (eq selectionOfMedia "Image")}}
+        <picture>
+            <source media="(max-width:640px)" srcset="{{s7ImageMobile}}">
+            <img class="img-fluid w-100" src="{{s7ImageDesktop}}" alt="{{imageAltDesktop}}">
+            </picture>
+        {{/if}}
+  
+        {{#if (eq selectionOfMedia "Video")}}
+        <video class="video-desktop removeFocusIndicator lazy-video" autoplay="" muted="" loop="" playsinline=""data-mv="{{s7VideoMobile}}" data-dv="{{s7VideoDesktop}}">
+            <source src="">
+        </video>
+        {{/if}}
+     
+      
+        <div class="gradient 
+      {{#if (eq positionOfTextContentDesktop "Left Aligned")}}  gradient-left {{/if}}
+      {{#if (eq positionOfTextContentDesktop "Right Aligned")}}  gradient-right {{/if}}
+      {{#if (eq positionOfTextContentDesktop "Center Aligned")}}  gradient-center {{/if}}
+      {{#if (eq positionOfTextContentMobile "Top Aligned")}}  gradient-top {{/if}}
+    {{#if (eq positionOfTextContentMobile "Bottom Aligned")}}  gradient-bottom {{/if}}
+      ">
+      </div>
+      
+  
+      {{#if (eq positionOfTextContentDesktop "Left Aligned")}}
+      <div class="
+       {{#if (eq positionOfTextContentMobile "Bottom Aligned")}} content-text text-content position-absolute d-flex align-items-end align-items-sm-center justify-content-sm-start justify-content-center bottom-padding text-align-left {{/if}} 
+      {{#if (eq positionOfTextContentMobile "Center Aligned")}} content-text text-content position-absolute d-flex align-items-center align-items-sm-center justify-content-sm-start justify-content-center text-align-left {{/if}}
+      {{#if (eq positionOfTextContentMobile "Top Aligned")}} content-text text-content position-absolute d-flex align-items-start align-items-sm-center justify-content-sm-start justify-content-center text-align-left {{/if}}
+      ">
+      {{#if landingPageURI}}
+      <a href="{{landingPageURI}}" class="anchorClass">
+      </a>
+  
+
+  
+      {{/if}}
+        <div class="text-collection" tabindex="0">
+         <div>
+          {{#if themeName}}    
+          <p class="collection-name">{{themeName}}</p>
+          {{/if}}
+          {{#if mainTagLine}}
+          <p class="banner-header">{{mainTagLine}}</p>
+          {{/if}}
+          {{#if lockupImage}}
+          <picture>
+              <source media="(max-width:640px)" srcset="{{lockupImage}}" width="{{lockupImageWidthMobile}}">
+              <img class="img lockup-image mw-100" src="{{lockupImage}}" alt="{{lockupImageAlt}}" width="{{lockupImageWidthDesktop}}">
+              </picture>
+          {{/if}}
+          {{#if description}}    
+          <p class="description">{{description}}</p>
+          {{/if}}
+      </div>
+        
+      {{#if (eq ctaToBeShown "Primary CTA")}}
+      <div class="button-redirect {{#if (eq positionOfCTA "Center")}} justify-content-center {{/if}}">
+        <a class="button button--secondary single-cta"href="{{cta1LandingURI}}" >{{cta1}}</a>
+        </div>
+      {{/if}}
+
+      {{#if (eq ctaToBeShown "Primary and Secondary CTA")}}
+      <div class="button-redirect {{#if (eq positionOfCTA "Center")}} justify-content-center {{/if}}">
+        <a class="button button--primary"href="{{cta1LandingURI}}" >{{cta1}}</a>
+        <a class="button button--secondary"href="{{cta2LandingURI}}" >{{cta2}}</a>
+      </div>
+      {{/if}}
+    
+  
+  
+        </div>
+        
+        </div>
+        <div class="disclaimer position-absolute d-flex align-items-center justify-content-sm-start justify-content-center">
+          {{disclaimer}}
+        </div>
+        {{/if}}
+        
+        {{#if (eq positionOfTextContentDesktop "Right Aligned")}}
+      <div class="
+      {{#if (eq positionOfTextContentMobile "Bottom Aligned")}} content-text text-content position-absolute d-flex align-items-end align-items-sm-center justify-content-sm-end justify-content-center bottom-padding text-align-right right-padding {{/if}} 
+      {{#if (eq positionOfTextContentMobile "Center Aligned")}} content-text text-content position-absolute d-flex align-items-center align-items-sm-center justify-content-sm-end justify-content-center text-align-right right-padding {{/if}}
+      {{#if (eq positionOfTextContentMobile "Top Aligned")}} content-text text-content position-absolute d-flex align-items-start align-items-sm-center justify-content-sm-end justify-content-center text-align-right right-padding {{/if}}
+      ">
+      {{#if landingPageURI}}
+      <a href="{{landingPageURI}}" class="anchorClass">
+      </a>
+  
+
+  
+      {{/if}}
+        <div class="text-collection" tabindex="0">
+         <div>
+          {{#if themeName}}    
+          <p class="collection-name">{{themeName}}</p>
+          {{/if}}
+          {{#if mainTagLine}}
+          <p class="banner-header">{{mainTagLine}}</p>
+          {{/if}}
+          {{#if lockupImage}}
+          <picture>
+              <source media="(max-width:640px)" srcset="{{lockupImage}}" width="{{lockupImageWidthMobile}}">
+              <img class="img lockup-image mw-100" src="{{lockupImage}}" alt="{{lockupImageAlt}}" width="{{lockupImageWidthDesktop}}">
+              </picture>
+          {{/if}}
+          {{#if description}}    
+          <p class="description">{{description}}</p>
+          {{/if}}
+      </div>
+        
+      {{#if (eq ctaToBeShown "Primary CTA")}}
+      <div class="button-redirect {{#if (eq positionOfCTA "Center")}} justify-content-center {{/if}}">
+        <a class="button button--secondary single-cta"href="{{cta1LandingURI}}" >{{cta1}}</a>
+        </div>
+      {{/if}}
+
+      {{#if (eq ctaToBeShown "Primary and Secondary CTA")}}
+      <div class="button-redirect {{#if (eq positionOfCTA "Center")}} justify-content-center {{/if}}">
+        <a class="button button--primary"href="{{cta1LandingURI}}" >{{cta1}}</a>
+        <a class="button button--secondary"href="{{cta2LandingURI}}" >{{cta2}}</a>
+      </div>
+      {{/if}}
+        
+        </div>
+       
+        </div>
+        <div class="disclaimer position-absolute d-flex align-items-center justify-content-sm-end justify-content-center right-padding">
+          {{disclaimer}}
+        </div>
+        {{/if}}
+  
+        {{#if (eq positionOfTextContentDesktop "Center Aligned")}}
+      <div class="
+      {{#if (eq positionOfTextContentMobile "Bottom Aligned")}} content-text text-content position-absolute d-flex align-items-end align-items-sm-center justify-content-sm-center justify-content-center bottom-padding text-align-center {{/if}} 
+          {{#if (eq positionOfTextContentMobile "Center Aligned")}} content-text text-content position-absolute d-flex align-items-center align-items-sm-center justify-content-sm-center justify-content-center text-align-center {{/if}}
+          {{#if (eq positionOfTextContentMobile "Top Aligned")}} content-text text-content position-absolute d-flex align-items-start align-items-sm-center justify-content-sm-center justify-content-center text-align-center {{/if}}
+      ">
+      {{#if landingPageURI}}
+      <a href="{{landingPageURI}}" class="anchorClass">
+      </a>
+  
+
+  
+      {{/if}}
+        <div class="text-collection" tabindex="0">
+         <div>
+          {{#if themeName}}    
+          <p class="collection-name">{{themeName}}</p>
+          {{/if}}
+          {{#if mainTagLine}}
+          <p class="banner-header">{{mainTagLine}}</p>
+          {{/if}}
+          {{#if lockupImage}}
+          <picture>
+              <source media="(max-width:640px)" srcset="{{lockupImage}}" width="{{lockupImageWidthMobile}}">
+              <img class="img lockup-image mw-100" src="{{lockupImage}}" alt="{{lockupImageAlt}}" width="{{lockupImageWidthDesktop}}">
+              </picture>
+          {{/if}}
+          {{#if description}}    
+          <p class="description">{{description}}</p>
+          {{/if}}
+      </div>
+        
+      {{#if (eq ctaToBeShown "Primary CTA")}}
+      <div class="button-redirect {{#if (eq positionOfCTA "Center")}} justify-content-center {{/if}}">
+        <a class="button button--secondary single-cta"href="{{cta1LandingURI}}" >{{cta1}}</a>
+        </div>
+      {{/if}}
+
+      {{#if (eq ctaToBeShown "Primary and Secondary CTA")}}
+      <div class="button-redirect {{#if (eq positionOfCTA "Center")}} justify-content-center {{/if}}">
+        <a class="button button--primary"href="{{cta1LandingURI}}" >{{cta1}}</a>
+        <a class="button button--secondary"href="{{cta2LandingURI}}" >{{cta2}}</a>
+      </div>
+      {{/if}}
+        
+        </div>
+        
+        </div>
+        <div class="disclaimer position-absolute d-flex align-items-center justify-content-sm-center justify-content-center text-align-center">
+          {{disclaimer}}
+        </div>
+
+        
+        {{/if}}
+  
+      </div>
+              
+          </div>
+          {{/each}}
+      </div>
+      <div class="hero-slide-next"><svg width="21" height="12" viewBox="0 0 21 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19.7543 6H0" stroke="#1B1C1E"/>
+          <path d="M14.9004 1L19.7548 6L14.9004 11" stroke="#1B1C1E"/>
+          </svg></div>
+      <div class="hero-slide-prev"><svg width="21" height="12" viewBox="0 0 21 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1.24572 6H21" stroke="#1B1C1E"/>
+          <path d="M6.09961 1L1.24523 6L6.09961 11" stroke="#1B1C1E"/>
+          </svg></div>
+  </div>
+
+  <!-- code ends-->
+  
+  {{/compare}}
+  
+        </div>

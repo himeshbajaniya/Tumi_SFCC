@@ -1,0 +1,689 @@
+.monogram-item {
+    .icon {
+        border: 1px solid $bg-dark;
+        border-radius: 5px;
+        font-size: 15px;
+        line-height: 15px;
+        min-width: 48px;
+        // height: 28px;
+        margin-right: 16px;
+        padding: 5.5px 8px;
+        text-align: center;
+        color: $bg-dark;
+
+        span {
+            width: 48px;
+            height: 28px;
+
+            &.numberFormat {
+                padding: 0;
+            }
+        }
+    }
+
+    .flex-grow-1 {
+        flex-basis: 40%;
+    }
+
+    .title,
+    .confirmmsg,
+    .confirmmsg-premium {
+        color: $eerie-black;
+        font-family: $font-tumi-sbold;
+
+        @include sizeWeightLh (15px, 600, 20px);
+    }
+
+    .desc {
+        color: $davy-grey;
+        font-family: $font-tumi;
+
+        @include sizeWeightLh (15px, 400, 20px);
+    }
+
+    a {
+        color: $eerie-black;
+        text-decoration: underline;
+        @include sizeWeightLh (13px, 400, 20px);
+    }
+
+    a:hover {
+        text-decoration: none !important;
+    }
+
+    &.add-monogram {
+        .confirmmsg,
+        .confirmmsg-premium,
+        .edit-block {
+            display: none;
+        }
+    }
+
+    &.edit-monogram.classic {
+        .confirmmsg-premium {
+            display: none !important;
+        }
+    }
+
+    &.edit-monogram.premium {
+        .confirmmsg {
+            display: none !important;
+        }
+    }
+
+    &.edit-monogram {
+        .title,
+        .add-block {
+            display: none;
+        }
+    }
+}
+
+.toggle-value {
+    color: $eerie-black;
+    text-decoration: underline;
+    @include sizeWeightLh (13px, 400, 20px);
+}
+
+.numberFormat {
+    font-family: $font-tumi-monogram;
+}
+
+.monogram-modal {
+    .monogram-option-selection {
+        .item {
+            margin-bottom: 35px;
+        }
+
+        a {
+            @include sizeWeightLh (18px, 400, 19px);
+
+            color: $bg-dark;
+            text-decoration: none;
+            margin-top: 18px;
+            margin-bottom: 4px;
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    .image {
+        margin-bottom: 24px;
+    }
+
+    p {
+        @include sizeWeightLh (15px, 400, 20px);
+
+        color: $davy-grey;
+    }
+
+    a:hover {
+        text-decoration: none;
+    }
+
+    .count {
+        @include sizeWeightLh (12px, 400, 18px);
+
+        font-family: $font-tumi;
+        color: $davy-grey;
+        letter-spacing: 2px;
+    }
+
+    .initials {
+        @include sizeWeightLh (18px, 400, 20px);
+
+        font-family: $font-tumi;
+        color: $eerie-black;
+        margin-bottom: 4px;
+        margin-top: 4px;
+    }
+
+    .monogram-wrapper {
+        min-height: 213px;
+
+        fieldset {
+            display: flex;
+            justify-content: space-around;
+        }
+    }
+
+    .personalization-monogram-preview {
+        display: none;
+
+        &.active {
+            display: block;
+        }
+    }
+
+    .content {
+        @include sizeWeightLh (15px, 400, 20px);
+
+        font-family: $font-tumi;
+        color: $davy-grey;
+    }
+
+    .fonts {
+        margin-top: 4px;
+        @include sizeWeightLh (18px, 400, 20px);
+    }
+
+    @include media-breakpoint-up(md) {
+        input::-webkit-input-placeholder {
+            color: transparent;
+        }
+
+        input::-moz-placeholder {
+            color: transparent;
+        }
+
+        input::-moz-placeholder {
+            color: transparent;
+        }
+
+        input::-ms-input-placeholder {
+            color: transparent;
+        }
+    }
+
+    [type="radio"]:checked + label::before,
+    [type="radio"]:checked + label::after {
+        content: '';
+        border-radius: unset;
+        border: none;
+        background-color: transparent;
+        width: 0;
+        height: 0;
+    }
+
+    [type="radio"]:not(:checked) + label::before,
+    [type="radio"]:not(:checked) + label::after {
+        border-radius: unset;
+        border: none;
+        width: auto;
+    }
+
+    .monogram-initials {
+        text-align: center;
+        padding-top: 18px;
+        padding-bottom: 16px;
+        outline: 0 !important;
+        display: flex;
+
+        .monogram-input {
+            margin-right: 17px;
+            border: 1px solid #ccc;
+            font-weight: lighter;
+            height: 80px;
+            text-align: center;
+            text-transform: uppercase;
+            width: 30%;
+            padding: 0 15px;
+            vertical-align: top;
+            font-size: 25px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            &.symbol {
+                font-family: $font-tumi-monogram !important;
+            }
+
+            &.selected {
+                border-color: #000;
+            }
+        }
+
+        &.removeFocusIndicator {
+            &:focus {
+                outline: 0 !important;
+            }
+        }
+    }
+
+    .personalization-monogram-symbols {
+        [type="radio"]:not(:checked) + label {
+            padding-left: 0;
+            width: 28.43px;
+            height: 28px;
+            margin-right: 10.33px;
+        }
+
+        [type="radio"]:not(:checked) + label::before,
+        [type="radio"]:not(:checked) + label::after {
+            content: unset;
+        }
+
+        .symbol-size {
+            font-family: $font-tumi-monogram;
+            font-size: 32px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 100%;
+        }
+
+        .symbol_1::before {
+            content: '\31';
+        }
+
+        .symbol_2::before {
+            content: '\32';
+        }
+
+        .symbol_3::before {
+            content: '\33';
+        }
+
+        .symbol_4::before {
+            content: '\34';
+        }
+
+        .symbol_5::before {
+            content: '\35';
+        }
+
+        .symbol_6::before {
+            content: '\36';
+        }
+
+        .symbol_7::before {
+            content: '\37';
+        }
+
+        .symbol_8::before {
+            content: '\24';
+        }
+
+        .symbol_9::before {
+            content: '\21';
+        }
+    }
+
+    .personalization-monogram-style {
+        margin-bottom: 100px;
+
+        .monogram-fonts {
+            display: flex;
+            margin-top: 20px;
+            justify-content: space-between;
+            margin-bottom: 100px;
+        }
+
+        label {
+            width: 173px;
+            height: 80px;
+            padding: 16px !important;
+            display: flex;
+            border: 1px solid $grey3;
+            color: #595959;
+            align-items: center;
+            text-align: center;
+
+            &.uppercase {
+                text-transform: uppercase;
+            }
+
+            > span {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 40px;
+                line-height: 24px;
+            }
+
+            &.font_style_1 {
+                margin-right: 10px;
+                font-family: "Times New Roman", Times, Baskerville, Georgia, serif;
+            }
+
+            &.font_style_2 {
+                font-family: Futura, Arial, sans-serif;
+            }
+        }
+
+        [type="radio"]:checked + label {
+            border: 1px solid $bg-dark;
+            color: $black;
+        }
+    }
+
+    .monogram-btn-cntr {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        margin-top: 55px;
+
+        .disabled {
+            pointer-events: none;
+            background: $grey3;
+            color: $white;
+        }
+
+        .cancelBtn,
+        .previousBtn {
+            margin-top: 24px;
+            @include sizeWeightLh (15px, 400, 14px);
+        }
+    }
+
+    .monogram-placement {
+        display: flex;
+        flex-wrap: wrap;
+
+        [type="radio"] + label {
+            border-radius: 50%;
+            padding-left: 28px;
+            width: 28px;
+            height: 28px;
+            border: 1px solid $radio-circle;
+        }
+
+        [type="radio"]:not(:checked) + label {
+            text-indent: -9999px;
+            margin: 0 4px 12px;
+        }
+
+        [type="radio"]:checked + label {
+            text-indent: -9999px;
+            margin: 0 4px 12px;
+        }
+
+        [type="radio"]:not(:checked) + label::before,
+        [type="radio"]:not(:checked) + label::after {
+            background-color: transparent;
+        }
+
+        .placement {
+            display: inline-flex;
+            width: 100%;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 5px;
+            padding: 20px 0;
+
+            .option {
+                background-color: transparent !important;
+                height: 80px !important;
+                width: 93px !important;
+                display: flex !important;
+                align-items: center;
+                justify-content: center;
+                margin: 0 5px !important;
+                border-radius: 0 !important;
+                cursor: pointer;
+                padding: 0 10px !important;
+                border: 1px solid $grey3;
+                transition: all 0.3s ease;
+                text-indent: 0 !important;
+
+                span {
+                    color: $davy-grey;
+                    font-family: $font-tumi-sbold;
+                    @include sizeWeightLh(15px, 600, 16px);
+                }
+            }
+
+            input[type="radio"] {
+                display: none;
+            }
+
+            [id^="option-1"] {
+                &:checked {
+                    &:checked {
+                        ~ {
+                            .option-1 {
+                                border-color: $black;
+                                background: $white;
+
+                                span {
+                                    color: $eerie-black;
+                                    font-family: $font-tumi-sbold;
+                                    @include sizeWeightLh(15px, 600, 16px);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            [id^="option-2"] {
+                &:checked {
+                    &:checked {
+                        ~ {
+                            .option-2 {
+                                border-color: $black;
+                                background: $white;
+
+                                span {
+                                    color: $eerie-black;
+                                    font-family: $font-tumi-sbold;
+                                    @include sizeWeightLh(15px, 600, 16px);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            [id^="option-3"] {
+                &:checked {
+                    &:checked {
+                        ~ {
+                            .option-3 {
+                                border-color: $black;
+                                background: $white;
+
+                                span {
+                                    color: $eerie-black;
+                                    font-family: $font-tumi-sbold;
+                                    @include sizeWeightLh(15px, 600, 16px);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .description {
+
+            @include sizeWeightLh(13px, 400, 18px);
+
+            color: $davy-grey;
+        }
+    }
+
+    .monogram-fontColor {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 20px;
+
+        button.premium-color-attribute,
+        [type="radio"] + label {
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            border: 1px solid $radio-circle;
+            padding-left: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        button.premium-color-attribute,
+        [type="radio"]:not(:checked) + label {
+            text-indent: -9999px;
+            margin: 0 18px 16px 0;
+            background-size: 100% !important;
+        }
+
+        button.premium-color-attribute.selected,
+        [type="radio"]:checked + label {
+            text-indent: -9999px;
+            margin: 0 18px 16px 0;
+            padding-left: 0;
+            background-size: 100% !important;
+        }
+
+        [type="radio"]:checked + label::before {
+            content: "" !important;
+            border: 3px solid #fff;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            border-radius: 100%;
+            width: 34px;
+            height: 34px;
+        }
+
+        [type="radio"]:checked + label::after {
+            content: "" !important;
+            background: transparent !important;
+        }
+
+        [type="radio"]:not(:checked) + label::before,
+        [type="radio"]:not(:checked) + label::after {
+            background-color: transparent;
+        }
+    }
+
+    .modal-header {
+        background-color: transparent;
+    }
+}
+
+.monogram-modal {
+    &.global-modal {
+        .modal-dialog {
+            max-width: 455px !important;
+        }
+
+        .modal-header {
+            margin-bottom: 0;
+            position: absolute;
+            right: 43px;
+            z-index: 1002;
+        }
+    }
+
+    #monogramTabContent {
+        margin-top: 12px;
+    }
+
+    .modal-title {
+
+        @include sizeWeightLh(24px, 400, 24px);
+
+        color: $bg-dark;
+        margin-bottom: 33px;
+        font-family: $font-tumi;
+    }
+
+    .numberFormat {
+        font-family: $font-tumi-monogram;
+    }
+
+    /* stylelint-disable */
+    *:focus,
+    *:focus-visible,
+    input[type="radio"]:focus + label,
+    input[type="checkbox"]:focus + label,
+    button:focus {
+        outline: inherit;
+    }
+}
+
+.monogram-modal {
+    #premium-monogram-form {
+        .monogram-initials {
+            .monogram-input {
+                width: 50% !important;
+            }
+        }
+    }
+
+    .monogram-disclaimer {
+        margin-top: 119px;
+        @include sizeWeightLh(13px, 400, 18px);
+    }
+
+    .monogram-fontColor button.premium-color-attribute {
+        text-indent: inherit;
+        background: transparent;
+        border: none;
+        width: 36px;
+        height: 36px;
+        margin-right: 18px;
+        margin-left: 0;
+        padding: 0;
+
+        .swatch-circle {
+            width: 100%;
+            height: 100%;
+            background-repeat: no-repeat;
+            border-radius: 1.25em;
+            border: 1px solid $radio-circle;
+            margin-left: 0;
+            margin-right: 0;
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        &.selected {
+            .color-value {
+                text-indent: inherit !important;
+                padding-left: 0;
+                width: 36px;
+                height: 36px;
+                &:before {
+                    content: "" !important;
+                    border: 3px solid #fff;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    border-radius: 100%;
+                }
+
+                &:after {
+                    content: "" !important;
+                    background: transparent;
+                }
+            }
+        }
+    }
+}
+
+.monogram-modal {
+    #premium-monogram-form {
+        .monogram-initials {
+            .monogram-input {
+                width: 50% !important;
+            }
+        }
+    }
+    .monogram-form {
+        &.classic-patch, &.classic-tag {
+            .monogram-option-tab {
+                display: none;
+            }
+        }
+    }
+}
+
+.product-wrapper {
+    .monogram-item,
+    .accent-item {
+        margin-top: 16px;
+    }
+}

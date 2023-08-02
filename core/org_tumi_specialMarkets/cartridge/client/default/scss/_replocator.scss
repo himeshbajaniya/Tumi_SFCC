@@ -1,0 +1,54 @@
+
+.your-representative {
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 28px;
+    text-transform: capitalize;
+    color: $bg-dark;
+    margin-top: 60px;
+    margin-bottom: 40px;
+}
+
+.replocator_selector {
+    margin-bottom: 200px;
+}
+
+.replocator_selector {
+    select {
+        min-width: 250px;
+    }
+
+    .address1,
+    .address2,
+    .contact-lbl2 {
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 22px;
+        color: $bg-dark;
+    }
+
+    .repLocator-region-contacts {
+        display: flex;
+        flex-direction: column;
+        margin-top: 15px;
+
+        @include media-breakpoint-up(sm) {
+            text-align: center;
+            display: inline-block;
+        }
+
+        .repLocator-contact-info {
+            float: left;
+            padding: 10px;
+
+            .contact-lbl {
+                font-family: $font-semibold;
+                color: $bg-dark;
+            }
+
+            .contact-lbl2 {
+                padding: 6px;
+            }
+        }
+    }
+}

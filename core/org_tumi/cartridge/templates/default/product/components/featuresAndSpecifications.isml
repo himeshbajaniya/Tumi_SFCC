@@ -1,0 +1,269 @@
+<isscript>
+        var assets = require('*/cartridge/scripts/assets');
+        assets.addJs('/js/productDetail.js');
+        assets.addCss('/css/product/detail.css');
+    </isscript>
+<isinclude template="/components/modules" sf-toolkit="off" />
+<isif condition="${typeof product === 'undefined'}">
+    <isset name="product" value="${pdict.product}" scope="page"/>
+</isif>
+<isinclude template="product/components/airlineGuide" />
+
+<ul class="nav nav-tabs nav-fill pdp-feature-tab" id="pdpFeatureTab" role="tablist">
+    <isif condition="${product.exteriorFeatures || product.interiorFeatures}">
+        <li class="nav-item">
+            <a class="nav-link" id="featuresTab" data-toggle="tab" href="#features" role="tab" aria-controls="features"
+                aria-selected="false">${Resource.msg('tab.features', 'featuresAndSpecifications', null)}</a>
+        </li>
+    </isif>
+    <isif
+        condition="${product.styleDescription || product.dimensions || product.expandable || product.netWeightLb || product.capacity || product.primaryMaterial || (product.heightInches && product.widthInches && product.depthInches)}">
+        <li class="nav-item">
+            <a class="nav-link" id="specificationsTab" data-toggle="tab" href="#specifications" role="tab"
+                aria-controls="specifications" aria-selected="false">${Resource.msg('tab.specifications', 'featuresAndSpecifications', null)}</a>
+        </li>
+    </isif>
+    <isif
+        condition="${((product.tsaLockType !== null && product.tsaLockType !== 'FALSE') && dw.content.ContentMgr.getContent('tsaLock-PDP')) || (product.tumiTracer && dw.content.ContentMgr.getContent('tumiTracer-PDP')) || (product.warranty && dw.content.ContentMgr.getContent('warranty-PDP'))}">
+    <li class="nav-item">
+        <a class="nav-link" id="maintenanceandcareTab" data-toggle="tab" href="#maintenanceandcare" role="tab"
+            aria-controls="maintenanceandcare" aria-selected="false">${Resource.msg('tab.maintenance', 'featuresAndSpecifications', null)}</a>
+    </li>
+    </isif>
+    <input type="hidden" name="eligibleToShowAirlineGuide" value="${product.eligibleToShowAirlineGuide}"/>
+    <isif condition="${product.eligibleToShowAirlineGuide}">
+        <li class="nav-item">
+            <a class="nav-link" id="compatibleairlineguideTab" data-toggle="tab" href="#compatibleairlineguide" role="tab"
+                aria-controls="compatibleairlineguide" aria-selected="false">${Resource.msg('tab.airlineguide', 'featuresAndSpecifications', null)}</a>
+        </li>
+    </isif>
+</ul>
+<div class="tab-content" id="pdpTabContent">
+ <isif condition="${product.exteriorFeatures || product.interiorFeatures}">
+    <div class="tab-pane" id="features" role="tabpanel" aria-labelledby="featuresTab">
+        <div class="tab-content-wrap">
+            <div class="row">
+            <isif condition="${product.exteriorFeatures}">
+                <div class="col-md-6 col-12 col-sm-6">
+                    <h4>${Resource.msg('tab.exterior', 'featuresAndSpecifications', null)}</h4>
+                    <isloop items="${product.exteriorFeatures}" var="exteriorFeatures">
+                        <ul>
+                            <li>${exteriorFeatures}</li>
+                        </ul>
+                    </isloop>
+                </div>
+            </isif>
+            <isif condition="${product.interiorFeatures}">
+                <div class="col-md-6 col-12 col-sm-6">
+                    <h4>${Resource.msg('tab.interior', 'featuresAndSpecifications', null)}</h4>
+                    <isloop items="${product.interiorFeatures}" var="interiorFeatures">
+                        <ul>
+                            <li>${interiorFeatures}</li>
+                        </ul>
+                    </isloop>
+                </div>
+            </isif>
+            </div>
+        </div>
+
+    </div>
+     </isif>
+      <isif
+        condition="${product.styleDescription || product.dimensions || product.expandable || product.netWeightLb || product.capacity || product.primaryMaterial ||(product.heightInches && product.widthInches && product.depthInches) || product.laptopSize}">
+    <div class="tab-pane" id="specifications" role="tabpanel" aria-labelledby="specificationsTab">
+        <div class="tab-content-wrap">
+            <div class="row justify-content-center"> 
+                    <isif condition="${product.heightInches && product.widthInches && product.depthInches}">
+                         <div class="col-20">
+                        <div class="specification-content-wrap">
+                           <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 30 30"><path d="M22.68,11.89h-.75V9.36h.75ZM21.93,19h.75V16.5h-.75Zm0-10.6h.75V6.15a.38.38,0,0,0-.38-.37H20.05v.75h1.88Zm.75,4.49h-.75v2.54h.75ZM19,5.78H16.44v.75H19ZM9,20.49h2.58v-.75H10L18.91,10v1.65h.75V9.05a.36.36,0,0,0-.37-.37H16.71v.75h1.68l-9,9.81V17.55H8.67v2.57A.38.38,0,0,0,9,20.49Zm14,1.85-1.83-1.82-.53.53,1.13,1.13H6.27V6.74L7.45,7.92,8,7.39,6.17,5.58a.37.37,0,0,0-.53,0L3.82,7.4l.53.53L5.52,6.76V22.55a.38.38,0,0,0,.38.38h16l-1.23,1.23.53.53L23,22.88A.4.4,0,0,0,23,22.34ZM15.41,5.78H12.87v.75h2.54Zm-3.58,0H9.29v.75h2.54Z"/></svg>
+                            <div class="specification-content-inner">
+                                <h5>${Resource.msg('tab.dimensions', 'featuresAndSpecifications', null)}</h5>
+                                <p>
+                                    ${parseFloat(product.heightInches).toFixed(1)}${product.dimUnit} X ${parseFloat(product.widthInches).toFixed(1)}${product.dimUnit} X ${parseFloat(product.depthInches).toFixed(1)}${product.dimUnit}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </isif>
+                <isif condition="${product.expandable}">
+                    <div class="col-20">
+                        <div class="specification-content-wrap">
+                          <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"><path d="M18.63,14l1.94,1.94-1.93,1.93-.53-.53,1-1H10.87l1,1-.53.53L9.81,16.31h0v0l-.36-.36.36-.36h0L11.36,14l.53.53-1,1h8.27l-1-1Zm5-4.93V22.8h.75V9.07ZM5.62,22.8h.75V9.07H5.62Z"/></svg>
+                            <div class="specification-content-inner">
+                                <h5>${Resource.msg('tab.expanded.depth', 'featuresAndSpecifications', null)}</h5>
+                                <p>
+                                    ${parseFloat(product.expansionInches).toFixed(1)}${Resource.msg('tab.specifications.inchesunit', 'featuresAndSpecifications', null)}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </isif>
+                <isif condition="${product.netWeightLb && product.weightUnit}">
+                    <div class="col-20">
+                        <div class="specification-content-wrap">
+                            <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"><path d="M19.88,13.41l.06-.08a6.13,6.13,0,0,0,1.31-3.81c0-3.1-2.28-4.87-6.25-4.87S8.75,6.42,8.75,9.52a6.13,6.13,0,0,0,1.31,3.81l.06.08a6.82,6.82,0,0,0,.64,10.14l.11.08h8.26l.11-.08a6.82,6.82,0,0,0,.64-10.14Zm-8.14-1.22-.07-.09a4.17,4.17,0,0,1-.9-2.58c0-.71,0-2.86,4.23-2.86s4.23,2.15,4.23,2.86a4.17,4.17,0,0,1-.9,2.58l-.07.09a6.82,6.82,0,0,0-6.52,0ZM9.5,9.52C9.5,6.86,11.45,5.4,15,5.4s5.5,1.46,5.5,4.12a5.45,5.45,0,0,1-1.15,3.35l-.43-.31a4.92,4.92,0,0,0,1.06-3c0-3-2.71-3.61-5-3.61s-5,.63-5,3.61a4.92,4.92,0,0,0,1.06,3l-.43.31A5.45,5.45,0,0,1,9.5,9.52Zm9.37,13.36H11.13a6.09,6.09,0,1,1,7.74,0Zm-5.55-9.51.26.69-.34.14a4.73,4.73,0,0,0-2.47,2.9l-.13.36-.7-.26.13-.36A5.47,5.47,0,0,1,13,13.5Z"/></svg>
+                            <div class="specification-content-inner">
+                                <h5>${Resource.msg('tab.specifications.netWeightLb', 'featuresAndSpecifications', null)}
+                                </h5>
+                                <p>${parseFloat(product.netWeightLb).toFixed(1)} ${product.weightUnit}</p>
+                            </div>
+                        </div>
+                    </div>
+                </isif>
+                <isif condition="${product.volumeCapacity}">
+                    <div class="col-20">
+                        <div class="specification-content-wrap">
+                            <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 30 30"><path d="M15,4.77a9.76,9.76,0,1,0,9.76,9.76A9.77,9.77,0,0,0,15,4.77Zm0,18.77a9,9,0,1,1,9-9A9,9,0,0,1,15,23.54ZM14,16,10.94,19.1h1.63v.75H9.65V17h.75v1.63l3.1-3.1ZM17.4,9.2h2.92v2.9h-.75V10.47l-3.11,3.11-.53-.53L19,10H17.4Zm2.16,7.74h.75v2.92h-2.9v-.75H19L15.93,16l.53-.53,3.1,3.09Zm-8.63-7L14,13.05l-.53.53-3.09-3.1v1.63H9.66V9.19h2.9v.75Z"/></svg>
+                            <div class="specification-content-inner">
+                                <h5>${Resource.msg('tab.specifications.capacity', 'featuresAndSpecifications', null)}
+                                </h5>
+                                <p>${product.volumeCapacity} ${Resource.msg('tab.specifications.litreunit', 'featuresAndSpecifications', null)}</p>
+                            </div>
+                        </div>
+                    </div>
+                </isif>
+                <isif condition="${product.primaryMaterial}">
+                    <div class="col-20">
+                        <div class="specification-content-wrap">
+                            <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"><path d="M18.21,17V7.24a1.55,1.55,0,0,0-1.56-1.55H6.45A1.55,1.55,0,0,0,4.9,7.24V17a1.56,1.56,0,0,0,1.55,1.55h10.2A1.56,1.56,0,0,0,18.21,17ZM5.65,17V7.24a.8.8,0,0,1,.8-.8h10.2a.8.8,0,0,1,.81.8V17a.8.8,0,0,1-.81.8H6.45A.8.8,0,0,1,5.65,17Zm6.89-3.66a.82.82,0,0,0-.73.19.85.85,0,0,0-.23.72,1.57,1.57,0,0,1-.46,1.25,1.55,1.55,0,0,1-1.27.4.87.87,0,0,0-.72.2l-.27.26-.52-.54.27-.26a1.55,1.55,0,0,1,1.26-.41.83.83,0,0,0,.73-.2.85.85,0,0,0,.23-.71,1.51,1.51,0,0,1,1.73-1.65.84.84,0,0,0,.72-.2.87.87,0,0,0,.23-.72A1.54,1.54,0,0,1,14,10.4,1.61,1.61,0,0,1,15.23,10,.83.83,0,0,0,16,9.8l.27-.26.52.54-.28.26a1.55,1.55,0,0,1-1.26.4.79.79,0,0,0-1,.92,1.52,1.52,0,0,1-1.72,1.65Zm4.15.81a1.34,1.34,0,0,1-1,.36.62.62,0,0,0-.49.16.63.63,0,0,0-.19.48,1.33,1.33,0,0,1-1.4,1.31.63.63,0,0,0-.49.17l-.27.25-.52-.54.28-.26a1.28,1.28,0,0,1,1-.36.64.64,0,0,0,.5-.17.62.62,0,0,0,.19-.48,1.33,1.33,0,0,1,.42-.95,1.34,1.34,0,0,1,1-.36.62.62,0,0,0,.49-.16l.27-.26.52.55ZM9,13.18a1.51,1.51,0,0,1-1.2.38c-.31,0-.47,0-.66.18L6.88,14l-.52-.55.27-.26a1.51,1.51,0,0,1,1.2-.38c.31,0,.47,0,.66-.18s.21-.34.21-.65a1.5,1.5,0,0,1,.44-1.18,1.47,1.47,0,0,1,1.2-.38c.31,0,.47,0,.66-.18s.21-.34.21-.65a1.55,1.55,0,0,1,.44-1.19A1.46,1.46,0,0,1,12.86,8c.31,0,.47,0,.66-.18l.27-.26.52.54L14,8.38a1.5,1.5,0,0,1-1.2.39c-.32,0-.48,0-.67.18s-.2.34-.21.65a1.46,1.46,0,0,1-.44,1.18,1.49,1.49,0,0,1-1.2.39c-.31,0-.47,0-.66.17a.78.78,0,0,0-.21.65A1.48,1.48,0,0,1,9,13.18Zm-2.57-3L5.93,9.6l.27-.25A1.2,1.2,0,0,1,7,9c.17,0,.24,0,.35-.1s.11-.18.13-.34a1.12,1.12,0,0,1,.37-.81,1.19,1.19,0,0,1,.84-.31c.16,0,.24,0,.34-.1l.28-.25.51.55-.28.25a1.13,1.13,0,0,1-.84.3c-.16,0-.24,0-.34.11a.39.39,0,0,0-.13.34,1.23,1.23,0,0,1-.37.81,1.14,1.14,0,0,1-.84.3.45.45,0,0,0-.35.11Zm15,.33H19.52v8.17a1.18,1.18,0,0,1-1.18,1.18H9.69v1.93a1.55,1.55,0,0,0,1.56,1.55h10.2A1.55,1.55,0,0,0,23,21.76V12A1.56,1.56,0,0,0,21.45,10.48Zm.8,11.28a.8.8,0,0,1-.8.8H11.25a.8.8,0,0,1-.81-.8V20.58h7.9a1.94,1.94,0,0,0,1.93-1.93V11.23h1.18a.8.8,0,0,1,.8.8Z"/></svg>
+                            <div class="specification-content-inner">
+                                <h5>${Resource.msg('tab.specifications.primaryMaterial', 'featuresAndSpecifications', null)}
+                                </h5>
+                                <p>${product.primaryMaterial}</p>
+                            </div>
+                        </div>
+                    </div>
+                </isif>
+                <isif condition="${product.laptopSize}">
+                    <div class="col-20">
+                        <div class="specification-content-wrap">
+                            <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"><path d="M9.75,17.07h10.5A1,1,0,0,0,21.3,16V11A1.06,1.06,0,0,0,20.25,10H9.75A1.06,1.06,0,0,0,8.7,11v5A1,1,0,0,0,9.75,17.07ZM9.45,11a.31.31,0,0,1,.3-.31h10.5a.31.31,0,0,1,.3.31v5a.31.31,0,0,1-.3.3H9.75a.31.31,0,0,1-.3-.3Zm-1-3.59L6.9,5.85,8.45,4.29,9,4.82l-.65.66H21.66L21,4.82l.53-.53L23.1,5.86,21.55,7.42,21,6.88l.65-.65H8.34L9,6.88ZM24.86,21.8l-2.1-3.75a.9.9,0,0,0,.22-.58V9.56a.9.9,0,0,0-.9-.9H7.92a.9.9,0,0,0-.9.9v7.91a.9.9,0,0,0,.22.58L5.14,21.8a1.46,1.46,0,0,0,0,1.47A1.44,1.44,0,0,0,6.43,24H23.57a1.44,1.44,0,0,0,1.27-.73A1.46,1.46,0,0,0,24.86,21.8ZM7.77,9.56a.15.15,0,0,1,.15-.15H22.08a.15.15,0,0,1,.15.15v7.91a.15.15,0,0,1-.15.15H7.92a.15.15,0,0,1-.15-.15ZM20.7,18.43l1,2a.09.09,0,0,1,0,.11.1.1,0,0,1-.1.06H8.38a.1.1,0,0,1-.1-.06s0-.06,0-.12l1-1.95Zm3.5,4.46a.75.75,0,0,1-.63.36H6.43a.75.75,0,0,1-.63-.36.73.73,0,0,1,0-.73l2.09-3.73h.57L7.62,20a.85.85,0,0,0,0,.86.86.86,0,0,0,.75.43H21.62a.86.86,0,0,0,.75-.43.84.84,0,0,0,0-.85l-.84-1.6h.57l2.09,3.73A.73.73,0,0,1,24.2,22.89Z"/></svg>
+                            <div class="specification-content-inner">
+                                <h5>${Resource.msg('tab.specifications.laptopSize', 'featuresAndSpecifications', null)}
+                                </h5>
+                                <p>${product.laptopSize}</p>
+                            </div>
+                        </div>
+                    </div>
+                </isif>
+                <isif condition="${product.styleDescription}">
+                    <div class="col-20">
+                        <div class="specification-content-wrap">
+                            <div class="specification-content-inner">
+                                <h5>
+                                    <isprint value="${Resource.msg('product.style.id', 'product', null)}"/>
+                                </h5>
+                                <p class="style-description">
+                                    <isprint value="${Resource.msgf('product.style.content', 'product', null, product.styleVariant)}"/>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </isif>
+            </div>
+        </div>
+    </div>
+    </isif>
+    <div class="tab-pane" id="maintenanceandcare" role="tabpanel" aria-labelledby="maintenanceandcareTab">
+        <div class="tab-content-wrap">
+            <div class="row">
+                <isif condition="${(product.tsaLockType !== null && product.tsaLockType !== 'FALSE') && dw.content.ContentMgr.getContent('tsaLock-PDP')}">
+                    <div class="col-md-4 col-sm-6 col-12 feature-tsaLock"></div>
+                </isif>
+                <isif condition="${product.tumiTracer && dw.content.ContentMgr.getContent('tumiTracer-PDP')}">
+                    <div class="col-md-4 col-sm-6 col-12 feature-tumiTracer"></div>
+                </isif>
+                <isif condition="${product.warranty && dw.content.ContentMgr.getContent('warranty-PDP')}">
+                    <div class="col-md-4 col-sm-6 col-12 feature-warranty"></div>
+                </isif>
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane" id="compatibleairlineguide" role="tabpanel" aria-labelledby="compatibleairlineguideTab">
+        <div class="tab-content-wrap">
+            <div class="row">
+                <div class="col-md-12">
+                    <form class="care" name="airlines">
+                        <div class="radio-wrap">
+                            <div class="form-check form-check-inline" tabindex="1">
+                                <input type="radio" name="countryAirlines" class="form-check-input countryAirlines"
+                                    id="imperial" value="imperial" checked />
+                                <label for="imperial" class="form-check-label">${Resource.msg('label.imperial.header','product',null)}</label>
+                            </div>
+                            <div class="form-check form-check-inline" tabindex="1">
+                                <input type="radio" name="countryAirlines" class="form-check-input countryAirlines"
+                                    id="metric" value="metric" />
+                                <label for="metric" class="form-check-label">${Resource.msg('label.metric.header','product',null)}</label>
+                            </div>
+                        </div>
+                        <div class="imperial selectt">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">${Resource.msg('label.Airline.name', 'product', null)}</th>
+                                        <th scope="col">${Resource.msg('label.Airline.Size', 'product', null)}</th>
+                                        <th scope="col">${Resource.msg('label.Airline.Weight', 'product', null)}</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <isloop items="${pdict.name}" var="imperial" status="loopState">
+                                        <isif condition="${loopState.count < 7}">
+                                            <tr tabindex="1">
+                                                <td>${imperial}</td>
+                                                <td>${pdict.size[loopState.index]}</td>
+                                                <td>${pdict.weight[loopState.index]}</td>
+                                            </tr>
+                                        </isif>
+                                    </isloop>
+                                </tbody>
+                            </table>
+                            <isif condition="${pdict.name && pdict.name.length > 4}">
+                                <button type="button" class="button button--secondary w-100" data-toggle="modal"
+                                    id="airlinesModalData" data-target="#airlineGuideModal"
+                                    data-modal-html="${pdict.attributesHtml}"
+                                    data-content-url="${URLUtils.url('Product-AirlinesShow')}">
+                                    ${Resource.msg('lable.airlines.button', 'product', null)}
+                                </button>
+                            </isif>
+                        </div>
+                        <div class="metric selectt d-none">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">${Resource.msg('label.Airline.name', 'product', null)}</th>
+                                        <th scope="col">${Resource.msg('label.Airline.Size', 'product', null)}</th>
+                                        <th scope="col">${Resource.msg('label.Airline.Weight', 'product', null)}</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <isloop items="${pdict.nameMetric}" var="imperial" status="loopState">
+                                        <isif condition="${loopState.count < 7}">
+                                            <tr tabindex="1">
+                                                <td>${imperial}</td>
+                                                <td>${pdict.sizeMetric[loopState.index]}</td>
+                                                <td>${pdict.weightMetric[loopState.index]}</td>
+                                            </tr>
+                                        </isif>
+                                    </isloop>
+                                </tbody>
+                            </table>
+                            <isif condition="${pdict.nameMetric && pdict.nameMetric.length > 4}">
+                                <button type="button" class="button button--secondary w-100" data-toggle="modal"
+                                    id="airlinesModalData" data-target="#airlineGuideModal"
+                                    data-content-url="${URLUtils.url('Product-AirlinesShow')}">
+                                    ${Resource.msg('lable.airlines.button', 'product', null)}
+                                </button>
+                            </isif>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div>
+
+        </div>
+    </div>
+</div>
+

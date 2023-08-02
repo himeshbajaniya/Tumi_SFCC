@@ -1,0 +1,139 @@
+<isdecorate template="common/layout/page">
+    <isset name="form" value="${pdict.form}" scope="page" />
+    <isset name="isConfirmationPage" value="${true}" scope="page" />
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addCss('/css/checkout/checkout.css');
+        assets.addCss('/css/cart.css');
+        assets.addCss('/css/enquiry-confirmation.css');
+        assets.addJs('/js/checkoutRegistration.js');
+        var pageContext = {
+			title: 'Order Confirmation',
+			type:'orderconfirmation',
+			ns:'cart'
+		};
+    </isscript>
+
+    <div class="order-confirmation">
+        <div class="container-fluid bgGreyColor">
+            <div class="hero-confirmation-note">
+                <div class="icon"></div>
+                <h1>${Resource.msg('label.thankyouforyourinquiry', 'confirmation', null)}</h1>
+                <div class="email-confirmation">${Resource.msgf('info.receive.email.confirmationemail', 'confirmation', null)}</div>
+            </div>
+        </div>
+        <div class="continer-fluid bgColor">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-sm-7">
+                        <div class="inquiry-details">
+                            <div class="row">
+                                <div class="col-12 col-sm-7 d-flex flex-column">
+                                     <h2 class="d-block d-sm-none">${Resource.msg('heading.order.details','order',null)}</h2>
+                                     <h3 class="d-block d-sm-none">${Resource.msg('heading.inquiry', 'cart', null)}</h3>
+                                    <h2 class="d-none d-sm-block">${Resource.msg('label.your.inquiry.details', 'confirmation', null)}:</h2>
+                                    <div class="details">
+                                        <isif condition="${form.inquiryPrice}">
+                                            <div class="row">
+                                                <span class="col-7">${Resource.msg('label.input.inquiry.price', 'cart', null)}:</span>
+                                                <span class="col-5">${form.inquiryPrice}</span>
+                                            </div>
+                                        </isif>
+                                        <isif condition="${form.inquiryDate}">
+                                            <div class="row">
+                                                <span class="col-7">${Resource.msg('label.input.inquiry.date', 'cart', null)}:</span>
+                                                <span class="col-5">${form.inquiryDate}</span>
+                                            </div>
+                                        </isif>
+                                        <isif condition="${form.inquiryQuantity}">
+                                            <div class="row">
+                                                <span class="col-7">${Resource.msg('label.input.inquiry.quantity', 'cart', null)}:</span>
+                                                <span class="col-5">${form.inquiryQuantity}</span>
+                                            </div>
+                                        </isif>
+                                        <isif condition="${form.inquiryCustomize}">
+                                            <div class="row">
+                                                <span class="col-7">${Resource.msg('label.input.inquiry.customize', 'confirmation', null)}:</span>
+                                                <span class="col-5">${form.inquiryCustomize}</span>
+                                            </div>
+                                        </isif>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-7 local-agent-help">
+                                    <isif condition="${!empty(pdict.agentDetails)}">
+                                        <h2>${Resource.msg('label.local.agent.help', 'common', null)}:</h2>
+
+                                        <div class="row">
+                                            <span class="col-7">${Resource.msg('label.local.agent.name', 'common', null)}:</span>
+                                            <span class="col-5">
+                                                <isprint value="${pdict.agentDetails.name}" /></span>
+                                        </div>
+
+                                        <div class="row">
+                                            <span class="col-7">${Resource.msg('label.local.agent.phone', 'common', null)}:</span>
+                                            <span class="col-5">
+                                                <isprint value="${pdict.agentDetails.phone}" /></span>
+                                        </div>
+
+                                        <div class="row">
+                                            <span class="col-7">${Resource.msg('label.local.agent.email', 'common', null)}:</span>
+                                            <span class="col-5">
+                                                <isprint value="${pdict.agentDetails.email}" /></span>
+                                        </div>
+
+                                        <div class="mt-3 address">
+                                            <span>
+                                                <isprint value="${pdict.agentDetails.address1}" /></span>
+                                            <span>
+                                                <isprint value="${pdict.agentDetails.address2}" /></span>
+                                        </div>
+                                    </isif>
+
+
+                                </div>
+                                <div class="col-sm-8 col-12">
+                                    <a href="${URLUtils.url('Home-Show')}"
+                                        class="button button--secondary btn-block order-confirmation-continue-shopping w-100"
+                                        role="button" aria-pressed="true">
+                                        ${Resource.msg('button.continue.browsing', 'confirmation', null)}
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-5">
+                        <div class="product-card">
+                            <h2 class="your-cart-header">${Resource.msg('link.continue.shopping', 'cart', null)}
+                                <div class="opening-parenthesis">(</div>
+                                <div class="number-of-items">${Resource.msgf('label.number.items.in.cart', 'cart', null, pdict.numItems)}</div>
+                                <div>)</div>
+                            </h2>
+                            <isloop items="${pdict.items}" var="lineItem" status="loopstate">
+                                <isif condition="${lineItem.productType === 'bundle'}">
+                                    <isinclude template="cart/productCard/cartBundleCard" />
+                                <iselse/>
+                                    <isif condition="${lineItem.noProduct === true}">
+                                        <isinclude template="cart/productCard/uncategorizedCartProductCard" />
+                                    <iselse/>
+                                        <isif
+                                            condition="${!lineItem.isPremiumMonogramLetter && !lineItem.parentProductLineItemID}">
+                                            <isinclude template="cart/productCard/cartProductCard" />
+                                            <isset name="product" value="${lineItem}" scope="page" />
+                                        </isif>
+                                        <iscomment>
+                                            <isif condition="${!lineItem.parentProductLineItemID}">
+                                                <isinclude template="cart/productCard/cartProductCard" />
+                                            </isif>
+                                        </iscomment>
+                                    </isif>
+                                </isif>
+                            </isloop>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</isdecorate>

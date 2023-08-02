@@ -1,0 +1,259 @@
+<form action="${URLUtils.url('PaymentInstruments-SavePayment', 'UUID', pdict.UUID)}" class="payment-form" method="POST"  autocomplete="off"
+    name="payment-form" ${pdict.paymentForm.attributes}>
+
+    <!-- Credit Card Type -->
+    <input type="hidden" class="form-control" id="cardType" value="" <isprint
+        value="${pdict.paymentForm.cardType.attributes}" encoding="htmlsinglequote" /> autocomplete="cc-type">
+
+    <div class="form-group custom-control custom-radio d-none">
+        <input id="paymentOption-Credit" name="paymentOption-Credit" type="radio" class="custom-control-input" checked
+            <isprint value="${pdict.paymentForm.paymentMethod.attributes}" encoding="htmlsinglequote" />
+        >
+        <label for="paymentOption-Credit" class="custom-control-label">
+            <span>${Resource.msg('label.payment.credit', 'payment', null)}</span>
+        </label>
+        <div class="invalid-feedback"></div>
+    </div>
+    <div class="paymentInstruments row justify-content-center">
+    </div>
+
+    <!-- Name on Card -->
+    <div class="form-group has-float-label
+        <isif condition=" ${pdict.paymentForm.cardOwner.mandatory === true}">required</isif>">
+        <input type="text" class="form-control" id="cardOwner" placeholder="${pdict.paymentForm.cardOwner.label}"
+            data-missing-error="${Resource.msg('profile.name.invalid', 'account', null)}"
+            data-pattern-mismatch="${Resource.msg('profile.name.invalid', 'account', null)}" <isprint
+            value="${pdict.paymentForm.cardOwner.attributes}" encoding="htmlsinglequote" />>
+        <label class="form-control-label" for="cardOwner">
+            <isprint value="${pdict.paymentForm.cardOwner.label}" encoding="htmlcontent" />
+        </label>
+        <iscomment> autocomplete="cc-name"> </iscomment>
+        <div class="invalid-feedback">
+            <isprint value="${pdict.paymentForm.cardOwner.error}" encoding="htmlcontent" />
+        </div>
+    </div>
+
+    <isif condition="${pdict.UUID}">
+        <!-- Edit Card Number -->
+        <div class="form-group">
+            ${pdict.paymentForm.editNumber.label}
+            <span class="info-icon">
+                <span class="icon">i</span>
+                <div class="tooltip">
+                    ${Resource.msg('msg.edit.card.tooltip', 'payment', null)}
+                </div>
+            </span>
+            <p class="masked-card-number">${pdict.paymentForm.editNumber.htmlValue}</p>
+        </div>
+        <iselse>
+            <!-- Card Number -->
+            <div class="form-group
+            <isif condition=" ${pdict.paymentForm.cardNumber.mandatory === true}">required
+    </isif>">
+    <div class="card-number-wrapper">
+        <input type="text" class="form-control" id="cardNumber" placeholder="${pdict.paymentForm.cardNumber.label}"
+            data-missing-error="${Resource.msg('error.card.missing.cardnumber', 'payment', null)}"
+            data-pattern-mismatch="${Resource.msg('error.invalid.cardnumber', 'creditCard', null)}" <isprint
+            value="${pdict.paymentForm.cardNumber.attributes}" encoding="htmlsinglequote" />>
+        <label class="form-control-label" for="cardNumber">
+            <isprint value="${pdict.paymentForm.cardNumber.label}" encoding="htmlcontent" />
+        </label>
+        <div class="invalid-feedback">
+            <isprint value="${pdict.paymentForm.cardNumber.error}" encoding="htmlcontent" />
+        </div>
+    </div>
+    </div>
+    </isif>
+
+    <!-- Month -->
+    <div class="row">
+        <div class="col-6">
+            <div class="form-group
+                <isif condition=" ${pdict.paymentForm.expirationMonth.mandatory === true}">required</isif>">
+                <label class="form-control-label" for="month">
+                    <iscomment>
+                        <isprint value="${pdict.paymentForm.expirationMonth.label}" encoding="htmlcontent" />
+                    </iscomment>
+                </label>
+                <select class="form-control custom-select" id="month"
+                    data-missing-error="${Resource.msg('error.missing.expirationmonth', 'creditCard', null)}" <isprint
+                    value="${pdict.paymentForm.expirationMonth.attributes}" encoding="htmlsinglequote" />
+                autocomplete="cc-exp-month">
+                <isloop items=${pdict.paymentForm.expirationMonth.options} var="month">
+                    <option id="${month.id}" value="${month.htmlValue}" <isif condition="${month.selected}">selected
+                        </isif> >${month.label}</option>
+                </isloop>
+                </select>
+                <div class="invalid-feedback">
+                    <isprint value="${pdict.paymentForm.expirationMonth.error}" encoding="htmlcontent" />
+                </div>
+            </div>
+        </div>
+
+        <div class="col-6">
+            <div class="form-group
+                <isif condition=" ${pdict.paymentForm.expirationYear.mandatory === true}">required</isif>">
+                <label class="form-control-label" for="year">
+                    <iscomment>
+                        <isprint value="${pdict.paymentForm.expirationYear.label}" encoding="htmlcontent" />
+                    </iscomment>
+                </label>
+                <select class="form-control custom-select" id="year"
+                    data-missing-error="${Resource.msg('error.missing.expirationyear', 'creditCard', null)}" <isprint
+                    value="${pdict.paymentForm.expirationYear.attributes}" encoding="htmlsinglequote" />
+                autocomplete="cc-exp-year">
+                <option value="${pdict.paymentForm.expirationYear.options[0].htmlValue}">
+                    ${pdict.paymentForm.expirationYear.options[0].label}</option>
+                <isloop items=${pdict.expirationYears} var="year">
+                    <option id="${year}" value="${year}" <isif
+                        condition="${year == pdict.paymentForm.expirationYear.value}">selected</isif> >${year}</option>
+                </isloop>
+                </select>
+                <div class="invalid-feedback"></div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group
+        <isif condition=${pdict.paymentForm.securityCode.mandatory === true}>required</isif>
+        ${pdict.paymentForm.securityCode.htmlName}">
+        <input type="password" class="form-control securityCode" id="securityCode"
+            placeholder="${Resource.msg('field.placeorder.credit.card.security', 'creditCard', null)}"
+            data-missing-error="${Resource.msg('error.card.missing.security.code', 'creditCard', null)}" <isprint
+            value="${pdict.paymentForm.securityCode.attributes}" encoding="htmlsinglequote" />>
+        <label class="form-control-label"
+            for="securityCode">${Resource.msg('field.placeorder.credit.card.security', 'creditCard', null)}</label>
+            <a href="javascript:void(0)" 
+            data-toggle="tooltip" data-placement="bottom" class="cvv-tooltip" title="${Resource.msg('tooltip.security.code','creditCard',null)}"><img  src="${URLUtils.staticURL('/images/info-icon.svg')}" alt="" /></a>
+        <div class="invalid-feedback"></div>
+    </div>
+
+    <h2 class="billing-adr-heading">${Resource.msg('heading.add.billing.address', 'payment', null)}</h2>
+
+    <isset name="isCartridgeEnabled"
+        value="${dw.system.Site.getCurrent().getCustomPreferenceValue('IsCartridgeEnabled')}" scope="page" />
+    <isif
+        condition="${'CsTokenizationEnable' in dw.system.Site.current.preferences.custom && dw.system.Site.current.preferences.custom
+                   .CsTokenizationEnable == 'YES' && isCartridgeEnabled}">
+        <!--  Card Owner Address1 -->
+        <div class="form-group
+    	<isif condition=" ${pdict.paymentForm.addressFields.address1.mandatory === true}">required
+    </isif>">
+    <input type="text" class="form-control" id="address1"
+        placeholder="${pdict.paymentForm.addressFields.address1.label}"
+        data-missing-error="${Resource.msg('address.line1.invalid', 'account', null)}" <isprint
+        value="${pdict.paymentForm.addressFields.address1.attributes}" encoding="htmlsinglequote" />>
+    <label class="form-control-label" for="address1">
+        <isprint value="${pdict.paymentForm.addressFields.address1.label}" encoding="htmlcontent" />
+    </label>
+    <div class="invalid-feedback"></div>
+    </div>
+    <div class="form-group
+			<isif condition=" ${pdict.paymentForm.addressFields.city.mandatory === true}">required</isif>">
+        <input type="text" class="form-control" id="billingAddressCity"
+            placeholder="${pdict.paymentForm.addressFields.city.label}"
+            data-missing-error="${Resource.msg('address.townCity.invalid', 'account', null)}" <isprint
+            value=${pdict.paymentForm.addressFields.city.attributes} encoding="htmlsinglequote" />>
+        <label class="form-control-label" for="billingAddressCity">
+            <isprint value="${pdict.paymentForm.addressFields.city.label}" encoding="htmlcontent" />
+        </label>
+        <div class="invalid-feedback"></div>
+    </div>
+
+    <div class="form-group
+		<isif condition=" ${pdict.paymentForm.addressFields.country.mandatory === true}">required</isif>" style="display:none">
+        <label class="form-control-label" for="billingCountry">
+            <isprint value="${pdict.paymentForm.addressFields.country.label}" encoding="htmlcontent" />
+        </label>
+        <select class="form-control" id="billingCountry" <isprint
+            value=${pdict.paymentForm.addressFields.country.attributes} encoding="htmlsinglequote" />
+        autocomplete="billing country">
+        <isloop items=${pdict.paymentForm.addressFields.country.options} var="country">
+            <option id="${country.id}" value="${country.htmlValue}" <isif condition="${country.selected}">selected
+                </isif>>${country.label}</option>
+        </isloop>
+        </select>
+        <div class="invalid-feedback"></div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">
+            <div class="form-group
+	        	<isif condition=" ${pdict.paymentForm.addressFields.states.mandatory === true}">required</isif>">
+                <iscomment> <label class="form-control-label" for="billingState">
+                        <isprint value="${pdict.paymentForm.addressFields.states.stateCode.label}"
+                            encoding="htmlcontent" />
+                    </label> </iscomment>
+                <select class="form-control custom-select" id="billingState"
+                    data-missing-error="${Resource.msg('add.regionIso.invalid', 'account', null)}" <isprint
+                    value=${pdict.paymentForm.addressFields.states.stateCode.attributes} encoding="htmlsinglequote" />>
+                <option value="" disabled selected>State</option>
+                <isloop items=${pdict.paymentForm.addressFields.states.stateCode.options} var="state">
+                    <option id="${state.id}" value="${state.htmlValue}">
+                        ${state.label}
+                    </option>
+                </isloop>
+                </select>
+                <div class="invalid-feedback"></div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="form-group
+   		<isif condition=" ${pdict.paymentForm.addressFields.postalCode.mandatory === true}">required</isif>">
+                <input type="text" class="form-control" id="postalCode"
+                    placeholder="${pdict.paymentForm.addressFields.postalCode.label}"
+                    data-missing-error="${Resource.msg('add.postcode.invalid', 'account', null)}" <isprint
+                    value="${pdict.paymentForm.addressFields.postalCode.attributes}" encoding="htmlsinglequote" />>
+                <label class="form-control-label" for="postalCode">
+                    <isprint value="${pdict.paymentForm.addressFields.postalCode.label}" encoding="htmlcontent" />
+                </label>
+                <div class="invalid-feedback"></div>
+            </div>
+        </div>
+        <div class="col-6" style="display:none">
+            <div class="form-group
+        <isif condition=" ${pdict.paymentForm.email.mandatory === true}">required</isif>">
+                <label class="form-control-label" for="email">
+                    <isprint value="${pdict.paymentForm.email.label}" encoding="htmlcontent" />
+                </label>
+                <input type="text" class="form-control" id="email" value="${pdict.CurrentCustomer.profile.email}"
+                    <isprint value="${pdict.paymentForm.email.attributes}" encoding="htmlsinglequote" />>
+                <div class="invalid-feedback"></div>
+            </div>
+        </div>
+    </div>
+
+     <div class="form-group
+	     ${pdict.paymentForm.addressFields.phone.mandatory === true ? 'required' : ''}">
+	     <input type="text" class="form-control" id="phone" placeholder="${pdict.paymentForm.addressFields.phone.label}"
+	         data-missing-error="${Resource.msg('contact.phone.invalid','account',null)}"
+	         <isprint value="${pdict.paymentForm.addressFields.phone.attributes}" encoding="off" />
+	         autocomplete="tel">
+	     <label class="form-control-label" for="phone">
+	         <isprint value="${pdict.paymentForm.addressFields.phone.label}" encoding="htmlcontent" />
+	     </label>
+	     <div class="invalid-feedback"></div>
+     </div>
+    </isif>
+    <input type="hidden" name="${pdict.csrf.tokenName}" value="${pdict.csrf.token}" />
+
+    <div
+        class="form-group custom-control custom-checkbox ${pdict.paymentInstruments.length === 0 ? 'd-none' : ''}">
+        <input type="checkbox" class="custom-control-input" id="checkbox" <isprint
+            value="${pdict.paymentForm.makeDefaultCard.attributes}" encoding="off"/> ${pdict.paymentInstruments.length === 0 ? 'checked=true' : ''}">
+        <label class="custom-control-label" for="checkbox">
+            <isprint value="${pdict.paymentForm.makeDefaultCard.label}" encoding="htmlcontent" />
+        </label>
+    </div>
+
+    <!-- Cancel and Save Buttons -->
+    <div class="row btn-wrapper">
+        <div class="col-sm-6">
+            <button type="submit" name="save"
+                class="button button--primary w-100">${Resource.msg('button.add.acard', 'payment', null)}</button>
+        </div>
+        <div class="col-sm-6">
+            <a href="javascript:void(0)" class="button button--secondary w-100 btn-paymentInstrument-cancel">${Resource.msg('button.cancel', 'account', null)}</a>
+        </div>
+    </div>
+
+</form>

@@ -1,0 +1,4 @@
+<isinclude template="/components/modules" sf-toolkit="off" />
+<div class="header-menu-sub-menu ${category.id}">
+    <iscontentasset aid="services-header-content" />
+</div>

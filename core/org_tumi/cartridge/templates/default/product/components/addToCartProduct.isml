@@ -1,0 +1,15 @@
+<isset name="isApplePayEnabled" value="${dw.system.Site.getCurrent().getCustomPreferenceValue("enableApplePayPDP") && (session.custom.applepaysession === 'yes') && (product.available && product.readyToOrder)}" scope="page" />
+<div class="cart-and-ipay ${isApplePayEnabled ? 'flex-wrap' : ''}"
+     data-is-apple-session="${session.custom.applepaysession === 'yes' ? 'true' : 'false'}">
+    <input type="hidden" class="add-to-cart-url" value="${pdict.addToCartUrl}"/>
+    <isinclude url="${URLUtils.url('Product-IncludeBuyNow', 'pid', product.id)}"/>
+    <button class="add-to-cart button button--primary ${isApplePayEnabled ? 'btn-50' : ''}"
+            data-toggle="modal" data-target="#chooseBonusProductModal"
+            data-pid="${product.id}"
+            ${!product.readyToOrder || !product.available ? "disabled" : ""}>
+        <i class="fa fa-shopping-bag"></i>
+        ${Resource.msg('button.addtocart', 'common', null)}
+    </button>
+    <isinclude template="product/components/addToCartButtonExtension"/>
+    <isinclude url="${URLUtils.url('Product-IncludeApplePayButton', 'pid', product.id, 'isApplePayEnabled', isApplePayEnabled, '')}"/>
+</div>

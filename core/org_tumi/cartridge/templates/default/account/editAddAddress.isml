@@ -1,0 +1,67 @@
+<isdecorate template="account/components/myAccountDecorator">
+<div class="edit-address">
+    <!---Breadcrumbs--->
+    <iscomment> <isinclude template="components/breadcrumbs/pageBreadcrumbs"/> </iscomment>
+    <div class="card">
+        <isif condition="${pdict.action === 'Address-AddAddress'}">
+             <div class="card-header">
+             <h3>${Resource.msg('label.addressbook.addnewaddress','account',null)}</h3>
+             </div>
+         <div class="card-body">
+            <isinclude template="account/addressForm"/>
+        </div>
+        </isif>
+    </div>
+</div>
+<isif condition="${pdict.action === 'Address-EditAddress'}">
+    <div class="saved-address">
+        <h2 class="saved-adr-heading ${pdict.addressBook[0].ID !== pdict.addressId ? 'hide-saved-heading' : ''}">${Resource.msg('label.addressbook.defaultaddress','account',null)}</h2>
+        <!-- Rows for addresses in the Address Book -->
+        <isloop items="${pdict.addressBook}" var="address">
+            <isif condition="${address.ID === pdict.addressBook[1].ID}">
+            <div class="adr-heading">
+            <h3 class="${pdict.addressBook[0].ID === pdict.addressId ? 'saved-heading' : ''} edit-saved-adr">${Resource.msg('label.addressbook.savedaddress','account',null)}</h3>
+            </div>
+            </isif>
+            <isif condition="${address.ID !== pdict.addressId}">
+                <div class="${(address.ID == pdict.addressBook[0].ID)? 'default-info': ''} hide-saved-info" id="uuid-${address.UUID}">
+                    <div class="card default-adr">
+                        <div class="card-body card-body-positioning pull-left">
+                            <div class="address-blog">
+                                <div>${address.firstName} ${address.lastName}</div>
+                                <div>${address.address1}</div>
+                                <isif condition="${address.address2 !== null}">
+                                    <div>${address.address2}</div>
+                                </isif>
+                                <div>${address.city}, ${address.stateCode} ${address.postalCode}</div>
+                                <div>${address.phone}</div>
+                            </div>
+                            <div class="cta-wrapper">
+                                <a href="${URLUtils.url('Address-EditAddress', 'addressId', address.ID)}" class="edit-adr-btn" aria-label="${Resource.msg('label.addressbook.editaddress','account',null)} : ${address.ID == pdict.addressBook[0].ID ? pdict.addressBook[0].ID+' ('+Resource.msg('label.addressbook.defaultaddress','account',null)+')' : address.ID}">${Resource.msg('link.edit','account',null)}</a>|
+                                <a
+                                    class="remove-btn remove-address btn-light"
+                                    data-toggle="modal"
+                                    data-target="#deleteAddressModal"
+                                    data-id="${address.ID}"
+                                    data-url="${pdict.actionUrls.deleteActionUrl}"
+                                    aria-label="${Resource.msg('label.addressbook.deleteaddress','account',null)}"
+                                    <isprint value="${address.ID == pdict.addressBook[0].ID ? 'data-default="true"' : '' }" encoding="off" />>${Resource.msg('link.delete','account',null)}
+                                </a>
+                                <isif condition="${address.ID !== pdict.addressBook[0].ID}">
+                                <div class="card-make-default-link">
+                                    |<a href="${URLUtils.url('Address-SetDefault', 'addressId', address.ID)}" class="normal" aria-label="${Resource.msg('label.addressbook.makedefaultaddress','account',null)}">${Resource.msg('link.addressbook.makedefault','account',null)}</a>
+                                </div>
+                                </isif>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <iselse/>
+                    <div class="card-body">
+                        <isinclude template="account/addressForm"/>
+                    </div>
+            </isif>
+        </isloop>
+    </div>
+</isif>
+</isdecorate>

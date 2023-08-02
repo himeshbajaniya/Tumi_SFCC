@@ -1,0 +1,214 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://www.tumi.com/tumi-diffrences-hero-component",
+    "title": "Title",
+    "description": "Description",
+    "allOf": [
+      {
+        "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+      }
+    ],
+    "type": "object",
+    "properties": {
+      "content-asset-id": {
+        "title": "Content Asset ID",
+        "description": "SFCC Content Asset",
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 256,
+        "format": "text"
+      },
+      "carouselContent": {
+        "title": "Carousel Content",
+        "description": "Add the carousel content",
+        "type": "array",
+        "minItems": 1,
+        "maxItems": 3,
+        "items": {
+          "allOf": [
+            {
+              "type": "object",
+              "properties": {
+                "s7ImageDesktop": {
+                  "type": "string",
+                  "minLength": 0,
+                  "maxLength": 250,
+                  "format": "uri",
+                  "title": "Scene 7 Image Desktop",
+                  "description": "eg. https://tumi.scene7.com/is/image/Tumi/1232072777_main_T"
+                },
+                "imageAltDesktop": {
+                  "title": "Image alt for desktop",
+                  "description": "Text to show if image is not loaded",
+                  "type": "string",
+                  "minLength": 0,
+                  "maxLength": 255
+                },
+                "s7VideoDesktop": {
+                  "type": "string",
+                  "minLength": 0,
+                  "maxLength": 250,
+                  "format": "uri",
+                  "title": "Scene 7 Video Desktop",
+                  "description": "eg. https://tumi.scene7.com/is/image/Tumi/1232072777_main_T"
+                },
+                "videoAltDesktop": {
+                  "title": "Video alt for desktop",
+                  "description": "Text to show if video is not loaded",
+                  "type": "string",
+                  "minLength": 0,
+                  "maxLength": 255
+                },
+                "s7ImageMobile": {
+                  "type": "string",
+                  "minLength": 0,
+                  "maxLength": 250,
+                  "format": "uri",
+                  "title": "Scene 7 Image Mobile",
+                  "description": "eg. https://tumi.scene7.com/is/image/Tumi/1232072777_main_T"
+                },
+                "imageAltMobile": {
+                  "title": "Image alt for mobile",
+                  "description": "Text to show if image is not loaded",
+                  "type": "string",
+                  "minLength": 0,
+                  "maxLength": 255
+                },
+                "s7VideoMobile": {
+                  "type": "string",
+                  "minLength": 0,
+                  "maxLength": 250,
+                  "format": "uri",
+                  "title": "Scene 7 Video Mobile",
+                  "description": "eg. https://tumi.scene7.com/is/image/Tumi/1232072777_main_T"
+                },
+                "videoAltMobile": {
+                  "title": "Video alt for mobile",
+                  "description": "Text to show if video is not loaded",
+                  "type": "string",
+                  "minLength": 0,
+                  "maxLength": 255
+                },
+                "selectionOfMedia": {
+                  "title": "Selection Of Media",
+                  "type": "string",
+                  "enum": [
+                    "Image",
+                    "Video"
+                  ]
+                },
+                "themeName": {
+                  "title": "Theme Name",
+                  "description": "Enter the theme name",
+                  "type": "string",
+                  "minLength": 0,
+                  "maxLength": 255
+                },
+                "mainTagLine": {
+                  "title": "Main Tag Line",
+                  "description": "Enter the main tag line",
+                  "type": "string",
+                  "minLength": 0,
+                  "maxLength": 255
+                },
+                "description": {
+                  "title": "Description (Optional)",
+                  "description": "Enter the description",
+                  "type": "string",
+                  "minLength": 0,
+                  "maxLength": 255
+                },
+                   "ctaToBeShown": {
+                  "title": "Please configure the CTA's to be shown",
+                  "type": "string",
+                  "enum": [
+                    "No CTA",
+                    "Primary CTA",
+                    "Primary and Secondary CTA"
+                  ]
+                },
+                "cta1": {
+                  "title": "CTA 1",
+                  "description": "Enter CTA 1 to be shown on button (Optional)",
+                  "type": "string",
+                  "minLength": 0,
+                  "maxLength": 255
+                },
+                "cta1LandingURI": {
+                  "title": "CTA 1 Landing Page URI",
+                  "description": "CTA 1 Landing Page URI (Optional)",
+                  "type": "string",
+                  "format": "uri",
+                  "minLength": 0,
+                  "maxLength": 250
+                },
+                "cta2": {
+                  "title": "CTA 2 (optional)",
+                  "description": "Enter CTA 2 to be shown on button (Optional)",
+                  "type": "string",
+                  "minLength": 0,
+                  "maxLength": 255
+                },
+                "cta2LandingURI": {
+                  "title": "CTA 2 Landing Page URI (Optional)",
+                  "description": "CTA 2 Landing Page URI",
+                  "type": "string",
+                  "format": "uri",
+                  "minLength": 0,
+                  "maxLength": 250
+                },
+                "disclaimer": {
+                  "title": "Disclaimer ",
+                  "description": "Enter the disclaimer (Optional)",
+                  "type": "string",
+                  "minLength": 0,
+                  "maxLength": 255
+                },
+                "gradientOrBackgroundSelection": {
+                  "title": "Gradient/Background Selection",
+                  "description": "Select the gradient/background",
+                  "type": "string",
+                  "enum": [
+                    "Light Gradient",
+                    "Dark Gradient",
+                    "Light Background",
+                    "Dark Background"
+                  ]
+                },
+                "positionOfTextContentDesktop": {
+                  "title": "Position Of Text Content to be shown in desktop view",
+                  "type": "string",
+                  "enum": [
+                    "Left Aligned",
+                    "Center Aligned",
+                    "Right Aligned"
+                  ]
+                },
+                "positionOfTextContentMobile": {
+                  "title": "Position Of Text Content to be shown in mobile view",
+                  "type": "string",
+                  "enum": [
+                    "Top Aligned",
+                    "Center Aligned",
+                    "Bottom Aligned"
+                  ]
+                },
+                "landingPageURI": {
+                  "title": "Landing Page URI",
+                  "description": "Banner landing page URI to get more details about offer (Optional)",
+                  "type": "string",
+                  "minLength": 0,
+                  "maxLength": 250
+                }
+              },
+              "propertyOrder": []
+            }
+          ]
+        }
+      }
+    },
+    "propertyOrder": [],
+    "required": [
+      "content-asset-id"
+    ]
+  }

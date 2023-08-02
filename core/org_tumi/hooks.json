@@ -1,0 +1,99 @@
+{
+    "hooks": [{
+            "name": "app.post.order.processing",
+            "script": "./cartridge/scripts/hooks/order/postOrderProcessing"
+        },
+        {
+            "name": "app.payment.settlement.capture.cybersource_credit",
+            "script": "./cartridge/scripts/hooks/settlement/processCybersourceSettlement"
+        },
+        {
+            "name": "app.payment.settlement.refund.cybersource_credit",
+            "script": "./cartridge/scripts/hooks/settlement/processCybersourceSettlement"
+        },
+        {
+            "name": "app.payment.settlement.void.cybersource_credit",
+            "script": "./cartridge/scripts/hooks/settlement/processCybersourceSettlement"
+        },
+        {
+            "name": "app.payment.settlement.capture.paypal",
+            "script": "./cartridge/scripts/hooks/settlement/processPaypalSettlement"
+        },
+        {
+            "name": "app.payment.settlement.refund.paypal",
+            "script": "./cartridge/scripts/hooks/settlement/processPaypalSettlement"
+        },
+        {
+            "name": "app.payment.settlement.void.paypal",
+            "script": "./cartridge/scripts/hooks/settlement/processPaypalSettlement"
+        },
+        {
+            "name": "app.payment.settlement.void.valuetec_gift_certificate",
+            "script": "./cartridge/scripts/hooks/settlement/processGiftCardSettlement"
+        },
+        {
+            "name": "app.avatax.settlement",
+            "script": "./cartridge/scripts/hooks/avatax/avataxhooks"
+        },
+        {
+            "name": "emarsys.sendOrderConfirmation.US",
+            "script": "./cartridge/scripts/hooks/emails"
+        },
+        {
+            "name": "emarsys.sendOrderCancellation",
+            "script": "./cartridge/scripts/hooks/emails"
+        },
+        {
+            "name": "emarsys.sendShippingConfirmation",
+            "script": "./cartridge/scripts/hooks/emails"
+        },
+        {
+            "name": "emarsys.order.return",
+            "script": "./cartridge/scripts/hooks/emails"
+        },
+        {
+            "name": "app.singnifyd.fulfillment",
+            "script": "./cartridge/scripts/hooks/signifyd/signifyd"
+        },
+        {
+            "name": "app.singnifyd.sendtransaction",
+            "script": "./cartridge/scripts/hooks/signifyd/signifyd"
+        },
+        {
+            "name": "app.singnifyd.cancel.guarantee",
+            "script": "./cartridge/scripts/hooks/signifyd/signifyd"
+        },
+        {
+            "name": "app.tax.adjust.avalara",
+            "script": "./cartridge/scripts/hooks/avatax/avalaraAdjustTax"
+        },
+        {
+            "name": "app.tax.refund.avalara",
+            "script": "./cartridge/scripts/hooks/avatax/avalaraRefundTax"
+        },
+        {
+            "name": "app.contactUs.subscribe",
+            "script": "./cartridge/scripts/hooks/contactUs/sendContactUsEmail"
+        },
+        {
+            "name": "dw.system.request.onSession",
+            "script": "./cartridge/scripts/request/OnSession"
+        },
+        {
+            "name": "dw.system.request.onRequest",
+            "script": "./cartridge/scripts/request/OnRequest"
+        },
+        {
+            "name": "dw.extensions.applepay.paymentAuthorized.authorizeOrderPayment",
+            "script": "./cartridge/scripts/hooks/applepay/applePay.js"
+        },
+        {
+            "name": "dw.extensions.applepay.getRequest",
+            "script": "./cartridge/scripts/hooks/applepay/applePay.js"
+        },
+        {
+            "name": "dw.extensions.applepay.shippingContactSelected",
+            "script": "./cartridge/scripts/hooks/applepay/applePay.js"
+        }
+    ]
+}

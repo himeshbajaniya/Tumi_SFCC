@@ -1,0 +1,8 @@
+<iscomment>GTM head tag script </iscomment>
+<isinclude template="/gtm/gtmHeaderTag"/>
+
+<iscomment>monetate script </iscomment>
+<isinclude template="/monetate/monetateScript" sf-toolkit="off" />
+
+<iscomment> ray gun script </iscomment>
+<isinclude template="/raygun/raygunScript" sf-toolkit="off" />

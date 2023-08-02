@@ -1,0 +1,8 @@
+<isif condition="${pdict.rfkPLPSearchResults.total_item !== 0 && !(pdict.rfkPLPSearchResults.errors)}">
+    <isif condition="${pdict.query && pdict.query.q}">
+    <div class="search-results-count-desktop">
+        <span class="search-results-count">${pdict.rfkPLPSearchResults.total_item}</span>
+        <span>${Resource.msgf('label.rfkresultscount', 'search', null, pdict.query.q)}</span>
+    </div>
+    </isif>
+</isif>

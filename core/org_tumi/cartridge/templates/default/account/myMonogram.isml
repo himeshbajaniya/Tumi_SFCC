@@ -1,0 +1,61 @@
+<div class="my-monogram  my-monogram-item">
+    <div class="no-monogram d-block">
+        ${Resource.msg('label.mymonogram.nomonogram', 'account', null)}
+    </div>
+
+    <div class="created-wrapper-monogram d-none">
+        <div class="created-date-monogram">
+            ${Resource.msg('label.mymonogram.created', 'account', null)} ${pdict.monogramCreationDate}
+        </div>
+
+        <div class="autoapplied-monogram">
+            ${Resource.msg('label.mymonogram.autoapplied', 'account', null)}
+        </div>
+    </div>
+
+
+    <div class="clickable add-block d-block">
+        <a href="#" class="add-monogram-modal button button--primary" data-toggle="modal"
+            data-target="#myMonogramModal" role="button"
+            aria-label="${Resource.msg('label.link.monogram', 'account', null)}">${Resource.msg('product.default.monogram.create', 'product', null)}</a>
+    </div>
+</div>
+<isset name="monogram" value="${pdict.monogramdata}" scope="page" />
+<div class=" my-monogram-item ${monogram ? 'edit-monogram' : 'add-monogram'}" >
+    <div class="monogram-wrapper my-monogram-wrapper d-none">
+        <isset name="labelMonoA"
+            value="${!empty(product.monogramLineItem) && !empty(product.monogramLineItem.character) && product.monogramLineItem.character !==
+                    'undefined' && !empty(product.monogramLineItem.character[0]) ? product.monogramLineItem.character[0] : ''}"
+            scope="page" />
+        <isset name="labelMonoB"
+            value="${!empty(product.monogramLineItem) && !empty(product.monogramLineItem.character) && product.monogramLineItem.character !==
+                    'undefined' && !empty(product.monogramLineItem.character[1]) ? product.monogramLineItem.character[1] : ''}"
+            scope="page" />
+        <isset name="labelMonoC"
+            value="${!empty(product.monogramLineItem) && !empty(product.monogramLineItem.character) && product.monogramLineItem.character !==
+                    'undefined' && !empty(product.monogramLineItem.character[2]) ? product.monogramLineItem.character[2] : ''}"
+            scope="page" />
+        <isset name="combined_text" value="${labelMonoA + labelMonoB + labelMonoC}" scope="page" />
+        <isset name="fontcolor"
+            value="${!empty(product.monogramLineItem) && !empty(product.monogramLineItem.color) && product.monogramLineItem.color !==
+                    'undefined' && !empty(product.monogramLineItem.color.split('_').length === 2 && product.monogramLineItem
+                        .color.split('_')[1]) ? product.monogramLineItem.color.split('_')[1] : null}"
+            scope="page" />
+        <img class="icon" src="${monogram.imageSrc}" />
+
+        <div class="clickable edit-block my-monogram-update d-sm-flex">
+
+            <a data-url="${URLUtils.url('Account-RemoveMonogram')}" data-uuid="${lineItem.UUID}"
+                class="remove-monogram button button--secondary" role="button"
+                aria-label="${Resource.msg('label.header.loginbutton', 'account', null)}">${Resource.msg('my-account.default.monogram.delete', 'product', null)}</a>
+
+            <a class="edit-monogram button button--primary" data-toggle="modal" data-target="#myMonogramModal"
+                href="#" role="button" aria-label="${Resource.msg('label.header.loginbutton', 'account', null)}">
+                ${Resource.msg('my-account.default.monogram.update', 'product', null)}
+            </a>
+        </div>
+    </div>
+</div>
+<input type="hidden" id="monogramUrl" value="${pdict.monogramUrl}"/>
+
+<isinclude template="account/components/myMonogramModal" />

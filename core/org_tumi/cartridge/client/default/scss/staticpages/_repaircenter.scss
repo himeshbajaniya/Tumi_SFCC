@@ -1,0 +1,67 @@
+.repair-centers {
+    color: #555;
+
+    h1 {
+        font-size: 20px;
+        text-align: center;
+        position: relative;
+        padding: 30px 0 5px;
+        line-height: 1.25;
+        text-transform: uppercase;
+
+        &::after {
+            content: "";
+            display: block;
+            margin: 2% auto 0;
+            height: 1px;
+            width: 50%;
+            border-bottom: 1px solid #bfbfbf;
+        }
+    }
+
+    h3 {
+        text-transform: uppercase;
+    }
+
+    a {
+        color: #222;
+
+        &:hover {
+            color: #c41e3a;
+            text-decoration: underline;
+            transition: 0.1s;
+        }
+    }
+
+    table {
+        border: 1px solid #d7d7d7;
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed;
+
+        caption {
+            margin: 3.5% 0 0;
+            background: #1f1f1f;
+            padding: 1.5% 0;
+            color: #fff;
+            caption-side: top;
+            text-align: center;
+        }
+
+        th {
+            background: #ebebeb;
+            border: 1px solid #d6d6d6;
+            margin: 0;
+            text-align: center;
+            padding: 1.5% 0;
+            word-wrap: break-word;
+        }
+
+        td {
+            text-align: center;
+            padding: 1.25% 1%;
+            border: 1px solid #d7d7d7;
+            word-wrap: break-word;
+        }
+    }
+}

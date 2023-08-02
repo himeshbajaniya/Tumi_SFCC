@@ -1,0 +1,7 @@
+<div class="primary-images col-12 col-sm-6">
+        <div id="pdpCarousel-${product.id}" class="product-carousel" data-interval="0"
+            data-prev="${Resource.msg('button.previous', 'common', null)}"
+            data-next="${Resource.msg('button.next', 'common', null)}">
+            <div class="product-slider swiper-wrapper d-flex" role="listbox"></div>
+        </div>
+</div>

@@ -1,0 +1,84 @@
+<isinclude template="/components/header/skipNav" />
+<isslot id="header-promo-banner" context="global" description="header-promo-banner" />
+<header class="header">
+    <div class="container px-0" id='pageHeader'>
+        <div class="d-flex align-items-end">
+            <div class="logo">
+                <a href="/" class="header-logo darkMode-focus" title="${Resource.msgf('global.homepage.tooltip', 'common', null, Resource.msg('global.storename', 'common', null), Resource.msg(
+                                                                                  'global.home', 'common', null))}">
+                    <img src="${URLUtils.staticURL('/images/tumi-logo-specialMarkets.svg')}"
+                        alt="${Resource.msg('global.storename', 'common', null)}" />
+                </a>
+            </div>
+            <input type="hidden" id="storeurl" value="${dw.web.URLUtils.https('Account-Storeheader')}" />	
+            <input type="hidden" id="storeSearchRadius"	
+                value="${'storeLookupMaxDistance' in dw.system.Site.getCurrent().getPreferences().getCustom() ? dw.system.Site.getCurrent()	
+                       .getCustomPreferenceValue('storeLookupMaxDistance') : 50}" />
+            <nav class="header-menu">
+                <isinclude url="${URLUtils.url('Page-IncludeHeaderMenu')}" />
+            </nav>
+            <div class="nav-overlay"></div>
+            <div class="ml-auto header-icons">
+                <ul>
+                    <li>
+                        <div class="minicart" data-action-url="${URLUtils.url('Cart-MiniCartShow')}">
+                            <isinclude url="${URLUtils.url('Cart-MiniCart')}" />
+                        </div>
+                    </li>
+                    <li class="hamburger-icon">
+                        <a href="#" class="header-menu-toggle">
+                            <svg class="open-icon" width="20" height="18" viewBox="0 0 20 18" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect width="20" height="1" transform="matrix(-1 0 0 1 20 0.5)" fill="white" />
+                                <rect width="17" height="1" transform="matrix(-1 0 0 1 20 8.5)" fill="white" />
+                                <rect width="13" height="1" transform="matrix(-1 0 0 1 20 16.5)" fill="white" />
+                            </svg>
+                            <svg class="close-icon" width="20" height="18" viewBox="0 0 17 18" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M0 1.20833L0.708333 0.5L8.50715 8.29881L16.0937 0.71224L16.8021 1.42057L9.21548 9.00715L17 16.7917L16.2917 17.5L8.50715 9.71548L0.921224 17.3014L0.212891 16.5931L7.79881 9.00715L0 1.20833Z"
+                                    fill="white" />
+                            </svg>
+                            <span class="sr-only">${Resource.msg('label.header.menu', 'common', null)}</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<iscomment> My Account Modal </iscomment>	
+<div class="modal fade global-modal" id="requestLoginModal" tabindex="-1"	
+    aria-labelledby="requestLoginModal">	
+    <div class="modal-dialog">	
+        <div class="modal-content">	
+            <div class="modal-header">	
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">	
+                    <span aria-hidden="true">	
+                        <img class="" src="${URLUtils.staticURL('/images/modal-close.svg')}"	
+                            alt="${Resource.msg('global.search', 'common', null)}" />	
+                    </span>	
+                </button>	
+            </div>	
+            <div class="modal-body">	
+                <div class="login-screen">	
+                    <isinclude url="${URLUtils.url('Login-Create', 'pageinclude', true)}" />	
+                </div>	
+                <iscomment>	
+                    <isinclude template="account/components/welcome" />	
+                </iscomment>	
+                <iscomment>	
+                    <isinclude template="account/components/resetpassword" />	
+                </iscomment>	
+                <div class="reset-password">	
+                    <isinclude template="account/password/passwordResetForm" />	
+                </div>	
+                <iscomment>	
+                    <isinclude template="account/login" />	
+                </iscomment>	
+            </div>	
+        </div>	
+    </div>	
+</div>

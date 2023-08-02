@@ -1,0 +1,51 @@
+<iscomment> <div data-method-id="${paymentOption.ID}">
+    <a class="nav-link valuetec-tab" data-toggle="tab" href="#valuetec-content" role="tab">
+        Pay with TUMI gift card
+    </a>
+</div> </iscomment>
+
+<div class="payment-info">
+    <div class="details-wrapper">
+        <isset name="paymentMethodClass" value="${(!empty(pdict.order.billing.payment.selectedPaymentInstruments) && pdict.order.billing.payment.selectedPaymentInstruments.length > 1) ? pdict.order.billing.payment.selectedPaymentInstruments[1].paymentMethod : 'card-number-wrapper'}" scope="page" />
+        <isset name="paymentMethodClass" value="${!empty(pdict.order.billing.payment.selectedPaymentInstruments) ? pdict.order.billing.payment.selectedPaymentInstruments[0].paymentMethod : 'unknown'}" scope="page" />
+        <div class="card-number-wrapper" data-type="${paymentMethodClass}">
+                    
+        <iscomment> <isprint value=${creditFields.cardNumber.attributes} encoding="htmlsinglequote"/> </iscomment>
+        
+        <div class="invalid-feedback"></div>
+
+    </div>
+
+    <!--- Payment information --->
+    <div class="summary-details">
+        <iscomment> <span class="summary-section-label payment-info-label">${Resource.msg('label.order.payment.info', 'confirmation', null)}</span><br/> </iscomment>
+        <isinclude template="checkout/billing/paymentOptions/paymentOptionsSummary" />
+    </div>
+        
+    </div>
+
+<!--- Security code --->
+
+<div class="security-code-input d-none ${(typeof loopState !== 'undefined' && typeof loopState.first !== 'undefined') ? '' : 'checkout-hidden'}">
+        <iscomment> <label class="form-control-label" for="saved-payment-security-code">${Resource.msg('label.credit.card-security.code','checkout',null)}</label> </iscomment>
+
+
+        <input type="password" placeholder="${Resource.msg('field.credit.card.security.code','creditCard',null)}" autocomplete="off" class="form-control saved-payment-security-code" id="saved-payment-security-code" maxlength="4"
+            aria-describedby="savedPaymentSecurityCodeInvalidMessage">
+        <div class="invalid-feedback" id="savedPaymentSecurityCodeInvalidMessage">${Resource.msg('error.message.security.code.required', 'creditCard', null)}</div>
+    </div>
+</div>
+
+<isif condition="${pdict.order.billing.billingAddress.address !== null}">
+    <isset name="address" value="${pdict.order.billing.billingAddress.address}" scope="page"/>
+    <iselse>
+    <isset name="address" value="{}" scope="page"/>
+</isif>
+
+<div class="summary-details billing">
+     <isinclude template="checkout/billingAddressSummary" />
+     <isif condition="${pdict.order.orderEmail !== null}">
+        <span class="order-summary-email d-none">${pdict.order.orderEmail}</span>
+     </isif>
+</div>
+<button class="edit-button button button--secondary" aria-label="${Resource.msg('action.edit.step.msg.payment', 'checkout', null)}">${Resource.msg('change.payment.method', 'checkout', null)}</button>

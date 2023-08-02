@@ -1,0 +1,1178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+    <type-extension type-id="Order">
+        <system-attribute-definitions>
+            <attribute-definition attribute-id="UUID">
+                <min-length>0</min-length>
+                <field-length>28</field-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="affiliatePartnerID">
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="affiliatePartnerName">
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="businessType">
+                <value-definitions immutable="true">
+                    <value-definition>
+                        <display xml:lang="x-default">B2C</display>
+                        <value>1</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">B2B</display>
+                        <value>2</value>
+                    </value-definition>
+                </value-definitions>
+            </attribute-definition>
+            <attribute-definition attribute-id="cancelCode">
+                <value-definitions>
+                    <value-definition default="true">
+                        <display xml:lang="x-default">None Specified</display>
+                        <value>NONE_SPECIFIED</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Wrong Size</display>
+                        <value>WRONG_SIZE</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Wrong Color</display>
+                        <value>WRONG_COLOR</value>
+                    </value-definition>
+                </value-definitions>
+            </attribute-definition>
+            <attribute-definition attribute-id="cancelDescription">
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="channelType">
+                <value-definitions immutable="true">
+                    <value-definition>
+                        <display xml:lang="x-default">Storefront</display>
+                        <value>1</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Call Center</display>
+                        <value>2</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Marketplace</display>
+                        <value>3</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">DSS</display>
+                        <value>4</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Store</display>
+                        <value>5</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Pinterest</display>
+                        <value>6</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Twitter</display>
+                        <value>7</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Facebook Ads</display>
+                        <value>8</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Subscriptions</display>
+                        <value>9</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Online Reservation</display>
+                        <value>10</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Customer Service Center</display>
+                        <value>11</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Instagram Commerce</display>
+                        <value>12</value>
+                    </value-definition>
+                </value-definitions>
+            </attribute-definition>
+            <attribute-definition attribute-id="confirmationStatus">
+                <value-definitions immutable="true">
+                    <value-definition>
+                        <display xml:lang="x-default">NOTCONFIRMED</display>
+                        <value>0</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">CONFIRMED</display>
+                        <value>2</value>
+                    </value-definition>
+                </value-definitions>
+            </attribute-definition>
+            <attribute-definition attribute-id="createdBy">
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="creationDate"/>
+            <attribute-definition attribute-id="currencyCode">
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="customerEmail">
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="customerLocaleID">
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="customerName">
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="customerNo">
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="customerOrderReference">
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="exportAfter"/>
+            <attribute-definition attribute-id="exportStatus">
+                <value-definitions immutable="true">
+                    <value-definition>
+                        <display xml:lang="x-default">NOTEXPORTED</display>
+                        <value>0</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">EXPORTED</display>
+                        <value>1</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">EXPORTREADY</display>
+                        <value>2</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">EXPORTFAILED</display>
+                        <value>3</value>
+                    </value-definition>
+                </value-definitions>
+            </attribute-definition>
+            <attribute-definition attribute-id="externalOrderNo">
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="externalOrderStatus">
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="externalOrderText">
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="lastModified"/>
+            <attribute-definition attribute-id="orderNo">
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="originalOrderNo">
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentStatus">
+                <value-definitions immutable="true">
+                    <value-definition>
+                        <display xml:lang="x-default">NOTPAID</display>
+                        <value>0</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">PARTPAID</display>
+                        <value>1</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">PAID</display>
+                        <value>2</value>
+                    </value-definition>
+                </value-definitions>
+            </attribute-definition>
+            <attribute-definition attribute-id="replaceCode">
+                <value-definitions>
+                    <value-definition default="true">
+                        <display xml:lang="x-default">None Specified</display>
+                        <value>NONE_SPECIFIED</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Wrong Size</display>
+                        <value>WRONG_SIZE</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Wrong Color</display>
+                        <value>WRONG_COLOR</value>
+                    </value-definition>
+                </value-definitions>
+            </attribute-definition>
+            <attribute-definition attribute-id="replaceDescription">
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="replacedOrderNo">
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="replacementOrderNo">
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="shippingStatus">
+                <value-definitions immutable="true">
+                    <value-definition>
+                        <display xml:lang="x-default">NOTSHIPPED</display>
+                        <value>0</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">PARTSHIPPED</display>
+                        <value>1</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">SHIPPED</display>
+                        <value>2</value>
+                    </value-definition>
+                </value-definitions>
+            </attribute-definition>
+            <attribute-definition attribute-id="status">
+                <value-definitions immutable="true">
+                    <value-definition>
+                        <display xml:lang="x-default">CREATED</display>
+                        <value>0</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">NEW</display>
+                        <value>3</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">OPEN</display>
+                        <value>4</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">COMPLETED</display>
+                        <value>5</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">CANCELLED</display>
+                        <value>6</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">REPLACED</display>
+                        <value>7</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">FAILED</display>
+                        <value>8</value>
+                    </value-definition>
+                </value-definitions>
+            </attribute-definition>
+        </system-attribute-definitions>
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="emailSent">
+                <display-name xml:lang="x-default">Email Sent</display-name>
+                <description xml:lang="x-default">Check if confirmation email was already sent to customer.</description>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="emarsysCancelledOrderEmailSent">
+                <display-name xml:lang="x-default">Emarsys Cancelled Order Email Sent</display-name>
+                <description xml:lang="x-default">If the message that the order was canceled was sent to Emarsys then the status is true.</description>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="emarsysShippingEmailSent">
+                <display-name xml:lang="x-default">Emarsys Shipping Email Sent</display-name>
+                <description xml:lang="x-default">Automatically marked as true after the shipping confirmation email is sent by Emarsys</description>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="exported">
+                <display-name xml:lang="x-default">Exported</display-name>
+                <description xml:lang="x-default">Flag to check if order data were exported to Emarsys.</description>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="sendEmarsysShippingEmail">
+                <display-name xml:lang="x-default">Send Emarsys Shipping Email ?</display-name>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="Emarsys">
+                <display-name xml:lang="x-default">Emarsys</display-name>
+                <attribute attribute-id="sendEmarsysShippingEmail"/>
+                <attribute attribute-id="emarsysShippingEmailSent"/>
+                <attribute attribute-id="emarsysCancelledOrderEmailSent"/>
+                <attribute attribute-id="exported"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+
+    <type-extension type-id="Profile">
+        <system-attribute-definitions>
+            <attribute-definition attribute-id="UUID">
+                <min-length>0</min-length>
+                <field-length>28</field-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="birthday"/>
+            <attribute-definition attribute-id="companyName">
+                <min-length>0</min-length>
+                <field-length>10</field-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="creationDate"/>
+            <attribute-definition attribute-id="customerNo">
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="email">
+                <field-length>75</field-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="fax">
+                <min-length>0</min-length>
+                <field-length>32</field-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="firstName">
+                <min-length>0</min-length>
+                <field-length>25</field-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="gender">
+                <value-definitions>
+                    <value-definition>
+                        <display xml:lang="x-default">Male</display>
+                        <value>1</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Female</display>
+                        <value>2</value>
+                    </value-definition>
+                </value-definitions>
+            </attribute-definition>
+            <attribute-definition attribute-id="jobTitle">
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="lastLoginTime"/>
+            <attribute-definition attribute-id="lastModified"/>
+            <attribute-definition attribute-id="lastName">
+                <min-length>0</min-length>
+                <field-length>25</field-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="lastVisitTime"/>
+            <attribute-definition attribute-id="nextBirthday"/>
+            <attribute-definition attribute-id="phoneBusiness">
+                <min-length>0</min-length>
+                <field-length>32</field-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="phoneHome">
+                <min-length>0</min-length>
+                <field-length>32</field-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="phoneMobile">
+                <min-length>0</min-length>
+                <field-length>32</field-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="preferredLocale">
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="salutation">
+                <min-length>0</min-length>
+                <field-length>5</field-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="secondName">
+                <min-length>0</min-length>
+                <field-length>25</field-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="suffix">
+                <min-length>0</min-length>
+                <field-length>5</field-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="taxID">
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="taxIDType">
+                <value-definitions>
+                    <value-definition default="true">
+                        <display xml:lang="x-default">Arbitrary</display>
+                        <value>Arbitrary</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">CPF</display>
+                        <value>CPF</value>
+                    </value-definition>
+                </value-definitions>
+            </attribute-definition>
+            <attribute-definition attribute-id="title">
+                <min-length>0</min-length>
+                <field-length>10</field-length>
+            </attribute-definition>
+        </system-attribute-definitions>
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="EmarsysOptInFlag">
+                <display-name xml:lang="x-default">EmarsysOptInFlag</display-name>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="emarsysExportedProfileFlag">
+                <display-name xml:lang="x-default">Emarsys: Profile export flag</display-name>
+                <description xml:lang="x-default">Used for CSV exports</description>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="emarsysExportedProfileFlagRefArch">
+                <display-name xml:lang="x-default">emarsysExportedProfileFlagRefArch</display-name>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="emarsysExportedProfileFlagSiteGenesis">
+                <display-name xml:lang="x-default">Emarsys: Profile export flag (SiteGenesis)</display-name>
+                <description xml:lang="x-default">Used for CSV exports</description>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="emarsysExportedProfileFlagSiteGenesisGlobal">
+                <display-name xml:lang="x-default">Emarsys: Profile export flag (SiteGenesisGlobal)</display-name>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="emarsysOptIn">
+                <display-name xml:lang="x-default">Emarsys: Opt-In</display-name>
+                <description xml:lang="x-default">Used to store the user decision for the opt-in field</description>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="familyStatus">
+                <display-name xml:lang="x-default">Family Status</display-name>
+                <type>enum-of-string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="Standard">
+                <display-name xml:lang="x-default">Profile Attributes</display-name>
+                <attribute attribute-id="salutation" system="true"/>
+                <attribute attribute-id="title" system="true"/>
+                <attribute attribute-id="companyName" system="true"/>
+                <attribute attribute-id="jobTitle" system="true"/>
+                <attribute attribute-id="firstName" system="true"/>
+                <attribute attribute-id="lastName" system="true"/>
+                <attribute attribute-id="suffix" system="true"/>
+                <attribute attribute-id="gender" system="true"/>
+                <attribute attribute-id="birthday" system="true"/>
+                <attribute attribute-id="email" system="true"/>
+                <attribute attribute-id="nextBirthday" system="true"/>
+                <attribute attribute-id="secondName" system="true"/>
+            </attribute-group>
+            <attribute-group group-id="Phone">
+                <display-name xml:lang="x-default">Phone Numbers</display-name>
+                <attribute attribute-id="phoneHome" system="true"/>
+                <attribute attribute-id="phoneBusiness" system="true"/>
+                <attribute attribute-id="phoneMobile" system="true"/>
+                <attribute attribute-id="fax" system="true"/>
+            </attribute-group>
+            <attribute-group group-id="EmarsysProfileFlags">
+                <display-name xml:lang="x-default">Emarsys Profile Flags</display-name>
+                <attribute attribute-id="emarsysExportedProfileFlag"/>
+                <attribute attribute-id="emarsysExportedProfileFlagRefArch"/>
+                <attribute attribute-id="emarsysExportedProfileFlagSiteGenesis"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+
+        <type-extension type-id="SitePreferences">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="GoogleVerificationTag">
+                <display-name xml:lang="x-default">GoogleVerificationTag - Content Attribute</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="buildNotificationEmailList">
+                <display-name xml:lang="x-default">Build Notification Email List</display-name>
+                <description xml:lang="x-default">Semicolon separated list</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="checkTLS">
+                <display-name xml:lang="x-default">Check TLS</display-name>
+                <description xml:lang="x-default">When true, this causes a TLS check to take place based on whether or not a cookie ('dw_TLSWarning') has been set on the browser</description>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>false</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="countryCode">
+                <display-name xml:lang="x-default">Default Country Code</display-name>
+                <description xml:lang="x-default">Default country code for store searches</description>
+                <type>enum-of-string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <value-definitions>
+                    <value-definition default="true">
+                        <display xml:lang="x-default">USA</display>
+                        <value>US</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">CANADA</display>
+                        <value>CA</value>
+                    </value-definition>
+                </value-definitions>
+            </attribute-definition>
+            <attribute-definition attribute-id="customerServiceEmail">
+                <display-name xml:lang="x-default">Customer Service Email</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>0</field-length>
+                <default-value>noreply@salesforce.com</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="disableResponsiveDesign">
+                <display-name xml:lang="x-default">Disable Responsive Design</display-name>
+                <description xml:lang="x-default">Disable Responsive Design for Storefront</description>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>false</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="emarsysAddressFieldsMap">
+                <display-name xml:lang="x-default">Emarsys Address Fields Map</display-name>
+                <description xml:lang="x-default">Address System Fields and their IDs on Emarsys side. In use for address data mapping, in case if account has more than one saved address.</description>
+                <type>text</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="emarsysAppId">
+                <display-name xml:lang="x-default">Emarsys appId</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="emarsysAsList">
+                <display-name xml:lang="x-default">Create a list with imported contacts</display-name>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>true</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="emarsysAutoImportEnabled">
+                <display-name xml:lang="x-default">Create enabled auto import profile</display-name>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>true</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="emarsysCancelledOrderInformationElements">
+                <display-name xml:lang="x-default">Cancelled Order Information Elements</display-name>
+                <type>text</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="emarsysCatalogExportType">
+                <display-name xml:lang="x-default">Emarsys catalog export type</display-name>
+                <type>text</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="emarsysContactFieldsMap">
+                <display-name xml:lang="x-default">Emarsys Contact Fields Map</display-name>
+                <description xml:lang="x-default">Customer System Fields and their IDs on Emarsys side</description>
+                <type>text</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="emarsysCountryCodes">
+                <display-name xml:lang="x-default">Emarsys Country Codes</display-name>
+                <description xml:lang="x-default">Country codes map</description>
+                <type>string</type>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="emarsysCustomObjectList">
+                <display-name xml:lang="x-default">Emarsys custom object list</display-name>
+                <type>set-of-string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="emarsysCustomerId">
+                <display-name xml:lang="x-default">emarsys customerId</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="emarsysDBLoadAttributes">
+                <display-name xml:lang="x-default">Attributes for initial database load</display-name>
+                <type>text</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="emarsysDBLoadExportStatus">
+                <display-name xml:lang="x-default">Export Status</display-name>
+                <description xml:lang="x-default">Changes value automatically.&#13;
+                    This will be unchecked until the DB Load job is ran.&#13;
+                    &#13;
+                    Please do not change the value manually.</description>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>false</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="emarsysDBLoadNotificationEmail">
+                <display-name xml:lang="x-default">E-mail address for forwarding notifications</display-name>
+                <description xml:lang="x-default">Fill in an e-mail address where the initial db load script can forward notifications</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="emarsysEnableSmartInsightTimeframe">
+                <display-name xml:lang="x-default">Enable SmartInsight Timeframe</display-name>
+                <description xml:lang="x-default">Enable timeframe for exported orders</description>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="emarsysEnabled">
+                <display-name xml:lang="x-default">Enable Emarsys Services</display-name>
+                <description xml:lang="x-default">You can switch Emarsys functionality on/off.</description>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>false</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="emarsysEnvironment">
+                <display-name xml:lang="x-default">Emarsys Environment</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="emarsysGenderCodes">
+                <display-name xml:lang="x-default">Emarsys Gender Codes</display-name>
+                <description xml:lang="x-default">Gender codes map</description>
+                <type>string</type>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="emarsysGetProfileFieldsLanguage">
+                <display-name xml:lang="x-default">Profile Fields import job: Fields Language</display-name>
+                <description xml:lang="x-default">The language of profile fields to be retrieved from Emarsys. It should be in a two-letter format: fr, en, us, etc.</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <default-value>us</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="emarsysLanguage">
+                <display-name xml:lang="x-default">Language to query data in</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <default-value>en</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="emarsysLoyalsysURLexaccess">
+                <display-name xml:lang="x-default">Loyalsys URL exaccess</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="emarsysLoyalsysURLuiElements">
+                <display-name xml:lang="x-default">Loyalsys URL ui-elements</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="emarsysLoyaltyWalletEnabled">
+                <display-name xml:lang="x-default">Emarsys Loyalty Wallet Enabled</display-name>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="emarsysNewsletter">
+                <display-name xml:lang="x-default">Create auto import with newsletter</display-name>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>false</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="emarsysOptInStatusAttributeEnumOfStrings">
+                <display-name xml:lang="x-default">Opt-In attributes</display-name>
+                <type>enum-of-string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="emarsysOptInStatusCustomFieldString">
+                <display-name xml:lang="x-default">Opt-In Status custom attribute ID</display-name>
+                <description xml:lang="x-default">This field expects a custom attribute ID</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="emarsysOptInStatusEnumOfIntegers">
+                <display-name xml:lang="x-default">Set Opt-In Status</display-name>
+                <type>enum-of-int</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <value-definitions>
+                    <value-definition default="true">
+                        <display xml:lang="x-default">All users empty</display>
+                        <value>0</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">All users true</display>
+                        <value>1</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Depending on attribute</display>
+                        <value>2</value>
+                    </value-definition>
+                </value-definitions>
+            </attribute-definition>
+            <attribute-definition attribute-id="emarsysOptInStatusEnumOfStrings">
+                <display-name xml:lang="x-default">Set Opt-In Status</display-name>
+                <type>enum-of-string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <value-definitions>
+                    <value-definition>
+                        <display xml:lang="x-default">All users true</display>
+                        <value>true</value>
+                    </value-definition>
+                    <value-definition default="true">
+                        <display xml:lang="x-default">All users empty</display>
+                        <value>empty</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Depending on attribute</display>
+                        <value>attribute</value>
+                    </value-definition>
+                </value-definitions>
+            </attribute-definition>
+            <attribute-definition attribute-id="emarsysOrderConfirmationElements">
+                <display-name xml:lang="x-default">Order Confirmation Elements</display-name>
+                <description xml:lang="x-default">Define here the fields needed for order confirmation emails.&#13;</description>
+                <type>text</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="emarsysOverwriteContacts">
+                <display-name xml:lang="x-default">Overwrite existing contacts</display-name>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>true</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="emarsysPredictCartPageRecommendationType">
+                <display-name xml:lang="x-default">Cart Page Recommendation Type</display-name>
+                <description xml:lang="x-default">Select recommendation widget type to show on storefront cart page</description>
+                <type>enum-of-string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <value-definitions>
+                    <value-definition default="true">
+                        <display xml:lang="x-default">Disable widget on this page</display>
+                        <value>disable</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">PERSONAL</display>
+                        <value>PERSONAL</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">TOPICAL</display>
+                        <value>TOPICAL</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">CART</display>
+                        <value>CART</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">PERSONAL_REC</display>
+                        <value>PERSONAL_REC</value>
+                    </value-definition>
+                </value-definitions>
+            </attribute-definition>
+            <attribute-definition attribute-id="emarsysPredictCategoryPageRecommendationType">
+                <display-name xml:lang="x-default">Category Page Recommendation Type</display-name>
+                <description xml:lang="x-default">Select recommendation widget type to show on storefront category page</description>
+                <type>enum-of-string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <value-definitions>
+                    <value-definition default="true">
+                        <display xml:lang="x-default">Disable widget on this page</display>
+                        <value>disable</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">PERSONAL</display>
+                        <value>PERSONAL</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">TOPICAL</display>
+                        <value>TOPICAL</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">CATEGORY</display>
+                        <value>CATEGORY</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">PERSONAL_REC</display>
+                        <value>PERSONAL_REC</value>
+                    </value-definition>
+                </value-definitions>
+            </attribute-definition>
+            <attribute-definition attribute-id="emarsysPredictEnableJSTrackingCode">
+                <display-name xml:lang="x-default">Predict: Enable tracking code</display-name>
+                <description xml:lang="x-default">Enables/disabled the JavaScript tracking code</description>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>false</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="emarsysPredictHomePageRecommendationType">
+                <display-name xml:lang="x-default">Home Page Recommendation Type</display-name>
+                <description xml:lang="x-default">Select recommendation widget type to show on storefront Home page</description>
+                <type>enum-of-string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <value-definitions>
+                    <value-definition default="true">
+                        <display xml:lang="x-default">Disable widget on this page</display>
+                        <value>disable</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">PERSONAL</display>
+                        <value>PERSONAL</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">TOPICAL</display>
+                        <value>TOPICAL</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">PERSONAL_REC</display>
+                        <value>PERSONAL_REC</value>
+                    </value-definition>
+                </value-definitions>
+            </attribute-definition>
+            <attribute-definition attribute-id="emarsysPredictIMPEXFolder">
+                <display-name xml:lang="x-default">Export folder</display-name>
+                <description xml:lang="x-default">Emarsys Predict export folder relative to IMPEX/src/</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <default-value>predict</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="emarsysPredictLocCurMap">
+                <display-name xml:lang="x-default">Map of locales and currencies</display-name>
+                <description xml:lang="x-default">Map of locales and currencies&#13;
+Example: {"default":"USD", "en_US":"USD", "it_IT":"EUR", "en_GB":"GBP"}</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <default-value>{"default":"USD", "en_US":"USD", "it_IT":"EUR", "en_GB":"GBP"}</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="emarsysPredictMerchantID">
+                <display-name xml:lang="x-default">Predict: Merchant ID</display-name>
+                <description xml:lang="x-default">To enable JavaScript tracking code, recommendations, etc.</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="emarsysPredictPDPRecommendationType">
+                <display-name xml:lang="x-default">Product Detail Page Recommendation Type</display-name>
+                <description xml:lang="x-default">Select recommendation widget type to show on storefront PDP</description>
+                <type>enum-of-string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <value-definitions>
+                    <value-definition default="true">
+                        <display xml:lang="x-default">Disable widget on this page</display>
+                        <value>disable</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">PERSONAL</display>
+                        <value>PERSONAL</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">TOPICAL</display>
+                        <value>TOPICAL</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">RELATED</display>
+                        <value>RELATED</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">ALSO_BOUGHT</display>
+                        <value>ALSO_BOUGHT</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">PERSONAL_REC</display>
+                        <value>PERSONAL_REC</value>
+                    </value-definition>
+                </value-definitions>
+            </attribute-definition>
+            <attribute-definition attribute-id="emarsysPredictProductAttributes">
+                <display-name xml:lang="x-default">Predict: Product attributes for exporting</display-name>
+                <description xml:lang="x-default">Mandatory attributes: item, available, title, link, image, category (path), price</description>
+                <type>set-of-string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="emarsysPredictSearchPageRecommendationType">
+                <display-name xml:lang="x-default">Search Page Recommendation Type</display-name>
+                <description xml:lang="x-default">Select recommendation widget type to show on storefront search page</description>
+                <type>enum-of-string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <value-definitions>
+                    <value-definition default="true">
+                        <display xml:lang="x-default">Disable widget on this page</display>
+                        <value>disable</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">PERSONAL</display>
+                        <value>PERSONAL</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">TOPICAL</display>
+                        <value>TOPICAL</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">CATEGORY</display>
+                        <value>CATEGORY</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">PERSONAL_REC</display>
+                        <value>PERSONAL_REC</value>
+                    </value-definition>
+                </value-definitions>
+            </attribute-definition>
+            <attribute-definition attribute-id="emarsysPredictThankYouForOrderPageRecommendationType">
+                <display-name xml:lang="x-default">Thank You For Your Order Page Recommendation Type</display-name>
+                <description xml:lang="x-default">Select recommendation widget type to show on storefront "thank you for your order" page</description>
+                <type>enum-of-string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <value-definitions>
+                    <value-definition default="true">
+                        <display xml:lang="x-default">Disable widget on this page</display>
+                        <value>disable</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">PERSONAL</display>
+                        <value>PERSONAL</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">TOPICAL</display>
+                        <value>TOPICAL</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">PERSONAL_REC</display>
+                        <value>PERSONAL_REC</value>
+                    </value-definition>
+                </value-definitions>
+            </attribute-definition>
+            <attribute-definition attribute-id="emarsysPredictVariationAttributes">
+                <display-name xml:lang="x-default">List of product variation attributes for predict Feed</display-name>
+                <description xml:lang="x-default">List here all the product variation attributes that are used at Predict feed: like product.custom.color. product.custom.size</description>
+                <type>set-of-string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="emarsysProductImageSize">
+                <display-name xml:lang="x-default">Product image size for transactional e-mails</display-name>
+                <description xml:lang="x-default">Select the image size you want to be sent in your transactional e-mails (order confirmation, shipping confirmation)</description>
+                <type>enum-of-string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <value-definitions>
+                    <value-definition default="true">
+                        <display xml:lang="x-default">small</display>
+                        <value>small</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">medium</display>
+                        <value>medium</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">large</display>
+                        <value>large</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">hi-res</display>
+                        <value>hi-res</value>
+                    </value-definition>
+                </value-definitions>
+            </attribute-definition>
+            <attribute-definition attribute-id="emarsysRegion">
+                <display-name xml:lang="x-default">Emarsys Region</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="emarsysSecret">
+                <display-name xml:lang="x-default">Emarsys Secret</display-name>
+                <type>password</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="emarsysSeparatorString">
+                <display-name xml:lang="x-default">Separator</display-name>
+                <description xml:lang="x-default">Character used to separate columns in the csv file.&#13;
+                    Default is ;</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <default-value>;</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="emarsysShippingInformationElements">
+                <display-name xml:lang="x-default">Shipping Information Elements</display-name>
+                <description xml:lang="x-default">Define here the fields needed for shipping information emails.&#13;</description>
+                <type>text</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="emarsysSingleChoiceValueMapping">
+                <display-name xml:lang="x-default">Emarsys Single Choice Value Mapping</display-name>
+                <type>text</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="emarsysSkipEmpty">
+                <display-name xml:lang="x-default">Skip empty fields</display-name>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>false</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="emarsysSmartInsightAvailableElements">
+                <display-name xml:lang="x-default">SmartInsight Available Elements</display-name>
+                <type>set-of-string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="emarsysSmartInsightDestinationFolder">
+                <display-name xml:lang="x-default">SmartInsight destination folder</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="emarsysSmartInsightIMPEXFolder">
+                <display-name xml:lang="x-default">Export folder</display-name>
+                <description xml:lang="x-default">Emarsys SmartInsight export folder relative to IMPEX/src/</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <default-value>smartinsight</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="emarsysSourceID">
+                <display-name xml:lang="x-default">Emarsys Source ID</display-name>
+                <description xml:lang="x-default">Source ID on Emarsys side. The field fills automatically.</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="emarsysSourceName">
+                <display-name xml:lang="x-default">Emarsys Source Name</display-name>
+                <description xml:lang="x-default">Source name on Emarsys</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="emarsysUpdateOnly">
+                <display-name xml:lang="x-default">Only update contacts</display-name>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>false</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="emarsysUseGrossPrice">
+                <display-name xml:lang="x-default">Use Gross price</display-name>
+                <description xml:lang="x-default">Sends products gross price if YES and sends net price if NO to scarab-js-api.</description>
+                <type>boolean</type>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>false</default-value>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="EmarsysTransactionalEmailsSetup">
+                <display-name xml:lang="x-default">Emarsys Transactional Emails Setup</display-name>
+                <attribute attribute-id="emarsysOrderConfirmationElements"/>
+                <attribute attribute-id="emarsysShippingInformationElements"/>
+                <attribute attribute-id="emarsysCancelledOrderInformationElements"/>
+            </attribute-group>
+            <attribute-group group-id="Emarsys">
+                <display-name xml:lang="x-default">Emarsys</display-name>
+                <attribute attribute-id="emarsysEnabled"/>
+                <attribute attribute-id="emarsysCountryCodes"/>
+                <attribute attribute-id="emarsysGenderCodes"/>
+                <attribute attribute-id="emarsysSourceName"/>
+                <attribute attribute-id="emarsysProductImageSize"/>
+                <attribute attribute-id="emarsysSourceID"/>
+                <attribute attribute-id="emarsysContactFieldsMap"/>
+                <attribute attribute-id="emarsysAddressFieldsMap"/>
+                <attribute attribute-id="emarsysUseGrossPrice"/>
+            </attribute-group>
+            <attribute-group group-id="EmarsysSmartInsight">
+                <display-name xml:lang="x-default">Emarsys SmartInsight Configuration</display-name>
+                <description xml:lang="x-default">Configure Emarsys Smart Insight solution integration</description>
+                <attribute attribute-id="emarsysSmartInsightAvailableElements"/>
+            </attribute-group>
+            <attribute-group group-id="EmarsysDBInitConfiguration">
+                <display-name xml:lang="x-default">Emarsys DB Init Configuration</display-name>
+                <attribute attribute-id="emarsysGetProfileFieldsLanguage"/>
+                <attribute attribute-id="emarsysDBLoadAttributes"/>
+                <attribute attribute-id="emarsysSingleChoiceValueMapping"/>
+                <attribute attribute-id="emarsysDBLoadExportStatus"/>
+            </attribute-group>
+            <attribute-group group-id="EmarsysCatalog">
+                <display-name xml:lang="x-default">Emarsys Catalog Configuration</display-name>
+                <description xml:lang="x-default">Configure Emarsys catalog recommendation solutions</description>
+                <attribute attribute-id="emarsysPredictMerchantID"/>
+                <attribute attribute-id="emarsysPredictEnableJSTrackingCode"/>
+                <attribute attribute-id="emarsysPredictThankYouForOrderPageRecommendationType"/>
+                <attribute attribute-id="emarsysPredictPDPRecommendationType"/>
+                <attribute attribute-id="emarsysPredictHomePageRecommendationType"/>
+                <attribute attribute-id="emarsysPredictCartPageRecommendationType"/>
+                <attribute attribute-id="emarsysPredictSearchPageRecommendationType"/>
+                <attribute attribute-id="emarsysPredictCategoryPageRecommendationType"/>
+                <attribute attribute-id="emarsysPredictProductAttributes"/>
+                <attribute attribute-id="emarsysPredictVariationAttributes"/>
+                <attribute attribute-id="emarsysPredictLocCurMap"/>
+                <attribute attribute-id="emarsysCustomObjectList"/>
+                <attribute attribute-id="emarsysCatalogExportType"/>
+            </attribute-group>
+            <attribute-group group-id="EmarsysLoyaltyWallet">
+                <display-name xml:lang="x-default">Emarsys Loyalty Wallet</display-name>
+                <description xml:lang="x-default">Configure Emarsys Loyalty Wallet</description>
+                <attribute attribute-id="emarsysLoyaltyWalletEnabled"/>
+                <attribute attribute-id="emarsysAppId"/>
+                <attribute attribute-id="emarsysCustomerId"/>
+                <attribute attribute-id="emarsysSecret"/>
+                <attribute attribute-id="emarsysRegion"/>
+                <attribute attribute-id="emarsysLoyalsysURLexaccess"/>
+                <attribute attribute-id="emarsysLoyalsysURLuiElements"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+
+</metadata>

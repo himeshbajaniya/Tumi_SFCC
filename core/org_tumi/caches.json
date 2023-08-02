@@ -1,0 +1,8 @@
+{
+  "caches": [
+    {
+      "id": "OCAPIToken",
+      "expireAfterSeconds": 1600
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+.card-number-wrapper {
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        right: 3px;
+        background-repeat: no-repeat;
+        background-image: url('../../images/credit.png');
+        background-size: contain;
+        width: 48px;
+        height: 30px;
+        top: -4px;
+    }
+
+    &[data-type="visa"]::after,
+    &[data-type="Visa"]::after {
+        background-image: url('../../images/payment-types.jpeg');
+        background-size: 725% 755%;
+        background-position: 74.2% 50%;
+    }
+
+    &[data-type="mastercard"]::after {
+        background-image: url('../../images/payment-types.jpeg');
+        background-size: 725% 755%;
+        background-position: 98.3% 50%;
+    }
+
+    &[data-type="amex"]::after {
+        background-image: url('../../images/payment-types.jpeg');
+        background-size: 725% 755%;
+        background-position: 74.2% 2.2%;
+    }
+
+    &[data-type="discover"]::after {
+        background-image: url('../../images/payment-types.jpeg');
+        background-size: 725% 755%;
+        background-position: 98.3% 26%;
+    }
+
+    &[data-type="klarna"]::after {
+        background-image: url('https://x.klarnacdn.net/payment-method/assets/badges/generic/white/klarna.svg');
+        background-size: auto;
+    }
+
+    &[data-type="PayPal"]::after {
+        background-image: url('../../images/payment-types.jpeg');
+        background-size: 725% 755%;
+        background-position: 98.3% 73.9%;
+    }
+
+    &[data-type="maestro"]::after {
+        background-image: url("../../images/payment-types.jpeg");
+        background-size: 725% 755%;
+        background-position: 25.9% 74%;
+    }
+
+    &[data-type="dinersclub"]::after {
+        background-image: url('../../images/payment-types.jpeg');
+        background-size: 725% 755%;
+        background-position: 74.2% 98%;
+    }
+}
+
+.payment-form-fields .card-number-wrapper::after {
+    right: 3px;
+    top: 3px;
+}
+
+.saved-payments .card-number-wrapper::after {
+    right: auto;
+    top: -4px;
+}
+
+.payment-section .card-number-wrapper::after {
+    top: 5px;
+}

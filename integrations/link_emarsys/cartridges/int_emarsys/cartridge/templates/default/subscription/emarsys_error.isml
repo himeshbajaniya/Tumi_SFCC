@@ -1,0 +1,11 @@
+<iscomment> TEMPLATENAME: emarsys_thankyou.isml </iscomment>
+<iscontent type="text/html" charset="UTF-8" compact="true"/>
+
+<isdecorate template="${Resource.msg('page.decorator.default', 'emarsys', 'common/layout/page')}">
+    <div class="show-confirmation-message">
+        <h1>${Resource.msg("subscription.error", "emarsys", null)}</h1>
+        <isif condition="${pdict.ErrorMsg}" >
+            <isprint value="${pdict.ErrorMsg}" encoding="on" />
+        </isif>
+    </div>
+</isdecorate>

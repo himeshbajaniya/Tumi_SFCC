@@ -1,0 +1,159 @@
+<div class="sub-hero-container">
+    <div
+        class="sub-hero-component container"
+        data-creative-name="{{content-asset-id}}"
+    >
+        <div class="row">
+            <div class="text-collection col-md-6">
+                {{#if mainTagLine}}
+                <div class="main-tag-line">{{mainTagLine}}</div>
+                {{/if}} {{#if description}}
+                <div class="description">{{description}}</div>
+                {{/if}}
+            </div>
+        </div>
+
+        {{#if catagories}}
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a
+                    class="nav-link active categories-prev"
+                    id="sub-hero-category-tab"
+                    data-toggle="tab"
+                    href="#sub-hero-category"
+                    role="tab"
+                    aria-controls="home"
+                    aria-selected="true"
+                    >Categories</a
+                >
+            </li>
+            <li class="nav-item">
+                <a
+                    class="nav-link collections-prev"
+                    id="sub-hero-collection-tab"
+                    data-toggle="tab"
+                    href="#sub-hero-collection"
+                    role="tab"
+                    aria-controls="profile"
+                    aria-selected="false"
+                    >Collections</a
+                >
+            </li>
+        </ul>
+
+        <div class="tab-content" id="myTabContent">
+            <div
+                class="tab-pane fade position-relative show active"
+                id="sub-hero-category"
+                role="tabpanel"
+                aria-labelledby="sub-hero-category-tab"
+            >
+                <div class="swiper mySwiper sub-hero-category">
+                    <div class="swiper-wrapper">
+                        {{#each catagories}}
+                        <div class="swiper-slide">
+                            <a href="{{category-url}}">
+                            {{#if S7-image-link}}
+                                <img
+                                    src="{{S7-image-link}}"
+                                    alt="{{image-alt}}"
+                                    class="w-100"
+                                />
+                                {{/if}}
+                            </a>
+                            <div class="image-content">
+                                <a href="{{collection-url }}"
+                                    >
+                                    {{#if anchor-number}}
+                                    <span class="anchornumber">{{anchor-number}}</span>
+                                    <span class="hypen"></span>
+                                    {{/if}}
+                                    {{collection-name}}</a>
+                                <p>{{description}}</p>
+                            </div>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+                <div class="categories-next"></div>
+                <div class="categories-prev"></div>
+            </div>
+            <div
+                class="tab-pane fade position-relative"
+                id="sub-hero-collection"
+                role="tabpanel"
+                aria-labelledby="sub-hero-collection-tab"
+            >
+                <div class="swiper sub-hero-collection">
+                    <div class="swiper-wrapper">
+                        {{#each collections}}
+                        <div class="swiper-slide">
+                            <a href="{{collection-url}}">
+                            {{#if S7-image-link}}
+                                <img
+                                    src="{{S7-image-link}}"
+                                    alt="{{image-alt}}"
+                                    class="w-100"
+                                />
+                            {{/if}}    
+                            </a>
+                            <div class="image-content">
+                                <a href="{{collection-url }}"
+                                    >
+                                    {{#if anchor-number}}
+                                    <span class="anchornumber">{{anchor-number}}</span>
+                                    <span class="hypen"></span>
+                                    {{/if}}
+                                    {{collection-name}}</a>
+                                <p>{{description}}</p>
+                            </div>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+                <div class="collections-next"></div>
+                <div class="collections-prev"></div>
+            </div>
+        </div>
+
+        {{else}}
+        <div
+            class="tab-pane fade position-relative show active"
+            id="sub-hero-collection"
+            role="tabpanel"
+            aria-labelledby="sub-hero-collection-tab"
+        >
+            <div class="swiper mySwiper tumi-sub-hero-collection">
+                <div class="swiper-wrapper">
+                    {{#each collections}}
+                    <div class="swiper-slide">
+                        <a href="{{collection-url}}">
+                        {{#if S7-image-link}}
+                            <img
+                                src="{{S7-image-link}}"
+                                alt="{{image-alt}}"
+                                class="w-100"
+                            />
+                        {{/if}}    
+                        </a>
+                        <div class="image-content">
+                            <a href="{{collection-url }}"
+                                    >
+                                    {{#if anchor-number}}
+                                    <span class="anchornumber">{{anchor-number}}</span>
+                                    <span class="hypen"></span>
+                                    {{/if}}
+                                    {{collection-name}}</a>
+                            <p>{{description}}</p>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+            <div class="collections-next"></div>
+            <div class="collections-prev"></div>
+        </div>
+
+        {{/if}}
+    </div>
+</div>

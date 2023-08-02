@@ -1,0 +1,215 @@
+    {
+        "_v": "22.7",
+        "clients": [
+            {
+                "client_id": "<my-client-id>",
+                "resources":
+                [
+                  {
+                    "resource_id": "/code_versions",
+                    "methods": ["get"],
+                    "read_attributes": "(**)",
+                    "write_attributes": "(**)"
+                  },
+                  {
+                    "resource_id": "/code_versions/*",
+                    "methods": ["patch", "delete"],
+                    "read_attributes": "(**)",
+                    "write_attributes": "(**)"
+                  },
+                  {
+                    "resource_id": "/jobs/*/executions",
+                    "methods": ["post"],
+                    "read_attributes": "(**)",
+                    "write_attributes": "(**)"
+                  },
+                  {
+                    "resource_id": "/jobs/*/executions/*",
+                    "methods": ["get"],
+                    "read_attributes": "(**)",
+                    "write_attributes": "(**)"
+                  },
+                  { 
+                    "resource_id": "/sites/*/cartridges", 
+                    "methods": ["post"], 
+                    "read_attributes": "(**)", 
+                    "write_attributes": "(**)"
+                  },
+                  {
+                    "resource_id":"/role_search",
+                    "methods":["post"],
+                    "read_attributes":"(**)",
+                    "write_attributes":"(**)"
+                  },
+                  {
+                    "resource_id":"/roles/*",
+                    "methods":["get"],
+                    "read_attributes":"(**)",
+                    "write_attributes":"(**)"
+                  },
+                  {
+                    "resource_id":"/roles/*/user_search",
+                    "methods":["post"],
+                    "read_attributes":"(**)",
+                    "write_attributes":"(**)"
+                  },
+                  {
+                    "resource_id":"/roles/*/users/*",
+                    "methods":["put","delete"],
+                    "read_attributes":"(**)",
+                    "write_attributes":"(**)"
+                  },
+                  {
+                    "resource_id":"/user_search",
+                    "methods":["post"],
+                    "read_attributes":"(**)",
+                    "write_attributes":"(**)"
+                  },
+                  {
+                    "resource_id":"/users",
+                    "methods":["get"],
+                    "read_attributes":"(**)",
+                    "write_attributes":"(**)"
+                  },
+                  {
+                    "resource_id":"/users/*",
+                    "methods":["put","get","patch","delete"],
+                    "read_attributes":"(**)",
+                    "write_attributes":"(**)"
+                  },
+                  
+                ]
+              },
+            {
+                "client_id": "a41276bb-d8c7-40c7-ad8e-56884d2c4a64",
+                "resources": [
+                    {
+                        "resource_id": "/sites/{site_id}/slot_search",
+                        "methods": [
+                            "post"
+                        ],
+                        "read_attributes": "(**)",
+                        "write_attributes": "(**)"
+                    },
+                    {
+                        "resource_id": "/sites/{site_id}/slots",
+                        "methods": [
+                            "get"
+                        ],
+                        "read_attributes": "(**)",
+                        "write_attributes": "(**)"
+                    },
+                    {
+                        "resource_id": "/sites/{site_id}/slots/{slot_id}/slot_configurations/{configuration_id}",
+                        "methods": [
+                            "get",
+                            "put",
+                            "patch",
+                            "delete"
+                        ],
+                        "read_attributes": "(**)",
+                        "write_attributes": "(**)"
+                    },
+                    {
+                        "resource_id": "/sites/{site_id}/slot_configurations",
+                        "methods": [
+                            "get"
+                        ],
+                        "read_attributes": "(**)",
+                        "write_attributes": "(**)"
+                    },
+                    {
+                        "resource_id": "/sites/{site_id}/slot_configuration_search",
+                        "methods": [
+                            "post"
+                        ],
+                        "read_attributes": "(**)",
+                        "write_attributes": "(**)"
+                    },
+                    {
+                        "resource_id": "/sites/{site_id}/campaigns/{campaign_id}",
+                        "methods": [
+                            "get",
+                            "put",
+                            "patch",
+                            "delete"
+                        ],
+                        "read_attributes": "(**)",
+                        "write_attributes": "(**)"
+                    },
+                    {
+                        "resource_id": "/sites/{site_id}/campaigns/{campaign_id}/slot_configurations/{slot_id}/{slot_config_id}",
+                        "methods": [
+                            "put",
+                            "patch",
+                            "delete"
+                        ],
+                        "read_attributes": "(**)",
+                        "write_attributes": "(**)"
+                    },
+                    {
+                        "resource_id": "/sites/{site_id}/slot_configuration_campaign_assignment_search",
+                        "methods": [
+                            "post"
+                        ],
+                        "read_attributes": "(**)",
+                        "write_attributes": "(**)"
+                    },
+                    {
+                        "resource_id": "/libraries/{library_id}/content/{content_id}",
+                        "methods": [
+                            "get",
+                            "put",
+                            "patch",
+                            "delete"
+                        ],
+                        "read_attributes": "(**)",
+                        "write_attributes": "(**)"
+                    },
+                    {
+                        "resource_id": "/libraries/{library_id}/content/{content_id}/folders",
+                        "methods": [
+                            "get"
+                        ],
+                        "read_attributes": "(**)",
+                        "write_attributes": "(**)"
+                    },
+                    {
+                        "resource_id": "/libraries/{library_id}/folders/{folder_id}",
+                        "methods": [
+                            "get",
+                            "put"
+                        ],
+                        "read_attributes": "(**)",
+                        "write_attributes": "(**)"
+                    },
+                    {
+                        "resource_id": "/libraries/{library_id}/folders/{folder_id}/content",
+                        "methods": [
+                            "get"
+                        ],
+                        "read_attributes": "(**)",
+                        "write_attributes": "(**)"
+                    },
+                    {
+                        "resource_id": "/libraries/{library_id}/folder_assignments/{content_id}/{folder_id}",
+                        "methods": [
+                            "get",
+                            "put",
+                            "delete"
+                        ],
+                        "read_attributes": "(**)",
+                        "write_attributes": "(**)"
+                    },
+                    {
+                        "resource_id": "/libraries/{library_id}/folders/{folder_id}/sub_folders",
+                        "methods": [
+                            "get"
+                        ],
+                        "read_attributes": "(**)",
+                        "write_attributes": "(**)"
+                    }
+                ]
+            }
+        ]
+    }

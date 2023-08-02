@@ -1,0 +1,12 @@
+<div class="add-to-cart-wishList">
+    <input type="hidden" class="add-to-cart-url" value="${pdict.addToCartUrl}">
+    <input type="hidden" class="remove-from-sfl-url" value="${URLUtils.https('Wishlist-RemoveProduct')}">
+    <button class="add-to-cart button button--primary w-100 ${!item.available ? "disabled" : ""}"
+        data-pid="${item.pid}"
+        data-url="${URLUtils.url('Cart-AddProduct')}"
+        data-option="${JSON.stringify(item.selectedOptions)}"
+        ${!item.available ? "disabled" : ""}
+    >
+        ${Resource.msg('button.addtocart', 'common', null)}
+    </button>
+</div>

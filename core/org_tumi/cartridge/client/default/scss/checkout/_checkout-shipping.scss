@@ -1,0 +1,419 @@
+.card.shipping-section {
+    border: none;
+
+    .card-header {
+        border: none;
+        padding: 0;
+        margin-bottom: 21px;
+
+        @include media-breakpoint-up(sm) {
+            margin-bottom: 28px;
+        }
+
+        .shipping-step-header {
+            border: 1px solid $eerie-black;
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            text-align: center;
+            padding: 5px;
+            background: transparent;
+            margin-right: 8px;
+            color: $eerie-black;
+        }
+
+        .edit-button {
+            color: $eerie-black;
+        }
+    }
+
+    .card-body.shipping-content {
+        padding: 0;
+        @include media-breakpoint-up(sm) {
+            padding-left: 32px;
+        }
+
+        .edit-summary-details {
+            font-family: $font-tumi;
+            color: $eerie-black;
+            @include sizeWeightLh(13px, 400, 19px);
+
+            .address-summary {
+                margin: 0;
+            }
+
+            .other-edit-ship-address {
+                padding: 20px;
+            }
+
+            .change-shipping {
+                margin-top: 19px;
+                width: 211px;
+            }
+        }
+
+        .shipping-address-block {
+            .state-label {
+                label {
+                    top: -9%;
+                    left: 5px;
+                    color: var(--color-grey1);
+                    @include sizeWeightLh(12px, 400, 16px);
+
+                    &::before {
+                        display: none;
+                    }
+                }
+
+                .select-state {
+                    select,
+                    option {
+                        @include sizeWeightLh(15px, 400, 20px);
+
+                        color: $eerie-black;
+                    }
+
+                    select {
+                        padding-left: 5px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.single-shipping {
+    // border-bottom: 1px solid $grey3;
+
+    .choose-saved-add {
+        color: $eerie-black;
+        @include sizeWeightLh(15px, 400, 12px);
+
+        font-family: $font-tumi;
+        margin-bottom: 16px;
+
+        @include media-breakpoint-up(md) {
+            margin-bottom: 27px;
+        }
+    }
+
+    .add-new {
+        color: $eerie-black !important;
+        @include sizeWeightLh(15px, 400, 12px);
+
+        margin: 24px 0;
+        float: unset;
+        cursor: pointer;
+        border-bottom: 1px solid $eerie-black;
+        padding-bottom: 3px;
+        text-decoration: none;
+    }
+
+    .edit-ship-add {
+        color: $eerie-black;
+        @include sizeWeightLh(13px, 400, 20px);
+
+        font-family: $font-tumi;
+        padding: 20px;
+        background: transparent;
+        outline: none;
+        width: auto;
+        text-decoration: underline;
+    }
+
+    .card-header {
+        border: none;
+        padding: 0;
+        margin-bottom: 32px;
+    }
+
+    .card-body {
+        .ground-method {
+            .form-check {
+                padding: 0;
+            }
+        }
+    }
+
+    .selectedAddress {
+        border: 1px solid $eerie-black !important;
+    }
+
+    .ground-method {
+        .display-name {
+            @include sizeWeightLh(15px, 600, 20px);
+        }
+
+        .arrival-time {
+            @include sizeWeightLh(15px, 400, 24px);
+
+            font-family: $font-light;
+        }
+    }
+}
+
+.shipping-method-block .form-check,
+.shipping-method-block .form-check + .shipping-method-pricing {
+    display: none;
+}
+
+.shipping-method-block.show-all-list .form-check,
+.shipping-method-block.show-all-list .shipping-method-pricing {
+    display: block;
+    margin-bottom: 16px;
+}
+
+.shipping-method-block .form-check.shipmethod-selected,
+.shipping-method-block .shipmethod-selected + .shipping-method-pricing {
+    display: block;
+    color: $eerie-black;
+}
+
+.shipping-method-block {
+    .form-check {
+        &.shipmethod-selected {
+            label.shipping-method-option {
+                padding-left: 34px;
+            }
+        }
+
+        .shipping-method-option {
+            padding-left: 34px !important;
+        }
+    }
+}
+
+.show-all-list .choose-expedit-shipping {
+    display: none;
+}
+// .shipping-method-block .form-check.all-shipmethod,
+// .shipping-method-block .all-shipmethod + .shipping-method-pricing {
+//     display: block;
+// }
+
+.show-all-list .ground-method {
+    margin-bottom: 15px;
+}
+
+.choose-expedit-shipping {
+    @include sizeWeightLh(15px, 400, 20px);
+
+    margin: 19px 0 10px;
+    color: $eerie-black;
+    font-family: $font-tumi;
+}
+
+.choose-expedit-shipping-anchor {
+    border-bottom: 1px solid $eerie-black;
+    font-family: $font-tumi;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+/*
+Shipping Summary SCSS
+*/
+
+.card.shipping-summary {
+    border: none;
+
+    .card-header {
+        border: none;
+        padding: 0;
+        margin-bottom: 21px;
+
+        @include media-breakpoint-up(sm) {
+            margin-bottom: 28px;
+        }
+
+        .shipping-step-header {
+            border: 1px solid $eerie-black;
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            text-align: center;
+            padding: 5px;
+            background: transparent;
+            margin-right: 8px;
+            color: $eerie-black;
+        }
+
+        .edit-button {
+            color: $eerie-black;
+        }
+    }
+
+    .card-body {
+        padding: 0;
+
+        @include media-breakpoint-up(sm) {
+            padding: 0;
+            padding-left: 32px;
+        }
+
+        .single-shipping {
+            .summary-details {
+                font-family: $font-tumi;
+                @include sizeWeightLh(15px, 400, 22px);
+
+                color: $eerie-black;
+                margin-bottom: 28px;
+
+                .address-summary {
+                    margin: 0;
+                }
+
+                .other-edit-ship-address {
+                    padding: 20px;
+                }
+
+                .change-shipping {
+                    margin-top: 19px;
+                    width: 211px;
+                }
+            }
+        }
+    }
+}
+
+#klarna_payments_pay_over_time_nav {
+    a {
+        &.klarna-payments-pay_over_time-tab {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+}
+
+.payment-summary {
+    .card-body {
+        padding-bottom: 40px !important;
+
+        .valuetec-tab {
+            text-decoration: underline;
+            padding: 0;
+            margin-bottom: 25px;
+        }
+
+        .payment-info {
+            display: flex;
+            flex-wrap: wrap;
+
+            .details-wrapper {
+                display: flex;
+            }
+
+            .payment-details {
+                margin-top: 0;
+                color: $eerie-black;
+
+                .credit-card-type,
+                .valuetec-type {
+                    display: none;
+                }
+            }
+
+            .card-number-wrapper {
+                margin-right: 8px;
+                width: 48px;
+            }
+
+            .security-code-input {
+                width: 176px;
+            }
+
+            .summary-details {
+                padding: 0;
+                margin-right: 37px;
+                margin-bottom: 10px;
+            }
+        }
+
+        .billing-addr-label {
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 20px;
+            color: $eerie-black;
+        }
+
+        .payment-details {
+            @include sizeWeightLh(15px, 400, 20px);
+        }
+
+        .summary-details {
+            color: $davy-grey;
+
+            .other-edit-ship-address {
+                padding: 20px;
+            }
+
+            .change-shipping {
+                margin-top: 19px;
+                width: 211px;
+            }
+
+            .change-payment {
+                margin-top: 40px;
+            }
+        }
+    }
+
+    .address-summary {
+        margin-left: 56px;
+        color: $eerie-black;
+        @include sizeWeightLh(13px, 400, 20px);
+
+        .billingAddressHeading {
+            display: none;
+        }
+    }
+
+    .payment-details > span:nth-of-type(2) {
+        margin-top: 20px;
+        display: block;
+    }
+}
+
+.next-step-button {
+    padding-top: 0 !important;
+}
+
+.zip-code-style {
+    margin-bottom: -9px;
+}
+
+.default-border {
+    border: 1px solid $grey3;
+}
+
+.other-address-register-user {
+    width: 100%;
+
+    @include media-breakpoint-up(sm) {
+        max-width: 332px;
+    }
+    @include media-breakpoint-up(md) {
+        max-width: 400px;
+    }
+}
+
+.edit-page-buttons {
+    position: relative;
+
+    .next-step-button {
+        margin-bottom: 16px;
+    }
+}
+
+.shipping-summary-new {
+    button {
+        width: 100%;
+    }
+}
+
+.continue-shipping {
+    margin-top: 20px;
+    margin-bottom: 30px;
+}

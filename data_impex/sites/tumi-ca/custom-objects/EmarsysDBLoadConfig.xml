@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custom-objects xmlns="http://www.demandware.com/xml/impex/customobject/2006-10-31">
+    <custom-object type-id="EmarsysDBLoadConfig" object-id="dbloadConfig">
+        <object-attribute attribute-id="mappedFields">[&#13;
+	{&#13;
+		"field": "1",&#13;
+		"placeholder": "firstName"&#13;
+	},&#13;
+	{&#13;
+		"field": "2",&#13;
+		"placeholder": "lastName"&#13;
+	},&#13;
+	{&#13;
+		"field": "3",&#13;
+		"placeholder": "email"&#13;
+	},&#13;
+	{&#13;
+		"field": "4",&#13;
+		"placeholder": "birthday"&#13;
+	},&#13;
+	{&#13;
+		"field": "5",&#13;
+		"placeholder": "gender"&#13;
+	},&#13;
+	{&#13;
+		"field": "10",&#13;
+		"placeholder": "address1"&#13;
+	},&#13;
+	{&#13;
+		"field": "11",&#13;
+		"placeholder": "city"&#13;
+	},&#13;
+	{&#13;
+		"field": "12",&#13;
+		"placeholder": "stateCode"&#13;
+	},&#13;
+	{&#13;
+		"field": "13",&#13;
+		"placeholder": "postalCode"&#13;
+	},&#13;
+	{&#13;
+		"field": "14",&#13;
+		"placeholder": "countryCode"&#13;
+	},&#13;
+	{&#13;
+		"field": "15",&#13;
+		"placeholder": "phone"&#13;
+	},&#13;
+	{&#13;
+		"field": "13650",&#13;
+		"placeholder": "address2"&#13;
+	},&#13;
+	{&#13;
+		"field": "13693",&#13;
+		"placeholder": "custom.favouriteStore"&#13;
+	},&#13;
+	{&#13;
+		"field": "18302",&#13;
+		"placeholder": "UUID"&#13;
+	},&#13;
+	{&#13;
+		"field": "19063",&#13;
+		"placeholder": "custom.monogramText"&#13;
+	},&#13;
+	{&#13;
+		"field": "19075",&#13;
+		"placeholder": "custom.emarsysOptIn"&#13;
+	},&#13;
+	{&#13;
+		"field": "19244",&#13;
+		"placeholder": "custom.optInEmail"&#13;
+	},&#13;
+	{&#13;
+		"field": "19384",&#13;
+		"placeholder": "custom.optInSMS"&#13;
+	}&#13;
+]</object-attribute>
+    </custom-object>
+
+</custom-objects>

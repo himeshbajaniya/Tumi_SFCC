@@ -1,0 +1,58 @@
+<isset name="monogram" value="${product ? product : pdict.monogramData}" scope="page" />
+<div class="modal fade accent-modal global-modal" id="accentModal-${product.uuid}" tabindex="-1" role="dialog"
+    aria-labelledby="accentModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">${Resource.msg('product.default.accent.add', 'product', null)}</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">
+                <img class="" src="${URLUtils.staticURL('/images/modal-close.svg')}"
+                    alt="${Resource.msg('global.search', 'common', null)}" />
+                </span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class=" accent-option-selection">
+                </div>
+                <form id="accent-form" class="accent-form">
+                    <div class="tab-content" id="monogramTabContent">
+                        <div class="tab-pane active" id="viewpatch" role="tabpanel" aria-labelledby="patch-tab">
+                            <div class="image-accent">
+                                <iscomment> <img class="accent-preview-img classic-patch w-100"
+                                    src="${product.monoPatchImage}?fmt=jpeg&amp;layer=2&amp;src=is(Tumi/monogram_template_v2?scl=2.5)&amp;$text1=&amp;$text2=&amp;$text3=&amp;$monogramfonttext1=Times%20New%20Roman%20Bold&amp;$monogramfonttext2=Times%20New%20Roman%20Bold&amp;$monogramfonttext3=Times%20New%20Roman%20Bold&amp;$monogramcolor=${currentFontColor}&amp;$textureimage=smooth_texture"
+                                    alt="Accent preview image" /> </iscomment>
+                                     <img class="accent-preview-img classic-patch w-100"
+                                    src=""
+                                    alt="Accent preview image" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accent-content">
+                        <div id="accent_1" class="personalization-accent-preview initials active">
+                            <div class="color">${Resource.msg('product.monogram.choose.accent', 'product', null)}</div>
+                            <span class="selected-accent-option">None Selected</span>
+                            <span class="selected-accent-price"></span>
+                            <isloop items="${product.variationAttributes}" var="attr" status="attributeStatus">
+                                <div class="row below-underline ${attr.id}-section" data-attr="${attr.id}">
+                                    <div class="col-12">
+                                        <isinclude template="product/components/accentButton" />
+                                    </div>
+                                </div>
+                                <div class="mobile-border-line"></div>
+                            </isloop>
+                            <div class="accent-btn-cntr">
+                                <a href="#"
+                                    class="button button--primary w-100 accent-step-button-next disabled">${Resource.msg('product.accent.apply.link', 'product', null)}</a>
+                                <div class="accent-cancel-btn">
+                                    <a href="#" class="cancelBtn w-100"
+                                        data-dismiss="modal">${Resource.msg('product.monogram.cancel', 'product', null)}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

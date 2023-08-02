@@ -1,0 +1,9 @@
+<isset name="customPreferences" value="${dw.system.Site.current.preferences.custom}" scope="page"/>
+
+<isset name="dnsPrefetchs" value="${'dnsPrefetch' in customPreferences ? JSON.parse(customPreferences['dnsPrefetch']) : []}" scope="page"/>
+
+<isif condition="${dnsPrefetchs}">
+    <isloop items="${dnsPrefetchs}" var="dnsPrefetch">
+        <link rel="dns-prefetch" href="${dnsPrefetch}" />
+    </isloop>
+</isif>

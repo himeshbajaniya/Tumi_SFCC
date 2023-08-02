@@ -1,0 +1,183 @@
+@import "dialogPopup";
+
+$header-column-padding: 0.8rem;
+$column-padding: 0.5rem;
+
+.external-events-content {
+    padding: 1.5rem;
+    border: 0.1rem solid #ccc;
+    width: 100%;
+}
+
+.control-block {
+    min-height: 3.6rem;
+    margin-top: 1rem;
+    padding-right: 1rem;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+div.table-title-column {
+    width: 92%;
+    margin-left: 3%;
+}
+
+.table-header {
+    height: 4.8rem;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    background-color: #d5d7d9;
+}
+
+.table-header .column-basic {
+    padding-left: $header-column-padding;
+}
+
+.row-basic {
+    height: 4.8rem;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.events-table .row-basic:nth-child(odd) {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.column-basic {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    margin-left: 0.3rem;
+}
+
+.sfcc-name-column {
+    padding-left: $column-padding;
+    width: 30%;
+}
+
+.emarsys-name-column {
+    width: 34%;
+}
+
+.campaign-status-column {
+    width: 12%;
+}
+
+.button-column {
+    width: 8%;
+    min-width: 9rem;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.control-block .button-column {
+    margin-left: 0.8rem;
+}
+
+.trigger-form .label-column {
+    min-width: 30%;
+}
+
+.trigger-form .field-column {
+    width: 55%;
+}
+
+.empty-notification-block {
+    width: -webkit-fit-content;
+    width: fit-content;
+    height: -webkit-fit-content;
+    height: fit-content;
+    margin-left: 2.5rem;
+}
+
+.empty-notification {
+    line-height: 4rem;
+}
+
+.required-sign {
+    color: red;
+    font-size: 3.2rem;
+}
+
+/* Common styles */
+.input-placeholder {
+    border: 0.0501rem solid transparent;
+    border-bottom: 0.0501rem solid #40a3f9;
+    background: transparent;
+    width: 100%;
+    padding: 0.5rem;
+
+    &:hover {
+        border: 0.0501rem solid #40a3f9;
+        box-shadow: 0 0 0.5rem #bbb;
+    }
+
+    &:focus {
+        border-color: #40a3f9;
+        box-shadow: 0 0 0.5rem #bbb;
+    }
+}
+
+.button-basic {
+    display: inline-block;
+    transition:
+        color 0.2s ease-in-out,
+        background-color 0.2s ease-in-out,
+        border-color 0.2s ease-in-out;
+    border: 0.1rem solid #009ddc;
+    border-radius: 0.3rem;
+    padding: 0.1rem 0.8rem;
+    background-color: #009ddc;
+    color: #fff;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #40a3f9;
+    }
+}
+
+.select-basic {
+    border: 0.1rem solid #d5d7d9;
+    border-radius: 1rem;
+    cursor: pointer;
+    width: 100%;
+    background-color: #fff;
+    background-image: none;
+    padding: 0.1rem $column-padding;
+    margin: 0;
+    min-width: 12.9rem;
+
+    &:focus {
+        outline: none;
+        border: 0.1rem solid #40a3f9;
+    }
+
+    &:hover {
+        border: 0.1rem solid #40a3f9;
+    }
+
+    &:disabled {
+        border: 0.0501rem solid transparent;
+        color: black;
+        background-color: transparent;
+        pointer-events: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+    }
+}

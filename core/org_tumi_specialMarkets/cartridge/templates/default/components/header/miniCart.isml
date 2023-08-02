@@ -1,0 +1,14 @@
+<div class="minicart-total">
+    <a class="minicart-link darkMode-focus" href="${URLUtils.https('Cart-Show')}"
+        title="${Resource.msgf('minicart.count', 'common', null, pdict.quantityTotal)}"
+        aria-label="${Resource.msgf('minicart.count', 'common', null, pdict.quantityTotal)}">
+        <svg width="15" height="18" viewBox="0 0 15 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M4.61538 2.25V1.125H10.3846V2.25H4.61538ZM3.46154 0.5625C3.46154 0.25184 3.71984 0 4.03846 0H10.9615C11.2802 0 11.5385 0.25184 11.5385 0.5625V1.125H14.4231C14.7417 1.125 15 1.37684 15 1.6875V17.4375C15 17.7482 14.7417 18 14.4231 18H0.576923C0.258298 18 0 17.7482 0 17.4375V1.6875C0 1.37684 0.258297 1.125 0.576923 1.125H3.46154V0.5625ZM11.5385 2.25V2.8125C11.5385 3.12316 11.2802 3.375 10.9615 3.375H4.03846C3.71984 3.375 3.46154 3.12316 3.46154 2.8125V2.25H1.15385V16.875H13.8462V2.25H11.5385ZM3.46154 6.75H11.5385V5.625H3.46154V6.75ZM3.46154 10.125H9V9H3.46154V10.125ZM11.5385 10.125H9V9H11.5385V10.125ZM3.46154 13.5H11.5385V12.375H3.46154V13.5Z" fill="white"/>
+        </svg>
+
+        <span class="minicart-quantity <isif condition="${pdict.quantityTotal <= 0}">d-none</isif>">
+            <isprint value="${pdict.quantityTotal}" formatter="##" />
+        </span>
+    </a>
+</div>
+<div class="popover popover-bottom"></div>

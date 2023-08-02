@@ -1,0 +1,9 @@
+{
+    "hooks": [{
+        "name": "app.payment.processor.valuetec_gift_certificate",
+        "script": "./cartridge/scripts/hooks/payment/processor/giftCertificate"
+    }, {
+        "name": "app.payment.form.processor.valuetec_gift_certificate",
+        "script": "./cartridge/scripts/hooks/payment/processor/giftCertificate"
+    }]
+}

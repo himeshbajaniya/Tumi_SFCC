@@ -1,0 +1,61 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "https://www.tumi.com/footer-links",
+
+	"title": "Title",
+	"description": "Description",
+
+	"allOf": [
+		{
+			"$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+		}
+	],
+	
+	"type": "object",
+	"properties": {
+		"content-asset-id": {
+            "title": "Content Asset ID",
+            "description": "SFCC Content Asset",
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 256,
+            "format": "text"
+        },
+		"footerLinks1":{
+			"allOf": [
+				{
+          		"$ref": "https://www.tumi.com/partial-footer-links#/definitions/footerLink"
+      			},
+				{
+					"title": "Footer Link 1"
+				}
+				]
+		},
+		"footerLinks2":{
+			"allOf": [
+				{
+          		"$ref": "https://www.tumi.com/partial-footer-links#/definitions/footerLink"
+      			},
+				{
+					"title": "Footer Link 2"
+				}
+				]
+		},
+		"footerLinks3":{
+			"allOf": [
+				{
+          		"$ref": "https://www.tumi.com/partial-footer-links#/definitions/footerLink"
+      			},
+				{
+					"title": "Footer Link 3"
+				}
+				]
+		}
+	},
+    "propertyOrder": [
+        "content-asset-id"
+    ],
+    "required": [
+        "content-asset-id"
+    ]
+}

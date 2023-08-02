@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custom-objects xmlns="http://www.demandware.com/xml/impex/customobject/2006-10-31">
+    <custom-object type-id="EmarsysExternalEvents" object-id="StoredEvents">
+        <object-attribute attribute-id="campaignsCategory">6146</object-attribute>
+        <object-attribute attribute-id="id">StoredEvents</object-attribute>
+        <object-attribute attribute-id="name">StoredEvents</object-attribute>
+        <object-attribute attribute-id="newsletterSubscriptionResult"></object-attribute>
+        <object-attribute attribute-id="newsletterSubscriptionSource">["newsletter_subscription_confirmation","newsletter_subscription_success","newsletter_unsubscribe_success"]</object-attribute>
+        <object-attribute attribute-id="otherResult"></object-attribute>
+        <object-attribute attribute-id="otherSource">["cancelled_order","forgot_password_submitted","contact_form_submitted"]</object-attribute>
+    </custom-object>
+
+</custom-objects>

@@ -1,0 +1,119 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://www.tumi.com/collection-best-seller-component",
+    "title": "Title",
+    "description": "Description",
+    "allOf": [
+        {
+            "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+        }
+    ],
+    "type": "object",
+    "properties": {
+        "content-asset-id": {
+            "title": "Content Asset ID",
+            "description": "SFCC Content Asset",
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 256,
+            "format": "text"
+        },
+        "title": {
+            "title": "Title",
+            "description": "Enter Title",
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 256,
+            "format": "text"
+        },
+        "tabs": {
+            "title": "Tabs",
+            "description": "add tabs",
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 6,
+            "items": {
+                "allOf": [
+                    {
+                        "type": "object",
+                        "properties": {
+                            "tabName": {
+                                "title": "Tab Name",
+                                "description": "Enter Tab Name",
+                                "type": "string",
+                                "minLength": 1,
+                                "maxLength": 256,
+                                "format": "text"
+                            },
+                            "tabPId": {
+                                "title": "Tab PId's",
+                                "description": "Enter Tab PId's",
+                                "type": "string",
+                                "minLength": 1,
+                                "maxLength": 256,
+                                "format": "text"
+                            },
+                            "tabRfkId": {
+                                "title": "Tab RfkId",
+                                "description": "Enter Tab PId's",
+                                "type": "string",
+                                "minLength": 1,
+                                "maxLength": 256,
+                                "format": "text"
+                            },
+                            "reviewStars": {
+                                "title": "Review Rating Stars",
+                                "description": "Enter Review Rating Stars",
+                                "type": "string",
+                                "minLength": 1,
+                                "maxLength": 256,
+                                "format": "text"
+                            },
+                            "reviewDescription": {
+                                "title": "Review Description",
+                                "description": "Enter Review Description",
+                                "type": "string",
+                                "minLength": 1,
+                                "maxLength": 256,
+                                "format": "text"
+                            },
+                            "reviewAuthor": {
+                                "title": "Review Author",
+                                "description": "Enter Review Author",
+                                "type": "string",
+                                "minLength": 1,
+                                "maxLength": 256,
+                                "format": "text"
+                            },
+                            "reviewProductName": {
+                                "title": "Review Product Name",
+                                "description": "Enter Review Product Name",
+                                "type": "string",
+                                "minLength": 1,
+                                "maxLength": 256,
+                                "format": "text"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "viewAllCTA": {
+            "title": "View All CTA",
+            "description": "View All CTA",
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 256,
+            "format": "text"
+        },
+        "viewAllCTALandingURI": {
+            "title": "View All CTA URI",
+            "description": "View All CTA URI",
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 256,
+            "format": "text"
+        }
+    },
+    "propertyOrder": []
+}

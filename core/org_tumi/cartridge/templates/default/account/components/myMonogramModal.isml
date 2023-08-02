@@ -1,0 +1,162 @@
+<isset name="monogram" value="${product ? product : pdict.monogramData}" scope="page" />
+
+<div class="modal fade monogram-modal global-modal" id="myMonogramModal" tabindex="-1" role="dialog"
+    aria-labelledby="monogramModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">${Resource.msg('product.monogram.mymonogram', 'product', null)}</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">
+                        <img class="" src="${URLUtils.staticURL('/images/modal-close.svg')}"
+                            alt="${Resource.msg('global.search', 'common', null)}" />
+                    </span>
+                </button>
+            </div>
+            <div class="modal-body">
+               
+                <form id="monogram-form" class="monogram-form">
+                   
+                    <isset name="labelA" value="${!empty(monogram) && !empty(monogram.monogramLineItem) && !empty(monogram.monogramLineItem.character) && monogram.monogramLineItem
+                                                .character !== 'undefined' && !empty(monogram.monogramLineItem.character[0]) ? monogram.monogramLineItem.character[
+                                                    0] : 'A'}" scope="page" />
+                    <isset name="labelB" value="${!empty(monogram) && !empty(monogram.monogramLineItem) && !empty(monogram.monogramLineItem.character) && monogram.monogramLineItem
+                                                .character !== 'undefined' && !empty(monogram.monogramLineItem.character[1]) ? monogram.monogramLineItem.character[
+                                                    1] : 'B'}" scope="page" />
+                    <isset name="labelC" value="${!empty(monogram) && !empty(monogram.monogramLineItem) && !empty(monogram.monogramLineItem.character) && monogram.monogramLineItem
+                                                .character !== 'undefined' && !empty(monogram.monogramLineItem.character[2]) ? monogram.monogramLineItem.character[
+                                                    2] : 'C'}" scope="page" />
+                    <isset name="currentFontColor"
+                        value="${!empty(monogram) && !empty(monogram.monogramLineItem) && !empty(monogram.monogramLineItem.color) && monogram.monogramLineItem
+                               .color !== 'undefined' && !empty(monogram.monogramLineItem.color.split('_').length === 2 && monogram
+                                   .monogramLineItem.color.split('_')[1]) ? monogram.monogramLineItem.color.split('_')[1] : 'FCF5F9'}"
+                        scope="page" />
+                    <div class="tab-pane active" id="viewpatch" role="tabpanel" aria-labelledby="patch-tab">
+                        <div class="image">
+                            <img class="monogram-preview-img classic-patch w-100"
+                                src="${pdict.monogramPatch}?fmt=jpeg&amp;layer=2&amp;src=is(Tumi/monogram_template_v2?scl=2.5)&amp;$text1=&amp;$text2=&amp;$text3=&amp;$monogramfonttext1=Times%20New%20Roman%20Bold&amp;$monogramfonttext2=Times%20New%20Roman%20Bold&amp;$monogramfonttext3=Times%20New%20Roman%20Bold&amp;$monogramcolor=FCF5F9&amp;$textureimage=smooth_texture"
+                                alt="monogram preview image" />
+                        </div>
+                    </div>
+
+                  
+            <div class="monogram-content">
+                <div id="monogram_1" class="personalization-monogram-preview initials active">
+                    <div class="count">${Resource.msg('product.monogram.index.create.one', 'product', null)}</div>
+                    <div class="initials">${Resource.msg('product.monogram.choose.initials', 'product', null)}</div>
+                    <div class="content">${Resource.msg('product.monogram.classic.content', 'product', null)}</div>
+                  
+                    <div class="monogram-initials">
+                        <input data-value="0" class="monogram-input selected" name="monogramText" data-input-order="1"
+                            aria-label="First initial" placeholder="A" maxlength="1" value="">
+                        <input data-value="0" class="monogram-input" name="monogramText" data-input-order="2"
+                            aria-label="Middle initial" placeholder="B" maxlength="1" value="">
+                        <input data-value="0" class="monogram-input  last" name="monogramText" data-input-order="3"
+                            aria-label="Last initial" placeholder="C" maxlength="1" value="">
+                    </div>
+                    <fieldset class="personalization-monogram-symbols d-flex justify-content-around">
+                        <isloop items="${pdict.symbolList}" var="symbolList" status="loopState">
+                            <legend class="sr-only">${Resource.msg('product.monogram.classic.symboloptions', 'product', null)}</legend>
+                            <input type="radio" data-input-order="${loopState.count}"
+                                id="monogram_symbol-${loopState.count}" name="monogram_symbol" value="${symbolList[1]}"
+                                tabindex="-1" aria-label="hash symbol">
+                            <label for="monogram_symbol-${loopState.count}">
+                                <span class="symbol_${symbolList[1]} symbol-size"></span>
+                            </label>
+                        </isloop>
+                    </fieldset>
+                    <div class="monogram-btn-cntr">
+                        <a href="#"
+                            class="button button--primary w-100 monogram-step-button-next disabled">${Resource.msg('product.monogram.next.link', 'product', null)}</a>
+                        <a href="#" class="cancelBtn w-100"
+                            data-dismiss="modal">${Resource.msg('product.monogram.cancel', 'product', null)}</a>
+                    </div>
+                </div>
+                <div id="monogram_2" class="personalization-monogram-preview personalization-monogram-style font-style">
+                    <div class="count">${Resource.msg('product.monogram.index.create.two', 'product', null)}</div>
+                    <div class="initials">${Resource.msg('product.monogram.choose.font', 'product', null)}</div>
+                    <div class="content my-monogram-input-content">${Resource.msg('account.mymonogram.choose.fontType.times', 'account', null)}</div>
+                
+
+                    <div class="monogram-fonts">
+                        <isloop items="${pdict.fontList}" var="fontList" status="loopState">
+                            <legend class="sr-only">${Resource.msg('product.monogram.choose.fonts.label', 'product', null)}</legend>
+                            <input type="radio" id="font_style_${loopState.count}_0" name="fontStyle" <isif
+                                condition="${!empty(monogram) && !empty(monogram.monogramLineItem) && !empty(monogram.monogramLineItem.font) && monogram.monogramLineItem.font === fontList}">checked
+                            </isif>
+                            value="${fontList}" data-inputOrder="${loopState.count}" tabindex="-1"
+                            aria-label="${fontList}" />
+                            <label for="font_style_${loopState.count}_0"
+                                class="font_style_${loopState.count} font_style">
+                                <span
+                                    class="font_style_${loopState.count}">${Resource.msg('product.default.monogram.text', 'product', null)}</span>
+                            </label>
+                        </isloop>
+                    </div>
+
+
+                    <div class="monogram-btn-cntr">
+                        <a href="#"
+                            class="button button--primary w-100 monogram-step-button-next">${Resource.msg('product.monogram.next.link', 'product', null)}</a>
+                        <a href="#" class="previousBtn monogram-step-button-prev w-100">${Resource.msg('product.monogram.previous.link', 'product', null)}</a>
+                    </div>
+                </div>
+                <div id="monogram_3" class="personalization-monogram-preview color-style">
+                    <div class="count">${Resource.msg('product.monogram.index.create.three', 'product', null)}</div>
+                    <div class="initials">${Resource.msg('product.mymonogram.choose.color', 'product', null)}</div>
+                    <div class="content color-name"></div>
+                 
+
+                    <div class="monogram-fontColor">
+                        <isloop items="${pdict.colorList}" var="fontList" status="loopState">
+                            <legend class="sr-only">${Resource.msg('product.monogram.choose.color.label', 'product', null)}</legend>
+                            <input type="radio" id="font_color_${loopState.count - 1}" name="fontColor"
+                                value="${fontList.colorDisplayValue}_${fontList.colorHex}" tabindex="-1"
+                                aria-label="${fontList.colorDisplayValue}" data-inputOrder="${loopState.count - 1}">
+                            <label for="font_color_${loopState.count - 1}"
+                            style= "background: ${fontList.swatchURL ? 'url(' +fontList.swatchURL +')' : '#' + fontList.colorHex}"
+                                class="font_color_${loopState.count - 1} font_style" title="${fontList.colorDisplayValue}">
+                                <span aria-hidden="true">${fontList.colorHex}</span>
+                            </label>
+                        </isloop>
+                    </div>
+
+
+                 
+                      <div class="monogram-btn-cntr">
+                        <a href="${URLUtils.url('Account-SaveMonogram')}" data-uuid="${lineItem.UUID}"
+                            class="button button--primary w-100 monogram-step-button-apply">${Resource.msg('product.monogram.save.link', 'product', null)}</a>
+                        <a href="#" class="cancelBtn w-100"
+                            data-dismiss="modal">${Resource.msg('product.monogram.cancel', 'product', null)}</a>
+                    </div>
+                </div>
+                <div id="monogram_4" class="personalization-monogram-preview selection-style">
+                    <div class="count">${Resource.msg('product.monogram.index.four', 'product', null)}</div>
+                    <div class="initials">${Resource.msg('product.monogram.choose.patch', 'product', null)}</div>
+                    <div class="content">${Resource.msg('product.monogram.choose.content', 'product', null)}</div>
+                    <div class="monogram-placement">
+                        <div class="row-fluid-no-gutter">
+                            <div class="mongram-types">
+
+                               
+
+                            </div>
+                            <div class="d-flex description">
+                                ${Resource.msg('product.monogram.description', 'product', null)}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="monogram-btn-cntr">
+                        <a href="${URLUtils.url('Account-SaveMonogram')}" data-uuid="${lineItem.UUID}"
+                            class="button button--primary w-100 monogram-step-button-apply">${Resource.msg('product.monogram.apply.link', 'product', null)}</a>
+                        <a href="#" class="previousBtn monogram-step-button-prev w-100">${Resource.msg('product.monogram.previous.link', 'product', null)}</a>
+                    </div>
+                </div>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+<input type="hidden" id="futuraCleanModern" value="${Resource.msg('account.mymonogram.choose.fontType.futura', 'account', null)}"/>
+<input type="hidden" id="timesClassicSophisticated" value="${Resource.msg('account.mymonogram.choose.fontType.times', 'account', null)}"/>
+</div>

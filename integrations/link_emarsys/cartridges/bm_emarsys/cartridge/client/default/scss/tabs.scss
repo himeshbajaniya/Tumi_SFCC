@@ -1,0 +1,66 @@
+/* Style the tab */
+.tab {
+    border-bottom: 0.1rem solid #bbb;
+}
+
+/* Style the buttons inside the tab */
+.tab {
+    display: flex;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+
+    button {
+        background-color: inherit;
+        border: none;
+        border-bottom: 0.3rem solid transparent;
+        cursor: pointer;
+        padding: 1.4rem 1.6rem;
+        transition: 0.3s;
+        font-size: 1.7rem;
+        margin: 0;
+        box-shadow: none;
+
+        &:hover {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            border-bottom: 0.3rem solid #0275d8;
+        }
+
+        &:focus {
+            outline: none;
+            padding: 1.4rem 1.6rem;
+            color: #fff;
+            border-bottom: 0.3rem solid #0275d8;
+        }
+    }
+
+    .active {
+        border-bottom: 0.3rem solid #0275d8;
+        padding: 1.4rem 1.6rem;
+    }
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    display: block;
+    max-width: 14em;
+    padding: 1em 1em 0.5em;
+    transition: border-color 0.2s ease-in-out;
+    color: #0275d8;
+    text-decoration: none;
+}
+
+/* Style the tab content */
+.tabcontent .main-container {
+    padding: 0.6rem 1.2rem;
+    border: 0.1rem solid #ccc;
+    border-top: none;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+    width: 100%;
+}
+
+.hide-content {
+    display: none;
+}

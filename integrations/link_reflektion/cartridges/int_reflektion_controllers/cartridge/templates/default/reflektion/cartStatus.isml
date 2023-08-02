@@ -1,0 +1,19 @@
+<script>
+document.addEventListener('DOMContentLoaded', getCartStatus, false);
+function getCartStatus () {
+    var rfk = window.rfk = window.rfk || [];
+    rfk.push(["trackEvent", {
+        "type": "status",
+        "name": "cart",
+        "value": {
+            "products": <isprint value="${require('*/cartridge/scripts/reflektionHelper').getItemsJSON(pdict.Basket)}" encoding="htmlsinglequote" />,
+            "dn": rfkDomain,
+            "locale": {
+                "lg": rfkLanguage,
+                "co": rfkCountry,
+                "cy": rfkCurrency
+            }
+        }
+    }]);
+}
+</script>

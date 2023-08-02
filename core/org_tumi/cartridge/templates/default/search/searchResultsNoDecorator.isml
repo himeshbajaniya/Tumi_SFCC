@@ -1,0 +1,168 @@
+<div class="container-fluid category-banner">
+	<div class="container">
+		<div class="row align-items-end">
+			<div class="col-sm-6">
+				<div class="bread-crumb">
+					<div class="bread-crumb-content">
+						<!--Breadcrumbs-->
+						<div class="row">
+							<div class="product-breadcrumb col hidden-sm-down">
+								<isinclude template="components/breadcrumbs/pageBreadcrumbsforPLP" />
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="category-title">  
+					<isif condition="${pdict.productSearch.category.name}">
+						${pdict.productSearch.category.name}
+					</isif>
+				</div>
+			</div>
+			<div class="col-sm-6 filters">
+				<div class="filter">
+					<span class="btn-filter-text">Show Filters</span> <span class="filter-count">(10)</span> 
+					<img src="${URLUtils.absStatic('/images/filter-icon.svg')}" alt="" />
+				</div>
+
+				<div class="sortby">
+					Sort by:
+
+					<isinclude template="search/sortOrderMenu" />
+					<iscomment> <div class="dropdown show">
+						<a class="btn dropdown-toggle" href="/" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Best Sellers
+						</a>
+						<div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+							<div class="form-check radio-small">
+								<input type="radio" class="form-check-input" id="bestSellers" name="sortBy" value="">
+								<label class="form-check-label" for="bestSellers">
+									${Resource.msg('search.best.sellers', 'search', null)}
+								</label>
+							</div>
+
+							<div class="form-check radio-small">
+								<input type="radio" class="form-check-input" id="newRelease" name="sortBy" value="">
+								<label class="form-check-label" for="newRelease">
+									${Resource.msg('search.new.release', 'search', null)}
+								</label>
+							</div>
+
+							<div class="form-check radio-small">
+								<input type="radio" class="form-check-input" id="priceLow" name="sortBy" value="">
+								<label class="form-check-label" for="priceLow">
+									${Resource.msg('search.price.low', 'search', null)}
+								</label>
+							</div>
+
+							<div class="form-check radio-small">
+								<input type="radio" class="form-check-input" id="priceHigh" name="sortBy" value="">
+								<label class="form-check-label" for="priceHigh">
+									${Resource.msg('search.price.high', 'search', null)}
+								</label>
+							</div>
+
+							<div class="form-check radio-small">
+								<input type="radio" class="form-check-input" id="topRated" name="sortBy" value="">
+								<label class="form-check-label" for="topRated">
+									${Resource.msg('search.top.rated', 'search', null)}
+								</label>
+							</div>
+
+						</div>
+					</div> </iscomment>
+
+						<iscomment> <select>
+							<option>${Resource.msg('search.best.sellers', 'search', null)}</option>
+							<option>${Resource.msg('search.new.release', 'search', null)}</option>
+							<option>${Resource.msg('search.price.low', 'search', null)}</option>
+							<option>${Resource.msg('search.price.high', 'search', null)}</option>
+							<option>${Resource.msg('search.top.rated', 'search', null)}</option>
+						</select> </iscomment>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<isif condition="${pdict.reportingURLs && pdict.reportingURLs.length}">
+    <isinclude template="reporting/reportingUrls" />
+</isif>
+
+<isset name="rfkFullPageSearch" value="${require('*/cartridge/scripts/reflektionHelper').getFullPageSearch(pdict.productSearch.isCategorySearch)}" scope="page">
+<div class="container search-results" ${rfkFullPageSearch}>
+    <isif condition="${empty(rfkFullPageSearch)}">
+	    <div class="row search-nav">
+	        <isif condition="${!pdict.productSearch.isCategorySearch}">
+	            <div class="nav-tabs-wrapper">
+	                <ul class="nav nav-tabs nav-fill" role="tablist">
+	
+	                    <li class="nav-item" role="presentation">
+	                        <a class="nav-link active product-search" href="#product-search-results" aria-controls="product-search-results" data-toggle="tab" role="tab" aria-selected="true" tabindex="0" id="product-tab">
+	                            ${Resource.msg('tab.nav.search.productsresults', 'search', null)}
+	                        </a>
+	                    </li>
+	                    <li class="nav-item" role="presentation">
+	                        <a class="nav-link content-search" href="#content-search-results-pane" aria-controls="content-search-results-pane" data-toggle="tab" role="tab" aria-selected="false" tabindex="-1" id="articles-tab"
+	                            data-url="${URLUtils.url('Search-Content', 'q', pdict.productSearch.searchKeywords, 'startingPage', 0)}">
+	                            ${Resource.msg('tab.nav.search.artclesresults', 'search', null)}
+	                        </a>
+	                    </li>
+	                </ul>
+	            </div>
+	        </isif>
+	    </div>
+		<div class="tab-content">
+			<div class="tab-pane active" id="product-search-results" role="tabpanel" aria-labelledby="product-tab">
+					<isif condition="${pdict.productSearch.productIds.length > 0}">
+						<div class="row grid-header">
+							<div class="result-count text-center col-12 col-md-9 col-sm-6 order-sm-2">
+					<iselse>
+						<div class="row grid-header justify-content-center">
+							<div class="result-count col">
+					</isif>
+						<iscomment> <isinclude template="search/resultsCount" /> </iscomment>
+					</div>
+					<isif condition="${pdict.productSearch.productIds.length > 0}">
+						<div class="col-6 col-sm-3 order-sm-1">
+							<iscomment> <isinclude template="search/sortOrderMenu" /> </iscomment>
+						</div>
+
+						<div class="col-6 col-sm-3 text-right d-md-none order-sm-3">
+							<button type="button" class="btn btn-primary filter-results col-12">
+								${Resource.msg('button.filter', 'search', null)}
+							</button>
+						</div>
+					</isif>
+				</div>
+
+				<isif condition="${pdict.productSearch.productIds.length > 0}">
+					<!--- Refinement bar --->
+					<div class="row">
+						<div class="refinement-bar col-md-3 d-none">
+							<isinclude url="${pdict.refineurl}"/>
+						</div>
+
+						<div class="product-tiles-container col-sm-12 col-md-12">
+								<!--- Selected filters bar --->
+								<div class="row filter-bar d-md-none">
+									<isinclude template="search/filterBar" />
+								</div>
+								<!--- Product Grid --->
+								<div class="row product-grid" itemtype="http://schema.org/SomeProducts" itemid="#product">
+									<isinclude template="search/productGrid" />
+								</div>
+								
+						</div>
+					</div>
+				</isif>
+			</div>
+			<!--- Content Grid --->
+			<div class="tab-pane container" id="content-search-results-pane" role="tabpanel" aria-labelledby="articles-tab">
+				<div id="content-search-results" class="content-grid-header"></div>
+			</div>
+			<isif condition="${pdict.productSearch.isCategorySearch}">
+				<div class="recommendations" ${require('*/cartridge/scripts/reflektionHelper').getCategoryRec()}></div>
+			</isif>
+		</div>
+	</isif>
+</div>

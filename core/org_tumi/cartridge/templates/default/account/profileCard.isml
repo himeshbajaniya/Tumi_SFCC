@@ -1,0 +1,83 @@
+<isif condition="${pdict.reportingURLs && pdict.reportingURLs.length}">
+        <isinclude template="reporting/reportingUrls" />
+</isif>
+
+<div class="my-settings">
+    <div class="card personal-details">   
+        <div class="personal-info-section">
+            <div class="card-header clearfix">
+            <h2 class="pull-left profile-header">${Resource.msg('label.profile.personal.details','account',null)}</h2>
+            <iscomment> <isif condition="${!pdict.account.isExternallyAuthenticated}"> </iscomment>
+                <span class="edit-btn pull-right "><a href="javascript:void(0)" class="profile-edit" aria-label="${Resource.msg('label.profile.edit','account',null)}">${Resource.msg('link.edit','account',null)}</a>
+                <a href="javascript:void(0)" class="profile-cancel">${Resource.msg('button.cancel','account',null)}</a></span>
+            <iscomment> </isif> </iscomment>
+        </div>
+        <div class="card-body personal-info">
+            <dl>
+                <dt>${Resource.msg('label.profile.name','account',null)}</dt>
+                <dd>${pdict.account.profile.firstName} ${pdict.account.profile.lastName}</dd>
+            </dl>
+            <dl>
+                <dt>${Resource.msg('label.profile.email','account',null)}</dt>
+                <dd>${pdict.account.profile.email}</dd>
+            </dl>
+            <isif condition="${!pdict.account.isExternallyAuthenticated}">
+                <dl>
+                    <dt>${Resource.msg('label.profile.mobile','account',null)}</dt>
+                    <dd>${pdict.account.profile.phone}</dd>
+                </dl>
+            </isif>
+            <dl>
+                <dt>${Resource.msg('label.profile.gender','account',null)}</dt>
+                <dd><isif condition="${pdict.account.profile.gender.value !== 0}">
+                    ${pdict.account.profile.gender.displayValue}
+                <iselse/>
+                    ${Resource.msg('label.profile.personal.details.gender','account',null)}
+                </isif>
+                </dd>
+            </dl>
+            <dl>
+                <dt>${Resource.msg('label.profile.birthday','account',null)}</dt>
+                <dd><isif condition="${pdict.account.profile.date !=='' && pdict.account.profile.date !== 'undefined' && pdict.account.profile.month !=='' && pdict.account.profile.month !== 'undefined' }">
+                    ${pdict.account.profile.month}/${pdict.account.profile.date}
+                    <iselse/>
+                    ${Resource.msg('label.profile.monthdate','account',null)}
+                    </isif>
+                </dd>
+            </dl>
+
+        </div>
+        </div>
+        <isinclude template="account/editProfileForm" />
+        <isif condition="${!pdict.account.isExternallyAuthenticated}">
+        <!---Password--->
+        <div class="password-section">
+            <isinclude template="account/passwordCard" />
+            <isinclude template="account/changePasswordForm" />
+        </div>
+        </isif>
+
+        <div class="card prefered-store">
+            <div class="card-header">
+                <h2>${Resource.msg('label.preferred.store','account',null)}</h2>
+            </div>
+            <div class="card-body">
+            <isset name="radius" value="${'storeLookupMaxDistance' in dw.system.Site.getCurrent().getPreferences().getCustom() ? dw.system.Site.getCurrent().getCustomPreferenceValue('storeLookupMaxDistance') : 50}" scope="page" />
+                <dl>
+                <isif condition="${pdict.storeObj && pdict.storeObj.address1}">
+                    <dt>${Resource.msg('label.pick.up.store','account',null)} ${pdict.storeObj.name}</dt>
+                    <dd>${Resource.msg('label.open.store','account',null)} ${pdict.storetiming}${Resource.msg('label.pm.store.today','account',null)}</dd>
+                    <a href="${URLUtils.url('Stores-Find', 'showMap', 'true', 'radius', radius, 'lat', pdict.storeObj.latitude , 'long', pdict.storeObj.longitude)}" class="" role="button">
+                                ${Resource.msg('link.change.store','account',null)}
+                            </a>
+                <iselse/>
+                    <dd>${Resource.msg('label.no.preferred.store', 'account', null)}</dd>
+                    <a href="${URLUtils.url('Stores-Find', 'showMap', 'true', 'radius', radius)}" class="" role="button">
+                                ${Resource.msg('label.select.preferred.store','account',null)}
+                            </a>
+                </isif>
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>

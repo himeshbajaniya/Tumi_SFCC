@@ -1,0 +1,1035 @@
+{
+    "step-types": {
+        "script-module-step": [
+			{
+                "@type-id": "custom.tumi.scene7ProductImageExport",
+                "@supports-parallel-execution": "true",
+                "@supports-site-context": "true",
+                "@supports-organization-context": "true",
+                "description": "Export scene7 images into XML",
+                "module": "org_tumi/cartridge/scripts/jobs/exportScene7ImagesForProduct.js",
+                "function": "execute",
+                "transactional": "false",
+                "timeout-in-seconds": "900",
+                "parameters": {
+                    "parameters": [
+                        {
+                            "@name": "TargetFolder",
+                            "@type": "string",
+                            "@required": "true",
+                            "@trim": "true",
+                            "description": "Source folder path (in IMPEX)",
+                            "default-value": "src/scene7"
+                        },
+						{
+                            "@name": "catalogId",
+                            "@type": "string",
+                            "@required": "true",
+                            "@trim": "true",
+                            "description": "catalog Id",
+                            "default-value": "tumi-master-catalog"
+                        },
+						{
+                            "@name": "fileName",
+                            "@type": "string",
+                            "@required": "true",
+                            "@trim": "true",
+                            "description": "File Name",
+                            "default-value": "scene7ProductImageExport_"
+                        }
+                    ]
+                },
+                "status-codes": {
+                    "status": [
+                        {
+                            "@code": "ERROR",
+                            "description": "Used when the step failed with an error."
+                        },
+                        {
+                            "@code": "FINISHED",
+                            "description": "Used when the step finished successfully."
+                        },
+                        {
+                            "@code": "FINISHED_WITH_WARNINGS",
+                            "description": "Used when the step finished with warnings."
+                        }
+                    ]
+                }
+            },
+            {
+                "@type-id": "custom.tumi.convertOrderXML",
+                "@supports-parallel-execution": "true",
+                "@supports-site-context": "true",
+                "@supports-organization-context": "false",
+                "description": "Convert CSV price book into XML",
+                "module": "org_tumi/cartridge/scripts/jobs/exportOrder.js",
+                "function": "getOrderDetails",
+                "transactional": "false",
+                "timeout-in-seconds": "900",
+                "parameters": {
+                    "parameters": [
+                        {
+                            "@name": "TargetFolder",
+                            "@type": "string",
+                            "@required": "true",
+                            "@trim": "true",
+                            "description": "Source folder path (in IMPEX)",
+                            "default-value": "src/order"
+                        }
+                    ]
+                },
+                "status-codes": {
+                    "status": [
+                        {
+                            "@code": "ERROR",
+                            "description": "Used when the step failed with an error."
+                        },
+                        {
+                            "@code": "FINISHED",
+                            "description": "Used when the step finished successfully."
+                        },
+                        {
+                            "@code": "FINISHED_WITH_WARNINGS",
+                            "description": "Used when the step finished with warnings."
+                        }
+                    ]
+                }
+            },
+            {
+                "@type-id": "custom.tumi.ExportOrderCSV",
+                "@supports-parallel-execution": "true",
+                "@supports-site-context": "true",
+                "@supports-organization-context": "false",
+                "description": "Export CA Order into CSV",
+                "module": "org_tumi/cartridge/scripts/jobs/exportCAOrder.js",
+                "function": "execute",
+                "transactional": "false",
+                "timeout-in-seconds": "900",
+                "parameters": {
+                    "parameters": [
+                        {
+                            "@name": "TargetFolder",
+                            "@type": "string",
+                            "@required": "true",
+                            "@trim": "true",
+                            "description": "Source folder path (in IMPEX)",
+                            "default-value": "src/order/tumi_ca"
+                        }
+                    ]
+                },
+                "status-codes": {
+                    "status": [
+                        {
+                            "@code": "ERROR",
+                            "description": "Used when the step failed with an error."
+                        },
+                        {
+                            "@code": "FINISHED",
+                            "description": "Used when the step finished successfully."
+                        },
+                        {
+                            "@code": "FINISHED_WITH_WARNINGS",
+                            "description": "Used when the step finished with warnings."
+                        }
+                    ]
+                }
+            },
+            {
+                "@type-id": "custom.tumi.RekutenCancelledOrderFeedtoCSV",
+                "@supports-parallel-execution": "true",
+                "@supports-site-context": "true",
+                "@supports-organization-context": "false",
+                "description": "Convert CSV price book into XML",
+                "module": "org_tumi/cartridge/scripts/jobs/exportRekutenCancelledOrderFeed.js",
+                "function": "getCompleteOrderDetails",
+                "transactional": "false",
+                "timeout-in-seconds": "900",
+                "parameters": {
+                    "parameters": [{
+                        "@name": "days_before",
+                        "@type": "long",
+                        "@required": "true",
+                        "@trim": "true",
+                        "default-value": 5,
+                        "description": "Day before"
+                    },
+                        {
+                            "@name": "TargetFolder",
+                            "@type": "string",
+                            "@required": "true",
+                            "@trim": "true",
+                            "description": "Source folder path (in IMPEX)",
+                            "default-value": "src/order"
+                        }
+                    ]
+                },
+                "status-codes": {
+                    "status": [
+                        {
+                            "@code": "ERROR",
+                            "description": "Used when the step failed with an error."
+                        },
+                        {
+                            "@code": "FINISHED",
+                            "description": "Used when the step finished successfully."
+                        },
+                        {
+                            "@code": "FINISHED_WITH_WARNINGS",
+                            "description": "Used when the step finished with warnings."
+                        }
+                    ]
+                }
+            },
+            {
+                "@type-id": "custom.tumi.RekutenCompleteOrderFeedtoCSV",
+                "@supports-parallel-execution": "true",
+                "@supports-site-context": "true",
+                "@supports-organization-context": "false",
+                "description": "Convert CSV price book into XML",
+                "module": "org_tumi/cartridge/scripts/jobs/exportRekutenCompleteOrderFeed.js",
+                "function": "getCompleteOrderDetails",
+                "transactional": "false",
+                "timeout-in-seconds": "900",
+                "parameters": {
+                    "parameters": [{
+                        "@name": "days_before",
+                        "@type": "long",
+                        "@required": "true",
+                        "@trim": "true",
+                        "default-value": 5,
+                        "description": "Day before"
+                    },
+                        {
+                            "@name": "TargetFolder",
+                            "@type": "string",
+                            "@required": "true",
+                            "@trim": "true",
+                            "description": "Source folder path (in IMPEX)",
+                            "default-value": "src/order"
+                        }
+                    ]
+                },
+                "status-codes": {
+                    "status": [
+                        {
+                            "@code": "ERROR",
+                            "description": "Used when the step failed with an error."
+                        },
+                        {
+                            "@code": "FINISHED",
+                            "description": "Used when the step finished successfully."
+                        },
+                        {
+                            "@code": "FINISHED_WITH_WARNINGS",
+                            "description": "Used when the step finished with warnings."
+                        }
+                    ]
+                }
+            },
+            {
+                "@type-id": "custom.tumi.unverifiedCustomerRemovalJob",
+                "@supports-parallel-execution": "true",
+                "@supports-site-context": "true",
+                "@supports-organization-context": "false",
+                "description": "Remove the Expired Customers",
+                "module": "org_tumi/cartridge/scripts/jobs/unverifiedCustomerRemovalJob.js",
+                "function": "unverifiedCustomerRemovalJob",
+                "transactional": "true",
+                "timeout-in-seconds": "900",
+                "parameters": {
+                    "parameters": [
+                        {
+                            "@name": "removeTime",
+                            "@type": "string",
+                            "@required": "true",
+                            "@trim": "true",
+                            "description": "Time gap in minuts from link sent",
+                            "default-value": "2880"
+                        },
+                        {
+                            "@name": "fileName",
+                            "@type": "string",
+                            "@required": "true",
+                            "@trim": "true",
+                            "description": "name to create a file with",
+                            "default-value": "unverifiedCustomers.xml"
+                        },
+                        {
+                            "@name": "folderPath",
+                            "@type": "string",
+                            "@required": "true",
+                            "@trim": "true",
+                            "description": "path to create a file in",
+                            "default-value": "src/unverifiedCustomers"
+                        }
+                    ]
+                },
+                "status-codes": {
+                    "status": [
+                        {
+                            "@code": "ERROR",
+                            "description": "Used when the step failed with an error."
+                        },
+                        {
+                            "@code": "FINISHED",
+                            "description": "Used when the step finished successfully."
+                        },
+                        {
+                            "@code": "FINISHED_WITH_WARNINGS",
+                            "description": "Used when the step finished with warnings."
+                        }
+                    ]
+                }
+            },
+		  {
+			"@type-id": "custom.ImportCustomers",
+			"@supports-parallel-execution": "true",
+			"@supports-site-context": "true",
+			"@supports-organization-context": "false",
+			"description": "Custom CSV Customer Import",
+			"module": "org_tumi/cartridge/scripts/jobs/import/importXMLCustomers",
+			"function": "execute",
+			"transactional": "false",
+			"parameters": {
+			  "parameter": [
+				{
+				  "@name": "ImportType",
+				  "@type": "string",
+				  "enum-values": {
+					"value": [
+					  "CUSTOMER_IMPORT"
+					]
+				  },
+				  "@required": "true",
+				  "description": "Type of file import"
+				},
+				{
+				  "@name": "MaxAddresses",
+				  "@type": "long",
+				  "@required": "true",
+				  "description": "Max number of addreses per customer"
+				},
+                {
+                  "@name": "STARTING_SEED",
+                  "@type": "long",
+                  "@required": "true",
+                  "description": "Starting seed for customer number"
+                },
+				{
+				  "@name": "ImportFolder",
+				  "@type": "string",
+				  "@required": "true",
+				  "description": "IMPEX folder"
+				},
+				{
+				  "@name": "FilePattern",
+				  "@type": "string",
+				  "@required": "true",
+				  "description": "File Pattern"
+				},
+				{
+				  "@name": "ArchiveFiles",
+				  "@type": "boolean",
+				  "@required": "false",
+				  "description": "ArchiveFiles"
+				},
+				{
+				  "@name": "ArchiveFolder",
+				  "@type": "string",
+				  "@required": "true",
+				  "description": "ArchiveFolder"
+				},
+				{
+				  "@name": "MaxRecordPerFile",
+				  "@type": "long",
+				  "@required": "false",
+				  "description": "Maximum records per file"
+				},
+				{
+				  "@name": "EncryptRandomPassword",
+				  "@type": "boolean",
+				  "@required": "false",
+				  "description": "Maximum records per file"
+				},
+				{
+				  "@name": "PreferredLocale",
+				  "@type": "string",
+				  "@required": "false",
+				  "description": "Locale for customer import, en_US or en_CA"
+				},
+				{
+				  "@name": "DebugLevel",
+				  "@type": "long",
+				  "@required": "false",
+				  "description": "Debug Level max to level 3 for more info"
+				}
+			  ]
+			},
+			"status-codes": {
+			  "status": [
+				{
+				  "@code": "ERROR",
+				  "description": "Used when the step failed with an error."
+				},
+				{
+				  "@code": "FINISHED",
+				  "description": "Used when the step finished successfully."
+				},
+				{
+				  "@code": "FINISHED_WITH_WARNINGS",
+				  "description": "Used when the step finished with warnings."
+				}
+			  ]
+			}
+		  },
+		  {
+			"@type-id": "custom.Unzip",
+			"@supports-parallel-execution": "true",
+			"@supports-site-context": "false",
+			"@supports-organization-context": "true",
+			"description": "Unzip files",
+			"module": "org_tumi/cartridge/scripts/jobs/import/unzip",
+			"function": "execute",
+			"transactional": "false",
+			"parameters": {
+			  "parameter": [
+				{
+				  "@name": "ImportFolder",
+				  "@type": "string",
+				  "@required": "true",
+				  "description": "IMPEX folder"
+				},
+				{
+				  "@name": "FilePattern",
+				  "@type": "string",
+				  "@required": "true",
+				  "description": "File Pattern"
+				},
+				{
+				  "@name": "ArchiveFiles",
+				  "@type": "boolean",
+				  "@required": "false",
+				  "description": "ArchiveFiles"
+				},
+				{
+				  "@name": "ArchiveFolder",
+				  "@type": "string",
+				  "@required": "true",
+				  "description": "ArchiveFolder"
+				}
+			  ]
+			},
+			"status-codes": {
+			  "status": [
+				{
+				  "@code": "ERROR",
+				  "description": "Used when the step failed with an error."
+				},
+				{
+				  "@code": "FINISHED",
+				  "description": "Used when the step finished successfully."
+				},
+				{
+				  "@code": "FINISHED_WITH_WARNINGS",
+				  "description": "Used when the step finished with warnings."
+				}
+			  ]
+			}
+		  },
+		  {
+			"@type-id": "custom.ImporOptin",
+			"@supports-parallel-execution": "true",
+			"@supports-site-context": "true",
+			"@supports-organization-context": "false",
+			"description": "Custom CSV Optin Import",
+			"module": "org_tumi/cartridge/scripts/jobs/import/importXMLOptInDelta",
+			"function": "execute",
+			"transactional": "false",
+			"parameters": {
+			  "parameter": [
+				{
+				  "@name": "ImportType",
+				  "@type": "string",
+				  "enum-values": {
+					"value": [
+					  "OPTIN_IMPORT"
+					]
+				  },
+				  "@required": "true",
+				  "description": "Type of file import"
+				},
+				{
+				  "@name": "ImportFolder",
+				  "@type": "string",
+				  "@required": "true",
+				  "description": "IMPEX folder"
+				},
+				{
+				  "@name": "FilePattern",
+				  "@type": "string",
+				  "@required": "true",
+				  "description": "File Pattern"
+				},
+				{
+				  "@name": "ArchiveFiles",
+				  "@type": "boolean",
+				  "@required": "false",
+				  "description": "ArchiveFiles"
+				},
+				{
+				  "@name": "ArchiveFolder",
+				  "@type": "string",
+				  "@required": "true",
+				  "description": "ArchiveFolder"
+				},
+				{
+				  "@name": "MaxRecordPerFile",
+				  "@type": "long",
+				  "@required": "false",
+				  "description": "Maximum records per file"
+				},
+				{
+				  "@name": "DebugLevel",
+				  "@type": "long",
+				  "@required": "false",
+				  "description": "Debug Level max to level 3 for more info"
+				}
+			  ]
+			}
+		  },
+		  {
+			"@type-id": "custom.ImportOrders",
+			"@supports-parallel-execution": "true",
+			"@supports-site-context": "true",
+			"@supports-organization-context": "false",
+			"description": "Custom CSV Customer Import",
+			"module": "org_tumi/cartridge/scripts/jobs/import/importXMLOrders",
+			"function": "execute",
+			"transactional": "false",
+			"parameters": {
+			  "parameter": [
+				{
+				  "@name": "ImportType",
+				  "@type": "string",
+				  "enum-values": {
+					"value": [
+					  "ORDER_IMPORT"
+					]
+				  },
+				  "@required": "true",
+				  "description": "Type of file import"
+				},
+				{
+				  "@name": "MaxProducts",
+				  "@type": "long",
+				  "@required": "true",
+				  "description": "Max number of product lines per order"
+				},
+				{
+				  "@name": "Currency",
+				  "@type": "string",
+				  "@required": "false",
+				  "description": "Currency, default USD"
+				},
+				{
+				  "@name": "Locale",
+				  "@type": "string",
+				  "@required": "false",
+				  "description": "Locale, en_US or en_CA"
+				},
+				{
+				  "@name": "ImportFolder",
+				  "@type": "string",
+				  "@required": "true",
+				  "description": "IMPEX folder"
+				},
+				{
+				  "@name": "FilePattern",
+				  "@type": "string",
+				  "@required": "true",
+				  "description": "File Pattern"
+				},
+				{
+				  "@name": "ArchiveFiles",
+				  "@type": "boolean",
+				  "@required": "false",
+				  "description": "ArchiveFiles"
+				},
+				{
+				  "@name": "ArchiveFolder",
+				  "@type": "string",
+				  "@required": "true",
+				  "description": "ArchiveFolder"
+				},
+				{
+				  "@name": "MaxRecordPerFile",
+				  "@type": "long",
+				  "@required": "false",
+				  "description": "Maximum records per file"
+				},
+				{
+				  "@name": "EncryptRandomPassword",
+				  "@type": "boolean",
+				  "@required": "false",
+				  "description": "Maximum records per file"
+				},
+				{
+				  "@name": "DebugLevel",
+				  "@type": "long",
+				  "@required": "false",
+				  "description": "Debug Level max to level 3 for more info"
+				}
+			  ]
+			},
+			"status-codes": {
+			  "status": [
+				{
+				  "@code": "ERROR",
+				  "description": "Used when the step failed with an error."
+				},
+				{
+				  "@code": "FINISHED",
+				  "description": "Used when the step finished successfully."
+				},
+				{
+				  "@code": "FINISHED_WITH_WARNINGS",
+				  "description": "Used when the step finished with warnings."
+				}
+			  ]
+			}
+		  },
+		  {
+			"@type-id": "custom.tumi.ExportTumiTracerCSV",
+			"@supports-parallel-execution": "true",
+			"@supports-site-context": "true",
+			"@supports-organization-context": "false",
+			"description": "Export CA Order into CSV",
+			"module": "org_tumi/cartridge/scripts/jobs/exportTumiTracerOrder.js",
+			"function": "execute",
+			"transactional": "false",
+			"timeout-in-seconds": "900",
+			"parameters": {
+				"parameters": [
+					{
+						"@name": "TargetFolder",
+						"@type": "string",
+						"@required": "true",
+						"@trim": "true",
+						"description": "Source folder path (in IMPEX)",
+						"default-value": "src/order"
+					}
+				]
+			},
+			"status-codes": {
+				"status": [
+					{
+						"@code": "ERROR",
+						"description": "Used when the step failed with an error."
+					},
+					{
+						"@code": "FINISHED",
+						"description": "Used when the step finished successfully."
+					},
+					{
+						"@code": "FINISHED_WITH_WARNINGS",
+						"description": "Used when the step finished with warnings."
+					}
+				]
+			}
+		  },
+		  {
+			"@type-id": "custom.ImportTracers",
+			"@supports-parallel-execution": "true",
+			"@supports-site-context": "true",
+			"@supports-organization-context": "false",
+			"description": "Custom CSV Customer Import",
+			"module": "org_tumi/cartridge/scripts/jobs/import/importXMLTracers",
+			"function": "execute",
+			"transactional": "false",
+			"parameters": {
+			  "parameter": [
+				{
+				  "@name": "ImportType",
+				  "@type": "string",
+				  "enum-values": {
+					"value": [
+					  "TRACER_IMPORT"
+					]
+				  },
+				  "@required": "true",
+				  "description": "Type of file import"
+				},
+				{
+				  "@name": "MaxTracers",
+				  "@type": "long",
+				  "@required": "true",
+				  "description": "Max number of tracers per customer"
+				},					
+				{
+				  "@name": "ImportFolder",
+				  "@type": "string",
+				  "@required": "true",
+				  "description": "IMPEX folder"
+				},
+				{
+				  "@name": "FilePattern",
+				  "@type": "string",
+				  "@required": "true",
+				  "description": "File Pattern"
+				},
+				{
+				  "@name": "ArchiveFiles",
+				  "@type": "boolean",
+				  "@required": "false",
+				  "description": "ArchiveFiles"
+				},
+				{
+				  "@name": "ArchiveFolder",
+				  "@type": "string",
+				  "@required": "true",
+				  "description": "ArchiveFolder"
+				},
+				{
+				  "@name": "MaxRecordPerFile",
+				  "@type": "long",
+				  "@required": "false",
+				  "description": "Maximum records per file"
+				},
+				{
+				  "@name": "DebugLevel",
+				  "@type": "long",
+				  "@required": "false",
+				  "description": "Debug Level max to level 3 for more info"
+				}
+			  ]
+			},
+			"status-codes": {
+			  "status": [
+				{
+				  "@code": "ERROR",
+				  "description": "Used when the step failed with an error."
+				},
+				{
+				  "@code": "FINISHED",
+				  "description": "Used when the step finished successfully."
+				},
+				{
+				  "@code": "FINISHED_WITH_WARNINGS",
+				  "description": "Used when the step finished with warnings."
+				}
+			  ]
+			}
+		  },
+		  {
+			"@type-id": "custom.googleInventoryFeedJob",
+			"@supports-parallel-execution": "true",
+			"@supports-site-context": "true",
+			"@supports-organization-context": "false",
+			"description": "Custom CSV Customer Import",
+			"module": "org_tumi/cartridge/scripts/jobs/googleInventoryFeedJob",
+			"function": "execute",
+			"transactional": "false",
+			"parameters": {
+			  "parameter": [
+				{
+				  "@name": "ImportFolder",
+				  "@type": "string",
+				  "@required": "true",
+				  "description": "IMPEX folder"
+				}
+			  ]
+			},
+			"status-codes": {
+			  "status": [
+				{
+				  "@code": "ERROR",
+				  "description": "Used when the step failed with an error."
+				},
+				{
+				  "@code": "FINISHED",
+				  "description": "Used when the step finished successfully."
+				},
+				{
+				  "@code": "FINISHED_WITH_WARNINGS",
+				  "description": "Used when the step finished with warnings."
+				}
+			  ]
+			}
+		  },
+		  {
+			"@type-id": "custom.SendMailForNotExportedOrder",
+			"@supports-parallel-execution": "true",
+			"@supports-site-context": "true",
+			"@supports-organization-context": "false",
+			"description": "List out those order which has not been exported",
+			"module": "org_tumi/cartridge/scripts/jobs/listOutNotExportedOrder.js",
+			"function": "execute",
+			"transactional": "false",
+			"parameters": {
+			  "parameter": [
+				{
+				  "@name": "MailTo",
+				  "@type": "string",
+				  "@required": "false",
+				  "description": "Send mail to this email id"
+				}
+			  ]
+			},
+			"status-codes": {
+			  "status": [
+				{
+				  "@code": "ERROR",
+				  "description": "Used when the step failed with an error."
+				},
+				{
+				  "@code": "FINISHED",
+				  "description": "Used when the step finished successfully."
+				},
+				{
+				  "@code": "FINISHED_WITH_WARNINGS",
+				  "description": "Used when the step finished with warnings."
+				}
+			  ]
+			}
+		  },
+		  {
+			"@type-id": "custom.CustomerUpdates",
+			"@supports-parallel-execution": "true",
+			"@supports-site-context": "true",
+			"@supports-organization-context": "false",
+			"description": "Custom CSV Optin Import",
+			"module": "org_tumi/cartridge/scripts/jobs/import/importXMLCustomerUpdates",
+			"function": "execute",
+			"transactional": "false",
+			"parameters": {
+			  "parameter": [
+				{
+				  "@name": "ImportType",
+				  "@type": "string",
+				  "enum-values": {
+					"value": [
+					  "CUSTOMER_IMPORT"
+					]
+				  },
+				  "@required": "true",
+				  "description": "Type of file import"
+				},
+				{
+				  "@name": "AttributesToImport",
+				  "@type": "string",
+				  "@required": "true",
+				  "description": "Comma delimited values"
+				},
+				{
+				  "@name": "ImportFolder",
+				  "@type": "string",
+				  "@required": "true",
+				  "description": "IMPEX folder"
+				},
+				{
+				  "@name": "FilePattern",
+				  "@type": "string",
+				  "@required": "true",
+				  "description": "File Pattern"
+				},
+				{
+				  "@name": "ArchiveFiles",
+				  "@type": "boolean",
+				  "@required": "false",
+				  "description": "ArchiveFiles"
+				},
+				{
+				  "@name": "ArchiveFolder",
+				  "@type": "string",
+				  "@required": "true",
+				  "description": "ArchiveFolder"
+				},
+				{
+				  "@name": "MaxRecordPerFile",
+				  "@type": "long",
+				  "@required": "false",
+				  "description": "Maximum records per file"
+				},
+				{
+				  "@name": "DebugLevel",
+				  "@type": "long",
+				  "@required": "false",
+				  "description": "Debug Level max to level 3 for more info"
+				}
+			  ]
+			}
+		  },
+		  {
+			"@type-id": "custom.LinkCustomerOrders",
+			"@supports-parallel-execution": "true",
+			"@supports-site-context": "true",
+			"@supports-organization-context": "false",
+			"description": "Customer and order updates",
+			"module": "org_tumi/cartridge/scripts/jobs/import/LinkCustomerOrders",
+			"function": "execute",
+			"transactional": "false",
+			"parameters": {
+			  "parameter": [
+				{
+				  "@name": "Emails",
+				  "@type": "string",
+				  "@required": "false",
+				  "description": "Comma delimited values"
+				},
+				{
+				  "@name": "UpdateAll",
+				  "@type": "string",
+				  "@required": "false",
+				  "description": ""
+				},
+				{
+				  "@name": "DeleteAllCustomers",
+				  "@type": "string",
+				  "@required": "false",
+				  "description": ""
+				}
+			  ]
+			}
+		  },
+		  {
+			"@type-id": "custom.generateSitemap",
+			"@supports-parallel-execution": "true",
+			"@supports-site-context": "true",
+			"@supports-organization-context": "false",
+			"description": "Custom products sitemap Generator. Don't remove generateDefaultSitemap from flow",
+			"module": "org_tumi/cartridge/scripts/jobs/generateCustomSitemap",
+			"function": "execute",
+			"transactional": "false",
+			"parameters": {
+				"parameter": [
+				{
+					"@name": "includeMasters",
+					"@type": "boolean",
+					"@required": "true",
+					"description": "Inlcude masters in xml", 
+					"default-value": "false"
+				}
+				]
+			}
+		  },
+          {
+                "@type-id": "custom.tumi.ExportMedallia",
+                "@supports-parallel-execution": "true",
+                "@supports-site-context": "true",
+                "@supports-organization-context": "false",
+                "description": "Export orders to Medallia",
+                "module": "org_tumi/cartridge/scripts/jobs/exportMedallia.js",
+                "function": "exportMedallia",
+                "transactional": "false",
+                "timeout-in-seconds": "1800",
+                "parameters": {
+                    "parameters": [
+                        {
+                          "@name": "OrderCreatedDateStart",
+                          "@type": "datetime-string",
+                          "@required": "false",
+                          "description": "Orders created after this date"
+                        },
+                        {
+                          "@name": "OrderCreatedDateEnd",
+                          "@type": "datetime-string",
+                          "@required": "false",
+                          "description": "Orders created before this date"
+                        },
+                        {
+                          "@name": "ExporteAll",
+                          "@type": "boolean",
+                          "@required": "false",
+                          "description": "Ignore if orders exported already to Medallian, export all that qualify"
+                        },
+                        {
+                          "@name": "MarkOrdersExported",
+                          "@type": "boolean",
+                          "@required": "false",
+                          "description": "Mark orders exported to Medallia so we don't export them again"
+                        },
+                        {
+                          "@name": "FileSuffix",
+                          "@type": "string",
+                          "@required": "false",
+                          "description": "File name suffix to distinguish between brands"
+                        },
+                        {
+                            "@name": "TargetFolder",
+                            "@type": "string",
+                            "@required": "true",
+                            "@trim": "true",
+                            "description": "Source folder path (in IMPEX)",
+                            "default-value": "src/medallia"
+                        }
+                    ]
+                },
+                "status-codes": {
+                    "status": [
+                        {
+                            "@code": "ERROR",
+                            "description": "Used when the step failed with an error."
+                        },
+                        {
+                            "@code": "FINISHED",
+                            "description": "Used when the step finished successfully."
+                        },
+                        {
+                            "@code": "FINISHED_WITH_WARNINGS",
+                            "description": "Used when the step finished with warnings."
+                        }
+                    ]
+                }
+          },
+          {
+                "@type-id": "custom.tumi.LincShippingUpdates",
+                "@supports-parallel-execution": "true",
+                "@supports-site-context": "true",
+                "@supports-organization-context": "false",
+                "description": "Send ship updates to Linc",
+                "module": "org_tumi/cartridge/scripts/jobs/lincShippingUpdate.js",
+                "function": "execute",
+                "transactional": "false",
+                "timeout-in-seconds": "1800",
+                "parameters": {
+                    "parameters": [
+                        {
+                          "@name": "StartDate",
+                          "@type": "datetime-string",
+                          "@required": "true",
+                          "description": "Orders created after this date"
+                        },
+                        {
+                          "@name": "DaystoLookBack",
+                          "@type": "long",
+                          "@required": "false",
+                          "description": "Days to look back, overides StartDate"
+                        },
+                        {
+                          "@name": "OrdersToProcess",
+                          "@type": "string",
+                          "@required": "false",
+                          "description": "list of comma separated order id to process, overrides other settings"
+                        }
+                    ]
+                },
+                "status-codes": {
+                    "status": [
+                        {
+                            "@code": "ERROR",
+                            "description": "Used when the step failed with an error."
+                        },
+                        {
+                            "@code": "FINISHED",
+                            "description": "Used when the step finished successfully."
+                        },
+                        {
+                            "@code": "FINISHED_WITH_WARNINGS",
+                            "description": "Used when the step finished with warnings."
+                        }
+                    ]
+                }
+          }
+        ]
+    }
+}

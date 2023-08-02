@@ -1,0 +1,35 @@
+<div class="form-group">
+    <iscomment> <label class="form-control-label" for="shipmentSelector-${lineItem ? lineItem.UUID : 'default'}">
+            ${Resource.msg('heading.ship.to.address', 'checkout', null)}
+        </label> </iscomment>
+
+    <iscomment> <select id="shipmentSelector-${lineItem ? lineItem.UUID : 'default'}" name="shipmentSelector"
+        class="addressSelector form-control custom-select d-none"
+        data-create-shipment-url="${URLUtils.https('CheckoutAddressServices-CreateNewAddress')}">
+        <isinclude template="checkout/shipping/shipmentSelectorOptions" />
+    </select> </iscomment>
+    <div id="shipmentSelector-${lineItem ? lineItem.UUID : 'default'}" name="shipmentSelector" class=""
+        data-create-shipment-url="${URLUtils.https('CheckoutAddressServices-CreateNewAddress')}">
+        <isinclude template="checkout/shipping/shippingSelectorAllAdd" />
+    </div>
+
+    <div class="invalid-feedback"></div>
+    <a href="javascript:void(0)" class="d-inline-flex add-new" data-addid="new" data-first-name="" data-last-name="" data-address1="" data-address2="" data-city="" data-state-code="" data-country-code="" data-postal-code="" data-phone="">${Resource.msg('action.add.new.shipping', 'checkout', null)}</a>
+
+    <div class="row mb-3 ml-0 other-address-register-user edit-page-buttons">
+        <div class="col-12  col-md-6  pl-0 next-step-button">
+            <button class="button button--primary save-continue-shipping" type="button" name="submit" value="save-continue-shipping">
+               ${Resource.msg('button.save.continue','checkout',null)}
+            </button>
+        </div>
+        <div class="col-12 col-md-6 pl-0 pr-0 cancel-edit next-step-button">
+             <button class="button button--secondary save-continue-shipping" type="button" name="submit" value="save-continue-shipping">
+               ${Resource.msg('button.cancel','checkout',null)}
+            </button>
+        </div>
+
+        <iscomment> <button class="col-6 text-center btn-show-details btn"
+                type="button">${Resource.msg('action.update.address', 'checkout', null)}</button> </iscomment>
+        <iscomment> <button class="col-6 text-center btn-add-new btn" type="button">${Resource.msg('action.add.new', 'checkout', null)}</button> </iscomment>
+    </div>
+</div>

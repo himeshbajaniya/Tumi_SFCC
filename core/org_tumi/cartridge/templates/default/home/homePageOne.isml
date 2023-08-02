@@ -1,0 +1,13 @@
+<isslot id="home-slot-D" context="global" description="Fourth slot" />
+<isinclude template="/home/tumiStore" />
+<isslot id="home-slot-E" context="global" description="Fifith slot" />
+<isslot id="home-slot-F" context="global" description="Sixth slot" />
+<isslot id="home-slot-G" context="global" description="Seventh slot" />
+<isslot id="home-slot-H" context="global" description="Eightth slot" />
+<isslot id="home-slot-I" context="global" description="Ninth slot" />
+<iscomment> -- pixlee integration -- </iscomment>
+<isinclude template="pixlee/widgets/homePageConfig" />
+<iscomment>
+    <iscontentasset aid="hero-storytelling-component" />
+</iscomment>
+<isslot id="CarouselHomePage" context="global" description="Recommendation Carousel for HomePage" />

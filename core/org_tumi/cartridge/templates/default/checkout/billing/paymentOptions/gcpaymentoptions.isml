@@ -1,0 +1,6 @@
+<div class="existing-gc">
+    <isset name="existingpayments" value="${pdict.existingpayments ? pdict.existingpayments : existingpayments}" scope="page" />
+    <isinclude template="valuetec/selectedpayments" />
+</div>
+<isinclude template="checkout/billing/paymentOptions/valueTecTab" />
+<isinclude template="checkout/billing/paymentOptions/valueTecContent" />

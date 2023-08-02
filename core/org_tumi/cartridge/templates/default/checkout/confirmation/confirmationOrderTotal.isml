@@ -1,0 +1,54 @@
+<!--- Subtotal --->
+<div class="row subtotal">
+    <div class="col-md-8 col-sm-7 col-7">
+        <p>${Resource.msg('label.order.subtotal','confirmation', null)}</p>
+    </div>
+    <div class="col-md-4 col-sm-5 col-5">
+        <p class="text-right sub-total">${pdict.order.totals.subTotal}</p>
+    </div>
+</div>
+
+<isif condition="${pdict.order.totals.totalDiscount.value !== 0}">
+    <div class="row shipping-discount">
+        <div class="col-md-8 col-sm-7 col-7">
+            <p>${Resource.msg('label.shipping.promo', 'cart', null)}</p>
+        </div>
+        <div class="col-md-4 col-sm-5 col-5">
+            <p class="text-right">${pdict.order.totals.totalDiscount.formatted}</p>
+        </div>
+    </div>
+</isif>
+
+<!--- Shipping Cost --->
+<div class="row shipping-text">
+        <div class="col-md-8 col-sm-7 col-7">
+            <p>${Resource.msg('label.order.shipping.cost','confirmation', null)} <a href="javascript:void(0)" 
+            data-toggle="tooltip" data-placement="bottom" title="${Resource.msg('tooltip.shipping.cost','cart',null)}"><img  src="${URLUtils.staticURL('/images/info-icon.svg')}" alt="" /></a></p>
+    </div>
+    <div class="col-md-4 col-sm-5 col-5">
+        <p class="text-right ">${pdict.order.totals.totalShippingCost}</p>
+    </div>
+</div>
+
+
+
+<!--- Sales Tax --->
+<div class="row subtotal-text">
+    <div class="col-md-8 col-sm-7 col-7">
+        <p>${Resource.msg('label.sales.tax','cart',null)}<a href="javascript:void(0)" 
+        data-toggle="tooltip" data-placement="bottom" title="${Resource.msg('tooltip.tax.cost','cart',null)}"><img  src="${URLUtils.staticURL('/images/info-icon.svg')}" alt="" /></a></p>
+    </div>
+    <div class="col-md-4 col-sm-5 col-5">
+             <p class="text-right ">${pdict.order.totals.totalTax}</p>
+    </div>
+</div>
+
+<!--- Grand Total --->
+<div class="row total">
+        <div class="col-md-8 col-sm-7 col-7">
+            <p>${Resource.msg('label.order.grand.total','confirmation', null)}</p>
+    </div>
+    <div class="col-md-4 col-sm-5 col-5">
+        <p class="text-right ">${pdict.order.totals.grandTotal}</p>
+    </div>
+</div>

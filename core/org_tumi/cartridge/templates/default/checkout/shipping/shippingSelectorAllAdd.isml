@@ -1,0 +1,57 @@
+<isif condition="${pdict.customer.addresses && pdict.customer.addresses.length > 0}">
+    <div class="choose-saved-add">Choose from your saved addresses, or add a new one.</div>
+    <input type="hidden" class="default-addressID" value="${pdict.defaultAddressID}" data-defaultaddressid="${pdict.defaultAddressID}">
+    <isloop items="${pdict.customer.addresses}" var="address">
+
+        <div
+            class="card select-current-address d-block other-address-register-user">
+            <button class="col-6 text-center btn-show-details edit-ship-add"
+                type="button">${Resource.msg('action.edit.address', 'checkout', null)}</button>
+            <div class="card-body p-0">
+                    <div class="edit-summary-details">
+                        <div class="other-edit-ship-address default-border ${pdict.defaultAddressID == address.ID ? 'select-default-address' :''} ${shippingModel.matchingAddressId === address.ID ? 'selectedAddress' : ''}" data-first-name="${address.firstName || ''}"
+                            data-last-name="${address.lastName || ''}" data-address1="${address.address1 || ''}"
+                            data-address2="${address.address2 || ''}" data-city="${address.city || ''}"
+                            data-state-code="${address.stateCode || ''}"
+                            data-country-code="${address.countryCode.value || ''}"
+                            data-postal-code="${address.postalCode || ''}" data-phone="${address.phone || ''}"
+                            data-is-gift="${''}" data-gift-message="${''}" data-addid="${'ab_' + address.ID}" data-addressid="${address.ID}">
+                            <div data-addressid="${'ab_' + address.ID}"></div>
+
+                            <span class="firstName" data-firstname="${address.firstName || ''}">
+                                <isif condition="${address && address.firstName}">${address.firstName}</isif>
+                            </span>
+
+                            <span class="lastName" data-lastname="${address.lastName || ''}">
+                                <isif condition="${address && address.lastName}">${address.lastName}</isif>
+                            </span>
+                            <div class="address1" data-address1="${address.address1 || ''}">
+                                <isif condition="${address && address.address1}">${address.address1}</isif>
+                            </div>
+                            <div class="address2" data-address2="${address.address2 || ''}">
+                                <isif condition="${address && address.address2}">${address.address2}</isif>
+                            </div>
+                            <iscomment> <span class="postalCode">
+                                    <isif condition="${address && address.postalCode}">${address.postalCode}</isif>
+                                </span> </iscomment>
+                            <span class="city" data-city="${address.city || ''}">
+                                <isif condition="${address && address.city}">${address.city},</isif>
+                            </span>
+                            <span class="stateCode" data-statecode="${address.stateCode || ''}">
+                                <isif condition="${address && address.stateCode}">${address.stateCode}</isif>
+                            </span>
+                            <span class="postalCode" data-postalcode="${address.postalCode || ''}">
+                                <isif condition="${address && address.postalCode}">${address.postalCode}</isif>
+                            </span>
+                            <div>
+                                <span class="shipping-phone" data-phone="${address.phone || ''}">
+                                    <isif condition="${address && address.phone}">${address.phone}</isif>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+    </isloop>
+</isif>

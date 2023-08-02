@@ -1,0 +1,156 @@
+<isinclude template="/components/header/skipNav" />
+<isslot id="header-promo-banner" context="global" description="header-promo-banner" />
+<header class="header">
+    <iscomment>
+        <div class="header-banner slide-up d-none">
+            <div class="container">
+                <div class="d-flex justify-content-between">
+                    <div></div>
+                    <div class="content">
+                        <isslot id="header-banner-m" description="Slot above the site header" context="global" />
+                    </div>
+                    <div class="close-button">
+                        <button type="button" class="close" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </iscomment>
+    <div class="container px-0" data-loggedinstatusurl="${URLUtils.url('Login-CheckAuthenticatedStatus')}" id='pageHeader'>
+        <div class="d-flex align-items-end">
+            <div class="logo">
+                <a href="/" class="header-logo darkMode-focus" title="${Resource.msgf('global.homepage.tooltip', 'common', null, Resource.msg('global.storename', 'common', null), Resource.msg(
+                                                                                  'global.home', 'common', null))}">
+                    <svg width="93" height="24" viewBox="0 0 93 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M92.4312 5.23438H89.6572V23.9995H92.4312V5.23438Z" fill="white"/>
+                        <path d="M48.2709 5.23438V19.4429C48.2709 19.629 48.2709 21.2565 46.4982 21.2565H30.1616C28.3889 21.2565 28.3889 19.629 28.3889 19.4429V5.23438H15.5879V23.9994H18.3788V7.98581H25.6008V20.1452C25.6008 21.6485 26.612 23.9994 29.5256 23.9994H47.1145C50.0338 23.9994 51.0463 21.6485 51.0463 20.1452C51.0463 18.6461 51.0435 5.90425 51.0435 5.23438H48.2709Z" fill="white"/>
+                        <path d="M82.4777 5.23438L70.2125 21.4426L57.9446 5.23438H53.6094V23.9994H56.3961V7.73479L68.6316 23.9994H71.7949L84.0121 7.73479V23.9994H86.8058V5.23438H82.4777Z" fill="white"/>
+                        <path d="M0 0V7.98637H10.0101V23.9986H12.7982V5.23493H2.78811V2.7317H92.432V0H0Z" fill="white"/>
+                    </svg>
+                </a>
+            </div>
+            <input type="hidden" id="storeurl" value="${dw.web.URLUtils.https('Account-Storeheader')}" />
+            <input type="hidden" id="storeSearchRadius"
+                value="${'storeLookupMaxDistance' in dw.system.Site.getCurrent().getPreferences().getCustom() ? dw.system.Site.getCurrent()
+                       .getCustomPreferenceValue('storeLookupMaxDistance') : 50}" />
+            <nav class="header-menu">
+                <isinclude url="${URLUtils.url('Page-IncludeHeaderMenu')}" />
+            </nav>
+            <div class="nav-overlay"></div>
+            <div class="ml-auto header-icons">
+                <ul>
+                    <iscomment> <li>
+                        <a href="${URLUtils.url('Stores-Find', 'showMap', 'true', 'radius', '50')}" class="darkMode-focus">
+                           <img class="locator-marker" src="${URLUtils.staticURL('/images/nav-store-locator-icon.svg')}"
+                            alt="${Resource.msg('global.find.store', 'common', null)}" />
+                            <span class="sr-only">${Resource.msg('global.find.store', 'common', null)}</span>
+                        </a>
+                    </li> </iscomment>
+                    <li>
+                        <button class="search-products darkMode-focus" aria-haspopup="dialog"
+                            aria-label="${Resource.msg('global.search', 'common', null)}">
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.8487 16.65L12.2387 11.21C13.2087 10.07 13.7987 8.59999 13.7987 6.98999C13.7987 3.40999 10.8787 0.48999 7.29871 0.48999C3.71871 0.48999 0.798706 3.40999 0.798706 6.98999C0.798706 10.57 3.71871 13.49 7.29871 13.49C8.91871 13.49 10.3887 12.89 11.5287 11.92L17.1487 17.37C17.2487 17.46 17.3687 17.51 17.4987 17.51C17.6287 17.51 17.7587 17.46 17.8587 17.36C18.0487 17.16 18.0487 16.84 17.8487 16.65ZM1.79871 6.98999C1.79871 3.95999 4.26871 1.48999 7.29871 1.48999C10.3287 1.48999 12.7987 3.95999 12.7987 6.98999C12.7987 10.02 10.3287 12.49 7.29871 12.49C4.26871 12.49 1.79871 10.02 1.79871 6.98999Z" fill="white"/>
+                            </svg>
+                            <span class="sr-only">${Resource.msg('global.search', 'common', null)}</span>
+                        </button>
+                    </li>
+                    <li class="saved-item-icon d-none">
+                        <a href="${URLUtils.url('Wishlist-Show')}" class="darkMode-focus"
+                            aria-label="${Resource.msg('global.saved.items', 'common', null)}">
+                            <svg width="14" height="18" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6.78555 13.7248L0.5 16.7091V0.5H13.5V16.7091L7.21445 13.7248L7 13.623L6.78555 13.7248Z" stroke="#FFFFFF"/>
+                            </svg>
+                            <span class="sr-only">${Resource.msg('global.saved.items', 'common', null)}</span>
+                        </a>
+                    </li>
+                    <li class="accountheader" data-actionurl="${URLUtils.url('Account-Header')}">
+                        <isinclude url="${URLUtils.url('Account-Header')}" />
+                    </li>
+                    <li>
+                        <div class="minicart" data-action-url="${URLUtils.url('Cart-MiniCartShow')}">
+                            <isinclude url="${URLUtils.url('Cart-MiniCart')}" />
+                        </div>
+                    </li>
+                    <li class="hamburger-icon">
+                        <a href="#" class="header-menu-toggle">
+                            <svg class="open-icon" width="20" height="18" viewBox="0 0 20 18" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect width="20" height="1" transform="matrix(-1 0 0 1 20 0.5)" fill="white" />
+                                <rect width="17" height="1" transform="matrix(-1 0 0 1 20 8.5)" fill="white" />
+                                <rect width="13" height="1" transform="matrix(-1 0 0 1 20 16.5)" fill="white" />
+                            </svg>
+                            <svg class="close-icon" width="20" height="18" viewBox="0 0 17 18" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M0 1.20833L0.708333 0.5L8.50715 8.29881L16.0937 0.71224L16.8021 1.42057L9.21548 9.00715L17 16.7917L16.2917 17.5L8.50715 9.71548L0.921224 17.3014L0.212891 16.5931L7.79881 9.00715L0 1.20833Z"
+                                    fill="white" />
+                            </svg>
+                            <span class="sr-only">${Resource.msg('label.header.menu', 'common', null)}</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<iscomment> My Account Modal </iscomment>
+
+<div class="modal fade global-modal" id="requestLoginModal" tabindex="-1"
+    aria-labelledby="requestLoginModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">
+                        <img class="" src="" data-src="${URLUtils.staticURL('/images/modal-close.svg')}"
+                            alt="${Resource.msg('global.search', 'common', null)}" />
+                    </span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <div class="login-screen">
+                    <isinclude url="${URLUtils.url('Login-Create', 'pageinclude', true)}" />
+                </div>
+                <iscomment>
+                    <isinclude template="account/components/welcome" />
+                </iscomment>
+
+                <iscomment>
+                    <isinclude template="account/components/resetpassword" />
+                </iscomment>
+                <div class="reset-password">
+                    <isinclude template="account/password/passwordResetForm" />
+                </div>
+                <iscomment>
+                    <isinclude template="account/login" />
+                </iscomment>
+            </div>
+        </div>
+    </div>
+</div>
+
+<iscomment> Search Modal </iscomment>
+<div class="modal fade global-modal" id="searchModal" tabindex="-1" aria-labelledby="searchModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">
+                        <img class="" src="${URLUtils.staticURL('/images/modal-close.svg')}"
+                            alt="${Resource.msg('global.search', 'common', null)}" />
+                    </span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <isinclude template="components/header/search" />
+            </div>
+        </div>
+    </div>
+</div>

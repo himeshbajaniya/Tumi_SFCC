@@ -1,0 +1,33 @@
+<div class="header-menu-sub-menu ${category.id} ${(category.menuTemplateRender) ? 'menu-template1' : ''} ${(category.menuTemplateRender2) ? 'menu-template2' : ''}">
+    <div class="container d-flex flex-column">
+        <a href="javascript:void(0);" class="header-menu-sub-menu-title">${category.name}</a>
+        <isif condition="${category.displayShopAll !== null}">
+            <isprint value="${category.displayShopAll}" encoding="off" />
+        </isif>
+        <ul class="header-menu-sub-menu-links row order-1" role="menu" aria-hidden="true" aria-label="${category.id}">
+            <isloop items="${menuItem.subCategories}" var="category">
+                <isif condition="${category.subCategories}">
+                    <li class="menu-sub-one ${(menuItem.menuTemplateRender) ? 'col-12 d-block' : 'col-md-4' }" role="presentation">
+                        <a href="javascript:void(0)" id="${category.id}" class="category-name non-cta" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                            tabindex="0">${category.name}</a>
+                            <isset name="menuItem" value="${category}" scope="page" />
+                            <isinclude template="components/header/menuItemSubCategories" />
+                    </li>
+                <iselse/>
+                    <li class="menu-sub-one ${(category.thumbnail) ? 'col-md-3' : 'col-md-4'}" role="presentation">
+                        <a href="${category.url}" id="${category.id}" role="menuitem" class="category-name" tabindex="0">
+                        <isif condition="${category.thumbnail}">
+                            <img src="" data-src="${category.thumbnail}" alt="${Resource.msg('global.category.image', 'common', null)}" class="w-100 off-canvas" />
+                        </isif>
+                        <span class="menu-sub-heading">${category.name}</span>
+                        <isif condition="${category.description}">
+                            <p><isprint value=" ${category.description}" encoding="htmlcontent" /></p>
+                        </isif>
+                        </a>
+                    </li>
+                </isif>
+            </isloop>
+        </ul>
+    </div>
+</div>

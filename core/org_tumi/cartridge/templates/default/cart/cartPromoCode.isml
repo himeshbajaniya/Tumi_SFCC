@@ -1,0 +1,45 @@
+<div class="row order-review-heading">
+    <div class="col-12">
+        <h3>${Resource.msg('cart.order.summary','cart',null)}</h3>
+        <h3 class="order-review-title">${Resource.msg('checkout.order.summary','checkout',null)}</h3>
+        <isif condition="${pdict.items.length > 0}">
+            <p class="sub-text">
+                <img src="${URLUtils.staticURL('/images/complimentary-shipping.svg')}"
+                    alt="" />
+                ${Resource.msg('cart.order.summary.subtext','cart',null)}
+            </p>
+        </isif>
+    </div>
+</div>
+<iscomment> <div class="row">
+    <div class="col-12 d-sm-none">
+        <p class="optional-promo">${Resource.msg('action.enter.promo.code','cart',null)}</p>
+    </div>
+</div> </iscomment>
+
+<isif condition="${pdict.items.length > 0}">
+<div class="row promo-code-container">
+    <div class="col-12">
+        <form action="${pdict.actionUrls.submitCouponCodeUrl}" class="promo-code-form" method="GET" name="promo-code-form">
+            <div class="form-group mb-0">
+                <iscomment> <label for="couponCode">${Resource.msg('label.promo.code','cart',null)}</label> </iscomment>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="promo-code">
+                            <input type="text" class="form-control coupon-code-field" id="couponCode" name="couponCode" placeholder="${Resource.msg('placholder.text.promo.code.input','cart',null)}"/>
+                            <button type="submit" class="promo-code-btn">
+                                ${Resource.msg('button.submit.promo.code','cart',null)}
+                            </button>
+                        </div>
+                        <div class="coupon-error">
+                            <span class="coupon-missing-error" id="missingCouponCode" role="alert">${Resource.msg('error.missing.coupon.code', 'cart', null)}</span>
+                            <span class="coupon-error-message" id="invalidCouponCode" role="alert"></span>
+                        </div>
+                    </div>
+                    <input type="hidden" name="${pdict.csrf.tokenName}" value="${pdict.csrf.token}"/>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+</isif>

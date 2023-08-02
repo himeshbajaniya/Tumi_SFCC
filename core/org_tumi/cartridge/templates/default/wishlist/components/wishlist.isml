@@ -1,0 +1,6 @@
+<div class="save-for-later-wrapper ${(pdict.pageType === 'cart' && !pdict.isAuthenticated) ? 'd-none' : ''}">
+    <div class="save-for-later ml-auto ${(pdict.wishlist && pdict.wishlist.items.length === 0 ? 'empty-list-heading' : '')}">
+        <h3 class="save-later">${Resource.msgf('text.save.for.later', 'cart', null)}</h3>
+        <isinclude template="wishlist/components/list" />
+    </div>
+</div>

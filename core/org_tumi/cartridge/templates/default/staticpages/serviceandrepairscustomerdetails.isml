@@ -1,0 +1,32 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/components/mode-ecb.js"></script>
+<script>
+   window.repairsAndServicesDetails = <isprint value="${JSON.stringify(pdict.repairsAndServicesDetails)}" encoding="htmlsinglequote"/>;
+</script>
+<isif condition="${pdict.isRegisterCustomer}">
+   <p class="font-dark">
+      <isprint value="${Resource.msgf('heading.register.service.and.repair', 'common', null, pdict.name)}" encoding="on" />
+   </p>
+   <p>
+      <isprint value="${Resource.msg('body.register.service.and.repair', 'common', null)}" encoding="on" />
+      <a href="mailto:info@tumi.com" class="removeFocusIndicator">${Resource.msg('service.and.repair.mail', 'common', null)}</a>
+   </p>
+   <span class="request-a-repair"> 
+      <button class="button button-secondary-dark" > <isprint value="${Resource.msgf('request.service.and.repair', 'common', null)}" encoding="on" /></button>
+   </span>
+   <span class="check-status"> 
+      <button class="button button--secondary" > <isprint value="${Resource.msgf('check.service.and.repair', 'common', null)}" encoding="on" /></button>
+   </span>
+<iselse/>
+   <p>
+      <isprint value="${Resource.msg('heading.guest.service.and.repair', 'common', null)}" encoding="on" />
+   </p>
+   <span class="signin">
+      <a class="service-repairs-signin checkout-login button button-secondary-dark" data-login="sign-in" data-toggle="modal" data-target="#requestLoginModal" href="${URLUtils.https('Login-Create')}" role="button"
+      aria-label="${Resource.msg('label.header.loginbutton', 'account', null)}">${Resource.msg('text.tumi.member.signin','cart',null)}</a>
+   </span>
+   <span class="create-account">
+      <a class="service-repairs-register button button--secondary" data-login="create-account" data-toggle="modal" data-target="#requestLoginModal"  href="${URLUtils.https('Login-Create')}" role="button"
+         aria-label="${Resource.msg('label.header.loginbutton', 'account', null)}">${Resource.msg('text.tumi.member.account','cart',null)}</a> 
+   </span>
+</isif>

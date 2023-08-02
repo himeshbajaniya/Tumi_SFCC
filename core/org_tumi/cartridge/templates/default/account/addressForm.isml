@@ -1,0 +1,176 @@
+<form
+    action="${URLUtils.url('Address-SaveAddress', 'addressId', pdict.addressId)}"
+    class="address-form"
+    method="POST"
+    <isprint value="${pdict.addressForm.attributes}" encoding="off" />>
+    <div class="row duplicate-error-msg">
+    <div class="addressAlreadyExists">
+        <h3></h3>
+    </div>
+    </div>
+    <!-- AddressId -->
+
+    <input type="hidden" class="form-control" id="addressId"
+        <isprint value="${pdict.addressForm.addressId.attributes}" encoding="off" />>
+
+    <!-- Name -->
+    <div class="row">
+        <!-- First Name -->
+        <div class="col-6">
+            <div class="form-group
+                ${pdict.addressForm.firstName.mandatory === true ? 'required' : ''}">
+                <input type="text" class="form-control" id="firstName" placeholder="${pdict.addressForm.firstName.label}*"
+                    data-missing-error="${Resource.msg('profile.firstName.required','account',null)}"
+                    <isprint value="${pdict.addressForm.firstName.attributes}" encoding="off" />
+                    autocomplete="given-name">
+                <label class="form-control-label" for="firstName">
+                    <isprint value="${pdict.addressForm.firstName.label}" encoding="htmlcontent" />
+                </label>
+                <div class="invalid-feedback"></div>
+            </div>
+        </div>
+
+        <!-- Last Name -->
+        <div class="col-6">
+            <div class="form-group
+                ${pdict.addressForm.lastName.mandatory === true ? 'required' : ''}">
+                <input type="text" class="form-control" id="lastName" placeholder="${pdict.addressForm.lastName.label}*"
+                    data-missing-error="${Resource.msg('profile.lastName.required','account',null)}"
+                    <isprint value="${pdict.addressForm.lastName.attributes}" encoding="off" />
+                    autocomplete="family-name">
+                <label class="form-control-label" for="lastName">
+                    <isprint value="${pdict.addressForm.lastName.label}" encoding="htmlcontent" />
+                </label>
+                <div class="invalid-feedback"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Address 1 -->
+    <div class="form-group
+        ${pdict.addressForm.address1.mandatory === true ? 'required' : ''}">
+        <input type="text" class="form-control" id="address1" placeholder="${pdict.addressForm.address1.label}*"
+            data-missing-error="${Resource.msg('address.line1.invalid','account',null)}"
+            <isprint value="${pdict.addressForm.address1.attributes}" encoding="off" />
+            autocomplete="address-line1">
+        <label class="form-control-label adr-label" for="address1">
+            <isprint value="${pdict.addressForm.address1.label}" encoding="htmlcontent" />
+        </label>
+        <div class="invalid-feedback"></div>
+    </div>
+
+    <!-- Address 2 -->
+    <div class="form-group
+        ${pdict.addressForm.address2.mandatory === true ? 'required' : ''}">
+        <input type="text" class="form-control" id="address2" placeholder="${pdict.addressForm.address2.label}"
+            data-missing-error="${Resource.msg('address.line2.invalid','account',null)}"
+            <isprint value="${pdict.addressForm.address2.attributes}" encoding="off" />
+            autocomplete="billing address-line2">
+        <label class="form-control-label" for="address2">
+            <isprint value="${pdict.addressForm.address2.label}" encoding="htmlcontent" />
+        </label>
+        <div class="invalid-feedback"></div>
+    </div>
+
+    <!-- City  -->
+    <div class="form-group
+        ${pdict.addressForm.city.mandatory === true ? 'required' : ''}">
+        <input type="text" class="form-control" id="city" placeholder="${pdict.addressForm.city.label}*"
+            data-missing-error="${Resource.msg('address.townCity.invalid','account',null)}"
+            <isprint value="${pdict.addressForm.city.attributes}" encoding="off" />
+            autocomplete="address-level2">
+        <label class="form-control-label city-label" for="city">
+            <isprint value="${pdict.addressForm.city.label}" encoding="htmlcontent" />
+        </label>
+        <div class="invalid-feedback"></div>
+    </div>
+
+    <!-- State drop downs and ZIP  -->
+    <div class="row">
+        <!-- Country  -->
+        <div class="form-group d-none
+            ${pdict.addressForm.country.mandatory === true ? 'required' : ''}">
+            <label class="form-control-label" for="country">
+                <isprint value="${pdict.addressForm.country.label}" encoding="htmlcontent" />
+            </label>
+            <select class="form-control" id="country"
+                <isprint value="${pdict.addressForm.country.attributes}" encoding="off" />
+                autocomplete="country">
+                <isloop items=${pdict.addressForm.country.options} var="country">
+                    <option id="${country.id}" value="${country.htmlValue}" <isif condition="${country.selected}">selected</isif>>${country.label}</option>
+                </isloop>
+            </select>
+            <div class="invalid-feedback"></div>
+        </div>
+
+        <!-- State  -->
+        <div class="col-6">
+            <div class="form-group
+                ${pdict.addressForm.states.stateCode.mandatory === true ? 'required' : ''}">
+                <label class="form-control-label state-label" for="state">
+                    <isprint value="${pdict.addressForm.states.stateCode.label}" encoding="htmlcontent" />
+                </label>
+                <select class="form-control" id="state"
+                    data-missing-error="${Resource.msg('add.regionIso.invalid','account',null)}"
+                    <isprint value="${pdict.addressForm.states.stateCode.attributes}" encoding="off" />
+                    autocomplete="address-level1">
+                    <iscomment> <option value="" disabled selected>State*</option> </iscomment>
+                    <isloop items=${pdict.addressForm.states.stateCode.options} var="state">
+                        <option id="${state.id}" value="${state.htmlValue}" <isif condition="${state.selected}">selected</isif>>${state.label}</option>
+                    </isloop>
+                </select>
+                <div class="invalid-feedback"></div>
+            </div>
+        </div>
+        <!-- ZIP Code -->
+        <div class="col-6">
+            <div class="form-group
+                ${pdict.addressForm.postalCode.mandatory === true ? 'required' : ''}">
+                <input type="text" class="form-control" id="zipCode" placeholder="${pdict.addressForm.postalCode.label}*"
+                    data-missing-error="${Resource.msg('add.postcode.invalid','account',null)}*"
+                    <isprint value="${pdict.addressForm.postalCode.attributes}" encoding="off" />
+                    autocomplete="postal-code">
+                <label class="form-control-label code-label" for="zipCode">
+                    <isprint value="${pdict.addressForm.postalCode.label}" encoding="htmlcontent" />
+                </label>
+                <div class="invalid-feedback"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Mobile Number -->
+    <div class="form-group
+        ${pdict.addressForm.phone.mandatory === true ? 'required' : ''}">
+        <input type="text" class="form-control" id="phone" placeholder="${pdict.addressForm.phone.label}*"
+            data-missing-error="${Resource.msg('contact.phone.invalid','account',null)}"
+            <isprint value="${pdict.addressForm.phone.attributes}" encoding="off" />
+            autocomplete="tel">
+        <label class="form-control-label" for="phone">
+            <isprint value="${pdict.addressForm.phone.label}" encoding="htmlcontent" />
+        </label>
+        <div class="invalid-feedback"></div>
+    </div>
+
+    <input type="hidden" name="${pdict.csrf.tokenName}" value="${pdict.csrf.token}"/>
+
+    <div class="form-group custom-control custom-checkbox ${pdict.addressBook.length === 0 || pdict.addressId === pdict.addressBook[0].ID ? 'd-none': ''}">
+        <input 
+            type="checkbox" class="custom-control-input" id="checkbox"
+            <isprint value="${pdict.addressForm.checkbox.attributes}" encoding="off" />
+        >
+        <label class="custom-control-label" for="checkbox">
+            <isprint value="${pdict.addressForm.checkbox.label}" encoding="htmlcontent" />
+        </label>
+    </div>
+
+    <!-- Cancel and Save Buttons -->
+    <div class="row btn-wrapper">
+        <div class="col-sm-6">
+            <button type="submit" name="save" class="button button--primary w-100 add-adr-btn">
+            ${pdict.action === 'Address-AddAddress' ? Resource.msg('button.save','account',null) : Resource.msg('button.save.changes','account',null)}</button>
+        </div>
+        <div class="col-sm-6">
+            <a href="javascript:void(0)" class="address-cancel-button button button--secondary w-100">${Resource.msg('button.cancel','account',null)}</a>
+        </div>
+    </div>
+</form>
+<isinclude template="edq/edqUnicorn" />

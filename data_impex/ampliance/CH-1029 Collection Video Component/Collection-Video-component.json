@@ -1,0 +1,105 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "https://www.tumi.com/collection-video-component",
+	"title": "Title",
+	"description": "Description",
+	"allOf": [
+		{
+			"$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+		}
+	],
+	"type": "object",
+	"properties": {
+		"content-asset-id": {
+			"title": "Content Asset ID",
+			"description": "SFCC Content Asset",
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 256,
+			"format": "text"
+		},
+		"title": {
+			"title": "Title",
+			"description": "Enter the Title",
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 255
+		},
+		"copy": {
+			"title": "Copy",
+			"description": "Enter the copy",
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 1024
+		},
+		"s7VideoDesktop": {
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 250,
+			"format": "uri",
+			"title": "Scene 7 Video Desktop",
+			"description": "eg. https://tumi.scene7.com/is/image/Tumi/1232072777_main_T"
+		},
+		"videoAltDesktop": {
+			"title": "Video alt for desktop",
+			"description": "Text to show if video is not loaded",
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 255
+		},
+		"s7VideoMobile": {
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 250,
+			"format": "uri",
+			"title": "Scene 7 Video Mobile",
+			"description": "eg. https://tumi.scene7.com/is/image/Tumi/1232072777_main_T"
+		},
+		"videoAltMobile": {
+			"title": "Video alt for mobile",
+			"description": "Text to show if video is not loaded",
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 255
+		},
+		"s7ImageDesktop": {
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 250,
+			"format": "uri",
+			"title": "Scene 7 Image Desktop",
+			"description": "eg. https://tumi.scene7.com/is/image/Tumi/1232072777_main_T"
+		},
+		"imageAltDesktop": {
+			"title": "Image alt for desktop",
+			"description": "Text to show if image is not loaded",
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 255
+		},
+		"s7ImageMobile": {
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 250,
+			"format": "uri",
+			"title": "Scene 7 Image Mobile",
+			"description": "eg. https://tumi.scene7.com/is/image/Tumi/1232072777_main_T"
+		},
+		"imageAltMobile": {
+			"title": "Image alt for mobile",
+			"description": "Text to show if image is not loaded",
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 255
+		},
+		"selectionOfMedia": {
+			"title": "Selection Of Media",
+			"type": "string",
+			"enum": [
+				"Image",
+				"Video"
+			]
+		}
+	},
+	"propertyOrder": []
+}

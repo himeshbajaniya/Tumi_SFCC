@@ -1,0 +1,122 @@
+{
+  "Order no.": {
+    "property": "OrderNo",
+    "required": false
+  },
+  "Order creation date": {
+    "property": "CreationDate",
+    "required": false
+  },
+  "Order status": {
+    "property": "OrderStatus",
+    "required": false
+  },
+  "Order total": {
+    "property": "OrderTotal",
+    "required": false
+  },
+  "Total tax": {
+    "property": "TotalTax",
+    "required": false
+  },
+  "Sub total": {
+    "property": "SubTotal",
+    "required": false
+  },
+  "Shipping fee": {
+    "property": "ShippingFee",
+    "required": false
+  },
+  "deliveryMode": {
+    "property": "ShippingMethodId",
+    "required": false
+  },
+  "Customer no.": {
+    "property": "CustomerNo",
+    "required": false
+  },
+  "Customer first name": {
+    "property": "CustomerFirstName",
+    "required": false
+  },
+  "Customer last name": {
+    "property": "CustomerLastName",
+    "required": false
+  },
+  "Customer email": {
+    "property": "CustomerEmail",
+    "required": false
+  },
+  "Billing - First name": {
+    "property": "BillingFirstName",
+    "required": false
+  },
+  "Billing - Last name": {
+    "property": "BillingLastName",
+    "required": false
+  },
+  "Billing - Address 1": {
+    "property": "BillingAddress1",
+    "required": false
+  },
+  "Billing - Address 2": {
+    "property": "BillingAddress2",
+    "required": false
+  },
+  "Billing - Town/City": {
+    "property": "BillingCity",
+    "required": false
+  },
+  "Billing - Country": {
+    "property": "BillingCountry",
+    "required": false
+  },
+  "Billing - State/Province": {
+    "property": "BillingProvince",
+    "required": false
+  },
+  "Billing - Postal code": {
+    "property": "BillingPostalCode",
+    "required": false
+  },
+  "Billing - Phone": {
+    "property": "BillingPhone",
+    "required": false
+  },
+  "Shipping - First name": {
+    "property": "ShippingFirstName",
+    "required": false
+  },
+  "Shipping - Last name": {
+    "property": "ShippingLastName",
+    "required": false
+  },
+  "Shipping - Address 1": {
+    "property": "ShippingAddress1",
+    "required": false
+  },
+  "Shipping - Address 2": {
+    "property": "ShippingAddress2",
+    "required": false
+  },
+  "Shipping - Town/City": {
+    "property": "ShippingCity",
+    "required": false
+  },
+  "Shipping - Country": {
+    "property": "ShippingCountry",
+    "required": false
+  },
+  "Shipping - State/Province": {
+    "property": "ShippingProvince",
+    "required": false
+  },
+  "Shipping - Postal code": {
+    "property": "ShippingPostalcode",
+    "required": false
+  },
+  "Shipping - Phone": {
+    "property": "ShippingPhone",
+    "required": false
+  }
+}

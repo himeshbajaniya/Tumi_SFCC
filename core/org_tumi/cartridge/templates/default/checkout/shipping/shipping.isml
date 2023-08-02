@@ -1,0 +1,33 @@
+<div class="card ghost shipping">
+    <div class="card-header">
+        <h2 class="card-header-custom">${Resource.msg('heading.checkout.shipping', 'checkout', null)}</h2>
+    </div>
+</div>
+
+<div class="card shipping-section">
+    <div class="single-shipping">
+    <isif condition="${pdict.isBasketHavingOnlyStorePickupitems}">
+        <div class="card-header d-flex">
+                <span class="step-header">1</span>
+                <h2 class="card-header-custom">${Resource.msg('heading.personal.details', 'checkout', null)}</h2>
+        </div>
+        <isinclude template="checkout/shipping/shipmentCardForOnlyBOPIS" />
+    <iselse>
+        <isset name="shippingModel" value="${pdict.order.shipping[0]}" scope="page" />
+        <isset name="shipmentLoopState" value="${null}" scope="page" />
+        <isset name="lineItem" value="${null}" scope="page" />
+        <div data-shipment-uuid="${shippingModel.UUID}">
+            <div class="card-header d-flex">
+                <span class="step-header">1</span>
+                <h2 class="card-header-custom">${shippingModel.productLineItems.items[0].storeId ? Resource.msg('heading.contact.info', 'checkout', null) : Resource.msg('heading.checkout.shipping', 'checkout', null)}</h2>
+            </div>
+
+            <div class="shipping-error"></div>
+
+            <isinclude template="checkout/shipping/multiShipCheckbox" />
+
+            <isinclude template="checkout/shipping/shipmentCard" />
+        </div>
+    </isif>
+    </div>
+</div>

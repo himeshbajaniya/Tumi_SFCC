@@ -1,0 +1,12 @@
+<isset name="showQuickView" value="${true}" scope="page" />
+<isset name="product" value="${pdict.product}" scope="page" />
+<isif condition="${!pdict.display.isCompareDetailPage}">
+    <div class="product" data-pid="${product.id}">
+        <isinclude template="product/productTile" />
+    </div>
+<iselse/>
+    <div class="product" data-pid="${product.id}">
+       <isinclude template="product/productCompareTile" />
+    </div>
+</isif>
+

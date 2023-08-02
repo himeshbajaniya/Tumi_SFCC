@@ -1,0 +1,457 @@
+{
+    "step-types": {
+        "script-module-step": [{
+                "@type-id": "custom.EmarsysComponents.EmarsysExportOrders",
+                "module": "int_emarsys/cartridge/scripts/jobsteps/exportOrders.js",
+                "description": "Exports orders for Emarsys",
+                "function": "execute",
+                "transactional":"true",
+                "parameters": {
+                    "parameter": [
+                        {
+                            "@name": "destinationFolder",
+                            "@type": "string",
+                            "@required": "true",
+                            "@trim": "true",
+                            "description": "Target folder path",
+                            "default-value": "test/orders"
+                        },
+                        {
+                            "@name": "smartInsightCurrency",
+                            "@type": "string",
+                            "@required": "true",
+                            "@trim": "true",
+                            "description": "Mnemonic currency code of the currency that is configured for the Smart Insight",
+                            "default-value": "USD"
+                        },
+                        {
+                            "@name": "queryString",
+                            "@type": "string",
+                            "@required": "false",
+                            "description": "Add a query addendum for searchOrders. Start with AND"
+                        },
+                        {
+                            "@name": "enableCustomTimeFrame",
+                            "@type": "boolean",
+                            "description": "Enable timeframe for exported orders"
+                        },
+                        {
+                            "@name": "timeframeStart",
+                            "@type": "date-string",
+                            "@required": "false",
+                            "description": "Timeframe start date for the Emarsys historical export job"
+                        },
+                        {
+                            "@name": "timeframeEnd",
+                            "@type": "date-string",
+                            "@required": "false",
+                            "description": "Timeframe end date for the Emarsys historical export job"
+                        }
+                    ]
+                },
+                "status-codes": {
+                    "status": [{
+                            "@code": "ERROR",
+                            "description": "Used when an error occurred."
+                        },
+                        {
+                            "@code": "OK",
+                            "description": "Used when execution was successful."
+                        }
+                    ]
+                }
+            },
+            {
+                "@type-id": "custom.EmarsysComponents.EmarsysExportCatalog",
+                "module": "int_emarsys/cartridge/scripts/jobsteps/exportCatalog.js",
+                "description": "Exports products for Emarsys",
+                "function": "execute",
+                "parameters": {
+                    "parameter": [
+                        {
+                            "@name": "exportFolderName",
+                            "@type": "string",
+                            "@required": "true",
+                            "@trim": "true",
+                            "description": "Target folder path",
+                            "default-value": "predict"
+                        },
+                        {
+                            "@name": "exportFileName",
+                            "@type": "string",
+                            "@required": "false",
+                            "@trim": "true",
+                            "description": "Export file name"
+                        },
+                        {
+                            "@name": "catalogConfigKey",
+                            "@type": "string",
+                            "@required": "true",
+                            "@trim": "true",
+                            "description": "Add the unique key value for custom object"
+                        }
+                    ]
+                },
+                "status-codes": {
+                    "status": [{
+                            "@code": "ERROR",
+                            "description": "Used when an error occurred."
+                        },
+                        {
+                            "@code": "OK",
+                            "description": "Used when execution was successful."
+                        }
+                    ]
+                }
+            },
+            {
+                "@type-id": "custom.CSComponents.FtpUpload",
+                "description": "Upload files to an (S)FTP server",
+                "module": "int_emarsys/cartridge/scripts/jobsteps/ftpUpload.js",
+                "function": "Run",
+                "parameters": {
+                    "parameters": [
+                        {
+                            "@name": "ServiceID",
+                            "@type": "string",
+                            "@required": true,
+                            "@trim": true,
+                            "default-value": "exchange.emarsys.api"
+                        },
+                        {
+                            "@name": "FilePattern",
+                            "@type": "string",
+                            "@required": false,
+                            "description": "File pattern (Regular Expression)",
+                            "@trim": true,
+                            "default-value":".*.csv"
+                        },
+                        {
+                            "@name": "SourceFolder",
+                            "@type": "string",
+                            "@required": true,
+                            "@trim": true,
+                            "description": "Local folder with files, relative to IMPEX/"
+                        },
+                        {
+                            "@name": "TargetFolder",
+                            "@type": "string",
+                            "@required": true,
+                            "description": "Remote folder on Server, relative to home directory",
+                            "@trim": true
+                        },
+                        {
+                            "@name": "Recursive",
+                            "@type": "boolean",
+                            "@required": "false",
+                            "description": "If checked, We will take care of tree.",
+                            "default-value": "false"
+                        },
+                        {
+                            "@name": "ArchiveFolder",
+                            "@type": "string",
+                            "@required": false,
+                            "description": "Local folder where to archive files, relative to IMPEX/",
+                            "@trim": true
+                        },
+                        {
+                            "@name": "NoFileFoundStatus",
+                            "@type": "string",
+                            "@required": true,
+                            "@trim": true,
+                            "enum-values": {
+                                "value": [
+                                    "OK",
+                                    "ERROR"
+                                ]
+                            },
+                            "description": "Exit code in case no files were found.",
+                            "default-value": "OK"
+                        },
+                        {
+                            "@name": "IsDisabled",
+                            "description": "Mark the step as disabled. This will skip the step and returns a OK status",
+                            "@type": "boolean",
+                            "@required": false,
+                            "@trim": true
+                        }
+                    ]
+                },
+                "status-codes": {
+                    "status": [{
+                            "@code": "ERROR",
+                            "description": "Used when an error occurred."
+                        },
+                        {
+                            "@code": "OK",
+                            "description": "Used when everything went well."
+                        },
+                        {
+                            "@code": "NO_FILE_FOUND",
+                            "description": "In case exit status is OK and no files were found."
+                        }
+                    ]
+                }
+            },
+            {
+                "@type-id": "custom.EmarsysComponents.GetAvailableProfileFields",
+                "module": "int_emarsys/cartridge/scripts/jobsteps/getProfileFieldsJob.js",
+                "description": "retrieves and stores Emarsys external events",
+                "function": "execute",
+                "transactional":"true",
+                "status-codes": {
+                    "status": [{
+                            "@code": "ERROR",
+                            "description": "Used when an error occurred."
+                        },
+                        {
+                            "@code": "OK",
+                            "description": "Used when execution was successful."
+                        }
+                    ]
+                }
+            },
+            {
+                "@type-id": "custom.EmarsysComponents.GetAvailableEvents",
+                "module": "int_emarsys/cartridge/scripts/jobsteps/getExternalEventsJob.js",
+                "description": "Retrieve all profile fields from Emarsys",
+                "function": "execute",
+                "transactional":"true",
+                "parameters": {
+                    "parameters": [
+                        {
+                            "@name": "isDisabled",
+                            "description": "Mark the step as disabled. This will skip the step and returns a OK status",
+                            "@type": "boolean",
+                            "@required": false,
+                            "@trim": true,
+                            "default-value": false
+                        }
+                    ]
+                },
+                "status-codes": {
+                    "status": [{
+                            "@code": "ERROR",
+                            "description": "Used when an error occurred."
+                        },
+                        {
+                            "@code": "OK",
+                            "description": "Used when execution was successful."
+                        }
+                    ]
+                }
+            },
+            {
+                "@type-id": "custom.EmarsysComponents.GetSourceID",
+                "module": "int_emarsys/cartridge/scripts/jobsteps/getSourceID.js",
+                "description": "Get source id on Emarsys side",
+                "function": "execute",
+                "transactional":"true",
+                "status-codes": {
+                    "status": [{
+                            "@code": "ERROR",
+                            "description": "Used when an error occurred."
+                        },
+                        {
+                            "@code": "OK",
+                            "description": "Used when execution was successful."
+                        }
+                    ]
+                }
+            },
+            {
+                "@type-id": "custom.EmarsysComponents.CreateSingleChoiceValueMapping",
+                "module": "int_emarsys/cartridge/scripts/jobsteps/createSingleChoiceValueMapping.js",
+                "description": "Create Single Choice Value Mapping",
+                "function": "execute",
+                "transactional":"true",
+                "status-codes": {
+                    "status": [{
+                            "@code": "ERROR",
+                            "description": "Used when an error occurred."
+                        },
+                        {
+                            "@code": "OK",
+                            "description": "Used when execution was successful."
+                        }
+                    ]
+                }
+            },
+            {
+                "@type-id": "custom.DBLoad.ExportCustomerInfo",
+                "module": "int_emarsys/cartridge/scripts/jobsteps/exportCustomerInfo.js",
+                "description": "Exports customer info for Emarsys",
+                "function": "execute",
+                "transactional": true,
+                "parameters": {
+                    "parameter": [
+                        {
+                            "@name": "csvFileColumnsDelimiter",
+                            "@type": "string",
+                            "@required": "true",
+                            "description": "Character used to separate columns in the csv file.",
+                            "default-value": ";"
+                        },
+                        {
+                            "@name": "optInStatus",
+                            "@type": "long",
+                            "@required": "true",
+                            "description": "0 - All users empty; 1 - All users true; 2 - Depending on attribute",
+                            "enum-values": {
+                                "value": [
+                                    0,
+                                    1,
+                                    2
+                                ]
+                            },
+                            "default-value": "0"
+                        },
+                        {
+                            "@name": "customAttributeId",
+                            "@type": "string",
+                            "@required": "true",
+                            "@trim": "true",
+                            "description": "Opt-In Status custom attribute ID",
+                            "default-value": "EmarsysOptInFlag"
+                        },
+                        {
+                            "@name": "profilesExportThreshold",
+                            "@type": "long",
+                            "@required": "true",
+                            "description": "How many profiles should be exported at once?",
+                            "default-value": "1000"
+                        },
+                        {
+                            "@name": "queryString",
+                            "@type": "string",
+                            "@required": "false",
+                            "description": "Add a query addendum for searchOrders. Start with AND"
+                        },
+                        {
+                            "@name":"enableCustomTimeFrame",
+                            "@type":"boolean",
+                            "@required": "false",
+                            "description":"Enable timeframe for exported orders"
+                        },
+                        {
+                            "@name": "timeframeStart",
+                            "@type": "date-string",
+                            "@required": "false",
+                            "description": "Timeframe start date for the Emarsys historical export job"
+                        },
+                        {
+                            "@name": "timeframeEnd",
+                            "@type": "date-string",
+                            "@required": "false",
+                            "description": "Timeframe end date for the Emarsys historical export job"
+                        },
+                        {
+                            "@name": "fromEmail",
+                            "@type": "string",
+                            "@required": "false",
+                            "@trim": "true",
+                            "description": "Email address for forwarding notifications"
+                        },
+                        {
+                            "@name": "mailTo",
+                            "@type": "string",
+                            "@required": "false",
+                            "@trim": "true",
+                            "description": "Notifications destination e-mail address"
+                        },
+                        {
+                            "@name": "mailSubject",
+                            "@type": "string",
+                            "@required": "false",
+                            "@trim": "true",
+                            "description": "Mail subject",
+                            "default-value": "Export orders"
+                        }
+                    ]
+                },
+                "status-codes": {
+                    "status": [{
+                            "@code": "ERROR",
+                            "description": "Used when an error occurred."
+                        },
+                        {
+                            "@code": "OK",
+                            "description": "Used when execution was successful."
+                        }
+                    ]
+                }
+            },
+            {
+                "@type-id": "custom.EmarsysComponents.OrderStatusChangeNotification",
+                "module": "int_emarsys/cartridge/scripts/jobsteps/orderStatusChangeNotification.js",
+                "description": "Send a confirmation emails through campaign on Emarsys",
+                "function": "execute",
+                "transactional":"true",
+                "parameters": {
+                    "parameter": [
+                        {
+                            "@name": "isDisabled",
+                            "@type":"boolean",
+                            "@required": "false",
+                            "description": "Used to exclude the step"
+                        },
+                        {
+                            "@name": "stepFunctional",
+                            "@type": "long",
+                            "@required": "true",
+                            "description": "0 - send shipping data for Emarsys; 1 - send cancelled orders for Emarsys",
+                            "enum-values": {
+                                "value": [
+                                    "0",
+                                    "1"
+                                ]
+                            },
+                            "default-value": "0"
+                        }
+                    ]
+                },
+                "status-codes": {
+                    "status": [{
+                            "@code": "ERROR",
+                            "description": "Used when an error occurred."
+                        },
+                        {
+                            "@code": "OK",
+                            "description": "Used when execution was successful."
+                        }
+                    ]
+                }
+            },
+            {
+                "@type-id": "custom.EmarsysComponents.CreateExternalEvents",
+                "module": "int_emarsys/cartridge/scripts/jobsteps/createExternalEvents.js",
+                "description": "Creates external events on Emarsys",
+                "function": "execute",
+                "transactional":"true",
+                "parameters": {
+                    "parameter": [
+                        {
+                            "@name": "customObjectKey",
+                            "@type": "string",
+                            "@trim": "true",
+                            "description": "Key for custom object with events description",
+                            "default-value": "StoredEvents"
+                        }
+                    ]
+                },
+                "status-codes": {
+                    "status": [{
+                            "@code": "ERROR",
+                            "description": "Used when an error occurred."
+                        },
+                        {
+                            "@code": "OK",
+                            "description": "Used when execution was successful."
+                        }
+                    ]
+                }
+            }
+
+        ]
+    }
+}

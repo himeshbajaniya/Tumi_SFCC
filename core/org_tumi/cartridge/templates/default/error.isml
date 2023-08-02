@@ -1,0 +1,15 @@
+<isdecorate template="common/layout/page">
+    <isscript>
+        var pageContext = {
+            title: 'Error Not Found',
+            type:'Error',
+            ns:'notFound'
+        };
+    </isscript>
+    <div class="container">
+        <h2 class='text-center error-message custom-error-message'>
+            <span class="display-message">${Resource.msg('message.page.not.found', 'common', null)}</span>
+        </h2>
+    </div>
+    <isslot id="CarouselErrorLanding" context="global" description="Recommendation Carousel for Error Page" />
+</isdecorate>

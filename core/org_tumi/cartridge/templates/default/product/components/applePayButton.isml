@@ -1,0 +1,6 @@
+<isinclude template="/components/modules" sf-toolkit="off" />
+<isif condition="${pdict.isApplePayEnabled !== 'false'}">
+    <div class="pdp-apple-pay-button d-none">
+        <isapplepay class="dw-apple-pay-button apple-pay-pdp btn" id="apple-pay-button" sku="${pdict.pid}"></isapplepay>
+    </div>
+</isif>

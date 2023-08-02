@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custom-objects xmlns="http://www.demandware.com/xml/impex/customobject/2006-10-31">
+    <custom-object type-id="EmarsysExternalEvents" object-id="StoredEvents">
+        <object-attribute attribute-id="campaignsCategory">6146</object-attribute>
+        <object-attribute attribute-id="id">StoredEvents</object-attribute>
+        <object-attribute attribute-id="name">StoredEvents</object-attribute>
+        <object-attribute attribute-id="newsletterSubscriptionResult">[{"sfccName":"newsletter_subscription_confirmation","emarsysId":"13521","emarsysName":"newsletter_subscription_confirmation","campaignId":"2662269"},{"sfccName":"newsletter_subscription_success","emarsysId":"13522","emarsysName":"newsletter_subscription_success","campaignId":"2662270"},{"sfccName":"newsletter_unsubscribe_success","emarsysId":"13523","emarsysName":"newsletter_unsubscribe_success","campaignId":"2662271"}]</object-attribute>
+        <object-attribute attribute-id="newsletterSubscriptionSource">["newsletter_subscription_confirmation","newsletter_subscription_success","newsletter_unsubscribe_success"]</object-attribute>
+        <object-attribute attribute-id="otherResult">[{"sfccName":"ACCOUNT_EXPIRATION_TESTING","emarsysId":"13478","emarsysName":"ACCOUNT_EXPIRATION_TESTING","campaignId":"2662278"},{"sfccName":"ACCOUNT_VERIFICATION_TESTING","emarsysId":"13479","emarsysName":"ACCOUNT_VERIFICATION_TESTING","campaignId":"2662277"},{"sfccName":"FORGOT_PASSWORD_SUBMITTED_TESTING","emarsysId":"13657","emarsysName":"FORGOT_PASSWORD_SUBMITTED_TESTING","campaignId":"2823496"},{"sfccName":"forgot_password_submitted","emarsysId":"13525","emarsysName":"forgot_password_submitted","campaignId":"2662273"},{"sfccName":"PURCHASE_ACKNOWLEDGEMENT_TESTING","emarsysId":"13480","emarsysName":"PURCHASE_ACKNOWLEDGEMENT_TESTING","campaignId":"2662279"},{"sfccName":"PROFILE_UPDATE_TESTING","emarsysId":"13484","emarsysName":"PROFILE_UPDATE_TESTING","campaignId":"2662280"},{"sfccName":"RETURN_EMAIL_TESTING","emarsysId":"13647","emarsysName":"RETURN_EMAIL_TESTING","campaignId":"2682108"},&#13;
+{"sfccName":"TRACER_REGISTRATION_TESTING","emarsysId":"13658","emarsysName":"tracer_registration","campaignId":"2662274"}]</object-attribute>
+        <object-attribute attribute-id="otherSource">[&#13;
+	"ACCOUNT_EXPIRATION_TESTING",&#13;
+	"ACCOUNT_VERIFICATION_TESTING",&#13;
+        "FORGOT_PASSWORD_SUBMITTED_TESTING",&#13;
+        "forgot_password_submitted",&#13;
+	"PURCHASE_ACKNOWLEDGEMENT_TESTING",&#13;
+	"PROFILE_UPDATE_TESTING",&#13;
+        "RETURN_EMAIL_TESTING",&#13;
+        "TRACER_REGISTRATION_TESTING"&#13;
+]</object-attribute>
+    </custom-object>
+
+</custom-objects>

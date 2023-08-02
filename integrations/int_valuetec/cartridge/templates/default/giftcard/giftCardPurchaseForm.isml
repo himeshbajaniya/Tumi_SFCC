@@ -1,0 +1,178 @@
+<isdecorate template="common/layout/page">
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addJs('/js/giftcard/checkBalance.js');
+    </isscript>
+
+    <div class="container giftcard-container">
+        <div class="bread-crumb">
+            <div class="bread-crumb-content">
+            <iscomment> Breadcrumbs </iscomment>
+                <div class="row">
+                    <div class="product-breadcrumb col hidden-sm-down">
+                        <isinclude template="components/breadcrumbs/pageBreadcrumbsforPLP" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row giftcard-section">
+            <div class="col col-sm-6 d-none d-sm-block">
+                <div class="giftcard-creation-banner">
+                    <img src="https://s7d2.scene7.com/is/image/Tumi/gift-card-opt?wid=1020" alt="Giftcard" itemprop="image" />
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-5 offset-md-1">
+                <div class="giftcard-creation">
+                    <h2 class="giftcard-creation__title">
+                        ${Resource.msg('title.gifcard.creation', 'giftcard', null)}
+                    </h2>
+                    <p class="giftcard-creation__desc">
+                        ${Resource.msg('desc.gifcard.creation', 'giftcard', null)}
+                    </p>
+                    <span class="giftcard-creation__form-label">
+                        ${Resource.msg('label.input.giftcard.amountRedesign', 'forms', null)}
+                    </span>
+                    <form action="${pdict.addProductActionURL}" class="giftcard-purchase-form redesign-gift-card"
+                        method="POST" name="giftcard-purchase-form">
+                        <isset name="purchaseForm" value="${pdict.forms.giftCardForm.purchase}" scope="page" />
+                        <div
+                            class="form-group  ${purchaseForm.amount.mandatory === true ? 'required' : ''} ${purchaseForm.amount.htmlName}">
+                            <div class="giftcard-creation-options">
+                                <isloop items=${purchaseForm.amount.options} var="amount" status="amountStatus">
+                                    <div class="form-check">
+                                        <input class="form-check-input giftCardAmount" type="radio"
+                                            id="${'giftCardAmount-' + amountStatus.count}"
+                                            name="${purchaseForm.amount.htmlName}" value="${amount.htmlValue}"
+                                            label="${amount.label}" ${amountStatus.first ? 'checked' : ''} <isprint
+                                            value="${purchaseForm.amount.attributes}" encoding="off" />
+                                        />
+                                        <label class="form-check-label" for="${'giftCardAmount-' + amountStatus.count}">
+                                            ${amount.label}
+                                        </label>
+                                    </div>
+                                </isloop>
+                            </div>
+                            <div class="invalid-feedback"></div>
+                        </div>
+                        <iscomment>
+                            <div>
+                                <span>${Resource.msg('Personalize.your.gift', 'giftcard', null)}</span>
+                            </div>
+                        </iscomment>
+                        <div
+                            class="form-group ${purchaseForm.recipientName.mandatory === true ? 'required' : ''} ${purchaseForm.recipientName.htmlName}">
+                            <input type="text" class="form-control form-field-control" id="recipientName"
+                                data-pattern-mismatch="${Resource.msg('giftcard.purchase.recipient.recipientName.invalid', 'forms', null)}"
+                                placeholder="${Resource.msg('label.giftcard.purchase.recipient.recipientName', 'forms', null)}"
+                                <isprint value="${purchaseForm.recipientName.attributes}" encoding="off" />
+                            />
+                            <label class="form-control-label" for="recipientName">
+                                ${Resource.msg('label.giftcard.purchase.recipient.recipientName', 'forms', null)}
+                            </label>
+                            <div class="invalid-feedback">
+                                <isprint value="${purchaseForm.recipientName.error}" />
+                            </div>
+                        </div>
+                        <div
+                            class="form-group ${purchaseForm.senderName.mandatory === true ? 'required' : ''} ${purchaseForm.senderName.htmlName}">
+                            <input type="text" class="form-control form-field-control" id="senderName"
+                                data-pattern-mismatch="${Resource.msg('giftcard.purchase.recipient.senderName.invalid', 'forms', null)}"
+                                placeholder="${Resource.msg('label.giftcard.purchase.recipient.senderName', 'forms', null)}"
+                                <isprint value="${purchaseForm.senderName.attributes}" encoding="off" />
+                            />
+                            <label class="form-control-label" for="senderName">
+                                ${Resource.msg('label.giftcard.purchase.recipient.senderName', 'forms', null)}
+                            </label>
+                            <div class="invalid-feedback">
+                                <isprint value="${purchaseForm.senderName.error}" />
+                            </div>
+                        </div>
+                        <div
+                            class="form-group ${purchaseForm.gcMessage.mandatory === true ? 'required' : ''} ${purchaseForm.gcMessage.htmlName}">
+                            <input type="text" class="form-control form-field-control gc-message" id="gcMessage"
+                                data-pattern-mismatch="${Resource.msg('giftcard.purchase.recipient.gcMessage.invalid', 'forms', null)}"
+                                placeholder="${Resource.msg('label.input.gifcard.addmessage', 'giftcard', null)}"
+                                <isprint value="${purchaseForm.gcMessage.attributes}" encoding="off" />
+                            />
+                            <label class="form-control-label gc-message-label" for="gcMessage">
+                                ${Resource.msg('label.input.gifcard.addmessage', 'giftcard', null)}
+                            </label>
+                            <span id="emailHelp" class="form-text">${Resource.msg('caption.input.gifcard.addmessage', 'giftcard', null)}</span>
+                            <div class="invalid-feedback">
+                                <isprint value="${purchaseForm.gcMessage.error}" />
+                            </div>
+                        </div>
+                        <iscomment> Add toCart Button </iscomment>
+                        <div class="gc-add-to-cart">
+                            <button type="submit"
+                                class="button w-100 giftcard-add-to-cart tulsa-atcbutton-toggle">${Resource.msg('button.text.giftcard.purchase', 'giftcard', null)}</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="flex align-center">
+                    <div class="tumi-box">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="giftcard-balance">
+                    <h2 class="giftcard-balance__title">${Resource.msg('title.giftcart', 'giftcard', null)}</h2>
+                    <span class="giftcard-balance__form-label">${Resource.msg('label.giftcard.balance.form', 'giftcard', null)}</span>
+                    <iscomment>Check Balance Form </iscomment>
+                    <form action="${pdict.checkBalanceActionURL}" class="giftcard-balancecheck" method="POST"
+                        name="giftcard-balance-form">
+                        <isset name="checkBalanceForm" value="${pdict.forms.giftCardForm.balance}" scope="page" />
+
+                        <div
+                            class="form-group ${checkBalanceForm.accountNumber.mandatory === true ? 'required' : ''} ${checkBalanceForm.accountNumber.htmlName}">
+                            <input type="text" class="form-control" id="giftcard-balance-form-accountnumber"
+                                placeholder="${Resource.msg('label.input.giftcard.accountnumber', 'giftcard', null)}"
+                                data-pattern-mismatch="${Resource.msg('error.message.giftcard.accountnumber.invalid', 'forms', null)}"
+                                <isprint value="${checkBalanceForm.accountNumber.attributes}" encoding="off" />
+                            />
+                            <label class="form-control-label" for="giftcard-balance-form-accountnumber">
+                                ${Resource.msg('label.input.giftcard.accountnumber', 'giftcard', null)}
+                            </label>
+                            <span id="emailHelp" class="form-text">${Resource.msg('caption.input.gifcard.accountnumber', 'giftcard', null)}</span>
+                            <div class="invalid-feedback"></div>
+                        </div>
+                        <div
+                            class="form-group ${checkBalanceForm.pinNumber.mandatory === true ? 'required' : ''} ${checkBalanceForm.pinNumber.htmlName}">
+                            <input type="text" class="form-control" id="giftcard-balance-form-pinnumber"
+                                placeholder="${Resource.msg('label.input.giftcard.pinnumber', 'giftcard', null)}"
+                                data-pattern-mismatch="${Resource.msg('error.message.giftcard.pinnumber.invalid', 'forms', null)}"
+                                <isprint value="${checkBalanceForm.pinNumber.attributes}" encoding="off" />
+                            />
+                            <label class="form-control-label" for="giftcard-balance-form-pinnumber">
+                                ${Resource.msg('label.input.giftcard.pinnumber', 'giftcard', null)}
+                            </label>
+                            <div class="invalid-feedback"></div>
+                        </div>
+                        <isrecaptcha />
+                        <input type="hidden" name="${pdict.csrf.tokenName}" value="${pdict.csrf.token}" />
+                        <div class="d-none check-balance-details">
+                            <p></p>
+                        </div>
+                        <button type="submit"
+                            class="button w-100 check-balance-cta">${Resource.msg('button.text.checkbalance', 'giftcard', null)}</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-5 offset-md-1">
+                <div class="giftcard-balance-sample">
+                    <figure class="figure">
+                        <img class="figure-img img-fluid rounded" src="${URLUtils.absStatic('/images/card-sample.png')}"
+                            alt="" />
+                        <figcaption class="figure-caption">${Resource.msg('caption.giftcard.card.image', 'giftcard', null)}</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <isinclude template="product/components/cartFlyout" />
+
+</isdecorate>

@@ -1,0 +1,47 @@
+<isdecorate template="common/layout/page">
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets');
+        assets.addJs('/js/search.js');
+        assets.addCss('/css/search.css');
+        var pageContext = {
+            title: 'Product List Page',
+            type:'productlist',
+            ns:'productlist'
+        };
+    </isscript>
+    <script>
+        window.rfkPLPSearchResults = <isprint value="${JSON.stringify(pdict.rfkPLPSearchResults)}" encoding="htmlsinglequote"/>;
+        window.plpFiltersRequestData = <isprint value="${JSON.stringify(pdict.rfkCategoryRequestData)}" encoding="htmlsinglequote"/>;
+    </script>
+    <isif condition="${pdict.query && pdict.query.cgid}">
+        <div class="">
+            <input type="hidden" id="gridBreakerPositions" value="${pdict.category && pdict.category.custom && pdict.category.custom.gridBreakerPositions ? pdict.category.custom.gridBreakerPositions : null}"/>
+            <isslot id="grid-breaker-slot-1" context="category" description="First slot of Category" context-object="${pdict.category}"/>
+            <isslot id="grid-breaker-slot-2" context="category" description="Second slot of Category" context-object="${pdict.category}"/>
+            <isslot id="grid-breaker-slot-3" context="category" description="Third slot of Category" context-object="${pdict.category}"/>
+            <isslot id="grid-breaker-slot-4" context="category" description="Fourth slot of Category" context-object="${pdict.category}"/>
+            <isslot id="grid-breaker-slot-5" context="category" description="Fifth slot of Category" context-object="${pdict.category}"/>
+        </div>
+    </isif>
+    <isinclude template="search/reflektionSearchResultsNoDecorator" />
+    
+    <isif condition="${pdict.rfkPLPSearchResults.total_item !== 0 && !pdict.rfkPLPSearchResults.errors}">
+        <isif condition="${pdict.query && pdict.query.cgid}">
+            <div class="container-fluid plp-seo-block">
+                <isslot id="seo-content-block" context="category" description="SEO content block" context-object="${pdict.category}" />
+            </div>
+            <isslot id="serviceHighlightsForPLP" context="category" description="Service Highlights for PLP" context-object="${pdict.category}"/>
+        <iselse/>
+                <isslot id="serviceHighlightsForSLP" context="global" description="Service Highlights for SLP" />
+        </isif>
+    </isif>
+    <input type="hidden" class="rfkCategoryRequestData" value="${pdict.rfkCategoryRequestData}" />
+    <isif condition="${pdict.query && pdict.query.cgid}">
+        <isslot id="CarouselProductListViewPage" context="global" description="Recommendation Carousel for PLP" />
+    <iselse/>
+        <isslot id="CarouselSearchListViewPage" context="global" description="Recommendation Carousel for SLP" />
+    </isif>
+    <input type="hidden" id="comparePids" value="${pdict.comparePids ? pdict.comparePids : null}"/>
+    <input type="hidden" id="lazyLoadThreshold" value="${dw.system.Site.getCurrent().getCustomPreferenceValue('lazyLoadThreshold')}"/>
+
+</isdecorate>

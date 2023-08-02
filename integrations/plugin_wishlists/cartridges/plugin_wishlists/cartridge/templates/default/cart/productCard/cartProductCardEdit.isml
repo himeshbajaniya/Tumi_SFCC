@@ -1,0 +1,18 @@
+<!--- Edit product and MoveToWishList--->
+<isscript>
+var assets = require('*/cartridge/scripts/assets.js');
+assets.addJs('/js/product/wishlist.js');
+</isscript>
+<div class="product-edit product-move">
+    <a href="${URLUtils.url('Cart-GetProduct', 'uuid', lineItem.UUID)}" class="edit"
+       data-toggle="modal" data-target="#editProductModal"
+       aria-label="${Resource.msgf('text.edit.line.item','cart', null, lineItem.productName)}"
+       title="${Resource.msg('link.edit.item', 'cart', null)}">${Resource.msg('link.edit.item', 'cart', null)}
+    </a>
+        <a href="${URLUtils.url('Wishlist-AddProduct', 'uuid', lineItem.UUID, 'pid', lineItem.id)}" class="move cart-delete-confirmation-btn"
+        data-pid="${lineItem.id}"
+        data-name="${lineItem.productName}"
+        data-action="${URLUtils.url('Cart-RemoveProductLineItem')}"
+        data-uuid="${lineItem.UUID}"
+        title="${Resource.msg('link.move.to.saveforlater', 'cart', null)}">${Resource.msg('link.move.to.saveforlater', 'cart', null)}</a>
+</div>

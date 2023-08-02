@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences xmlns="http://www.demandware.com/xml/impex/preferences/2007-03-31">
+    <custom-preferences>
+        <all-instances/>
+        <development>
+            <preference preference-id="EDQDataSetUsage">false</preference>
+            <preference preference-id="EDQEmailEnable">true</preference>
+            <preference preference-id="EDQPhoneEnable">true</preference>
+            <preference preference-id="EDQPreferedAddressSearchEngine">Both</preference>
+            <preference preference-id="EDQProWebCallbackValidation">true</preference>
+            <preference preference-id="EDQStaging">Production</preference>
+            <preference preference-id="EDQValidateEmail">false</preference>
+            <preference preference-id="EDQValidatePhone">false</preference>
+        </development>
+        <staging/>
+        <production/>
+    </custom-preferences>
+</preferences>
+

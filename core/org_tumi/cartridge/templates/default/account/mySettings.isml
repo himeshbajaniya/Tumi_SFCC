@@ -1,0 +1,14 @@
+<isdecorate template="account/components/myAccountDecorator">
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addJs('/js/paymentInstruments.js');
+    </isscript>
+    <div id="setting-overview" class="d-none">
+        <isinclude template="account/profileCard" />
+    </div>
+    <div id="setting-address"></div>
+    <div id="setting-payment"></div>
+    <div id="setting-shoppingPreferences"></div>
+    <div id="setting-communicationPreference"></div>
+    <div id="setting-myMonogram"></div>
+</isdecorate>

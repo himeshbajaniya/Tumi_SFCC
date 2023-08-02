@@ -1,0 +1,38 @@
+<div data-creative-name="{{content-asset-id}}" class="look-component-container" div-amp-rfkid="{{dataRfkid}}"  data-amp-pid="{{dataPID}}">
+  <div class="container">
+    {{#if (eq large-image-position "Left")}}
+  <div class="collection-look-component1 collection-look">
+      <div class="row">
+      <div class="d-none d-sm-block col-md-8 col-sm-6 image-container">
+        <picture>
+          <img
+              class="img-fluid"
+              src="{{s7ImageDesktopComponent1}}"
+              alt="{{imageAltDesktop1}}"
+          />
+      </picture>
+      </div>
+      <div class="col-md-4 col-sm-6 look-comp-product-tile-1"></div>
+      </div>
+  </div>
+  {{/if}}
+  {{#if (eq large-image-position "Right")}}
+  <div class="collection-look-component2 collection-look">
+    <div class="row">
+    <div class="col-md-4 col-sm-6 look-comp-product-tile-2">
+
+    </div>
+    <div class="d-none d-sm-block col-md-8 col-sm-6 image-container">
+      <picture>
+        <img
+            class="img-fluid"
+            src="{{s7ImageDesktopComponent1}}"
+            alt="{{imageAltDesktop1}}"
+        />
+    </picture>
+    </div>
+    </div>
+</div>
+{{/if}}
+</div>
+</div>

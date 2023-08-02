@@ -1,0 +1,47 @@
+    <div class="content-banner" data-creative-name="{{content-asset-id}}">
+		<div class="row">
+            <div class="text-collection col-md-9">
+				{{#if subTagLine}}
+                <div class="subTagLine">{{subTagLine}}</div>
+                {{/if}}
+                {{#if mainTagLine}}
+                <div class="main-tag-line">{{mainTagLine}}</div>
+                {{/if}} {{#if description}}
+                <div class="description">{{description}}</div>
+                {{/if}}
+            </div>
+        </div>
+        <div class="swiper content-banner-swiper">
+        <div class="swiper-wrapper">
+            {{#each bannerContent}}
+            <div class="swiper-slide">
+                <div class="image">
+                    <img src="{{image-link}}"
+                        alt="{{image-alt}}" />
+                </div>
+                <div class="content-wrapper" style="background-color: {{ bgcolor }};">
+                    <div class="content">
+                        <div class="title">{{title}}</div>
+                        <div class="text">{{description}}</div>
+                        <a href="{{cta-landing-uri}}" class="button button--secondary-dark">{{cta-name}}</a>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+        <div class="swiper-pagination" tabindex="1"></div>
+        <div class="swiper-button-next">
+           <svg width="21" height="12" viewBox="0 0 21 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M19.7543 6H0" stroke="white"/>
+<path d="M14.8994 1L19.7538 6L14.8994 11" stroke="white"/>
+</svg>
+
+        </div>
+        <div class="swiper-button-prev">
+            <svg width="21" height="12" viewBox="0 0 21 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1.24572 6H21" stroke="white"/>
+<path d="M6.10059 1L1.24621 6L6.10059 11" stroke="white"/>
+</svg>
+        </div>
+        </div>
+    </div>

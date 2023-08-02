@@ -1,0 +1,34 @@
+<iscomment>Star SVGs</iscomment>
+<isinclude template="product/components/starsvgs" />
+
+<iscomment>Teasers CSS</iscomment>
+<isscript>
+    var assets = require('*/cartridge/scripts/assets');
+    assets.addCss('/css/teasers.css');
+</isscript>
+<div class="row product-grid productTileTemplates">
+    <isinclude template="search/ismlProductTileTemplate" />
+</div>
+<isinclude template="search/productTileTemplate" /> <iscomment> replacing handler templates </iscomment>
+<p class="viewing-list text-center col-12">Viewing <span class="product-count">${pdict.rfkPLPSearchResults.n_item.toString()}</span> of <span class="total-product-count">${pdict.rfkPLPSearchResults.total_item.toString()}</span> products</p>
+<div>
+    <div class="col-12 rfk-grid-footer <isif condition=${rfkCategoryRequestData.data.sort.value[0]}>sortby-show-more</isif>"
+        data-page-size="${pdict.rfkPLPSearchResults.n_item}"
+        data-page-number="${pdict.rfkPLPSearchResults.page_number}"
+        data-page-total="${pdict.rfkPLPSearchResults.total_page}"
+        data-page-total-item="${pdict.rfkPLPSearchResults.total_item}"
+        <isif condition=${rfkCategoryRequestData.data.sort.value[0]}>data-sort-name="${rfkCategoryRequestData.data.sort.value[0].name}" data-sort-order="${rfkCategoryRequestData.data.sort.value[0].order}"</isif>
+    >
+        <!--- More button --->
+        <isif condition="${!(pdict.rfkPLPSearchResults.page_number >= pdict.rfkPLPSearchResults.total_page)}">
+            <div class="rfk-show-more">
+                <div class="text-center">
+                    <button class="btn btn-outline-primary col-12 more"
+                    >
+                        ${Resource.msg('button.more', 'search', null)}
+                    </button>
+                </div>
+            </div>
+        </isif>
+    </div>
+</div>

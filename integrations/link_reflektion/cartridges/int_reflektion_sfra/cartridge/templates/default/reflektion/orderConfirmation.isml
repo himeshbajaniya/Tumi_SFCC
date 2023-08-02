@@ -1,0 +1,27 @@
+<script>
+document.addEventListener('DOMContentLoaded', getOrderItems, false);
+function getOrderItems () {
+    var rfk = window.rfk = window.rfk || [];
+    rfk.push(["trackEvent", {
+        "type": "order",
+        "name": "confirm",
+        "value": {
+            "products": <isprint value="${require('*/cartridge/scripts/reflektionHelper').getOrderJSON(pdict.order)}" encoding="htmlsinglequote" />,
+            "checkout": {
+                "order_id": "${pdict.order.orderNumber}",
+                "subtotal": ${require('*/cartridge/scripts/reflektionHelper').getOrderSubTotal(pdict.order)},
+                "total": ${require('*/cartridge/scripts/reflektionHelper').getOrderTotal(pdict.order)}
+            },
+            "user": {
+                "id": <isprint value="${require('*/cartridge/scripts/reflektionHelper').getCustomerNo(pdict.order)}"/>
+            },
+            "dn": rfkDomain,
+            "locale": {
+                "lg": rfkLanguage,
+                "co": rfkCountry,
+                "cy": rfkCurrency
+            }          
+        }
+    }]);
+}
+</script>

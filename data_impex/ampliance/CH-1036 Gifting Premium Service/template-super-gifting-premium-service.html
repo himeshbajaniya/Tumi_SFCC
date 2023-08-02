@@ -1,0 +1,41 @@
+<div class="gifting-premium-service" data-creative-name="{{content-asset-id}}">
+    <div class="{{#if (eq backgroundColor "Yes")}}container-fluid ts-background  {{else}} container{{/if}}"">
+        <div class="row align-items-center">
+            <div class="col-md-12 col-12">
+                <div
+                    class="text-content d-flex flex-column align-items-center justify-content-center"
+                >
+                    <div class="title">{{header}}</div>
+                    <div class="sub-title">{{sub-header}}</div>
+                </div>
+    
+                <div class="swiper gifting-premium-service-swiper mobile-swiper">
+                    <div class="swiper-wrapper">
+                        {{#each cta-links}}
+                        <a href="{{cta-landing-uri}}" class="swiper-slide">
+                            <div
+                                class="cta-content d-flex flex-column align-items-center justify-content-center flex-md-row"
+                            >
+                                <div
+                                    class="service-content-wrapper d-flex align-items-center"
+                                >
+                                    <div
+                                        class="img-wrapper d-md-flex align-items-md-center justify-content-md-center"
+                                    >
+                                        <img
+                                            src="{{cta-image}}"
+                                            alt="{{cta-image-alt-text}}"
+                                        />
+                                    </div>
+                                    <p class="cta-link-name">{{cta-name}}</p>
+                                    <p class="cta-link-copy">{{cta-copy}}</p>
+                                </div>
+                            </div>
+                        </a>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

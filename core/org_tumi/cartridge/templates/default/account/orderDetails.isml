@@ -1,0 +1,21 @@
+<isdecorate template="account/purchases/purchasesDecorator">
+<isscript>
+    var pageContext = {
+			title: 'Order Details',
+			type:'orderdetails',
+			ns:'myaccount'
+		};
+</isscript>
+    <isif condition="${dw.system.System.getInstanceType() != 2 && dw.system.Site.getCurrent().getCustomPreferenceValue('lincEnabled')}">
+        <div id="letslinc-params" data-staging="true" data-shop-id="${dw.system.Site.getCurrent().getCustomPreferenceValue('lincShopId')}"></div>
+    <iselse/>
+	    <div id="letslinc-params" data-shop-id="${dw.system.Site.getCurrent().getCustomPreferenceValue('lincShopId')}"></div>
+    </isif>
+
+    <div class="linc" data-custom-class="mobile" data-source="orderdetails" data-uid="${pdict.digest}"></div>
+
+    <div class="container purchase-order-details-container receipt <isif condition="${pdict.order.shipping.length > 1}">multi-ship</isif>">
+        <isinclude template="checkout/confirmation/orderConfirmationDetails" />
+    </div>
+    <isslot id="CarouselOrderDetailsPage" context="global" description="Recommendation Carousel for Order Details Page" />
+</isdecorate>

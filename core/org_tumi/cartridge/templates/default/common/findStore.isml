@@ -1,0 +1,55 @@
+<div class="modal fade global-modal findAStore" id="findAStore" tabindex="-1" role="dialog" aria-labelledby="findAStoreTitle"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="btn btn--secondary px-0" data-dismiss="modal">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="18" viewBox="0 0 23 18" fill="none">
+                            <path d="M1.15999 9.33103H22.9297" stroke="#1B1C1E" />
+                            <path d="M9.45292 1.33105L1.24579 9.33105L9.45292 17.3311" stroke="#1B1C1E" />
+                        </svg>
+                    </button>
+                    <h5 class="modal-title" id="findAStoreTitle">${Resource.msg('find.store.title', 'storeLocator', null)}</h5>
+                    <p>${Resource.msg('find.store.description', 'storeLocator', null)}</p>
+                    <div class="row">
+                        <div class="col-12">
+                            <form>
+                                <div class="form-group has-float-label required">
+
+                                    <input type="text" id="zip-code" placeholder="${Resource.msg('find.store.zipcode', 'storeLocator', null)}" required=""
+                                        aria-required="true" class="form-control required"
+                                        maxlength="10"
+                                        aria-describedby="form-email-error" name="postalCode" value="">
+                                    
+                                    <label class="form-control-label" for="login-form-email">
+                                        ${Resource.msg('find.store.zipcode', 'storeLocator', null)}
+                                    </label>
+                                    <div class="postalcode-msg" data-empty="${Resource.msg('store.zipcode.empty.error', 'storeLocator', null)}" data-wrong-postal="${Resource.msg('store.zipcode.wrong.error', 'storeLocator', null)}"></div>
+                                    <div class="submit-button-abs">
+                                        <button type="submit" class="btn btn-link" id="zip-code-submit"
+                                            data-findstore-url="${URLUtils.url('Stores-FindStores', 'radius', 50, 'showMap', false, 'isForm', false)}">
+                                            <img src="${URLUtils.staticURL('/images/black-right-arrow.svg')}"
+                                                alt="black arrow icon">
+                                        </button>
+                                    </div>
+
+                                </div>
+                            </form>
+                            <div class="current-location">
+                                <img src="${URLUtils.staticURL('/images/fly.svg')}" alt="black arrow icon"><a
+                                    href="#">${Resource.msg('find.store.current.location', 'storeLocator', null)}</a>
+                            </div>
+                            <div class="store-result">
+                                <h6 class="store-count"><span id="number-of-store"></span> ${Resource.msg('find.store.nearest.location', 'storeLocator', null)}
+                                </h6>
+                                <div class="store-result-wrap"></div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <button type="button" id="pick-up-store" class="button button--primary w-100">${Resource.msg('find.store.pickup.button', 'storeLocator', null)}</button>
+                    <a href="#" id="cancel-store" data-dismiss="modal">${Resource.msg('find.store.cancel.button', 'storeLocator', null)}</a>
+                </div>
+            </div>
+        </div>
+    </div>

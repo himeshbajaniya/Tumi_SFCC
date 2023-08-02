@@ -1,0 +1,153 @@
+<isset name="s7PresetsPlp" value="${dw.system.Site.getCurrent().getCustomPreferenceValue('s7PresetsPlp')}" scope="page" />
+<isset name="rfkCountry" value="${require('*/cartridge/scripts/reflektionHelper').getCountry()}" scope="page" />
+<isloop items="${pdict.rfkPLPSearchResults.content.product.value}" var="lineItem" status="loopstatus">
+    <div class="col-6 col-sm-4 ctnr-product-item swiper-slide temp_${loopstatus.count}" data-pid="${lineItem.sku}" data-index="${loopstatus.count}">
+        <div class="product" data-pid="${lineItem.sku}">
+            <div class="product-tile product-${lineItem.sku}">
+                <div class="product-bookmark">
+                    <a href="${URLUtils.url('Wishlist-AddProduct').toString()}" class="bookmark" data-pid="${lineItem.sku}" data-wid="${lineItem.sku}" data-removeurl="${URLUtils.url('Wishlist-RemoveProduct').toString()}"></a>
+                </div>
+                <div class="badge-message">
+                    <isif condition="${lineItem.badge_en}">
+                        ${lineItem.badge_en}
+                    </isif>
+                </div>
+                <div class="image-container">
+                    <a href="${lineItem.url}">
+                        <div class="primary-image ${lineItem.id}" data-id="${lineItem.id}" data-alt-images="${lineItem.altimage_url}">
+                            <img class="tile-image active" src="${lineItem.image_url}${s7PresetsPlp}" data-src="${lineItem.image_url}${s7PresetsPlp}" data-master-image="${lineItem.image_url}${s7PresetsPlp}"  alt="${lineItem.name}" title="${lineItem.name}">
+                            <div class="dark-overlay-plp"></div>
+                        </div>
+                    </a>
+                </div>            
+                <div class="tile-body">
+                    <div class="product-tile-title">
+                        <isif condition="${lineItem.collection}">
+                            ${lineItem.collection}
+                        </isif>
+                    </div>
+                    <div class="pdp-link">
+                        <a class="link" href="${lineItem.url ? lineItem.url: ''}">
+                            <isif condition="${lineItem.name}">
+                                ${lineItem.name}
+                            </isif>
+                        </a>
+                    </div>
+                </div>
+                <div class="price">
+                    <span>
+                        <isif condition="${rfkCountry === 'CA'}">
+                            <isif condition="${lineItem.final_price_ca == lineItem.price_ca}">
+                                <span class="sales">
+                                    <span class="value" content="${lineItem.final_price_ca}}">${lineItem.final_price_ca ? 'C$'+lineItem.final_price_ca: ''}</span>
+                                </span>
+                            <iselse/>
+                                <del>
+                                    <span class="strike-through list">
+                                        <span class="value" content="${lineItem.price_ca}">
+                                            <span class="sr-only">
+                                                ${Resource.msg('label.price.reduced.from', 'pricing', null)}
+                                            </span>
+                                                <isif condition="${lineItem.price_ca}">
+                                                    C$${lineItem.price_ca}
+                                                </isif>
+                                            <span class="sr-only">
+                                                ${Resource.msg('label.price.to', 'pricing', null)}
+                                            </span>
+                                        </span>
+                                    </span>
+                                </del>
+                                <span class="sales">
+                                    <span class="value" content="${lineItem.final_price_ca}}">${lineItem.final_price_ca ? 'C$'+lineItem.final_price_ca: ''}</span>
+                                </span>
+                            </isif>
+                        <iselse/>
+                            <isif condition="${lineItem.final_price == lineItem.price}">
+                                <span class="sales">
+                                    <span class="value" content="${lineItem.final_price}}">$${lineItem.final_price}</span>
+                                </span>
+                            <iselse/>
+                                <del>
+                                    <span class="strike-through list">
+                                        <span class="value" content="${lineItem.price}">
+                                            <span class="sr-only">
+                                                ${Resource.msg('label.price.reduced.from', 'pricing', null)}
+                                            </span>
+                                                <isif condition="${lineItem.price}">
+                                                    $${lineItem.price}
+                                                </isif>
+                                            <span class="sr-only">
+                                                ${Resource.msg('label.price.to', 'pricing', null)}
+                                            </span>
+                                        </span>
+                                    </span>
+                                </del>
+                                <span class="sales">
+                                    <span class="value" content="${lineItem.final_price}}">${lineItem.final_price ? '$'+lineItem.final_price: ''}</span>
+                                </span>
+                            </isif>
+                        </isif>
+                    </span>
+                </div>
+                <div class="product-tile-footer">
+                    <div class="color">
+                        <isloop items="${lineItem.swatch_list}" var="swatches" status="swatchloopstatus">
+                            <isif condition="${swatchloopstatus.count > 4}">
+                                <isbreak/>
+                            </isif>
+                            <button class="color-attribute color-pointer" 
+                                aria-label="Select Color ${swatches.color}"
+                                aria-describedby="${swatches.product_url}" 
+                                title="${swatches.color}"
+                                >
+                                <div data-attr-value="${swatches.product_url}" data-swatch-id = "${lineItem.id}" class="color-value swatch-circle swatch-value ${swatches.swatch_sku == lineItem.sku ? 'selected': ''} selectable" data-alt-swatch-image ="${swatches.altimage_url}" data-product-url="${swatches.product_url}" style="background-image: url(${swatches.swatch_image})">
+                                </div>
+                                <span id="${swatches.product_url}" class="sr-only selected-assistive-text">selected</span>
+                            </button>
+                        </isloop>
+                        <div>
+                            <a href ="${lineItem.url}">
+                                <span class="desktop">
+                                    <isif condition="${lineItem.swatch_list.length-4 > 0}">
+                                        +${(lineItem.swatch_list.length-4).toString()}
+                                    </isif>
+                                </span>
+                                <span class="mobile">
+                                    <isif condition="${lineItem.swatch_list.length-1 > 0}">
+                                        +${(lineItem.swatch_list.length-1).toString()}
+                                    </isif>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="compare-products compare">
+                        <div class="custom-checkbox">
+                            <div class="form-group custom-control custom-checkbox pull-left">
+                                <input type="checkbox" class="custom-control-input compare" id="compare_${lineItem.sku}" 
+                                        data-pid="${lineItem.sku}" 
+                                        data-categoryname="${lineItem.collection}" 
+                                        data-categorytitle="${lineItem.name}"
+                                        data-imgsrc="${lineItem.image_url}"
+                                        data-alttext="${lineItem.name}"
+                                        name="compareProduct" value="">
+                                <label class="custom-control-label" for="compare_${lineItem.sku}">
+                                    ${Resource.msg('checkbox.tile.compare', 'product', null)}
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <isif condition="${lineItem.available_us}">
+                    <div class="product-add-to-cart d-none" data-pid="${lineItem.sku}">
+                        <div class="cart-and-ipay">
+                            <input type="hidden" class="add-to-cart-url" value="${URLUtils.url('Cart-AddProduct')}">
+                            <button class="add-to-cart button button--primary w-100" data-pid="${lineItem.sku}">
+                                <span>${Resource.msg('button.addtocart', 'common', null)}</span>
+                            </button>
+                        </div>
+                    </div>
+                </isif>
+            </div>
+        </div>
+    </div>
+</isloop>

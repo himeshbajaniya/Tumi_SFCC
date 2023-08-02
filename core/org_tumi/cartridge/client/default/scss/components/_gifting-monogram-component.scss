@@ -1,0 +1,146 @@
+.gifting-monogram {
+    background-color: $lotion;
+    color: $eerie-black;
+
+    @include media-breakpoint-up(sm) {
+        padding: 0 32px;
+    }
+    @include media-breakpoint-up(md) {
+        padding: 0 120px;
+    }
+    @include media-breakpoint-up(xl) {
+        padding: 0;
+    }
+
+    .container {
+        @include media-breakpoint-up(sm) {
+            padding: 0;
+        }
+    }
+
+    + .gifting-monogram .gifting-monogram-container {
+        padding-top: 0;
+    }
+
+    .gifting-monogram-container {
+        @include media-breakpoint-up(sm) {
+            padding: 80px 0;
+        }
+        @include media-breakpoint-up(md) {
+            padding: 100px 0;
+        }
+
+        .text-content {
+            .title {
+                @include sizeWeightLh(13px, 400, 16px);
+
+                letter-spacing: 3px;
+                text-align: center;
+                margin-top: 50px;
+                margin-bottom: 4px;
+                font-family: $font-tumi;
+
+                @include media-breakpoint-up(sm) {
+                    margin-top: 0;
+                    margin-bottom: 4px;
+                }
+                @include media-breakpoint-up(md) {
+                    font-size: 12px;
+                    letter-spacing: 2px;
+                    margin-top: 0;
+                    margin-bottom: 4px;
+                }
+            }
+
+            .sub-heading {
+                @include sizeWeightLh(30px, 300, 32px);
+
+                text-align: center;
+                margin: 0;
+                margin-bottom: 18px;
+
+                @include media-breakpoint-up(md) {
+                    line-height: 26px;
+                    margin-bottom: 24px;
+                }
+            }
+
+            .description {
+                @include sizeWeightLh(15px, 400, 20px);
+
+                text-align: center;
+                margin-bottom: 24px;
+                width: 100%;
+                color: $davy-grey;
+
+                @include media-breakpoint-up(sm) {
+                    margin-bottom: 28px;
+                    width: 95%;
+                }
+
+                @include media-breakpoint-up(md) {
+                    width: 65%;
+                }
+
+                @include media-breakpoint-up(xl) {
+                    width: 58%;
+                }
+            }
+
+            .cta-both {
+                .try-out {
+                    text-decoration: none;
+                    margin-bottom: 18px;
+                    width: 343px;
+
+                    @include media-breakpoint-up(sm) {
+                        width: 157px;
+                        margin-right: 16px;
+                    }
+                    @include media-breakpoint-up(md) {
+                        margin-right: 20px;
+                    }
+                }
+
+                .learn-more {
+                    width: 343px;
+
+                    @include media-breakpoint-up(sm) {
+                        width: 157px;
+                    }
+                }
+            }
+
+            .cta-single {
+                @include media-breakpoint-down(xs) {
+                    padding-bottom: 80px;
+                }
+
+                .premium-monogram {
+                    width: 343px;
+                    @include media-breakpoint-up(sm) {
+                        width: 332px;
+                    }
+                    @include media-breakpoint-up(md) {
+                        width: 334px;
+                    }
+                }
+            }
+        }
+
+        .gifting-monogram-image {
+            @include media-breakpoint-down(xs) {
+                padding: 0;
+                padding-top: 80px;
+            }
+
+            img {
+                width: 100%;
+                margin-bottom: 50px;
+                @include media-breakpoint-up(md) {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}

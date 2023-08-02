@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custom-objects xmlns="http://www.demandware.com/xml/impex/customobject/2006-10-31">
+    <custom-object type-id="EmarsysCatalogConfig" object-id="catalogConfig">
+        <object-attribute attribute-id="exportType">master</object-attribute>
+        <object-attribute attribute-id="mappedFields">[{"field":"product.ID","placeholder":"item"},{"field":"product.availability","placeholder":"available"},{"field":"product.name","placeholder":"title_multilang"},{"field":"product.url","placeholder":"link_multilang"},{"field":"product.image","placeholder":"image"},{"field":"product.categories","placeholder":"category_multilang"},{"field":"product.price","placeholder":"price_multilang"},{"field":"product.brand","placeholder":"c_braand"},{"field":"product.group_id","placeholder":"group_id"}]</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="EmarsysCatalogConfig" object-id="catalogConfigTwo">
+        <object-attribute attribute-id="exportType">variations</object-attribute>
+        <object-attribute attribute-id="mappedFields">[]</object-attribute>
+    </custom-object>
+
+</custom-objects>

@@ -1,0 +1,115 @@
+.dialog-container {
+    width: fit-content;
+    height: fit-content;
+}
+
+.dialog-container .dialog-wrapper {
+    display: flex;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.2s ease-out;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 6.5rem 3rem 3rem;
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    outline: none;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+}
+
+.dialog-container .dialog-block {
+    background: #fff;
+    box-shadow: 0 0.4rem 0.8rem 0 rgba(0, 0, 0, 0.3);
+    max-height: 100%;
+    max-width: 65rem;
+    width: 100%;
+    display: flex;
+    visibility: visible;
+    opacity: 1;
+    flex: 0 0 auto;
+    flex-direction: column;
+    position: relative;
+    text-align: left;
+}
+
+.dialog-container .hidden-block {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.dialog-container .dialog-header-block {
+    padding-left: 1.5rem;
+    line-height: 4rem;
+}
+
+.dialog-container .dialog-title {
+    font-size: 1.7rem;
+}
+
+.dialog-container .dialog-close-button {
+    float: right;
+    margin-right: 1rem;
+    cursor: pointer;
+
+    &::before {
+        content: '\2716';
+        color: #717171;
+        font-family: 'fontAwesome';
+        font-size: 1.6rem;
+        height: 3rem;
+        line-height: 2.8rem;
+    }
+}
+
+.dialog-container .dialog-content-block {
+    padding: 1rem 1.5rem 0.5rem 2.5rem;
+}
+
+.dialog-container .dialog-input-label {
+    display: block;
+    margin-bottom: 0.6rem;
+    font-weight: 700;
+}
+
+.dialog-container .dialog-footer-block {
+    padding: 1.5rem;
+}
+
+.dialog-container .dialog-cancel-button {
+    background-color: #fff;
+    color: #009ddc;
+
+    &:hover {
+        background-color: #d5e5f9;
+        text-decoration: none;
+    }
+}
+
+.dialog-container .dialog-footer-block .button-basic {
+    margin-right: 0.5rem;
+}
+
+.dialog-container .dialog-select-block {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 100%;
+    padding: 0.5rem 0;
+    padding-right: 1.5rem;
+    box-sizing: border-box;
+}
+
+.dialog-container .dialog-select-block .title-option {
+    font-style: italic;
+}

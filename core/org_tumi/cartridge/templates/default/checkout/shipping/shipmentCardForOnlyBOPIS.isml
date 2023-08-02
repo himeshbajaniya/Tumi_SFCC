@@ -1,0 +1,80 @@
+<isset name="contactInfoFields" value="${pdict.forms.contactInfoForm}" scope="page"/>
+<div class="card-body shipping-content">
+    <form class="shipping-form" autocomplete="on" novalidate action="${URLUtils.url('CheckoutShippingServices-SubmitShipping', 'isBasketHavingOnlyStorePickupitems', 'true')}"
+    <isprint value=${pdict.forms.shippingForm.attributes} encoding="off" />
+    >
+    <fieldset>
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group
+                ${contactInfoFields.firstName.mandatory === true ? 'required' : ''}
+                ${contactInfoFields.firstName.htmlName}">
+                <input autofocus type="text" class="form-control contactInfoFirstName" id="contactInfoFirstName" placeholder="${Resource.msg('field.billing.address.first.name','address',null)}"
+                    value="${pdict.customer.profile && pdict.customer.profile.firstName ? pdict.customer.profile.firstName : ''}"
+                    <isprint value=${contactInfoFields.firstName.attributes} encoding="off"/>
+                    autocomplete="given-name">
+                <label class="form-control-label" for="contactInfoFirstName">${Resource.msg('field.billing.address.first.name','address',null)}</label>
+                <div class="invalid-feedback"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group
+                ${contactInfoFields.lastName.mandatory === true ? 'required' : ''}
+                ${contactInfoFields.lastName.htmlName}">
+                <input type="text" class="form-control contactInfoLastName" id="contactInfoLastName" placeholder="${Resource.msg('field.billing.address.last.name','address',null)}"
+                    value="${pdict.customer.profile && pdict.customer.profile.lastName ? pdict.customer.profile.lastName : ''}"
+                    <isprint value=${contactInfoFields.lastName.attributes} encoding="off"/>
+                    autocomplete="family-name">
+                <label class="form-control-label" for="contactInfoLastName">${Resource.msg('field.billing.address.last.name','address',null)}</label>
+                <div class="invalid-feedback"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group
+                ${contactInfoFields.phone.mandatory === true ? 'required' : ''}
+                ${contactInfoFields.phone.htmlName}">
+                <input type="text" class="form-control contactInfoPhone" id="contactInfoPhone" placeholder="${Resource.msg('field.contactinfo.phone','address',null)}"
+                    value="${pdict.customer.profile && pdict.customer.profile.phone ? pdict.customer.profile.phone : ''}"
+                    <isprint value=${contactInfoFields.phone.attributes} encoding="off"/>
+                    autocomplete="family-name">
+                <label class="form-control-label" for="contactInfoPhone">${Resource.msg('field.contactinfo.phone','address',null)}</label>
+                <div class="invalid-feedback"></div>
+            </div>
+        </div>
+    </div>
+    <isset name="emailfieldValue" value="" scope="page" />
+    <isif condition="${pdict.customer.registeredUser && pdict.customer.profile && pdict.customer.profile.email}">
+        <isset name="emailfieldValue" value="${pdict.customer.profile.email}" scope="page" />
+    <iselseif condition="${pdict.paypalExpressCheckout}">
+        <isset name="emailfieldValue" value="${pdict.paypal.paypalEmail}" scope="page" />
+    </isif>
+    <div class="row">
+            <div class="col-12">
+                <div class="form-group has-float-label">
+                    <input type="text" placeholder="Email" class="form-control email" id="email-guest"
+                    value="${emailfieldValue}"
+                    <isprint value=${pdict.forms.guestCustomerForm.email.attributes} encoding="off" />
+                    aria-describedby="guestEmailInvalidMessage" >
+                    <label class="form-control-label">
+                    ${Resource.msg('field.customer.email', 'checkout', null)}
+                    </label>
+                    <div class="invalid-feedback" id="guestEmailInvalidMessage"></div>
+                </div>
+            </div>
+    </div>
+    <div class="row mb-3 edit-page-buttons">
+            <div class="col-12 next-step-button">
+                <button class="button button--primary save-continue-shipping" type="button" name="submit" value="save-continue-shipping" 
+                <isprint value="${(pdict.order.usingMultiShipping && !pdict.order.shippable) ? 'disabled' : ''}" encoding="on" />
+                >${Resource.msg('button.next.continue','checkout',null)}
+                </button>
+            </div>
+        </div>
+        </fieldset>
+    <input type="hidden" name="${pdict.csrf.tokenName}" value="${pdict.csrf.token}" />
+    </form>
+</div>

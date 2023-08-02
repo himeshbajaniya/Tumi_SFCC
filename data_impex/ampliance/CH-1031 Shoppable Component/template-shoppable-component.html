@@ -1,0 +1,67 @@
+
+<div data-creative-name="{{content-asset-id}}" class="shoppable-component-container">
+    <div class="container">
+        <div class="row shoppable-component">
+            <div class="col-sm-6 left-section">
+                <div class="image-wrapper">
+                    <a href="{{leftBottomLandingURI}}">
+                        <picture>
+                            <source media="(max-width:640px)" srcset="{{s7LeftImageMobile}}">
+                            <img class="img-fluid w-100" src="{{s7LeftImageDesktop}}" alt="{{leftImageAltDesktop}}">
+                        </picture>
+                    </a>
+                </div>
+                {{#if leftBottomLandingURI}}
+                <div class="link-content">
+                    <a href="{{leftBottomLandingURI}}"> {{leftBottomCTA}} </a>
+                    <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1.33301 1L7.99967 7L1.33301 13" stroke="black"></path>
+                    </svg>
+                </div>
+                {{/if}}
+            </div>
+
+            <div class="col-sm-6 flex-sm-column right-section">
+                <div class="quotation-container">
+                    <figure class="d-flex flex-column h-100 justify-content-center {{#if (eq rightSectionQuotesVisible "Yes")}} review  {{else}} review-without-quotes  {{/if}} ">
+                        <blockquote class="review__text">
+                        {{rightSectionTitle}}
+                        </blockquote>
+                        <figcaption >
+                        <div class="review__info">
+                        <p class="review__info--name">{{rightSectionTitleAuthorName}}</p>
+                        <p class="review__info--designation">{{rightSectionTitleAuthorDesignation}}</p>
+                        </div>
+                        </figcaption>
+                        </figure>
+                </div>
+
+                <div class="bottom-section">
+                    <div class="image-wrapper">
+                        <a href="{{rightBottomLandingURI}}" class="w-100">
+                            <picture>
+                                <source media="(max-width:640px)" srcset="{{s7RightImageMobile}}">
+                                <img class="img-fluid w-100" src="{{s7RightImageDesktop}}" alt="{{rightImageAltDesktop}}">
+                            </picture>
+                        </a>
+                    </div>
+                </div>
+               
+               {{#if rightBottomLandingURI}}
+                 <div class="link-content">
+                        <a href="{{rightBottomLandingURI}}"> {{rightBottomCTA}} </a>
+                        <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1.33301 1L7.99967 7L1.33301 13" stroke="black"></path>
+                        </svg>
+                    </div> 
+                {{/if}}    
+
+            </div>
+            {{#if shopAllCTA}}
+            <div class="col-12 show-cta">
+           <a class="button button--secondary w-100" href="{{shopAllCTALandingURI}}">{{shopAllCTA}}</a>              
+            </div>
+            {{/if}}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,101 @@
+<isset name="productCopy" value="${pdict.product}" scope="page"/>
+<isset name="product" value="${pdict.product}" scope="page"/>
+<isset name="isBundle" value="${false}" scope="page"/>
+<isset name="isQuickView" value="${true}" scope="page"/>
+<isset name="isProductSet" value="${false}" scope="page" />
+<isset name="loopState" value="${{count: 1}}" scope="page" />
+<div class="product-quickview product-${product.productType} product-wrapper product-detail" data-pid="${product.id}">
+    <div class="row">
+    <div class="col-sm-12">
+        <!-- Product Images Carousel -->
+        <div class="edit-productlist">
+            <div id="productImg_0" class='prooduct-image'>
+            <img src="${product.images['large'][0] && product.images['large'][0].url}" class="d-block img-fluid swiper-lazy" alt="${product.images['large'][0] && product.images['large'][0].alt} image number ${product.images['large'][0] && product.images['large'][0].index}" itemprop="image" />
+        </div>
+        <div class="update-product">
+        <isif condition="${product.collection}">
+                        <div class="row">
+                            <div class="col-12 collections">
+                                <h6 class="collection-name">${product.collection}</h6>
+                            </div>
+                        </div>
+                    </isif>
+                    <section>
+                        <h1 class="product-name">${product.productName}</h1>
+                    </section>
+                     <!-- Prices -->
+                <div class="prices">
+                    <isset name="price" value="${product.price}" scope="page" />
+                    <isinclude template="product/components/pricing/main" />
+                </div>
+                <!-- Quantity -->
+            <iscomment> <div class="col-4 edit-quantity">
+                <isif condition="${pdict.addToCartUrl || pdict.updateCartUrl}">
+                    <isinclude template="product/components/quantity" />
+                </isif>
+            </div> </iscomment>
+        </div>
+        </div>
+
+            <div class="detail-panel">
+                <!-- Attributes -->
+                <section class="attributes">
+
+                        <isloop items="${product.variationAttributes}" var="attr" status="attributeStatus">
+                            <div data-attr="${attr.id}" class="swatch row">
+                                <div class="col-12">
+                                    <isinclude template="product/components/variationAttribute" />
+                                    <iscomment> <isinclude template="product/components/accentingVariationAttributes" /> </iscomment>
+                                    <isinclude  template="product/components/accentButton" />
+                                </div>
+                            </div>
+                            <hr>
+                        </isloop> 
+                        <!-- Cart and [Optionally] Apple Pay -->
+                    <div class="row">
+                        <div class="col-12 promotions">
+                            <div class="align-self-center">
+                                <isinclude template="product/components/promotions" />
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <isif condition="${product.productType !== 'bundle'}">
+                    <!-- Options -->
+                    <isif condition="${product.options && product.options.length > 0}">
+                            <isinclude template="product/components/options" />
+                    </isif>
+                </isif>
+            </div>
+        </div>
+         
+    </div>
+    </div>
+
+    <isif condition="${product.productType === 'bundle'}">
+        <div class="hidden-xs-down">
+            <hr>
+        </div>
+        <isinclude template="product/components/bundleItems" />
+
+        <hr>
+
+        <!-- Quantity Drop Down Menu -->
+        <div class="row d-sm-none">
+            <div class="quantity col-10 mx-auto d-none">
+                <isinclude template="product/components/quantity" />
+            </div>
+        </div>
+
+        <!-- Availability -->
+    </isif>
+
+    <isset name="product" value="${productCopy}" scope="page"/>
+</div>
+<div class="modal-footer p-0 row align-items-end">
+    <isif condition="${pdict.addToCartUrl}">
+                <iselse>
+                    <isinclude template="product/components/updateProduct" />
+                </isif>
+</div> 

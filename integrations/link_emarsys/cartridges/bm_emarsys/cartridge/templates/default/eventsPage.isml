@@ -1,0 +1,122 @@
+<isdecorate template="/pageWrapper">
+    <iscontent type="text/html" charset="UTF-8" />
+    <isinclude template="inc/Modules" />
+    <isinclude template="/components/modules" />
+
+    <link rel="stylesheet" type="text/css" href="${URLUtils.staticURL('css/global.css')}" />
+    <script src="${URLUtils.staticURL('js/main.js')}" defer="defer"></script>
+
+    <isinclude template="/components/pageHeader" />
+
+    <ismodule template="components/events/eventsTable.isml"
+        name="externalevents"
+        attribute="type"
+    />
+    <isexternalevents type="subscription" />
+    <isexternalevents type="other" />
+
+    <isinclude template="/components/dialogPopup" />
+
+
+
+    <iscomment> hidden page data block </iscomment>
+    <div class="js-page-data-block hide-content">
+        <div class="js-page-links"
+            data-urls="${JSON.stringify(pdict.urls)}">
+        </div>
+        <div class="js-button-labels"
+            data-change="${Resource.msg("button.change", "externalEvents", null)}"
+            data-apply="${Resource.msg("button.apply", "externalEvents", null)}">
+        </div>
+        <div class="js-emarsys-select-data"
+            data-option-cancel-title="${Resource.msg("option.cancel.title", "externalEvents", null)}">
+        </div>
+        <div class="js-dialog-messages"
+            data-add-subscription="${Resource.msg("dialog.add.subscription.title", "externalEvents", null)}"
+            data-add-other="${Resource.msg("dialog.add.other.title", "externalEvents", null)}"
+            data-show-example="${Resource.msg("dialog.request.example.title", "externalEvents", null)}"
+            data-unsupported-event="${Resource.msg("dialog.unsupported.event", "externalEvents", null)}"
+            data-trigger-event="${Resource.msg("dialog.trigger.event.title", "externalEvents", null)}">
+        </div>
+        <div class="js-notification-messages"
+            data-success-event="${Resource.msg("success.message.event", "externalEvents", null)}"
+            data-success-created="${Resource.msg("success.message.created", "externalEvents", null)}"
+            data-success-changed="${Resource.msg("success.message.changed", "externalEvents", null)}"
+            data-server-error="${Resource.msg("server.error", "errorMessages", null)}"
+            data-empty-name-error="${Resource.msg("name.not.specified.error", "errorMessages", null)}"
+            data-empty-source-error="${Resource.msg("empty.source.field.error", "errorMessages", null)}"
+            data-form-validation-error="${Resource.msg("form.validation.error", "errorMessages", null)}"
+            data-invalid-mapping="${Resource.msg("invalid.mapping", "errorMessages", null)}"
+            data-no-trigger-form="${Resource.msg("no.trigger.form", "errorMessages", null)}">
+        </div>
+
+        <iscomment> add event (custom) dialog template </iscomment>
+        <div class="js-add-event-dialog dialog-block">
+            <div class="dialog-header-block">
+                <span class="js-dialog-title dialog-title"></span>
+                <span class="js-close-button dialog-close-button"></span>
+            </div>
+            <div class="dialog-content-block">
+                <div class="dialog-select-block">
+                    <select class="js-sfcc-name-select select-basic">
+                        <option value="" class="title-option">
+                            ${Resource.msg("dialog.select.sfcc.title", "externalEvents", null)}
+                        </option>
+                    </select>
+                </div>
+                <div class="dialog-select-block">
+                    <select class="js-emarsys-name-select select-basic">
+                        <option value="appropriate" data-emarsys-id="">
+                            ${Resource.msg("dialog.select.emarsys.title", "externalEvents", null)}
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="dialog-footer-block">
+                <button class="js-cancel-button button-basic dialog-cancel-button">
+                    ${Resource.msg("dialog.button.cancel", "externalEvents", null)}
+                </button>
+                <button class="js-confirm-button button-basic">
+                    ${Resource.msg("dialog.button.add", "externalEvents", null)}
+                </button>
+            </div>
+        </div>
+
+        <iscomment> request body example (custom) dialog template </iscomment>
+        <div class="js-request-body-example dialog-block">
+            <div class="dialog-header-block">
+                <span class="js-dialog-title dialog-title">
+                    ${Resource.msg("dialog.request.example.title", "externalEvents", null)}
+                </span>
+                <span class="js-close-button dialog-close-button"></span>
+            </div>
+            <div class="js-content-block dialog-content-block">
+                <pre class="request-example-container"></pre>
+            </div>
+            <div class="dialog-footer-block">
+                <button class="js-confirm-button button-basic">
+                    ${Resource.msg("button.confirm.default", "dialogPopup", null)}
+                </button>
+            </div>
+        </div>
+
+        <iscomment> trigger event (custom) dialog template </iscomment>
+        <div class="js-trigger-event dialog-block">
+            <div class="dialog-header-block">
+                <span class="js-dialog-title dialog-title">
+                    ${Resource.msg("dialog.trigger.event.title", "externalEvents", null)}
+                </span>
+                <span class="js-close-button dialog-close-button"></span>
+            </div>
+            <div class="js-content-block dialog-content-block"></div>
+            <div class="dialog-footer-block">
+                <button class="js-cancel-button button-basic dialog-cancel-button">
+                    ${Resource.msg("dialog.button.cancel", "externalEvents", null)}
+                </button>
+                <button class="js-confirm-button button-basic">
+                    ${Resource.msg("dialog.button.trigger", "externalEvents", null)}
+                </button>
+            </div>
+        </div>
+    </div>
+</isdecorate>

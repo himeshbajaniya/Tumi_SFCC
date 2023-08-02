@@ -1,0 +1,69 @@
+{
+    "hosts": {
+        "staging": {
+            "hostname": "cert.staging.na01.tumi.demandware.net",
+            "dataset" : []
+        },
+
+        "development": {
+            "hostname": "development-na01-tumi.demandware.net",
+            "dataset" : []
+        },
+        "ci-001": {
+            "hostname" : "demo-na01-tumi.demandware.net",
+            "dataset" : []
+        },
+        "sandbox": {
+            "hostname" : "demo-na01-tumi.demandware.net",
+            "dataset" : []
+        }
+    },
+    "cartridges": [
+        "./integrations/link_cybersource/cartridges/int_cybersource_sfra",
+        "./storefront-reference-architecture/cartridges/app_storefront_base",
+        "./storefront-reference-architecture/cartridges/bm_app_storefront_base",
+        "./storefront-reference-architecture/cartridges/modules",
+        "./integrations/link_paypal/cartridges/bm_paypal",
+        "./integrations/link_paypal/cartridges/bm_paypal_configuration",
+        "./integrations/link_paypal/cartridges/int_paypal",
+        "./integrations/link_paypal/cartridges/paypal_credit_financing_options",
+        "./integrations/link_paypal/cartridges/paypal_credit_messaging",
+        "./integrations/int_scene7",
+        "./integrations/plugin_janrain",
+        "./integrations/int_valuetec",
+        "./integrations/link_emarsys/cartridges/bm_emarsys",
+        "./integrations/link_emarsys/cartridges/emarsys_sfra_changes",
+        "./integrations/link_emarsys/cartridges/int_emarsys",
+        "./integrations/link_emarsys/cartridges/int_emarsys_sfra",
+        "./integrations/plugin_wishlists/cartridges/plugin_wishlists",
+        "./integrations/plugin_turnto/cartridges/int_turnto_core_v5",
+        "./integrations/plugin_turnto/cartridges/int_turnto_sfra_v5",
+        "./integrations/lib_productlist",
+        "./integrations/link_signified/cartridges/int_signifyd",
+        "./integrations/link_signified/cartridges/int_signifyd_sfra",
+        "./integrations/link_avalaracbu/cartridges/bm_avatax",
+        "./integrations/link_avalaracbu/cartridges/int_avatax_sfra",
+        "./integrations/link_avalaracbu/cartridges/int_avatax_svcclient",
+        "./integrations/plugin-applepay-master/cartridges/plugin_applepay",
+        "./integrations/link_experiancbu-master/cartridge/int_experian_sfra",
+        "./core/org_tumi",
+        "./core/org_tumi_ca",
+        "./core/org_tumi_specialMarkets",
+        "./core/plugin_sfra_override",
+        "./core/plugin_sitemap-master/cartridges/plugin_sitemap",
+        "./integrations/link_experiancbu-master/cartridge/int_experian_sfra",
+        "./integrations/link_reflektion/cartridges/int_reflektion",
+        "./integrations/link_reflektion/cartridges/int_reflektion_sfra",
+        "./integrations/plugin_instorepickup/cartridges/plugin_instorepickup",
+        "./core/bc_tumi_processorder",
+        "./integrations/plugin_pixlee/cartridges/int_pixlee_sfra",
+        "./integrations/plugin_pixlee/cartridges/int_pixlee",
+        "./integrations/plugin_pixlee/cartridges/int_pixlee_core",
+        "./integrations/plugin_productcompare-master/cartridges/plugin_productcompare",
+        "./integrations/link_klarnapayments/cartridges/int_klarna_payments",
+        "./integrations/link_klarnapayments/cartridges/int_klarna_payments_sfra"
+    ],
+    "site-data": {
+        "global-meta" : "./data/meta"
+    }
+}

@@ -1,0 +1,234 @@
+{
+    "requestBodyExamples": {
+        "subscription": {
+            "SFCC_SINGLE": {
+                "key_id": "3",
+                "external_id": "test@gmail.com",
+                "data": {
+                    "global": {
+                        "order_number": "00008103",
+                        "customer_email": "test@gmail.com",
+                        "shipping_address_1": "735 E Fillmore St",
+                        "order_date": "2020-02-18 09:42:39"
+                    },
+                    "products": [
+                        {
+                            "product_price_currency": "USD",
+                            "product_rebate": {}
+                        }
+                    ]
+                }
+            },
+            "SFCC_NEWSLETTER_SUBSCRIPTION_CONFIRMATION": {
+                "key_id": "3",
+                "external_id": "test@gmail.com",
+                "31":"1",
+                "source_id": "34567"
+            },
+            "SFCC_NEWSLETTER_SUBSCRIPTION_SUCCESS": {
+                "key_id": "3",
+                "external_id": "test@gmail.com",
+                "31":"1",
+                "source_id": "34567"
+            },
+            "SFCC_NEWSLETTER_UNSUBSCRIBE_SUCCESS": {
+                "key_id": "3",
+                "external_id": "test@gmail.com",
+                "31":"2",
+                "source_id": "34567"
+            }
+        },
+        "other": {
+            "SFCC_CANCELLED_ORDER": {
+                "key_id": "3",
+                "external_id": "test@gmail.com",
+                "data": {
+                    "global": {
+                        "order_number": "00008103",
+                        "customer_email": "test@gmail.com",
+                        "shipping_address_1": "735 E Fillmore St",
+                        "order_date": "2020-02-18 09:50:44"
+                    },
+                    "products": [
+                        {
+                            "product_price_currency": "USD",
+                            "product_rebate": {}
+                        }
+                    ]
+                }
+            },
+            "SFCC_FORGOT_PASSWORD_SUBMITTED": {
+                "key_id": "3",
+                "external_id": "test@gmail.com"
+            },
+            "SFCC_CONTACT_FORM_SUBMITTED": {
+                "key_id": "3",
+                "external_id": "test@gmail.com"
+            }
+        }
+    },
+    "formsDescriptions": {
+        "subscription": [
+            {
+                "sfccEventName": "single",
+                "emarsysEventName": "SFCC_SINGLE",
+                "fieldsData": [
+                    {
+                        "field": "email",
+                        "placeholder": "external_id",
+                        "label": "Email",
+                        "required": true
+                    },
+                    {
+                        "field": "orderNumber",
+                        "placeholder": "data.global.order_number",
+                        "label": "Order number",
+                        "required": false
+                    },
+                    {
+                        "field": "customer_email",
+                        "placeholder": "data.global.customer_email",
+                        "label": "Customer email",
+                        "required": false
+                    },
+                    {
+                        "field": "shippingAddress",
+                        "placeholder": "data.global.shipping_address_1",
+                        "label": "Shipping address",
+                        "required": false
+                    },
+                    {
+                        "field": "orderDate",
+                        "placeholder": "data.global.order_date",
+                        "label": "Date",
+                        "required": false
+                    },
+                    {
+                        "field": "currency",
+                        "placeholder": "data.products[0].product_price_currency",
+                        "label": "Currency",
+                        "required": false
+                    }
+                ]
+            },
+            {
+                "sfccEventName": "newsletter_subscription_confirmation",
+                "emarsysEventName": "SFCC_NEWSLETTER_SUBSCRIPTION_CONFIRMATION",
+                "fieldsData": [
+                    {
+                        "field": "email",
+                        "placeholder": "external_id",
+                        "label": "Email",
+                        "required": true
+                    },
+                    {
+                        "field": "31",
+                        "placeholder": "31",
+                        "label": "OptInStatus",
+                        "required": false
+                    }
+                ]
+            },
+            {
+                "sfccEventName": "newsletter_subscription_success",
+                "emarsysEventName": "SFCC_NEWSLETTER_SUBSCRIPTION_SUCCESS",
+                "fieldsData": [
+                    {
+                        "field": "email",
+                        "placeholder": "external_id",
+                        "label": "Email",
+                        "required": true
+                    },
+                    {
+                        "field": "31",
+                        "placeholder": "31",
+                        "label": "OptInStatus",
+                        "required": false
+                    }
+                ]
+            },
+            {
+                "sfccEventName": "newsletter_unsubscribe_success",
+                "emarsysEventName": "SFCC_NEWSLETTER_UNSUBSCRIBE_SUCCESS",
+                "fieldsData": [
+                    {
+                        "field": "email",
+                        "placeholder": "external_id",
+                        "label": "Email",
+                        "required": true
+                    },
+                    {
+                        "field": "31",
+                        "placeholder": "31",
+                        "label": "OptInStatus",
+                        "required": false
+                    }
+                ]
+            }
+        ],
+        "other": [
+            {
+                "sfccEventName": "cancelled_order",
+                "emarsysEventName": "SFCC_CANCELLED_ORDER",
+                "fieldsData": [
+                    {
+                        "field": "email",
+                        "placeholder": "external_id",
+                        "label": "Email",
+                        "required": true
+                    },
+                    {
+                        "field": "orderNumber",
+                        "placeholder": "data.global.order_number",
+                        "label": "Order number",
+                        "required": false
+                    },
+                    {
+                        "field": "customer_email",
+                        "placeholder": "data.global.customer_email",
+                        "label": "Customer email",
+                        "required": false
+                    },
+                    {
+                        "field": "shippingAddress",
+                        "placeholder": "data.global.shipping_address_1",
+                        "label": "Shipping address",
+                        "required": false
+                    },
+                    {
+                        "field": "orderDate",
+                        "placeholder": "data.global.order_date",
+                        "label": "Date",
+                        "required": false
+                    },
+                    {
+                        "field": "currency",
+                        "placeholder": "data.products[0].product_price_currency",
+                        "label": "Currency",
+                        "required": false
+                    }
+                ]
+            },
+            {
+                "sfccEventName": "forgot_password_submitted",
+                "emarsysEventName": "SFCC_FORGOT_PASSWORD_SUBMITTED",
+                "fieldsData": [{
+                    "field": "email",
+                    "placeholder": "external_id",
+                    "label": "Email",
+                    "required": true
+                }]
+            },
+            {
+                "sfccEventName": "contact_form_submitted",
+                "emarsysEventName": "SFCC_CONTACT_FORM_SUBMITTED",
+                "fieldsData": [{
+                    "field": "email",
+                    "placeholder": "external_id",
+                    "label": "Email",
+                    "required": true
+                }]
+            }
+        ]
+    }
+}

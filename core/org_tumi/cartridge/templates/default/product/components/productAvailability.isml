@@ -1,0 +1,14 @@
+<!-- Availability -->
+<div class="availability row product-availability d-none">
+    <div class="col-12">
+        <ul class="list-unstyled availability-msg pre-order"><span class="label">${product.productAvailability ? product.productAvailability.label : ''} </span><span class="msg">
+            <isif condition="${product.productAvailability}">
+                <isif condition="${product.comingSoon}">
+                    ${product.productAvailability.launchingLabel}
+                <iselse/>
+                    ${product.productAvailability.expectedToShipLabel}
+                </isif>
+            </isif>
+        </span></ul>
+    </div>
+</div>

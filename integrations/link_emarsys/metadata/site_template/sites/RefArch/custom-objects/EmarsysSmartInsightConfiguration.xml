@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custom-objects xmlns="http://www.demandware.com/xml/impex/customobject/2006-10-31">
+    <custom-object type-id="EmarsysSmartInsightConfiguration" object-id="emarsysSmartInsight">
+        <object-attribute attribute-id="mappedFields">[{"field":"order","placeholder":"order"},{"field":"date","placeholder":"timestamp"},{"field":"item","placeholder":"item"},{"field":"quantity","placeholder":"quantity"},{"field":"price","placeholder":"price"},{"field":"customer","placeholder":"customer"},{"field":"custom.order.paymentMethods","placeholder":"c_payment_method"},{"field":"custom.lineItem.shipment.shippingAddress.address1","placeholder":"c_Address"}]</object-attribute>
+    </custom-object>
+
+</custom-objects>

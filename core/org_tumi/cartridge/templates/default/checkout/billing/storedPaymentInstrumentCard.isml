@@ -1,0 +1,59 @@
+<div class="saved-payment-instrument ${loopSate.first ? 'selected-payment' : ''}" data-uuid="${paymentInstrument.UUID}">
+<div class="saved-card-tile">
+            <div class="form-group required saved-security-code">
+                <img class="card-image ${loopSate.first ? 'checkout' : ''}"
+                    src="${paymentInstrument.cardTypeImage.src}"
+                    alt="${paymentInstrument.cardTypeImage.alt}"
+                    >
+            </div>
+            <div class="saved-payment-information">
+                <span class="saved-credit-card-number">
+                    ${paymentInstrument.maskedCreditCardNumber},
+                </span>
+                <span class="saved-credit-card-expiration-date">
+                    <span>
+                    ${Resource.msg('msg.card.type.ending', 'confirmation', null)}
+                    ${paymentInstrument.creditCardExpirationMonth}/${paymentInstrument.creditCardExpirationYear}
+                    </span>
+                </span>
+                <div class="saved-credit-card-address">
+                    <span class="firstName d-none">${paymentInstrument.firstName}</span>
+                    <span class="lastName d-none">${paymentInstrument.lastName}</span>
+                </div>
+                <div class="mt-1">
+                    <span class="address1">${paymentInstrument.address1}</span>
+                    <isif condition="${paymentInstrument.address2}">
+                        <span class="address2">${paymentInstrument.address2}</span>
+                    </isif>
+                </div>
+                <div>
+                    <span class="city">${paymentInstrument.city}</span>
+                    <span class="stateCode">${paymentInstrument.stateCode}</span>
+                    <span class="postalCode">${paymentInstrument.postalCode}</span>
+                    <span class="country">${paymentInstrument.countryCode}</span>
+                </div>
+                <div class="form-group required saved-security-code">
+                <iscomment> <img class="card-image ${loopSate.first ? 'checkout' : ''}"
+                    src="${paymentInstrument.cardTypeImage.src}"
+                    alt="${paymentInstrument.cardTypeImage.alt}"
+                    > </iscomment>
+                <div class="security-code-input ${loopSate.first ? '' : 'checkout-hidden'}">
+                    <div>
+                        <input type="password" class="form-control saved-payment-security-code icon-i" autocomplete="off" placeholder="CVV" id="saved-payment-security-code" maxlength="4">
+                        <a href="javascript:void(0)" data-toggle="tooltip" data-placement="bottom" title="${Resource.msg('tooltip.security.code','creditCard',null)}">
+                            <img  src="${URLUtils.staticURL('/images/info-icon.svg')}" alt="" />
+                        </a>
+                        <div class="invalid-feedback">${Resource.msg('error.message.savedcard.code.required', 'checkout', null)}</div>
+                    </div>
+                </div>
+            </div>
+            </div>
+    <div class="delete col-2 text-right">
+        <a type="button" class="remove-btn remove-payment" data-toggle="modal"
+            data-target="#deletePaymentModal" data-id="${paymentInstrument.UUID}"
+            data-card="${paymentInstrument.maskedCreditCardNumber}" data-url="${URLUtils.url('PaymentInstruments-DeletePayment')}">
+        ${Resource.msg('label.delete', 'forms', null)}
+        </a>
+    </div>
+    </div>
+</div>

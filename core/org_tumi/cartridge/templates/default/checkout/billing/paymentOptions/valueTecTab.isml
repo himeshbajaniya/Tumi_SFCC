@@ -1,0 +1,18 @@
+<div>
+    <div class="form-group custom-control custom-checkbox checkbox-m pay-giftcard">
+        <input type="checkbox" class="custom-control-input" id="pay-with-giftcard" />
+        <label class="custom-control-label" for="pay-with-giftcard">
+            <span><isprint value="${Resource.msg('label.giftcard.paywith.tumi', 'giftcard', null)}" /></span>
+        </label>
+    </div>
+    <div class="giftcard-not-allowed d-none"> 
+        <span>
+            ${Resource.msg('label.giftcard.notallowedmethod', 'giftcard', null)}
+        </span>
+    </div>
+    <div class="pay-giftcard-existing">
+        <a href="javascript:void(0)">
+            <isprint value="${Resource.msg('label.giftcard.paywith.another.tumi', 'giftcard', null)}" />
+        </a>
+    </div>
+</div>

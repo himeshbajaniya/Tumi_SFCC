@@ -1,0 +1,13 @@
+<body>
+    <p>${Resource.msg('emailbody.notexportedorder', 'common', null)}</p>
+    <table width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+            <td align="center" style="background:#e0e0e0;padding:50px 0;">Order Number</td>
+        </tr>
+        <isloop items="${pdict.orders}" var="orderNo">
+            <tr>
+                <td align="center">${orderNo}</td>
+            </tr>
+        </isloop>
+    </table>
+</body>

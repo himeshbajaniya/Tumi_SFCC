@@ -1,0 +1,74 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "https://www.tumi.com/home-best-seller",
+
+	"title": "Title",
+	"description": "Description",
+
+	"allOf": [
+		{
+			"$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+		}
+	],
+	
+	"type": "object",
+	"properties": {
+		"content-asset-id": {
+			"title": "Content Asset ID",
+			"description": "SFCC Content Asset",
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 256,
+			"format": "text"
+		},
+		"pid": {
+			"title": "PId",
+			"description": "Enter PID's of product tile",
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 256,
+			"format": "text"
+		},
+		"rfkId": {
+			"title": "RFKId",
+			"description": "Enter RFKId of product tile",
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 256,
+			"format": "text"
+		},
+		"title": {
+			"title": "Title",
+			"description": "Enter Title",
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 256,
+			"format": "text"
+		},
+		"hero-image": {
+			"title": "Hero Image URL",
+			"description": "Enter Hero Image URL for first product tile",
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 256,
+			"format": "text"
+		},
+		"cta-name": {
+			"title": "CTA Name",
+			"description": "Enter CTA Name",
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 256,
+			"format": "text"
+		},
+		"cta-uri": {
+			"title": "CTA URL",
+			"description": "Enter CTA URL",
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 256,
+			"format": "text"
+		}
+	},
+	"propertyOrder": []
+}

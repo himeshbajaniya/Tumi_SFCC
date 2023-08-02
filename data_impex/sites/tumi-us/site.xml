@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site xmlns="http://www.demandware.com/xml/impex/site/2007-04-30" site-id="tumi-us">
+    <name>Tumi - US</name>
+    <currency>USD</currency>
+    <taxation>net</taxation>
+    <custom-cartridges>org_tumi:int_pixlee_sfra:int_pixlee_core:int_emarsys:int_emarsys_sfra:plugin_productcompare:plugin_instorepickup:int_experian_sfra:int_reflektion:int_reflektion_sfra:int_avatax_svcclient:int_avatax_sfra:int_turnto_core_v5:int_turnto_sfra_v5:int_valuetec:int_signifyd_sfra:int_signifyd:paypal_credit_messaging:int_paypal:plugin_wishlists:lib_productlist:int_scene7:plugin_janrain:int_cybersource_sfra:plugin_applepay:int_klarna_payments_sfra:int_klarna_payments:plugin_sfra_override:app_storefront_base</custom-cartridges>
+    <storefront-status>online</storefront-status>
+</site>

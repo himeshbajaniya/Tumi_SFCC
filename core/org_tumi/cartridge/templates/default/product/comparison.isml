@@ -1,0 +1,237 @@
+<isdecorate template="common/layout/page">
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets');
+        assets.addJs('/js/search.js');
+        assets.addJs('/js/addToCartCompare.js');
+        assets.addCss('/css/search.css');
+    </isscript>
+
+    <script>
+        var rfkCompareSuggestionsResults = <isprint value="${JSON.stringify(pdict.rfkCompareSuggestionsResults)}" encoding="htmlsinglequote"/>;
+        var rfkCompareProductTileDataResults = <isprint value="${JSON.stringify(pdict.rfkCompareProductTileDataResults)}" encoding="htmlsinglequote"/>;
+        var compareVariationsData = <isprint value="${JSON.stringify(pdict.compareVariationObject)}" encoding="htmlsinglequote"/>;
+        window.wishListAddProductRfk = <isprint value="${JSON.stringify(pdict.wishListAddProductRfk)}" encoding="htmlsinglequote"/>;
+        window.removeWishlistProductRfk = <isprint value="${JSON.stringify(pdict.removeWishlistProductRfk)}" encoding="htmlsinglequote"/>;
+    </script>
+    <isset name="rfkCountry" value="${require('*/cartridge/scripts/reflektionHelper').getCountry()}" scope="page" />
+
+    <div class="container-fluid compare-landing">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="back-link">
+                        <a href="${pdict.continueShopUrl}"><img src="${URLUtils.absStatic('/images/back-arrow.svg')}" alt="" /> ${Resource.msg('text.continue.shopping', 'cart', null)}</a>
+                    </div>
+                    <div class="page-title compare-sections">
+                        ${Resource.msg('product.compare.sections', 'product', null)}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container product-comparison" data-pids="${pdict.pids.length === 2 ? pdict.pids[0] +',' + pdict.pids[1] : pdict.pids.length === 1 ? pdict.pids[0] : pdict.pids[0] +','+pdict.pids[1]+','+pdict.pids[2]}" data-removeitemurl="${URLUtils.url('Compare-Show', pdict.querystring.cgid ? 'cgid' : 'q', pdict.querystring.cgid ? pdict.querystring.cgid: pdict.querystring.q)}">
+        <isif condition="${pdict.pids.length === 2 || pdict.pids.length === 1}">
+            <div class="row productTileTemplates">
+                    <div class="col-sm-${pdict.pids.length === 2 ? '8' : '4'}">
+                        <isif condition="${pdict.attributes.length > 0}" >
+                            <isinclude template="product/compareAttributes"/>
+                                <iselse/>
+                                <div class="row">
+                                <isloop items="${pdict.pids}" var="productid" status="loopstatus">
+                                    <div class="col-6 col-sm-${pdict.pids.length === 1 ? '12' : '6'} ctnr-product-item swiper-slide compare-products-tiles" data-pid="${productid}">
+                                    </div>
+                                </isloop>
+                                <isif condition="${pdict.pids.length === 1}">
+                                    <div class="col-6 col-sm-6 more-products">
+                                        <div class="more-products-wrapper">
+                                            <a href="${pdict.continueShopUrl}">
+                                                <span class="plus-icon">+</span>
+                                                <span class="content">${Resource.msg('compare.button.redirect.content', 'product', null)}</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </isif>
+                                </div>
+                                <div class="row no-gutters products-detail" data-altimagerequest="${pdict.alterNateImageUrl}">
+                                    <isloop items="${pdict.products}" var="product" status="productloopstatus">
+                                        <div class="col-md-${pdict.pids.length === 1 ? '12' : '6'} compare-attr-detail-product" data-pid="${product.id}" data-sceneproductid="${product.scene7ProductId}">
+                                            <isinclude template="product/components/productCompareAttributes"/>
+                                            <isinclude template="product/productTileCompareFooter" />
+                                        </div>
+                                    </isloop>
+                                </div>
+                        </isif>
+                    </div>
+                    <isif condition="${pdict.pids.length === 2}">
+                        <isset name="dataCompareUrl" value="${URLUtils.url('Compare-Show', pdict.querystring.cgid ? 'cgid' : 'q', pdict.querystring.cgid ? pdict.querystring.cgid: pdict.querystring.q, 'pid0', pdict.pids[0], 'pid1', pdict.pids[1])}" scope="page" />
+                    <iselseif condition="${pdict.pids.length === 1}"/>
+                        <isset name="dataCompareUrl" value="${URLUtils.url('Compare-Show', pdict.querystring.cgid ? 'cgid' : 'q', pdict.querystring.cgid ? pdict.querystring.cgid: pdict.querystring.q, 'pid0', pdict.pids[0])}" scope="page" />
+                    </isif>
+                    <div class="col-sm-4 product-compared-suggestions ${pdict.products.length > 2 ? 'invisible' : ''}">
+                        <div class="compared-suggestions" data-compareurl = ${dataCompareUrl ? dataCompareUrl : null}>
+                            <p class="notes">
+                                ${Resource.msg('compare.other.customers.compared','product',null)}
+                            </p>
+                            <script id="compare-products-suggestion" type="text/x-handlebars-template">
+                                    {{#each content.product.value}}
+                                        <a href="{{addCompareUrl this.sku}}">
+                                            <div class="ctnr-product-item swiper-slide" data-pid="{{this.sku}}">
+                                                <div class="product" data-pid="{{this.sku}}">
+                                                    <div class="product-tile">
+                                                        <div class="suggesstion-items">
+                                                            <div class="product-compare-url">
+                                                                +
+                                                            </div>
+                                                            <div class="image">
+                                                                <div class="image-container">
+                                                                        <div class="primary-image {{this.id}}" data-id={{this.id}} data-alt-images={{imageUrls this}}>
+                                                                            <img class="tile-image active" src="{{this.image_url}}" data-master-image="{{this.image_url}}"  alt="{{this.productSearchHit.product.productName}}" title="{{this.title}}">
+                                                                            <div class="dark-overlay-plp"></div>
+                                                                        </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="discription">
+                                                                <div class="tile-body">
+                                                                    <div class="product-tile-title">
+                                                                        {{this.collection}}
+                                                                    </div>
+                                                                    <div class="pdp-link">
+                                                                        {{{this.name}}}
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="price">
+                                                                    <span>
+                                                                        <isif condition="${rfkCountry === 'CA'}">
+                                                                            {{productTilePriceCA this.final_price_ca this.price_ca}}
+                                                                                <span class="sales">
+                                                                                    <span class="value" content="{{this.price}}">{{dollarFormatCA this.final_price_ca}}</span>
+                                                                                </span>
+                                                                            <iselse/>
+                                                                            {{productTilePrice this.final_price this.price}}
+                                                                                <span class="sales">
+                                                                                    <span class="value" content="{{this.price}}">{{dollarFormat this.final_price}}</span>
+                                                                                </span>
+                                                                        </isif>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    {{/each}}
+                            </script>
+                            <div class="compare-products-suggestion"></div>
+                        </div>
+                    </div>
+                </div>
+        </isif>
+        <isif condition="${pdict.pids.length === 3}">
+            <isif condition="${pdict.attributes.length > 0}" >
+                        <isinclude template="product/compareAttributes"/>
+                    <iselse/>
+                    <div class="row productTileTemplates">
+                        <isloop items="${pdict.pids}" var="productid" status="loopstatus">
+                            <div class="col-6 col-sm-4 ctnr-product-item swiper-slide compare-products-tiles" data-pid="${productid}">
+                            </div>
+                        </isloop>
+                    </div>
+
+                <div class="row no-gutters products-detail" data-altimagerequest="${pdict.alterNateImageUrl}">
+                    <isloop items="${pdict.products}" var="product" status="productloopstatus">
+                        <div class="col-6 col-md-4 col-sm-4 compare-attr-detail-product" data-pid="${product.id}" data-sceneproductid="${product.scene7ProductId}">
+                            <isinclude template="product/components/productCompareAttributes"/>
+                            <isinclude template="product/productTileCompareFooter" />
+                            <isinclude template="product/productTileFooter" />
+                        </div>
+                    </isloop>
+                </div>
+            </isif>
+        </isif>
+    </div>
+    <div class="compare-left-navigation">
+    </div>
+    <script id="compare-products-tiles" type="text/x-handlebars-template">
+        <div class="product" data-pid="{{sku}}">
+            <div class="product-tile">
+                <div class="product-bookmark">
+                    <a href="{{wishListAddProductRfk}}" class="bookmark" data-pid="{{sku}}" data-wid="{{sku}}" data-removeurl="{{removeWishlistProductRfk}}"></a>
+                </div>
+                <div class="badge-message">
+                    {{{badge_en}}}
+                </div>                  
+                <div class="image-container compare" data-id="{{sku}}" data-alt-images={{altimage_url}}>
+                    <a href={{mainUrl this.url '.html'}}>
+                        <div class="primary-image {{id}}" data-id={{id}} data-alt-images={{altimage_url}}>
+                            <img class="tile-image active"  src="{{imageQuery image_url}}" data-src="{{imageQuery image_url}}" data-master-image="{{imageQuery image_url}}"  alt="{{productSearchHit.product.productName}}" title="{{title}}">
+                            <div class="dark-overlay-plp"></div>
+                        </div>
+                    </a>
+                </div>                      
+                <div class="tile-body">
+                    <div class="product-tile-title">
+                        {{collection}}
+                    </div>
+                    <div class="pdp-link">
+                        <a class="link" href="{{url}}">{{{name}}}</a>
+                    </div>
+                </div>
+                <div class="price">
+                    <span>
+                       <isif condition="${rfkCountry === 'CA'}">
+                            {{productTilePriceCA this.final_price_ca this.price_ca}}
+                                <span class="sales">
+                                    <span class="value" content="{{this.price}}">{{dollarFormatCA this.final_price_ca}}</span>
+                                </span>
+                            <iselse/>
+                            {{productTilePrice this.final_price this.price}}
+                                <span class="sales">
+                                    <span class="value" content="{{this.price}}">{{dollarFormat this.final_price}}</span>
+                                </span>
+                        </isif>
+                    </span>
+                </div>
+                {{SortSwatches this.swatch_list this.sku}}
+                <div class="product-tile-footer" data-attr="color">
+                    <div class="color">
+                        {{#each_upto swatch_list}}
+                            <button class="color-attribute color-pointer" 
+                                aria-label="Select Color {{this.color}}" 
+                                aria-describedby="{{productUrl this.product_url}}" 
+                                title="{{this.color}}"
+                                >
+                                <div data-attr-value="{{productUrl this.product_url}}" data-swatch-id = "{{../id}}" class="color-value swatch-circle swatch-value {{selectedSwatch this.product_url ../sku}} selectable" data-alt-swatch-image ="{{this.altimage_url}}" data-product-url = "{{mainUrl this.product_url '.html'}}" style="background-image: url({{this.swatch_image}})">
+                                </div>
+                                <span id="{{productUrl this.product_url}}" class="sr-only selected-assistive-text">selected</span>
+                            </button>
+                        {{/each_upto}}
+                        <div><a href = {{mainUrl url '.html'}}><span class="desktop">{{colorCountDesktop swatch_list}}</span><span class="mobile">{{colorCountMobile swatch_list}}</span></a></div>
+                    </div>
+                </div>
+                <div class="product-add-to-cart">
+                    <div class="cart-and-ipay">
+                        <input type="hidden" class="add-to-cart-url" value="${pdict.addToCartUrl}">
+                        <button class="add-to-cart button button--primary w-100" {{checkAvailability sku}} data-pid="{{sku}}">
+                            <span>${Resource.msg('button.addtocart', 'common', null)}</span>
+                        </button>
+                    </div>
+                </div>
+                <iscomment> <div class="col-12 error-msg-add-to-cart"> </iscomment>
+                <div class="remove-item">
+                    <a href="{{removeCompareItemUrl sku}}">Remove Item</a>
+                </div>
+            </div>
+        </div>
+    </script>
+    <isinclude template="product/components/cartFlyout" />
+    <isif condition="${pdict.querystring.cgid}">
+        <input type="hidden" id="cgidOrQ" value="${pdict.querystring.cgid}"/>
+    <iselse/>
+        <input type="hidden" id="cgidOrQ" value="${pdict.querystring.q}"/>
+    </isif>
+    <input type="hidden" id="pidsLength" value="${pdict.pids.length}"/>
+    <input type="hidden" id="s7PresetsPlp" value="${dw.system.Site.getCurrent().getCustomPreferenceValue('s7PresetsPlp')}" scope="page" />
+</isdecorate>

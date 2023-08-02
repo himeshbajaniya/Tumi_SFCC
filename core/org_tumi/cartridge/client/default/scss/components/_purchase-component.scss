@@ -1,0 +1,95 @@
+$name: "purchase-component-wrapper";
+
+.#{$name} {
+    margin-top: 20px;
+    margin-bottom: 60px;
+
+    @include media-breakpoint-up(sm) {
+        margin-top: 90px;
+    }
+
+    @include media-breakpoint-up(md) {
+        max-width: 850px;
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+
+    h3 {
+        text-align: center;
+        text-transform: capitalize;
+        margin-bottom: 18px;
+        color: $bg-dark;
+        font-family: $font-tumi-light;
+        @include sizeWeightLh(24px, 300, 24px);
+
+        @include media-breakpoint-up(sm) {
+            margin-bottom: 12px;
+        }
+        @include media-breakpoint-up(md) {
+            @include sizeWeightLh(30px, 300, 32px);
+        }
+    }
+
+    .description {
+        @include sizeWeightLh(15px, 400, 20px);
+
+        text-align: center;
+        margin: 0 auto 40px;
+        width: 343px;
+
+        @include media-breakpoint-up(md) {
+            width: 508px;
+        }
+    }
+
+    .purchase-component {
+        padding: 0 16px;
+
+        @include media-breakpoint-up(sm) {
+            padding: 0;
+
+            .swiper-wrapper {
+                justify-content: center;
+            }
+        }
+
+        .swiper-slide {
+            width: 146px;
+            height: 160px;
+            border: 1px solid $eerie-black;
+            text-align: center;
+            padding-top: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            @include media-breakpoint-up(sm) {
+                height: 135px;
+                width: 146px !important;
+                border: none;
+                padding-top: 25px;
+            }
+
+            .icon {
+                margin-bottom: 15px;
+                max-width: 32px;
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            .sub-text {
+                color: $eerie-black;
+                @include sizeWeightLh(14px, 400, 19px);
+
+                a {
+                    @include sizeWeightLh(14px, 400, 19px);
+
+                    display: block;
+                    color: $davy-grey;
+                }
+            }
+        }
+    }
+}

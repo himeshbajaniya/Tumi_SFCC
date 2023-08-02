@@ -1,0 +1,37 @@
+<div class="card desktop-card">
+    <ul class="card-body setting-slides">
+        <li tabindex="0" role="link" id="setting-overview-left" data-tabname='overview' data-url="${URLUtils.https('Account-MySettings')}" class="settings-link ${pdict.action === 'Account-MySettings' ? 'my-settings-active' : ''}">
+           ${Resource.msg('label.mysettings.overview','account',null)}
+                <img class="pull-right" src="${URLUtils.staticURL('/images/right-arrow.svg')}" alt="${Resource.msg('global.search', 'common', null)}" />
+        </li>
+
+        <li tabindex="0" role="link" id="setting-address-left" data-tabname='address' data-url="${URLUtils.https('Address-List')}" class="${pdict.action === 'Address-List' ? 'my-settings-active' : '' || pdict.action === 'Address-EditAddress' ? 'my-settings-active' : '' || pdict.action === 'Address-AddAddress' ? 'my-settings-active' : ''}">
+            ${Resource.msg('label.mysettings.savedaddresses','account',null)}
+                <img class="pull-right" src="${URLUtils.staticURL('/images/right-arrow.svg')}" alt="${Resource.msg('global.search', 'common', null)}" />
+        </li>
+
+        <li tabindex="0" role="link" id="setting-payment-left" data-tabname='payment' data-url="${URLUtils.https('PaymentInstruments-List')}" class="${pdict.action === 'PaymentInstruments-List' ? 'my-settings-active' : '' || pdict.action === 'PaymentInstruments-AddPayment' ? 'my-settings-active': ''}">
+            ${Resource.msg('label.mysettings.savedpayments','account',null)}
+                <img class="pull-right" src="${URLUtils.staticURL('/images/right-arrow.svg')}" alt="${Resource.msg('global.search', 'common', null)}" />
+        </li>
+
+        <li tabindex="0" role="link" id="setting-shoppingPreferences-left" data-tabname='shoppingPreferences' data-url="${URLUtils.https('ShoppingPreferences-Show')}" class="${pdict.action === 'ShoppingPreferences-Show' ? 'my-settings-active' : ''}">
+            ${Resource.msg('label.mysettings.shoppingpreferences','account',null)}
+                <img class="pull-right" src="${URLUtils.staticURL('/images/right-arrow.svg')}" alt="${Resource.msg('global.search', 'common', null)}" />
+        </li>
+
+        <li tabindex="0" role="link" id="setting-communicationPreference-left" data-tabname='communicationPreference' data-url="${URLUtils.https('CommunicationPreference-Show')}" class="${pdict.action === 'CommunicationPreference-Show' ? 'my-settings-active' : ''}">
+            ${Resource.msg('label.mysettings.communicationpreferences','account',null)}
+                <img class="pull-right" src="${URLUtils.staticURL('/images/right-arrow.svg')}" alt="${Resource.msg('global.search', 'common', null)}" />
+        </li>
+
+        <li tabindex="0" role="link" id="setting-myMonogram-left" data-tabname='myMonogram' data-url="${URLUtils.https('Account-MyMonogram')}" class="${pdict.action === 'Account-MyMonogram' ? 'my-settings-active' : ''}">
+            ${Resource.msg('label.mysettings.mymonogram','account',null)}
+                <img class="pull-right" src="${URLUtils.staticURL('/images/right-arrow.svg')}" alt="${Resource.msg('global.search', 'common', null)}" />
+        </li>
+
+        <li>
+            <a href="${URLUtils.https('Account-Show')}" role="menuitem"><img src="${URLUtils.absStatic('/images/back-arrow.svg')}" alt="" />${Resource.msg('label.mysettings.backtomyaccount','account',null)}</a>
+        </li>
+    </ul>
+</div>

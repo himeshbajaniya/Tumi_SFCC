@@ -1,0 +1,23 @@
+<header class="header">
+    <isinclude template="/components/header/skipNav" />
+
+    <div class="container px-0">
+        <div class="d-flex align-items-end">
+            <div class="logo">
+                <a class="logo-home" href="${URLUtils.url('Home-Show')}" title="${Resource.msgf('global.homepage.tooltip', 'common', null, Resource.msg('global.storename', 'common', null), Resource.msg(
+                                                                                'global.home', 'common', null))}">
+                    <img src="${URLUtils.staticURL('/images/logo.svg')}"
+                        alt="${Resource.msg('global.storename', 'common', null)}" />
+                </a>
+            </div>
+            <div class="ml-auto header-icons cart-icon">
+                <a href="${URLUtils.https('Cart-Show')}">
+                    <img src="${URLUtils.staticURL('/images/cart-icon.svg')}"
+                        alt="${Resource.msg('global.storename', 'common', null)}" />
+                    <span
+                        class="order-receipt-label grand-total-label checkout-cart">${Resource.msgf('label.number.items.in.cart', 'cart', null, pdict.order.items.totalQuantity)}</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</header>

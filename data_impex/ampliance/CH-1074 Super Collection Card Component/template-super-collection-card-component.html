@@ -1,0 +1,104 @@
+<div data-creative-name="{{content-asset-id}}" class="super-collection-card-component">
+    <div class="container">
+        {{#if heading}}
+        <div class="heading">{{heading}}</div>
+        {{/if}}
+        <div class="row flex-sm-row no-gutters 
+        {{#if (eq collection-image-position "Left")}} flex-md-row {{/if}}
+        {{#if (eq collection-image-position "Right")}} flex-md-row-reverse{{/if}}
+        {{#if (eq collection-image-position "Top")}} flex-md-column {{/if}}
+        ">
+            <div class="col-12 col-sm-6 
+            {{#if (eq collection-image-position "Left")}} col-md-6 pr-md-0 pr-sm-0 pl-md-0 pl-sm-0{{/if}}
+            {{#if (eq collection-image-position "Right")}} col-md-6 pl-md-0 pr-sm-0 pl-sm-0{{/if}}
+            {{#if (eq collection-image-position "Top")}} col-md-12 pr-sm-0 pr-md-0 pl-md-0 pl-sm-0{{/if}} 
+            left-section
+            ">
+                <img
+                    src="{{card-component-collection-image}}"
+                    alt="{{card-component-collection-image-alt}}"
+                />
+            </div>
+            <div class="col-sm-6 
+            {{#if (eq collection-image-position "Left")}} col-md-6 pl-md-0 pl-sm-0 pr-md-0 pr-sm-0{{/if}}
+            {{#if (eq collection-image-position "Right")}} col-md-6 pr-md-0 pl-sm-0 pr-sm-0{{/if}}
+            {{#if (eq collection-image-position "Top")}} col-md-12 pl-sm-0 pl-md-0 pr-md-0 pr-sm-0 {{/if}} 
+            right-section
+            ">
+                <div class="right-container">
+                <div class="
+                {{#if (eq collection-image-position "Top")}} d-md-flex 
+                
+                {{#if (eq tile-content-position "Right")}} flex-md-row {{/if}} 
+                {{#if (eq tile-content-position "Left")}} flex-md-row-reverse  {{/if}} 
+                {{/if}}
+                ">
+                    <div class="tile-image-container col-sm-12
+                    {{#if (eq collection-image-position "Top")}} col-md-6 tile-image-container-top{{/if}} 
+
+                    {{#if (eq collection-image-position "Top")}}
+                    {{#if (eq tile-content-position "Right")}} padding-left-image-tile {{/if}} 
+                    {{#if (eq tile-content-position "Left")}} padding-right-image-tile {{/if}} 
+                    {{/if}}
+                    ">
+                    <div class="row">
+                   
+                        <div class="tile-wrapper-1 col-4">
+                            <a href="{{card-component-tile-pdp-link-1}}">
+                                <img src="{{card-component-tile-image-1}}" class="w-100" alt="" />
+                            </a>
+                        </div>
+                        <div class="tile-wrapper-2 col-4">
+                            <a href="{{card-component-tile-pdp-link-2}}">
+                                <img src="{{card-component-tile-image-2}}" class="w-100" alt="" />
+                            </a>
+                        </div>
+                        <div class="tile-wrapper-3 col-4">
+                            <a href="{{card-component-tile-pdp-link-3}}">
+                                <img src="{{card-component-tile-image-3}}" class="w-100" alt="" />
+                            </a>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="contect-text
+                    {{#if (eq collection-image-position "Top")}} col-md-6 contect-text-top{{/if}} 
+
+                    {{#if (eq collection-image-position "Top")}}
+                    {{#if (eq tile-content-position "Right")}} padding-left-text {{/if}} 
+                    {{#if (eq tile-content-position "Left")}} padding-right-text {{/if}} 
+                    {{/if}}
+                    ">
+                        <div class="title">{{card-component-title}}</div>
+                        <div class="
+                        {{#if (eq collection-image-position "Top")}} decription-top {{/if}}
+                        {{#if (eq tile-content-position "Right")}} description {{/if}} 
+                        {{#if (eq tile-content-position "Left")}} description {{/if}} 
+                        
+                        ">
+                            {{card-component-description}}
+                        </div>
+                        <div class="shop-all-cta">
+                            <a
+                                class="button button--primary w-100"
+                                href="{{card-component-cta-link}}"
+                                >{{card-component-cta}}</a
+                            >
+                        </div>
+
+                        {{#if card-component-characterstick-tag-1}}
+                        <div class="char">
+                            <span class="char-1">
+                                {{card-component-characterstick-tag-1}}
+                            </span>
+                            <span class="char-2">
+                                {{card-component-characterstick-tag-2}}
+                            </span>
+                        </div>
+                        {{/if}}
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

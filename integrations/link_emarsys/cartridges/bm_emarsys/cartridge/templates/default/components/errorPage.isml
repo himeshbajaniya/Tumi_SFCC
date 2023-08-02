@@ -1,0 +1,28 @@
+<isdecorate template="/pageWrapper">
+    <iscontent type="text/html" charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="${URLUtils.staticURL('css/global.css')}" />
+    <script src="${URLUtils.staticURL('js/main.js')}" defer="defer"></script>
+
+    <div class="page-title-block">
+        <h1 class="page-title">${Resource.msg('heading.error.general','errorMessages',null)}</h1>
+    </div>
+    <div class="page-subtitle-block">
+        <h2 class="page-subtitle">${Resource.msg('subheading.error.general','errorMessages',null)}</h2>
+    </div>
+
+    <div class="container">
+        <isif condition="${!empty(pdict.error) && !empty(pdict.message)}">
+            <h2 class='error-message'>${pdict.message}</h2>
+            <pre><code><isprint value=${pdict.error.message} encoding="htmlcontent" /></code></pre>
+            <isif condition="${!empty(pdict.continueUrl)}">
+                <div class="try-again-link-block">
+                    <a href="${pdict.continueUrl}" class="try-again-link">
+                        ${Resource.msg('try.again.link.label','errorMessages',null)}
+                    </a>
+                </div>
+            </isif>
+        <iselse/>
+            ${Resource.msg('lack.of.arguments.message','errorMessages',null)}
+        </isif>
+    </div>
+</isdecorate>

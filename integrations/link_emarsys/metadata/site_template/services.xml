@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns="http://www.demandware.com/xml/impex/services/2014-09-26">
+    <service-credential service-credential-id="emarsys.http.cred">
+        <url>https://suite11.emarsys.net/api/v2/</url>
+    </service-credential>
+
+    <service-credential service-credential-id="exchange.emarsys.sftp.cred">
+        <url>exchange.si.emarsys.net</url>
+    </service-credential>
+
+    <service-profile service-profile-id="emarsys.http.prof">
+        <timeout-millis>5000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>10</rate-limit-calls>
+        <rate-limit-millis>10000</rate-limit-millis>
+        <cb-enabled>true</cb-enabled>
+        <cb-calls>10</cb-calls>
+        <cb-millis>5000</cb-millis>
+    </service-profile>
+
+    <service-profile service-profile-id="exchange.emarsys.sftp.prof">
+        <timeout-millis>5000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>10</rate-limit-calls>
+        <rate-limit-millis>10000</rate-limit-millis>
+        <cb-enabled>true</cb-enabled>
+        <cb-calls>10</cb-calls>
+        <cb-millis>5000</cb-millis>
+    </service-profile>
+
+    <service service-id="emarsys.api">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>emarsysEvents</log-prefix>
+        <comm-log-enabled>true</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>emarsys.http.prof</profile-id>
+        <credential-id>emarsys.http.cred</credential-id>
+    </service>
+
+    <service service-id="exchange.emarsys.api">
+        <service-type>SFTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>exchangeEmarsysEvents</log-prefix>
+        <comm-log-enabled>true</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>exchange.emarsys.sftp.prof</profile-id>
+        <credential-id>exchange.emarsys.sftp.cred</credential-id>
+    </service>
+
+</services>

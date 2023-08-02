@@ -1,0 +1,1612 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jobs xmlns="http://www.demandware.com/xml/impex/jobs/2015-07-01">
+    <job job-id="DownloadHistoryFiles" priority="0">
+        <description/>
+        <parameters/>
+        <flow>
+            <context site-id="Sites"/>
+            <step step-id="Download" type="custom.CSComponents.FtpDownload" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="ServiceID">samsonite.sftp.service</parameter>
+                    <parameter name="FilePattern">.*.zip</parameter>
+                    <parameter name="SourceFolder">/Tumi_US/Prod/Orders</parameter>
+                    <parameter name="TargetFolder">src/order/import</parameter>
+                    <parameter name="Recursive">false</parameter>
+                    <parameter name="NoFileFoundStatus">OK</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <rules/>
+        <triggers>
+            <run-once enabled="false">
+                <date>2022-08-03Z</date>
+                <time>19:02:57.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+
+    <job job-id="Import_US_Orders" priority="0">
+        <description/>
+        <parameters/>
+        <flow>
+            <context site-id="tumi-us"/>
+            <step step-id="ImportOrders" type="custom.ImportOrders" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="ImportType">ORDER_IMPORT</parameter>
+                    <parameter name="MaxProducts">101</parameter>
+                    <parameter name="ImportFolder">/src/order/import/</parameter>
+                    <parameter name="FilePattern">.*Order.*.csv</parameter>
+                    <parameter name="ArchiveFolder">/src/order/import/archive/</parameter>
+                    <parameter name="MaxRecordPerFile">15000</parameter>
+                    <parameter name="DebugLevel">2</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <rules>
+            <on-exit status="OK,ERROR" enabled="false">
+                <send-mail>
+                    <from>noreply@demandware.net</from>
+                    <to>cristi.mariean.cft@jcrew.com</to>
+                </send-mail>
+            </on-exit>
+        </rules>
+        <triggers>
+            <run-once enabled="false">
+                <date>2022-08-09Z</date>
+                <time>14:52:17.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+
+    <job job-id="ImportCustomersFromXMLIntoSFCC" priority="0">
+        <description/>
+        <parameters/>
+        <flow>
+            <context site-id="tumi-us"/>
+            <step step-id="ImportCustomers" type="ImportCustomers" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="WorkingFolder">customer/import</parameter>
+                    <parameter name="FileNamePattern">.*Trace.*?\.xml$</parameter>
+                    <parameter name="NoFilesFoundHandling">NO_FILES_FOUND</parameter>
+                    <parameter name="ImportMode">Merge</parameter>
+                    <parameter name="ImportFailedHandling">WARN</parameter>
+                    <parameter name="AfterImportFileHandling">Archive</parameter>
+                    <parameter name="ArchiveFolder">src/customer/import/archive</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <rules>
+            <on-exit status="OK,ERROR" enabled="true">
+                <send-mail>
+                    <from>noreply@demandware.net</from>
+                    <to>cristi.mariean@samsonite.com</to>
+                </send-mail>
+            </on-exit>
+        </rules>
+        <triggers>
+            <run-once enabled="false">
+                <date>2022-05-05Z</date>
+                <time>13:35:59.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+
+    <job job-id="ImportCustomersFromCSVToXML" priority="0">
+        <description/>
+        <parameters/>
+        <flow>
+            <context site-id="tumi-us"/>
+            <step step-id="ImportCustomers" type="custom.ImportCustomers" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="ImportType">CUSTOMER_IMPORT</parameter>
+                    <parameter name="MaxAddresses">100</parameter>
+                    <parameter name="ImportFolder">/src/customer/import/</parameter>
+                    <parameter name="FilePattern">.*US_40Customers.*.csv</parameter>
+                    <parameter name="ArchiveFiles">true</parameter>
+                    <parameter name="ArchiveFolder">/src/customer/import/archive/</parameter>
+                    <parameter name="MaxRecordPerFile">1000000</parameter>
+                    <parameter name="EncryptRandomPassword">false</parameter>
+                    <parameter name="DebugLevel">2</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <rules>
+            <on-running runtime-threshold="60m" enabled="true">
+                <mark-job-as-hanging/>
+                <send-mail>
+                    <from>noreply@demandware.net</from>
+                    <to>cristi.mariean@samsonite.com</to>
+                </send-mail>
+            </on-running>
+            <on-exit status="OK,ERROR" enabled="true">
+                <send-mail>
+                    <from>noreply@demandware.net</from>
+                    <to>cristi.mariean@samsonite.com</to>
+                </send-mail>
+            </on-exit>
+        </rules>
+        <triggers>
+            <run-once enabled="false">
+                <date>2022-05-12Z</date>
+                <time>14:55:29.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+
+    <job job-id="Unzip" priority="0">
+        <description/>
+        <parameters/>
+        <flow>
+            <context site-id="Sites"/>
+            <step step-id="Unzip" type="custom.Unzip" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="ImportFolder">/src/customer/import/</parameter>
+                    <parameter name="FilePattern">.*Cust.*.zip</parameter>
+                    <parameter name="ArchiveFiles">false</parameter>
+                    <parameter name="ArchiveFolder">/src/customer/import/archive/</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <rules/>
+        <triggers>
+            <run-once enabled="false">
+                <date>2022-05-12Z</date>
+                <time>18:57:55.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+
+    <job job-id="ImportCustomersFromCSVToXML_CA" priority="0">
+        <description/>
+        <parameters/>
+        <flow>
+            <context site-id="tumi-us"/>
+            <step step-id="ImportCustomers" type="custom.ImportCustomers" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="ImportType">CUSTOMER_IMPORT</parameter>
+                    <parameter name="MaxAddresses">100</parameter>
+                    <parameter name="ImportFolder">/src/customer/import/</parameter>
+                    <parameter name="FilePattern">CA_.*.csv</parameter>
+                    <parameter name="ArchiveFiles">true</parameter>
+                    <parameter name="ArchiveFolder">/src/customer/import/archive/</parameter>
+                    <parameter name="MaxRecordPerFile">1000000</parameter>
+                    <parameter name="EncryptRandomPassword">false</parameter>
+                    <parameter name="PreferredLocale">en_CA</parameter>
+                    <parameter name="DebugLevel">2</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <rules>
+            <on-running runtime-threshold="60m" enabled="true">
+                <mark-job-as-hanging/>
+                <send-mail>
+                    <from>noreply@demandware.net</from>
+                    <to>cristi.mariean@samsonite.com</to>
+                </send-mail>
+            </on-running>
+            <on-exit status="OK,ERROR" enabled="true">
+                <send-mail>
+                    <from>noreply@demandware.net</from>
+                    <to>cristi.mariean@samsonite.com</to>
+                </send-mail>
+            </on-exit>
+        </rules>
+        <triggers>
+            <run-once enabled="false">
+                <date>2022-05-12Z</date>
+                <time>14:55:29.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+
+    <job job-id="CustomerUpdatesFromCVSToSML" priority="0">
+        <description/>
+        <parameters/>
+        <flow>
+            <context site-id="tumi-us"/>
+            <step step-id="CustomerUpdates" type="custom.CustomerUpdates" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="ImportType">CUSTOMER_IMPORT</parameter>
+                    <parameter name="AttributesToImport">StoreId</parameter>
+                    <parameter name="ImportFolder">/src/customer/import/</parameter>
+                    <parameter name="FilePattern">.*Customers.*.csv</parameter>
+                    <parameter name="ArchiveFiles">true</parameter>
+                    <parameter name="ArchiveFolder">/src/customer/import/archive/</parameter>
+                    <parameter name="MaxRecordPerFile">1000000</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <rules/>
+        <triggers>
+            <run-once enabled="false">
+                <date>2022-08-11Z</date>
+                <time>14:54:28.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+
+    <job job-id="ImportTracersFrom CSVToXML" priority="0">
+        <description/>
+        <parameters/>
+        <flow>
+            <context site-id="tumi-us"/>
+            <step step-id="ImportTracers" type="custom.ImportTracers" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="ImportType">TRACER_IMPORT</parameter>
+                    <parameter name="MaxTracers">100</parameter>
+                    <parameter name="ImportFolder">/src/customer/import/</parameter>
+                    <parameter name="FilePattern">.*Tracer.*.csv</parameter>
+                    <parameter name="ArchiveFiles">true</parameter>
+                    <parameter name="ArchiveFolder">/src/customer/import/archive/</parameter>
+                    <parameter name="MaxRecordPerFile">1000000</parameter>
+                    <parameter name="DebugLevel">2</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <rules/>
+        <triggers>
+            <run-once enabled="false">
+                <date>2022-08-11Z</date>
+                <time>15:19:11.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+	
+	<job job-id="GoData-ProductFeed" priority="0">
+        <description/>
+        <parameters>
+            <parameter name="SiteScope"/>
+        </parameters>
+        <flow>
+            <context site-id="tumi-us"/>
+            <step step-id="GetProductFeed" type="ExecuteScriptModule" enforce-restart="false">
+                <description>Create a TXT file with the products and transfer it to SFTP</description>
+                <parameters>
+                    <parameter name="ExecuteScriptModule.Module">org_tumi/cartridge/scripts/jobs/exportGoDataProductFeed.js</parameter>
+                    <parameter name="ExecuteScriptModule.FunctionName">exportProductFeeds</parameter>
+                    <parameter name="ExecuteScriptModule.Transactional">false</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <rules/>
+        <triggers>
+            <run-once enabled="false">
+                <date>2022-05-19Z</date>
+                <time>22:29:56.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+
+    <job job-id="ExportTumiTracerOrder" priority="0">
+        <description/>
+        <parameters/>
+        <flow>
+            <context site-id="tumi-ca"/>
+            <step step-id="ExportTumiTracerOrder" type="custom.tumi.ExportTumiTracerCSV" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="TargetFolder">src/order</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <rules/>
+        <triggers>
+            <run-once enabled="false">
+                <date>2022-06-27Z</date>
+                <time>08:47:03.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+
+    <job job-id="LincOrderExport" priority="0">
+        <description>Exports the newly placed orders to Linc</description>
+        <parameters/>
+        <split sequential="false">
+            <contexts template-ref="template_24">
+                <context site-id="tumi-ca"/>
+                <context site-id="tumi-us"/>
+            </contexts>
+            <flow-template template-id="template_24">
+                <step step-id="Order Export" type="ExecuteScriptModule" enforce-restart="false">
+                    <description>Create a JSON with the orders and export it to Linc. Runs the execute method in the OrderExport.js</description>
+                    <parameters>
+                        <parameter name="ExecuteScriptModule.Module">org_tumi/cartridge/scripts/jobs/lincOrderExport.js</parameter>
+                        <parameter name="ExecuteScriptModule.FunctionName">execute</parameter>
+                        <parameter name="ExecuteScriptModule.Transactional">false</parameter>
+                    </parameters>
+                </step>
+            </flow-template>
+        </split>
+        <rules/>
+        <triggers>
+            <run-once enabled="false">
+                <date>2022-05-17Z</date>
+                <time>19:03:19.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+
+    <job job-id="unverifiedCustomerRemovalJob" priority="0">
+        <description/>
+        <parameters/>
+        <flow>
+            <context site-id="tumi-ca"/>
+            <step step-id="ExportUnverifiedCustomers" type="custom.tumi.unverifiedCustomerRemovalJob" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="removeTime">2880</parameter>
+                    <parameter name="fileName">unverifiedCustomers.xml</parameter>
+                    <parameter name="folderPath">src/unverifiedCustomers</parameter>
+                </parameters>
+            </step>
+            <step step-id="DeleteCustomers" type="ImportCustomers" enforce-restart="false">
+                <description>DeleteCustomers</description>
+                <parameters>
+                    <parameter name="WorkingFolder">unverifiedCustomers</parameter>
+                    <parameter name="FileNamePattern">unverifiedCustomers.xml</parameter>
+                    <parameter name="NoFilesFoundHandling">NO_FILES_FOUND</parameter>
+                    <parameter name="ImportMode">Delete</parameter>
+                    <parameter name="ImportFailedHandling">ERROR</parameter>
+                    <parameter name="AfterImportFileHandling">Archive</parameter>
+                    <parameter name="ArchiveFolder">archive/unverifiedCustomers</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <rules/>
+        <triggers>
+            <run-once enabled="false">
+                <date>2022-06-03Z</date>
+                <time>12:50:34.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+
+    <job job-id="ImportCustomers" priority="0">
+        <description/>
+        <parameters/>
+        <flow>
+            <context site-id="tumi-us"/>
+            <step step-id="ImportCustomers" type="custom.ImportCustomers" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="ImportType">CUSTOMER_IMPORT</parameter>
+                    <parameter name="ImportFolder">/src/customer/import/</parameter>
+                    <parameter name="FilePattern">.*Customers.*.csv</parameter>
+                    <parameter name="ArchiveFiles">true</parameter>
+                    <parameter name="ArchiveFolder">/src/customer/import/archive/</parameter>
+                    <parameter name="MaxRecordPerFile">1000000</parameter>
+                    <parameter name="EncryptRandomPassword">false</parameter>
+                    <parameter name="PreferredLocale">en_CA</parameter>
+                    <parameter name="DebugLevel">2</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <rules>
+            <on-running runtime-threshold="60m" enabled="true">
+                <mark-job-as-hanging/>
+                <send-mail>
+                    <from>noreply@demandware.net</from>
+                    <to>cristi.mariean@samsonite.com</to>
+                </send-mail>
+            </on-running>
+            <on-exit status="OK,ERROR" enabled="true">
+                <send-mail>
+                    <from>noreply@demandware.net</from>
+                    <to>cristi.mariean@samsonite.com</to>
+                </send-mail>
+            </on-exit>
+        </rules>
+        <triggers>
+            <run-once enabled="false">
+                <date>2022-05-12Z</date>
+                <time>14:55:29.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+
+    <job job-id="Tumi-Returns" priority="0">
+        <description>Process Tumi return orders.</description>
+        <parameters/>
+        <flow>
+            <context site-id="Sites"/>
+            <step step-id="downloadReturnXML" type="custom.CSComponents.FtpDownload" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="ServiceID">canada.orderprocessor.sftp</parameter>
+                    <parameter name="SourceFolder">TUMIEcommerce/hybris/stage/incoming/orders/orderStatusUpdate_eom</parameter>
+                    <parameter name="TargetFolder">src/order/return</parameter>
+                    <parameter name="Recursive">false</parameter>
+                    <parameter name="NoFileFoundStatus">OK</parameter>
+                    <parameter name="IsDisabled">false</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <flow>
+            <context site-id="tumi-ca"/>
+            <step step-id="readReturnXML" type="custom.readAndUpdateReturnXML" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="folderpath">src/order/return</parameter>
+                    <parameter name="archievelocation">src/order/archive</parameter>
+                </parameters>
+            </step>
+            <step step-id="process-return" type="custom.processReturn" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="isRefundCallRequired">true</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <rules/>
+        <triggers>
+            <run-once enabled="false">
+                <date>2022-07-04Z</date>
+                <time>08:16:10.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+
+    <job job-id="CustomersImport" priority="0">
+        <description/>
+        <parameters/>
+        <flow>
+            <context site-id="tumi-us"/>
+            <step step-id="ImportCustomers" type="ImportCustomers" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="WorkingFolder">customer/import</parameter>
+                    <parameter name="FileNamePattern">.*Tracer.*?\.xml$</parameter>
+                    <parameter name="NoFilesFoundHandling">NO_FILES_FOUND</parameter>
+                    <parameter name="ImportMode">Merge</parameter>
+                    <parameter name="ImportFailedHandling">WARN</parameter>
+                    <parameter name="AfterImportFileHandling">Archive</parameter>
+                    <parameter name="ArchiveFolder">src/customer/import/archive</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <rules>
+            <on-exit status="OK,ERROR" enabled="true">
+                <send-mail>
+                    <from>noreply@demandware.net</from>
+                    <to>cristi.mariean@samsonite.com</to>
+                </send-mail>
+            </on-exit>
+        </rules>
+        <triggers>
+            <run-once enabled="false">
+                <date>2022-05-05Z</date>
+                <time>13:35:59.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+
+    <job job-id="ImportORders" priority="0">
+        <description/>
+        <parameters/>
+        <flow>
+            <context site-id="tumi-us"/>
+            <step step-id="ImportOrders" type="custom.ImportOrders" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="ImportType">ORDER_IMPORT</parameter>
+                    <parameter name="ImportFolder">/src/order/import/</parameter>
+                    <parameter name="FilePattern">.*Order.*.csv</parameter>
+                    <parameter name="ArchiveFolder">/src/order/import/archive/</parameter>
+                    <parameter name="DebugLevel">2</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <rules/>
+        <triggers>
+            <run-once enabled="false">
+                <date>2022-05-26Z</date>
+                <time>01:23:22.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+
+    <job job-id="Emarsys-ExportCatalog" priority="0">
+        <description/>
+        <parameters/>
+        <split sequential="false">
+            <contexts template-ref="template_25">
+                <context site-id="tumi-us"/>
+            </contexts>
+            <flow-template template-id="template_25">
+                <step step-id="product export" type="custom.EmarsysComponents.EmarsysExportCatalog" enforce-restart="false">
+                    <description/>
+                    <parameters>
+                        <parameter name="exportFolderName">predict</parameter>
+                        <parameter name="catalogConfigKey">catalogConfig</parameter>
+                    </parameters>
+                </step>
+                <step step-id="FtpUpload" type="custom.CSComponents.FtpUpload" enforce-restart="false">
+                    <description/>
+                    <parameters>
+                        <parameter name="ServiceID">exchange.emarsys.api</parameter>
+                        <parameter name="FilePattern">.*.csv</parameter>
+                        <parameter name="SourceFolder">src/predict</parameter>
+                        <parameter name="TargetFolder">Predict</parameter>
+                        <parameter name="Recursive">false</parameter>
+                        <parameter name="ArchiveFolder">src/predict/archives</parameter>
+                        <parameter name="NoFileFoundStatus">OK</parameter>
+                    </parameters>
+                </step>
+            </flow-template>
+        </split>
+        <rules/>
+        <triggers>
+            <run-once enabled="true">
+                <date>2020-08-19Z</date>
+                <time>15:49:21.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+
+    <job job-id="Emarys-Setup" priority="0">
+        <description>Setup job for Emarsys implementation.</description>
+        <parameters/>
+        <flow>
+            <context site-id="tumi-us"/>
+            <step step-id="GetSourceID" type="custom.EmarsysComponents.GetSourceID" enforce-restart="false">
+                <description/>
+                <parameters/>
+            </step>
+            <step step-id="GetAvailableProfileFields" type="custom.EmarsysComponents.GetAvailableProfileFields" enforce-restart="false">
+                <description/>
+                <parameters/>
+            </step>
+            <step step-id="CreateSingleChoiceValueMapping" type="custom.EmarsysComponents.CreateSingleChoiceValueMapping" enforce-restart="false">
+                <description/>
+                <parameters/>
+            </step>
+            <step step-id="CreateExternalEvents" type="custom.EmarsysComponents.CreateExternalEvents" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="customObjectKey">StoredEvents</parameter>
+                </parameters>
+            </step>
+            <step step-id="GetAvailableEvents" type="custom.EmarsysComponents.GetAvailableEvents" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="isDisabled">true</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <rules/>
+        <triggers>
+            <run-once enabled="true">
+                <date>2019-12-16Z</date>
+                <time>09:47:03.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+
+    <job job-id="TurnToExportCatalog" priority="0">
+        <description/>
+        <parameters/>
+        <split sequential="false">
+            <contexts template-ref="template_296">
+                <context site-id="tumi-ca"/>
+                <context site-id="tumi-us"/>
+            </contexts>
+            <flow-template template-id="template_296">
+                <step step-id="TurnToExportCatalogFeed_v5" type="custom.TurnToExportCatalogFeed_v5" enforce-restart="false">
+                    <description/>
+                    <parameters>
+                        <parameter name="ExportFileName">exportCatalog</parameter>
+                    </parameters>
+                </step>
+            </flow-template>
+        </split>
+        <split sequential="false">
+            <contexts template-ref="template_297">
+                <context site-id="tumi-ca"/>
+                <context site-id="tumi-us"/>
+            </contexts>
+            <flow-template template-id="template_297">
+                <step step-id="TurnToFeedUpload_v5" type="custom.TurnToFeedUpload_v5" enforce-restart="false">
+                    <description/>
+                    <parameters>
+                        <parameter name="ServiceID">turnto.http.export.orders.post</parameter>
+                        <parameter name="PostFileLocation">/feedUpload/postfile</parameter>
+                        <parameter name="FilePattern">exportCatalog.*</parameter>
+                        <parameter name="NoFileFoundStatus">OK</parameter>
+                        <parameter name="IsDisabled">false</parameter>
+                        <parameter name="isLoggingEnable">true</parameter>
+                    </parameters>
+                </step>
+            </flow-template>
+        </split>
+        <rules/>
+        <triggers>
+            <run-once enabled="false">
+                <date>2022-01-17Z</date>
+                <time>23:47:13.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+
+    <job job-id="TurnToHistoricalOrderExportOngoing" priority="0">
+        <description>Exports all orders placed in the last X days, where X is the value of the "Historical Order Days" Custom Site Preference in the "TurnTo Feeds" preference group</description>
+        <parameters/>
+        <flow>
+            <context site-id="RefArch"/>
+            <step step-id="TurnToExportOrderFeedOngoing_v5" type="custom.TurnToExportOrderFeedOngoing_v5" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="ExportFileName">exportOrders</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <flow>
+            <context site-id="RefArch"/>
+            <step step-id="TurnToFeedUpload_v5" type="custom.TurnToFeedUpload_v5" enforce-restart="false">
+                <description>3</description>
+                <parameters>
+                    <parameter name="ServiceID">turnto.http.export.orders.post</parameter>
+                    <parameter name="PostFileLocation">/feedUpload/postfile</parameter>
+                    <parameter name="FilePattern">exportOrders.*</parameter>
+                    <parameter name="NoFileFoundStatus">OK</parameter>
+                    <parameter name="IsDisabled">false</parameter>
+                    <parameter name="isLoggingEnable">true</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <rules/>
+        <triggers>
+            <run-once enabled="false">
+                <date>2022-01-17Z</date>
+                <time>23:47:13.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+
+    <job job-id="Test" priority="0">
+        <description/>
+        <parameters/>
+        <rules/>
+        <triggers>
+            <run-once enabled="false">
+                <date>2022-05-17Z</date>
+                <time>16:17:38.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+
+    <job job-id="TurnToImportUserGeneratedContent" priority="0">
+        <description>Import the user generated content XML feed from TurnTo, which can be used to make the content searchable by the storefront</description>
+        <parameters/>
+        <flow>
+            <context site-id="RefArch"/>
+            <step step-id="TurnToFeedDownload_v5" type="custom.TurnToFeedDownload_v5" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="XMLName">/turnto-ugc.xml</parameter>
+                    <parameter name="NoFileFoundStatus">OK</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <flow>
+            <context site-id="RefArch"/>
+            <step step-id="TurnToResetData_v5" type="custom.TurnToResetData_v5" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="DataType">ugc</parameter>
+                    <parameter name="isLoggingEnable">true</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <flow>
+            <context site-id="RefArch"/>
+            <step step-id="TurnToImportUGCFeed_v5" type="custom.TurnToImportUGCFeed_v5" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="ImportFileName">turnto-ugc.xml</parameter>
+                    <parameter name="isLoggingEnable">true</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <rules/>
+        <triggers>
+            <run-once enabled="false">
+                <date>2022-01-17Z</date>
+                <time>23:47:15.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+
+    <job job-id="TurnToHistoricalOrderExportSpecificDate" priority="0">
+        <description>Exports all orders from X date to the current date, where X is the value of the "Historical Order Date" Custom Site Preference in the "TurnTo Feeds" preference group</description>
+        <parameters/>
+        <flow>
+            <context site-id="RefArch"/>
+            <step step-id="TurnToExportOrderFeedSpecificDate_v5" type="custom.TurnToExportOrderFeedSpecificDate_v5" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="ExportFileName">exportOrders</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <flow>
+            <context site-id="RefArch"/>
+            <step step-id="TurnToFeedUpload_v5" type="custom.TurnToFeedUpload_v5" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="ServiceID">turnto.http.export.orders.post</parameter>
+                    <parameter name="PostFileLocation">/feedUpload/postfile</parameter>
+                    <parameter name="FilePattern">exportOrders.*</parameter>
+                    <parameter name="NoFileFoundStatus">OK</parameter>
+                    <parameter name="isLoggingEnable">true</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <rules/>
+        <triggers>
+            <run-once enabled="false">
+                <date>2022-01-17Z</date>
+                <time>23:47:15.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+
+    <job job-id="Reindex" priority="0">
+        <description/>
+        <parameters/>
+        <split sequential="false">
+            <contexts template-ref="template_45">
+                <context site-id="tumi-us"/>
+            </contexts>
+            <flow-template template-id="template_45">
+                <step step-id="Reindex" type="SearchReindex" enforce-restart="false">
+                    <description/>
+                    <parameters>
+                        <parameter name="Product related search indexes">true</parameter>
+                        <parameter name="Active data search index">true</parameter>
+                        <parameter name="Content search index">true</parameter>
+                        <parameter name="Indexer Type">Full Index Rebuild</parameter>
+                    </parameters>
+                </step>
+            </flow-template>
+        </split>
+        <rules/>
+        <triggers>
+            <run-once enabled="false">
+                <date>2018-06-25Z</date>
+                <time>05:36:56.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+
+    <job job-id="RebuildURLs" priority="0">
+        <description/>
+        <parameters/>
+        <flow>
+            <context site-id="tumi-us"/>
+            <step step-id="RebuildURLs" type="UpdateStorefrontURLs" enforce-restart="false">
+                <description/>
+                <parameters/>
+            </step>
+        </flow>
+        <rules/>
+        <triggers>
+            <run-once enabled="false">
+                <date>2018-06-25Z</date>
+                <time>05:38:35.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+
+    <job job-id="TurnToImportAverageRatings" priority="1">
+        <description>Imports the average rating feed from TurnTo, which is used to show the average stars on the product tiles</description>
+        <parameters/>
+        <flow>
+            <context site-id="tumi-us"/>
+            <step step-id="TurnToFeedDownload_v5" type="custom.TurnToFeedDownload_v5" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="XMLName">/turnto-skuaveragerating.xml</parameter>
+                    <parameter name="NoFileFoundStatus">OK</parameter>
+                    <parameter name="IsDisabled">false</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <flow>
+            <context site-id="tumi-us"/>
+            <step step-id="TurnToResetData_v5" type="custom.TurnToResetData_v5" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="DataType">ratings</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <flow>
+            <context site-id="RefArch"/>
+            <step step-id="TurnToImportRatingsFeed_v5" type="custom.TurnToImportRatingsFeed_v5" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="ImportFileName">turnto-skuaveragerating.xml</parameter>
+                    <parameter name="ProductNotFoundStatus">OK</parameter>
+                    <parameter name="isLoggingEnable">true</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <rules/>
+        <triggers>
+            <run-once enabled="false">
+                <date>2022-01-17Z</date>
+                <time>23:47:15.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+
+    <job job-id="UpdateOrderStatus-US" priority="0">
+        <description>Order Settlement for United States</description>
+        <parameters/>
+        <flow>
+            <context site-id="Sites"/>
+            <step step-id="downloadFTP" type="custom.CSComponents.FtpDownload" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="ServiceID">samsonite.sftp.service</parameter>
+                    <parameter name="FilePattern">^(orderStatusUpdate_.*csv)$</parameter>
+                    <parameter name="SourceFolder">/Tumi_US/Dev/OrderStatus_Import</parameter>
+                    <parameter name="TargetFolder">src/order/shipping/us</parameter>
+                    <parameter name="Recursive">false</parameter>
+                    <parameter name="DeleteRemoteFiles">true</parameter>
+                    <parameter name="NoFileFoundStatus">OK</parameter>
+                    <parameter name="IsDisabled">false</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <flow>
+            <context site-id="Sites"/>
+            <step step-id="downloadUSReturnsFeed" type="custom.CSComponents.FtpDownload" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="ServiceID">samsonite.sftp.service</parameter>
+                    <parameter name="FilePattern">^(returnEntryFeed_.*csv)$</parameter>
+                    <parameter name="SourceFolder">/Tumi_US/Dev/Returns</parameter>
+                    <parameter name="TargetFolder">src/order/return/us</parameter>
+                    <parameter name="Recursive">false</parameter>
+                    <parameter name="NoFileFoundStatus">OK</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <flow>
+            <context site-id="tumi-us"/>
+            <step step-id="shippingupdate" type="custom.updateshippingstatus" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="calculateReconcile">false</parameter>
+                    <parameter name="folderpath">src/order/shipping/us</parameter>
+                    <parameter name="archievelocation">src/order/archive</parameter>
+                </parameters>
+            </step>
+            <step step-id="CallSignifydToUpdateFulfillment" type="custom.callSignifydToUpdateFulfillment" enforce-restart="false">
+                <description/>
+                <parameters/>
+            </step>
+            <step step-id="CallSignifydSendOrCancelTransaction" type="custom.callSignifydSendOrCancelTransaction" enforce-restart="false">
+                <description/>
+                <parameters/>
+            </step>
+        </flow>
+        <flow>
+            <context site-id="tumi-us"/>
+            <step step-id="readReturnXML" type="custom.readAndUpdateReturnXML" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="folderpath">src/order/return/us</parameter>
+                    <parameter name="archievelocation">src/order/return/usreturnarchive</parameter>
+                </parameters>
+            </step>
+            <step step-id="process-return" type="custom.processReturn" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="isRefundCallRequired">false</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <rules/>
+        <triggers>
+            <run-recurring enabled="true">
+                <recurrence>
+                    <date-from>2022-07-26Z</date-from>
+                    <start-time>15:16:40.000Z</start-time>
+                    <interval>4h</interval>
+                    <day-of-week>
+                        <weekday>Friday</weekday>
+                        <weekday>Thursday</weekday>
+                        <weekday>Tuesday</weekday>
+                        <weekday>Monday</weekday>
+                        <weekday>Wednesday</weekday>
+                    </day-of-week>
+                </recurrence>
+            </run-recurring>
+        </triggers>
+    </job>
+
+    <job job-id="GetAllEvents" priority="0">
+        <description/>
+        <parameters/>
+        <flow>
+            <context site-id="tumi-us"/>
+            <step step-id="Get Available Events_" type="custom.EmarsysComponents.GetAvailableEvents" enforce-restart="false">
+                <description/>
+                <parameters/>
+            </step>
+        </flow>
+        <rules/>
+        <triggers>
+            <run-once enabled="true">
+                <date>2019-12-18Z</date>
+                <time>12:31:09.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+
+    <job job-id="LincProductFeed" priority="0">
+        <description>Exports the product feed to Linc</description>
+        <parameters/>
+        <flow>
+            <context site-id="tumi-us"/>
+            <step step-id="Product Feed" type="ExecuteScriptModule" enforce-restart="false">
+                <description>Create a CSV with the products and export it to Linc. Runs the execute method in the lincProductExport.js</description>
+                <parameters>
+                    <parameter name="ExecuteScriptModule.Module">org_tumi/cartridge/scripts/jobs/lincProductExport.js</parameter>
+                    <parameter name="ExecuteScriptModule.FunctionName">execute</parameter>
+                    <parameter name="ExecuteScriptModule.Transactional">false</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <flow>
+            <context site-id="Sites"/>
+            <step step-id="Transfer_To_FTP" type="custom.CSComponents.FtpUpload" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="ServiceID">linc.ftp.service</parameter>
+                    <parameter name="FilePattern">.*.csv</parameter>
+                    <parameter name="SourceFolder">src/product/linc</parameter>
+                    <parameter name="TargetFolder">/home/tumi/staging-product-feeds</parameter>
+                    <parameter name="Recursive">false</parameter>
+                    <parameter name="ArchiveFolder">src/product/linc/archive</parameter>
+                    <parameter name="NoFileFoundStatus">ERROR</parameter>
+                    <parameter name="IsDisabled">false</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <rules/>
+        <triggers>
+            <run-once enabled="true">
+                <date>2022-05-12Z</date>
+                <time>16:57:53.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+
+    <job job-id="Emarsys-ExportOrders" priority="0">
+        <description/>
+        <parameters/>
+        <flow>
+            <context site-id="tumi-us"/>
+            <step step-id="EmarsysExportOrders" type="custom.EmarsysComponents.EmarsysExportOrders" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="destinationFolder">test/orders</parameter>
+                    <parameter name="smartInsightCurrency">USD</parameter>
+                    <parameter name="enableCustomTimeFrame">true</parameter>
+                    <parameter name="timeframeStart">2019-11-11</parameter>
+                    <parameter name="timeframeEnd">2020-06-15</parameter>
+                </parameters>
+            </step>
+            <step step-id="FtpUpload" type="custom.CSComponents.FtpUpload" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="ServiceID">exchange.emarsys.api</parameter>
+                    <parameter name="FilePattern">.*.csv</parameter>
+                    <parameter name="SourceFolder">src/test/orders</parameter>
+                    <parameter name="TargetFolder">test/orders</parameter>
+                    <parameter name="Recursive">false</parameter>
+                    <parameter name="ArchiveFolder">src/test/orders/archive</parameter>
+                    <parameter name="NoFileFoundStatus">OK</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <rules/>
+        <triggers>
+            <run-once enabled="true">
+                <date>2019-12-11Z</date>
+                <time>10:06:55.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+
+    <job job-id="Emarsys-OrderStatusСhangeNotification" priority="0">
+        <description/>
+        <parameters/>
+        <split sequential="false">
+            <contexts template-ref="template_92">
+                <context site-id="tumi-us"/>
+            </contexts>
+            <flow-template template-id="template_92">
+                <step step-id="ShippingConfirmation" type="custom.EmarsysComponents.OrderStatusChangeNotification" enforce-restart="false">
+                    <description/>
+                    <parameters>
+                        <parameter name="stepFunctional">0</parameter>
+                    </parameters>
+                </step>
+                <step step-id="OrderCancelled" type="custom.EmarsysComponents.OrderStatusChangeNotification" enforce-restart="false">
+                    <description/>
+                    <parameters>
+                        <parameter name="stepFunctional">1</parameter>
+                    </parameters>
+                </step>
+            </flow-template>
+        </split>
+        <rules/>
+        <triggers>
+            <run-once enabled="true">
+                <date>2020-03-26Z</date>
+                <time>18:04:56.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+
+    <job job-id="Emarsys-InitDatabase" priority="0">
+        <description/>
+        <parameters/>
+        <split sequential="false">
+            <contexts template-ref="template_90">
+                <context site-id="tumi-us"/>
+            </contexts>
+            <flow-template template-id="template_90">
+                <step step-id="ExportCustomerInfo" type="custom.DBLoad.ExportCustomerInfo" enforce-restart="false">
+                    <description/>
+                    <parameters>
+                        <parameter name="csvFileColumnsDelimiter">;</parameter>
+                        <parameter name="optInStatus">0</parameter>
+                        <parameter name="customAttributeId">EmarsysOptInFlag</parameter>
+                        <parameter name="profilesExportThreshold">1000</parameter>
+                        <parameter name="mailSubject">Export orders</parameter>
+                    </parameters>
+                </step>
+            </flow-template>
+        </split>
+        <rules/>
+        <triggers>
+            <run-once enabled="true">
+                <date>2019-12-17Z</date>
+                <time>12:35:22.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+
+    <job job-id="Tumi-US Order Export" priority="0">
+        <description/>
+        <parameters/>
+        <flow>
+            <context site-id="tumi-us"/>
+            <step step-id="exportUSOrdersInAPTOSFormat" type="custom.tumi.convertOrderXML" enforce-restart="true">
+                <description>US Order export</description>
+                <parameters>
+                    <parameter name="TargetFolder">src/order/tumi_us</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <flow>
+            <context site-id="tumi-us"/>
+            <step step-id="uploadUSOrdersToSamsoniteSFTP" type="custom.CSComponents.FtpUpload" enforce-restart="true">
+                <description>Uploads the converted order XML in APTOS format to SFTP.</description>
+                <parameters>
+                    <parameter name="ServiceID">samsonite.sftp.service</parameter>
+                    <parameter name="FilePattern">.*.xml</parameter>
+                    <parameter name="SourceFolder">src/order/tumi_us</parameter>
+                    <parameter name="TargetFolder">Tumi_US/Dev/Order_Export</parameter>
+                    <parameter name="Recursive">false</parameter>
+                    <parameter name="ArchiveFolder">src/order/archive</parameter>
+                    <parameter name="NoFileFoundStatus">OK</parameter>
+                    <parameter name="IsDisabled">false</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <flow>
+            <context site-id="tumi-us"/>
+            <step step-id="SendMailForNotExportedOrder" type="custom.SendMailForNotExportedOrder" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="MailTo">amit.kumar7@publicissapient.com</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <rules/>
+        <triggers>
+            <run-once enabled="false">
+                <date>2022-03-08Z</date>
+                <time>12:27:38.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+
+    <job job-id="ReflektionCategoryFeedExport" priority="0">
+        <description>Export category data to CSV and uploads the file to Reflektion.  Executes script reflektionCategoryFeedExport.js Execute method.</description>
+        <parameters/>
+        <split sequential="false">
+            <contexts template-ref="template_24">
+                <context site-id="tumi-ca"/>
+                <context site-id="tumi-us"/>
+            </contexts>
+            <flow-template template-id="template_24">
+                <step step-id="Category Feed" type="ExecuteScriptModule" enforce-restart="false">
+                    <description>Export category data to CSV and uploads the file to Reflektion.  Executes script reflektionCategoryFeedExport.js Execute method.</description>
+                    <parameters>
+                        <parameter name="ExecuteScriptModule.Module">int_reflektion/cartridge/scripts/jobs/reflektionCategoryFeedExport.js</parameter>
+                        <parameter name="ExecuteScriptModule.FunctionName">execute</parameter>
+                        <parameter name="ExecuteScriptModule.Transactional">false</parameter>
+                    </parameters>
+                </step>
+            </flow-template>
+        </split>
+        <rules/>
+        <triggers>
+            <run-recurring enabled="false">
+                <recurrence>
+                    <date-from>2019-08-27Z</date-from>
+                    <start-time>03:45:00.000Z</start-time>
+                    <interval>1d</interval>
+                    <day-of-week>
+                        <weekday>Sunday</weekday>
+                        <weekday>Friday</weekday>
+                        <weekday>Thursday</weekday>
+                        <weekday>Tuesday</weekday>
+                        <weekday>Saturday</weekday>
+                        <weekday>Monday</weekday>
+                        <weekday>Wednesday</weekday>
+                    </day-of-week>
+                </recurrence>
+            </run-recurring>
+        </triggers>
+    </job>
+
+    <job job-id="ReflektionProductFeedExport" priority="0">
+        <description>Export product data to CSV and uploads the file to Reflektion.  Executes script reflektionProductFeedExport.js Execute method.</description>
+        <parameters/>
+        <split sequential="false">
+            <contexts template-ref="template_146">
+                <context site-id="tumi-ca"/>
+                <context site-id="tumi-us"/>
+            </contexts>
+            <flow-template template-id="template_146">
+                <step step-id="Product Feed" type="ExecuteScriptModule" enforce-restart="false">
+                    <description>Export product data to CSV and uploads the file to Reflektion.  Executes script reflektionProductFeedExport.js Execute method.</description>
+                    <parameters>
+                        <parameter name="ExecuteScriptModule.Module">int_reflektion/cartridge/scripts/jobs/reflektionProductFeedExport.js</parameter>
+                        <parameter name="ExecuteScriptModule.FunctionName">execute</parameter>
+                        <parameter name="ExecuteScriptModule.Transactional">false</parameter>
+                    </parameters>
+                </step>
+            </flow-template>
+        </split>
+        <rules/>
+        <triggers>
+            <run-recurring enabled="false">
+                <recurrence>
+                    <date-from>2019-08-23Z</date-from>
+                    <start-time>03:30:00.000Z</start-time>
+                    <interval>1d</interval>
+                    <day-of-week>
+                        <weekday>Sunday</weekday>
+                        <weekday>Friday</weekday>
+                        <weekday>Thursday</weekday>
+                        <weekday>Tuesday</weekday>
+                        <weekday>Saturday</weekday>
+                        <weekday>Monday</weekday>
+                        <weekday>Wednesday</weekday>
+                    </day-of-week>
+                </recurrence>
+            </run-recurring>
+        </triggers>
+    </job>
+
+    <job job-id="OrderReconcliation" priority="0">
+        <description>Canada Order Reconcliation</description>
+        <parameters/>
+        <flow>
+            <context site-id="tumi-ca"/>
+            <step step-id="OrderReconcliation" type="custom.settlement.reconcliation" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="days_before">5</parameter>
+                    <parameter name="mailTo">test@noreply.com;test@test.com</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <rules/>
+        <triggers>
+            <run-once enabled="false">
+                <date>2022-05-12Z</date>
+                <time>11:08:03.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+
+    <job job-id="Emarsys-ProductFeed" priority="0">
+        <description/>
+        <parameters>
+            <parameter name="SiteScope"/>
+        </parameters>
+        <flow>
+            <context site-id="tumi-us"/>
+            <step step-id="GetProductFeed" type="ExecuteScriptModule" enforce-restart="false">
+                <description>Create a CSV with the products and export it to Emarsys.</description>
+                <parameters>
+                    <parameter name="ExecuteScriptModule.Module">org_tumi/cartridge/scripts/jobs/exportEmarsysProductFeed.js</parameter>
+                    <parameter name="ExecuteScriptModule.FunctionName">getProductFeeds</parameter>
+                    <parameter name="ExecuteScriptModule.Transactional">false</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <rules/>
+        <triggers>
+            <run-once enabled="false">
+                <date>2022-05-17Z</date>
+                <time>21:10:25.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+
+    <job job-id="Tumi-CA Order Export" priority="0">
+        <description/>
+        <parameters/>
+        <flow>
+            <context site-id="tumi-ca"/>
+            <step step-id="exportCAOrdersInSAPFormat" type="custom.tumi.ExportOrderCSV" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="TargetFolder">src/order/tumi_ca</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <flow>
+            <context site-id="tumi-ca"/>
+            <step step-id="uploadCAOrdersToSamsoniteSFTP" type="custom.CSComponents.FtpUpload" enforce-restart="true">
+                <description>Uploads the converted order CSV in SAP format to SFTP.</description>
+                <parameters>
+                    <parameter name="ServiceID">samsonite.sftp.service</parameter>
+                    <parameter name="FilePattern">.*.csv</parameter>
+                    <parameter name="SourceFolder">src/order/tumi_ca</parameter>
+                    <parameter name="TargetFolder">Tumi_CA/Dev/Order_Export</parameter>
+                    <parameter name="Recursive">false</parameter>
+                    <parameter name="ArchiveFolder">src/order/archive</parameter>
+                    <parameter name="NoFileFoundStatus">OK</parameter>
+                    <parameter name="IsDisabled">false</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <flow>
+            <context site-id="tumi-ca"/>
+            <step step-id="SendMailForNotExportedOrder" type="custom.SendMailForNotExportedOrder" enforce-restart="false">
+                <description>Test</description>
+                <parameters>
+                    <parameter name="MailTo">ramya.sadagopan@publicissapient.com</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <rules/>
+        <triggers>
+            <run-once enabled="false">
+                <date>2022-04-01Z</date>
+                <time>14:33:06.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+
+    <job job-id="Order-Settlement" priority="0">
+        <description>Order Settlement for Canada</description>
+        <parameters/>
+        <flow>
+            <context site-id="Sites"/>
+            <step step-id="downloadFromFTP" type="custom.CSComponents.FtpDownload" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="ServiceID">canada.orderprocessor.sftp</parameter>
+                    <parameter name="FilePattern">^(orderStatusUpdate_.*csv)$</parameter>
+                    <parameter name="SourceFolder">TUMIEcommerce/hybris/stage/incoming/orders/orderStatusUpdate_eom</parameter>
+                    <parameter name="TargetFolder">src/download</parameter>
+                    <parameter name="Recursive">false</parameter>
+                    <parameter name="NoFileFoundStatus">OK</parameter>
+                    <parameter name="IsDisabled">true</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <flow>
+            <context site-id="tumi-us"/>
+            <step step-id="updateshipment" type="custom.updateshippingstatus" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="folderpath">src/order/shipping</parameter>
+                    <parameter name="archievelocation">src/order/archive</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <rules/>
+        <triggers>
+            <run-once enabled="false">
+                <date>2022-05-12Z</date>
+                <time>11:01:29.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+
+    <job job-id="UpdateAndOrderSettlement-ca" priority="0">
+        <description>Order Settlement for Canada</description>
+        <parameters/>
+        <flow>
+            <context site-id="Sites"/>
+            <step step-id="downloadOrderStatus" type="custom.CSComponents.FtpDownload" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="ServiceID">canada.orderprocessor.sftp</parameter>
+                    <parameter name="FilePattern">^(orderStatusUpdate_.*csv)$</parameter>
+                    <parameter name="SourceFolder">Tumi_CA/Dev/OrderStatus_Import</parameter>
+                    <parameter name="TargetFolder">src/order/shipping/ca</parameter>
+                    <parameter name="Recursive">false</parameter>
+                    <parameter name="DeleteRemoteFiles">true</parameter>
+                    <parameter name="NoFileFoundStatus">OK</parameter>
+                    <parameter name="IsDisabled">false</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <flow>
+            <context site-id="tumi-ca"/>
+            <step step-id="shippingupdate" type="custom.updateshippingstatus" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="folderpath">src/order/shipping/ca</parameter>
+                    <parameter name="archievelocation">src/order/archive</parameter>
+                </parameters>
+            </step>
+            <step step-id="CallSignifydToUpdateFulfillment" type="custom.callSignifydToUpdateFulfillment" enforce-restart="false">
+                <description>Reads the custom object and call signifyd fulfillment API for each shipped productLineItem</description>
+                <parameters/>
+            </step>
+            <step step-id="ordersettlement" type="custom.processsettlement" enforce-restart="false">
+                <description/>
+                <parameters/>
+            </step>
+            <step step-id="CallSignifydSendOrCancelTransaction" type="custom.callSignifydSendOrCancelTransaction" enforce-restart="false">
+                <description/>
+                <parameters/>
+            </step>
+        </flow>
+        <rules/>
+        <triggers>
+            <run-once enabled="false">
+                <date>2022-05-12Z</date>
+                <time>11:01:29.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+
+    <job job-id="OrderReconcliation-CA" priority="0">
+        <description>Canada Order Reconcliation</description>
+        <parameters/>
+        <flow>
+            <context site-id="tumi-ca"/>
+            <step step-id="OrderReconcliation" type="custom.settlement.reconcliation" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="days_before">5</parameter>
+                    <parameter name="mailTo">test@noreply.com;test@test.com</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <rules/>
+        <triggers>
+            <run-once enabled="false">
+                <date>2022-05-12Z</date>
+                <time>11:08:03.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+
+    <job job-id="scene7ImageExportForVariants" priority="0">
+        <description>Exporting the Scene7 Images for variant products</description>
+        <parameters/>
+        <split sequential="false">
+            <contexts template-ref="template_24">
+                <context site-id="tumi-ca"/>
+                <context site-id="tumi-us"/>
+            </contexts>
+            <flow-template template-id="template_24">
+                <step step-id="scene7ImageExportForVariants" type="custom.tumi.scene7ProductImageExport" enforce-restart="false">
+                    <description/>
+                    <parameters>
+                        <parameter name="TargetFolder">src/scene7</parameter>
+                    </parameters>
+                </step>
+            </flow-template>
+        </split>
+        <rules/>
+        <triggers>
+            <run-once enabled="false">
+                <date>2022-06-22Z</date>
+                <time>22:58:01.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+
+    <job job-id="ImportTracers" priority="0">
+        <description/>
+        <parameters/>
+        <flow>
+            <context site-id="tumi-us"/>
+            <step step-id="ImportTracers" type="custom.ImportTracers" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="ImportType">TRACER_IMPORT</parameter>
+                    <parameter name="ImportFolder">/src/customer/import/</parameter>
+                    <parameter name="FilePattern">.*Tracer.*.csv</parameter>
+                    <parameter name="ArchiveFiles">true</parameter>
+                    <parameter name="ArchiveFolder">/src/customer/import/archive/</parameter>
+                    <parameter name="MaxRecordPerFile">1000000</parameter>
+                    <parameter name="DebugLevel">2</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <rules/>
+        <triggers>
+            <run-once enabled="false">
+                <date>2022-08-05Z</date>
+                <time>15:24:44.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+
+    <job job-id="ImportPriceBooks" priority="0">
+        <description>Import Price books</description>
+        <parameters/>
+        <flow>
+            <context site-id="Sites"/>
+            <step step-id="DownloadPricebooks-US" type="custom.CSComponents.FtpDownload" enforce-restart="false">
+                <description>Download Pricebooks for TUMI US</description>
+                <parameters>
+                    <parameter name="ServiceID">samsonite.sftp.service</parameter>
+                    <parameter name="FilePattern">.*.xml</parameter>
+                    <parameter name="SourceFolder">/Tumi_US/Dev/Price_Import</parameter>
+                    <parameter name="TargetFolder">src/pricebooks</parameter>
+                    <parameter name="Recursive">false</parameter>
+                    <parameter name="DeleteRemoteFiles">true</parameter>
+                    <parameter name="NoFileFoundStatus">OK</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <flow>
+            <context site-id="Sites"/>
+            <step step-id="DownloadPricebooks-CA" type="custom.CSComponents.FtpDownload" enforce-restart="false">
+                <description>Download Pricebooks for TUMI CA</description>
+                <parameters>
+                    <parameter name="ServiceID">samsonite.sftp.service</parameter>
+                    <parameter name="FilePattern">.*.xml</parameter>
+                    <parameter name="SourceFolder">/Tumi_CA/Dev/Price_Import</parameter>
+                    <parameter name="TargetFolder">src/pricebooks</parameter>
+                    <parameter name="Recursive">false</parameter>
+                    <parameter name="DeleteRemoteFiles">true</parameter>
+                    <parameter name="NoFileFoundStatus">OK</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <flow>
+            <context site-id="Sites"/>
+            <step step-id="Import Pricebooks US-CA" type="ImportPriceBook" enforce-restart="false">
+                <description>Import Price books for TUMI US and CA Sites</description>
+                <parameters>
+                    <parameter name="WorkingFolder">/pricebooks</parameter>
+                    <parameter name="FileNamePattern">.*.xml</parameter>
+                    <parameter name="NoFilesFoundHandling">NO_FILES_FOUND</parameter>
+                    <parameter name="ImportMode">Merge</parameter>
+                    <parameter name="ImportFailedHandling">WARN</parameter>
+                    <parameter name="AfterImportFileHandling">Archive</parameter>
+                    <parameter name="ArchiveFolder">archive/pricebooks</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <rules/>
+        <triggers>
+            <run-once enabled="false">
+                <date>2022-07-06Z</date>
+                <time>17:26:55.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+
+    <job job-id="ImportInventoryLists" priority="0">
+        <description>Imports Inventory Lists</description>
+        <parameters/>
+        <flow>
+            <context site-id="Sites"/>
+            <step step-id="DownloadInventoryList-US" type="custom.CSComponents.FtpDownload" enforce-restart="false">
+                <description>Download Inventory Lists for TUMI US</description>
+                <parameters>
+                    <parameter name="ServiceID">samsonite.sftp.service</parameter>
+                    <parameter name="FilePattern">.*.xml</parameter>
+                    <parameter name="SourceFolder">/Tumi_US/Dev/Inventory_Import</parameter>
+                    <parameter name="TargetFolder">src/inventorylists</parameter>
+                    <parameter name="Recursive">false</parameter>
+                    <parameter name="NoFileFoundStatus">OK</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <flow>
+            <context site-id="Sites"/>
+            <step step-id="DownloadInventoryList-CA" type="custom.CSComponents.FtpDownload" enforce-restart="false">
+                <description>Download Inventory List for TUMI CA</description>
+                <parameters>
+                    <parameter name="ServiceID">samsonite.sftp.service</parameter>
+                    <parameter name="FilePattern">.*.xml</parameter>
+                    <parameter name="SourceFolder">/Tumi_CA/Dev/Inventory_Import</parameter>
+                    <parameter name="TargetFolder">src/inventorylists</parameter>
+                    <parameter name="Recursive">false</parameter>
+                    <parameter name="NoFileFoundStatus">OK</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <flow>
+            <context site-id="Sites"/>
+            <step step-id="Import Inventory List US-CA" type="ImportInventoryLists" enforce-restart="false">
+                <description>Import Inventory Lists for TUMI US and CA Sites</description>
+                <parameters>
+                    <parameter name="WorkingFolder">src/inventorylists</parameter>
+                    <parameter name="FileNamePattern">*.xml</parameter>
+                    <parameter name="NoFilesFoundHandling">NO_FILES_FOUND</parameter>
+                    <parameter name="ImportMode">Merge</parameter>
+                    <parameter name="ImportFailedHandling">WARN</parameter>
+                    <parameter name="AfterImportFileHandling">Archive</parameter>
+                    <parameter name="ArchiveFolder">InventoryArchive</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <rules/>
+        <triggers>
+            <run-once enabled="false">
+                <date>2022-07-07Z</date>
+                <time>14:28:52.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+
+    <job job-id="generate-custom-sitemap-xml" priority="0">
+        <description/>
+        <parameters/>
+        <flow>
+            <context site-id="tumi-us"/>
+            <step step-id="Generate Products Custom Sitemap XML" type="custom.generateSitemap" enforce-restart="false">
+                <description>Generates custom sitemap xml for products only
+and adds it to the default sitemap. Don't remove 'generateDefaultSitemap' step from flow</description>
+                <parameters>
+                    <parameter name="includeMasters">false</parameter>
+                </parameters>
+            </step>
+            <step step-id="generateDefaultSitemap" type="CreateSitemap" enforce-restart="false">
+                <description>Don't remove this step from flow. This is necessary to generate default SFCC sitemap, and index custom sitemaps in the server</description>
+                <parameters/>
+            </step>
+        </flow>
+        <rules/>
+        <triggers>
+            <run-once enabled="false">
+                <date>2022-08-23Z</date>
+                <time>21:38:46.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+
+</jobs>

@@ -1,0 +1,12 @@
+<div class="product_360_enable <isif condition="${!pdict.product.p360enable}">d-none</isif>">
+<div id="pdpCarousel-${product.id}" class="product_360_view" data-vid="${pdict.product.p360assetID ? pdict.product.p360assetID : ''}">
+    <div class="row spinWrapper" role="listbox">
+        <div id="s7_spinview"></div>
+        <div class="col-12 text-center">
+            <div class="description">
+                <img src="${URLUtils.staticURL('/images/360.png')}" alt="${Resource.msgf('product.image.view360', 'product', null)}"/><span>${Resource.msgf('message.drag.view', 'common', null)}</span>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

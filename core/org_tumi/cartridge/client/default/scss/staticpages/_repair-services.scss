@@ -1,0 +1,66 @@
+.service-repairs {
+    .jumbotron {
+        .container {
+            @include media-breakpoint-down(sm) {
+                padding-left: 0;
+                padding-right: 0;
+
+                span {
+                    display: inline-block;
+                    margin-bottom: 10px;
+                }
+            }
+
+            h1 {
+                @include media-breakpoint-down(sm) {
+                    @include sizeWeightLh(29px, 800, 35px);
+                }
+            }
+        }
+    }
+
+    .repair-services-user-info {
+        background-color: $white;
+        padding-top: 27px;
+        padding-bottom: 27px;
+
+        .user-info {
+            border: 2px solid $eerie-black;
+            padding: 20px;
+            text-align: center;
+
+            p {
+                a {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        a.button-secondary-dark {
+            &:hover {
+                color: $white;
+            }
+        }
+
+        // .font-dark {
+        //     font-weight: 600;
+        // }
+    }
+
+    .service-repairs-content {
+        h2 {
+            font-size: 18px;
+            padding: 15px 0 5px;
+            // font-weight: 700;
+            letter-spacing: 0.025em;
+            line-height: 1.75;
+            text-transform: uppercase;
+        }
+    }
+}
+
+.repair-content {
+    a {
+        text-decoration: underline;
+    }
+}

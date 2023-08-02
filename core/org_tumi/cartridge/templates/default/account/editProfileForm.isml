@@ -1,0 +1,97 @@
+<div class="edit-profile">
+    <form action="${URLUtils.url('Account-SaveProfileWithoutPW')}" class="edit-profile-form" method="POST" <isprint value="${pdict.profileForm.attributes}" encoding="htmlsinglequote" />>
+     <div class="row">
+         <div class="col-6"> 
+             <div class="form-group
+                <isif condition="${pdict.profileForm.customer.firstname.mandatory === true}">required</isif>">
+                <input type="text" class="form-control" id="firstName" data-missing-error="${Resource.msg('profile.firstName.required','account',null)}" placeholder="${pdict.profileForm.customer.firstname.label}*"
+                    data-pattern-mismatch="${Resource.msg('profile.firstName.invalid','account',null)}" <isprint value="${pdict.profileForm.customer.firstname.attributes}" encoding="htmlsinglequote" />>
+                <label class="form-control-label" for="firstName">
+                    <isprint value="${pdict.profileForm.customer.firstname.label}" encoding="htmlcontent" />
+                </label>
+                <div class="invalid-feedback"></div>
+            </div>
+         </div>
+         <div class="col-6"> 
+             <div class="form-group
+                <isif condition="${pdict.profileForm.customer.lastname.mandatory === true}">required</isif>">
+                <input type="text" class="form-control" id="lastName" data-missing-error="${Resource.msg('profile.lastName.required','account',null)}" placeholder="${pdict.profileForm.customer.lastname.label}*"
+                    <isprint value="${pdict.profileForm.customer.lastname.attributes}" encoding="htmlsinglequote" />>
+                <label class="form-control-label" for="lastName">
+                    <isprint value="${pdict.profileForm.customer.lastname.label}" encoding="htmlcontent" />
+                </label>
+                <div class="invalid-feedback"></div>
+            </div>
+         </div>
+          <div class="col-12"> 
+              <div class="form-group email-label
+                <isif condition="${pdict.profileForm.customer.email.mandatory === true}">required</isif>">
+                <input type="email" class="form-control" autocomplete="false" readonly id="email" placeholder="${pdict.profileForm.customer.email.label}"
+                    <isprint value="${pdict.profileForm.customer.email.attributes}" encoding="htmlsinglequote" />>
+                <label class="form-control-label" for="email">
+                    <isprint value="${pdict.profileForm.customer.email.label}" encoding="htmlcontent" />
+                </label>
+                <div class="invalid-feedback"></div>
+            </div>
+         </div>
+         <div class="col-12"> 
+              <div class="form-group
+                <isif condition="${pdict.profileForm.customer.phone.mandatory === true}">required</isif>">
+                <input type="text" class="form-control" id="phone" data-pattern-mismatch="${Resource.msg('contact.phone.invalid','account',null)}" placeholder="${pdict.profileForm.customer.phone.label}"
+                    <isprint value="${pdict.profileForm.customer.phone.attributes}" encoding="htmlsinglequote" />>
+                <label class="form-control-label" for="phone">
+                    <isprint value="${pdict.profileForm.customer.phone.label}" encoding="htmlcontent" />
+                </label>
+                <div class="invalid-feedback"></div>
+            </div>
+         </div>
+         <div class="col-12"> 
+             <div class="form-group
+                <isif condition="${pdict.profileForm.customer.gender.mandatory === true}">required</isif>">
+                <label class="form-control-label" for="gender">
+                    <isprint value="${pdict.profileForm.customer.gender.label}" encoding="on" />
+                </label>
+                <select class="form-control" id="gender"
+                    <isprint value="${pdict.profileForm.customer.gender.attributes}" encoding="htmlsinglequote" />
+                    autocomplete="gender">
+                    <isloop items=${pdict.profileForm.customer.gender.options} var="gender">
+                        <option id="${gender.id}" value="${gender.value}" <isif condition="${gender.value == pdict.profileForm.customer.gender.value}">selected</isif>>${gender.label}</option>
+                    </isloop>
+                </select>
+                <div class="invalid-feedback"></div>
+            </div>
+         </div>
+         <div class="col-12"> 
+              <div class="form-group
+                <isif condition="${pdict.profileForm.customer.birthday.mandatory === true}">required</isif>">
+                <label class="form-control-label" for="birthday">
+                    <isprint value="${pdict.profileForm.customer.birthday.label}" encoding="htmlcontent" />
+                </label>
+                <input type="text" class="form-control" id="birthday" data-pattern-mismatch="${Resource.msg('profile.birthday.invalid','account',null)}" placeholder="MM/DD"
+                    <isprint value="${pdict.profileForm.customer.birthday.attributes}" encoding="htmlsinglequote" />>
+                <div class="invalid-feedback"></div>
+            </div>
+         </div>
+     </div>
+    <input type="hidden" name="${pdict.csrf.tokenName}" value="${pdict.csrf.token}"/>
+    <div class="row  d-none">
+        <div class="col form-group">
+            <span class="${pdict.tracking_consent == null ? '' : 'consented' } tracking-consent" 
+                data-url="${URLUtils.url('ConsentTracking-GetContent', 'cid', 'tracking_hint')}"
+                data-reject="${URLUtils.url('ConsentTracking-SetSession', 'consent', 'false')}"
+                data-accept="${URLUtils.url('ConsentTracking-SetSession', 'consent', 'true')}"
+                data-acceptText="${Resource.msg('button.consentTracking.yes', 'common', null)}"
+                data-rejectText="${Resource.msg('button.consentTracking.no', 'common', null)}"
+                data-heading="${Resource.msg('heading.consentTracking.track.consent', 'common', null)}">
+                ${Resource.msg('link.tracking.consent','account',null)}
+            </span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <button type="submit" name="save" class="btn-save button button--primary w-100">${Resource.msg('button.save.changes','account',null)}</button>
+        </div>
+    </div>
+</form>
+<isinclude template="edq/edqUnicorn" />
+</div>

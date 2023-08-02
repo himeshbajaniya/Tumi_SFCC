@@ -1,0 +1,22 @@
+<isdecorate template="common/layout/page">
+   <isscript>
+      var assets = require('*/cartridge/scripts/assets.js');
+      assets.addCss('/css/staticpages/tumiLock.css');
+   </isscript>
+   <isinclude template="/components/modules" sf-toolkit="off" />
+   <div class="tumi-diffrences-container customer-service-container">
+      <isslot id="customer-service-slot-A" context="global" description="First slot" />
+      <isslot id="customer-service-slot-B" context="global" description="Second slot" />
+      <isslot id="customer-service-slot-C" context="global" description="Third slot" />
+      <isinclude template="/home/tumiStore" />
+      <isslot id="customer-service-slot-D" context="global" description="Fourth slot" />
+      <isslot id="customer-service-slot-E" context="global" description="Fifith slot" />
+      <isslot id="customer-service-slot-F" context="global" description="Sixth slot" />
+      <isslot id="customer-service-slot-G" context="global" description="Seventh slot" />
+      <isslot id="customer-service-slot-H" context="global" description="Eightth slot" />
+   </div>
+   <isscript>
+      var assets = require('*/cartridge/scripts/assets.js');
+      assets.addJs('/js/tumiLock.js');
+   </isscript>
+</isdecorate>

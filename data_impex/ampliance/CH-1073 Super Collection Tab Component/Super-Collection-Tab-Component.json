@@ -1,0 +1,167 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "https://www.tumi.com/super-collection-tab-component",
+	"title": "Title",
+	"description": "Description",
+	"allOf": [
+		{
+			"$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+		}
+	],
+	"type": "object",
+	"properties": {
+		"content-asset-id": {
+			"title": "Content Asset ID",
+			"description": "SFCC Content Asset",
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 256,
+			"format": "text"
+		},
+		"tabs": {
+			"title": "Tabs",
+			"description": "add tabs",
+			"type": "array",
+			"minItems": 1,
+			"maxItems": 4,
+			"items": {
+				"allOf": [
+					{
+						"type": "object",
+						"properties": {
+							"tabName": {
+								"title": "Tab Name",
+								"description": "Enter Tab Name",
+								"type": "string",
+								"minLength": 1,
+								"maxLength": 256,
+								"format": "text"
+							},
+							"tabPId": {
+								"title": "Tab PId's",
+								"description": "Enter Tab PId's",
+								"type": "string",
+								"minLength": 1,
+								"maxLength": 256,
+								"format": "text"
+							},
+							"tabRfkId": {
+								"title": "Tab RfkId",
+								"description": "Enter Tab PId's",
+								"type": "string",
+								"minLength": 1,
+								"maxLength": 256,
+								"format": "text"
+							},
+							"tabHeroImageURL": {
+								"title": "Tab Hero Image URL",
+								"description": "Enter Tab Hero Image URL",
+								"type": "string",
+								"minLength": 1,
+								"maxLength": 256,
+								"format": "text"
+							},
+							"reviewStars": {
+								"title": "Review Rating Stars for Best Sellers",
+								"description": "Enter Review Rating Stars for Best Sellers",
+								"type": "string",
+								"minLength": 1,
+								"maxLength": 256,
+								"format": "text"
+							},
+							"reviewDescription": {
+								"title": "Review Description for Best Sellers",
+								"description": "Enter Review Description for Best Sellers",
+								"type": "string",
+								"minLength": 1,
+								"maxLength": 256,
+								"format": "text"
+							},
+							"reviewAuthor": {
+								"title": "Review Author for Best Sellers",
+								"description": "Enter Review Author for Best Sellers",
+								"type": "string",
+								"minLength": 1,
+								"maxLength": 256,
+								"format": "text"
+							},
+							"reviewProductName": {
+								"title": "Review Product Name for Best Sellers",
+								"description": "Enter Review Product Name for Best Sellers",
+								"type": "string",
+								"minLength": 1,
+								"maxLength": 256,
+								"format": "text"
+							},
+							"tabContentOne": {
+								"title": "Tab Content One",
+								"description": "Enter Tab Content One",
+								"type": "string",
+								"minLength": 1,
+								"maxLength": 256,
+								"format": "text"
+							},
+							"tabContentTwo": {
+								"title": "Tab Content Tow",
+								"description": "Enter Tab Content Two",
+								"type": "string",
+								"minLength": 1,
+								"maxLength": 256,
+								"format": "text"
+							},
+							"tabContentThree": {
+								"title": "Tab Content Three",
+								"description": "Enter Tab Content Three",
+								"type": "string",
+								"minLength": 1,
+								"maxLength": 256,
+								"format": "text"
+							},
+							"tabContentFour": {
+								"title": "Tab Content Four",
+								"description": "Enter Tab Content Four",
+								"type": "string",
+								"minLength": 1,
+								"maxLength": 256,
+								"format": "text"
+							},
+							"tabContentFive": {
+								"title": "Tab Content Five",
+								"description": "Enter Tab Content Five",
+								"type": "string",
+								"minLength": 1,
+								"maxLength": 256,
+								"format": "text"
+							},
+							"tabContentSix": {
+								"title": "Tab Content Six",
+								"description": "Enter Tab Content Six",
+								"type": "string",
+								"minLength": 1,
+								"maxLength": 256,
+								"format": "text"
+							}
+						}
+					}
+				]
+			}
+		},
+		"view-all-cta-name": {
+			"title": "View All CTA Name",
+			"description": "Enter View All CTA Name",
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 256,
+			"format": "text"
+		},
+		"view-al-cta-link": {
+			"title": "View All CTA Link",
+			"description": "Enter View All CTA Link",
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 256,
+			"format": "text"
+		}
+	},
+	"propertyOrder": []
+}

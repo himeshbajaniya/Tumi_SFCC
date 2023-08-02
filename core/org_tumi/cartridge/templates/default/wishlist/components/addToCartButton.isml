@@ -1,0 +1,16 @@
+<div class="add-to-cart-wishList">
+    <input type="hidden" class="add-to-cart-url" value="${URLUtils.url('Cart-AddProduct')}">
+    <input type="hidden" class="remove-from-sfl-url" value="${URLUtils.https('Wishlist-RemoveProduct')}">
+    <button class="add-to-cart button w-100 ${pdict.pageType === 'cart' ? 'button--secondary' : 'button--primary'} ${!item.available ? "disabled" : ""}"
+        data-pid="${item.pid}"
+        data-url="${URLUtils.url('Cart-AddProduct')}"
+        data-option="${JSON.stringify(item.selectedOptions)}"
+        ${!item.available ? "disabled" : ""}
+    >
+        <isif condition="${pdict.pageType !== 'cart'}">
+            ${Resource.msg('button.addtocart', 'common', null)}
+        <iselse/>
+            ${Resource.msg('button.movetocart', 'common', null)}
+        </isif>
+    </button>
+</div>

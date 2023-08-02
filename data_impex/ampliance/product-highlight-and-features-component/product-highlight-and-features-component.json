@@ -1,0 +1,118 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://www.tumi.com/product-highlight-and-features-component",
+  "title": "Title",
+  "description": "Description",
+  "allOf": [
+    {
+      "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+    }
+  ],
+  "type": "object",
+  "properties": {
+    "content-asset-id": {
+      "title": "Content Asset ID",
+      "description": "SFCC Content Asset",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 256,
+      "format": "text"
+    },
+    "s7Image": {
+      "type": "string",
+      "minLength": 0,
+      "maxLength": 250,
+      "format": "uri",
+      "title": "Scene 7 Image",
+      "description": "eg. https://tumi.scene7.com/is/image/Tumi/1232072777_main_T"
+    },
+    "s7ImageAltTag": {
+      "type": "string",
+      "minLength": 0,
+      "maxLength": 250,
+      "format": "text",
+      "title": "Scene 7 Image Alt Tag",
+      "description": "Enter Alt Tag for Image"
+    },
+    "cta1": {
+      "title": "CTA 1",
+      "description": "Enter CTA 1 to be shown on button",
+      "type": "string",
+      "minLength": 0,
+      "maxLength": 255
+    },
+    "cta1LandingURI": {
+      "title": "CTA 1 Landing Page URI",
+      "description": "CTA 1 Landing Page URI",
+      "type": "string",
+      "minLength": 0,
+      "maxLength": 250
+    },
+    "cta2": {
+      "title": "CTA 2 (optional)",
+      "description": "Enter CTA 2 to be shown on button",
+      "type": "string",
+      "minLength": 0,
+      "maxLength": 255
+    },
+    "cta2LandingURI": {
+      "title": "CTA 2 Landing Page URI (Optional)",
+      "description": "CTA 2 Landing Page URI",
+      "type": "string",
+      "minLength": 0,
+      "maxLength": 250
+    },
+    "mainTagLine": {
+      "title": "Main Tag Line",
+      "description": "Enter the main tag line",
+      "type": "string",
+      "minLength": 0,
+      "maxLength": 255
+    },
+    "description": {
+      "title": "Description (Optional)",
+      "description": "Enter the description",
+      "type": "string",
+      "minLength": 0,
+      "maxLength": 600
+    },
+    "backgroundSelection": {
+      "title": "Background Selection",
+      "description": "Background Selection",
+      "type": "string",
+      "enum": [
+        "Dark",
+        "Light"
+      ]
+    },
+    "imagePositionToBeShown": {
+      "title": "Image Position Selection",
+      "description": "Image Position Selection",
+      "type": "string",
+      "enum": [
+        "Left",
+        "Right"
+      ]
+    },
+    "componentvariationSelection": {
+      "title": "componentvariationSelection",
+      "description": "componentvariationSelection",
+      "type": "string",
+      "enum": [
+        "FiftyFifty",
+        "SixtyForty"
+      ]
+    },
+    "imageCtaLandingURI": {
+      "title": "Image Link URL",
+      "description": "Image Link URL",
+      "type": "string",
+      "minLength": 0,
+      "maxLength": 250
+    }
+  },
+  "propertyOrder": [],
+  "required": [
+    "content-asset-id"
+  ]
+}

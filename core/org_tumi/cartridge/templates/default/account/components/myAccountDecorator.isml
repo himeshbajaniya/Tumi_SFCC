@@ -1,0 +1,42 @@
+<isdecorate template="common/layout/page">
+
+<isscript>
+	var assets = require('*/cartridge/scripts/assets.js');
+	assets.addJs('/js/wishlist.js');
+	assets.addJs('/js/profile.js');
+	assets.addCss('/css/account/profile.css');
+</isscript>
+
+<div class="container-fluid account-banner d-none d-sm-block">
+	<div class="container">
+		<div class="row align-items-end">
+			<div class="col-12">
+				<div class="bread-crumb">
+					<div class="bread-crumb-content">
+					<a href="${URLUtils.url('Home-Show')}">
+						<img src="${URLUtils.absStatic('/images/home-icon.svg')}" alt="" /></a> / <a href="${URLUtils.https('Account-Show')}">${Resource.msg('link.header.myaccount','account',null)}</a> / ${Resource.msg('link.header.myaccount.my.settings','account',null)}
+					</div>
+				</div>
+				<div class="account-title">${Resource.msg('link.header.myaccount.my.settings','account',null)}</div>
+			</div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container my-settings-wrapper" data-home-page="${URLUtils.url('Home-Show')}">
+<div class="row">
+    <div class="col-sm-4 d-none d-sm-block">
+    <isinclude template="account/settingsSlide" />
+    </div>
+    <div class="col-sm-6 my-settings-container">
+		<isinclude template="account/backToSettings">
+        <isreplace/>
+    </div>
+    
+</div>
+</div>
+
+
+</isdecorate>

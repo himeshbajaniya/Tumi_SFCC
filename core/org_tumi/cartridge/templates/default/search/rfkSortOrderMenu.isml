@@ -1,0 +1,28 @@
+<isset name="rfkCategoryRequestData" value="${JSON.parse(pdict.rfkCategoryRequestData)}" scope="page" />
+<div class="sortby">
+    <div class="custom-dropdown sort-filter">
+        <a class="btn dropdown-toggle" href="javascript: void(0)" role="button"
+            id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            <span class="selectable"></span>
+            <span><img src="${URLUtils.absStatic('/images/down-arrow.svg')}" alt="" /></span>  
+        </a>
+            
+        <div class="dropdown-menu dropdown-menu-right rfk-sort-order-dropdown" aria-labelledby="dropdownMenuLink">
+            <div class="sortby-modal">
+                <h3>${Resource.msg('label.sort.by', 'search', null)}</h3>
+                <a href="javascrit:void(0)" class="remove-sort-modal">
+                <img src="${URLUtils.absStatic('/images/modal-close.svg')}" alt=""/></a>
+            </div>
+            <isloop items="${pdict.rfkPLPSearchResults.sort.choices}" var="option">
+                <div class="form-check radio-small">
+                    <input type="radio" class="form-check-input ${option.label}" id="${option.name}_${option.order}"
+                        data-id="${option.label}" name="rfk-sort-order" data-sort-name="${option.name}"
+                        data-sort-order="${option.order}" <isif condition="${(rfkCategoryRequestData.data.sort.value[0].name === option.name) && (rfkCategoryRequestData.data.sort.value[0].order === option.order)}">checked</isif>/>
+                    <label class="form-check-label" for="${option.name}_${option.order}">
+                        ${option.label}
+                    </label>
+                </div>
+            </isloop>
+        </div>
+    </div>
+</div>

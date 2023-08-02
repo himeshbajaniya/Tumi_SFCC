@@ -1,0 +1,15 @@
+<div>
+    <div class="card order-confirm-create-account">
+            <form
+                action="${URLUtils.url('Order-CreateAccount', 'ID', pdict.order.orderNumber, 'UUID', pdict.orderUUID)}"
+                class="checkout-registration"
+                method="POST"
+                name="checkout-register-form" ${pdict.passwordForm.attributes} novalidate>
+                <isinclude template="checkout/confirmation/confirmationCreateAccountExtension">
+                <input type="hidden" name="${pdict.csrf.tokenName}" value="${pdict.csrf.token}"/>
+                <button class="button button-primary btn-block w-100">
+                    ${Resource.msg('button.create.account','confirmation',null)}
+                </button>
+            </form>
+    </div>
+</div>

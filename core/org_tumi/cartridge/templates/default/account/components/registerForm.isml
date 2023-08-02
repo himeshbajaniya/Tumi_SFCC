@@ -1,0 +1,109 @@
+<p class="register-info">${Resource.msg('register.message.info','forms',null)}</p>
+<form
+    action="${pdict.createAccountUrl}"
+    class="registration"
+    method="POST"
+    name="${pdict.profileForm.htmlName}">
+    <div class="form-group has-float-label
+        <isif condition="${!!pdict.profileForm.customer.firstname.mandatory === true}">required</isif>">
+        <input
+            type="text"
+            class="form-control"
+            placeholder="First Name*"
+            id="registration-form-fname"
+            data-missing-error="${Resource.msg('error.message.required','forms',null)}"
+            data-range-error="${Resource.msg('error.message.50orless','forms',null)}"
+            aria-describedby="form-fname-error"
+            <isprint value=${pdict.profileForm.customer.firstname.attributes} encoding="off" />>
+            <label class="form-control-label" for="registration-form-fname">
+                <isprint value="${pdict.profileForm.customer.firstname.label}" encoding="htmlcontent" />
+            </label>
+        <div class="invalid-feedback" id="form-fname-error"></div>
+    </div>
+
+    <div class="form-group has-float-label
+        <isif condition="${!!pdict.profileForm.customer.lastname.mandatory === true}">required</isif>">
+        <input
+            type="text"
+            class="form-control"
+            placeholder="Last Name*"
+            id="registration-form-lname"
+            data-missing-error="${Resource.msg('error.message.required','forms',null)}"
+            data-range-error="${Resource.msg('error.message.50orless','forms',null)}"
+            aria-describedby="form-lname-error"
+            <isprint value=${pdict.profileForm.customer.lastname.attributes} encoding="off" />>
+        <label class="form-control-label" for="registration-form-lname">
+            <isprint value="${pdict.profileForm.customer.lastname.label}" encoding="htmlcontent" />
+        </label>
+        <div class="invalid-feedback" id="form-lname-error"></div>
+    </div>
+
+    <div class="form-group has-float-label
+        <isif condition="${!!pdict.profileForm.customer.email.mandatory === true}">required</isif>">
+        <input
+            type="text"
+            class="form-control"
+            placeholder="Email Address*"
+            id="registration-form-email"
+            data-missing-error="${Resource.msg('error.message.required','forms',null)}"
+            data-pattern-mismatch="${Resource.msg('error.message.parse.email.profile.form','forms',null)}"
+            data-range-error="${Resource.msg('error.message.50orless','forms',null)}"
+            aria-describedby="form-remail-error"
+            <isprint value=${pdict.profileForm.customer.email.attributes} encoding="off" />>
+        <label class="form-control-label" for="registration-form-email">
+             <isprint value="${pdict.profileForm.customer.email.label}" encoding="htmlcontent" />
+        </label>
+        <div class="invalid-feedback" id="form-remail-error"></div>
+        <div class="invalid-feedback-us d-none" id="form-remail-error-us">
+            <isprint value="${Resource.msg('error.link.us.customer', 'login', null)}"/>
+            <a href="https://www.tumi.com/s/united-airlines" style="text-decoration: underline;">${Resource.msg('error.link.us.customer.link', 'login', null)}</a>
+        </div>
+    </div>
+
+    <div class="form-group has-float-label position-relative
+        <isif condition="${!!pdict.profileForm.login.password.mandatory === true}">required</isif>">
+        <input
+            type="password"
+            class="form-control m-0"
+            placeholder="Password"
+            id="registration-form-password"
+            autocomplete="off"
+            aria-describedby="form-rpassword-error"
+            <isprint value=${pdict.profileForm.login.password.attributes} encoding="off" />>
+        <label class="form-control-label" for="registration-form-password">
+            <isprint value="${pdict.profileForm.login.password.label}" encoding="htmlcontent" />
+        </label>
+        <span class="toggle-password toggle-register-password" aria-label="registration-form-password" tabindex="0">
+            <img class="eye-slash" src="" data-src="${URLUtils.staticURL('/images/eye-slash.svg')}"
+                        alt="${Resource.msg('global.hide.password', 'common', null)}" />
+            <img class="eye" src="" data-src="${URLUtils.staticURL('/images/eye.svg')}"
+                        alt="${Resource.msg('global.show.password', 'common', null)}" />
+        </span>
+        <div class="pwstrength_progress"></div>
+        <div class="invalid-feedback" id="form-rpassword-error"></div>
+        <p id="password-error" class="password-info invalid-password"></p>
+    </div>
+
+    <div class="form-group custom-control custom-checkbox">
+        <input
+            type="checkbox"
+            class="custom-control-input" id="add-to-email-list"
+            <isprint value=${pdict.profileForm.customer.addtoemaillist.attributes} encoding="off" />
+        >
+        <label class="custom-control-label" for="add-to-email-list">
+            <isprint value="${pdict.profileForm.customer.addtoemaillist.label}" encoding="htmlcontent" />
+        </label>
+    </div>
+
+    <div class="account-verification-notification registration"></div>
+
+    <input type="hidden" name="${pdict.csrf.tokenName}" value="${pdict.csrf.token}"/>
+
+    <button tabindex="0" type="submit" class="button button--secondary w-100">
+        ${Resource.msg('button.createaccount.registration', 'registration', null)}
+    </button>
+    <div class="privacy-policy">
+        By signing in, you agree to TUMI’s <a href="/">Privacy Policy</a> and <a href="/">Terms & Conditions</a>.
+    </div>
+</form>
+<iscomment> CH-522 added </iscomment>

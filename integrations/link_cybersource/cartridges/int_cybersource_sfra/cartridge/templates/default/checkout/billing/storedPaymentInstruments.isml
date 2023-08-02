@@ -1,0 +1,74 @@
+<div class="choose-save-cards">Choose from your saved cards, or add a new one.</div>
+<isloop items="${pdict.customer.customerPaymentInstruments}" var="paymentInstrument" status="loopSate">
+    <div class="row saved-payment-instrument ${loopSate.first ? 'selected-payment' : ''}" data-uuid="${paymentInstrument.UUID}">
+        <div class="form-group required saved-security-code col-2">
+            <img class="card-image ${loopSate.first ? 'checkout' : ''}"
+                 src="${paymentInstrument.cardTypeImage.src}"
+                 alt="${paymentInstrument.cardTypeImage.alt}"
+            >
+         
+        </div>
+        <div class="col-10">
+        <div class="row">
+                <div class="saved-payment-information col-12 d-flex">
+            <iscomment> <div class="saved-credit-card-type">
+                <span>
+                    ${Resource.msg('msg.payment.type.credit', 'confirmation', null)}
+                    ${paymentInstrument.creditCardType}
+                </span>
+            </div> </iscomment>
+            <div class="saved-credit-card-number">
+                ${paymentInstrument.maskedCreditCardNumber},
+            </div>
+            <div class="saved-credit-card-expiration-date">
+                <span>
+                    ${Resource.msg('msg.card.type.ending', 'confirmation', null)}
+                    ${paymentInstrument.creditCardExpirationMonth}/${paymentInstrument.creditCardExpirationYear}
+                </span>
+            </div>
+        </div>
+  <div class="form-group required saved-security-code col-8">
+            <iscomment> <img class="card-image ${loopSate.first ? 'checkout' : ''}"
+                 src="${paymentInstrument.cardTypeImage.src}"
+                 alt="${paymentInstrument.cardTypeImage.alt}"
+            > </iscomment>
+            <div class="security-code-input ${loopSate.first ? '' : 'checkout-hidden'}">
+                <div>
+                
+               
+                <input type="password" class="form-control saved-payment-security-code icon-i" placeholder="CVV"id="saved-payment-security-code" maxlength="4">
+                 <span class="info-icon">
+                    <iscomment> <span class="icon">i</span> </iscomment>
+                   <span class="icon"> <img src="${URLUtils.staticURL('/images/i-icon.png')}"
+                        alt="${Resource.msg('global.storename', 'common', null)}" />
+                        </span>
+                    <div class="tooltip">
+                        ${Resource.msg('tooltip.security.code','creditCard',null)}
+                    </div>
+                </span>
+                 </div>
+                <div class="invalid-feedback">${Resource.msg('error.message.security.code.required', 'checkout', null)}</div>
+            </div>
+        </div>
+        
+        </div>
+        </div>
+
+        <iscomment> <div class="delete col-2 text-right">
+            <a href="/">DELETE</a>
+        </div> </iscomment>
+    </div>
+</isloop>
+<a class="btn add-payment add-new-payment-card">+ Add a New Card</a>
+<iscomment> Cybersource Secure Acceptance </iscomment>
+<div class="row">
+    <div class="col-12">
+        <div class="form-group">
+            <div class="selectedCardID-wrapper">
+                <input type="hidden" class="form-control selectedCardID" id="selectedCardID"
+                    value="" name="dwfrm_billing_creditCardFields_selectedCardID" >
+            </div>
+        </div>
+    </div>
+</div>
+

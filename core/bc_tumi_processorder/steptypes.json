@@ -1,0 +1,315 @@
+{
+    "step-types": {
+        "chunk-script-module-step": [{
+            "@type-id": "custom.updateshippingstatus",
+            "@supports-parallel-execution": "false",
+            "@supports-site-context": "true",
+            "@supports-organization-context": "false",
+            "description": "Read the CSV at the entry level code and update the product Line Item data",
+            "module": "bc_tumi_processorder/cartridge/scripts/jobsteps/updateshipping.js",
+            "before-step-function": "beforeStep",
+            "chunk-size": 20,
+            "transactional": "true",
+            "parameters": {
+                "parameter": [{
+                    "@name": "calculateReconcile",
+                    "@type": "boolean",
+                    "@required": "true",
+                    "default-value": true,
+                    "description": "Flag to determine whether reconcilled is required or not"
+                }, {
+                    "@name": "folderpath",
+                    "@type": "string",
+                    "@required": "true",
+                    "@trim": "true",
+                    "description": "Folder where update csv exists"
+                }, {
+                    "@name": "archievelocation",
+                    "@type": "string",
+                    "@required": "true",
+                    "@trim": "true",
+                    "default-value": "src/order/archive",
+                    "description": "Backup location"
+                }]
+            },
+            "status-codes": {
+                "status": [{
+                        "@code": "ERROR",
+                        "description": "Used when the step failed with an error."
+                    },
+                    {
+                        "@code": "OK",
+                        "description": "Used when the step finished successfully."
+                    }
+                ]
+            }
+        }, {
+            "@type-id": "custom.callSignifydToUpdateFulfillment",
+            "@supports-parallel-execution": "false",
+            "@supports-site-context": "true",
+            "@supports-organization-context": "false",
+            "description": "Reads the custom object and call signifyd fulfillment API for each shipped productLineItem",
+            "module": "bc_tumi_processorder/cartridge/scripts/jobsteps/callSignifydFulfillmentApi.js",
+            "before-step-function": "beforeStep",
+            "chunk-size": 20,
+            "transactional": "true",
+            "parameters": {
+                "parameter": []
+            },
+            "status-codes": {
+                "status": [{
+                        "@code": "ERROR",
+                        "description": "Used when the step failed with an error."
+                    },
+                    {
+                        "@code": "OK",
+                        "description": "Used when the step finished successfully."
+                    }
+                ]
+            }
+        }, {
+            "@type-id": "custom.processsettlement",
+            "@supports-parallel-execution": "false",
+            "@supports-site-context": "true",
+            "@supports-organization-context": "false",
+            "description": "Payment settlement",
+            "module": "bc_tumi_processorder/cartridge/scripts/jobsteps/paymentsettlement.js",
+            "before-step-function": "beforeStep",
+            "chunk-size": 20,
+            "transactional": "true",
+            "status-codes": {
+                "status": [{
+                        "@code": "ERROR",
+                        "description": "Used when the step failed with an error."
+                    },
+                    {
+                        "@code": "OK",
+                        "description": "Used when the step finished successfully."
+                    }
+                ]
+            }
+        }, {
+            "@type-id": "custom.callSignifydSendOrCancelTransaction",
+            "@supports-parallel-execution": "false",
+            "@supports-site-context": "true",
+            "@supports-organization-context": "false",
+            "description": "Reads the custom object and call signifyd sendTransaction or cancel Guarantee API",
+            "module": "bc_tumi_processorder/cartridge/scripts/jobsteps/callSignifydSendTransactionApi.js",
+            "before-step-function": "beforeStep",
+            "chunk-size": 20,
+            "transactional": "true",
+            "parameters": {
+                "parameter": []
+            },
+            "status-codes": {
+                "status": [{
+                        "@code": "ERROR",
+                        "description": "Used when the step failed with an error."
+                    },
+                    {
+                        "@code": "OK",
+                        "description": "Used when the step finished successfully."
+                    }
+                ]
+            }
+        }, {
+            "@type-id": "custom.settlement.reconcliation",
+            "@supports-parallel-execution": "false",
+            "@supports-site-context": "true",
+            "@supports-organization-context": "false",
+            "description": "Payment settlement",
+            "module": "bc_tumi_processorder/cartridge/scripts/jobsteps/paymentreconcliation.js",
+            "before-step-function": "beforeStep",
+            "chunk-size": 20,
+            "transactional": "true",
+            "parameters": {
+                "parameter": [{
+                    "@name": "days_before",
+                    "@type": "long",
+                    "@required": "true",
+                    "@trim": "true",
+                    "default-value": 5,
+                    "description": "Day before"
+                }, {
+                    "@name": "mailTo",
+                    "@type": "string",
+                    "@required": "true",
+                    "@trim": "true",
+                    "description": "Comma seperated values"
+                }]
+            },
+            "status-codes": {
+                "status": [{
+                        "@code": "ERROR",
+                        "description": "Used when the step failed with an error."
+                    },
+                    {
+                        "@code": "OK",
+                        "description": "Used when the step finished successfully."
+                    }
+                ]
+            }
+        }, {
+            "@type-id": "custom.readAndUpdateReturnXML",
+            "@supports-parallel-execution": "false",
+            "@supports-site-context": "true",
+            "@supports-organization-context": "false",
+            "description": "Read the CSV at the entry level code and update the product Line Item data",
+            "module": "bc_tumi_processorder/cartridge/scripts/jobsteps/readAndUpdateReturnXML.js",
+            "before-step-function": "beforeStep",
+            "chunk-size": 20,
+            "transactional": "true",
+            "parameters": {
+                "parameter": [{
+                    "@name": "folderpath",
+                    "@type": "string",
+                    "@required": "true",
+                    "@trim": "true",
+                    "description": "Folder where update csv exists"
+                }, {
+                    "@name": "archievelocation",
+                    "@type": "string",
+                    "@required": "true",
+                    "@trim": "true",
+                    "default-value": "src/order/archive",
+                    "description": "Backup location"
+                }]
+            },
+            "status-codes": {
+                "status": [{
+                        "@code": "ERROR",
+                        "description": "Used when the step failed with an error."
+                    },
+                    {
+                        "@code": "OK",
+                        "description": "Used when the step finished successfully."
+                    }
+                ]
+            }
+        }, {
+            "@type-id": "custom.processReturn",
+            "@supports-parallel-execution": "false",
+            "@supports-site-context": "true",
+            "@supports-organization-context": "false",
+            "description": "Payment settlement",
+            "module": "bc_tumi_processorder/cartridge/scripts/jobsteps/processReturn.js",
+            "before-step-function": "beforeStep",
+            "chunk-size": 20,
+            "transactional": "true",
+            "parameters": {
+                "parameter": [{
+                    "@name": "isRefundCallRequired",
+                    "@type": "boolean",
+                    "@required": "true",
+                    "default-value": false,
+                    "description": "Flag to determine whether refund service call is required or not"
+                }]
+            },
+            "status-codes": {
+                "status": [{
+                        "@code": "ERROR",
+                        "description": "Used when the step failed with an error."
+                    },
+                    {
+                        "@code": "OK",
+                        "description": "Used when the step finished successfully."
+                    }
+                ]
+            }
+        }],
+        "script-module-step": [{
+            "@type-id": "custom.CSComponents.FtpDownload",
+            "description": "Download files from an (S)FTP server",
+            "module": "bc_tumi_processorder/cartridge/scripts/jobsteps/FtpDownload.js",
+            "function": "Run",
+            "parameters": {
+                "parameters": [{
+                        "@name": "ServiceID",
+                        "@type": "string",
+                        "@required": "true",
+                        "@trim": "true"
+                    },
+                    {
+                        "@name": "KeyAlias",
+                        "@type": "string",
+                        "@required": "false",
+                        "description": "Private Key Alias to retrieve from BM keystore",
+                        "@trim": "true"
+                    },
+                    {
+                        "@name": "FilePattern",
+                        "@type": "string",
+                        "@required": "false",
+                        "description": "File pattern (Regular Expression)",
+                        "@trim": "true"
+                    },
+                    {
+                        "@name": "SourceFolder",
+                        "@type": "string",
+                        "@required": "true",
+                        "@trim": "true",
+                        "description": "Remote folder on Server where to find files, relative to home directory"
+                    },
+                    {
+                        "@name": "TargetFolder",
+                        "@type": "string",
+                        "@required": "true",
+                        "description": "Local folder where to store files, relative to IMPEX/",
+                        "@trim": "true",
+                        "default-value": "src/download"
+                    },
+                    {
+                        "@name": "Recursive",
+                        "@type": "boolean",
+                        "@required": "false",
+                        "description": "When checked, the operation will include subfolders.",
+                        "default-value": "false"
+                    },
+                    {
+                        "@name": "DeleteRemoteFiles",
+                        "description": "If set to true, remove each file after a successful download",
+                        "@type": "boolean",
+                        "@required": "false",
+                        "@trim": "true"
+                    },
+                    {
+                        "@name": "NoFileFoundStatus",
+                        "@type": "string",
+                        "@required": "true",
+                        "@trim": "true",
+                        "enum-values": {
+                            "value": [
+                                "OK",
+                                "ERROR"
+                            ]
+                        },
+                        "description": "Exit code in case no files were found.",
+                        "default-value": "OK"
+                    },
+                    {
+                        "@name": "IsDisabled",
+                        "description": "Mark the step as disabled. This will skip the step and returns a OK status",
+                        "@type": "boolean",
+                        "@required": "false",
+                        "@trim": "true"
+                    }
+                ]
+            },
+            "status-codes": {
+                "status": [{
+                        "@code": "ERROR",
+                        "description": "Used when an error occurred."
+                    },
+                    {
+                        "@code": "OK",
+                        "description": "Used when everything went well."
+                    },
+                    {
+                        "@code": "NO_FILE_FOUND",
+                        "description": "In case exit status is OK and no files were found."
+                    }
+                ]
+            }
+        }]
+    }
+}

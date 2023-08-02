@@ -1,0 +1,45 @@
+<div
+    class="header-menu-sub-menu ${category.id} menu-template1">
+    <div class="container d-flex flex-column">
+        <a href="javascript:void(0);" class="header-menu-sub-menu-title">${category.name}</a>
+        <isif condition="${category.displayShopAll !== null}">
+            <isprint value="${category.displayShopAll}" encoding="off" />
+        </isif>
+        <ul class="nav nav-tabs nav-fill" role="menu" aria-hidden="true" aria-label="${category.id}">
+            <isloop items="${menuItemColl.subCategories}" var="category" status="loopStatus">
+                <li class="nav-item" role="presentation">
+                    <a href="${'#'+category.id}" id="${category.id}-tab" class="nav-link ${loopStatus.index === 0 ? 'active' : ''}"
+                        data-toggle="tab" role="tab" aria-controls="${category.id}" aria-selected="${loopStatus.index === 0 ? 'true' : 'false'}"
+                        tabindex="0">${category.name}</a>
+                </li>
+            </isloop>
+        </ul>
+        <div class="tab-content">
+        <isloop items="${menuItemColl.subCategories}" var="categoryL2" status="loopStatus">
+            <isif condition="${categoryL2.subCategories}">
+                <div class="tab-pane ${loopStatus.index === 0 ? 'active' : ''}" id="${categoryL2.id}" role="tabpanel" aria-labelledby="${categoryL2.id}-tab">
+                <a href="javascript:void(0);" class="header-menu-sub-menu-title back">${categoryL2.id}</a>
+                <ul class="${categoryL2.id} row menu-sub">
+                    <isloop items="${categoryL2.subCategories}" var="categoryL3">
+                        <li class="${categoryL3.id} col-md-3"
+                            role="presentation">
+                            <a href="${categoryL3.url}" id="${categoryL3.id}" class="category-name" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                tabindex="0">
+                            <isif condition="${categoryL3.thumbnail}">
+                                <img class="w-100" src="" data-src="${categoryL3.thumbnail}" alt="${Resource.msg('global.category.image', 'common', null)}" />
+                            </isif>
+                            <span class="menu-sub-heading">${categoryL3.name}</span>
+                            <isif condition=" ${categoryL3.description}">
+                                <p><isprint value=" ${categoryL3.description}" encoding="htmlcontent" /></p>
+                            </isif>
+                            </a>
+                        </li>
+                    </isloop>
+                </ul>
+                </div>
+            </isif>
+        </isloop>
+        </div>
+    </div>
+</div>

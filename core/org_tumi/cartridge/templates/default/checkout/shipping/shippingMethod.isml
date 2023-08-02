@@ -1,0 +1,62 @@
+<isset name="shippingAddress" value="${pdict.forms.shippingForm.shippingAddress}" scope="page"/>
+
+<div class="ground-method${!shippingModel.applicableShippingMethods.length ? ' inactive':''}">
+    <div class="row leading-lines shipping-method-list" data-action-url="${URLUtils.https('CheckoutShippingServices-UpdateShippingMethodsList')}" data-select-shipping-method-url="${URLUtils.https('CheckoutShippingServices-SelectShippingMethod')}">
+        <input name="shipmentUUID" type="hidden" value="${shippingModel.UUID}" />
+        <isloop items="${shippingModel.applicableShippingMethods}" var="shippingMethod">
+            <div class="form-check col-9 p-0 ${(shippingModel.selectedShippingMethod && shippingMethod.ID === shippingModel.selectedShippingMethod.ID) ? 'shipmethod-selected' : ''}">
+                <isinclude template="checkout/shipping/selectedShippingMethod"/>
+                <label class="form-check-label shipping-method-option" for="shippingMethod-${shippingMethod.ID}-${shippingModel.UUID}">
+                    <span class="display-name">${shippingMethod.displayName}</span>
+                    <isif condition="${shippingMethod.estimatedArrivalTime}">
+                        <div class="text-muted arrival-time">${shippingMethod.estimatedArrivalTime}</div>
+                    </isif>
+                </label>
+            </div>
+            <div class="col-3 text-right shipping-method-pricing end-lines p-1">
+                <span class="shipping-cost">${shippingMethod.shippingCost}</span>
+            </div>
+        </isloop>
+    </div>
+    <div class="error-msg">
+        <span>
+            <isprint value="${Resource.msg('shipping.method.notavailable1', 'checkout', null)}"/>
+        </span>
+        <span>
+            <isprint value="${Resource.msg('shipping.method.notavailable2', 'checkout', null)}"/>
+        </span>
+    </div>
+</div>
+
+<isif condition="${shippingModel.applicableShippingMethods.length > 1}" >
+    <div class="choose-expedit-shipping">Need it faster? <a href="javascript:void(0)" class="choose-expedit-shipping-anchor">Choose expedited shipping</a></div>
+    <isif condition="${pdict.isOrderAccentableOrMonogramable}">
+        <div class="monogram-accent-note">
+            ${Resource.msg('shipping.method.monogramaccentnote', 'checkout', null)}
+        </div>
+    </isif>
+<iselse>
+    <div class="choose-expedit-shipping" style="display:none">Need it faster? <a href="javascript:void(0)" class="choose-expedit-shipping-anchor">Choose expedited shipping</a></div>
+    <isif condition="${pdict.isOrderAccentableOrMonogramable}">
+        <div class="monogram-accent-note">
+            ${Resource.msg('shipping.method.monogramaccentnote', 'checkout', null)}
+        </div>
+    </isif>
+</isif>
+
+<!---------------------------------------------------------------------------------->
+<!-- Template used by client to redraw shipping methods                           -->
+<!---------------------------------------------------------------------------------->
+<div id="shipping-method-template" style="display:none;" >
+
+    <div class="form-check col-9 p-1 all-shipmethod">
+        <input type="radio" class="form-check-input" id="shippingMethodRadioButton">
+        <label class="form-check-label shipping-method-option" for="shippingMethodRadioButton">
+            <span class="display-name"></span>
+            <div class="text-muted arrival-time"></div>
+        </label>
+    </div>
+    <div class="col-3 p-1 text-right shipping-method-pricing end-lines">
+        <span class="shipping-cost"></span>
+    </div>
+</div>

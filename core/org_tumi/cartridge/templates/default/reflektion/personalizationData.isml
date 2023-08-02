@@ -1,0 +1,5 @@
+<script>
+    window.deviceType = <isprint value="${JSON.stringify(pdict.deviceType)}" encoding="htmlsinglequote"/>;
+    window.ipAddress = <isprint value="${JSON.stringify(pdict.ipAddress)}" encoding="htmlsinglequote"/>;
+    window.customerUUID = <isprint value="${JSON.stringify(pdict.customerUUID)}" encoding="htmlsinglequote"/>;
+</script>

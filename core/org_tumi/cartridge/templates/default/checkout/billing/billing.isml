@@ -1,0 +1,105 @@
+<div class="card ghost payment">
+    <div class="card-header">
+        <h2 class="card-header-custom">${Resource.msg('heading.payment', 'checkout', null)}</h2>
+    </div>
+</div>
+<input type="hidden" id="billingCountry" value="${dw.system.Site.current.preferences.custom.siteCountryCode}" data-siteCountryCode="${dw.system.Site.current.preferences.custom.siteCountryCode}" encoding="off"/>
+<isinclude template="account/payment/deletePaymentModal" />
+<div class="card payment-form">
+    <div class="card-header d-flex clearfix">
+        <span class="step-header">2</span>
+        <h2 class="pull-left card-header-custom">${Resource.msg('heading.payment.method', 'checkout', null)}</h2>
+    </div>
+    <div class="card-body">
+        <form autocomplete="on" method="POST" action="${URLUtils.url('CheckoutServices-SubmitPayment')}"
+        class="${pdict.order.billing.payment.isOnlyGC ? 'is-only-gc' : ''}"
+        data-address-mode="${!pdict.order.billing.billingAddress.address ? 'new' : 'edit'}"
+        <isprint value=${pdict.forms.billingForm.attributes} encoding="off" />
+        novalidate>
+        <isif condition="${pdict.CurrentHttpParameterMap.error.intValue === 429}">
+            <div class="payment-expired">
+                <div class="alert alert-danger error-message mt-2 mb-4 d-block" role="alert">
+                    <p class="error-message-text mb-0">${Resource.msg('error.payment.session.expired', 'checkout', null)}</p>
+                </div>
+            </div>
+        </isif>
+        <!-------------------------------------------------------------------------->
+        <!-- Contact Info (Email and Phone)                                       -->
+        <!-------------------------------------------------------------------------->
+        <isset name="shippingModel" value="${pdict.order.shipping[0]}" scope="page" />
+        <isset name="phonenumber" value="${}" scope="page" />
+        <isif condition="${pdict.order.billing.billingAddress.address && pdict.order.billing.billingAddress.address.phone}">
+            <isset name="phonenumber" value="${pdict.order.billing.billingAddress.address.phone}" scope="page" />
+        <iselseif condition="${pdict.order.shipping && pdict.order.shipping.shippingAddress && pdict.order.shipping.shippingAddress.phone}">
+            <isset name="phonenumber" value="${pdict.order.shipping.shippingAddress.phone}" scope="page" />
+        </isif>
+        <div id="billing-contact-info">
+	        <input type="hidden" class="form-control phone" id="email" name="dwfrm_billing_contactInfoFields_email"
+	            value="${(pdict.customer.profile && pdict.customer.profile.email) ? pdict.customer.profile.email : pdict.order.orderEmail}"  encoding="off"/>
+	        <input type="hidden" class="form-control phone" id="phoneNumber" name="dwfrm_billing_contactInfoFields_phone"
+	            value="${phonenumber}"  encoding="off"/>
+        </div>
+        <!-------------------------------------------------------------------------->
+        <!-- Payment Options                                                      -->
+        <!-------------------------------------------------------------------------->
+        <fieldset>
+            <isset name="payment" value="${pdict.order.billing.payment}" scope="page"/>
+            <isif condition="${pdict.isGiftCardPaymentMethodEnabled}">
+                <isif condition="${!payment.isOrderContainsGC}">
+                    <div class="pay-with-giftcard${payment.isContainsGc ? ' is-gc' : ''}">
+                        <div class="existing-gc">
+                            <isinclude template="valuetec/selectedpayments"/>
+                        </div>
+                        <isinclude template="checkout/billing/paymentOptions/valueTecTab" />
+                        <isinclude template="checkout/billing/paymentOptions/valueTecContent" />
+                    </div>
+                </isif>
+            </isif>
+            <isinclude template="checkout/billing/paymentOptions" />
+            <isif condition="${pdict.customer.registeredUser && pdict.customer.customerPaymentInstruments.length > 0}">
+                <a href="javascript:void(0)" class="button button--secondary change-payment-method">Change Payment Method</a>
+            </isif>
+        </fieldset>
+        <isset name="showBillingForm" value="${true}" scope="page" />
+        <isif condition="${pdict.order && pdict.order.billing && pdict.order.billing.billingAddress && pdict.order.billing.billingAddress.address && pdict.order.billing.billingAddress.address.address1}">
+            <isset name="showBillingForm" value="${false}" scope="page" />
+            <isif condition="${pdict.isBasketHavingOnlyStorePickupitems && !pdict.customer.registeredUser}">
+                <isset name="showBillingForm" value="${true}" scope="page" />
+            <iselseif condition="${pdict.isBasketHavingOnlyStorePickupitems && pdict.customer.registeredUser && pdict.customer.customerPaymentInstruments && pdict.customer.customerPaymentInstruments.length < 1}">
+                <isset name="showBillingForm" value="${true}" scope="page" />
+            </isif>
+        </isif>
+        <fieldset class="billing-address-block ${showBillingForm ? '' : 'checkout-hidden'}">
+            <fieldset>
+                <isif condition="${shippingModel.selectedShippingMethod.storePickupEnabled}">
+                    <isinclude template="checkout/billing/billingAddressBopis" />
+                    <iselse/>
+                    <div class="add-billing-header">${Resource.msg('heading.add.billing.address', 'checkout', null)}</div>
+                    <isinclude template="checkout/billing/billingAddress" />
+                </isif>
+            </fieldset>
+            <input type="hidden" name="${pdict.csrf.tokenName}" value="${pdict.csrf.token}"/>
+            <input type="hidden" name="localizedNewAddressTitle" value="${Resource.msg('msg.new.address', 'checkout', null)}"/>
+        </fieldset>
+
+        <fieldset>
+            <div class="continue-billing">
+                <button class="button button--primary w-100 continue-billing-btn" type="button" name="submit" value="continue-billing">${Resource.msg('button.next.continue', 'checkout', null)}</button>
+                <div class="row mb-5 new-card-add">
+                    <div class="col-12 col-md-6">
+                        <button class="button button--primary save-continue-billing w-100" type="button" name="submit" value="save-continue-billing">
+                            ${Resource.msg('button.save.continue', 'checkout', null)}
+                        </button>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <a href="javascript:void(0);" class="button button--secondary w-100">${Resource.msg('button.cancel', 'checkout', null)}</a>
+                    </div>
+                </div>
+            </div>
+            <div class="continue-billing-klarna d-none">
+                <button class="button button--primary w-100 mb-5" type="button" name="submit" value="continue-billing">${Resource.msg('button.next.continue', 'checkout', null)}</button>
+            </div>
+        </fieldset>
+        </form>
+    </div>
+</div>

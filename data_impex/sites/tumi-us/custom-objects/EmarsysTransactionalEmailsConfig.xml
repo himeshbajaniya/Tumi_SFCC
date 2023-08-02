@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custom-objects xmlns="http://www.demandware.com/xml/impex/customobject/2006-10-31">
+    <custom-object type-id="EmarsysTransactionalEmailsConfig" object-id="orderCancelledConf">
+        <object-attribute attribute-id="externalEvent">13652</object-attribute>
+        <object-attribute attribute-id="mappedFields">[&#13;
+    {&#13;
+        "field": "order.billingAddress.firstName",&#13;
+        "placeholder": "FirstName"&#13;
+    },&#13;
+    {&#13;
+        "field": "order.billingAddress.countryCode",&#13;
+        "placeholder": "Country"&#13;
+    },&#13;
+    {&#13;
+        "field": "order.orderNumber",&#13;
+        "placeholder": "OrderNumber"&#13;
+    },&#13;
+    {&#13;
+        "field": "order.customerEmail",&#13;
+        "placeholder": "ORDER_BILLING_ADDRESS_EMAIL"&#13;
+    },&#13;
+    {&#13;
+        "field": "order.billingAddress.lastName",&#13;
+        "placeholder": "LastName"&#13;
+    }&#13;
+]</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="EmarsysTransactionalEmailsConfig" object-id="orderReturn">
+        <object-attribute attribute-id="externalEvent">13647</object-attribute>
+        <object-attribute attribute-id="mappedFields">[]</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="EmarsysTransactionalEmailsConfig" object-id="orderconf">
+        <object-attribute attribute-id="externalEvent">13480</object-attribute>
+        <object-attribute attribute-id="mappedFields">[&#13;
+	{&#13;
+		"field": "order.orderNo",&#13;
+		"placeholder": "Order_Id"&#13;
+	},&#13;
+	{&#13;
+		"field": "constant.en",&#13;
+		"placeholder": "Language"&#13;
+	},&#13;
+	{&#13;
+		"field": "order.billingAddress.firstName",&#13;
+		"placeholder": "FirstName"&#13;
+	},&#13;
+	{&#13;
+		"field": "order.billingAddress.countryCode",&#13;
+		"placeholder": "Country"&#13;
+	},&#13;
+	{&#13;
+		"field": "order.customerEmail",&#13;
+		"placeholder": "ORDER_BILLING_ADDRESS_EMAIL"&#13;
+	},&#13;
+	{&#13;
+		"field": "order.billingAddress.lastName",&#13;
+		"placeholder": "LastName"&#13;
+	}&#13;
+]</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="EmarsysTransactionalEmailsConfig" object-id="shipping">
+        <object-attribute attribute-id="externalEvent">13649</object-attribute>
+        <object-attribute attribute-id="mappedFields">[{"field":"product.price.currencyCode","placeholder":"currency"},{"field":"product.url","placeholder":"product_url"},{"field":"orderRebate.display","placeholder":"order_rebate"},{"field":"product.rebate","placeholder":"product_rebate"},{"field":"billingAddress.address1","placeholder":"b_address_1"},{"field":"shippingAddress.postalCode","placeholder":"b_address_zip"},{"field":"billingAddress.city","placeholder":"b_address_city"},{"field":"billingAddress.countryCode.displayValue","placeholder":"b_address_country"},{"field":"order.orderNo","placeholder":"order_number"},{"field":"order.creationDate","placeholder":"order_date"},{"field":"deliveryMethod.display","placeholder":"delivery_method"},{"field":"paymentMethod.display","placeholder":"payment_method"},{"field":"shippingCosts.display","placeholder":"shipping_costs"},{"field":"order.totalNetPrice","placeholder":"net_sum"},{"field":"order.totalTax","placeholder":"taxes"},{"field":"product.productName","placeholder":"product_name"},{"field":"product.quantityValue","placeholder":"quantity"},{"field":"product.adjustedPrice","placeholder":"price"},{"field":"trackingNumber","placeholder":"tracking_number"},{"field":"custom.shippingCompany","placeholder":"shipping_company"},{"field":"custom.arrivalDate","placeholder":"arrival_date"},{"field":"custom.trackingLink","placeholder":"tracking_link"}]</object-attribute>
+    </custom-object>
+
+</custom-objects>

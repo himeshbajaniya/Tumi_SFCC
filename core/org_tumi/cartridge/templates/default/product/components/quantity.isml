@@ -1,0 +1,18 @@
+<!-- Change the `data-field` of buttons and `name` of input field's for multiple plus minus buttons-->
+<div class="input-group plus-minus-input">
+  <div class="input-group-button">
+    <button type="button" class="hollow circle" data-quantity="minus" data-field="quantity">
+      <svg width="12" height="2" viewBox="0 0 12 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect y="1.5" width="1" height="12" transform="rotate(-90 0 1.5)" fill="#1B1C1E"/>
+      </svg>
+    </button>
+  </div>
+  <input class="input-group-field" type="number" name="quantity" value="${pdict.selectedQuantity}" id="quantity-${loopState && loopState.count ? loopState.count : '1' }"/>
+  <div class="input-group-button">
+    <button type="button" class="hollow circle" data-quantity="plus" data-field="quantity">
+      <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M6.59844 0.5H5.39844V5.89999H0V7.09999H5.39844V12.5H6.59844V7.09999H12V5.89999H6.59844V0.5Z" fill="#1B1C1E"/>
+      </svg>
+    </button>
+  </div>
+</div>

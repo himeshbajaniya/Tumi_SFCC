@@ -1,0 +1,184 @@
+<h3>${Resource.msg('heading.order.details', 'cart', null)}</h3>
+
+<form action="${pdict.actionUrl}" class="inquiryForm" method="POST" name="inquiry-form">
+    <!--- inquiry full name --->
+    <div class="row inquiry-name">
+        <div class="col-12 col-lg-6">
+            <div class="form-group required">
+                <input type="text" required 
+                    data-missing-error="${Resource.msg('error.message.required','forms',null)}" 
+                    data-range-error="${Resource.msg('error.message.50orless','forms',null)}" 
+                    maxlength="50" pattern="^[a-zA-Z]+(\s[a-zA-Z]+)?$"
+                    class="form-control required" placeholder="${Resource.msg('label.input.inquiry.name', 'cart', null)}*"
+                    aria-describedby="form-inquiry-name-error" id="inquiry-name" name="inquiryName">
+                <label class="form-control-label" for="inquiry-name">
+                    ${Resource.msg('label.input.inquiry.name', 'cart', null)}
+                </label>
+                <div class="invalid-feedback" id="form-inquiry-name-error"></div>
+            </div>
+        </div>
+
+        <!--- inquiry email --->
+        <div class="col-12 col-lg-6 inquiry-email">
+            <div class="form-group required">
+                <input type="text" required 
+                    data-missing-error="${Resource.msg('error.message.required','forms',null)}" 
+                    data-pattern-mismatch="${Resource.msg('error.message.parse.email.profile.form','forms',null)}"
+                    data-range-error="${Resource.msg('error.message.50orless','forms',null)}" 
+                    maxlength="50" pattern="^[\w.%+-]+@[\w.-]+\.[\w]{2,6}$"
+                    class="form-control required" placeholder="${Resource.msg('label.input.inquiry.email', 'cart', null)}*"
+                    aria-describedby="form-inquiry-email-error" id="inquiry-email" name="inquiryEmail">
+                <label class="form-control-label" for="inquiry-email">
+                    ${Resource.msg('label.input.inquiry.email', 'cart', null)}
+                </label>
+                <div class="invalid-feedback" id="form-inquiry-email-error"></div>
+            </div>
+        </div>
+    </div>
+
+    <!--- inquiry phone --->
+    <div class="row inquiry-phone required">
+        <div class="col-12 col-lg-6">
+            <div class="form-group">
+                <input type="text" required 
+                    data-missing-error="${Resource.msg('error.message.required','forms',null)}" 
+                    data-pattern-mismatch="${Resource.msg('error.message.parse.phone.profile.form','forms',null)}"
+                    maxlength="12" pattern="^[1-9]\d{2}[-]\d{3}[-]\d{4}$"
+                    class="form-control" placeholder="${Resource.msg('label.input.inquiry.phone', 'cart', null)}*"
+                    aria-describedby="form-inquiry-phone-error" id="inquiry-phone" name="inquiry_phone">
+                <label class="form-control-label" for="inquiry-phone">
+                    ${Resource.msg('label.input.inquiry.phone', 'cart', null)}
+                </label>
+                <div class="invalid-feedback" id="form-inquiry-phone-error"></div>
+            </div>
+        </div>
+        <!--- inquiry Price --->
+        <div class="col-12 col-lg-6 inquiry-price">
+            <div class="form-group">
+                <input type="text" class="form-control"
+                    data-pattern-mismatch="${Resource.msg('error.msg.inquiry.price','forms',null)}"
+                    maxlength="10" pattern="^[\$0-9]\d*([-][\$0-9]\d*)?$"
+                    placeholder="${Resource.msg('label.input.inquiry.price', 'cart', null)}"
+                    aria-describedby="form-inquiry-price-error" id="inquiry-price" name="inquiryPrice">
+                <label class="form-control-label" for="inquiry-price">
+                    ${Resource.msg('label.input.inquiry.price', 'cart', null)}
+                </label>
+                <div class="invalid-feedback" id="form-inquiry-price-error"></div>
+            </div>
+        </div>
+    </div>
+
+    <!--- inquiry Quantity --->
+    <div class="row inquiry-quantity">
+        <div class="col-12 col-lg-6">
+            <div class="form-group">
+                <input type="text" class="form-control"
+                    data-pattern-mismatch="${Resource.msg('error.not.allowed.for.quantity','forms',null)}"
+                    maxlength="6" pattern="^[1-9]\d*$"
+                    placeholder="${Resource.msg('label.input.inquiry.quantity', 'cart', null)}"
+                    aria-describedby="form-inquiry-quantity-error" id="inquiry-quantity" name="inquiryQuantity">
+                <label class="form-control-label" for="inquiry-quantity">
+                    ${Resource.msg('label.input.inquiry.quantity', 'cart', null)}
+                </label>
+                <div class="invalid-feedback" id="form-inquiry-quantity-error"></div>
+            </div>
+        </div>
+
+        <!--- inquiry Date --->
+        <div class="col-12 col-lg-6 inquiry-date">
+            <div class="form-group">
+                <input type="text" class="form-control"
+                    data-pattern-mismatch="${Resource.msg('error.msg.inquiry.date','forms',null)}"
+                    placeholder="${Resource.msg('label.input.inquiry.date', 'cart', null)}"
+                    aria-describedby="form-inquiry-date-error" id="inquiry-date" name="inquiryDate" maxlength="10" pattern="^(1[0-2]|0[1-9])/(3[01]|[12][0-9]|0[1-9])/(\d{2})$">
+                <label class="form-control-label" for="inquiry-date">
+                    ${Resource.msg('label.input.inquiry.date', 'cart', null)}
+                </label>
+                <div class="invalid-feedback" id="form-inquiry-date-error"></div>
+            </div>
+        </div>
+    </div>
+
+    <!--- inquiry Representative --->
+    <div class="row inquiry-representative required">
+        <div class="col">
+            <div class="form-group">
+                <select type="text" required class="form-control required" id="inquiry-representative"
+                    aria-describedby="form-inquiry-representative-error" name="inquiryRepresentative">
+                    <option value=""> ${Resource.msg('label.input.inquiry.representative', 'cart', null)}</option>
+                    <isloop items="${pdict.agentDetailsJSON}" var="agentDetails" status="loopstatus">
+                        <option value=${agentDetails.region}>
+                            <isprint
+                                value="${agentDetails.code + ': ' + Resource.msg('label.region.' + agentDetails.region, 'common', null)}" />
+                        </option>
+                    </isloop>
+                </select>
+                <div class="invalid-feedback" id="form-inquiry-representative-error"></div>
+            </div>
+        </div>
+    </div>
+
+    <!--- inquiry Customize --->
+    <div class="row inquiry-customize">
+        <div class="col">
+            <div class="form-group">
+                <p>
+                    <isprint value="${Resource.msg('label.input.inquiry.customize', 'cart', null)}" />
+                </p>
+
+                <input type="radio" checked="true" class="form-control" id="inquiry-customize-yes"
+                    name="inquiryCustomize" value=${Resource.msg('label.input.inquiry.customize.yes', 'cart', null)}>
+                <label class="form-control-label" for="inquiry-customize-yes">
+                    ${Resource.msg('label.input.inquiry.customize.yes', 'cart', null)}
+                </label>
+
+                <input type="radio" class="form-control" id="inquiry-customize-no" name="inquiryCustomize"
+                    value=${Resource.msg('label.input.inquiry.customize.no', 'cart', null)}>
+                <label class="form-control-label" for="inquiry-customize-no">
+                    ${Resource.msg('label.input.inquiry.customize.no', 'cart', null)}
+                </label>
+
+                <input type="radio" class="form-control" id="inquiry-customize-unsure" name="inquiryCustomize"
+                    value=${Resource.msg('label.input.inquiry.customize.unsure', 'cart', null)}>
+                <label class="form-control-label" for="inquiry-customize-unsure">
+                    ${Resource.msg('label.input.inquiry.customize.unsure', 'cart', null)}
+                </label>
+                <div class="invalid-feedback" id="form-inquiry-customize-error"></div>
+            </div>
+        </div>
+    </div>
+
+    <!--- inquiry MarketingEmail --->
+    <div class="row inquiry-marketingEmail">
+        <div class="col">
+            <div class="form-group custom-control custom-checkbox pull-left">
+                <input type="checkbox" class="custom-control-input" aria-describedby="form-inquiry-marketingEmail-error"
+                    id="inquiry-marketingEmail" name="inquiryMarketingEmail">
+                <label class="custom-control-label" for="inquiry-marketingEmail">
+                    ${Resource.msg('label.input.inquiry.marketingEmail', 'cart', null)}
+                </label>
+                <div class="invalid-feedback" id="form-inquiry-marketingEmail-error"></div>
+            </div>
+        </div>
+    </div>
+
+    <p class="inquiry-terms-text d-block d-sm-none">${Resource.msg('info.terms.text', 'cart', null)}<a
+            href="${URLUtils.url('Page-Show', 'cid', 'terms-and-conditions')}">${Resource.msg('link.terms.text', 'login', null)}</a>
+        ${Resource.msg('link.and.text', 'login', null)} <a
+            href="${URLUtils.url('Page-Show', 'cid', 'privacy-policy')}">${Resource.msg('link.privacy.text', 'login', null)}</a> ${Resource.msg('link.dot.text', 'login', null)}</p>
+
+    <!--- inquiry submit --->
+    <div class="row inquiry-submit">
+        <div class="col">
+            <button class="button button--primary w-100 submitInquiry" type="submit" name="submit" value="submit">
+                ${Resource.msg('label.input.inquiry.submit', 'cart', null)}
+            </button>
+        </div>
+    </div>
+
+</form>
+
+<p class="inquiry-terms-text d-none d-sm-block">${Resource.msg('info.terms.text', 'cart', null)}<a
+        href="${URLUtils.url('Page-Show', 'cid', 'special-markets-terms-and-conditions')}">${Resource.msg('link.terms.text', 'login', null)}</a>
+    ${Resource.msg('link.and.text', 'login', null)} <a
+        href="${URLUtils.url('Page-Show', 'cid', 'special-markets-privacy-policy')}">${Resource.msg('link.privacy.text', 'login', null)}</a> ${Resource.msg('link.dot.text', 'login', null)}</p>

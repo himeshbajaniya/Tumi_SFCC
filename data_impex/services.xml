@@ -1,0 +1,967 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns="http://www.demandware.com/xml/impex/services/2014-09-26">
+    <service-credential service-credential-id="ConversionDetailReport">
+        <url>https://apitest.cybersource.com/reporting/v3/conversion-details</url>
+        <user-id/>
+        <password encrypted="true" encryption-type="common.export">V7h26brOyNVPtsJ59CqJ5lE6qnKAHByozrLarQ7oKX8=</password>
+    </service-credential>
+
+    <service-credential service-credential-id="CybersourceFlexToken">
+        <url>https://apitest.cybersource.com/flex/v1/keys</url>
+        <user-id/>
+        <password encrypted="true" encryption-type="common.export">BqU6Q8nI+W5+dKlnCFMDCAiTLcwQt2r5nAb7ZvnlHiw=</password>
+    </service-credential>
+
+    <service-credential service-credential-id="CybersourceService">
+        <url/>
+        <user-id/>
+        <password encrypted="true" encryption-type="common.export">RLdccRL0NKkWcSUYVohLCUitFqk0TlFU5QVz38ihuNU=</password>
+    </service-credential>
+
+    <service-credential service-credential-id="Paypal_Sandbox_Connect_Credentials">
+        <url>https://api-m.sandbox.paypal.com/v1/</url>
+        <user-id>ASFoH3idoWhhkEIR_tA3x_QBRlUfewObTlP6mAMzHYhbDCB8e3FLdYG4mKJdXU_Kxw3Zj6vHcYYdN7OO</user-id>
+        <password encrypted="true" encryption-type="common.export">hfypHdDHul/Eb4sD816d8VkvTyCC76kaM18ClAdByTY=</password>
+    </service-credential>
+
+    <service-credential service-credential-id="Paypal_Sandbox_Connect_Credentials_CA">
+        <url>https://api-m.sandbox.paypal.com/v1/</url>
+        <user-id>AQcWo64s-vQBULOtNnTq5FwvTIcTMd99bLakNTV7WKpSQ10X5Zhs6mkXEX86_h3RjxcLF3DPEIt-T5Bc</user-id>
+        <password encrypted="true" encryption-type="common.export">kt0P0TrRfN84fvgVAerX6+EYTYSf0xMC8/Swzvn1Yzaa3dYcGJftfG77eptw1zmLgm+IrVAS15S3yRMH4VUBLQCEasKgvtU7O4PXHjfeK2V637wB1k6P6QhfewXLTxCC7gfC3Fy8vo1yP3Mkb3mO3Q==</password>
+    </service-credential>
+
+    <service-credential service-credential-id="Paypal_Sandbox_Credentials">
+        <url>https://api.sandbox.paypal.com/</url>
+        <user-id>ASFoH3idoWhhkEIR_tA3x_QBRlUfewObTlP6mAMzHYhbDCB8e3FLdYG4mKJdXU_Kxw3Zj6vHcYYdN7OO</user-id>
+        <password encrypted="true" encryption-type="common.export">97YUJQV1m9CIHtCjz3cAeB0kLC4Q0DOk3baVG1DNDB76mu2hv6BkHePQfVuwCfg/uFiPtd8LALPQxx2hCc3Zy91l7TDITXCivzZmVqWC8VLx0jCB8mo+wG23FpxsXg8b3NV2uU/qKxUHU1lkd/NlaA==</password>
+    </service-credential>
+
+    <service-credential service-credential-id="Paypal_Sandbox_Credentials_CA">
+        <url>https://api.sandbox.paypal.com/</url>
+        <user-id>AQcWo64s-vQBULOtNnTq5FwvTIcTMd99bLakNTV7WKpSQ10X5Zhs6mkXEX86_h3RjxcLF3DPEIt-T5Bc</user-id>
+        <password encrypted="true" encryption-type="common.export">97Bo83yL2kTwU/uIQz6WFOEYTYSf0xMC8/Swzvn1Yzaa3dYcGJftfG77eptw1zmLgm+IrVAS15S3yRMH4VUBLQCEasKgvtU7O4PXHjfeK2WW6DqFRdlilwfmVtAF8OJYiWTC/IeczxtAGva9a4iEbw==</password>
+    </service-credential>
+
+    <service-credential service-credential-id="emarsys.http.cred">
+        <url>https://suite11.emarsys.net/api/v2/</url>
+        <user-id>tumi_na003</user-id>
+        <password encrypted="true" encryption-type="common.export">9L/IBajmYfro4GiTSVAv7/aYIeWXHr8JUEerOWdZ3p5Vy/eaMLSr1oAewypUPTK8VP9CqgLUtUR4W+1vAlhVQQ==</password>
+    </service-credential>
+
+    <service-credential service-credential-id="exchange.emarsys.sftp.cred">
+        <url>exchange.si.emarsys.net</url>
+        <user-id/>
+        <password encrypted="true" encryption-type="common.export">RF/VX44M6aUbMD/zNcLDxI4EnRpDN3iYkPfs5cvJON0=</password>
+    </service-credential>
+
+    <service-credential service-credential-id="linc.ftp.credentials">
+        <url>https://ws.staging.letslinc.com/v1</url>
+        <user-id>tumi</user-id>
+        <password encrypted="true" encryption-type="common.export">4wIKJCgaoorsEM3V8EkM8VY5kaFOBGvmjgvV2m44cuvyaUNJjHpd9/hK9niYnySF</password>
+    </service-credential>
+
+    <service-credential service-credential-id="lincOrderCredentials">
+        <url>https://ws.staging.letslinc.com/v1/order</url>
+        <user-id/>
+        <password encrypted="true" encryption-type="common.export">0WGU6CGeSyANBrun2ODqts8j7n1WJby8kJsq/RFVGS4=</password>
+    </service-credential>
+
+    <service-credential service-credential-id="scene7.images.credentials">
+        <url>https://tumi.scene7.com/is/image/</url>
+        <user-id/>
+        <password encrypted="true" encryption-type="common.export">CMWANnKfYSW8RGpVU5XdaXc16TTPaIcLJqaRr9p8Nfo=</password>
+    </service-credential>
+
+    <service-credential service-credential-id="screen.seven.images.credentials">
+        <url>https://tumi.scene7.com/is/image/</url>
+        <user-id/>
+        <password encrypted="true" encryption-type="common.export">v+dpRuqYBW3kFZsl5/MgweTjlDCIlF7vVgYUDhaEsjg=</password>
+    </service-credential>
+
+    <service-credential service-credential-id="signifyd.rest.case.development.cred">
+        <url>https://api.signifyd.com/v2/cases</url>
+        <user-id>signifyd</user-id>
+        <password encrypted="true" encryption-type="common.export">ELX/9+V2vl4jSLG/u70Bk/4ufOXgqMOvrlr7SgBbze0=</password>
+    </service-credential>
+
+    <service-credential service-credential-id="signifyd.rest.case.production.cred">
+        <url>https://api.signifyd.com/v2/cases</url>
+        <user-id>signifyd</user-id>
+        <password encrypted="true" encryption-type="common.export">ini+hI4fy6pLBgDN821fHSXsoCw22nLcO/pGZEbZl04=</password>
+    </service-credential>
+
+    <service-credential service-credential-id="signifyd.rest.send.fulfillment.development.cred">
+        <url>https://api.signifyd.com/v2/fulfillments/orderId</url>
+        <user-id>signifyd</user-id>
+        <password encrypted="true" encryption-type="common.export">jUjXwxm7iQHwnukOMvY+Besc4wwrIPO54/LSrOTukHk=</password>
+    </service-credential>
+
+    <service-credential service-credential-id="signifyd.rest.send.transaction.development.cred">
+        <url>https://api.signifyd.com/v2/transactions</url>
+        <user-id>signifyd</user-id>
+        <password encrypted="true" encryption-type="common.export">T02KXlhesUqLCvlijW+D6z5V6cZVC+HYF+0VSzd3/L0=</password>
+    </service-credential>
+
+    <service-credential service-credential-id="signifyd.rest.send.transaction.production.cred">
+        <url>https://api.signifyd.com/v2/transactions</url>
+        <user-id>signifyd</user-id>
+        <password encrypted="true" encryption-type="common.export">BnhFQnqWJGRQok3Uw+hcGQN3bCEfzk11ahu9lODCeJA=</password>
+    </service-credential>
+	
+	<service-credential service-credential-id="signifyd.rest.cancel.Guarantee.development.cred">
+        <url>https://api.signifyd.com/v2/cases/caseId/guarantee</url>
+        <user-id/>
+        <password encrypted="true" encryption-type="common.export">JAxy/Tm71mTem6fA2bEwIFdLFHs0h9rUvFyjQYSmuOY=</password>
+    </service-credential>
+
+    <service-credential service-credential-id="tumi.janrain.authinfo.credential">
+        <url>https://rpxnow.com/api/v2/auth_info</url>
+        <user-id>e1e856e3166a1012b6b81a0499b6bd1aa78e9df9</user-id>
+        <password encrypted="true" encryption-type="common.export">CURt0a/y0c/yFFGUDdcaERru5kAhQiLVEkLzNndnNgc=</password>
+    </service-credential>
+
+    <service-credential service-credential-id="turnto-jobs">
+        <url>https://www.turnto.com</url>
+        <user-id>admin</user-id>
+        <password encrypted="true" encryption-type="common.export">s9LtuKhLSrj3x/6gcJ2TRtNes3LqIZzIsER4dwYtKXo=</password>
+    </service-credential>
+
+    <service-credential service-credential-id="turnto-static">
+        <url>http://static.www.turnto.com</url>
+        <user-id/>
+        <password encrypted="true" encryption-type="common.export">OrtU/Gd/xedNzXCS6fDXdW6OuM8BrTYwjCP9e2WcIKA=</password>
+    </service-credential>
+
+    <service-credential service-credential-id="valueteccreds">
+        <url>https://ws.valutec.net/Valutec.asmx</url>
+        <user-id/>
+        <password encrypted="true" encryption-type="common.export">7g7jonAUoV/YP5FtGO69pYpRHWEZN2X15cb5AtG6yeo=</password>
+    </service-credential>
+
+    <service-credential service-credential-id="credentials.avatax.rest">
+        <url>https://sandbox-rest.avatax.com/</url>
+        <user-id>1100146032</user-id>
+        <password masked="true">AD7A9629D578DA66</password>
+    </service-credential>
+
+    <service-credential service-credential-id="logentries.avatax.rest">
+        <url>https://webhook.logentries.com/noformat/logs/</url>
+        <user-id>1100146032</user-id>
+        <password masked="true">AD7A9629D578DA66</password>
+    </service-credential>
+
+    <service-credential service-credential-id="reflektion.search.credentials">
+        <url>https://sfcctumi.sfcc-sc.tumi.com/api/search-rec/3</url>
+        <user-id/>
+        <password encrypted="true" encryption-type="common.export">YcwSx+HUrNsipfokUOtepAMze2jVlK5B/KqHyBCng/4=</password>
+    </service-credential>
+
+    <service-credential service-credential-id="reflektion.sftp.tumi-ca">
+        <url>sftp-uat.rfksrv.com</url>
+        <user-id>243146759</user-id>
+        <password masked="true">fec81f115a285f4b6654</password>
+    </service-credential>
+
+    <service-credential service-credential-id="reflektion.sftp.tumi-us">
+        <url>sftp-uat.rfksrv.com</url>
+        <user-id>243146759</user-id>
+        <password masked="true">fec81f115a285f4b6654</password>
+    </service-credential>
+
+    <service-credential service-credential-id="samsonite.sftp.credentials">
+        <url>sftp.samsonite.com</url>
+        <user-id>SFCommerce</user-id>
+        <password encrypted="true" encryption-type="common.export">WiTmH3zBQ5Y3MyXnOy6SXj1w3VHIbAGBa0OqCBhKplr/C45mvTTx8nZ2PT/12VLf</password>
+    </service-credential>
+
+    <service-credential service-credential-id="oms.orderprocessor.sftp.credentials">
+        <url>sftp.samsonite.com</url>
+        <user-id>hybriscommerce</user-id>
+        <password masked="true">Monday@1</password>
+    </service-credential>
+
+    <service-credential service-credential-id="tumi.loginAPI.auth.credential">
+        <url>https://www.tumi.com/auth/loginAPI</url>
+        <user-id/>
+        <password encrypted="true" encryption-type="common.export">LCtvMqKg6ghaSp8O+jOLwaRYhovdmJEQ5u+sjCo5YxA=</password>
+    </service-credential>
+
+    <service-credential service-credential-id="klarna.http.decredentials">
+        <url>https://api.playground.klarna.com/</url>
+        <user-id>your Merchant ID</user-id>
+        <password encrypted="true" encryption-type="common.export"></password>
+    </service-credential>
+    <service-credential service-credential-id="klarna.http.mxcredentials">
+        <url>https://api-na.playground.klarna.com/</url>
+        <user-id>your Merchant ID</user-id>
+        <password encrypted="true" encryption-type="common.export"></password>
+    </service-credential>
+    <service-credential service-credential-id="klarna.http.ficredentials">
+        <url>https://api.playground.klarna.com/</url>
+        <user-id>your Merchant ID</user-id>
+        <password encrypted="true" encryption-type="common.export"></password>
+    </service-credential>
+
+    <service-credential service-credential-id="klarna.http.nocredentials">
+        <url>https://api.playground.klarna.com/</url>
+        <user-id>your Merchant ID</user-id>
+        <password encrypted="true" encryption-type="common.export"></password>
+    </service-credential>
+
+    <service-credential service-credential-id="klarna.http.secredentials">
+        <url>https://api.playground.klarna.com/</url>
+        <user-id>your Merchant ID</user-id>
+        <password encrypted="true" encryption-type="common.export"></password>
+    </service-credential>
+
+    <service-credential service-credential-id="klarna.http.plcredentials">
+        <url>https://api.playground.klarna.com/</url>
+        <user-id>your Merchant ID</user-id>
+        <password encrypted="true" encryption-type="common.export"></password>
+    </service-credential>
+
+    <service-credential service-credential-id="klarna.http.gbcredentials">
+        <url>https://api.playground.klarna.com/</url>
+        <user-id>your Merchant ID</user-id>
+        <password encrypted="true" encryption-type="common.export"></password>
+    </service-credential>    
+
+    <service-credential service-credential-id="klarna.http.uscredentials">
+        <url>https://api-na.playground.klarna.com/</url>
+        <user-id>your Merchant ID</user-id>
+        <password encrypted="true" encryption-type="common.export"></password>
+    </service-credential>
+
+    <service-profile service-profile-id="CybersourceProfile">
+        <timeout-millis>30000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>0</rate-limit-calls>
+        <rate-limit-millis>0</rate-limit-millis>
+        <cb-enabled>false</cb-enabled>
+        <cb-calls>0</cb-calls>
+        <cb-millis>0</cb-millis>
+    </service-profile>
+
+    <service-profile service-profile-id="PayPal_Profile">
+        <timeout-millis>60000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>0</rate-limit-calls>
+        <rate-limit-millis>0</rate-limit-millis>
+        <cb-enabled>false</cb-enabled>
+        <cb-calls>0</cb-calls>
+        <cb-millis>0</cb-millis>
+    </service-profile>
+
+    <service-profile service-profile-id="reflektion.search.profile">
+        <timeout-millis>1000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>0</rate-limit-calls>
+        <rate-limit-millis>0</rate-limit-millis>
+        <cb-enabled>true</cb-enabled>
+        <cb-calls>0</cb-calls>
+        <cb-millis>0</cb-millis>
+    </service-profile>
+
+    <service-profile service-profile-id="Signifyd Profile">
+        <timeout-millis>1000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>0</rate-limit-calls>
+        <rate-limit-millis>0</rate-limit-millis>
+        <cb-enabled>true</cb-enabled>
+        <cb-calls>3</cb-calls>
+        <cb-millis>0</cb-millis>
+    </service-profile>
+
+    <service-profile service-profile-id="emarsys.http.prof">
+        <timeout-millis>5000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>10</rate-limit-calls>
+        <rate-limit-millis>10000</rate-limit-millis>
+        <cb-enabled>true</cb-enabled>
+        <cb-calls>10</cb-calls>
+        <cb-millis>5000</cb-millis>
+    </service-profile>
+
+    <service-profile service-profile-id="exchange.emarsys.sftp.prof">
+        <timeout-millis>5000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>10</rate-limit-calls>
+        <rate-limit-millis>10000</rate-limit-millis>
+        <cb-enabled>true</cb-enabled>
+        <cb-calls>10</cb-calls>
+        <cb-millis>5000</cb-millis>
+    </service-profile>
+
+    <service-profile service-profile-id="linc.ftp.profile">
+        <timeout-millis>1000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>0</rate-limit-calls>
+        <rate-limit-millis>0</rate-limit-millis>
+        <cb-enabled>true</cb-enabled>
+        <cb-calls>0</cb-calls>
+        <cb-millis>0</cb-millis>
+    </service-profile>
+
+    <service-profile service-profile-id="lincOrderProfile">
+        <timeout-millis>10000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>0</rate-limit-calls>
+        <rate-limit-millis>0</rate-limit-millis>
+        <cb-enabled>true</cb-enabled>
+        <cb-calls>0</cb-calls>
+        <cb-millis>0</cb-millis>
+    </service-profile>
+
+    <service-profile service-profile-id="scene7.images.profile">
+        <timeout-millis>1000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>0</rate-limit-calls>
+        <rate-limit-millis>0</rate-limit-millis>
+        <cb-enabled>false</cb-enabled>
+        <cb-calls>0</cb-calls>
+        <cb-millis>0</cb-millis>
+    </service-profile>
+
+    <service-profile service-profile-id="screen.seven.images.profile">
+        <timeout-millis>1000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>0</rate-limit-calls>
+        <rate-limit-millis>0</rate-limit-millis>
+        <cb-enabled>true</cb-enabled>
+        <cb-calls>0</cb-calls>
+        <cb-millis>0</cb-millis>
+    </service-profile>
+
+    <service-profile service-profile-id="tumi.janrain.authinfo.profile">
+        <timeout-millis>10000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>0</rate-limit-calls>
+        <rate-limit-millis>0</rate-limit-millis>
+        <cb-enabled>false</cb-enabled>
+        <cb-calls>0</cb-calls>
+        <cb-millis>0</cb-millis>
+    </service-profile>
+
+    <service-profile service-profile-id="turnto-jobs">
+        <timeout-millis>40000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>0</rate-limit-calls>
+        <rate-limit-millis>0</rate-limit-millis>
+        <cb-enabled>false</cb-enabled>
+        <cb-calls>0</cb-calls>
+        <cb-millis>0</cb-millis>
+    </service-profile>
+
+    <service-profile service-profile-id="turnto-static">
+        <timeout-millis>4000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>0</rate-limit-calls>
+        <rate-limit-millis>0</rate-limit-millis>
+        <cb-enabled>false</cb-enabled>
+        <cb-calls>0</cb-calls>
+        <cb-millis>0</cb-millis>
+    </service-profile>
+
+    <service-profile service-profile-id="valuetecprofile">
+        <timeout-millis>1000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>0</rate-limit-calls>
+        <rate-limit-millis>0</rate-limit-millis>
+        <cb-enabled>false</cb-enabled>
+        <cb-calls>0</cb-calls>
+        <cb-millis>0</cb-millis>
+    </service-profile>
+
+    <service-profile service-profile-id="logentries.avatax.profile">
+        <timeout-millis>20000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>0</rate-limit-calls>
+        <rate-limit-millis>0</rate-limit-millis>
+        <cb-enabled>false</cb-enabled>
+        <cb-calls>0</cb-calls>
+        <cb-millis>0</cb-millis>
+    </service-profile>
+
+    <service-profile service-profile-id="profile.avatax.rest">
+        <timeout-millis>3000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>0</rate-limit-calls>
+        <rate-limit-millis>0</rate-limit-millis>
+        <cb-enabled>false</cb-enabled>
+        <cb-calls>0</cb-calls>
+        <cb-millis>0</cb-millis>
+    </service-profile>
+
+    <service-profile service-profile-id="reflektion.sftp">
+        <timeout-millis>5000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>0</rate-limit-calls>
+        <rate-limit-millis>0</rate-limit-millis>
+        <cb-enabled>true</cb-enabled>
+        <cb-calls>1</cb-calls>
+        <cb-millis>5000</cb-millis>
+    </service-profile>
+
+    <service-profile service-profile-id="samsonite.sftp.profile">
+        <timeout-millis>5000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>0</rate-limit-calls>
+        <rate-limit-millis>0</rate-limit-millis>
+        <cb-enabled>true</cb-enabled>
+        <cb-calls>1</cb-calls>
+        <cb-millis>5000</cb-millis>
+    </service-profile>
+    
+    <service-profile service-profile-id="oms.orderprocessor.sftp.profile">
+        <timeout-millis>5000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>0</rate-limit-calls>
+        <rate-limit-millis>0</rate-limit-millis>
+        <cb-enabled>true</cb-enabled>
+        <cb-calls>1</cb-calls>
+        <cb-millis>5000</cb-millis>
+    </service-profile>
+
+    <service-profile service-profile-id="tumi.loginAPI.auth.profile">
+        <timeout-millis>1000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>0</rate-limit-calls>
+        <rate-limit-millis>0</rate-limit-millis>
+        <cb-enabled>true</cb-enabled>
+        <cb-calls>0</cb-calls>
+        <cb-millis>0</cb-millis>
+    </service-profile>
+
+    <service-profile service-profile-id="klarna.http.service">
+        <timeout-millis>20000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>0</rate-limit-calls>
+        <rate-limit-millis>0</rate-limit-millis>
+        <cb-enabled>false</cb-enabled>
+        <cb-calls>0</cb-calls>
+        <cb-millis>0</cb-millis>
+    </service-profile>
+    <service-profile service-profile-id="klarna.http.createSession">
+        <timeout-millis>30000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>0</rate-limit-calls>
+        <rate-limit-millis>0</rate-limit-millis>
+        <cb-enabled>false</cb-enabled>
+        <cb-calls>0</cb-calls>
+        <cb-millis>0</cb-millis>
+    </service-profile>
+    <service-profile service-profile-id="klarna.http.getSession">
+        <timeout-millis>30000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>0</rate-limit-calls>
+        <rate-limit-millis>0</rate-limit-millis>
+        <cb-enabled>false</cb-enabled>
+        <cb-calls>0</cb-calls>
+        <cb-millis>0</cb-millis>
+    </service-profile>
+    <service-profile service-profile-id="klarna.http.updateSession">
+        <timeout-millis>30000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>0</rate-limit-calls>
+        <rate-limit-millis>0</rate-limit-millis>
+        <cb-enabled>false</cb-enabled>
+        <cb-calls>0</cb-calls>
+        <cb-millis>0</cb-millis>
+    </service-profile>
+    <service-profile service-profile-id="klarna.http.getOrder">
+        <timeout-millis>30000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>0</rate-limit-calls>
+        <rate-limit-millis>0</rate-limit-millis>
+        <cb-enabled>false</cb-enabled>
+        <cb-calls>0</cb-calls>
+        <cb-millis>0</cb-millis>
+    </service-profile>
+    <service-profile service-profile-id="klarna.http.cancelAuthorization">
+        <timeout-millis>30000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>0</rate-limit-calls>
+        <rate-limit-millis>0</rate-limit-millis>
+        <cb-enabled>false</cb-enabled>
+        <cb-calls>0</cb-calls>
+        <cb-millis>0</cb-millis>
+    </service-profile>
+    <service-profile service-profile-id="klarna.http.createOrder">
+        <timeout-millis>30000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>0</rate-limit-calls>
+        <rate-limit-millis>0</rate-limit-millis>
+        <cb-enabled>false</cb-enabled>
+        <cb-calls>0</cb-calls>
+        <cb-millis>0</cb-millis>
+    </service-profile>
+    <service-profile service-profile-id="klarna.http.cancelOrder">
+        <timeout-millis>30000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>0</rate-limit-calls>
+        <rate-limit-millis>0</rate-limit-millis>
+        <cb-enabled>false</cb-enabled>
+        <cb-calls>0</cb-calls>
+        <cb-millis>0</cb-millis>
+    </service-profile>
+    <service-profile service-profile-id="klarna.http.vcnSettlement">
+        <timeout-millis>30000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>0</rate-limit-calls>
+        <rate-limit-millis>0</rate-limit-millis>
+        <cb-enabled>false</cb-enabled>
+        <cb-calls>0</cb-calls>
+        <cb-millis>0</cb-millis>
+    </service-profile>
+    <service-profile service-profile-id="klarna.http.createCapture">
+        <timeout-millis>30000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>0</rate-limit-calls>
+        <rate-limit-millis>0</rate-limit-millis>
+        <cb-enabled>false</cb-enabled>
+        <cb-calls>0</cb-calls>
+        <cb-millis>0</cb-millis>
+    </service-profile>
+
+    <service service-id="Signifyd.REST.CreateCase">
+        <service-type>HTTPForm</service-type>
+        <enabled>true</enabled>
+        <log-prefix>signifyd_createcase</log-prefix>
+        <comm-log-enabled>true</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>Signifyd Profile</profile-id>
+        <credential-id>signifyd.rest.case.development.cred</credential-id>
+    </service>
+
+    <service service-id="Signifyd.REST.SendFulfillment">
+        <service-type>HTTPForm</service-type>
+        <enabled>true</enabled>
+        <log-prefix>signifyd_fulfilment</log-prefix>
+        <comm-log-enabled>true</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>Signifyd Profile</profile-id>
+        <credential-id>signifyd.rest.send.fulfillment.development.cred</credential-id>
+    </service>
+
+    <service service-id="Signifyd.REST.SendTransaction">
+        <service-type>HTTPForm</service-type>
+        <enabled>true</enabled>
+        <log-prefix>signifyd_transaction</log-prefix>
+        <comm-log-enabled>true</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>Signifyd Profile</profile-id>
+        <credential-id>signifyd.rest.send.transaction.development.cred</credential-id>
+    </service>
+	
+	<service service-id="Signifyd.REST.CancelGuarantee">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>SignifydCancelGuarantee</log-prefix>
+        <comm-log-enabled>true</comm-log-enabled>
+        <force-prd-enabled>true</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>Signifyd Profile</profile-id>
+        <credential-id>signifyd.rest.cancel.Guarantee.development.cred</credential-id>
+    </service>
+
+    <service service-id="cybersource.conversiondetailreport">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>Cybersource</log-prefix>
+        <comm-log-enabled>false</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>CybersourceProfile</profile-id>
+        <credential-id>ConversionDetailReport</credential-id>
+    </service>
+
+    <service service-id="cybersource.http.flextoken">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>Cybersource</log-prefix>
+        <comm-log-enabled>true</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>CybersourceProfile</profile-id>
+        <credential-id>CybersourceFlexToken</credential-id>
+    </service>
+
+    <service service-id="cybersource.soap.transactionprocessor.generic">
+        <service-type>SOAP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>Cybersource</log-prefix>
+        <comm-log-enabled>true</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>CybersourceProfile</profile-id>
+        <credential-id>CybersourceService</credential-id>
+    </service>
+
+    <service service-id="emarsys.api">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>emarsysEvents</log-prefix>
+        <comm-log-enabled>true</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>emarsys.http.prof</profile-id>
+        <credential-id>emarsys.http.cred</credential-id>
+    </service>
+
+    <service service-id="exchange.emarsys.api">
+        <service-type>SFTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>exchangeEmarsysEvents</log-prefix>
+        <comm-log-enabled>true</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>exchange.emarsys.sftp.prof</profile-id>
+        <credential-id>exchange.emarsys.sftp.cred</credential-id>
+    </service>
+
+    <service service-id="int_paypal.http.rest">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>PayPalRest</log-prefix>
+        <comm-log-enabled>true</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>PayPal_Profile</profile-id>
+        <credential-id>Paypal_Sandbox_Credentials</credential-id>
+    </service>
+
+    <service service-id="int_paypal.http.token.service">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>PayPal_token_service</log-prefix>
+        <comm-log-enabled>true</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>PayPal_Profile</profile-id>
+        <credential-id>Paypal_Sandbox_Connect_Credentials</credential-id>
+    </service>
+
+    <service service-id="int_paypal.http.rest.ca">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>PayPalRest</log-prefix>
+        <comm-log-enabled>true</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>PayPal_Profile</profile-id>
+        <credential-id>Paypal_Sandbox_Credentials_CA</credential-id>
+    </service>
+
+    <service service-id="int_paypal.http.token.service.ca">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>PayPal_token_service</log-prefix>
+        <comm-log-enabled>true</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>PayPal_Profile</profile-id>
+        <credential-id>Paypal_Sandbox_Connect_Credentials_CA</credential-id>
+    </service>
+
+    <service service-id="linc.ftp.service">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix/>
+        <comm-log-enabled>true</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>linc.ftp.profile</profile-id>
+        <credential-id>linc.ftp.credentials</credential-id>
+    </service>
+
+    <service service-id="lincOrderService">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>lincOrder</log-prefix>
+        <comm-log-enabled>true</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>lincOrderProfile</profile-id>
+        <credential-id>lincOrderCredentials</credential-id>
+    </service>
+
+    <service service-id="scene7.images">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>scene7Images</log-prefix>
+        <comm-log-enabled>false</comm-log-enabled>
+        <force-prd-enabled>true</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>scene7.images.profile</profile-id>
+        <credential-id>scene7.images.credentials</credential-id>
+    </service>
+
+    <service service-id="tumi.janrain.authinfo.service">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>jainrain</log-prefix>
+        <comm-log-enabled>false</comm-log-enabled>
+        <force-prd-enabled>true</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>tumi.janrain.authinfo.profile</profile-id>
+        <credential-id>tumi.janrain.authinfo.credential</credential-id>
+    </service>
+
+    <service service-id="turnto.http.export.catalog.post">
+        <service-type>GENERIC</service-type>
+        <enabled>true</enabled>
+        <log-prefix>turnto-export-catalog</log-prefix>
+        <comm-log-enabled>false</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>turnto-jobs</profile-id>
+        <credential-id>turnto-jobs</credential-id>
+    </service>
+
+    <service service-id="turnto.http.export.orders.post">
+        <service-type>GENERIC</service-type>
+        <enabled>true</enabled>
+        <log-prefix>turnto-export-orders</log-prefix>
+        <comm-log-enabled>false</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>turnto-jobs</profile-id>
+        <credential-id>turnto-jobs</credential-id>
+    </service>
+
+    <service service-id="turnto.http.import.get">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>turnto-import</log-prefix>
+        <comm-log-enabled>false</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>turnto-jobs</profile-id>
+        <credential-id>turnto-jobs</credential-id>
+    </service>
+
+    <service service-id="turnto.http.static.qa.get">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>turnto-static-qa</log-prefix>
+        <comm-log-enabled>false</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>turnto-static</profile-id>
+        <credential-id>turnto-static</credential-id>
+    </service>
+
+    <service service-id="turnto.http.static.reviews.get">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>turnto-static-reviews</log-prefix>
+        <comm-log-enabled>false</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>turnto-static</profile-id>
+        <credential-id>turnto-static</credential-id>
+    </service>
+
+    <service service-id="turnto.http.upload.get">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>turnto-upload</log-prefix>
+        <comm-log-enabled>false</comm-log-enabled>
+        <force-prd-enabled>true</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>turnto-jobs</profile-id>
+        <credential-id>turnto-jobs</credential-id>
+    </service>
+
+    <service service-id="valuetec.soap.generic">
+        <service-type>SOAP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>valuetec</log-prefix>
+        <comm-log-enabled>true</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>valuetecprofile</profile-id>
+        <credential-id>valueteccreds</credential-id>
+    </service>
+
+    <service service-id="avatax.rest.all">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix/>
+        <comm-log-enabled>true</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>profile.avatax.rest</profile-id>
+        <credential-id>credentials.avatax.rest</credential-id>
+    </service>
+
+    <service service-id="logentries.avatax.svc">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix/>
+        <comm-log-enabled>true</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>logentries.avatax.profile</profile-id>
+        <credential-id>logentries.avatax.rest</credential-id>
+    </service>
+
+    <service service-id="reflektion.search.results">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>reflektion_search_results</log-prefix>
+        <comm-log-enabled>true</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>reflektion.search.profile</profile-id>
+        <credential-id>reflektion.search.credentials</credential-id>
+    </service>
+
+    <service service-id="reflektion.sftp">
+        <service-type>SFTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>reflektion-sftp</log-prefix>
+        <comm-log-enabled>false</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>reflektion.sftp</profile-id>
+        <credential-id/>
+    </service>
+
+    <service service-id="samsonite.sftp.service">
+        <service-type>SFTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>samsonite_sftp_service</log-prefix>
+        <comm-log-enabled>false</comm-log-enabled>
+        <force-prd-enabled>true</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>samsonite.sftp.profile</profile-id>
+        <credential-id>samsonite.sftp.credentials</credential-id>
+    </service>
+
+    <service service-id="oms.orderprocessor.sftp">
+        <service-type>SFTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>canada_orderprocessor</log-prefix>
+        <comm-log-enabled>false</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>oms.orderprocessor.sftp.profile</profile-id>
+        <credential-id>oms.orderprocessor.sftp.credentials</credential-id>
+    </service>
+
+    <service service-id="tumi.loginAPI.auth">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>tumi-loginAPI-auth</log-prefix>
+        <comm-log-enabled>true</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>tumi.loginAPI.auth.profile</profile-id>
+        <credential-id>tumi.loginAPI.auth.credential</credential-id>
+    </service>
+
+    <service service-id="klarna.http.createSession">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix/>
+        <comm-log-enabled>false</comm-log-enabled>
+        <force-prd-enabled>true</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>klarna.http.createSession</profile-id>
+        <credential-id/>
+    </service>
+    <service service-id="klarna.http.getSession">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix/>
+        <comm-log-enabled>false</comm-log-enabled>
+        <force-prd-enabled>true</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>klarna.http.getSession</profile-id>
+        <credential-id/>
+    </service>
+    <service service-id="klarna.http.updateSession">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix/>
+        <comm-log-enabled>false</comm-log-enabled>
+        <force-prd-enabled>true</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>klarna.http.updateSession</profile-id>
+        <credential-id/>
+    </service>
+    <service service-id="klarna.http.getOrder">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix/>
+        <comm-log-enabled>false</comm-log-enabled>
+        <force-prd-enabled>true</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>klarna.http.getOrder</profile-id>
+        <credential-id/>
+    </service>
+    <service service-id="klarna.http.cancelAuthorization">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix/>
+        <comm-log-enabled>false</comm-log-enabled>
+        <force-prd-enabled>true</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>klarna.http.cancelAuthorization</profile-id>
+        <credential-id/>
+    </service>
+    <service service-id="klarna.http.createOrder">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix/>
+        <comm-log-enabled>false</comm-log-enabled>
+        <force-prd-enabled>true</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>klarna.http.createOrder</profile-id>
+        <credential-id/>
+    </service>
+    <service service-id="klarna.http.cancelOrder">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix/>
+        <comm-log-enabled>false</comm-log-enabled>
+        <force-prd-enabled>true</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>klarna.http.cancelOrder</profile-id>
+        <credential-id/>
+    </service>
+    <service service-id="klarna.http.vcnSettlement">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix/>
+        <comm-log-enabled>false</comm-log-enabled>
+        <force-prd-enabled>true</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>klarna.http.vcnSettlement</profile-id>
+        <credential-id/>
+    </service>
+    <service service-id="klarna.http.createCapture">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix/>
+        <comm-log-enabled>false</comm-log-enabled>
+        <force-prd-enabled>true</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>klarna.http.createCapture</profile-id>
+        <credential-id/>
+    </service>
+    <service service-id="klarna.http.defaultendpoint">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>klarna</log-prefix>
+        <comm-log-enabled>true</comm-log-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>klarna.http.service</profile-id>
+        <credential-id/>
+    </service>
+
+</services>

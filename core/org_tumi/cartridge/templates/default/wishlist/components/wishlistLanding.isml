@@ -1,0 +1,73 @@
+<isdecorate template="common/layout/page">
+<isset name="publicUrl" value="${encodeURIComponent(URLUtils.abs('Wishlist-ShowOthers', 'id', pdict.wishlist.UUID))}" scope="page"/>
+    <isset name="shareUrl" value="${URLUtils.https('Wishlist-ShowOthers', 'id', pdict.wishlist.UUID)}" scope="page"/>
+    <isset name="escapedTitle" value="${encodeURIComponent(Resource.msg('wl.email.subject.wishlist', 'wishlist', null))}" scope="page"/>
+	<isset name="escapedBody" value="${Resource.msg('wl.email.body.wishlist', 'wishlist', null)}" scope="page"/>
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addCss('/css/account/profile.css');
+		assets.addCss('/css/search.css');
+        assets.addJs('/js/wishlist.js');
+		var pageContext = {
+			title: 'My Saved Items',
+			type:'wishlist',
+			ns:'myaccount'
+		};
+		var bodytext = escapedBody + publicUrl
+    </isscript>
+    <div class="container-fluid category-banner  ${(pdict.wishlist.items.length === 0 ? 'empty-list-heading' : '')}">
+	<div class="container">
+		<div class="row align-items-end">
+			<div class="col-sm-6">
+				<div class="wishlist-title">
+					<h3>${Resource.msg('heading.my.saved.items','wishlist',null)}  <isif condition="${pdict.wishlist.items.length !== 0}">
+                    (${parseInt(pdict.wishlist.items.length).toString()})
+                    </isif></h3>
+				</div>
+			</div>
+			<div class="col-sm-6 filters">
+				<div class="filter">
+				<!-- <a class="share-icons" title="${Resource.msg('wl.socialshare.email.label', 'wishlist', null)}" data-share="email" href="mailto:?subject=${escapedTitle}&body=${bodytext}" target="_blank">
+			<span>${Resource.msg('wishlist.label.share','wishlist',null)} <svg id="a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><defs><style>.b{stroke-linecap:round;stroke-linejoin:round;}.b,.c{fill:none;stroke:#1b1c1e;}.c{stroke-miterlimit:10;}</style></defs><rect class="c" x="8.67" y="3.52" width="14.66" height="24.95" rx="1.04" ry="1.04" transform="translate(32 0) rotate(90)"/><polygon class="b" points="26.42 8.67 16 17.77 5.58 8.67 26.42 8.67"/><polygon class="b" points="21.44 18.78 18.07 15.96 16 17.77 13.93 15.96 10.56 18.78 5.11 23.33 16 23.33 26.89 23.33 21.44 18.78"/></svg></span>
+        </a> -->
+				</div>
+				<isif condition="${!(pdict.action === "Wishlist-ShowOthers")}">
+					<div class="sortby">
+						<div class="custom-dropdown sort-filter">
+							<span class="sort-label">${Resource.msg('wishlist.label.sort.by','wishlist',null)} ${pdict.sortingRule === 'LatestAdded'? 'Latest Added' : 'Oldest Added' }</span><a class="btn dropdown-toggle" href="javascript: void(0)" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"></a>
+							<div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+								<div class="sortby-modal">
+									<h3>${Resource.msg('wishlist.label.sort.by','wishlist',null)}</h3> 
+									<a href="javascrit:void(0)" class="remove-sort-modal"><img src="${URLUtils.absStatic('/images/modal-close.svg')}" alt=""></a>
+								</div>
+
+								<div class="form-check radio-small">
+									<input type="radio" class="form-check-input latest-added" id="latestAdded" data-id="latest-added" name="sort-order" value="LatestAdded" ${pdict.sortingRule === 'LatestAdded' ? 'checked' :''}>
+									<label class="form-check-label" for="latestAdded">
+											${Resource.msg('wishlist.label.latest.added','wishlist',null)}
+									</label>
+								</div>
+								<div class="form-check radio-small">
+									<input type="radio" class="form-check-input oldest-added" id="oldestAdded" data-id="oldest-added" name="sort-order" value="OldestAdded" ${pdict.sortingRule === 'OldestAdded' ? 'checked' :''}>
+									<label class="form-check-label" for="oldestAdded">
+											${Resource.msg('wishlist.label.oldest.added','wishlist',null)}
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</isif>
+			</div>
+		</div>
+	</div>
+</div>
+    <isinclude template="product/components/cartFlyout" />
+
+<div class="saved-items-lp container">
+    <isinclude template="wishlist/components/wishlist" />
+</div>
+<div class="wishlist-rfk">
+	<isslot id="CarouselWishlistLanding" context="global" description="Recommendation Carousel for Wishlist Landing Page" />
+</div>
+<isinclude template="product/compareBar" />
+</isdecorate>

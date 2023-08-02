@@ -1,0 +1,118 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "https://www.tumi.com/tumi-differences-content-banner",
+
+	"title": "Title",
+	"description": "Description",
+
+	"allOf": [
+		{
+			"$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+		}
+	],
+	
+	"type": "object",
+	
+	"properties": {
+		"content-asset-id": {
+			"title": "Content Asset ID",
+			"description": "SFCC Content Asset",
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 256,
+			"format": "text"
+		},
+		
+		"subTagLine": {
+			"title": "Main Subtag Line",
+			"description": "Enter the Subtag line",
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 255
+		  },
+		
+		"mainTagLine": {
+			"title": "Main Tag Line",
+			"description": "Enter the main tag line",
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 255
+		  },
+		  "description": {
+			"title": "Description (Optional)",
+			"description": "Enter the description",
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 1000
+		  },
+		"bannerContent": {
+      "title": "Banner Content",
+      "description": "Add the banner content",
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 4,
+      "items": {
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+		"image-link": {
+			"title": "image link",
+			"description": "Enter the image link",
+			"type": "string",
+			"format": "uri",
+			"minLength": 0,
+			"maxLength": 256
+		},
+		"title": {
+			"title": "Title",
+			"description": "Enter the title of the banner",
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 256
+		},
+		"bgcolor": {
+			"title": "background color",
+			"description": "Enter the Background Color",
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 256
+		},
+		"description": {
+			"title": "description",
+			"description": "Description of the image",
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 256
+		},
+		"cta-name": {
+			"title": "CTA Name",
+			"description": "Enter the CTA Name",
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 256
+		},
+		"cta-landing-uri": {
+			"title": "CTA Landing URI",
+			"description": "Enter the uri to redirect landing page",
+			"type": "string",
+			"format": "uri",
+			"minLength": 0,
+			"maxLength": 256
+		},
+		"image-alt": {
+			"title": "image alt",
+			"description": "Enter image alt text",
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 256
+		}
+	}
+		  }
+		]
+		  }
+		}
+	},
+	"propertyOrder": ["content-asset-id"],
+	"required": ["content-asset-id"]
+}

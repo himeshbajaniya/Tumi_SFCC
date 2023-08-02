@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31">
+    <folder folder-id="root">
+        <online-flag>true</online-flag>
+        <page-attributes/>
+    </folder>
+
+    <content content-id="faq">
+        <display-name xml:lang="x-default">FAQ</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">    &lt;div data-creative-name="faq"&gt;
+&lt;div class="container py-5"&gt;
+  &lt;section class="faq-section"&gt;
+    &lt;h1&gt;What can we help you with?&lt;/h1&gt;
+    &lt;div class="content"&gt;
+      &lt;!--keywords section--&gt;
+      &lt;div class="faq-filter-container d-none d-md-block"&gt;
+        &lt;h3&gt;Keywords:&lt;/h3&gt;
+        &lt;ul class="categories"&gt;
+          &lt;li rel="store-pickup-and-curbside"&gt;&lt;a href="#"&gt;Store Pickup and Curbside&lt;/a&gt;&lt;/li&gt;
+          &lt;li rel="shipping"&gt;&lt;a href="#"&gt;Shipping&lt;/a&gt;&lt;/li&gt;
+          &lt;li rel="orders"&gt;&lt;a href="#"&gt;Order/Order Status&lt;/a&gt;&lt;/li&gt;
+          &lt;li rel="repairs"&gt;&lt;a href="#"&gt;Repairs&lt;/a&gt;&lt;/li&gt;
+          &lt;li rel="tracer-registration"&gt;&lt;a href="#"&gt;Tracer Registration&lt;/a&gt;&lt;/li&gt;
+          &lt;li rel="returns"&gt;&lt;a href="#"&gt;Returns/Exchanges&lt;/a&gt;&lt;/li&gt;
+          &lt;li rel="product-inquiry"&gt;&lt;a href="#"&gt;Product Inquiry&lt;/a&gt;&lt;/li&gt;
+          &lt;li rel="view-all"&gt;&lt;a href="#"&gt;View All&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+
+      &lt;!--right section--&gt;
+      &lt;div class="faq-content-container"&gt;
+        &lt;div class="qa repairs"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;How do I go about sending my bag in for repair?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;You may submit an online repair request form by visiting our Service and Repair link &lt;a href="https://www.tumi.com/repairRequestGuest"&gt;https://www.tumi.com/repairRequestGuest&lt;/a&gt; and completing the online repair request form.&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa repairs"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;What is your warranty policy for the first year of ownership?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;TUMI products damaged during the first 12 months you own it, including damage caused by normal wear and tear, airline handling, or other transit damage, TUMI will cover all repair expenses, including shipping costs to and from our repair facility. If we determine that the product is damaged beyond repair, we will replace it. If we determine that a replacement product is not available, we will provide you with a product of comparable value. Damages not covered are damage resulting from abuse, cosmetic damage and incidental or consequential damages.&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa repairs"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;What is your warranty policy for years after the 1st year of ownership?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;From the beginning of the second through the end of the fifth year when you own your TUMI travel item, business case or other bag, and for the second year of ownership for wallets, accessories, or outerwear, TUMI will repair any item that is damaged due to normal wear and tear, or defective in materials or workmanship, including any structural defects. For years two through five, we do not cover damage caused by airlines or other transit damage. Damage claims in transit cases should be filed against the carrier. Other damages not covered are damage resulting from abuse, cosmetic damage and incidental or consequential damages. Normal wear and tear for TUMI Outerwear does not include lost or missing buttons, torn fabrics or leathers or cosmetic damage as described above.&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa tracer-registration"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;Where is my Tracer Plate located ?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;You can find your 20 digit tracer number, which is located on a metal plate affixed in certain locations depending on the collection to which your product belongs to. Generally placements consist of interior pocket lining or the exterior of some travel pieces. Please note, not all products have tracer numbers.&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa orders"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;How can I check the status of my order?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;You may check the status of your most recent orders by clicking on &amp;quot;Track Orders&amp;quot; under My Account. You will be prompted to enter in your order number and either your zip code and/or email address. You are required to enter an e-mail address during Checkout, so that you may receive emails regarding the status of your order. This will bring your to the Order History page, which will provide you with detailed information about your current and past orders.Click on the tracking number located next to the item you want to track in order to view your order status and expected delivery date. If order &amp;quot;is in route,&amp;quot; you may opt to receive updates via SMS or email. If order &amp;quot;is processing,&amp;quot; you may view an expected delivery date. You may also sign into your account and click on &amp;quot;View your order status.&amp;quot; A link is also located in your confirmation email. &lt;strong&gt;Please note: order information may not appear in your order history on &lt;a href="https://www.tumi.com/"&gt;www.TUMI.com&lt;/a&gt; for up to 24 hours .&lt;/strong&gt;&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa orders"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;Can I change or cancel my order?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;After you have clicked &amp;quot;Place Order&amp;quot;, you cannot cancel or change your order. Our system is designed to process and ship orders immediately.&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa product-inquiry"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;How do I submit feedback for my Tumi products and/or experience?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;You may submit your feedback to &lt;a href="mailto:service@tumi.com"&gt;service@tumi.com&lt;/a&gt; and your information will be forwarded to the appropriate department. You may also leave a review on Tumi.com by going to the Product Detail Page, select Ratings and Reviews, and Add a Review.&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa product-inquiry"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;How do I set my TUMI lock? Where is my key?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;Please visit the Setting Your Tumi Lock section for instructions &lt;a href="https://www.tumi.com/s/tumi-lock"&gt;https://www.tumi.com/s/tumi-lock&lt;/a&gt; .&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa product-inquiry"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;How do I know if a product is available?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;A product's availability is clearly noted on the Product Detail page as In Stock, Backorder, or Pre-order. Most products on our site are In Stock and ready to ship. Some products are either not yet available (Pre-order) or temporarily out-of-stock (Backorder).&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa product-inquiry"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;What are the cleaning instructions for Tumi products?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;The TUMI nylon fabric refresher is a special spot cleaning formula that removes dirt and most stains from ballistic and micro fiber nylon fabrics. &lt;strong&gt;Directions for use:&lt;/strong&gt; Wipe excess dirt from fabric with a clean, dry cloth, bristle brush, or sponge. Gently rub into affected area. After a few seconds, wipe once more with a clean, damp cloth and air dry. The TUMI leather conditioner is a complete leather care product designed to clean, polish and protect most leathers (except suede or napped finishes). The special wax-free lotion was created for Tumi to preserve the rich luster and soft hand of its fine leather luggage, business cases, handbags and accessories. &lt;strong&gt;Directions for use:&lt;/strong&gt; Shake well. Always test on a small area before treating an entire item. Using a clean soft cloth, smooth conditioner onto leather surface, let dry, then buff gently with a soft dry cloth. For exotic and naked leather apply sparingly, work into the surface, let dry and buff with a soft absorbent cloth. For best results, apply the conditioner to product before its first use. Reapply as needed.&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa product-inquiry"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;Can I bring my TUMI | McLaren purchase into a TUMI store to be monogrammed?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;Yes. Complimentary monogramming is available for this collection. However, premium monogramming is not.&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa product-inquiry"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;Can I have the TUMI | McLaren logo monogrammed on any TUMI product?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;The TUMI | McLaren logo monogram is exclusive to the TUMI | McLaren collection.&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa product-inquiry"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;If I buy a TUMI | McLaren item in a McLaren dealership, can I return it to a TUMI store?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;TUMI | McLaren pieces purchased at a McLaren dealership cannot be returned to a TUMI store. The return policy is dependent upon the retailer where the product was originally purchased.&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa product-inquiry"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;Is the TUMI | McLaren collection available for anyone to purchase?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;All are welcome to shop the TUMI | McLaren collection. You do not need to purchase a McLaren vehicle or racecar to purchase from the collaboration.&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa product-inquiry"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;Where can I shop the TUMI | McLaren collection?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;The TUMI | McLaren collection will be available in TUMI Full-Price Retail stores, TUMI.com, select McLaren dealerships and select department and specialty locations, globally.&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa product-inquiry"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;Does the TUMI | McLaren collection fall within TUMI’s warranty policy?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;All TUMI | McLaren pieces are covered under TUMI's warranty policy. More information can be found &lt;a href="https://www.tumi.com/s/product-info-warranty/"&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa product-inquiry"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;How do I send my TUMI | McLaren piece in for repair?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;It will follow the same repair process that all other TUMI products follow. More information can be found &lt;a href="https://www.tumi.com/s/repair-services-guest/"&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa returns"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;What is your return policy?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;We want you to be fully satisfied with your TUMI products. If you aren’t, we offer complimentary returns within 30 days of receipt. TUMI Full Price Retail purchases can be returned at a TUMI Full Price Retail store. TUMI Outlet purchases can only be returned at a TUMI Outlet. TUMI.com returns can be made by mail or at our TUMI Retail stores. Please visit our &lt;a href="https://www.tumi.com/s/returns/"&gt;Return Policy&lt;/a&gt; page for more information.&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa returns"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;Does TUMI accept international returns?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;Returns can only be made within the original country of purchase.&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa returns"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;How do I make an exchange?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;While exchanges are not accepted by TUMI.com at this time, they can be made in store. You can also follow the return steps below and place a separate order on TUMI.com for the new desired item.&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa returns"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;Can I return a monogrammed product?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;Gift cards, Care Kits, and personalized products, including monogrammed and TUMI Accents are final sale.&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa returns"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;How long will it take for my refund to show?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;Refunds will be made to the original form of payment. Once we have received the return, please allow 3-5 days for inspection and processing. The time it takes for a refund to appear on your credit card statement varies from bank to bank. .&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa returns"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;How do I start my free return?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;&lt;strong&gt;Each package includes a prepaid UPS shipping label and return slip affixed to the exterior of your package. If you cannot locate or have misplaced your return shipping label, please call us at 1-800-299-8864.&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;To return an item purchased on TUMI.com, securely pack the unused item in the original packaging along with the completed return slip stating the reason for your return, all paperwork, parts, and accessories. Please remove any extra labels from the outside of the package before shipping.&lt;/li&gt;
+&lt;li&gt;You may bring the package to any UPS customer counter, authorized UPS shipping outlet or present the package to a UPS driver.&lt;/li&gt;
+&lt;li&gt;Keep the UPS return tracking number to monitor the shipment status.&lt;/li&gt;
+&lt;/ul&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa shipping"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;When should I expect to my products to be shipped?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;Make note of the Availability of the product. This tells you when we expect to ship your product from our warehouse. Once your product has left our warehouse, the shipping method you select during Checkout will determine when your order will arrive. (For example, if your product takes 1-2 full business days to leave our warehouse and you select &amp;quot;Priority&amp;quot; shipping, it may actually take 2-3 full business days for your order to arrive.) Products are only shipped during regular business days, which are Monday-Friday, excluding federal holidays within the United States. If you receive an email notifying you that your products have been shipped during a weekend or federal holiday, they will not actually be shipped until the following business day. &lt;strong&gt;Please note:&lt;/strong&gt; most items take a minimum of 1 to 2 days to leave our warehouse if in stock, before the shipping process begins. Additional time is required for monogramming and accenting of an item.&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa shipping"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;Why can&amp;#x27;t I ship an item I want from the U.S. website to another country and vice versa?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;Customers can only purchase product off their local site. Tumi does not participate in cross border shipping. If you would like to ship to a selected country, the purchaser must purchase the products from that specific country's website.&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa shipping"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;What carrier does Tumi use to ship their products?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;Tumi.com uses UPS to ship all customer orders in the U.S. and Canada.&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa shipping"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;Can items ordered ship separately?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;Items may ship separately depending on size, availability and the addition of value added services (accenting and monogramming).&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa store-pickup-and-curbside"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;How does the &amp;quot;Buy Online, Pick Up in Store&amp;quot; option work?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;You can navigate to Tumi.com to place your order and select to pick up in the store of your choice. Upon completion, you will receive an email acknowledging that we, TUMI, have received your order. As soon as we have prepared your order you will receive a confirmation email that your order is ready for pick up. &lt;strong&gt;Please note: Your order will not be ready for pick up in store until you receive an email confirmation.&lt;/strong&gt; If your order contains multiple shipments or pick-up locations, you will receive separate notifications when each has been processed. If you need a bag for your order, some TUMI stores may only provide paper bags for a nominal fee as required by law. The fee varies by location. For your convenience, we will hold your order for 14 days. If you do not pick up your order in your selected TUMI Authorized Full Price Store location, we will have to cancel your order and issue you a refund via Mail Check. In order to pick up your order, please bring the following: Driver's License or state/government issued photo ID, Credit Card or gift card used for the purchase (only the individual named on the credit card can pick up the order) and a copy of this email (optional).&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa store-pickup-and-curbside"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;When will my order be ready for pick up?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;Your order will only be ready when you receive an email confirmation telling you so. Please continue to check your email for this notice.&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa store-pickup-and-curbside"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;How long will you hold my item(s) at the store?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;For your convenience, we will hold your order for 14 days. If you do not pick up your order in your selected TUMI Authorized Full Price Store location, we will have to cancel your order and issue you a refund via Mail Check.&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa store-pickup-and-curbside"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;What do I need to bring to the store when I pick up my order?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;In order to pick up your order, please bring the following: Driver's License or state/government issued photo ID, Credit Card or gift card used for the purchase and a copy of this email (optional).&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa store-pickup-and-curbside"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;Who can pick up my order?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;Only the individual named on the credit card can pick up the order in store.&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa store-pickup-and-curbside"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;Are TUMI stores open?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;We are working tirelessly on our plan to reopen our stores and evaluating market-by-market to understand where itâ€™s safe to consider reopening. Our goal is not only to reopen, but to welcome our community back safely. As soon as we feel confident and responsible in doing so in your neighborhoodâ€”with the guidance of our local and federal governmentsâ€”youâ€™ll hear from us with further details. You can find more details regarding a store near you on our TUMI Store Locator page.&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa store-pickup-and-curbside"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;What new safety precautions will be taken?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;We are working through many initiatives including curbside pickup, social distancing considerations, enhanced cleaning and disinfecting protocols, and reduced contact during the store experience to ensure that we can operate safely. Weâ€™ll have health and safety procedures in place for our store teams, and clear guidance for you on how to shop or utilize curbside pickup. In addition, we recommend that a face mask/covering be worn to ensure the safety of yourself and others (select states required per local regulations). TUMI safety measures include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Care Stations:&lt;/strong&gt; Each store will have a dedicated sanitation space cleared of all products stocked with hand sanitizer, face masks/coverings, and disinfecting surface cleaner.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Employee Protection:&lt;/strong&gt; All TUMI employees will wear a face mask/covering, as required by state guidelines, as well as have easy access to hand sanitizer and disinfecting surface cleaner.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Social Distancing:&lt;/strong&gt; Floor decals will be present measuring six feet apart to ensure necessary social distancing requirements.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Mobile Shopping Experience:&lt;/strong&gt; Call your local TUMI store and speak with a store associate to place your order with contactless payment..&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Curbside Pickup:&lt;/strong&gt; For store purchases made online or by phone, curbside pickup will be offered in order to retrieve your purchases in a safe and timely manner.&lt;/li&gt;
+&lt;/ul&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa store-pickup-and-curbside"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;Are masks required?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;All TUMI employees will wear a face mask/covering in our stores, as required by state guidelines. We recommend that a face mask/covering be worn by our customers as well to ensure the safety of yourself and others (select states required per local regulations).&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa store-pickup-and-curbside"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;Do you offer curbside pickup?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;Yes. For store purchases made online or by phone, curbside pickup will be offered in order to retrieve your purchases in a safe and timely manner. For online orders, once you receive the confirmation email that your order is ready for pickup, please call the store phone number listed in the pickup details. For phone orders, please call your local store directly and a store associate will coordinate the purchase and pickup details with you. For both online and phone orders, a store associate will provide details and directions to schedule curbside service as it may vary per location. Please refrain from attempting to pick up or schedule curbside service for your items until you receive confirmation that your order is ready.&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa store-pickup-and-curbside"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;Where do I go for curbside pickup?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;For both online and phone orders, a store associate will provide additional details and directions via phone to schedule curbside service as it may vary per location. Please refrain from attempting to pick up or schedule curbside service for your items until you receive confirmation that your order is ready.&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa store-pickup-and-curbside"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;How to set up an appointment?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;If you are interested in purchasing from a TUMI retail store, but are hesitant to visit one, TUMI is offering the option to set up an appointment with a store associate. You may schedule an appointment to Facetime/Google Duo with a store associate for a virtual shopping experience or schedule an appointment with a store associate for a private in store shopping experience. To schedule your appointment, please call your local TUMI retail store. Click &lt;a href="https://www.tumi.com/store-finder#reopened-stores-list."&gt;here&lt;/a&gt; to find more details regarding TUMI retail store openings near you.&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+  
+  
+  
+&lt;/div&gt;
+
+     &lt;div class="faq-footer removeFocusIndicator"&gt;
+            &lt;h2 class="haveQuestions"&gt;Still have questions?&lt;/h2&gt;
+            &lt;div class="faq-form-cntr"&gt;
+                    &lt;p class="bestway-txt"&gt;The best way to reach us is by email.&lt;/p&gt;
+                    &lt;div class="regular-options"&gt;
+                        &lt;div id="faq-next-btn-cntr"&gt;
+                            &lt;a href="/contactUsForm" class="btn faq-btn" aria-label="Contact Us"&gt;Contact Us&lt;/a&gt;
+                            &lt;/div&gt;
+                    &lt;/div&gt;
+                
+                &lt;/div&gt;
+
+        &lt;/div&gt;
+    
+&lt;/div&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="footer-links">
+        <display-name xml:lang="x-default">Footer Links</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">    &lt;div class="row" data-creative-name="footer-links"&gt;
+    &lt;div class="col-md-6"&gt;
+      &lt;ul class="footer-menu-links"&gt;
+        &lt;li&gt;
+          &lt;a href="/customer-service" class="title" id="footer-customer-service"&gt;Customer Service&lt;/a&gt;
+          &lt;ul class="footer-menu-sub-links" aria-labelledby="footer-customer-service"&gt;
+            &lt;li&gt;&lt;a href="/shipping"&gt;Shipping&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="/return"&gt;Returns&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="/payment-methods"&gt;Payment Methods&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="/service-repairs"&gt;Service &amp;amp; Repairs&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="/product-info"&gt;Product Info and Warranty&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="/airline-carry-on-guide"&gt;Airline Carry-On Guide&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="/faq"&gt;FAQs&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="/gift-card"&gt;Gift Card &amp;amp; Services&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="/replacement-parts"&gt;Replacement Parts&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="/setting-your-tumi-lock"&gt;Setting Your TUMI Lock&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+
+    &lt;div class="col-md-6"&gt;
+      &lt;div class="row"&gt;
+        &lt;div class="col-md-12 order-1 order-sm-2"&gt;
+          &lt;ul class="footer-menu-links"&gt;
+            &lt;li&gt;
+              &lt;a href="/my-account" class="title" id="footer-my-account"&gt;My Account&lt;/a&gt;
+              &lt;ul class="footer-menu-sub-links mb" aria-labelledby="footer-my-account"&gt;
+                &lt;li&gt;&lt;a href="/sign-in"&gt;Sign In&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="/track-orders"&gt;Track Orders&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="$url('Tracer-Show')$"&gt;Register Your Tumi&lt;/a&gt;&lt;/li&gt;
+              &lt;/ul&gt;
+            &lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/div&gt;
+
+        &lt;div class="col-md-12 order-2 order-sm-1 mb-32"&gt;
+
+          &lt;ul class="footer-menu-links"&gt;
+            &lt;li&gt;
+              &lt;a href="/about-tumi" class="title border-0" id="footer-about-tumi"&gt;About TUMI&lt;/a&gt;
+              &lt;ul class="footer-menu-sub-links" aria-labelledby="footer-about-tumi"&gt;
+                &lt;li&gt;&lt;a href="/tumi-diff"&gt;TUMI Difference&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="/corporate-gifts"&gt;Corporate Gifts &amp;amp; Incentives&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="/careers"&gt;Careers&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;/li&gt;
+          &lt;/ul&gt;
+
+        &lt;/div&gt;
+        
+      &lt;/div&gt;
+      &lt;/div&gt;
+  &lt;/div&gt;
+</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="services-header-content">
+        <display-name xml:lang="x-default">Services Header</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;div class="container nav-service"&gt;&#13;        &lt;div class="row"&gt;&#13;            &lt;div class="col-12 col-md-4"&gt;&#13;                &lt;ul class="nav-service--menu"&gt;&#13;                    &lt;h3&gt;WHY TUMI&lt;/h3&gt;&#13;                    &lt;li class="nav-service--menu--links"&gt;&#13;                        &lt;div class="image"&gt;&#13;                            &lt;img alt="" src="test-image.png?$staticlink$" title="" /&gt;&#13;                        &lt;/div&gt;&#13;                        &lt;div class="content"&gt;&#13;                            &lt;a href="$httpsURL('Page-Show', 'cid', 'warranty-service')$"&gt;Our Warranty&lt;/a&gt;&#13;                            &lt;p&gt;Lorem Ipsum is not simply random text.&lt;/p&gt;&#13;                        &lt;/div&gt;&#13;                    &lt;/li&gt;&#13;                     &lt;li class="nav-service--menu--links"&gt;&#13;                        &lt;div class="image"&gt;&#13;                            &lt;img alt="" src="test-image.png?$staticlink$" title="" /&gt;&#13;                        &lt;/div&gt;&#13;                        &lt;div class="content"&gt;&#13;                            &lt;a href=""&gt;TUMI Tracer&lt;/a&gt;&#13;                            &lt;p&gt;Lorem Ipsum is not simply random text.&lt;/p&gt;&#13;                        &lt;/div&gt;&#13;                    &lt;/li&gt;&#13;                     &lt;li class="nav-service--menu--links"&gt;&#13;                        &lt;div class="image"&gt;&#13;                            &lt;img alt="" src="test-image.png?$staticlink$" title="" /&gt;&#13;                        &lt;/div&gt;&#13;                        &lt;div class="content"&gt;&#13;                            &lt;a href=""&gt;Our Warranty&lt;/a&gt;&#13;                            &lt;p&gt;Lorem Ipsum is not simply random text.&lt;/p&gt;&#13;                        &lt;/div&gt;&#13;                    &lt;/li&gt;&#13;                     &lt;li class="nav-service--menu--links"&gt;&#13;                        &lt;div class="image"&gt;&#13;                            &lt;img alt="" src="test-image.png?$staticlink$" title="" /&gt;&#13;                        &lt;/div&gt;&#13;                        &lt;div class="content"&gt;&#13;                            &lt;a href=""&gt;Our Warranty&lt;/a&gt;&#13;                            &lt;p&gt;Lorem Ipsum is not simply random text.&lt;/p&gt;&#13;                        &lt;/div&gt;&#13;                    &lt;/li&gt;&#13;                &lt;/ul&gt;&#13;            &lt;/div&gt;&#13;            &lt;div class="col-12 col-md-4"&gt;&#13;                &lt;ul class="nav-service--menu"&gt;&#13;                    &lt;h3&gt;WE'RE HERE TO HELP&lt;/h3&gt;&#13;                    &lt;li class="nav-service--menu--links"&gt;&#13;                        &lt;div class="image"&gt;&#13;                            &lt;img alt="" src="test-image.png?$staticlink$" title="" /&gt;&#13;                        &lt;/div&gt;&#13;                        &lt;div class="content"&gt;&#13;                            &lt;a href=""&gt;FAQ&lt;/a&gt;&#13;                            &lt;p&gt;Lorem Ipsum is not simply random text.&lt;/p&gt;&#13;                        &lt;/div&gt;&#13;                    &lt;/li&gt;&#13;                    &#13;                    &lt;li class="nav-service--menu--links"&gt;&#13;                        &lt;div class="image"&gt;&#13;                            &lt;img alt="" src="test-image.png?$staticlink$" title="" /&gt;&#13;                        &lt;/div&gt;&#13;                        &lt;div class="content"&gt;&#13;                            &lt;a href=""&gt;FAQ&lt;/a&gt;&#13;                            &lt;p&gt;Lorem Ipsum is not simply random text.&lt;/p&gt;&#13;                        &lt;/div&gt;&#13;                    &lt;/li&gt;&#13;                    &#13;                    &lt;li class="nav-service--menu--links"&gt;&#13;                        &lt;div class="image"&gt;&#13;                            &lt;img alt="" src="test-image.png?$staticlink$" title="" /&gt;&#13;                        &lt;/div&gt;&#13;                        &lt;div class="content"&gt;&#13;                            &lt;a href=""&gt;FAQ&lt;/a&gt;&#13;                            &lt;p&gt;Lorem Ipsum is not simply random text.&lt;/p&gt;&#13;                        &lt;/div&gt;&#13;                    &lt;/li&gt;&#13;                    &#13;                    &lt;li class="nav-service--menu--links"&gt;&#13;                        &lt;div class="image"&gt;&#13;                            &lt;img alt="" src="test-image.png?$staticlink$" title="" /&gt;&#13;                        &lt;/div&gt;&#13;                        &lt;div class="content"&gt;&#13;                            &lt;a href=""&gt;FAQ&lt;/a&gt;&#13;                            &lt;p&gt;Lorem Ipsum is not simply random text.&lt;/p&gt;&#13;                        &lt;/div&gt;&#13;                    &lt;/li&gt;&#13;                &lt;/ul&gt;&#13;            &lt;/div&gt;&#13;            &lt;div class="col-12 col-md-4"&gt;&#13;                &lt;div class="store-locator"&gt;&#13;                    &lt;h3&gt;YOUR TUMI STORE&lt;/h3&gt;&#13;                   &lt;img alt="" src="header-image-placeholder.svg?$staticlink$" title="" /&gt;&#13;                    &lt;div class="address"&gt;&#13;                        &lt;p class="title"&gt;&#13;                            TUMI at Perimeter Mall&#13;                            &lt;a href=""&gt;change&lt;/a&gt;&#13;                        &lt;/p&gt;&#13;                        &lt;p&gt;5 miles away&lt;/p&gt;&#13;                        &lt;p&gt;open now until 8pm today&lt;/p&gt;&#13;                    &lt;/div&gt;&#13;                    &lt;a href="/" class="button d-block button--primary"&gt;&#13;                        Store Hours and Servies&#13;                    &lt;/a&gt;&#13;                    &lt;a href="/" class="button d-block button--secondary"&gt;&#13;                        Get Directions&#13;                    &lt;/a&gt;&#13;                &lt;/div&gt;&#13;            &lt;/div&gt;&#13;        &lt;/div&gt;&#13;    &lt;/div&gt;</custom-attribute>
+            <custom-attribute attribute-id="customCSSFile">services.css</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="tumilock">
+      <display-name xml:lang="x-default">tumilock</display-name>
+      <description xml:lang="x-default">tumilock</description>
+      <online-flag>true</online-flag>
+      <searchable-flag>false</searchable-flag>
+      <custom-attributes>
+        <custom-attribute attribute-id="body" xml:lang="x-default">&lt;div class=&quot;tumilock-container&quot;&gt;&#13;&lt;div class=&quot;tumilock-main row d-flex&quot;&gt;&#13;&lt;div class=&quot;tumilock-sidebar col-sm-4&quot;&gt;&#13;&lt;ul&gt;&#13;	&lt;li class=&quot;sidebar-head&quot;&gt;&#13;	&lt;div class=&quot;sidebar-img&quot;&gt;&lt;a href=&quot;#Padlock&quot;&gt;&lt;img alt=&quot;pad lock&quot; src=&quot;images/tumilock/padlock.svg?$staticlink$&quot; /&gt; &lt;/a&gt;&lt;/div&gt;&#13;	&lt;div class=&quot;sidebar-header&quot;&gt;&lt;a href=&quot;#Padlock&quot;&gt;Padlock &lt;/a&gt;&lt;/div&gt;&#13;	&lt;/li&gt;&#13;	&lt;li class=&quot;sidebar-head&quot;&gt;&#13;	&lt;div class=&quot;sidebar-img&quot;&gt;&lt;a href=&quot;#DualIntegratedLock&quot;&gt;&lt;img alt=&quot;Dual Integrated Lock&quot; src=&quot;images/tumilock/dual-integrated-lock.svg?$staticlink$&quot; /&gt; &lt;/a&gt;&lt;/div&gt;&#13;	&lt;div class=&quot;sidebar-header&quot;&gt;&lt;a href=&quot;#DualIntegratedLock&quot;&gt;Dual Integrated Lock &lt;/a&gt;&lt;/div&gt;&#13;	&lt;/li&gt;&#13;	&lt;li class=&quot;sidebar-head&quot;&gt;&#13;	&lt;div class=&quot;sidebar-img&quot;&gt;&lt;a href=&quot;#IntegratedLock&quot;&gt;&lt;img alt=&quot;Integrated Lock&quot; src=&quot;images/tumilock/integrated-lock.svg?$staticlink$&quot; /&gt; &lt;/a&gt;&lt;/div&gt;&#13;	&lt;div class=&quot;sidebar-header&quot;&gt;&lt;a href=&quot;#IntegratedLock&quot;&gt;Integrated Lock &lt;/a&gt;&lt;/div&gt;&#13;	&lt;/li&gt;&#13;	&lt;li class=&quot;sidebar-head&quot;&gt;&#13;	&lt;div class=&quot;sidebar-img&quot;&gt;&lt;a href=&quot;#LowProfileIntegratedLock&quot;&gt;&lt;img alt=&quot;Low Profile Integrated Lock&quot; src=&quot;images/tumilock/low-profile-integrated-lock.svg?$staticlink$&quot; /&gt; &lt;/a&gt;&lt;/div&gt;&#13;	&lt;div class=&quot;sidebar-header&quot;&gt;&lt;a href=&quot;#LowProfileIntegratedLock&quot;&gt;Low Profile Integrated Lock &lt;/a&gt;&lt;/div&gt;&#13;	&lt;/li&gt;&#13;	&lt;li class=&quot;sidebar-head&quot;&gt;&#13;	&lt;div class=&quot;sidebar-img&quot;&gt;&lt;a href=&quot;#SnapLatchLock&quot;&gt;&lt;img alt=&quot;Snap Latch Lock&quot; src=&quot;images/tumilock/snap-lactch.svg?$staticlink$&quot; /&gt; &lt;/a&gt;&lt;/div&gt;&#13;	&lt;div class=&quot;sidebar-header&quot;&gt;&lt;a href=&quot;#SnapLatchLock&quot;&gt;Snap Latch Lock &lt;/a&gt;&lt;/div&gt;&#13;	&lt;/li&gt;&#13;	&lt;li class=&quot;sidebar-head&quot;&gt;&#13;	&lt;div class=&quot;sidebar-img&quot;&gt;&lt;a href=&quot;#LockName&quot;&gt;&lt;img alt=&quot;Lock Name&quot; src=&quot;images/tumilock/padlck.svg?$staticlink$&quot; /&gt; &lt;/a&gt;&lt;/div&gt;&#13;	&lt;div class=&quot;sidebar-header&quot;&gt;&lt;a href=&quot;#LockName&quot;&gt;Lock Name &lt;/a&gt;&lt;/div&gt;&#13;	&lt;/li&gt;&#13;&lt;/ul&gt;&#13;&lt;/div&gt;&#13;&lt;div class=&quot;tumilock-content-section col-xs-12 col-sm-8&quot;&gt;&#13;&lt;div class=&quot;uppercase&quot;&gt;TUMI LOCKS&lt;/div&gt;&#13;&lt;h1&gt;Maximize your security&lt;/h1&gt;&#13;&lt;div class=&quot;banner-image&quot;&gt;&#13;&lt;picture&gt;&#13;            &lt;source media=&quot;(max-width:640px)&quot; srcset=&quot;images/tumilock/dummy-img-square.svg?$staticlink$&quot;&gt;&#13;            &lt;img class=&quot;img-fluid w-100&quot; src=&quot;images/tumilock/dummy-square-image-rect.svg?$staticlink$&quot; alt=&quot;&quot;&gt;&#13;            &lt;/picture&gt;&lt;/div&gt;&#13;&lt;div class=&quot;conent&quot;&gt;&#13;&lt;p class=&quot;mb-4&quot;&gt;Your new TSA-approved combination padlock is preset to open at 0-0-0 (even though the dials may be positioned at other numbers). You can change and reset your combination as often as you like.&lt;/p&gt;&#13;&lt;p&gt;Keep your combination in a safe and accessible place for future reference. This lock was designed to be recognized by the U.S. Transportation Security Administration, TSA, and allows the TSA to be able to unlock your bag, using special access codes and tools, if the need arises for a baggage search.。This lock can then be relocked by the TSA with no damage to the lock or your bag.&lt;/p&gt;&#13;&lt;div class=&quot;section-container&quot; id=&quot;Padlock&quot;&gt;&#13;&lt;div class=&quot;section-mob-header&quot;&gt;&#13;&lt;div class=&quot;sidebar-img&quot;&gt;&lt;img alt=&quot;pad lock&quot; src=&quot;images/tumilock/padlock.svg?$staticlink$&quot; /&gt;&lt;/div&gt;&#13;&lt;div class=&quot;sidebar-header&quot;&gt;Padlock&lt;/div&gt;&#13;&lt;/div&gt;&#13;&lt;div class=&quot;section-mobile-content&quot;&gt;&#13;&lt;div class=&quot;sec-img-container&quot;&gt;&lt;img alt=&quot;Lock Name&quot; src=&quot;images/tumilock/dummy-img-square.svg?$staticlink$&quot; /&gt; &lt;img alt=&quot;Lock Name&quot; src=&quot;images/tumilock/padlock-content-img.svg?$staticlink$&quot; /&gt;&lt;/div&gt;&#13;&lt;h2&gt;Padlock&lt;/h2&gt;&#13;&lt;div class=&quot;sec-content-container&quot;&gt;&#13;&lt;div class=&quot;sec-content-left&quot;&gt;&#13;&lt;div class=&quot;step-no&quot;&gt;Step 1&lt;/div&gt;&#13;&lt;div class=&quot;step-content&quot;&gt;Start by ensuring every digit on your dial is set in the preset starting code at 0-0-0.&lt;/div&gt;&#13;&lt;div class=&quot;step-no&quot;&gt;Step 2&lt;/div&gt;&#13;&lt;div class=&quot;step-content&quot;&gt;Use a ballpoint pen to push the reset button on the bottom of the lock and hold down while adjusting each number on your 3-digit dial.&lt;/div&gt;&#13;&lt;/div&gt;&#13;&lt;div class=&quot;sec-content-right&quot;&gt;&#13;&lt;div class=&quot;step-no&quot;&gt;Step 3&lt;/div&gt;&#13;&lt;div class=&quot;step-content&quot;&gt;When you have finalized your new code, release your ballpoint pen&amp;rsquo;s pressure on the reset button to set the new combination.&lt;/div&gt;&#13;&lt;div class=&quot;step-no&quot;&gt;Step 4&lt;/div&gt;&#13;&lt;div class=&quot;step-content&quot;&gt;Open the lock by entering the set combination on the dial and pressing down on the unlock button.&lt;/div&gt;&#13;&lt;/div&gt;&#13;&lt;/div&gt;&#13;&lt;/div&gt;&#13;&lt;/div&gt;&#13;&lt;div class=&quot;section-container&quot; id=&quot;DualIntegratedLock&quot;&gt;&#13;&lt;div class=&quot;section-mob-header&quot;&gt;&#13;&lt;div class=&quot;sidebar-img&quot;&gt;&lt;img alt=&quot;Dual Integrated Lock&quot; src=&quot;images/tumilock/dual-integrated-lock.svg?$staticlink$&quot; /&gt;&lt;/div&gt;&#13;&lt;div class=&quot;sidebar-header&quot;&gt;Dual Integrated Lock&lt;/div&gt;&#13;&lt;/div&gt;&#13;&lt;div class=&quot;section-mobile-content&quot;&gt;&#13;&lt;div class=&quot;sec-img-container&quot;&gt;&lt;img alt=&quot;Lock Name&quot; src=&quot;images/tumilock/dummy-img-square.svg?$staticlink$&quot; /&gt; &lt;img alt=&quot;Lock Name&quot; src=&quot;images/tumilock/padlock-content-img-1.svg?$staticlink$&quot; /&gt;&lt;/div&gt;&#13;&lt;h2&gt;Dual Integrated Lock&lt;/h2&gt;&#13;&lt;div class=&quot;sec-content-container&quot;&gt;&#13;&lt;div class=&quot;sec-content-left&quot;&gt;&#13;&lt;div class=&quot;step-no&quot;&gt;Step 1&lt;/div&gt;&#13;&lt;div class=&quot;step-content&quot;&gt;Start by ensuring your dial is set in the preset starting code 0-0-0 by releasing the zipper pullers from their housing. To do this, slide the TSA Lock as indicated by the arrows to unlock the zippers.&lt;/div&gt;&#13;&lt;div class=&quot;step-no&quot;&gt;Step 2&lt;/div&gt;&#13;&lt;div class=&quot;step-content&quot;&gt;Now that the preset code is confirmed, return the zipper pullers into the housing.&lt;/div&gt;&#13;&lt;div class=&quot;step-no&quot;&gt;Step 3&lt;/div&gt;&#13;&lt;div class=&quot;step-content&quot;&gt;Use a ballpoint pen to press down the reset button located next to the dial. After pressing down on the reset button, adjust each dial to your preference.&lt;/div&gt;&#13;&lt;/div&gt;&#13;&lt;div class=&quot;sec-content-right&quot;&gt;&#13;&lt;div class=&quot;step-no&quot;&gt;Step 4&lt;/div&gt;&#13;&lt;div class=&quot;step-content&quot;&gt;When you have finalized of your new code, push to slide the TSA Lock as indicated by the arrows. This causes the reset button to spring up and release the zipper pullers which confirms your new code is set.&lt;/div&gt;&#13;&lt;/div&gt;&#13;&lt;/div&gt;&#13;&lt;/div&gt;&#13;&lt;/div&gt;&#13;&lt;div class=&quot;section-container&quot; id=&quot;LowProfileIntegratedLock&quot;&gt;&#13;&lt;div class=&quot;section-mob-header&quot;&gt;&#13;&lt;div class=&quot;sidebar-img&quot;&gt;&lt;img alt=&quot;Low Profile Integrated Lock&quot; src=&quot;images/tumilock/low-profile-integrated-lock.svg?$staticlink$&quot; /&gt;&lt;/div&gt;&#13;&lt;div class=&quot;sidebar-header&quot;&gt;Low Profile Integrated Lock&lt;/div&gt;&#13;&lt;/div&gt;&#13;&lt;div class=&quot;section-mobile-content&quot;&gt;&#13;&lt;div class=&quot;sec-img-container&quot;&gt;&lt;img alt=&quot;Lock Name&quot; src=&quot;images/tumilock/dummy-img-square.svg?$staticlink$&quot; /&gt; &lt;img alt=&quot;Lock Name&quot; src=&quot;images/tumilock/low-profile-integrated-lock-content-img.svg?$staticlink$&quot; /&gt;&lt;/div&gt;&#13;&lt;h2&gt;Low Profile Integrated Lock&lt;/h2&gt;&#13;&lt;div class=&quot;sec-content-container&quot;&gt;&#13;&lt;div class=&quot;sec-content-left&quot;&gt;&#13;&lt;div class=&quot;step-no&quot;&gt;Step 1&lt;/div&gt;&#13;&lt;div class=&quot;step-content&quot;&gt;Start by ensuring every digit on your dial is set in the preset starting code at 0-0-0.&lt;/div&gt;&#13;&lt;div class=&quot;step-no&quot;&gt;Step 2&lt;/div&gt;&#13;&lt;div class=&quot;step-content&quot;&gt;Use a ballpoint pen to push the reset button on the bottom of the lock and hold down while adjusting each number on your 3-digit dial.&lt;/div&gt;&#13;&lt;div class=&quot;step-no&quot;&gt;Step 3&lt;/div&gt;&#13;&lt;div class=&quot;step-content&quot;&gt;When you have finalized your new code, release your ballpoint pen&amp;rsquo;s pressure on the reset button to set the new combination.&lt;/div&gt;&#13;&lt;/div&gt;&#13;&lt;div class=&quot;sec-content-right&quot;&gt;&#13;&lt;div class=&quot;step-no&quot;&gt;Step 4&lt;/div&gt;&#13;&lt;div class=&quot;step-content&quot;&gt;When you have finalized your new code, release your ballpoint pen&amp;rsquo;s pressure on the reset button.&lt;/div&gt;&#13;&lt;div class=&quot;step-no&quot;&gt;Step 5&lt;/div&gt;&#13;&lt;div class=&quot;step-content&quot;&gt;Now you have correctly set your lock! To test this, slide the TSA Lock as indicated by the arrows to unlock the zippers.&lt;/div&gt;&#13;&lt;/div&gt;&#13;&lt;/div&gt;&#13;&lt;/div&gt;&#13;&lt;/div&gt;&#13;&lt;div class=&quot;section-container&quot; id=&quot;IntegratedLock&quot;&gt;&#13;&lt;div class=&quot;section-mob-header&quot;&gt;&#13;&lt;div class=&quot;sidebar-img&quot;&gt;&lt;img alt=&quot;Integrated Lock&quot; src=&quot;images/tumilock/integrated-lock.svg?$staticlink$&quot; /&gt;&lt;/div&gt;&#13;&lt;div class=&quot;sidebar-header&quot;&gt;Integrated Lock&lt;/div&gt;&#13;&lt;/div&gt;&#13;&lt;div class=&quot;section-mobile-content&quot;&gt;&#13;&lt;div class=&quot;sec-img-container&quot;&gt;&lt;img alt=&quot;Lock Name&quot; src=&quot;images/tumilock/dummy-img-square.svg?$staticlink$&quot; /&gt; &lt;img alt=&quot;Lock Name&quot; src=&quot;images/tumilock/IntegratedLock-1.png?$staticlink$&quot; /&gt;&lt;/div&gt;&#13;&lt;h2&gt;Integrated Lock&lt;/h2&gt;&#13;&lt;div class=&quot;sec-content-container&quot;&gt;&#13;&lt;div class=&quot;sec-content-left&quot;&gt;&#13;&lt;div class=&quot;step-no&quot;&gt;Step 1&lt;/div&gt;&#13;&lt;div class=&quot;step-content&quot;&gt;Start by making sure every digit on your dial is set in the preset starting code at 0-0-0.&lt;/div&gt;&#13;&lt;div class=&quot;step-no&quot;&gt;Step 2&lt;/div&gt;&#13;&lt;div class=&quot;step-content&quot;&gt;Ensure zipper pulls are locked securely in the zipper housing.&lt;/div&gt;&#13;&lt;div class=&quot;step-no&quot;&gt;Step 3&lt;/div&gt;&#13;&lt;div class=&quot;step-content&quot;&gt;To reset your code, use a ballpoint pen to press down the reset button. After pressing down on the reset button, adjust each dial to your preference.&lt;/div&gt;&#13;&lt;/div&gt;&#13;&lt;div class=&quot;sec-content-right&quot;&gt;&#13;&lt;div class=&quot;step-no&quot;&gt;Step 4&lt;/div&gt;&#13;&lt;div class=&quot;step-content&quot;&gt;When you have finalized your new code, press down on the large release button, located to the right side of the TUMI logo. If the zippers pop out from the zipper pull, you have correctly set your lock!&lt;/div&gt;&#13;&lt;/div&gt;&#13;&lt;/div&gt;&#13;&lt;/div&gt;&#13;&lt;/div&gt;&#13;&lt;div class=&quot;section-container&quot; id=&quot;SnapLatchLock&quot;&gt;&#13;&lt;div class=&quot;section-mob-header&quot;&gt;&#13;&lt;div class=&quot;sidebar-img&quot;&gt;&lt;img alt=&quot;Snap Latch Lock&quot; src=&quot;images/tumilock/snap-lactch.svg?$staticlink$&quot; /&gt;&lt;/div&gt;&#13;&lt;div class=&quot;sidebar-header&quot;&gt;Snap Latch Lock&lt;/div&gt;&#13;&lt;/div&gt;&#13;&lt;div class=&quot;section-mobile-content&quot;&gt;&#13;&lt;div class=&quot;sec-img-container&quot;&gt;&lt;img alt=&quot;Lock Name&quot; src=&quot;images/tumilock/dummy-img-square.svg?$staticlink$&quot; /&gt; &lt;img alt=&quot;Lock Name&quot; src=&quot;images/tumilock/padlock-content-img-1.svg?$staticlink$&quot; /&gt;&lt;/div&gt;&#13;&lt;h2&gt;Snap Latch Lock&lt;/h2&gt;&#13;&lt;div class=&quot;sec-content-container&quot;&gt;&#13;&lt;div class=&quot;sec-content-left&quot;&gt;&#13;&lt;div class=&quot;step-no&quot;&gt;Step 1&lt;/div&gt;&#13;&lt;div class=&quot;step-content&quot;&gt;Start by ensuring every digit on your dial is set in the preset code 0-0-0. Press the release button on side to open the lock.&lt;/div&gt;&#13;&lt;div class=&quot;step-no&quot;&gt;Step 2&lt;/div&gt;&#13;&lt;div class=&quot;step-content&quot;&gt;When you have finalized your new code, press on the release button again. The reset button will spring up which confirms you have set your new code.&lt;/div&gt;&#13;&lt;/div&gt;&#13;&lt;div class=&quot;sec-content-right&quot;&gt;&#13;&lt;div class=&quot;step-no&quot;&gt;Step 3&lt;/div&gt;&#13;&lt;div class=&quot;step-content&quot;&gt;Once lock is open, use a ballpoint pen to press down on the reset button on the side of the lock. After pressing down on the reset button, adjust each dial to your preference.&lt;/div&gt;&#13;&lt;/div&gt;&#13;&lt;/div&gt;&#13;&lt;/div&gt;&#13;&lt;/div&gt;&#13;&lt;div class=&quot;section-container&quot; id=&quot;LockName&quot;&gt;&#13;&lt;div class=&quot;section-mob-header&quot;&gt;&#13;&lt;div class=&quot;sidebar-img&quot;&gt;&lt;img alt=&quot;Lock Name&quot; src=&quot;images/tumilock/padlck.svg?$staticlink$&quot; /&gt;&lt;/div&gt;&#13;&lt;div class=&quot;sidebar-header&quot;&gt;Lock Name&lt;/div&gt;&#13;&lt;/div&gt;&#13;&lt;div class=&quot;section-mobile-content&quot;&gt;&#13;&lt;div class=&quot;sec-img-container&quot;&gt;&lt;img alt=&quot;Lock Name&quot; src=&quot;images/tumilock/dummy-img-square.svg?$staticlink$&quot; /&gt; &lt;img alt=&quot;Lock Name&quot; src=&quot;images/tumilock/padlock-content-img.svg?$staticlink$&quot; /&gt;&lt;/div&gt;&#13;&lt;h2&gt;Lock Name&lt;/h2&gt;&#13;&lt;div class=&quot;sec-content-container&quot;&gt;&#13;&lt;div class=&quot;sec-content-left&quot;&gt;&#13;&lt;div class=&quot;step-no&quot;&gt;Step 1&lt;/div&gt;&#13;&lt;div class=&quot;step-content&quot;&gt;Start by making sure every digit on your dial is set in the preset starting code at 0-0-0.&lt;/div&gt;&#13;&lt;div class=&quot;step-no&quot;&gt;Step 2&lt;/div&gt;&#13;&lt;div class=&quot;step-content&quot;&gt;Use a ballpoint pen to push the reset button on the bottom of the lock and hold down while adjusting each number on your 3-digit dial.&lt;/div&gt;&#13;&lt;/div&gt;&#13;&lt;div class=&quot;sec-content-right&quot;&gt;&#13;&lt;div class=&quot;step-no&quot;&gt;Step 3&lt;/div&gt;&#13;&lt;div class=&quot;step-content&quot;&gt;When you have finalized your new code, release your ballpoint pen&amp;rsquo;s pressure on the reset button to set the new combination.&lt;/div&gt;&#13;&lt;div class=&quot;step-no&quot;&gt;Step 4&lt;/div&gt;&#13;&lt;div class=&quot;step-content&quot;&gt;Open the lock by entering the set combination on the dial and pressing down on the unlock button.&lt;/div&gt;&#13;&lt;/div&gt;&#13;&lt;/div&gt;&#13;&lt;/div&gt;&#13;&lt;/div&gt;&#13;&lt;/div&gt;&#13;&lt;/div&gt;&#13;&lt;/div&gt;&#13;&lt;/div&gt;</custom-attribute>
+      </custom-attributes>
+      <folder-links>
+      </folder-links>
+    </content>
+
+    <content content-id="tumi-diff-test-links-sec">
+        <display-name xml:lang="x-default">tumi-diff-test-links-sec</display-name>
+        <description xml:lang="x-default">tumi-diff-test-links-sec</description>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <custom-attributes>
+          <custom-attribute attribute-id="body" xml:lang="x-default">&lt;ol&gt;&#13;    &lt;li&gt;Product Safety&lt;/li&gt;&#13;    &lt;li&gt;Damage Colorfastness&lt;/li&gt;&#13;    &lt;li&gt;Colorfastness to Water&lt;/li&gt;&#13;    &lt;li&gt;Perspiration Colorfastness&lt;/li&gt;&#13;    &lt;li&gt;UV Fading Colorfastness&lt;/li&gt;&#13;    &lt;li&gt;Oil Resistance&lt;/li&gt;&#13;    &lt;li&gt;Cleanability&lt;/li&gt;&#13;    &lt;li&gt;Finish Adhesion&lt;/li&gt;&#13;    &lt;li&gt;Abrasion Resistance&lt;/li&gt;&#13;    &lt;li&gt;Bally Flex&lt;/li&gt;&#13;    &lt;li&gt;Stiffness&lt;/li&gt;&#13;    &lt;li&gt;Tensile Strength&lt;/li&gt;&#13;    &lt;li&gt;Tear Strength&lt;/li&gt;&#13;    &lt;li&gt;Seam Strength&lt;/li&gt;&#13;    &lt;li&gt;Break/Pip&lt;/li&gt;&#13;    &lt;li&gt;Shrinkage&lt;/li&gt;&#13;    &lt;li&gt;Dimensional Stability&lt;/li&gt;&#13;    &lt;li&gt;Salt Spray&lt;/li&gt;&#13;    &lt;li&gt;Mini-Tumble&lt;/li&gt;&#13;    &lt;li&gt;Operational Forces&lt;/li&gt;&#13;    &lt;li&gt;Zipper Crosswise Strength&lt;/li&gt;&#13;    &lt;li&gt;Zipper Puller Tensile Strength&lt;/li&gt;&#13;    &lt;li&gt;Environmental Cycle&lt;/li&gt;&#13;    &lt;li&gt;Handle Jerk/Strap Jerk&lt;/li&gt;&#13;    &lt;li&gt;Drop Test&lt;/li&gt;&#13;    &lt;li&gt;Tumble Test&lt;/li&gt;&#13;    &lt;li&gt;Telescoping Handle Impact&lt;/li&gt;&#13;    &lt;li&gt;Telescoping Handle Cycling&lt;/li&gt;&#13;    &lt;li&gt;Mileage Cycle&lt;/li&gt;&#13;    &lt;li&gt;Customized tests as required&lt;/li&gt;&#13;&lt;/ol&gt;</custom-attribute>
+        </custom-attributes>
+      </content>
+
+       <content content-id="services-get-started">
+          <display-name xml:lang="x-default">services-get-started</display-name>
+        <description xml:lang="x-default">services-get-started</description>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <custom-attributes>
+          <custom-attribute attribute-id="body" xml:lang="x-default">&lt;div class=&quot;banner-link-sec-container&quot;&gt;&#13;    &lt;div class=&quot;banner-container&quot;&gt;&#13;       &lt;div class=&quot;content&quot;&gt;&#13;          &lt;h1&gt;How can we help?&lt;/h1&gt;&#13;          &lt;div class=&quot;text&quot;&gt;We pride ourselves on delivering world-class Customer Service. And we really mean it&lt;/div&gt;&#13;       &lt;/div&gt;&#13;    &lt;/div&gt;&#13; &lt;/div&gt;&#13; &lt;div class=&quot;get-start-container&quot;&gt;&#13;    &lt;div class=&quot;container&quot;&gt;&#13;       &lt;div class=&quot;row&quot;&gt;&#13;          &lt;div class=&quot;col-12 col-sm-6 self-service-links text-left&quot;&gt;&#13;             &lt;h2&gt;Get Started&lt;/h2&gt;&#13;             &lt;p class=&quot;subtext&quot;&gt;Use one of our self service tools to get help fast.&lt;/p&gt;&#13;             &lt;ul&gt;&#13;                &lt;li&gt;&#13;                   &lt;a href=&quot;#&quot;&gt;&#13;                      &lt;div class=&quot;image-link-container&quot;&gt;&#13;                         &lt;div class=&quot;img&quot;&gt;&lt;img alt=&quot;image&quot; src=&quot;images/Vector.png?$staticlink$&quot; title=&quot;&quot; /&gt;&lt;/div&gt;&#13;                         &lt;div class=&quot;link-container&quot;&gt;&#13;                            &lt;p class=&quot;bold&quot;&gt;Submit a Repair&lt;/p&gt;&#13;                            &lt;p class=&quot;text&quot;&gt;We will have you on-the-go again in no time.&lt;/p&gt;&#13;                         &lt;/div&gt;&#13;                      &lt;/div&gt;&#13;                   &lt;/a&gt;&#13;                &lt;/li&gt;&#13;                &lt;li&gt;&#13;                   &lt;a href=&quot;#&quot;&gt;&#13;                      &lt;div class=&quot;image-link-container&quot;&gt;&#13;                         &lt;div class=&quot;img&quot;&gt;&lt;img alt=&quot;image&quot; src=&quot;images/Vector.png?$staticlink$&quot; title=&quot;&quot; /&gt;&lt;/div&gt;&#13;                         &lt;div class=&quot;link-container&quot;&gt;&#13;                   &lt;p class=&quot;bold&quot;&gt;Register Your TUMI&lt;/p&gt;&#13;                   &lt;p class=&quot;text&quot;&gt;Register your product or reunite with one you&amp;rsquo;ve lost.&lt;/p&gt;&#13;                   &lt;/div&gt;&#13;                   &lt;/div&gt;&lt;/a&gt;&#13;                &lt;/li&gt;&#13;                &lt;li&gt;&#13;                   &lt;a href=&quot;#&quot;&gt;&#13;                      &lt;div class=&quot;image-link-container&quot;&gt;&#13;                         &lt;div class=&quot;img&quot;&gt;&lt;img alt=&quot;image&quot; src=&quot;images/Vector.png?$staticlink$&quot; title=&quot;&quot; /&gt;&lt;/div&gt;&#13;                         &lt;div class=&quot;link-container&quot;&gt;&#13;                   &lt;p class=&quot;bold&quot;&gt;Set Your Lock&lt;/p&gt;&#13;                   &lt;p class=&quot;text&quot;&gt;Learn how to set your TSA approved TUMI Lock.&lt;/p&gt;&#13;                   &lt;/div&gt;&#13;                   &lt;/div&gt;&lt;/a&gt;&#13;                &lt;/li&gt;&#13;                &lt;li&gt;&#13;                   &lt;a href=&quot;#&quot;&gt;&#13;                      &lt;div class=&quot;image-link-container&quot;&gt;&#13;                         &lt;div class=&quot;img&quot;&gt;&lt;img alt=&quot;image&quot; src=&quot;images/Vector.png?$staticlink$&quot; title=&quot;&quot; /&gt;&lt;/div&gt;&#13;                         &lt;div class=&quot;link-container&quot;&gt;&#13;                   &lt;p class=&quot;bold&quot;&gt;Check Your Order Status&lt;/p&gt;&#13;                   &lt;p class=&quot;text&quot;&gt;Track your shipment and delivery status.&lt;/p&gt;&#13;                   &lt;/div&gt;&#13;                   &lt;/div&gt;&lt;/a&gt;&#13;                &lt;/li&gt;&#13;                &lt;li&gt;&#13;                   &lt;a href=&quot;#&quot;&gt;&#13;                      &lt;div class=&quot;image-link-container&quot;&gt;&#13;                         &lt;div class=&quot;img&quot;&gt;&lt;img alt=&quot;image&quot; src=&quot;images/Vector.png?$staticlink$&quot; title=&quot;&quot; /&gt;&lt;/div&gt;&#13;                         &lt;div class=&quot;link-container&quot;&gt;&#13;                   &lt;p class=&quot;bold&quot;&gt;TUMI Gift Card&lt;/p&gt;&#13;                   &lt;p class=&quot;text&quot;&gt;Purchase a gift card or check your balance.&lt;/p&gt;&#13;                   &lt;/div&gt;&#13;                   &lt;/div&gt;&lt;/a&gt;&#13;                &lt;/li&gt;&#13;             &lt;/ul&gt;&#13;          &lt;/div&gt;&#13;          &lt;div class=&quot;col-12 col-sm-6 policy-links&quot;&gt;&#13;             &lt;p class=&quot;subtext&quot;&gt;Learn more about our policies and guides.&lt;/p&gt;&#13;             &lt;div class=&quot;links&quot;&gt;&lt;a href=&quot;&quot;&gt;Our Return Policy&lt;/a&gt; &lt;a href=&quot;&quot;&gt;Our Warranty&lt;/a&gt; &lt;a href=&quot;&quot;&gt;Our Shipping Policy &lt;/a&gt; &lt;a href=&quot;&quot;&gt;Airline Carry-On Guide&lt;/a&gt; &lt;a href=&quot;&quot;&gt;Accepted Payment Methods&lt;/a&gt;&lt;/div&gt;&#13;          &lt;/div&gt;&#13;       &lt;/div&gt;&#13;    &lt;/div&gt;&#13; &lt;/div&gt;</custom-attribute>
+        </custom-attributes>
+        <folder-links>
+        </folder-links>
+      </content>
+
+</library>

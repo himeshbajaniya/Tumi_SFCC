@@ -1,0 +1,16 @@
+<li class="nav-item ${pdict.order.billing.payment.isContainsGc ? ' disabled' : ''}" data-method-id="${paymentOption.ID}">
+    <a class="applepay-tab ${pdict.order.billing.payment.isContainsGc ? ' disabled' : ''}" data-toggle="tab" href="#applepay-content" role="tab">
+    <div class="form-check">
+    <input type="radio" class="form-check-input" name="payment-options" id="applepay">
+    <label class="form-check-label" for="applepay">
+        <span class="display-name">
+            <img class="applepay-options"
+                    src="${URLUtils.staticURL('/images/apple.png')}"
+                    height="32"
+                    alt="${paymentOption.name}"
+                    title="${paymentOption.name}"
+            >
+        </span>
+    </div>
+    </a>
+</li>

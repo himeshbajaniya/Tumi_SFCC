@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jobs xmlns="http://www.demandware.com/xml/impex/jobs/2015-07-01">
+    <job job-id="Emarsys-OrderStatusСhangeNotification" priority="0">
+        <description/>
+        <parameters/>
+        <split sequential="false">
+            <contexts template-ref="template_92">
+                <context site-id="tumi-us"/>
+            </contexts>
+            <flow-template template-id="template_92">
+                <step step-id="ShippingConfirmation" type="custom.EmarsysComponents.OrderStatusChangeNotification" enforce-restart="false">
+                    <description/>
+                    <parameters>
+                        <parameter name="stepFunctional">0</parameter>
+                    </parameters>
+                </step>
+                <step step-id="OrderCancelled" type="custom.EmarsysComponents.OrderStatusChangeNotification" enforce-restart="false">
+                    <description/>
+                    <parameters>
+                        <parameter name="stepFunctional">1</parameter>
+                    </parameters>
+                </step>
+            </flow-template>
+        </split>
+        <rules/>
+        <triggers>
+            <run-once enabled="true">
+                <date>2020-03-26Z</date>
+                <time>18:04:56.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+
+    <job job-id="Emarsys-ExportCatalog" priority="0">
+        <description/>
+        <parameters/>
+        <split sequential="false">
+            <contexts template-ref="template_25">
+                <context site-id="tumi-us"/>
+            </contexts>
+            <flow-template template-id="template_25">
+                <step step-id="product export" type="custom.EmarsysComponents.EmarsysExportCatalog" enforce-restart="false">
+                    <description/>
+                    <parameters>
+                        <parameter name="exportFolderName">predict</parameter>
+                        <parameter name="catalogConfigKey">catalogConfig</parameter>
+                    </parameters>
+                </step>
+                <step step-id="FtpUpload" type="custom.CSComponents.FtpUpload" enforce-restart="false">
+                    <description/>
+                    <parameters>
+                        <parameter name="ServiceID">exchange.emarsys.api</parameter>
+                        <parameter name="FilePattern">.*.csv</parameter>
+                        <parameter name="SourceFolder">src/predict</parameter>
+                        <parameter name="TargetFolder">Predict</parameter>
+                        <parameter name="Recursive">false</parameter>
+                        <parameter name="ArchiveFolder">src/predict/archives</parameter>
+                        <parameter name="NoFileFoundStatus">OK</parameter>
+                    </parameters>
+                </step>
+            </flow-template>
+        </split>
+        <rules/>
+        <triggers>
+            <run-once enabled="true">
+                <date>2020-08-19Z</date>
+                <time>15:49:21.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+
+    <job job-id="Emarys-Setup" priority="0">
+        <description>Setup job for Emarsys implementation.</description>
+        <parameters/>
+        <split sequential="false">
+            <contexts template-ref="template_57">
+                <context site-id="tumi-us"/>
+            </contexts>
+            <flow-template template-id="template_57">
+                <step step-id="GetSourceID" type="custom.EmarsysComponents.GetSourceID" enforce-restart="false">
+                    <description/>
+                    <parameters/>
+                </step>
+                <step step-id="GetAvailableProfileFields" type="custom.EmarsysComponents.GetAvailableProfileFields" enforce-restart="false">
+                    <description/>
+                    <parameters/>
+                </step>
+                <step step-id="CreateSingleChoiceValueMapping" type="custom.EmarsysComponents.CreateSingleChoiceValueMapping" enforce-restart="false">
+                    <description/>
+                    <parameters/>
+                </step>
+                <step step-id="CreateExternalEvents" type="custom.EmarsysComponents.CreateExternalEvents" enforce-restart="false">
+                    <description/>
+                    <parameters>
+                        <parameter name="customObjectKey">StoredEvents</parameter>
+                    </parameters>
+                </step>
+                <step step-id="GetAvailableEvents" type="custom.EmarsysComponents.GetAvailableEvents" enforce-restart="false">
+                    <description/>
+                    <parameters>
+                        <parameter name="isDisabled">true</parameter>
+                    </parameters>
+                </step>
+            </flow-template>
+        </split>
+        <rules/>
+        <triggers>
+            <run-once enabled="true">
+                <date>2019-12-16Z</date>
+                <time>09:47:03.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+
+    <job job-id="Reindex" priority="0">
+        <description/>
+        <parameters/>
+        <split sequential="false">
+            <contexts template-ref="template_45">
+                <context site-id="tumi-us"/>
+            </contexts>
+            <flow-template template-id="template_45">
+                <step step-id="Reindex" type="SearchReindex" enforce-restart="false">
+                    <description/>
+                    <parameters>
+                        <parameter name="Product related search indexes">true</parameter>
+                        <parameter name="Active data search index">true</parameter>
+                        <parameter name="Content search index">true</parameter>
+                        <parameter name="Indexer Type">Full Index Rebuild</parameter>
+                    </parameters>
+                </step>
+            </flow-template>
+        </split>
+        <rules/>
+        <triggers>
+            <run-once enabled="false">
+                <date>2018-06-25Z</date>
+                <time>05:36:56.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+
+
+    <job job-id="RebuildURLs" priority="0">
+        <description/>
+        <parameters/>
+        <flow>
+            <context site-id="tumi-us"/>
+            <step step-id="RebuildURLs" type="UpdateStorefrontURLs" enforce-restart="false">
+                <description/>
+                <parameters/>
+            </step>
+        </flow>
+        <rules/>
+        <triggers>
+            <run-once enabled="false">
+                <date>2018-06-25Z</date>
+                <time>05:38:35.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+
+    <job job-id="Emarsys-ExportOrders" priority="0">
+        <description/>
+        <parameters/>
+        <flow>
+            <context site-id="tumi-us"/>
+            <step step-id="EmarsysExportOrders" type="custom.EmarsysComponents.EmarsysExportOrders" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="destinationFolder">test/orders</parameter>
+                    <parameter name="smartInsightCurrency">USD</parameter>
+                    <parameter name="enableCustomTimeFrame">true</parameter>
+                    <parameter name="timeframeStart">2019-11-11</parameter>
+                    <parameter name="timeframeEnd">2020-06-15</parameter>
+                </parameters>
+            </step>
+            <step step-id="FtpUpload" type="custom.CSComponents.FtpUpload" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="ServiceID">exchange.emarsys.api</parameter>
+                    <parameter name="FilePattern">.*.csv</parameter>
+                    <parameter name="SourceFolder">src/test/orders</parameter>
+                    <parameter name="TargetFolder">test/orders</parameter>
+                    <parameter name="Recursive">false</parameter>
+                    <parameter name="ArchiveFolder">src/test/orders/archive</parameter>
+                    <parameter name="NoFileFoundStatus">OK</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <rules/>
+        <triggers>
+            <run-once enabled="true">
+                <date>2019-12-11Z</date>
+                <time>10:06:55.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+
+    <job job-id="GetAllEvents" priority="0">
+        <description/>
+        <parameters/>
+        <flow>
+            <context site-id="tumi-us"/>
+            <step step-id="Get Available Events_" type="custom.EmarsysComponents.GetAvailableEvents" enforce-restart="false">
+                <description/>
+                <parameters/>
+            </step>
+        </flow>
+        <rules/>
+        <triggers>
+            <run-once enabled="true">
+                <date>2019-12-18Z</date>
+                <time>12:31:09.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+
+    <job job-id="Emarsys-InitDatabase" priority="0">
+        <description/>
+        <parameters/>
+        <split sequential="false">
+            <contexts template-ref="template_90">
+                <context site-id="tumi-us"/>
+            </contexts>
+            <flow-template template-id="template_90">
+                <step step-id="ExportCustomerInfo" type="custom.DBLoad.ExportCustomerInfo" enforce-restart="false">
+                    <description/>
+                    <parameters>
+                        <parameter name="csvFileColumnsDelimiter">;</parameter>
+                        <parameter name="optInStatus">0</parameter>
+                        <parameter name="customAttributeId">EmarsysOptInFlag</parameter>
+                        <parameter name="profilesExportThreshold">1000</parameter>
+                        <parameter name="mailSubject">Export orders</parameter>
+                    </parameters>
+                </step>
+            </flow-template>
+        </split>
+        <rules/>
+        <triggers>
+            <run-once enabled="true">
+                <date>2019-12-17Z</date>
+                <time>12:35:22.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+
+</jobs>

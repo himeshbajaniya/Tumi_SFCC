@@ -1,0 +1,20 @@
+<div class="address-summary">
+    <div class="billingAddressHeading">
+        <span>${Resource.msg('heading.billing.address','checkout',null)}</span>
+    </div>
+    <div class="address1">
+        <isif condition="${address && address.address1}">${address.address1},</isif>
+        <isif condition="${address && address.address2}">${address.address2}</isif>
+    </div>
+    <div>
+        <span class="city">
+            <isif condition="${address && address.city}">${address.city},</isif>
+        </span> 
+	    <span class="stateCode">
+	       <isif condition="${address && address.stateCode}">${address.stateCode}</isif>
+	    </span>
+	     <span class="postalCode">
+	       <isif condition="${address && address.postalCode}">${address.postalCode}</isif>
+	    </span>
+    </div>    
+</div>

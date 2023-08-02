@@ -1,0 +1,16 @@
+dist
+storefront-reference-architecture/cartridges/app_storefront_base/cartridge/static
+core/org_tumi/cartridge/static
+core/org_tumi_specialMarkets/cartridge/static
+sfra-webpack-builder/test
+integrations/link_cybersource
+integrations/link_paypal
+integrations/link_emarsys/cartridges/int_emarsys
+integrations/plugin_wishlists/cartridges/plugin_wishlists
+integrations/plugin_turnto/cartridges/int_turnto_core_v5
+integrations/plugin-applepay-master/cartridges/plugin_applepay
+integrations/link_experiancbu-master/cartridge/int_experian_sfra
+
+integrations/plugin_instorepickup
+integrations/plugin_productcompare-master/cartridges/plugin_productcompare/cartridge
+integrations/link_klarnapayments

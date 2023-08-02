@@ -1,0 +1,4 @@
+<script>
+    window.emarsysAnalyticsData = {};
+    emarsysAnalyticsData.emarsysAnalytics = <isprint value="${JSON.stringify(pdict.analyticsData)}" encoding="htmlsinglequote"/> || {isEnableEmarsys: false};
+</script>

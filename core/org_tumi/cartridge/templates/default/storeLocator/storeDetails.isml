@@ -1,0 +1,85 @@
+<div class="store-details locator-storedetails" data-store-id="${store.ID}">
+    <iscomment> <div class="store-name">${store.name}</div> </iscomment>
+    <isif condition="${store.storeType && store.storeType.toLowerCase() != 'dealer'}">
+        <a href="https://www.tumi.com/store/${store.ID}" class="removeFocusIndicator">
+    <iselse/>
+        <a class="removeFocusIndicator">
+    </isif>
+        <isif condition="${store.storeType && store.storeType.toLowerCase() == 'retail'}">
+            <img class="locator-marker left ctnr-locator-image removeFocusIndicator" src="${URLUtils.staticURL('/images/tumiStore.png')}"
+                alt="${Resource.msg('global.find.store', 'common', null)}" />
+        <iselseif condition="${store.storeType && store.storeType.toLowerCase() == 'outlet'}">
+            <img class="locator-marker left ctnr-locator-image removeFocusIndicator" src="${URLUtils.staticURL('/images/tumiOutlets.png')}"
+                alt="${Resource.msg('global.find.store', 'common', null)}" />
+        </iselseif> 
+        <iselse/>
+            <img class="locator-marker left ctnr-locator-image removeFocusIndicator" src="${URLUtils.staticURL('/images/tumiRetailers.png')}"
+                alt="${Resource.msg('global.find.store', 'common', null)}" />
+        </isif>
+        <iscomment> <div class="locator-thumb removeFocusIndicator">
+                <img class="w-100" src="${store.image}"
+                alt="${Resource.msg('global.find.store', 'common', null)}" />
+        </div> </iscomment>
+        <h5 class="locator-storename">
+            ${store.name}</h5>
+    </a>
+    <address>
+        <a class="store-map" target='_blank' href="https://maps.google.com/?daddr=${store.latitude},${store.longitude}">
+            ${store.address1}
+            <isif condition="${store.address2}">
+                ${store.address2}
+            </isif>
+            <isif condition="${store.city}">
+                ${store.city},
+            </isif>
+            <isif condition="${store.stateCode}">
+                ${store.stateCode}
+            </isif>
+            ${store.postalCode}
+        </a>
+        <p class="store-phone">
+            <isif condition="${store.phone}">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <span><a class="storelocator-phone" href="tel:${store.phone}">${store.phone}</a></span>
+            </isif>
+        </p>
+        <p>
+            <isif condition="${store.distance}">
+                <isif condition="${store.distance <= 1}">
+                    <span class="distance"><isprint value="${store.distance}" formatter="##"> Mile</span> <span class="seperator">|</span>
+                <iselse/>
+                    <span class="distance"><isprint value="${store.distance}" formatter="##"> Miles</span>  <span class="seperator">|</span>
+                </isif>
+            </isif>
+            <isif condition="${store.storeType && store.storeType.toLowerCase() != 'dealer'}">
+                <a id="view-store-details" data-store-id="${store.ID}"> View Details </a> <span class="seperator">|</span>
+            </isif>
+            
+            <a class="store-map" target='_blank' href="https://maps.google.com/?daddr=${store.latitude},${store.longitude}">Get Directions</a>
+        </p>
+        <div class="store-timing-section_${store.ID} d-none">
+            <h6>HOURS</h6>
+            <isloop items="${store.storetiming}" var="hours">
+                <div class="row view-all-days">
+                    <span class="col-4 px-0">${hours.day}</span> <span class="col-8 px-0 text-right">${hours.time}</span>
+                </div>
+            </isloop>
+        </div>
+            <isif condition="${store.storeType && store.storeType.toLowerCase() == 'retail'}">
+                <div class="form-check radio-small">
+                    <isif condition="${(!empty(pdict.stores) && !empty(pdict.stores.favouriteStore) && pdict.stores.favouriteStore === store.ID) || (!empty(customer.profile) && 'favouriteStore' in customer.profile.custom && !empty(customer.profile.custom.favouriteStore) && customer.profile.custom.favouriteStore === store.ID)}">
+                        <input type="radio" class="form-check-input disabled" id="store_${store.ID}" name="my-store" value="${store.ID}" checked="checked"/>        
+                            <label class="form-check-label disabled" for="store_${store.ID}">
+                                My Store
+                            </label>
+                    <iselse/>
+                        <input type="radio" class="form-check-input" id="store_${store.ID}" name="my-store" value="${store.ID}" />
+                        <label class="form-check-label" for="store_${store.ID}">
+                            Save as My Store
+                        </label>
+                    </isif>
+                </div>
+            </isif>
+        </p>
+    </address>
+</div>

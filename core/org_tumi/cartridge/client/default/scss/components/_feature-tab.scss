@@ -1,0 +1,498 @@
+.nav-tabs {
+    .nav-item {
+        .nav-link {
+            padding-top: 17px;
+            padding-bottom: 17px;
+            color: $davy-grey;
+            letter-spacing: 0.005em;
+            @include sizeWeightLh(15px,600,16px);
+            @include media-breakpoint-down(xs) {
+                letter-spacing: unset;
+            }
+
+            &.active {
+                border-bottom: 2px solid $charleston-green;
+                color: $eerie-black !important;
+            }
+        }
+    }
+}
+
+.feature-tab {
+    padding-top: 60px;
+
+    @include media-breakpoint-up(sm) {
+        padding-top: 80px;
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+
+    @include media-breakpoint-up(md) {
+        padding-top: 100px;
+    }
+
+    .modal {
+        padding-right: 0;
+    }
+
+    .modal-dialog {
+        margin: 0;
+
+        @include media-breakpoint-up(sm) {
+            margin: 0.5rem auto;
+        }
+    }
+
+    .modal-dialog-scrollable {
+        max-height: 100vh;
+
+        @include media-breakpoint-up(sm) {
+            max-height: calc(100% - 1rem);
+        }
+    }
+
+    .nav {
+        flex-wrap: nowrap;
+        overflow-x: overlay;
+
+        @include media-breakpoint-up(sm) {
+            overflow-x: hidden;
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        @include media-breakpoint-up(lg) {
+            overflow-x: inherit;
+        }
+
+        &.nav-fill {
+            .nav-item {
+                flex: 1 0 auto;
+
+                @include media-breakpoint-up(sm) {
+                    flex: 1;
+                }
+
+                &:last-child {
+                    .nav-link {
+                        padding-left: 40px;
+                        padding-right: 40px;
+
+                        @include media-breakpoint-up(sm) {
+                            padding-left: 0;
+                            padding-right: 0;
+                        }
+                    }
+                }
+
+                .nav-link {
+                    padding-left: 67px;
+                    padding-right: 67px;
+
+                    @include media-breakpoint-up(sm) {
+                        padding-left: 0;
+                        padding-right: 0;
+                    }
+
+                    &.active {
+                        color: $bg-dark;
+                    }
+                }
+            }
+        }
+    }
+
+    .tab-content {
+        padding-bottom: 30px;
+    }
+
+    #features {
+        .col-md-6 {
+            @include media-breakpoint-up(md) {
+                padding-left: 88px;
+                padding-right: 88px;
+            }
+
+            &:last-child {
+                h4 {
+                    margin-top: 30px;
+
+                    @include media-breakpoint-up(sm) {
+                        margin-top: 0;
+                    }
+                }
+            }
+        }
+
+        h4 {
+            @include sizeWeightLh(15px, 600, 20px);
+
+            font-family: $font-tumi-sbold;
+            margin-bottom: 12px;
+            color: $eerie-black;
+        }
+
+        ul {
+            padding-left: 15px;
+            margin-top: 12px;
+
+            li {
+                @include sizeWeightLh(15px, 400, 20px);
+
+                @include media-breakpoint-up(sm) {
+                    @include sizeWeightLh(14px, 400, 20px);
+                }
+
+                color: $davy-grey;
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    #specifications {
+        .col-20 {
+            flex: 0 0 100%;
+            max-width: 100%;
+            padding-right: 1rem;
+            padding-left: 1rem;
+
+            @include media-breakpoint-up(sm) {
+                flex: 0 0 20%;
+                max-width: 20%;
+            }
+        }
+
+        .specification-content-wrap {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+
+            @include media-breakpoint-up(sm) {
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            @include media-breakpoint-up(sm) {
+                margin-top: 24px;
+                margin-bottom: 24px;
+            }
+
+            @include media-breakpoint-down(sm) {
+                margin-left: 40px;
+            }
+
+            svg {
+                margin-right: 16px;
+                max-width: 32px;
+                width: 100%;
+
+                @include media-breakpoint-up(sm) {
+                    margin-right: 0;
+                }
+            }
+
+            .specification-content-inner {
+                text-align: left;
+
+                @include media-breakpoint-up(sm) {
+                    text-align: center;
+                }
+
+                h5 {
+                    @include sizeWeightLh(15px, 600, 20px);
+
+                    color: $eerie-black;
+                    margin-bottom: 0;
+
+                    @include media-breakpoint-up(sm) {
+                        margin-top: 15px;
+                    }
+                }
+
+                p {
+                    @include sizeWeightLh(15px, 400, 20px);
+
+                    color: $eerie-black;
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    #maintenanceandcare {
+        .col-12 {
+            margin-bottom: 40px;
+        }
+
+        a {
+            @include sizeWeightLh(15px, 600, 19px);
+
+            font-family: $font-tumi-sbold;
+            margin-top: 16px;
+            color: $eerie-black;
+            display: inline-block;
+
+            svg {
+                margin-left: 8px;
+            }
+        }
+
+        p {
+            @include sizeWeightLh(15px, 400, 20px);
+
+            margin-top: 8px;
+            color: $eerie-black;
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+
+    #airlineGuideModal {
+        .modal-header {
+            background-color: $white;
+            border: none;
+
+            @include media-breakpoint-up(sm) {
+                padding-left: 87px;
+                padding-right: 71px;
+                padding-top: 44px;
+            }
+
+            @include media-breakpoint-up(md) {
+                padding-left: 89px;
+                padding-right: 40px;
+                padding-top: 35px;
+            }
+        }
+
+        .modal-body {
+            padding: 0;
+            @include media-breakpoint-down(md) {
+                height: 100%;
+            }
+
+            .radio-wrap {
+                @include media-breakpoint-down(sm) {
+                    padding: 16px 16px 0 87px;
+                    margin-bottom: 38px !important;
+                }
+
+                @include media-breakpoint-down(md) {
+                    padding: 16px 16px 0 89px;
+                }
+
+                @include media-breakpoint-up(md) {
+                    padding-left: 89px;
+                    padding-right: 89px;
+                    margin-top: 40px;
+                }
+            }
+        }
+    }
+
+    #compatibleairlineguide {
+        .radio-wrap {
+            margin-bottom: 40px !important;
+
+            @include media-breakpoint-up(sm) {
+                margin-bottom: 30px !important;
+            }
+
+            @include media-breakpoint-up(md) {
+                margin-bottom: 40px !important;
+            }
+        }
+
+        button {
+            margin-top: 32px;
+
+            @include media-breakpoint-up(sm) {
+                margin-top: 40px;
+            }
+        }
+
+        table th,
+        table td {
+            border: none;
+        }
+
+        .table {
+            margin-bottom: 0;
+
+            thead {
+                th {
+                    @include sizeWeightLh(15px, 600, 20px);
+
+                    color: $eerie-black;
+                    text-transform: capitalize;
+
+                    @include media-breakpoint-down(xs) {
+                        &:nth-of-type(3) {
+                            display: none;
+                        }
+                    }
+                }
+            }
+
+            tbody {
+                td {
+                    @include sizeWeightLh(15px, 400, 20px);
+
+                    color: $davy-grey;
+                    padding-top: 20px;
+                    padding-bottom: 20px;
+
+                    @include media-breakpoint-down(xs) {
+                        &:nth-of-type(3) {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+
+        .table-striped {
+            tbody {
+                tr {
+                    &:nth-of-type(odd) {
+                        background-color: $anti-flash-white;
+                    }
+                }
+            }
+        }
+    }
+
+    .tab-content-wrap {
+        margin: 30px auto 0;
+
+        @include media-breakpoint-up(sm) {
+            margin: 40px auto 0;
+        }
+
+        @include media-breakpoint-up(md) {
+            margin: 50px auto 0;
+        }
+    }
+}
+
+#airlineGuideModal {
+    @include media-breakpoint-down(md) {
+        overflow: hidden;
+        padding: 52px 32px 81px;
+    }
+    @include media-breakpoint-down(xs) {
+        padding: 0;
+    }
+
+    .modal-lg {
+        @include media-breakpoint-up(sm) {
+            max-width: 680px;
+        }
+
+        @include media-breakpoint-up(md) {
+            max-width: 904px;
+        }
+        @include media-breakpoint-down(md) {
+            min-width: 100%;
+            min-height: 100%;
+
+            .modal-content {
+                min-height: 100%;
+            }
+        }
+    }
+
+    .modal-header {
+        border: none;
+        display: flex;
+        align-items: center;
+
+        .modal-title {
+            text-transform: capitalize;
+            font-family: $font-light;
+            color: $eerie-black;
+
+            @include sizeWeightLh(24px, 300, 28px);
+
+            @include media-breakpoint-up(sm) {
+                @include sizeWeightLh(24px, 300, 16px);
+            }
+
+            @include media-breakpoint-up(md) {
+                @include sizeWeightLh(30px, 300, 16px);
+            }
+        }
+
+        .close {
+            display: flex;
+        }
+    }
+
+    .imperialPopup,
+    .metricPopup {
+        height: 100vh;
+
+        @include media-breakpoint-up(sm) {
+            height: 300px;
+            padding-left: 87px;
+            padding-right: 87px;
+        }
+
+        @include media-breakpoint-up(md) {
+            padding-left: 89px;
+            padding-right: 89px;
+        }
+    }
+
+    table th,
+    table td {
+        border: none;
+        padding: 16px;
+    }
+
+    .table {
+        thead {
+            th {
+                @include sizeWeightLh(15px, 600, 20px);
+
+                font-family: $font-tumi-sbold;
+                color: $eerie-black;
+                text-transform: capitalize;
+            }
+        }
+    }
+
+    .table {
+        tbody {
+            td {
+                @include sizeWeightLh(15px, 400, 20px);
+
+                color: $davy-grey;
+                text-transform: capitalize;
+
+                @include media-breakpoint-up(sm) {
+                    padding-top: 20px;
+                    padding-bottom: 20px;
+                }
+            }
+        }
+    }
+
+    .table-striped {
+        tbody {
+            tr {
+                &:nth-of-type(odd) {
+                    background-color: $anti-flash-white;
+                }
+            }
+        }
+    }
+}
+
+.maintenanceandcare-content-wrap {
+    p {
+        margin: 0;
+    }
+}

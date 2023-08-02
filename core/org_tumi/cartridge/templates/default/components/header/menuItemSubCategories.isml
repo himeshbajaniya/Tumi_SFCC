@@ -1,0 +1,47 @@
+<ul class="dropdown-level-two d-flex flex-column" role="menu" aria-hidden="true" aria-label="${category.id}">
+    <isif condition="${category.menuTemplateRender}">
+
+    </isif>
+    <isif condition="${mainMenuItem.id === 'accessories'}">
+        <a href="javascript:void(0);" class="img-side-name header-menu-sub-menu-title back" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" tabindex="0">${category.name}</a>
+    </isif>
+    <isif condition="${category.displayShopAll !== null}">
+        <isprint value="${category.displayShopAll}" encoding="off" />
+    </isif>
+    <isloop items="${menuItem.subCategories}" var="category">
+        <isif condition="${category.subCategories}">
+             
+            <li class="header-category-second-level" role="presentation">
+                <a href="${category.url}" id="${category.id}" class="content-wrapper d-flex align-items-center" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" tabindex="0">
+                    <isif condition="${category.thumbnail}">
+                        <div class="image">
+                            <img src="" data-src="${category.thumbnail}" alt="${Resource.msg('global.category.image', 'common', null)}" class="off-canvas"/>
+                        </div>
+                    </isif>
+                    <div class="content">
+                        <span class="img-side-name">${category.name}</span>
+                    </div>
+                </a>
+                <isset name="menuItem" value="${category}" scope="page" />
+                <isinclude template="components/header/menuItemSubCategories" />
+            </li>
+
+        <iselse/>
+            <li role="presentation">
+                <a class="content-wrapper d-flex align-items-center" href="${category.url}" id="${category.id}" role="menuitem" tabindex="0">
+                    <isif condition="${category.thumbnail}">
+                        <div class="image">
+                            <img src="" data-src="${category.thumbnail}" alt="${Resource.msg('global.category.image', 'common', null)}" class="off-canvas"/>
+                        </div>
+                    </isif>
+                    <div class="content">
+                        <span class="dropdown-link">${category.name}</span>
+                        <isif condition="${category.description}">
+                            <p><isprint value=" ${category.description}" encoding="htmlcontent" /></p>
+                        </isif>
+                    </div>
+                </a>
+            </li>
+        </isif>
+    </isloop>
+</ul>

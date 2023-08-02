@@ -1,0 +1,22 @@
+<script>
+document.addEventListener('DOMContentLoaded', getCartStatus, false);
+function getCartStatus () {
+    var rfk = window.rfk = window.rfk || [];
+
+    rfk.push(["trackEvent", {
+        "type": "status",
+        "name": "cart",
+        "uuid": customerUUID,
+        "value": {
+            "context": {
+                "page": {
+                    locale_country: rfkCountry,
+                    locale_language: rfkLanguage,
+                    locale_currency: rfkCurrency
+                }
+            },
+            "products": <isprint value="${require('*/cartridge/scripts/reflektionHelper').getItemsJSON(pdict.items)}" encoding="htmlsinglequote" />
+        }
+    }]);
+}
+</script>

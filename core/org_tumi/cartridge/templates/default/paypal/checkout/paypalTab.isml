@@ -1,0 +1,28 @@
+<li class="nav-item" data-method-id="${paymentOption.ID}">
+    <a class="paypal-tab" data-toggle="tab" href="#paypal-content" role="tab">
+        <div class="form-check">
+            <input type="radio" class="form-check-input" name="payment-options" id="paypal-input">
+            <label class="form-check-label" for="paypal-input">
+                <span class="display-name">
+                    <img class="credit-card-option"
+                        src="${URLUtils.staticURL('/images/paypal-icon.png')}"
+                        height="32"
+                        alt="${paymentOption.name}"
+                        title="${paymentOption.name}" >
+                        <span>${Resource.msg('checkout.paypal.options', 'checkout', null)}</span>
+                </span>
+            </label>
+        </div>
+    </a>
+</li>
+
+<iscomment> <li class="nav-item" data-method-id="${paymentOption.ID}">
+    <a class="nav-link paypal-tab" data-toggle="tab" href="#paypal-content" role="tab">
+        <img class="credit-card-option"
+                src="${URLUtils.staticURL('/images/paypal_mark_logo.png')}"
+                height="32"
+                alt="${paymentOption.name}"
+                title="${paymentOption.name}"
+        >
+    </a>
+</li> </iscomment>

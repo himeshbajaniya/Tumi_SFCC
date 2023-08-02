@@ -1,0 +1,30 @@
+<isloop items="${context.formsDescriptions}" var="form">
+    <form 
+        class="js-trigger-form trigger-form trigger-${form.sfccEventName}-event-form"
+        data-event-name="${form.sfccEventName}"
+        action="${URLUtils.url('ExternalEvents-Trigger')}" method="POST">
+        <isloop items="${form.fieldsData}" var="obj">
+            <div class="row-basic">
+                <div class="column-basic label-column">
+                    <isif condition="${obj.required === true}">
+                        <span class="required-sign">*</span>
+                    </isif>
+                    <label class="field-label" for="${form.sfccEventName + '-' + obj.field}">
+                        ${obj.label}:
+                    </label>
+                </div>
+                <div class="column-basic field-column">
+                    <input 
+                        type="text"
+                        name="${obj.field}"
+                        id="${form.sfccEventName + '-' + obj.field}"
+                        class="js-input-fields input-placeholder"
+                        <isprint value="${obj.required ? 'required' : ''}"/>
+                    />
+                </div>
+            </div>
+        </isloop>
+
+        <input type="hidden" name="${pdict.csrf.tokenName}" value="${pdict.csrf.token}" />
+    </form>
+</isloop>

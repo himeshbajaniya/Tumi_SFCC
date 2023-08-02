@@ -1,0 +1,503 @@
+@import "variables";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins/breakpoints";
+
+.update-password {
+    margin-top: 100px;
+
+    .update-tumi-image {
+        margin: 0 auto;
+        display: block;
+        width: 100px;
+    }
+
+    h6 {
+        margin-top: 20px;
+    }
+}
+
+.reset-password-form {
+    #backtologin {
+        display: none;
+    }
+
+    &.active {
+        #backtologin {
+            display: block;
+            height: 44px;
+            color: #fff;
+            line-height: 44px;
+        }
+    }
+}
+
+.toggle-password {
+    position: absolute;
+    right: 6px;
+    top: 30%;
+    display: flex;
+
+    .eye {
+        display: none;
+    }
+
+    &.active {
+        .eye {
+            display: block;
+        }
+
+        .eye-slash {
+            display: none;
+        }
+    }
+}
+
+.global-modal {
+    .modal-dialog {
+        position: fixed;
+        margin: auto;
+        width: 100%;
+        height: 100%;
+        right: 0;
+        @include media-breakpoint-up(sm) {
+            width: 439px;
+        }
+        @include media-breakpoint-up(md) {
+            width: 455px;
+        }
+    }
+
+    .modal-header {
+        padding: 0;
+        border-bottom: none;
+        margin-bottom: 34px;
+        background-color: transparent;
+        @include media-breakpoint-up(sm) {
+            margin-bottom: 50px;
+        }
+        @include media-breakpoint-up(md) {
+            margin-bottom: 23px;
+            margin-right: 16px;
+        }
+
+        .close {
+            margin: 0 0 0 auto;
+            padding: 0;
+            font-size: unset;
+            opacity: 0.75;
+        }
+    }
+
+    .modal-body {
+        padding: 0 !important;
+
+        .card {
+            width: 100% !important;
+        }
+    }
+
+    .modal-content {
+        height: 100%;
+        border-radius: 0;
+        border: none;
+        overflow: auto;
+        padding: 28px 16px;
+
+        @include media-breakpoint-up(sm) {
+            padding: 28px 32px;
+        }
+
+        @include media-breakpoint-up(md) {
+            padding: 42px 48px;
+        }
+    }
+}
+
+.signed-in {
+    .member-since {
+        @include sizeWeightLh(14px, 400, 20px);
+
+        margin-bottom: 40px;
+        color: $davy-grey;
+    }
+
+    .welcome-user {
+        @include sizeWeightLh(24px, 300, 24px);
+
+        margin-bottom: 40px;
+        font-family: $font-light;
+        text-transform: capitalize;
+        color: var(--color-black);
+
+        @include media-breakpoint-up(md) {
+            @include sizeWeightLh(24px, 300, 20px !important);
+        }
+    }
+
+    .account-list {
+        display: block;
+        border-bottom: 1px solid var(--color-grey2);
+
+        li:last-child {
+            display: block;
+        }
+    }
+
+    ul,
+    li {
+        list-style: none;
+    }
+
+    ul {
+        li {
+            &:last-child {
+                margin-bottom: 40px;
+            }
+        }
+    }
+
+    .button {
+        margin-top: 15px;
+    }
+
+    .content-wrapper {
+        margin-bottom: 24px;
+
+        .image {
+            margin-right: 20px;
+
+            img {
+                width: 32px;
+                height: 32px;
+            }
+        }
+
+        .content {
+            a {
+                @include sizeWeightLh(15px, 600, 24px);
+
+                color: $eerie-black;
+
+                @include media-breakpoint-up(md) {
+                    @include sizeWeightLh(15px, 600, 15px);
+                }
+            }
+        }
+    }
+
+    .signout-button {
+        display: flex;
+        justify-content: center;
+        margin-top: 45px;
+        color: var(--color-black);
+        @include sizeWeightLh(15px, 400, 20px !important);
+    }
+}
+
+.reset-password {
+    display: none;
+
+    h6 {
+        @include sizeWeightLh(15px, 600, 24px);
+
+        margin-bottom: 10px;
+        color: $eerie-black;
+        @include media-breakpoint-up(sm) {
+            @include sizeWeightLh(15px, 600, 20px);
+
+            margin-bottom: 40px;
+        }
+    }
+
+    p {
+        @include sizeWeightLh(15px, 400, 20px);
+
+        color: $davy-grey;
+        margin-bottom: 20px;
+
+        @include media-breakpoint-up(sm) {
+            margin-bottom: 33px;
+        }
+    }
+
+    .button {
+        margin-top: 41px;
+    }
+
+    a {
+        @include sizeWeightLh(15px, 400, 14px);
+
+        color: $black;
+        margin-top: 33px;
+        display: block;
+        text-align: center;
+    }
+
+    a.backtologin {
+        @include sizeWeightLh(15px, 400, 44px);
+
+        color: $white;
+    }
+}
+
+.mlogin {
+    .login-screen {
+        display: none;
+    }
+
+    .reset-password {
+        display: block;
+    }
+}
+
+.pwstrength_progress {
+    .progress-bar {
+        display: block !important;
+        height: 3px !important;
+        text-align: left !important;
+    }
+
+    .password-verdict {
+        padding-left: 6px;
+    }
+
+    .progress {
+        height: 3px !important;
+        background-color: $white !important;
+        border-radius: 0 !important;
+        overflow: visible !important;
+        margin-bottom: 20px;
+
+        .bg-danger {
+            color: $red !important;
+        }
+
+        .bg-warning {
+            color: $mikado-yellow !important;
+        }
+
+        .bg-success {
+            color: $green !important;
+        }
+    }
+}
+
+$name: 'login-page';
+
+.#{$name} {
+    padding: 0;
+
+    .login-form-nav {
+        margin-bottom: 0;
+
+        .nav-tabs {
+            margin-bottom: 40px;
+
+            .nav-item {
+                flex: 1 1 50%;
+
+                .nav-link {
+                    padding-top: 17px;
+                    padding-bottom: 17px;
+                    font-size: 15px !important;
+                    // font-weight: 600 !important;
+
+                    &.active {
+                        border-bottom: 2px solid $charleston-green;
+                        color: $eerie-black;
+                    }
+                }
+            }
+        }
+
+        .login-info {
+            @include sizeWeightLh(15px, 400, 20px);
+
+            margin-bottom: 36px;
+            color: $davy-grey;
+        }
+
+        .terms-text {
+            @include sizeWeightLh(12px, 400, 16px);
+
+            color: $davy-grey;
+
+            a {
+                text-decoration: underline;
+            }
+        }
+
+        .margin-tb {
+            margin-top: 20px;
+            margin-bottom: 41px;
+
+            .form-group {
+                margin-bottom: 0;
+                padding-left: 26px;
+                padding-right: 10px;
+            }
+
+            .forgot-password {
+                padding-right: 6px;
+            }
+        }
+
+        .bookmark-info {
+            color: $davy-grey;
+            width: 332px;
+            margin-bottom: 32px;
+            @include sizeWeightLh(15px, 400, 20px);
+        }
+
+        .account-verification-notification.registration,
+        .account-verification-notification.login {
+            color: $red-account-error;
+            margin-bottom: 20px;
+            @include sizeWeightLh(15px, 400, 20px);
+
+            a {
+                color: $davy-grey;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .forgot-password {
+        a {
+            @include sizeWeightLh(13px, 400, 18px);
+
+            text-decoration: underline;
+            color: $eerie-black;
+        }
+    }
+
+    .divider {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid #c4c4c4;
+        line-height: 0.1em;
+        margin: 20px 0;
+
+        span {
+            background: $white;
+            padding: 0 5px;
+        }
+    }
+
+    .card {
+        border: none !important;
+
+        .card-body {
+            padding: 0;
+        }
+    }
+
+    #janrainEngageEmbed {
+        display: block;
+        margin-bottom: 18px !important;
+
+        .janrainContent {
+            width: 100% !important;
+            padding: 0 !important;
+            height: auto !important;
+            overflow: auto !important;
+
+            #janrainProviderPages {
+                padding-top: 0 !important;
+                left: 0 !important;
+                top: 0 !important;
+                position: relative !important;
+            }
+
+            #janrainAuthReturnExperience {
+                top: 55px !important;
+                height: auto !important;
+
+                #janrain-googleplus {
+                    height: 48px !important;
+                    display: flex !important;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 14px !important;
+                    line-height: 14px !important;
+                    font-weight: 400 !important;
+
+                    span {
+                        color: $eerie-black !important;
+                    }
+                }
+            }
+        }
+
+        li {
+            width: 100% !important;
+            height: 48px !important;
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+            margin-bottom: 18px !important;
+            border: 1px solid $eerie-black !important;
+
+            a {
+                font-size: 15px !important;
+                color: $eerie-black !important;
+            }
+
+            &:last-child {
+                margin-bottom: 0 !important;
+            }
+        }
+    }
+}
+
+#register {
+    .register-info {
+        font-size: 15px;
+    }
+
+    .password-info {
+        padding-left: 6px;
+        @include sizeWeightLh(12px, 400, 16px);
+    }
+
+    .custom-checkbox {
+        margin: 40px 0 !important;
+    }
+
+    .button {
+        margin-bottom: 20px !important;
+    }
+
+    .privacy-policy {
+        @include sizeWeightLh(12px, 400, 16px);
+
+        a {
+            text-decoration: underline;
+            color: $davy-grey;
+
+            &:hover {
+                color: $davy-grey;
+            }
+        }
+    }
+}
+
+.modal-backdrop.show {
+    z-index: 101;
+}
+
+.update-password {
+    .update-title {
+        color: $eerie-black;
+        @include sizeWeightLh(15px, 600, 24px);
+    }
+
+    .update-text {
+        color: $eerie-black;
+        @include sizeWeightLh(15px, 400, 20px);
+    }
+
+    .password-info {
+        color: $davy-grey;
+    }
+}

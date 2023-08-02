@@ -1,0 +1,112 @@
+.payment-methods {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: $bg-dark;
+    }
+
+    .payment-section {
+        margin: 50px 0;
+
+        p {
+            font-size: 15px;
+        }
+    }
+
+    h3 {
+        margin-top: 50px;
+    }
+
+    .payment-section p a {
+        text-decoration: underline;
+    }
+
+    .payment-section p a:hover {
+        color: $bg-dark;
+    }
+}
+
+.payment-methods-header {
+    margin-bottom: 40px;
+    border-bottom: 1px solid $anti-flash-white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    .container {
+        padding-left: 0;
+        padding-right: 0;
+
+        @include media-breakpoint-down(sm) {
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+
+        @include media-breakpoint-between(md, lg) {
+            padding-left: 120px;
+            padding-right: 120px;
+        }
+
+        @include media-breakpoint-up(lg) {
+            padding-left: 72px;
+            padding-right: 72px;
+        }
+    }
+
+    .bread-crumb {
+        margin-bottom: 10px;
+    }
+
+    .bread-crumb-content {
+        font-size: 12px;
+        line-height: 16px;
+        -webkit-font-smoothing: antialiased;
+        display: flex;
+        align-items: center;
+        color: $davy-grey;
+    }
+
+    .bread-crumb-content img {
+        margin-right: 5px;
+        margin-bottom: 4px;
+    }
+
+    .bread-crumb-content a {
+        color: $davy-grey;
+        padding: 0 5px;
+    }
+
+    .static-title {
+        font-size: 24px;
+        line-height: 24px;
+        -webkit-font-smoothing: antialiased;
+        text-transform: capitalize;
+        color: var(--color-black);
+
+        @include media-breakpoint-up(md) {
+            line-height: 30px;
+        }
+
+        @include media-breakpoint-up(sm) {
+            margin-bottom: 0;
+        }
+    }
+
+    ul.jump-links {
+        list-style: none;
+        margin: 10px 0  0;
+        padding: 0;
+    }
+
+    ul.jump-links li {
+        margin: 0;
+        padding: 0 12px 0 0;
+        display: inline-block;
+    }
+
+    ul.jump-links li a {
+        color: $bg-dark;
+    }
+}

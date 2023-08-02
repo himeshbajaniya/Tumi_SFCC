@@ -1,0 +1,5 @@
+<div class="back-to-settings">
+    <a href="${URLUtils.https('Account-MySettingsMenu')}" role="menuitem" class=""
+    tabindex="-1"><img src="${URLUtils.absStatic('/images/back-arrow.svg')}" alt="" />${Resource.msg('label.mysettings.backtomysettings','account',null)}</a>
+   <h3 class="my-account-heading"></h3>
+</div>

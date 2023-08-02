@@ -1,0 +1,77 @@
+<isdecorate template="common/layout/page">
+<isscript>
+	var assets = require('*/cartridge/scripts/assets.js');
+	assets.addJs('/js/giftCard.js');
+</isscript>
+
+<div class="container giftcard check-balance">
+    <div class="row justify-content-center equal-height">
+        <div class="tab-content col-12">
+            <div class="card-body">
+                <div class="text-center">
+                    <iscontentasset aid="giftcard-check-balance-component" />
+                </div>
+
+                <iscomment>used to display balance result from web service</iscomment>
+                <div class="row balance"></div>
+
+                <form action="${pdict.checkBalanceActionURL}" class="giftcard-balancecheck" method="POST" name="giftcard-balance-form">
+                    <isset name="checkBalanceForm" value="${pdict.forms.giftCardForm.balance}" scope="page" />
+                    <div class="row align-items-center">
+                        <div class="col-12 col-md-6 col-lg-3">
+                            <div class="form-group
+                                    ${checkBalanceForm.accountNumber.mandatory === true ? 'required' : ''}
+                                    ${checkBalanceForm.accountNumber.htmlName}">
+                                <label class="form-control-label" for="giftcard-balance-form-accountnumber">
+                                    ${Resource.msg('label.input.giftcard.accountnumber', 'giftcard', null)}
+                                </label>
+                                <input type="text" class="form-control" id="giftcard-balance-form-accountnumber"
+                                    data-pattern-mismatch="${Resource.msg('error.message.giftcard.accountnumber.invalid', 'forms', null)}"
+                                    <isprint value="${checkBalanceForm.accountNumber.attributes}" encoding="off" />
+                                >
+                                <div class="invalid-feedback"></div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-6 col-lg-3">
+                            <div class="form-group
+                                    ${checkBalanceForm.pinNumber.mandatory === true ? 'required' : ''}
+                                    ${checkBalanceForm.pinNumber.htmlName}">
+                                <label class="form-control-label" for="giftcard-balance-form-pinnumber">
+                                    ${Resource.msg('label.input.giftcard.pinnumber', 'giftcard', null)}
+                                </label>
+                                <input type="text" class="form-control" id="giftcard-balance-form-pinnumber"
+                                    data-pattern-mismatch="${Resource.msg('error.message.giftcard.pinnumber.invalid', 'forms', null)}"
+                                    <isprint value="${checkBalanceForm.pinNumber.attributes}" encoding="off" />
+                                >
+                                <div class="invalid-feedback"></div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-auto">
+                            <div class="form-group">
+                                <isrecaptcha />
+                            </div>
+                        </div>
+
+                        <input type="hidden" name="${pdict.csrf.tokenName}" value="${pdict.csrf.token}" />
+                        <div class="col-12 col-md-6 col-lg-2">
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-block btn-outline-primary btn-recaptcha-check">${Resource.msg('button.text.checkbalance','giftcard', null)}</button>
+                            </div>
+                        </div>
+                         <div class="col-12 col-md-6 col-lg-2">
+                         	<input type="hidden" id="authorize" value="${URLUtils.url('GiftCard-Authorize')}"/>
+                         	<a href="#" id="authorize" class="btn btn-block btn-outline-primary authorize">Test Authorize $5</a>
+                         </div>
+                         <div class="col-12 col-md-6 col-lg-2">
+                         	<input type="hidden" id="void" value="${URLUtils.url('GiftCard-Void')}"/>
+                         	<a href="#" id="void" class="btn btn-block btn-outline-primary void-authorize">Test Void $5</a>
+                         </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</isdecorate>

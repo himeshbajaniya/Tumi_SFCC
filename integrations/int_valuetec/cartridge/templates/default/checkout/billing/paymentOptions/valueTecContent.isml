@@ -1,0 +1,83 @@
+<div class="tab-pane valuetec-content js_valuetec-content" id="valuetec-content" role="tabpanel">
+    <fieldset class="payment-form-fields">
+        <div class="container giftcard check-balance">
+            <div class="row justify-content-center equal-height">
+                <div class="tab-content col-12 px-0">
+                    <div class="card-body px-0">
+                        <div class="text-center">
+                            <isinclude template="components/modules" />
+                            <iscontentasset aid="giftcard-check-balance-component" />
+                        </div>
+                        <iscomment>used to display balance result from web service</iscomment>
+                        <div class="row balance"></div>
+                        <div class="giftcard-balancecheck">
+                            <isset name="checkBalanceForm" value="${pdict.forms.billingForm.giftCardFields.balance}"
+                                scope="page" />
+                            <div class="row align-items-center">
+                                <div class="col-12">
+                                    <div class="form-group has-float-label
+                                        ${checkBalanceForm.accountNumber.mandatory === true ? 'required' : ''}
+                                        ${checkBalanceForm.accountNumber.htmlName}">
+                                        <input type="hidden" name="${pdict.csrf.tokenName}" value="${pdict.csrf.token}" />
+                                        <input type="text" class="form-control" placeholder="${Resource.msg('label.input.giftcard.accountnumber', 'giftcard', null)}" id="giftcard-balance-form-accountnumber"
+                                            data-pattern-mismatch="${Resource.msg('error.message.giftcard.accountnumber.invalid', 'forms', null)}"
+                                            <isprint value="${checkBalanceForm.accountNumber.attributes}"
+                                            encoding="off" />
+                                        />
+                                        <label class="form-control-label" for="giftcard-balance-form-accountnumber">
+                                            ${Resource.msg('label.input.giftcard.accountnumber', 'giftcard', null)}
+                                        </label>
+                                        <div class="invalid-feedback"></div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="form-group has-float-label
+                                    ${checkBalanceForm.pinNumber.mandatory === true ? 'required' : ''}
+                                    ${checkBalanceForm.pinNumber.htmlName}">
+                                        <input type="text" class="form-control" placeholder="${Resource.msg('label.input.giftcard.pinnumber', 'giftcard', null)}" id="giftcard-balance-form-pinnumber"
+                                            data-pattern-mismatch="${Resource.msg('error.message.giftcard.pinnumber.invalid', 'forms', null)}"
+                                            <isprint value="${checkBalanceForm.pinNumber.attributes}" encoding="off" />
+                                        />
+                                        <label class="form-control-label" for="giftcard-balance-form-pinnumber">
+                                            ${Resource.msg('label.input.giftcard.pinnumber', 'giftcard', null)}
+                                        </label>
+                                        <div class="invalid-feedback"></div>
+                                    </div>
+                                </div>
+
+                                <div class="col-6 gift-card-link">
+                                    <a href="javascript:void(0);" data-toggle="tooltip" data-placement="bottom" title="${Resource.msg('label.pin.tooltip','giftcard',null)}">${Resource.msg('label.href.pin.located', 'giftcard', null)}</a>
+                                </div>
+                                
+                                <div class="col-6 gift-card-link text-right">
+                                    <a href="${pdict.checkBalanceActionURL}" class="check-balance-cta">${Resource.msg('button.text.checkbalance', 'giftcard', null)}</a>
+                                </div>
+
+                                <div class="col-12 d-none check-balance-details">
+                                    <p></p>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <button type="submit"
+                                            data-url="${pdict.redeemGiftCardUrl}"
+                                            class="button button--secondary w-100 btn-giftcard-redeem">
+                                            <isprint
+                                                value="${Resource.msg('button.text.giftcard.redeem', 'giftcard', null)}" />
+                                        </button>
+                                    </div>
+                                </div>
+
+                                
+
+                                <input type="hidden" name="${pdict.csrf.tokenName}" value="${pdict.csrf.token}" />
+                                <input type="hidden" name="${pdict.CurrentForms.billing.paymentMethod.htmlName}" value="GIFT_CERTIFICATE" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+</div>

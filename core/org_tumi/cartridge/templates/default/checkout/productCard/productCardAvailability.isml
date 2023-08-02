@@ -1,0 +1,6 @@
+<!-- Availability -->
+<isif condition="${lineItem.productAvailability}">
+    <span class="list-unstyled availability-msg">
+        ${lineItem.productAvailability.expectedToShipLabel}
+    </span>
+</isif>

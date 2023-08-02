@@ -1,0 +1,34 @@
+<div class="slot-4 h-100 three-tile-horizontal">
+    <div class="grid-wrapper      
+         {{#if (eq selectionOfTheme "Dark")}} theme-dark {{/if}} 
+         {{#if (eq selectionOfTheme "Light")}} theme-light  {{/if}}">
+         {{#if vedioAltGrid}}
+             <video class="video-desktop removeFocusIndicator lazy-video" autoplay="" muted="" loop="" playsinline="">
+                 <source src="{{vedioAltGrid}}">
+             </video>
+         {{/if}}
+         {{#if bg-image-scene7-link}}
+         <picture>
+             <source media="(max-width:640px)" srcset="{{s7ImageMobile}}">
+             <img class="img-fluid w-100" src="{{bg-image-scene7-link}}" alt="{{imageAltDesktop}}">
+             </picture>
+         {{/if}}
+         <div class="grid-breaker-component 
+             {{#if (eq selectionOfContent "alignTop")}} alignTop  {{/if}}
+             {{#if (eq selectionOfContent "alignMiddle")}} alignMiddle  {{/if}}
+             {{#if (eq selectionOfContent "alignBottom")}} alignBottom  {{/if}}" style="background-color:{{bg-color-hex}}">
+
+      
+             <div class="content">
+                 <div class="title">{{mainTagLine}}</div>
+                 <h3 class="description">{{description}}</h3>
+                 {{#if bottomCTA}}
+                 <a href="{{bottomCTAURL}}" class="button">{{bottomCTA}}</a>
+                 {{/if}}
+             </div>
+         </div>
+         {{#if bottomCTAURL}}
+         <a class="anchor-wrapper"href="{{bottomCTAURL}}"></a>
+         {{/if}}
+     </div>
+</div>

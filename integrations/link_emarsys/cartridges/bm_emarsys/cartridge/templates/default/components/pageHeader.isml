@@ -1,0 +1,36 @@
+<div id="notification-messages" class="notification-messages-container">
+    <div class="js-notification-message js-unlocked-message">
+        <img class="notification-icon" alt="icon" src="${URLUtils.staticURL('images/icon_unlocked.png')}"/>
+        <div class="body-message">
+            ${Resource.msg("save.error","newsletter",null)}
+        </div>
+    </div>
+    <div class="js-notification-message js-success-message">
+        <img class="notification-icon" alt="icon" src="${URLUtils.staticURL('images/icon_lockedit.png')}"/>
+        <div class="body-message js-body-success-message">
+            ${Resource.msg("save.success","newsletter",null)}
+        </div>
+    </div>
+    <div class="js-notification-message js-error-message">
+        <img class="notification-icon" alt="icon" src="${URLUtils.staticURL('images/error.gif')}"/>
+        <div class="body-message js-body-error-message" 
+                data-max-fields='${Resource.msg('error.message.max.fields','errorMessages','')}'
+                data-check-logs='${Resource.msg('error.message.check.logs', 'errorMessages', '')}'></div>
+    </div>
+</div>
+
+<div class="head-section-name">
+    ${Resource.msg(
+        (Object.hasOwnProperty.call(pdict, 'pageType')
+        ? pdict.pageType 
+        : pdict.contentTemplate)
+        + ".title", "pageTitle",null)}
+</div>
+
+<div class="title-description">
+    ${Resource.msg(
+        (Object.hasOwnProperty.call(pdict, 'pageType')
+        ? pdict.pageType 
+        : pdict.contentTemplate)
+        + ".description", "pageDescription",null)}
+</div>

@@ -1,0 +1,16 @@
+ <div class="modal fade global-modal" id="miniCartModal" tabindex="-1" role="dialog"
+        aria-labelledby="miniCartModal">
+        <div class="modal-dialog minicart-flyout minicart-swipe" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="cart-flyout-heading">${Resource.msg('title.your.shopping.cart', 'cart', null)}</span>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true"><img class="" src="${URLUtils.staticURL('/images/modal-close.svg')}"
+                                alt="${Resource.msg('global.search', 'common', null)}" /></span></button>
+
+                </div>
+                <div class="modal-body" id="flyout-minicart">
+                </div>
+            </div>
+        </div>
+    </div>

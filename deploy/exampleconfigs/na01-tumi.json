@@ -1,0 +1,30 @@
+{
+    "hosts": {
+        "staging": {
+            "hostname": "cert.staging.na01.tumi.demandware.net",
+            "dataset" : []
+        },
+
+        "development": {
+            "hostname": "development-na01-tumi.demandware.net",
+            "dataset" : []
+        },
+        "ci-001": {
+            "hostname" : "demo-na01-tumi.demandware.net",
+            "dataset" : []
+        },
+        "sandbox": {
+            "hostname" : "dev05-na01-tumi.demandware.net",
+            "dataset" : []
+        }
+    },
+    "cartridges": [
+        "./integrations/link_cybersource/cartridges/int_cybersource_sfra",
+        "./storefront-reference-architecture/cartridges/app_storefront_base",
+        "./storefront-reference-architecture/cartridges/bm_app_storefront_base",
+        "./storefront-reference-architecture/cartridges/modules"
+    ],
+    "site-data": {
+        "global-meta" : "./data/meta"
+    }
+}

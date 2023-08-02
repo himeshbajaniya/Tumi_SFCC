@@ -1,0 +1,36 @@
+<isif condition="${slotcontent != null}">
+    <div class="global-banner" style="background : ${dw.system.Site.getCurrent().getCustomPreferenceValue("globalBannerBgColor")};">
+        <div class="container px-0">
+            <div class="offers swiper offersSwiper" data-delay="${dw.system.Site.getCurrent().getCustomPreferenceValue("globalPromoBannerDelayTime")}">
+                <div class="swiper-wrapper">
+                    <isloop items="${slotcontent.content}" var="contentAsset" status="loopStatus">
+                        <div style="color : ${dw.system.Site.getCurrent().getCustomPreferenceValue("globalBannerTextColor")};" class="${slotcontent.content.length > 1 ? 'swiper-slide multi-offers' : 'single-offer'} ${!empty(contentAsset.custom.date) ? 'countdown-time' : ''}" data-id="${contentAsset.ID}">
+                            <isif condition="${!empty(contentAsset.custom.buttonUrl)}"><a href="${contentAsset.custom.buttonUrl}" class="text-decoration-none" style="color : ${dw.system.Site.getCurrent().getCustomPreferenceValue("globalBannerTextColor")};"></isif>
+                                <isif condition="${!empty(contentAsset.custom.detailMobile)}"><span class="d-md-none d-inline-block text-ellipsis">${contentAsset.custom.detailMobile}</span></isif>
+                                <isif condition="${!empty(contentAsset.custom.detail)}"><span class="d-none d-md-inline-block text-ellipsis">${contentAsset.custom.detail}</span></isif>
+                                <isif condition="${!empty(contentAsset.custom.date)}">
+                                    <input type="hidden" class="end-time" value="${contentAsset.custom.date}"/>
+                                    <span class="${contentAsset.ID} countdown-ticker">
+                                        <span class="days"></span><span class="hours"></span><span class="mins"></span><span class="secs"></span>
+                                    </span>
+                                </isif>
+                            <isif condition="${!empty(contentAsset.custom.buttonUrl)}"></a></isif>
+                            <isif condition="${contentAsset.custom.buttonUrl != null}"><a class="banner-btn" href="${contentAsset.custom.buttonUrl}" style="color : ${dw.system.Site.getCurrent().getCustomPreferenceValue("globalBannerTextColor")};">${contentAsset.custom.buttonText != null ? contentAsset.custom.buttonText : ''}</a></isif>
+                        </div>
+                    </isloop>
+                </div>
+            </div>
+            <button class="global-banner-close ml-3">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M2.10049 0.342651L0.686279 1.75686L4.92936 5.99995L0.686279 10.243L2.10049 11.6572L6.34358 7.41416L10.5858 11.6564L12 10.2421L7.75779 5.99995L12 1.75775L10.5858 0.343537L6.34358 4.58573L2.10049 0.342651Z" fill="${dw.system.Site.getCurrent().getCustomPreferenceValue("globalBannerTextColor") || '#1b1c1e'}"/>
+                </svg>
+
+            </button>
+        </div>
+    </div>
+     <script>
+        if (sessionStorage.getItem('globalBanner') === 'hide') {
+            $('.global-banner').css('display', 'none');
+        }
+    </script>
+</isif>

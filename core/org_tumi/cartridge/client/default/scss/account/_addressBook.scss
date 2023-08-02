@@ -1,0 +1,251 @@
+.saved-address {
+    .saved-adr-heading {
+        margin-bottom: 20px;
+    }
+
+    .card-header,
+    .card-body {
+        padding: 0;
+        margin-bottom: 0;
+    }
+
+    .default-adr-heading {
+        display: none;
+    }
+
+    .default-adr {
+        margin-bottom: 20px;
+        border-radius: unset;
+
+        .card-header {
+            padding: 0;
+        }
+
+        .card-body-positioning {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            @include media-breakpoint-up(sm) {
+                flex-direction: row;
+            }
+
+            .address-blog {
+                color: var(--color-black);
+                @include sizeWeightLh(15px, 400, 20px);
+            }
+
+            .cta-wrapper {
+                display: flex;
+                align-items: flex-start;
+                margin: 10px -2px -2px;
+                @include sizeWeightLh(13px, 400, 18px);
+
+                @include media-breakpoint-up(sm) {
+                    margin: 0;
+                }
+
+                a {
+                    margin: 0 5px;
+                    text-decoration-line: underline;
+                    cursor: pointer;
+                }
+
+                .remove-address {
+                    color: var(--color-black);
+                    background-color: unset;
+                    -webkit-font-smoothing: antialiased;
+                }
+            }
+        }
+
+        .saved-adr-heading {
+            margin-top: 40px;
+        }
+    }
+
+    .add-new-address {
+        margin-top: 40px;
+        margin-bottom: 120px;
+    }
+
+    .divider {
+        border-bottom: 1px solid var(--color-grey2);
+
+        .card-header {
+            padding: 0;
+        }
+
+        .address-heading {
+            margin-bottom: 20px;
+            font-weight: 400;
+            font-family: $font-tumi;
+            @include sizeWeightLh(18px, 400, 24px);
+        }
+
+        .default-adr {
+            margin-bottom: 40px;
+        }
+    }
+
+    .adr-text {
+        color: var(--color-black);
+        @include sizeWeightLh(15px, 400, 19px);
+    }
+}
+
+.back-to-settings {
+    display: block;
+    margin-bottom: 43px;
+
+    a {
+        color: var(--color-black);
+        @include sizeWeightLh(14px, 400, 16px);
+
+        img {
+            padding-right: 8px;
+        }
+    }
+
+    .my-account-heading {
+        color: var(--color-black);
+        font-family: $font-light;
+        margin-top: 10px;
+        @include sizeWeightLh(24px, 300, 24px);
+    }
+
+    @include media-breakpoint-up(sm) {
+        display: none;
+    }
+}
+
+.edit-address,
+.saved-address {
+    h2,
+    h3 {
+        text-transform: capitalize;
+        color: var(--color-black);
+        margin-bottom: 0;
+        @include sizeWeightLh(15px, 600, 20px);
+
+        @include media-breakpoint-up(sm) {
+            font-weight: 400;
+            font-family: $font-tumi;
+            @include sizeWeightLh(18px, 400, 20px);
+        }
+    }
+
+    .address-form {
+        .form-group {
+            margin-bottom: 25px;
+
+            label {
+                text-indent: 6px;
+                color: #595959;
+                margin-left: -10px;
+                width: 100%;
+                @include sizeWeightLh(12px, 400, 16px);
+            }
+
+            input {
+                border-bottom: 1px solid $spanish-gray;
+                padding-left: 0;
+            }
+
+            #state {
+                border: none;
+                border-radius: unset;
+                border-bottom: 1px solid $spanish-gray;
+                padding-left: 0;
+                height: 49px;
+            }
+        }
+
+        .button--secondary {
+            margin-top: 20px;
+
+            @include media-breakpoint-up(sm) {
+                margin-top: 0;
+            }
+        }
+
+        .btn-wrapper {
+            margin-bottom: 40px;
+        }
+
+        .duplicate-error-msg {
+            display: none;
+        }
+    }
+
+    .hide-saved-heading,
+    .hide-saved-info,
+    .saved-heading {
+        opacity: 0.5;
+        pointer-events: none;
+    }
+
+    .saved-heading {
+        margin-top: 40px;
+    }
+
+    .adr-heading {
+        border-top: 1px solid var(--color-grey2);
+    }
+
+    .default-info {
+        display: block !important;
+    }
+
+    .edit-saved-adr {
+        margin-top: 40px;
+        margin-bottom: 20px !important;
+    }
+}
+
+.custom-checkbox {
+    padding-left: 30px;
+    margin-top: 24px;
+    margin-bottom: 24px !important;
+
+    .custom-control-label {
+        padding-left: 10px;
+        color: $bg-dark !important;
+        @include sizeWeightLh(15px !important, 400, 20px !important);
+
+        &::before {
+            width: 18px;
+            height: 18px;
+        }
+
+        &::after {
+            left: -24px;
+            display: block !important;
+            position: absolute;
+        }
+    }
+
+    .custom-control-input:checked ~ .custom-control-label::after {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+.addressAlreadyExists {
+    margin-left: 17px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    width: 337px;
+
+    @include media-breakpoint-up(sm) {
+        margin-top: 0;
+        margin-bottom: 30px;
+        width: auto;
+    }
+
+    h3 {
+        color: $red-account-error;
+        font-family: $font-tumi;
+        @include sizeWeightLh(15px, 400, 20px);
+    }
+}

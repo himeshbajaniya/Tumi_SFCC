@@ -1,0 +1,35 @@
+<isscript>
+    var reflektionHelper = require('*/cartridge/scripts/reflektionHelper');  
+</isscript>
+<script>
+document.addEventListener('DOMContentLoaded', getOrderConfirmationDetails, false);
+function getOrderConfirmationDetails() {
+    var customerUUID = <isprint value="${JSON.stringify(reflektionHelper.getCustomerUUID())}" encoding="htmlsinglequote"/>;
+    var rfk = window.rfk = window.rfk || [];
+    <isif condition="${pdict.action === 'Order-Confirm'}">
+        rfk.push(["trackEvent", {
+            "type": "order",
+            "name": "confirm",
+            "uuid": customerUUID,
+            "value": {
+                "context": {
+                    "user": <isprint value="${require('*/cartridge/scripts/reflektionHelper').getOrderUserData(pdict.order)}" encoding="htmlsinglequote" />,
+                    "page": {
+                        "locale_country": rfkCountry,
+                        "locale_language": rfkLanguage,
+                        "locale_currency": rfkCurrency
+                    }
+                },
+                "products": <isprint value="${require('*/cartridge/scripts/reflektionHelper').getOrderJSON(pdict.order)}" encoding="htmlsinglequote" />,
+                "checkout": {
+                    "checkout": {
+                        "order_id": '${pdict.order.orderNumber}',
+                        "subtotal": ${require('*/cartridge/scripts/reflektionHelper').getOrderSubTotal(pdict.order)},
+                        "total": ${require('*/cartridge/scripts/reflektionHelper').getOrderTotal(pdict.order)}
+                    }
+                }
+            }
+        }]);
+    </isif>
+}
+</script>

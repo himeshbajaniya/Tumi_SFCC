@@ -1,0 +1,23 @@
+<isdecorate template="account/components/myAccountDecorator">
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addJs('/js/paymentInstruments.js');
+        assets.addCss('/css/account/payment.css');
+    </isscript>
+    <div class="payment-section">
+        <!---Breadcrumbs--->
+        <iscomment> <isinclude template="components/breadcrumbs/pageBreadcrumbs"/> </iscomment>
+        <div class="card">
+            <div class="card-header">
+                <isif condition="${pdict.UUID}">
+                    <h2>${Resource.msg('label.payment.editpayment','payment',null)}</h2>
+                <iselse>
+                    <h2>${Resource.msg('label.add.card.details','payment',null)}</h2>
+                </isif>
+            </div>
+            <div class="card-body">
+                <isinclude template="account/payment/paymentForm"/>
+            </div>
+        </div>
+    </div>
+</isdecorate>

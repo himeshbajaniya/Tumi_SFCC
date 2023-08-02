@@ -1,0 +1,5 @@
+<div class="tracer-registration-successful">
+    <h3>${Resource.msg('tracer.thanks.notes','forms',null)}</h3>
+    ${Resource.msgf('tracer.success.msg', 'common', null, pdict.email)}
+    <div><a href="javascript:void(0)" class="button button--primary print-page mt-5">${Resource.msg('tracer.print', 'common', null)}</a></div>
+</div>

@@ -1,0 +1,23 @@
+<isset name="context" value="${pdict.response}" scope="page" />
+
+<isif condition="${!empty(pdict.response.event)}">
+    <div class="js-request-success">
+        <isset name="event" value="${pdict.response.event}" scope="page" />
+        <isset name="eventsType" value="${pdict.response.eventType}" scope="page" />
+        <isinclude template="/components/events/eventRow" />
+
+        <isif condition="${!empty(context.requestBodyExample)}">
+            <div class="js-supported-events-data"
+                data-request-example="${JSON.stringify(context.requestBodyExample)}">
+            </div>
+        </isif>
+
+        <isif condition="${!empty(context.formsDescriptions)}">
+            <isinclude template="/components/events/triggerEventForm" />
+        </isif>
+    </div>
+<iselse/>
+    <div class="js-request-error"
+        data-error="${JSON.stringify(context)}">
+    </div>
+</isif>

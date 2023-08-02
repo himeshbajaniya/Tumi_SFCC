@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<form xmlns="http://www.demandware.com/xml/form/2008-04-19">
+
+    <!-- form providing fields for balance check -->
+    <group formid="balance">
+        <field formid="accountNumber"
+            label="label.input.giftcard.accountnumber"
+            type="string"
+            mandatory="true"
+            missing-error="error.message.giftcard.accountnumber.invalid"
+            value-error="error.message.giftcard.accountnumber.invalid"
+            parse-error="error.message.giftcard.accountnumber.invalid"
+            min-length="19"
+            max-length="19"
+        />
+        <field formid="pinNumber"
+            label="label.input.giftcard.pinnumber"
+            type="string"
+            mandatory="true"
+            missing-error="error.message.giftcard.pinnumber.invalid"
+            value-error="error.message.giftcard.pinnumber.invalid"
+            parse-error="error.message.giftcard.pinnumber.invalid"
+            min-length="8"
+            max-length="8"
+        />
+        <action formid="checkBalance" valid-form="true"/>
+    </group>
+
+    <!-- form providing fields for gift card purchase -->
+    <group formid="purchase">
+        <field formid="amount"
+            label="label.input.giftcard.amount"
+            type="string"
+            mandatory="true"
+            binding="amount"
+            missing-error="error.message.giftcard.amount.missing">
+            <options optionid-binding="value" value-binding="value" label-binding="label">
+            </options>
+        </field>
+
+        <field formid="recipientName"
+            label="label.giftcard.purchase.recipient.name"
+            type="string"
+            mandatory="true"
+            regexp="^[-\sa-zA-Z0-9]+$"
+            parse-error="giftcard.purchase.recipient.name.invalid"
+            missing-error="giftcard.purchase.recipient.name.missing"
+            value-error="giftcard.purchase.recipient.name.invalid"/>
+
+        <field formid="senderName"
+            label="label.giftcard.purchase.recipient.sendername"
+            type="string"
+            mandatory="true"
+            regexp="^[-\sa-zA-Z0-9]+$"
+            parse-error="giftcard.purchase.recipient.sendername.invalid"
+            missing-error="giftcard.purchase.recipient.sendername.missing"
+            value-error="giftcard.purchase.recipient.sendername.invalid"/>
+
+        <field formid="gcMessage"
+            label="label.giftcard.purchase.recipient.gcMessage"
+            type="string"
+            mandatory="true"
+            regexp="^[-\sa-zA-Z0-9:.,!'*;:&amp;&quot;)]+$"
+            max-length="200"
+            parse-error="giftcard.purchase.recipient.gcMessage.invalid"
+            missing-error="giftcard.purchase.recipient.gcMessage.missing"
+            value-error="giftcard.purchase.recipient.gcMessage.invalid"/>
+
+        <action formid="addToCart" valid-form="true"/>
+    </group>
+</form>

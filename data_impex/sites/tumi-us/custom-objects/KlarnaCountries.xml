@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custom-objects xmlns="http://www.demandware.com/xml/impex/customobject/2006-10-31">
+    <custom-object type-id="KlarnaCountries" object-id="CA">
+        <object-attribute attribute-id="credentialID">klarna.http.cacredentials</object-attribute>
+        <object-attribute attribute-id="kebCartEnabled">true</object-attribute>
+        <object-attribute attribute-id="kebCategory">pay_later</object-attribute>
+        <object-attribute attribute-id="kebEnvironment">playground</object-attribute>
+        <object-attribute attribute-id="kebLibraryUrl">https://x.klarnacdn.net/express-button/v1/lib.js</object-attribute>
+        <object-attribute attribute-id="kebMCEnabled">false</object-attribute>
+        <object-attribute attribute-id="kebMerchantID">UG100655</object-attribute>
+        <object-attribute attribute-id="kebShape">pill</object-attribute>
+        <object-attribute attribute-id="kebTheme">light</object-attribute>
+        <object-attribute attribute-id="klarnaLocale">en-ca</object-attribute>
+        <object-attribute attribute-id="osmCartEnabled">true</object-attribute>
+        <object-attribute attribute-id="osmCartTagId">info-page-standard</object-attribute>
+        <object-attribute attribute-id="osmDataInlineEnabled">false</object-attribute>
+        <object-attribute attribute-id="osmFooterEnabled">false</object-attribute>
+        <object-attribute attribute-id="osmHeaderEnabled">false</object-attribute>
+        <object-attribute attribute-id="osmInfoPageEnabled">false</object-attribute>
+        <object-attribute attribute-id="osmLibraryUrl">https://na-library.playground.klarnaservices.com/lib.js</object-attribute>
+        <object-attribute attribute-id="osmPDPEnabled">true</object-attribute>
+        <object-attribute attribute-id="osmPDPTagId">credit-promotion-auto-size</object-attribute>
+        <object-attribute attribute-id="osmUCI">4b6ea4eb-5d6e-55fd-b9be-bdf91d171f99</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="KlarnaCountries" object-id="US">
+        <object-attribute attribute-id="credentialID">klarna.http.uscredentials</object-attribute>
+        <object-attribute attribute-id="kebCartEnabled">true</object-attribute>
+        <object-attribute attribute-id="kebCategory">pay_over_time</object-attribute>
+        <object-attribute attribute-id="kebEnvironment">playground</object-attribute>
+        <object-attribute attribute-id="kebLibraryUrl">https://x.klarnacdn.net/express-button/v1/lib.js</object-attribute>
+        <object-attribute attribute-id="kebMCEnabled">false</object-attribute>
+        <object-attribute attribute-id="kebMerchantID">UG100641</object-attribute>
+        <object-attribute attribute-id="kebShape">rect</object-attribute>
+        <object-attribute attribute-id="kebTheme">light</object-attribute>
+        <object-attribute attribute-id="klarnaLocale">en-US</object-attribute>
+        <object-attribute attribute-id="osmCartEnabled">true</object-attribute>
+        <object-attribute attribute-id="osmCartTagId">credit-promotion-auto-size</object-attribute>
+        <object-attribute attribute-id="osmDataInlineEnabled">false</object-attribute>
+        <object-attribute attribute-id="osmFooterEnabled">false</object-attribute>
+        <object-attribute attribute-id="osmHeaderEnabled">false</object-attribute>
+        <object-attribute attribute-id="osmInfoPageEnabled">false</object-attribute>
+        <object-attribute attribute-id="osmLibraryUrl">https://na-library.playground.klarnaservices.com/lib.js</object-attribute>
+        <object-attribute attribute-id="osmPDPEnabled">true</object-attribute>
+        <object-attribute attribute-id="osmPDPTagId">credit-promotion-auto-size</object-attribute>
+        <object-attribute attribute-id="osmUCI">1360f33b-6b6e-534b-b99f-9a428031578e</object-attribute>
+    </custom-object>
+
+</custom-objects>

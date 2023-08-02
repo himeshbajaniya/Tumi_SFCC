@@ -1,0 +1,21 @@
+<isinclude template="/components/modules" sf-toolkit="off" />
+<isif condition="${pdict.orders.length == 0}">
+    <div class="content">
+        <iscontentasset aid="empty-order-list" />
+    </div>
+<iselse/>
+    <isif condition="${(pdict.action == 'Order-GetSearchedOrders')}">
+        <p> ${pdict.orders.length.toString()} Orders Matching "${pdict.querystring}"</p>
+    </isif>
+    <isloop items="${pdict.orders}" var="order">
+        <isinclude template="account/order/orderHistoryCard"/>
+    </isloop>
+    <isif condition="${!(pdict.action == 'Order-GetSearchedOrders')}">
+        <div class="container load-more-orders ${pdict.orderCount.totalOrders === 0 ? 'd-none' : ''}">
+            <p class="text-center view-order-list">Viewing <span class="order-list-count">${pdict.orderCount.currentOrders.toString()}</span> of ${pdict.orderCount.totalOrders} orders</p>
+            <isif condition="${pdict.orderCount.totalOrders > pdict.orderCount.currentOrders && pdict.orderCount.totalOrders > 7}">
+                <button class="button button--secondary w-100 order-list-more load-more" data-url="${pdict.loadMoreURL}"> Load More </button>
+            </isif>
+        </div>
+    </isif>
+</isif>

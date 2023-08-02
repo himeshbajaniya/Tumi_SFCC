@@ -1,0 +1,39 @@
+<isdecorate template="common/layout/page">
+   <isscript>
+      var assets = require('*/cartridge/scripts/assets.js');
+        assets.addCss('/css/staticpages/tumiDifference.css');
+    </isscript>
+     <isinclude template="/components/modules" sf-toolkit="off" />
+   <div class="tumi-diffrences-container">
+       <isinclude template="search/productTileTemplate" />
+      <isslot id="tumi-difference-landing-slot-A" context="global" description="First slot for Hero Component" />
+      <div id="tumi-differences-what-makes-us-different" class="tumi-differences-what-makes-us-different">
+         <isslot id="tumi-difference-landing-slot-B" context="global"
+            description="Second slot What makes us differnt" />
+      </div>
+      <span id="design-excellence"></span>
+      <isslot id="tumi-difference-landing-slot-C" context="global" description="Third slot Design excellence" />
+      <span id="superior-quality"></span>
+      <isslot id="tumi-difference-landing-slot-D" context="global" description="forth slot for Superior quality" />
+      <span id="technical-innovation"></span>
+      <isslot id="tumi-difference-landing-slot-E" context="global" description="fifth slot for Technical innovation" />
+      <span id="functional-superiority"></span>
+      <isslot id="tumi-difference-landing-slot-F" context="global"
+         description="sixth slot for Functional superiority" />
+      <isslot id="tumi-difference-landing-slot-G" context="global" description="seventh slot for at your service" />
+      <div class="innovation-by-nature-container container-fluid">
+      <div class="container">
+         <isslot id="tumi-difference-landing-slot-H" context="global"
+            description="eigth slot for at Innovation by nature" />
+      </div>
+      </div>
+      <span id="world-class"></span>
+      <isslot id="tumi-difference-landing-slot-I" context="global"
+         description="ninth slot for Partners we believe in " />
+ <iscontentasset aid="tumi-diff-superior-modal" />
+   </div>
+    <isscript>
+      var assets = require('*/cartridge/scripts/assets.js');
+      assets.addJs('/js/tumiLock.js');
+   </isscript>
+</isdecorate>

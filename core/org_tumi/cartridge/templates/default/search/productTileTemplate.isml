@@ -1,0 +1,106 @@
+
+
+ <input type="hidden" id="s7PresetsPlp" value="${dw.system.Site.getCurrent().getCustomPreferenceValue('s7PresetsPlp')}" scope="page" />
+ <input type="hidden" id="s7imageNotFound" value="${dw.system.Site.getCurrent().getCustomPreferenceValue('Default-Image')}" scope="page" />
+ <isset name="rfkCountry" value="${require('*/cartridge/scripts/reflektionHelper').getCountry()}" scope="page" />
+
+<script id="producttile-handlebar" type="text/x-handlebars-template">
+	{{#each content.product.value}}
+		<div class="col-6 col-sm-4 ctnr-product-item swiper-slide temp_{{@index}}" data-pid="{{this.sku}}" data-index="{{@index}}">
+			<div class="product" data-pid="{{this.sku}}">
+				<div class="product-tile product-{{this.sku}}">
+					<div class="product-bookmark">
+						<a href="{{wishListAddProductRfk}}" class="bookmark" data-pid="{{this.sku}}" data-wid="{{this.sku}}" data-removeurl="{{removeWishlistProductRfk}}"></a>
+					</div>
+					<div class="badge-message">
+						{{{this.badge_en}}}
+					</div>
+					<div class="image-container">
+						<a href={{mainUrl this.url '.html'}}>
+							<div class="primary-image {{this.id}}" data-id={{this.id}} data-alt-images={{this.altimage_url}}>
+								<img class="tile-image active" src="{{dataSrcOrSrc @index this.image_url}}" data-src="{{imageQuery this.image_url}}" data-master-image="{{imageQuery this.image_url}}"  alt="{{this.productSearchHit.product.productName}}" title="{{this.title}}">
+								<div class="dark-overlay-plp"></div>
+							</div>
+						</a>
+					</div>
+												
+					<div class="tile-body">
+						<div class="product-tile-title">
+							{{{this.collection}}}
+						</div>
+						<div class="pdp-link">
+							<a class="link" href="{{mainUrl this.url '.html'}}">{{{this.name}}}</a>
+						</div>
+					</div>
+
+					<div class="price">
+						<span>
+						    <isif condition="${rfkCountry === 'CA'}">
+								{{productTilePriceCA this.final_price_ca this.price_ca}}
+									<span class="sales">
+										<span class="value" content="{{this.price}}">{{dollarFormatCA this.final_price_ca}}</span>
+									</span>
+								<iselse/>
+								{{productTilePrice this.final_price this.price}}
+									<span class="sales">
+										<span class="value" content="{{this.price}}">{{dollarFormat this.final_price}}</span>
+									</span>
+							</isif>
+						</span>
+					</div>
+
+					<iscomment> <div class="tile-body-footer">
+						<div class="ratings">
+							<div class="stars">
+								{{calculateRating this.productSearchHit.product.rating}}
+							</div>
+						</div>
+					</div> </iscomment>
+					{{SortSwatches this.swatch_list this.sku}}
+					<div class="product-tile-footer">
+						<div class="color">
+ 							{{#each_upto swatch_list}}
+ 								<button class="color-attribute color-pointer" 
+ 									aria-label="Select Color {{this.color}}" 
+ 									aria-describedby="{{productUrl this.product_url}}" 
+ 									title="{{this.color}}"
+ 									>
+ 									<div data-attr-value="{{productUrl this.product_url}}" data-swatch-id = "{{../id}}" class="color-value swatch-circle swatch-value {{selectedSwatch this.product_url ../sku}} selectable" data-alt-swatch-image ="{{this.altimage_url}}" data-product-url = "{{mainUrl this.product_url '.html'}}" style="background-image: url({{this.swatch_image}})">
+ 									</div>
+ 									<span id="{{productUrl this.product_url}}" class="sr-only selected-assistive-text">selected</span>
+ 								</button>
+ 							{{/each_upto}}
+ 								<div><a href = {{mainUrl this.url '.html'}}><span class="desktop">{{colorCountDesktop this.swatch_list}}</span><span class="mobile">{{colorCountMobile this.swatch_list}}</span></a></div>
+ 						</div>
+ 						<div class="compare-products compare">
+ 							<div class="custom-checkbox">
+ 								<div class="form-group custom-control custom-checkbox pull-left">
+									<input type="checkbox" class="custom-control-input compare" id="compare_{{this.sku}}" 
+											data-pid="{{this.sku}}" 
+											data-categoryname="{{this.collection}}" 
+											data-categorytitle="{{this.name}}"
+											data-imgsrc="{{this.image_url}}"
+											data-alttext="{{this.productSearchHit.product.productName}}"
+											name="compareProduct" value="">
+ 									<label class="custom-control-label" for="compare_{{this.sku}}">
+ 										Compare
+ 									</label>
+ 								</div>
+ 							</div>
+ 						</div>
+ 					</div>
+					{{#if available_us}}
+						<div class="product-add-to-cart d-none" data-pid="{{this.sku}}">
+							<div class="cart-and-ipay">
+								<input type="hidden" class="add-to-cart-url" value="${URLUtils.url('Cart-AddProduct')}">
+								<button class="add-to-cart button button--primary w-100" data-pid="{{this.sku}}">
+									<span>${Resource.msg('button.addtocart', 'common', null)}</span>
+								</button>
+							</div>
+						</div>
+					{{/if}}
+				</div>
+			</div>
+		</div>
+	{{/each}}
+</script>

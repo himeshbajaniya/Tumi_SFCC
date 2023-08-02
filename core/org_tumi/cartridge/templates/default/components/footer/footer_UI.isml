@@ -1,0 +1,37 @@
+<isset name="wishListAddProductRfk" value="${URLUtils.url('Wishlist-AddProduct').toString()}" scope="page" />
+<isset name="removeWishlistProductRfk" value="${URLUtils.url('Wishlist-RemoveProduct').toString()}" scope="page" />
+<script>
+    window.rfk_preferences = <isprint value="${JSON.stringify(pdict.rfk_preferences)}" encoding="htmlsinglequote"/>;
+    <isif condition="${typeof pageContext !== 'undefined'}" >
+            window.pageContext = <isprint value="${JSON.stringify(pageContext)}" encoding="htmlsinglequote"/>;
+        <iselse/>
+        <isscript>
+            var pageContext = {
+                title: 'other',
+                type:'other',
+                ns:'other'
+            };
+        </isscript>
+        window.pageContext = <isprint value="${JSON.stringify(pageContext)}" encoding="htmlsinglequote"/>;
+    </isif>
+    window.wishListAddProductRfk = <isprint value="${JSON.stringify(wishListAddProductRfk)}" encoding="htmlsinglequote"/>;
+    window.removeWishlistProductRfk = <isprint value="${JSON.stringify(removeWishlistProductRfk)}" encoding="htmlsinglequote"/>;
+    window.InstanceType = <isprint value="${JSON.stringify(dw.system.System.getInstanceType())}" encoding="htmlsinglequote"/>;
+    window.PRODUCTION_SYSTEM = <isprint value="${JSON.stringify(dw.system.System.PRODUCTION_SYSTEM)}" encoding="htmlsinglequote"/>;
+    window.STAGING_SYSTEM = <isprint value="${JSON.stringify(dw.system.System.STAGING_SYSTEM)}" encoding="htmlsinglequote"/>;
+    window.currentInstanceHostName = <isprint value="${JSON.stringify(dw.system.System.getInstanceHostname())}" encoding="htmlsinglequote"/>;
+    window.InstanceTypeHosts = <isprint value="${JSON.stringify(dw.system.Site.current.getCustomPreferenceValue('InstanceTypeHostNames'))}" encoding="htmlsinglequote"/>;
+</script>
+<isinclude template="search/productTileTemplate"/>
+<isscript>
+    var reflektionHelper = require('*/cartridge/scripts/reflektionHelper');  
+</isscript>
+<script>
+    var rfkCountry = '${reflektionHelper.getCountry()}';
+    var rfkLanguage = '${reflektionHelper.getLanguage()}';
+    var rfkDomain = '${reflektionHelper.getDomain()}';
+    var rfkCurrency = '${reflektionHelper.getCurrency()}';
+    var cartGetURL='${dw.web.URLUtils.https('Cart-Get')}';
+    var pathName = window.location.pathname;
+    var currentInstanceHostName = window.currentInstanceHostName;
+</script>

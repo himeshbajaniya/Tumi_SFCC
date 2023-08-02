@@ -1,0 +1,154 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "https://www.tumi.com/collection-shoppable-component",
+	"title": "Title",
+	"description": "Description",
+	"allOf": [
+		{
+			"$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+		}
+	],
+	"type": "object",
+	"properties": {
+		"content-asset-id": {
+			"title": "Content Asset ID",
+			"description": "SFCC Content Asset",
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 256,
+			"format": "text"
+		},
+		"s7LeftImageDesktop": {
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 250,
+			"format": "uri",
+			"title": "Scene 7 Left Image Desktop",
+			"description": "eg. https://tumi.scene7.com/is/image/Tumi/1232072777_main_T"
+		},
+		"leftImageAltDesktop": {
+			"title": "Left image alt for desktop",
+			"description": "Text to show if image is not loaded",
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 255
+		},
+		"s7LeftImageMobile": {
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 250,
+			"format": "uri",
+			"title": "Scene 7 Left Image Mobile",
+			"description": "eg. https://tumi.scene7.com/is/image/Tumi/1232072777_main_T"
+		},
+		"leftImageAltMobile": {
+			"title": "Left Image alt for mobile",
+			"description": "Text to show if image is not loaded",
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 255
+		},
+		"s7RightImageDesktop": {
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 250,
+			"format": "uri",
+			"title": "Scene 7 Right Image Desktop",
+			"description": "eg. https://tumi.scene7.com/is/image/Tumi/1232072777_main_T"
+		},
+		"rightImageAltDesktop": {
+			"title": "Right Image alt for desktop",
+			"description": "Text to show if image is not loaded",
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 255
+		},
+		"s7RightImageMobile": {
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 250,
+			"format": "uri",
+			"title": "Scene 7 Right Image Mobile",
+			"description": "eg. https://tumi.scene7.com/is/image/Tumi/1232072777_main_T"
+		},
+		"rightImageAltMobile": {
+			"title": "Right Image alt for mobile",
+			"description": "Text to show if image is not loaded",
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 255
+		},
+		"leftBottomCTA": {
+			"title": "Left Bottom CTA",
+			"description": "Enter CTA to be shown on under left image",
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 255
+		},
+		"leftBottomLandingURI": {
+			"title": "Left CTA Landing Page URI",
+			"description": "Left bottom Landing Page URI",
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 250
+		},
+		"rightBottomCTA": {
+			"title": "Left Right Bottom CTA",
+			"description": "Enter CTA to be shown on under Right image",
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 255
+		},
+		"rightBottomLandingURI": {
+			"title": "Right CTA Landing Page URI",
+			"description": "Right bottom Landing Page URI",
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 250
+		},
+		"rightSectionTitle": {
+			"title": "Title",
+			"description": "Title",
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 255
+		},
+		"rightSectionTitleAuthorName": {
+			"title": "Title Autor Name",
+			"description": "Author Name",
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 255
+		},
+		"rightSectionTitleAuthorDesignation": {
+			"title": "Title Autor Designation",
+			"description": "Author Designation",
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 255
+		},
+		"rightSectionQuotesVisible": {
+                "title": "Block Quotes",
+                "type": "string",
+                "enum": [
+                  "Yes",
+                  "No"
+                ]
+              },
+		"shopAllCTA": {
+			"title": "Shop All CTA",
+			"description": "Enter Shop All CTA Name",
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 255
+		},
+		"shopAllCTALandingURI": {
+			"title": "Shop All CTA Landing Page URI",
+			"description": "Shop All CTA Landing Page URI",
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 250
+		}
+	},
+	"propertyOrder": []
+}

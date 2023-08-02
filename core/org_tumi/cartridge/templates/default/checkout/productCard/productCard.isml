@@ -1,0 +1,139 @@
+<div class="product-line-item" data-product-line-item="${lineItem.UUID}" data-pid="${lineItem.id}">
+
+
+    <isif condition="${lineItem.productType === 'bundle'}">
+        <div class="bundle-includes">${Resource.msg('msg.bundle.includes', 'cart', null)}</div>
+        <!--- individual bundled line items --->
+        <isinclude template="cart/productCard/cartProductCardBundledItems" />
+    <iselse/>
+        <div class="product-line-item-details d-flex flex-row">
+            <div class="item-image">
+                <img class="product-image w-100" src="${lineItem.images.small[0].url}"
+                    alt="${lineItem.images.small[0].alt}" title="${lineItem.images.small[0].title}">
+                <div class="dark-overlay-checkout"></div>
+            </div>
+            <div class="item-attributes">
+                <div class="collection-name">${lineItem.collection ? lineItem.collection : ''}</div>
+                <div class="line-item-header">
+                    <isif condition=${miniCart}>
+                        <isinclude template="checkout/productCard/productCardProductNameAndRemove" />
+                        <iselse>
+                            <isinclude template="checkout/productCard/productCardProductName" />
+                    </isif>
+
+                </div>
+                <isset name="price" value="${lineItem.price}" scope="page" />
+                <div class="unit-price">
+                    <isinclude template="/product/components/pricing/main" />
+                </div>
+
+                <!-- Promotions-->
+                <div class="line-item-promo item-${lineItem.UUID}">
+                    <isinclude template="checkout/productCard/productCardProductPromotions" />
+                </div>
+                <isif condition="${lineItem.isAccentingSku}">
+                    <isloop items="${lineItem.variationAttributes}" var="attribute">
+                        <isif condition="${attribute.displayName === "Color"}">
+                            <p class="line-item-attributes">${attribute.displayName}: (${lineItem.baseaccentingSKUColor})
+                            </p>
+                            <p class="line-item-attributes-accent">
+                                <isprint value="${Resource.msgf('label.accent.details', 'checkout', null, attribute.displayValue, lineItem.accentPriceContainerMoneyFormat)}"/>
+                            </p>
+                        </isif>
+                    </isloop>
+                <iselse/>
+                    <isloop items="${lineItem.variationAttributes}" var="attribute">
+                        <isif condition="${attribute.displayName === "Color"}">
+                            <p class="line-item-attributes">${attribute.displayName}: ${attribute.displayValue}</p>
+                        </isif>
+                    </isloop>
+                </isif>
+                <isif condition="${lineItem.isGiftBoxEditable}">
+                    <div class="giftbox-label">${lineItem.giftBoxlabel}</div>
+                    <div class="giftbox-message">${Resource.msg('label.gift.box.message.added', 'common', null)}</div>
+                    <isif condition="${lineItem.giftBoxPrice}">
+                        <div class="giftbox-price">${lineItem.giftBoxPrice}</div>
+                    <iselseif condition="${lineItem.premiumGiftBoxPrice}" />
+                        <div class="giftbox-price">${lineItem.premiumGiftBoxPrice}</div>
+                    </isif>
+                </isif>
+                 <isinclude template="checkout/productCard/productCardAvailability" />
+                <div class="item-options">
+                    <isloop items="${lineItem.options}" var="option">
+                        <div class="line-item-option">${option.displayName}</div>
+                    </isloop>
+                    <iscomment>
+                        <p>Accent: Atlantic ${lineItem.accentPriceContainer}</p>
+                        ${lineItem.baseaccentingSKU}
+                    </iscomment>
+                    <isif condition="${!miniCart}">
+	                    <isif condition="${lineItem.shipmentType === 'instore' && !empty(lineItem.storeId)}">
+	                        <div class="pickup-instore-delivery">${Resource.msg('delivery.pickupinstore', 'checkout', null)}</div>
+	                        <div class="pickup-instore-delivery">${lineItem.storeName}</div>
+	                    </isif>
+                    </isif>
+                    <isif condition="${lineItem.monogramable && lineItem.monogramLineItem}">
+                        <p>${Resource.msg('msg.product.monogram.text', 'checkout', null)}
+                            <isset name="labelMonoA" value="${!empty(lineItem.monogramLineItem) && !empty(lineItem.monogramLineItem.character) && lineItem.monogramLineItem
+                                                            .character !== 'undefined' && !empty(lineItem.monogramLineItem.character.split(' ')[0]) ? lineItem.monogramLineItem
+                                                            .character.split(' ')[0] : ''}" scope="page" />
+                            <isset name="labelMonoB" value="${!empty(lineItem.monogramLineItem) && !empty(lineItem.monogramLineItem.character) && lineItem.monogramLineItem
+                                                            .character !== 'undefined' && !empty(lineItem.monogramLineItem.character.split(' ')[1]) ? lineItem.monogramLineItem
+                                                            .character.split(' ')[1] : ''}" scope="page" />
+                            <isset name="labelMonoC" value="${!empty(lineItem.monogramLineItem) && !empty(lineItem.monogramLineItem.character) && lineItem.monogramLineItem
+                                                            .character !== 'undefined' && !empty(lineItem.monogramLineItem.character.split(' ')[2]) ? lineItem.monogramLineItem
+                                                            .character.split(' ')[2] : ''}" scope="page" />
+                            <isset name="combined_text" value="${labelMonoA + labelMonoB + labelMonoC}" scope="page" />
+                            <isset name="fontcolor"
+                                value="${!empty(lineItem.monogramLineItem) && !empty(lineItem.monogramLineItem.color) && lineItem.monogramLineItem
+                                       .color !== 'undefined' && !empty(lineItem.monogramLineItem.color.split('_').length === 2 && lineItem
+                                           .monogramLineItem.color.split('_')[1]) ? lineItem.monogramLineItem.color.split('_')[1] : null}"
+                                scope="page" />
+                            <span class="icon">
+                        <isif condition="${combined_text}">
+                            <isprint value="${combined_text.replace(/\(/g, '<span class=" numberFormat">').replace(/\)/g, '</span>')}" encoding="off" />
+                        </isif>
+                        </span>(
+                            <isif condition="${!empty(lineItem.monogramCost) && lineItem.monogramCost.available}">
+                                <isprint value="${lineItem.monogramCost}"/>
+                            <iselse/>
+                                <isprint value="${Resource.msg('msg.product.monogram.price', 'checkout', null)}"/>
+                            </isif>
+                        )
+                        </p>
+                    </isif>
+                    <iscomment> Premium Monogram </iscomment>
+                    <isif condition="${lineItem.isPremiumMonogrammedPLI && lineItem.associatedLetter}">
+                        <p>${Resource.msg('msg.product.monogram.text', 'checkout', null)}
+                            <isset name="labelMonoA" value="${lineItem.associatedLetter[0]}" scope="page" />
+                            <isset name="labelMonoB" value="${lineItem.associatedLetter[1]}" scope="page" />
+                            <isset name="combined_text" value="${labelMonoA + labelMonoB}" scope="page" />
+                            <span class="icon">
+                            <isif condition="${combined_text}">
+                                <isprint value="${combined_text.replace(/\(/g, '<span class=" numberFormat">').replace(/\)/g, '</span>')}" encoding="off" />
+                            </isif>
+                            </span>(
+                                <isif condition="${!empty(lineItem.monogramCost)}">
+                                    <isprint value="${lineItem.monogramCost}"/>
+                                <iselse/>
+                                    <isprint value="${Resource.msg('msg.product.monogram.price', 'checkout', null)}"/>
+                                </isif>
+                            )
+                        </p>
+                    </isif>
+</div>
+</div>
+</div>
+</isif>
+
+<isif condition="${lineItem.productType === 'bundle' && ((pdict.order && !pdict.order.orderStatus) || miniCart)}">
+    <isinclude template="cart/productCard/cartProductCardAvailability" />
+</isif>
+
+<isif condition=${miniCart}>
+    <div class="line-item-promo item-${lineItem.UUID}">
+        <isinclude template="checkout/productCard/productCardProductPromotions" />
+    </div>
+</isif>
+
+</div>

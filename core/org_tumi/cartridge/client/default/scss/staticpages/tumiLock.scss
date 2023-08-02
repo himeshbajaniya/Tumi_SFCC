@@ -1,0 +1,1461 @@
+@import "../variables";
+@import "../util/variables";
+@import "bootstrap/scss/mixins/breakpoints";
+@import "bootstrap/scss/variables";
+@import "../base/mixins";
+
+* {
+    scroll-behavior: smooth;
+}
+
+.tumilock-container {
+    color: $bg-dark;
+    font-family: $font-tumi;
+
+    @include media-breakpoint-up(sm) {
+        padding: 0 16px;
+    }
+
+    @include media-breakpoint-up(md) {
+        padding: 0;
+    }
+
+    .uppercase {
+        text-transform: uppercase;
+        margin: 0 0 12px;
+        letter-spacing: 2px;
+        @include sizeWeightLh(13px, 400, 16px);
+
+        @include media-breakpoint-up(sm) {
+            @include sizeWeightLh(14px, 400, 18px);
+        }
+    }
+
+    .tumilock-main {
+        margin: 80px auto 60px;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-flow: row wrap;
+
+        @include media-breakpoint-down(lg) {
+            padding: 0 10px;
+            box-sizing: border-box;
+            margin: 60px auto;
+        }
+
+        @include media-breakpoint-down(lg) {
+            padding: 0;
+        }
+    }
+
+    .tumilock-sidebar {
+        padding: 0;
+        position: sticky;
+        top: 6rem;
+
+        @include sizeWeightLh(15px, 400, 18px);
+
+        @include media-breakpoint-down(xs) {
+            display: none;
+        }
+
+        ul {
+            width: 100%;
+            display: block;
+        }
+
+        .sidebar-head {
+            list-style: none;
+            width: 100%;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-flow: row wrap;
+        }
+    }
+
+    .sidebar-img {
+        width: 50px;
+        margin-right: 15px;
+    }
+
+    .sidebar-header {
+        width: 165px;
+    }
+
+    .tumilock-content-section {
+        h1 {
+            @include sizeWeightLh(42px, 300, 58px);
+
+            @include media-breakpoint-down(md) {
+                @include sizeWeightLh(30px, 300, 30px);
+            }
+        }
+
+        h2 {
+            display: none;
+
+            @include media-breakpoint-up(sm) {
+                margin-top: 40px;
+                display: block;
+
+                @include sizeWeightLh(24px, 300, 28px);
+
+                @include media-breakpoint-down(md) {
+                    @include sizeWeightLh(24px, 300, 32px);
+                }
+            }
+        }
+
+        p,
+        .step-no,
+        .step-content {
+            color: $davy-grey;
+
+            @include sizeWeightLh(15px, 400, 20px);
+        }
+
+        .banner-image,
+        .conent {
+            width: 100%;
+            display: block;
+        }
+
+        .banner-image {
+            @include media-breakpoint-down(xs) {
+                margin: 15px 0 0;
+            }
+        }
+
+        .conent {
+            padding: 20px 0;
+        }
+
+        @include media-breakpoint-down(xs) {
+            padding: 0;
+        }
+
+        .section-container {
+            width: 100%;
+            display: block;
+            border-top: 1px solid $horizontal-rule-grey;
+
+            @include media-breakpoint-up(sm) {
+                padding: 40px 0 0;
+                margin-top: 40px;
+            }
+
+            @include media-breakpoint-up(md) {
+                padding: 60px 0 0;
+                margin-top: 60px;
+            }
+
+            @include media-breakpoint-down(xs) {
+                margin-top: 0;
+                padding: 24px 0;
+                border-top: none;
+                border-bottom: 1px solid $horizontal-rule-grey;
+
+                &.active {
+                    .section-mobile-content {
+                        display: block;
+                        padding-top: 30px;
+                    }
+
+                    .section-mob-header {
+                        &::after {
+                            transform: rotate(-90deg);
+                            margin-top: 5px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .section-mob-header {
+            width: 100%;
+            clear: both;
+            display: none;
+
+            .sidebar-header {
+                width: 70%;
+                line-height: 50px;
+            }
+
+            @include media-breakpoint-down(xs) {
+                display: flex;
+                flex-flow: row wrap;
+                align-items: center;
+
+                &::after {
+                    position: absolute;
+                    content: " ";
+                    width: 40px;
+                    height: 40px;
+                    background: url("../../images/Chevron-right.svg") no-repeat 50%;
+                    transform: rotate(90deg);
+                    right: 6px;
+                    margin-top: 10px;
+                }
+            }
+        }
+
+        .section-mobile-content {
+            width: 100%;
+            clear: both;
+            display: block;
+
+            @include media-breakpoint-down(xs) {
+                display: none;
+            }
+        }
+
+        .sec-img-container {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            img {
+                max-width: 100%;
+                width: 48%;
+            }
+
+            @include media-breakpoint-down(xs) {
+                flex-direction: column;
+
+                img {
+                    width: 100%;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+
+        .banner-image {
+            img {
+                width: 100%;
+            }
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        .sec-content-container {
+            width: 100%;
+            margin: 30px 0 0;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            align-items: flex-start;
+
+            @include media-breakpoint-down(md) {
+                flex-direction: column;
+            }
+        }
+
+        .sec-content-left {
+            width: 50%;
+            padding: 0 10px 0 0;
+            box-sizing: border-box;
+
+            @include media-breakpoint-down(md) {
+                width: 100%;
+                padding: 0;
+            }
+        }
+
+        .step-no {
+            margin: 0 0 10px;
+            // font-weight: 600;
+            font-family: $font-semibold;
+        }
+
+        .step-content {
+            margin: 0 0 30px;
+        }
+
+        .sec-content-right {
+            width: 50%;
+            padding: 0 0 0 10px;
+
+            @include media-breakpoint-down(md) {
+                width: 100%;
+                padding: 0;
+            }
+        }
+
+        @include media-breakpoint-down(md) {
+            //width: 67%;
+        }
+
+        @include media-breakpoint-down(xs) {
+            width: 100%;
+        }
+    }
+}
+
+img {
+    max-width: 100%;
+}
+
+.tumi-diffrences-container {
+    .tumi-differences-what-makes-us-different {
+        margin-top: 100px;
+
+        @include media-breakpoint-down(sm) {
+            margin-top: 60px;
+        }
+
+        .sub-hero-container {
+            @include media-breakpoint-between(md, xl) {
+                padding: 0;
+            }
+
+            .sub-hero-component {
+                .text-collection {
+                    flex: 0 0 75%;
+                    max-width: 75%;
+                    text-align: center;
+                    margin: auto;
+
+                    @include media-breakpoint-down(sm) {
+                        flex: 0 0 100%;
+                        max-width: 100%;
+                    }
+
+                    @include media-breakpoint-down(xs) {
+                        text-align: left;
+                    }
+                }
+
+                &.container {
+                    @include media-breakpoint-up(md) {
+                        max-width: 100%;
+                    }
+                }
+
+                .main-tag-line {
+                    margin-top: 0;
+                    text-align: center;
+                    @include sizeWeightLh(30px, 300, 16px);
+                }
+
+                .description {
+                    margin: 20px auto 0;
+
+                    @include media-breakpoint-down(sm) {
+                        padding: 0 71px;
+                        width: 100%;
+                        margin: 18px auto 0;
+                    }
+
+                    @include media-breakpoint-down(xs) {
+                        padding: 0;
+                        text-align: center;
+                    }
+
+                    @include media-breakpoint-up(md) {
+                        width: 72%;
+                        margin: 20px auto 0;
+                    }
+                }
+
+                .collections-next,
+                .collections-prev {
+                    display: none;
+                }
+
+                .swiper-wrapper {
+                    display: flex;
+                    justify-content: center;
+                    width: 100%;
+                    height: 100%;
+                    margin-top: 40px;
+
+                    @include media-breakpoint-up(md) {
+                        margin-top: 60px;
+                    }
+
+                    @include media-breakpoint-up(sm) {
+                        margin-top: 40px;
+                    }
+
+                    .swiper-slide {
+                        width: 158px !important;
+                        height: 158px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        color: var(--color-white);
+                        background-color: var(--color-black);
+
+                        .image-content {
+                            margin: 0;
+                            padding: 0 20px;
+                            width: 90%;
+
+                            a {
+                                color: var(--color-white);
+                                @include sizeWeightLh(15px, 600, 20px);
+                            }
+
+                            p {
+                                margin-top: 10px;
+                                @include sizeWeightLh(15px, 600, 20px);
+                            }
+                        }
+
+                        > a {
+                            position: absolute;
+                            left: 0;
+                            right: 0;
+                            z-index: 10;
+                            width: 100%;
+                            height: 100%;
+                        }
+
+                        .anchornumber {
+                            display: block;
+                            margin-bottom: 10px;
+                            color: var(--color-white);
+                            text-decoration: none;
+                            @include sizeWeightLh(20px, 300, 24px);
+                        }
+
+                        .hypen {
+                            height: 1px;
+                            width: 20px;
+                            background-color: $white;
+                            display: inline-block;
+                        }
+
+                        &:last-child {
+                            .image-content {
+                                position: static;
+                                top: 0;
+                                left: 0;
+                                transform: unset;
+                                display: inline-block;
+                                max-width: 100%;
+                                text-align: left;
+                                padding: 0 16px;
+                                box-sizing: border-box;
+                                margin: 0;
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .tumi-diff-innovative-component-container {
+        .tumi-diff-innovative-component {
+            max-width: unset;
+            padding: 0;
+        }
+
+        .text-collection {
+            text-align: center;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: $bg-dark;
+        }
+
+        .subTagLine {
+            @include sizeWeightLh(14px, 400, 18px);
+        }
+
+        .main-tag-line {
+            @include sizeWeightLh(54px, 300, 58px);
+
+            width: 60%;
+            margin: 10px auto;
+
+            @include media-breakpoint-between(xs, md) {
+                width: 54%;
+                @include sizeWeightLh(30px, 300, 34px);
+            }
+
+            @include media-breakpoint-down(sm) {
+                width: 77%;
+            }
+        }
+
+        .description {
+            width: 75%;
+            margin: 0 auto;
+        }
+
+        #sub-hero-collection {
+            margin: 80px auto 60px;
+            max-width: 1040px;
+
+            .tumi-diff-innovative-collection-container {
+                width: 100%;
+            }
+
+            .tumi-diff-innovative-wrapper {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                align-items: flex-start;
+                justify-content: space-between;
+
+                .swiper-slide {
+                    flex-shrink: 0;
+                    width: 265px;
+                    height: 100%;
+                    display: flex;
+                    position: relative;
+                    transition-property: transform;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+
+                    img {
+                        width: 48px !important;
+                        height: 48px;
+                    }
+                }
+
+                .header-description-content {
+                    .header {
+                        background: none;
+                        text-align: center;
+                        padding: 0;
+                        width: 100%;
+                        display: block;
+                        height: auto;
+                        margin: 20px 0 10px;
+                        color: $bg-dark;
+
+                        @include sizeWeightLh(14px, 400, 20px);
+                    }
+                }
+
+                @include media-breakpoint-between(xs, md) {
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+
+                    .swiper-slide {
+                        width: 66%;
+                    }
+                }
+            }
+        }
+
+        .banner-section {
+            width: 100%;
+            max-width: 1040px;
+            margin: 0 auto;
+        }
+    }
+
+    .innovation-by-nature-container {
+        background: $lotion;
+
+        @include media-breakpoint-up(md) {
+            padding-top: 100px;
+        }
+    }
+
+    // final scss till here
+    // .tum-service {
+    //     .swiper {
+    //         .cta-content {
+    //             svg {
+    //                 display: block;
+    //             }
+    //         }
+    //     }
+    // }
+}
+
+// .tum-service[data-creative-name="tumi-differences-design-excellence"] {
+//     max-width: 1040px;
+//     padding: 0;
+
+//     .text-content {
+//         .title {
+//             line-height: 19px;
+//         }
+
+//         .service-content-wrapper {
+//             align-items: flex-start !important;
+//         }
+//     }
+
+//     @include media-breakpoint-up(md) {
+//         .text-content {
+//             text-align: left;
+//             max-width: 90%;
+//             margin: 0 0 0 20px;
+//             align-items: flex-start !important;
+//         }
+//     }
+// }
+
+.tumi-differences-design-excellence,
+.tumi-diffrences-superior-quality,
+.tumi-diffrences-functional-superiority,
+.tumi-differences-innovative-sustainable-component {
+    background-color: $lotion;
+    // width: 100%;
+    // float: left;
+}
+
+.tumi-differences-innovative-sustainable-component {
+    margin-top: 60px;
+    width: 100%;
+    // float: left;
+
+    @include media-breakpoint-up(md) {
+        padding-top: 100px;
+    }
+}
+
+.tum-service[data-creative-name="tumi-diffrences-superior-quality"],
+.tum-service[data-creative-name="tumi-diffrences-functional-superiority"],
+.tum-service[data-creative-name="tumi-diffrences-at-your-service"],
+.tum-service[data-creative-name="customer-service-faqs-1"] {
+    max-width: 1040px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    padding: 0;
+
+    @include media-breakpoint-up(md) {
+        margin-top: 100px;
+    }
+
+    @include media-breakpoint-between(xs, md) {
+        margin-top: 0;
+    }
+
+    .order-1 {
+        @include media-breakpoint-up(md) {
+            max-width: 334px !important;
+            margin: auto;
+        }
+
+        @include media-breakpoint-up(sm) {
+            flex: 0 0 50%;
+        }
+
+        @include media-breakpoint-down(sm) {
+            margin: 60px 0 0;
+        }
+    }
+
+    .large-img {
+        @include media-breakpoint-up(sm) {
+            flex: 0 0 50%;
+            width: 50%;
+        }
+    }
+
+    .text-content {
+        .sub-title {
+            width: 100%;
+        }
+    }
+
+    .swiper {
+        .service-content-wrapper {
+            display: block !important;
+            width: 100%;
+            margin: 0 0 30px;
+            border-bottom: 1px solid $grey3;
+            padding: 0 0 30px;
+
+            @include media-breakpoint-between(xs, md) {
+                padding: 0 20px 30px;
+            }
+
+            .img-wrapper {
+                float: left;
+                margin-right: 15px;
+            }
+
+            .cta-link-name {
+                width: 65%;
+                display: inline-block;
+                padding: 0;
+                margin: 0;
+                text-align: left;
+
+                &:first-child {
+                    color: $bg-dark;
+                }
+            }
+        }
+
+        .swiper-wrapper {
+            flex-direction: column;
+        }
+
+        .service-link {
+            margin: 0 0 10px;
+        }
+
+        .swiper-slide {
+            @include media-breakpoint-between(xs, md) {
+                border: none;
+                border-bottom: 1px solid $grey3;
+                height: 110px;
+                padding: 0 20px;
+                box-sizing: border-box;
+            }
+
+            @include media-breakpoint-down(md) {
+                width: 100% !important;
+                margin: 0 !important;
+            }
+        }
+
+        a {
+            .service-content-wrapper {
+                border-bottom: none;
+                padding: 0;
+                margin: 0;
+            }
+        }
+    }
+}
+
+.swiper-wrapper {
+    .cta-content {
+        &:nth-child(4),
+        &:last-child {
+            .service-content-wrapper {
+                border: none;
+            }
+        }
+    }
+
+    > a {
+        &.swiper-slide {
+            margin: 0;
+
+            &:nth-child(3) {
+                border-bottom: none !important;
+            }
+        }
+    }
+}
+
+.tum-service[data-creative-name="tumi-differences-design-excellence"] {
+    .sub-hero-container {
+        .sub-hero-component {
+            &.container {
+                max-width: 1040px;
+            }
+        }
+    }
+
+    .order-sm-1 {
+        @include media-breakpoint-up(sm) {
+            flex: 0 0 50%;
+        }
+    }
+
+    .large-img {
+        @include media-breakpoint-up(sm) {
+            flex: 0 0 50%;
+            width: 50%;
+        }
+    }
+}
+
+// .sub-hero-component[data-creative-name="tumi-differences-technical-innovation"],
+// .sub-hero-component[data-creative-name="tumi-differences-content-cards"]
+.tumi-differences-technical-innovation,
+.tumi-differences-content-cards {
+    .sub-hero-component {
+        .text-collection {
+            flex: 0 0 75%;
+            max-width: 75%;
+            text-align: center;
+            margin: auto;
+
+            @include media-breakpoint-down(sm) {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+
+            @include media-breakpoint-down(xs) {
+                text-align: left;
+            }
+        }
+
+        .main-tag-line {
+            @include sizeWeightLh(30px, 300, 30px);
+        }
+
+        .description {
+            margin: 20px 0 0;
+        }
+
+        .swiper-wrapper {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .swiper-slide {
+            flex-shrink: 0;
+            width: 24%;
+            height: 100%;
+            position: relative;
+            transition-property: transform;
+
+            a {
+                cursor: context-menu;
+
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+
+        @include media-breakpoint-up(md) {
+            .collections-prev,
+            .collections-next {
+                display: none;
+            }
+        }
+
+        .swiper-wrapper {
+            .swiper-slide {
+                &:last-child {
+                    .image-content {
+                        max-width: unset;
+                        text-align: left;
+                        width: 100%;
+                        position: static;
+                        left: 0;
+                        right: 0;
+                        transform: unset;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.tumi-differences-technical-innovation {
+    .sub-hero-container {
+
+        // .sub-hero-component[data-creative-name="tumi-differences-technical-innovation"] {
+        .sub-hero-component {
+            max-width: 1040px;
+            margin: auto;
+
+            @include media-breakpoint-up(md) {
+                padding: 0;
+
+                .collections-prev,
+                .collections-next {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+.sub-hero-component[data-creative-name="customer-service-still-need-help"] {
+    .text-collection {
+        .description {
+            margin-top: 18px;
+            margin-bottom: 10px;
+        }
+    }
+}
+
+// .tumi-diff-innovative-component-container {
+//     .tumi-diff-innovative-component {
+//         max-width: unset;
+//         padding: 0;
+//     }
+
+//     .text-collection {
+//         text-align: center;
+//         margin: 0 auto;
+//         display: flex;
+//         flex-direction: column;
+//         justify-content: center;
+//         align-items: center;
+//         color: $bg-dark;
+//     }
+
+//     .subTagLine {
+//         @include sizeWeightLh(14px, 400, 18px);
+//     }
+
+//     .main-tag-line {
+//         @include sizeWeightLh(54px, 300, 58px);
+
+//         width: 60%;
+//         margin: 10px auto;
+
+//         @include media-breakpoint-between(xs,md) {
+//             width: 54%;
+//             @include sizeWeightLh(30px, 300, 34px);
+//         }
+
+//         @include media-breakpoint-down(sm) {
+//             width: 77%;
+//         }
+//     }
+
+//     .description {
+//         width: 75%;
+//         margin: 0 auto;
+//     }
+
+//     #sub-hero-collection {
+//         margin: 80px auto 60px;
+//         max-width: 1040px;
+
+//         .tumi-diff-innovative-collection-container {
+//             width: 100%;
+//         }
+
+//         .tumi-diff-innovative-wrapper {
+//             width: 100%;
+//             display: flex;
+//             flex-direction: row;
+//             align-items: flex-start;
+//             justify-content: space-between;
+
+//             .swiper-slide {
+//                 flex-shrink: 0;
+//                 width: 265px;
+//                 height: 100%;
+//                 display: flex;
+//                 position: relative;
+//                 transition-property: transform;
+//                 flex-direction: column;
+//                 justify-content: center;
+//                 align-items: center;
+//                 text-align: center;
+
+//                 img {
+//                     width: 48px !important;
+//                     height: 48px;
+//                 }
+//             }
+
+//             .header-description-content {
+//                 .header {
+//                     background: none;
+//                     text-align: center;
+//                     padding: 0;
+//                     width: 100%;
+//                     display: block;
+//                     height: auto;
+//                     margin: 20px 0 10px;
+//                     color: $bg-dark;
+
+//                     @include sizeWeightLh(14px, 400, 20px);
+//                 }
+//             }
+
+//             @include media-breakpoint-between(xs,md) {
+//                 flex-direction: column;
+//                 justify-content: center;
+//                 align-items: center;
+
+//                 .swiper-slide {
+//                     width: 66%;
+//                 }
+//             }
+//         }
+//     }
+
+//     .banner-section {
+//         width: 100%;
+//         max-width: 1040px;
+//         margin: 0 auto;
+//     }
+// }
+
+.tumi-differences-two-column-section {
+    margin: 30px 0;
+
+    .tum-service {
+        .swiper {
+            width: 100%;
+            height: 100%;
+            background-color: var(--color-black);
+
+            .swiper-wrapper {
+                flex-direction: row;
+                margin: 0;
+
+                .swiper-slide {
+                    text-align: center;
+                    background: var(--color-black);
+                    color: var(--color-white);
+                    width: 100% !important;
+                    height: 100% !important;
+                    display: -webkit-box;
+                    display: -ms-flexbox;
+                    display: -webkit-flex;
+                    display: flex;
+                    -webkit-box-pack: center;
+                    -ms-flex-pack: center;
+                    -webkit-justify-content: center;
+                    justify-content: center;
+                    -webkit-box-align: center;
+                    -ms-flex-align: center;
+                    -webkit-align-items: center;
+                    align-items: center;
+                    flex-direction: column;
+
+                    .content-sub-head {
+                        text-transform: uppercase;
+
+                        @include sizeWeightLh(12px, 400, 16px);
+                    }
+
+                    .content-desc-component {
+                        width: 65%;
+                        margin: 20px 0 0;
+                        text-align: center;
+                    }
+
+                    .content-head {
+                        @include sizeWeightLh(30px, 300, 32px);
+                    }
+
+                    .content-sub-head-container {
+                        background: url("../../images/divider.png") no-repeat 50% 100%;
+                        text-align: center;
+                        padding: 0 0 25px;
+                        margin: 0 0 10px;
+                    }
+                }
+            }
+        }
+
+        .collections-next {
+            &::after {
+                right: 0;
+                background-color: transparent;
+                z-index: 10;
+            }
+        }
+
+        .collections-prev {
+            &::after {
+                left: 0;
+                background-color: transparent;
+                z-index: 10;
+            }
+        }
+    }
+
+    .tum-service[data-creative-name="tumi-differences-two-column-section"] {
+        max-width: 1040px;
+        margin: 0 auto;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        > .col-md-6 {
+            &:first-child {
+                padding: 0;
+
+                @include media-breakpoint-down(lg) {
+                    padding: 0 10px;
+                }
+            }
+
+            &:last-child {
+                padding-right: 0;
+                height: 510px;
+            }
+        }
+
+        #sub-hero-collection {
+            background-color: var(--color-black);
+        }
+
+        .order-1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            flex-direction: column;
+        }
+    }
+}
+
+.content-banner[data-creative-name="tumi-differences-sustainability"] {
+    background-color: transparent;
+
+    .text-collection {
+        text-align: center;
+        margin: 0 auto 60px;
+    }
+
+    .subTagLine {
+        @include sizeWeightLh(14px, 400, 18px);
+    }
+
+    .main-tag-line {
+        @include sizeWeightLh(54px, 300, 58px);
+
+        width: 60%;
+        margin: 10px auto;
+
+        @include media-breakpoint-between(xs, md) {
+            width: 54%;
+            @include sizeWeightLh(30px, 300, 34px);
+        }
+
+        @include media-breakpoint-down(sm) {
+            width: 77%;
+        }
+    }
+}
+
+.banner-link-sec-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 250px;
+    color: $white;
+    flex-direction: column;
+    text-align: center;
+    background-color: $grey9;
+    width: 100%;
+
+    div.content {
+        width: 100%;
+
+        @include media-breakpoint-up(sm) {
+            width: 450px;
+        }
+    }
+
+    h1 {
+        letter-spacing: -0.1px;
+        @include sizeWeightLh(30px, 300, 58px);
+        @include media-breakpoint-up(md) {
+            @include sizeWeightLh(52px, 300, 58px);
+        }
+    }
+
+    .text {
+        width: 85%;
+        margin: 0 auto;
+        @include sizeWeightLh(15px,400,20px);
+    }
+}
+
+.get-start-container {
+    margin: 60px 0 75px;
+    color: $bg-dark;
+
+    @include media-breakpoint-up(sm) {
+        margin: 75px 0 0;
+        padding: 0 32px;
+    }
+    @include media-breakpoint-up(md) {
+        padding: 0 120px;
+    }
+
+    .container {
+        @include media-breakpoint-up(sm) {
+            padding: 0;
+        }
+    }
+
+    h2 {
+        color: $eerie-black;
+        @include sizeWeightLh(30px, 300, 30px);
+    }
+
+    p {
+        color: $davy-grey;
+        @include sizeWeightLh(15px, 400, 20px);
+    }
+
+    a {
+        color: $bg-dark;
+    }
+}
+
+.policy-links {
+    padding-top: 38px;
+    padding-left: 16px;
+    @include sizeWeightLh(15px, 600, 20px);
+    @include media-breakpoint-up(sm) {
+        padding-left: 58px;
+    }
+    @include media-breakpoint-up(md) {
+        padding-left: 117px;
+    }
+
+    div.links {
+        width: 100%;
+        margin: 30px 0 0;
+        display: flex;
+        flex-direction: column;
+
+        a {
+            clear: both;
+            color: $bg-dark;
+            margin-bottom: 30px;
+            font-weight: 600;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        @include media-breakpoint-up(md) {
+            text-align: left;
+            box-sizing: border-box;
+        }
+    }
+}
+
+.self-service-links {
+    ul {
+        margin: 30px auto 0;
+        list-style: none;
+
+        li {
+            width: 100%;
+            padding: 20px 20px 24px;
+            border-bottom: 1px solid $grey3;
+            position: relative;
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            a {
+                &:hover {
+                    text-decoration: none;
+                }
+
+                &::after {
+                    position: absolute;
+                    content: url("../../images/arrow-down.svg");
+                    right: 20px;
+                    transform: rotate(-90deg);
+                    top: 36%;
+
+                    @include media-breakpoint-down(xs) {
+                        right: 0;
+                    }
+                }
+            }
+
+            .image-link-container {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+
+                .img {
+                    margin: auto 15px auto 0;
+                }
+
+                p {
+                    margin: 0;
+                    color: $davy-grey;
+                    width: 95%;
+                    @include media-breakpoint-up(sm) {
+                        width: 80%;
+                    }
+                    @include media-breakpoint-up(md) {
+                        width: 100%;
+                    }
+
+                    &.bold {
+                        color: $bg-dark;
+                        font-weight: 600;
+                        margin-bottom: 5px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.gifting-premium-service {
+    .gifting-premium-service-swiper {
+        .swiper-wrapper {
+            .swiper-slide {
+                margin-right: 18px !important;
+            }
+        }
+    }
+}
+
+.tum-service[data-creative-name="customer-service-faqs-1"] {
+    max-width: 1040px;
+
+    .text-content {
+        .title {
+            line-height: 30px;
+        }
+    }
+
+    .swiper {
+        .service-content-wrapper {
+            .cta-link-name {
+                width: 82%;
+            }
+
+            .cta-content {
+                flex-direction: row !important;
+            }
+        }
+    }
+
+    .swiper-wrapper {
+        .cta-content {
+            flex-direction: row !important;
+        }
+    }
+}
+
+.customer-service-container {
+    .service-hightlights {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+
+    .self-service-links {
+        text-align: left;
+    }
+}
+
+.container[data-creative-name="customer-service-still-need-help"] {
+    img {
+        width: auto !important;
+    }
+
+    .text-collection {
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .swiper-wrapper {
+        justify-content: space-around;
+        max-width: 720px;
+        margin: 30px auto 80px;
+
+        .swiper-slide {
+            &:last-child {
+                .image-content {
+                    position: unset;
+                    transform: unset;
+                }
+            }
+        }
+    }
+
+    .image-content {
+        text-align: center;
+    }
+
+    .swiper-slide {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: $lotion;
+        height: 140px !important;
+        border: 1px solid $black;
+
+        @include media-breakpoint-up(sm) {
+            width: 160px !important;
+            height: 160px !important;
+        }
+    }
+}
+
+.sub-hero-container {
+    .container[data-creative-name="customer-service-why-tumi"] {
+        max-width: 1040px;
+        padding: 0;
+
+        .text-collection {
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .swiper-wrapper {
+            justify-content: space-around;
+            margin: 30px auto 80px;
+
+            .swiper-slide {
+                &:last-child {
+                    .image-content {
+                        position: unset;
+                        transform: unset;
+                        max-width: unset;
+                        text-align: left;
+                    }
+                }
+            }
+        }
+
+        .image-content {
+            text-align: left;
+            min-height: unset;
+            max-height: unset;
+        }
+
+        .main-tag-line {
+            margin-bottom: 20px;
+        }
+
+        .swiper-slide {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
+
+$min-width: "1024px";
+$max-width: "1280px";
+$min-alt-width: "1281px";
+
+.static-page + .container {
+    @include media-breakpoint-up(sm) {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    @media (min-width: $min-width) and (max-width: $max-width) {
+        padding-left: 120px;
+        padding-right: 120px;
+    }
+
+    @media (min-width: $min-alt-width) {
+        padding-left: 72px;
+        padding-right: 72px;
+    }
+
+    .my-account {
+        border-bottom: 1px solid var(--color-grey3);
+    }
+}

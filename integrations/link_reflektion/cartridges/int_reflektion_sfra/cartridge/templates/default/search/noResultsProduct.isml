@@ -1,0 +1,5 @@
+<isslot id="noresults-help" description="Recommendations for no result search" context="global" />
+
+<div class="recommendations" ${require('*/cartridge/scripts/reflektionHelper').getNoSearchResultsRec()}>
+    <isslot id="noresult-recommendations" description="Recommendations for no result search" context="global" />
+</div>

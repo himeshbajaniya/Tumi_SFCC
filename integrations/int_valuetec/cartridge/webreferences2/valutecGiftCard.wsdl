@@ -1,0 +1,2798 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/2004-08-24.xsd" xmlns:tns="https://ws.valutec.net/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="https://ws.valutec.net/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="https://ws.valutec.net/">
+      <s:element name="Transaction_TieAlternateNo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClientKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TerminalID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProgramType" type="tns:ProgramType" />
+            <s:element minOccurs="0" maxOccurs="1" name="CardNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PhoneMid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ServerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Identifier" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="ProgramType">
+        <s:restriction base="s:string">
+          <s:enumeration value="Gift" />
+          <s:enumeration value="Loyalty" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="Transaction_TieAlternateNoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Transaction_TieAlternateNoResult" type="tns:TransactionResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TransactionResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="RawOutput" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TerminalID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IPaddress" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Authorized" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="AuthorizationCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TransactionType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Balance" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PointBalance" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RewardLevel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Refund" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CardAmountUsed" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AmountDue" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TotalSales" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TotalSales_Amount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TotalActivations" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TotalActivations_Amount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TotalAddValues" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TotalAddValues_Amount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TotalVoids" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TotalVoids_Amount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TotalDeactivations" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TotalDeactivations_Amount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Identifier" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CardNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CardPIN" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Transaction_ActivateCard">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClientKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TerminalID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProgramType" type="tns:ProgramType" />
+            <s:element minOccurs="0" maxOccurs="1" name="CardNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Amount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ServerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Identifier" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Transaction_ActivateCardResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Transaction_ActivateCardResult" type="tns:TransactionResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Transaction_AddValue">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClientKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TerminalID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProgramType" type="tns:ProgramType" />
+            <s:element minOccurs="0" maxOccurs="1" name="CardNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Amount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ServerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Identifier" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Transaction_AddValueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Transaction_AddValueResult" type="tns:TransactionResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Transaction_CardBalance">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClientKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TerminalID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProgramType" type="tns:ProgramType" />
+            <s:element minOccurs="0" maxOccurs="1" name="CardNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ServerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Identifier" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Transaction_CardBalanceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Transaction_CardBalanceResult" type="tns:TransactionResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Transaction_AdjustBalance">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClientKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TerminalID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProgramType" type="tns:ProgramType" />
+            <s:element minOccurs="0" maxOccurs="1" name="CardNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Amount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ServerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Identifier" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Transaction_AdjustBalanceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Transaction_AdjustBalanceResult" type="tns:TransactionResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Transaction_Cardless">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClientKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TerminalID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Telephone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Amount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ServerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Identifier" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Transaction_CardlessResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Transaction_CardlessResult" type="tns:TransactionResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Transaction_CardlessEx">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClientKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TerminalID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CardNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Telephone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Amount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ServerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Identifier" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Transaction_CardlessExResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Transaction_CardlessExResult" type="tns:TransactionResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Transaction_CashOut">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClientKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TerminalID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CardNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Amount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ServerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Identifier" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Transaction_CashOutResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Transaction_CashOutResult" type="tns:TransactionResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Transaction_CreateCard">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClientKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TerminalID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProgramType" type="tns:ProgramType" />
+            <s:element minOccurs="0" maxOccurs="1" name="CardProgram" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Amount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ServerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Identifier" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Transaction_CreateCardResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Transaction_CreateCardResult" type="tns:TransactionResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Transaction_DeactivateCard">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClientKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TerminalID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProgramType" type="tns:ProgramType" />
+            <s:element minOccurs="0" maxOccurs="1" name="CardNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ServerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Identifier" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Transaction_DeactivateCardResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Transaction_DeactivateCardResult" type="tns:TransactionResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Transaction_HostTotals">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClientKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TerminalID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProgramType" type="tns:ProgramType" />
+            <s:element minOccurs="1" maxOccurs="1" name="TotalType" type="tns:Total" />
+            <s:element minOccurs="0" maxOccurs="1" name="ServerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Identifier" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="Total">
+        <s:restriction base="s:string">
+          <s:enumeration value="CurrentDay" />
+          <s:enumeration value="PreviousDay" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="Transaction_HostTotalsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Transaction_HostTotalsResult" type="tns:TransactionResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Transaction_ReplaceCard">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClientKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TerminalID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProgramType" type="tns:ProgramType" />
+            <s:element minOccurs="0" maxOccurs="1" name="OldCard" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CardNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ServerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Identifier" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Transaction_ReplaceCardResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Transaction_ReplaceCardResult" type="tns:TransactionResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Transaction_RestaurantSale">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClientKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TerminalID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProgramType" type="tns:ProgramType" />
+            <s:element minOccurs="0" maxOccurs="1" name="CardNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Amount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TipAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ServerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Identifier" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Transaction_RestaurantSaleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Transaction_RestaurantSaleResult" type="tns:TransactionResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Transaction_Sale">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClientKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TerminalID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProgramType" type="tns:ProgramType" />
+            <s:element minOccurs="0" maxOccurs="1" name="CardNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Amount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ServerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Identifier" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Transaction_SaleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Transaction_SaleResult" type="tns:TransactionResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Transaction_Void">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClientKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TerminalID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProgramType" type="tns:ProgramType" />
+            <s:element minOccurs="0" maxOccurs="1" name="CardNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RequestAuthCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ServerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Identifier" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Transaction_VoidResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Transaction_VoidResult" type="tns:TransactionResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Transaction_Reversal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClientKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TerminalID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CardNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RequestIdentifier" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ServerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Identifier" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Transaction_ReversalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Transaction_ReversalResult" type="tns:TransactionResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Transaction_Generic">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClientKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TerminalID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProgramType" type="tns:ProgramType" />
+            <s:element minOccurs="1" maxOccurs="1" name="TransactionType" type="tns:TransactionCode" />
+            <s:element minOccurs="0" maxOccurs="1" name="CardNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Amount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ServerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TipAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RequestAuthCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OldCard" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Identifier" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CardProgram" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="TransactionCode">
+        <s:restriction base="s:string">
+          <s:enumeration value="Sale" />
+          <s:enumeration value="Activation" />
+          <s:enumeration value="AddValue" />
+          <s:enumeration value="Void" />
+          <s:enumeration value="Balance" />
+          <s:enumeration value="Current_Day_Totals" />
+          <s:enumeration value="Previous_Day_Totals" />
+          <s:enumeration value="Deactivate" />
+          <s:enumeration value="Replace" />
+          <s:enumeration value="CreateCard" />
+          <s:enumeration value="Restaurant_Sale" />
+          <s:enumeration value="CashOut" />
+          <s:enumeration value="Cardless" />
+          <s:enumeration value="CardlessEx" />
+          <s:enumeration value="AltActivation" />
+          <s:enumeration value="Adjust" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="Transaction_GenericResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Transaction_GenericResult" type="tns:TransactionResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Registration_Get">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClientKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TerminalID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CardNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Registration_GetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Registration_GetResult" type="tns:CardRegistration" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CardRegistration">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Authorized" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CardNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Zip" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Telephone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DOB" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Misc1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Misc2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Misc3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Misc4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Misc5" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Misc6" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Misc7" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Misc8" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Misc9" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Misc10" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Registration_Set">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClientKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TerminalID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CardNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Zip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Telephone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DateOfBirth" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Misc1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Misc2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Misc3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Misc4" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Misc5" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Registration_SetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Registration_SetResult" type="tns:CardRegistration" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Registration_SetEx">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClientKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TerminalID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CardNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Zip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Telephone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DateOfBirth" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Misc1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Misc2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Misc3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Misc4" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Misc5" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Misc6" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Misc7" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Misc8" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Misc9" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Misc10" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Registration_SetExResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Registration_SetExResult" type="tns:CardRegistration" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SurveyAnswers_Set">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClientKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CardNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Answer1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Answer2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Answer3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Answer4" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Answer5" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Answer6" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Answer7" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Answer8" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Answer9" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Answer10" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SurveyAnswers_SetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SurveyAnswers_SetResult" type="tns:SurveyResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SurveyResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Authorized" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CardNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Action" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Answer1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Answer2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Answer3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Answer4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Answer5" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Answer6" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Answer7" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Answer8" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Answer9" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Answer10" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SurveyAnswers_Get">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClientKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CardNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SurveyAnswers_GetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SurveyAnswers_GetResult" type="tns:SurveyResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Reporting_ByCard">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClientKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CardNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="StartDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EndDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CardProgram" type="tns:ReportingProgramType" />
+            <s:element minOccurs="1" maxOccurs="1" name="TransactionType" type="tns:ReportingTransactionCode" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="ReportingProgramType">
+        <s:restriction base="s:string">
+          <s:enumeration value="Any" />
+          <s:enumeration value="Gift" />
+          <s:enumeration value="Loyalty" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="ReportingTransactionCode">
+        <s:restriction base="s:string">
+          <s:enumeration value="Any" />
+          <s:enumeration value="Sale" />
+          <s:enumeration value="Activation" />
+          <s:enumeration value="AddValue" />
+          <s:enumeration value="Void" />
+          <s:enumeration value="Balance" />
+          <s:enumeration value="Current_Day_Totals" />
+          <s:enumeration value="Previous_Day_Totals" />
+          <s:enumeration value="Deactivate" />
+          <s:enumeration value="Replace" />
+          <s:enumeration value="CreateCard" />
+          <s:enumeration value="Restaurant_Sale" />
+          <s:enumeration value="CashOut" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="Reporting_ByCardResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Reporting_ByCardResult" type="tns:ReportResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ReportResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Authorized" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMsg" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DaysQueried" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Count" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TransactionRecords" type="tns:ArrayOfTransactionRecord" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTransactionRecord">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TransactionRecord" nillable="true" type="tns:TransactionRecord" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TransactionRecord">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="LocationID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TerminalID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AuthCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TranType" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TranAmount" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="TranDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="TranServerID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CardNumber" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Reporting_ByTID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClientKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TerminalID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="StartDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EndDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CardProgram" type="tns:ReportingProgramType" />
+            <s:element minOccurs="1" maxOccurs="1" name="TransactionType" type="tns:ReportingTransactionCode" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Reporting_ByTIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Reporting_ByTIDResult" type="tns:ReportResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Reporting_ByLID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClientKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LocationID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="StartDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EndDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CardProgram" type="tns:ReportingProgramType" />
+            <s:element minOccurs="1" maxOccurs="1" name="TransactionType" type="tns:ReportingTransactionCode" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Reporting_ByLIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Reporting_ByLIDResult" type="tns:ReportResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Reporting_ByMID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClientKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MerchantID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="StartDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EndDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CardProgram" type="tns:ReportingProgramType" />
+            <s:element minOccurs="1" maxOccurs="1" name="TransactionType" type="tns:ReportingTransactionCode" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Reporting_ByMIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Reporting_ByMIDResult" type="tns:ReportResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TransactionResponse" nillable="true" type="tns:TransactionResponse" />
+      <s:element name="CardRegistration" nillable="true" type="tns:CardRegistration" />
+      <s:element name="SurveyResponse" nillable="true" type="tns:SurveyResponse" />
+      <s:element name="ReportResponse" nillable="true" type="tns:ReportResponse" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="Transaction_TieAlternateNoSoapIn">
+    <wsdl:part name="parameters" element="tns:Transaction_TieAlternateNo" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_TieAlternateNoSoapOut">
+    <wsdl:part name="parameters" element="tns:Transaction_TieAlternateNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_ActivateCardSoapIn">
+    <wsdl:part name="parameters" element="tns:Transaction_ActivateCard" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_ActivateCardSoapOut">
+    <wsdl:part name="parameters" element="tns:Transaction_ActivateCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_AddValueSoapIn">
+    <wsdl:part name="parameters" element="tns:Transaction_AddValue" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_AddValueSoapOut">
+    <wsdl:part name="parameters" element="tns:Transaction_AddValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_CardBalanceSoapIn">
+    <wsdl:part name="parameters" element="tns:Transaction_CardBalance" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_CardBalanceSoapOut">
+    <wsdl:part name="parameters" element="tns:Transaction_CardBalanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_AdjustBalanceSoapIn">
+    <wsdl:part name="parameters" element="tns:Transaction_AdjustBalance" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_AdjustBalanceSoapOut">
+    <wsdl:part name="parameters" element="tns:Transaction_AdjustBalanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_CardlessSoapIn">
+    <wsdl:part name="parameters" element="tns:Transaction_Cardless" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_CardlessSoapOut">
+    <wsdl:part name="parameters" element="tns:Transaction_CardlessResponse" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_CardlessExSoapIn">
+    <wsdl:part name="parameters" element="tns:Transaction_CardlessEx" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_CardlessExSoapOut">
+    <wsdl:part name="parameters" element="tns:Transaction_CardlessExResponse" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_CashOutSoapIn">
+    <wsdl:part name="parameters" element="tns:Transaction_CashOut" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_CashOutSoapOut">
+    <wsdl:part name="parameters" element="tns:Transaction_CashOutResponse" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_CreateCardSoapIn">
+    <wsdl:part name="parameters" element="tns:Transaction_CreateCard" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_CreateCardSoapOut">
+    <wsdl:part name="parameters" element="tns:Transaction_CreateCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_DeactivateCardSoapIn">
+    <wsdl:part name="parameters" element="tns:Transaction_DeactivateCard" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_DeactivateCardSoapOut">
+    <wsdl:part name="parameters" element="tns:Transaction_DeactivateCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_HostTotalsSoapIn">
+    <wsdl:part name="parameters" element="tns:Transaction_HostTotals" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_HostTotalsSoapOut">
+    <wsdl:part name="parameters" element="tns:Transaction_HostTotalsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_ReplaceCardSoapIn">
+    <wsdl:part name="parameters" element="tns:Transaction_ReplaceCard" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_ReplaceCardSoapOut">
+    <wsdl:part name="parameters" element="tns:Transaction_ReplaceCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_RestaurantSaleSoapIn">
+    <wsdl:part name="parameters" element="tns:Transaction_RestaurantSale" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_RestaurantSaleSoapOut">
+    <wsdl:part name="parameters" element="tns:Transaction_RestaurantSaleResponse" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_SaleSoapIn">
+    <wsdl:part name="parameters" element="tns:Transaction_Sale" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_SaleSoapOut">
+    <wsdl:part name="parameters" element="tns:Transaction_SaleResponse" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_VoidSoapIn">
+    <wsdl:part name="parameters" element="tns:Transaction_Void" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_VoidSoapOut">
+    <wsdl:part name="parameters" element="tns:Transaction_VoidResponse" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_ReversalSoapIn">
+    <wsdl:part name="parameters" element="tns:Transaction_Reversal" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_ReversalSoapOut">
+    <wsdl:part name="parameters" element="tns:Transaction_ReversalResponse" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_GenericSoapIn">
+    <wsdl:part name="parameters" element="tns:Transaction_Generic" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_GenericSoapOut">
+    <wsdl:part name="parameters" element="tns:Transaction_GenericResponse" />
+  </wsdl:message>
+  <wsdl:message name="Registration_GetSoapIn">
+    <wsdl:part name="parameters" element="tns:Registration_Get" />
+  </wsdl:message>
+  <wsdl:message name="Registration_GetSoapOut">
+    <wsdl:part name="parameters" element="tns:Registration_GetResponse" />
+  </wsdl:message>
+  <wsdl:message name="Registration_SetSoapIn">
+    <wsdl:part name="parameters" element="tns:Registration_Set" />
+  </wsdl:message>
+  <wsdl:message name="Registration_SetSoapOut">
+    <wsdl:part name="parameters" element="tns:Registration_SetResponse" />
+  </wsdl:message>
+  <wsdl:message name="Registration_SetExSoapIn">
+    <wsdl:part name="parameters" element="tns:Registration_SetEx" />
+  </wsdl:message>
+  <wsdl:message name="Registration_SetExSoapOut">
+    <wsdl:part name="parameters" element="tns:Registration_SetExResponse" />
+  </wsdl:message>
+  <wsdl:message name="SurveyAnswers_SetSoapIn">
+    <wsdl:part name="parameters" element="tns:SurveyAnswers_Set" />
+  </wsdl:message>
+  <wsdl:message name="SurveyAnswers_SetSoapOut">
+    <wsdl:part name="parameters" element="tns:SurveyAnswers_SetResponse" />
+  </wsdl:message>
+  <wsdl:message name="SurveyAnswers_GetSoapIn">
+    <wsdl:part name="parameters" element="tns:SurveyAnswers_Get" />
+  </wsdl:message>
+  <wsdl:message name="SurveyAnswers_GetSoapOut">
+    <wsdl:part name="parameters" element="tns:SurveyAnswers_GetResponse" />
+  </wsdl:message>
+  <wsdl:message name="Reporting_ByCardSoapIn">
+    <wsdl:part name="parameters" element="tns:Reporting_ByCard" />
+  </wsdl:message>
+  <wsdl:message name="Reporting_ByCardSoapOut">
+    <wsdl:part name="parameters" element="tns:Reporting_ByCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="Reporting_ByTIDSoapIn">
+    <wsdl:part name="parameters" element="tns:Reporting_ByTID" />
+  </wsdl:message>
+  <wsdl:message name="Reporting_ByTIDSoapOut">
+    <wsdl:part name="parameters" element="tns:Reporting_ByTIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="Reporting_ByLIDSoapIn">
+    <wsdl:part name="parameters" element="tns:Reporting_ByLID" />
+  </wsdl:message>
+  <wsdl:message name="Reporting_ByLIDSoapOut">
+    <wsdl:part name="parameters" element="tns:Reporting_ByLIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="Reporting_ByMIDSoapIn">
+    <wsdl:part name="parameters" element="tns:Reporting_ByMID" />
+  </wsdl:message>
+  <wsdl:message name="Reporting_ByMIDSoapOut">
+    <wsdl:part name="parameters" element="tns:Reporting_ByMIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_TieAlternateNoHttpGetIn">
+    <wsdl:part name="ClientKey" type="s:string" />
+    <wsdl:part name="TerminalID" type="s:string" />
+    <wsdl:part name="ProgramType" type="s:string" />
+    <wsdl:part name="CardNumber" type="s:string" />
+    <wsdl:part name="PhoneMid" type="s:string" />
+    <wsdl:part name="ServerID" type="s:string" />
+    <wsdl:part name="Identifier" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_TieAlternateNoHttpGetOut">
+    <wsdl:part name="Body" element="tns:TransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_ActivateCardHttpGetIn">
+    <wsdl:part name="ClientKey" type="s:string" />
+    <wsdl:part name="TerminalID" type="s:string" />
+    <wsdl:part name="ProgramType" type="s:string" />
+    <wsdl:part name="CardNumber" type="s:string" />
+    <wsdl:part name="Amount" type="s:string" />
+    <wsdl:part name="ServerID" type="s:string" />
+    <wsdl:part name="Identifier" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_ActivateCardHttpGetOut">
+    <wsdl:part name="Body" element="tns:TransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_AddValueHttpGetIn">
+    <wsdl:part name="ClientKey" type="s:string" />
+    <wsdl:part name="TerminalID" type="s:string" />
+    <wsdl:part name="ProgramType" type="s:string" />
+    <wsdl:part name="CardNumber" type="s:string" />
+    <wsdl:part name="Amount" type="s:string" />
+    <wsdl:part name="ServerID" type="s:string" />
+    <wsdl:part name="Identifier" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_AddValueHttpGetOut">
+    <wsdl:part name="Body" element="tns:TransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_CardBalanceHttpGetIn">
+    <wsdl:part name="ClientKey" type="s:string" />
+    <wsdl:part name="TerminalID" type="s:string" />
+    <wsdl:part name="ProgramType" type="s:string" />
+    <wsdl:part name="CardNumber" type="s:string" />
+    <wsdl:part name="ServerID" type="s:string" />
+    <wsdl:part name="Identifier" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_CardBalanceHttpGetOut">
+    <wsdl:part name="Body" element="tns:TransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_AdjustBalanceHttpGetIn">
+    <wsdl:part name="ClientKey" type="s:string" />
+    <wsdl:part name="TerminalID" type="s:string" />
+    <wsdl:part name="ProgramType" type="s:string" />
+    <wsdl:part name="CardNumber" type="s:string" />
+    <wsdl:part name="Amount" type="s:string" />
+    <wsdl:part name="ServerID" type="s:string" />
+    <wsdl:part name="Identifier" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_AdjustBalanceHttpGetOut">
+    <wsdl:part name="Body" element="tns:TransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_CardlessHttpGetIn">
+    <wsdl:part name="ClientKey" type="s:string" />
+    <wsdl:part name="TerminalID" type="s:string" />
+    <wsdl:part name="Telephone" type="s:string" />
+    <wsdl:part name="Amount" type="s:string" />
+    <wsdl:part name="ServerID" type="s:string" />
+    <wsdl:part name="Identifier" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_CardlessHttpGetOut">
+    <wsdl:part name="Body" element="tns:TransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_CardlessExHttpGetIn">
+    <wsdl:part name="ClientKey" type="s:string" />
+    <wsdl:part name="TerminalID" type="s:string" />
+    <wsdl:part name="CardNumber" type="s:string" />
+    <wsdl:part name="Telephone" type="s:string" />
+    <wsdl:part name="Amount" type="s:string" />
+    <wsdl:part name="ServerID" type="s:string" />
+    <wsdl:part name="Identifier" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_CardlessExHttpGetOut">
+    <wsdl:part name="Body" element="tns:TransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_CashOutHttpGetIn">
+    <wsdl:part name="ClientKey" type="s:string" />
+    <wsdl:part name="TerminalID" type="s:string" />
+    <wsdl:part name="CardNumber" type="s:string" />
+    <wsdl:part name="Amount" type="s:string" />
+    <wsdl:part name="ServerID" type="s:string" />
+    <wsdl:part name="Identifier" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_CashOutHttpGetOut">
+    <wsdl:part name="Body" element="tns:TransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_CreateCardHttpGetIn">
+    <wsdl:part name="ClientKey" type="s:string" />
+    <wsdl:part name="TerminalID" type="s:string" />
+    <wsdl:part name="ProgramType" type="s:string" />
+    <wsdl:part name="CardProgram" type="s:string" />
+    <wsdl:part name="Amount" type="s:string" />
+    <wsdl:part name="ServerID" type="s:string" />
+    <wsdl:part name="Identifier" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_CreateCardHttpGetOut">
+    <wsdl:part name="Body" element="tns:TransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_DeactivateCardHttpGetIn">
+    <wsdl:part name="ClientKey" type="s:string" />
+    <wsdl:part name="TerminalID" type="s:string" />
+    <wsdl:part name="ProgramType" type="s:string" />
+    <wsdl:part name="CardNumber" type="s:string" />
+    <wsdl:part name="ServerID" type="s:string" />
+    <wsdl:part name="Identifier" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_DeactivateCardHttpGetOut">
+    <wsdl:part name="Body" element="tns:TransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_HostTotalsHttpGetIn">
+    <wsdl:part name="ClientKey" type="s:string" />
+    <wsdl:part name="TerminalID" type="s:string" />
+    <wsdl:part name="ProgramType" type="s:string" />
+    <wsdl:part name="TotalType" type="s:string" />
+    <wsdl:part name="ServerID" type="s:string" />
+    <wsdl:part name="Identifier" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_HostTotalsHttpGetOut">
+    <wsdl:part name="Body" element="tns:TransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_ReplaceCardHttpGetIn">
+    <wsdl:part name="ClientKey" type="s:string" />
+    <wsdl:part name="TerminalID" type="s:string" />
+    <wsdl:part name="ProgramType" type="s:string" />
+    <wsdl:part name="OldCard" type="s:string" />
+    <wsdl:part name="CardNumber" type="s:string" />
+    <wsdl:part name="ServerID" type="s:string" />
+    <wsdl:part name="Identifier" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_ReplaceCardHttpGetOut">
+    <wsdl:part name="Body" element="tns:TransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_RestaurantSaleHttpGetIn">
+    <wsdl:part name="ClientKey" type="s:string" />
+    <wsdl:part name="TerminalID" type="s:string" />
+    <wsdl:part name="ProgramType" type="s:string" />
+    <wsdl:part name="CardNumber" type="s:string" />
+    <wsdl:part name="Amount" type="s:string" />
+    <wsdl:part name="TipAmount" type="s:string" />
+    <wsdl:part name="ServerID" type="s:string" />
+    <wsdl:part name="Identifier" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_RestaurantSaleHttpGetOut">
+    <wsdl:part name="Body" element="tns:TransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_SaleHttpGetIn">
+    <wsdl:part name="ClientKey" type="s:string" />
+    <wsdl:part name="TerminalID" type="s:string" />
+    <wsdl:part name="ProgramType" type="s:string" />
+    <wsdl:part name="CardNumber" type="s:string" />
+    <wsdl:part name="Amount" type="s:string" />
+    <wsdl:part name="ServerID" type="s:string" />
+    <wsdl:part name="Identifier" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_SaleHttpGetOut">
+    <wsdl:part name="Body" element="tns:TransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_VoidHttpGetIn">
+    <wsdl:part name="ClientKey" type="s:string" />
+    <wsdl:part name="TerminalID" type="s:string" />
+    <wsdl:part name="ProgramType" type="s:string" />
+    <wsdl:part name="CardNumber" type="s:string" />
+    <wsdl:part name="RequestAuthCode" type="s:string" />
+    <wsdl:part name="ServerID" type="s:string" />
+    <wsdl:part name="Identifier" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_VoidHttpGetOut">
+    <wsdl:part name="Body" element="tns:TransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_ReversalHttpGetIn">
+    <wsdl:part name="ClientKey" type="s:string" />
+    <wsdl:part name="TerminalID" type="s:string" />
+    <wsdl:part name="CardNumber" type="s:string" />
+    <wsdl:part name="RequestIdentifier" type="s:string" />
+    <wsdl:part name="ServerID" type="s:string" />
+    <wsdl:part name="Identifier" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_ReversalHttpGetOut">
+    <wsdl:part name="Body" element="tns:TransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_GenericHttpGetIn">
+    <wsdl:part name="ClientKey" type="s:string" />
+    <wsdl:part name="TerminalID" type="s:string" />
+    <wsdl:part name="ProgramType" type="s:string" />
+    <wsdl:part name="TransactionType" type="s:string" />
+    <wsdl:part name="CardNumber" type="s:string" />
+    <wsdl:part name="Amount" type="s:string" />
+    <wsdl:part name="ServerID" type="s:string" />
+    <wsdl:part name="TipAmount" type="s:string" />
+    <wsdl:part name="RequestAuthCode" type="s:string" />
+    <wsdl:part name="OldCard" type="s:string" />
+    <wsdl:part name="Identifier" type="s:string" />
+    <wsdl:part name="CardProgram" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_GenericHttpGetOut">
+    <wsdl:part name="Body" element="tns:TransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="Registration_GetHttpGetIn">
+    <wsdl:part name="ClientKey" type="s:string" />
+    <wsdl:part name="TerminalID" type="s:string" />
+    <wsdl:part name="CardNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Registration_GetHttpGetOut">
+    <wsdl:part name="Body" element="tns:CardRegistration" />
+  </wsdl:message>
+  <wsdl:message name="Registration_SetHttpGetIn">
+    <wsdl:part name="ClientKey" type="s:string" />
+    <wsdl:part name="TerminalID" type="s:string" />
+    <wsdl:part name="CardNumber" type="s:string" />
+    <wsdl:part name="Name" type="s:string" />
+    <wsdl:part name="Address1" type="s:string" />
+    <wsdl:part name="Address2" type="s:string" />
+    <wsdl:part name="City" type="s:string" />
+    <wsdl:part name="State" type="s:string" />
+    <wsdl:part name="Zip" type="s:string" />
+    <wsdl:part name="Telephone" type="s:string" />
+    <wsdl:part name="EmailAddress" type="s:string" />
+    <wsdl:part name="DateOfBirth" type="s:string" />
+    <wsdl:part name="Misc1" type="s:string" />
+    <wsdl:part name="Misc2" type="s:string" />
+    <wsdl:part name="Misc3" type="s:string" />
+    <wsdl:part name="Misc4" type="s:string" />
+    <wsdl:part name="Misc5" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Registration_SetHttpGetOut">
+    <wsdl:part name="Body" element="tns:CardRegistration" />
+  </wsdl:message>
+  <wsdl:message name="Registration_SetExHttpGetIn">
+    <wsdl:part name="ClientKey" type="s:string" />
+    <wsdl:part name="TerminalID" type="s:string" />
+    <wsdl:part name="CardNumber" type="s:string" />
+    <wsdl:part name="Name" type="s:string" />
+    <wsdl:part name="Address1" type="s:string" />
+    <wsdl:part name="Address2" type="s:string" />
+    <wsdl:part name="City" type="s:string" />
+    <wsdl:part name="State" type="s:string" />
+    <wsdl:part name="Zip" type="s:string" />
+    <wsdl:part name="Telephone" type="s:string" />
+    <wsdl:part name="EmailAddress" type="s:string" />
+    <wsdl:part name="DateOfBirth" type="s:string" />
+    <wsdl:part name="Misc1" type="s:string" />
+    <wsdl:part name="Misc2" type="s:string" />
+    <wsdl:part name="Misc3" type="s:string" />
+    <wsdl:part name="Misc4" type="s:string" />
+    <wsdl:part name="Misc5" type="s:string" />
+    <wsdl:part name="Misc6" type="s:string" />
+    <wsdl:part name="Misc7" type="s:string" />
+    <wsdl:part name="Misc8" type="s:string" />
+    <wsdl:part name="Misc9" type="s:string" />
+    <wsdl:part name="Misc10" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Registration_SetExHttpGetOut">
+    <wsdl:part name="Body" element="tns:CardRegistration" />
+  </wsdl:message>
+  <wsdl:message name="SurveyAnswers_SetHttpGetIn">
+    <wsdl:part name="ClientKey" type="s:string" />
+    <wsdl:part name="CardNumber" type="s:string" />
+    <wsdl:part name="Answer1" type="s:string" />
+    <wsdl:part name="Answer2" type="s:string" />
+    <wsdl:part name="Answer3" type="s:string" />
+    <wsdl:part name="Answer4" type="s:string" />
+    <wsdl:part name="Answer5" type="s:string" />
+    <wsdl:part name="Answer6" type="s:string" />
+    <wsdl:part name="Answer7" type="s:string" />
+    <wsdl:part name="Answer8" type="s:string" />
+    <wsdl:part name="Answer9" type="s:string" />
+    <wsdl:part name="Answer10" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SurveyAnswers_SetHttpGetOut">
+    <wsdl:part name="Body" element="tns:SurveyResponse" />
+  </wsdl:message>
+  <wsdl:message name="SurveyAnswers_GetHttpGetIn">
+    <wsdl:part name="ClientKey" type="s:string" />
+    <wsdl:part name="CardNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SurveyAnswers_GetHttpGetOut">
+    <wsdl:part name="Body" element="tns:SurveyResponse" />
+  </wsdl:message>
+  <wsdl:message name="Reporting_ByCardHttpGetIn">
+    <wsdl:part name="ClientKey" type="s:string" />
+    <wsdl:part name="CardNumber" type="s:string" />
+    <wsdl:part name="StartDate" type="s:string" />
+    <wsdl:part name="EndDate" type="s:string" />
+    <wsdl:part name="CardProgram" type="s:string" />
+    <wsdl:part name="TransactionType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Reporting_ByCardHttpGetOut">
+    <wsdl:part name="Body" element="tns:ReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="Reporting_ByTIDHttpGetIn">
+    <wsdl:part name="ClientKey" type="s:string" />
+    <wsdl:part name="TerminalID" type="s:string" />
+    <wsdl:part name="StartDate" type="s:string" />
+    <wsdl:part name="EndDate" type="s:string" />
+    <wsdl:part name="CardProgram" type="s:string" />
+    <wsdl:part name="TransactionType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Reporting_ByTIDHttpGetOut">
+    <wsdl:part name="Body" element="tns:ReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="Reporting_ByLIDHttpGetIn">
+    <wsdl:part name="ClientKey" type="s:string" />
+    <wsdl:part name="LocationID" type="s:string" />
+    <wsdl:part name="StartDate" type="s:string" />
+    <wsdl:part name="EndDate" type="s:string" />
+    <wsdl:part name="CardProgram" type="s:string" />
+    <wsdl:part name="TransactionType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Reporting_ByLIDHttpGetOut">
+    <wsdl:part name="Body" element="tns:ReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="Reporting_ByMIDHttpGetIn">
+    <wsdl:part name="ClientKey" type="s:string" />
+    <wsdl:part name="MerchantID" type="s:string" />
+    <wsdl:part name="StartDate" type="s:string" />
+    <wsdl:part name="EndDate" type="s:string" />
+    <wsdl:part name="CardProgram" type="s:string" />
+    <wsdl:part name="TransactionType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Reporting_ByMIDHttpGetOut">
+    <wsdl:part name="Body" element="tns:ReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_TieAlternateNoHttpPostIn">
+    <wsdl:part name="ClientKey" type="s:string" />
+    <wsdl:part name="TerminalID" type="s:string" />
+    <wsdl:part name="ProgramType" type="s:string" />
+    <wsdl:part name="CardNumber" type="s:string" />
+    <wsdl:part name="PhoneMid" type="s:string" />
+    <wsdl:part name="ServerID" type="s:string" />
+    <wsdl:part name="Identifier" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_TieAlternateNoHttpPostOut">
+    <wsdl:part name="Body" element="tns:TransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_ActivateCardHttpPostIn">
+    <wsdl:part name="ClientKey" type="s:string" />
+    <wsdl:part name="TerminalID" type="s:string" />
+    <wsdl:part name="ProgramType" type="s:string" />
+    <wsdl:part name="CardNumber" type="s:string" />
+    <wsdl:part name="Amount" type="s:string" />
+    <wsdl:part name="ServerID" type="s:string" />
+    <wsdl:part name="Identifier" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_ActivateCardHttpPostOut">
+    <wsdl:part name="Body" element="tns:TransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_AddValueHttpPostIn">
+    <wsdl:part name="ClientKey" type="s:string" />
+    <wsdl:part name="TerminalID" type="s:string" />
+    <wsdl:part name="ProgramType" type="s:string" />
+    <wsdl:part name="CardNumber" type="s:string" />
+    <wsdl:part name="Amount" type="s:string" />
+    <wsdl:part name="ServerID" type="s:string" />
+    <wsdl:part name="Identifier" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_AddValueHttpPostOut">
+    <wsdl:part name="Body" element="tns:TransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_CardBalanceHttpPostIn">
+    <wsdl:part name="ClientKey" type="s:string" />
+    <wsdl:part name="TerminalID" type="s:string" />
+    <wsdl:part name="ProgramType" type="s:string" />
+    <wsdl:part name="CardNumber" type="s:string" />
+    <wsdl:part name="ServerID" type="s:string" />
+    <wsdl:part name="Identifier" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_CardBalanceHttpPostOut">
+    <wsdl:part name="Body" element="tns:TransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_AdjustBalanceHttpPostIn">
+    <wsdl:part name="ClientKey" type="s:string" />
+    <wsdl:part name="TerminalID" type="s:string" />
+    <wsdl:part name="ProgramType" type="s:string" />
+    <wsdl:part name="CardNumber" type="s:string" />
+    <wsdl:part name="Amount" type="s:string" />
+    <wsdl:part name="ServerID" type="s:string" />
+    <wsdl:part name="Identifier" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_AdjustBalanceHttpPostOut">
+    <wsdl:part name="Body" element="tns:TransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_CardlessHttpPostIn">
+    <wsdl:part name="ClientKey" type="s:string" />
+    <wsdl:part name="TerminalID" type="s:string" />
+    <wsdl:part name="Telephone" type="s:string" />
+    <wsdl:part name="Amount" type="s:string" />
+    <wsdl:part name="ServerID" type="s:string" />
+    <wsdl:part name="Identifier" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_CardlessHttpPostOut">
+    <wsdl:part name="Body" element="tns:TransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_CardlessExHttpPostIn">
+    <wsdl:part name="ClientKey" type="s:string" />
+    <wsdl:part name="TerminalID" type="s:string" />
+    <wsdl:part name="CardNumber" type="s:string" />
+    <wsdl:part name="Telephone" type="s:string" />
+    <wsdl:part name="Amount" type="s:string" />
+    <wsdl:part name="ServerID" type="s:string" />
+    <wsdl:part name="Identifier" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_CardlessExHttpPostOut">
+    <wsdl:part name="Body" element="tns:TransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_CashOutHttpPostIn">
+    <wsdl:part name="ClientKey" type="s:string" />
+    <wsdl:part name="TerminalID" type="s:string" />
+    <wsdl:part name="CardNumber" type="s:string" />
+    <wsdl:part name="Amount" type="s:string" />
+    <wsdl:part name="ServerID" type="s:string" />
+    <wsdl:part name="Identifier" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_CashOutHttpPostOut">
+    <wsdl:part name="Body" element="tns:TransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_CreateCardHttpPostIn">
+    <wsdl:part name="ClientKey" type="s:string" />
+    <wsdl:part name="TerminalID" type="s:string" />
+    <wsdl:part name="ProgramType" type="s:string" />
+    <wsdl:part name="CardProgram" type="s:string" />
+    <wsdl:part name="Amount" type="s:string" />
+    <wsdl:part name="ServerID" type="s:string" />
+    <wsdl:part name="Identifier" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_CreateCardHttpPostOut">
+    <wsdl:part name="Body" element="tns:TransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_DeactivateCardHttpPostIn">
+    <wsdl:part name="ClientKey" type="s:string" />
+    <wsdl:part name="TerminalID" type="s:string" />
+    <wsdl:part name="ProgramType" type="s:string" />
+    <wsdl:part name="CardNumber" type="s:string" />
+    <wsdl:part name="ServerID" type="s:string" />
+    <wsdl:part name="Identifier" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_DeactivateCardHttpPostOut">
+    <wsdl:part name="Body" element="tns:TransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_HostTotalsHttpPostIn">
+    <wsdl:part name="ClientKey" type="s:string" />
+    <wsdl:part name="TerminalID" type="s:string" />
+    <wsdl:part name="ProgramType" type="s:string" />
+    <wsdl:part name="TotalType" type="s:string" />
+    <wsdl:part name="ServerID" type="s:string" />
+    <wsdl:part name="Identifier" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_HostTotalsHttpPostOut">
+    <wsdl:part name="Body" element="tns:TransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_ReplaceCardHttpPostIn">
+    <wsdl:part name="ClientKey" type="s:string" />
+    <wsdl:part name="TerminalID" type="s:string" />
+    <wsdl:part name="ProgramType" type="s:string" />
+    <wsdl:part name="OldCard" type="s:string" />
+    <wsdl:part name="CardNumber" type="s:string" />
+    <wsdl:part name="ServerID" type="s:string" />
+    <wsdl:part name="Identifier" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_ReplaceCardHttpPostOut">
+    <wsdl:part name="Body" element="tns:TransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_RestaurantSaleHttpPostIn">
+    <wsdl:part name="ClientKey" type="s:string" />
+    <wsdl:part name="TerminalID" type="s:string" />
+    <wsdl:part name="ProgramType" type="s:string" />
+    <wsdl:part name="CardNumber" type="s:string" />
+    <wsdl:part name="Amount" type="s:string" />
+    <wsdl:part name="TipAmount" type="s:string" />
+    <wsdl:part name="ServerID" type="s:string" />
+    <wsdl:part name="Identifier" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_RestaurantSaleHttpPostOut">
+    <wsdl:part name="Body" element="tns:TransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_SaleHttpPostIn">
+    <wsdl:part name="ClientKey" type="s:string" />
+    <wsdl:part name="TerminalID" type="s:string" />
+    <wsdl:part name="ProgramType" type="s:string" />
+    <wsdl:part name="CardNumber" type="s:string" />
+    <wsdl:part name="Amount" type="s:string" />
+    <wsdl:part name="ServerID" type="s:string" />
+    <wsdl:part name="Identifier" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_SaleHttpPostOut">
+    <wsdl:part name="Body" element="tns:TransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_VoidHttpPostIn">
+    <wsdl:part name="ClientKey" type="s:string" />
+    <wsdl:part name="TerminalID" type="s:string" />
+    <wsdl:part name="ProgramType" type="s:string" />
+    <wsdl:part name="CardNumber" type="s:string" />
+    <wsdl:part name="RequestAuthCode" type="s:string" />
+    <wsdl:part name="ServerID" type="s:string" />
+    <wsdl:part name="Identifier" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_VoidHttpPostOut">
+    <wsdl:part name="Body" element="tns:TransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_ReversalHttpPostIn">
+    <wsdl:part name="ClientKey" type="s:string" />
+    <wsdl:part name="TerminalID" type="s:string" />
+    <wsdl:part name="CardNumber" type="s:string" />
+    <wsdl:part name="RequestIdentifier" type="s:string" />
+    <wsdl:part name="ServerID" type="s:string" />
+    <wsdl:part name="Identifier" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_ReversalHttpPostOut">
+    <wsdl:part name="Body" element="tns:TransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_GenericHttpPostIn">
+    <wsdl:part name="ClientKey" type="s:string" />
+    <wsdl:part name="TerminalID" type="s:string" />
+    <wsdl:part name="ProgramType" type="s:string" />
+    <wsdl:part name="TransactionType" type="s:string" />
+    <wsdl:part name="CardNumber" type="s:string" />
+    <wsdl:part name="Amount" type="s:string" />
+    <wsdl:part name="ServerID" type="s:string" />
+    <wsdl:part name="TipAmount" type="s:string" />
+    <wsdl:part name="RequestAuthCode" type="s:string" />
+    <wsdl:part name="OldCard" type="s:string" />
+    <wsdl:part name="Identifier" type="s:string" />
+    <wsdl:part name="CardProgram" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Transaction_GenericHttpPostOut">
+    <wsdl:part name="Body" element="tns:TransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="Registration_GetHttpPostIn">
+    <wsdl:part name="ClientKey" type="s:string" />
+    <wsdl:part name="TerminalID" type="s:string" />
+    <wsdl:part name="CardNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Registration_GetHttpPostOut">
+    <wsdl:part name="Body" element="tns:CardRegistration" />
+  </wsdl:message>
+  <wsdl:message name="Registration_SetHttpPostIn">
+    <wsdl:part name="ClientKey" type="s:string" />
+    <wsdl:part name="TerminalID" type="s:string" />
+    <wsdl:part name="CardNumber" type="s:string" />
+    <wsdl:part name="Name" type="s:string" />
+    <wsdl:part name="Address1" type="s:string" />
+    <wsdl:part name="Address2" type="s:string" />
+    <wsdl:part name="City" type="s:string" />
+    <wsdl:part name="State" type="s:string" />
+    <wsdl:part name="Zip" type="s:string" />
+    <wsdl:part name="Telephone" type="s:string" />
+    <wsdl:part name="EmailAddress" type="s:string" />
+    <wsdl:part name="DateOfBirth" type="s:string" />
+    <wsdl:part name="Misc1" type="s:string" />
+    <wsdl:part name="Misc2" type="s:string" />
+    <wsdl:part name="Misc3" type="s:string" />
+    <wsdl:part name="Misc4" type="s:string" />
+    <wsdl:part name="Misc5" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Registration_SetHttpPostOut">
+    <wsdl:part name="Body" element="tns:CardRegistration" />
+  </wsdl:message>
+  <wsdl:message name="Registration_SetExHttpPostIn">
+    <wsdl:part name="ClientKey" type="s:string" />
+    <wsdl:part name="TerminalID" type="s:string" />
+    <wsdl:part name="CardNumber" type="s:string" />
+    <wsdl:part name="Name" type="s:string" />
+    <wsdl:part name="Address1" type="s:string" />
+    <wsdl:part name="Address2" type="s:string" />
+    <wsdl:part name="City" type="s:string" />
+    <wsdl:part name="State" type="s:string" />
+    <wsdl:part name="Zip" type="s:string" />
+    <wsdl:part name="Telephone" type="s:string" />
+    <wsdl:part name="EmailAddress" type="s:string" />
+    <wsdl:part name="DateOfBirth" type="s:string" />
+    <wsdl:part name="Misc1" type="s:string" />
+    <wsdl:part name="Misc2" type="s:string" />
+    <wsdl:part name="Misc3" type="s:string" />
+    <wsdl:part name="Misc4" type="s:string" />
+    <wsdl:part name="Misc5" type="s:string" />
+    <wsdl:part name="Misc6" type="s:string" />
+    <wsdl:part name="Misc7" type="s:string" />
+    <wsdl:part name="Misc8" type="s:string" />
+    <wsdl:part name="Misc9" type="s:string" />
+    <wsdl:part name="Misc10" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Registration_SetExHttpPostOut">
+    <wsdl:part name="Body" element="tns:CardRegistration" />
+  </wsdl:message>
+  <wsdl:message name="SurveyAnswers_SetHttpPostIn">
+    <wsdl:part name="ClientKey" type="s:string" />
+    <wsdl:part name="CardNumber" type="s:string" />
+    <wsdl:part name="Answer1" type="s:string" />
+    <wsdl:part name="Answer2" type="s:string" />
+    <wsdl:part name="Answer3" type="s:string" />
+    <wsdl:part name="Answer4" type="s:string" />
+    <wsdl:part name="Answer5" type="s:string" />
+    <wsdl:part name="Answer6" type="s:string" />
+    <wsdl:part name="Answer7" type="s:string" />
+    <wsdl:part name="Answer8" type="s:string" />
+    <wsdl:part name="Answer9" type="s:string" />
+    <wsdl:part name="Answer10" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SurveyAnswers_SetHttpPostOut">
+    <wsdl:part name="Body" element="tns:SurveyResponse" />
+  </wsdl:message>
+  <wsdl:message name="SurveyAnswers_GetHttpPostIn">
+    <wsdl:part name="ClientKey" type="s:string" />
+    <wsdl:part name="CardNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SurveyAnswers_GetHttpPostOut">
+    <wsdl:part name="Body" element="tns:SurveyResponse" />
+  </wsdl:message>
+  <wsdl:message name="Reporting_ByCardHttpPostIn">
+    <wsdl:part name="ClientKey" type="s:string" />
+    <wsdl:part name="CardNumber" type="s:string" />
+    <wsdl:part name="StartDate" type="s:string" />
+    <wsdl:part name="EndDate" type="s:string" />
+    <wsdl:part name="CardProgram" type="s:string" />
+    <wsdl:part name="TransactionType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Reporting_ByCardHttpPostOut">
+    <wsdl:part name="Body" element="tns:ReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="Reporting_ByTIDHttpPostIn">
+    <wsdl:part name="ClientKey" type="s:string" />
+    <wsdl:part name="TerminalID" type="s:string" />
+    <wsdl:part name="StartDate" type="s:string" />
+    <wsdl:part name="EndDate" type="s:string" />
+    <wsdl:part name="CardProgram" type="s:string" />
+    <wsdl:part name="TransactionType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Reporting_ByTIDHttpPostOut">
+    <wsdl:part name="Body" element="tns:ReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="Reporting_ByLIDHttpPostIn">
+    <wsdl:part name="ClientKey" type="s:string" />
+    <wsdl:part name="LocationID" type="s:string" />
+    <wsdl:part name="StartDate" type="s:string" />
+    <wsdl:part name="EndDate" type="s:string" />
+    <wsdl:part name="CardProgram" type="s:string" />
+    <wsdl:part name="TransactionType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Reporting_ByLIDHttpPostOut">
+    <wsdl:part name="Body" element="tns:ReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="Reporting_ByMIDHttpPostIn">
+    <wsdl:part name="ClientKey" type="s:string" />
+    <wsdl:part name="MerchantID" type="s:string" />
+    <wsdl:part name="StartDate" type="s:string" />
+    <wsdl:part name="EndDate" type="s:string" />
+    <wsdl:part name="CardProgram" type="s:string" />
+    <wsdl:part name="TransactionType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Reporting_ByMIDHttpPostOut">
+    <wsdl:part name="Body" element="tns:ReportResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ValutecWSSoap">
+    <wsdl:operation name="Transaction_TieAlternateNo">
+      <wsdl:input message="tns:Transaction_TieAlternateNoSoapIn" />
+      <wsdl:output message="tns:Transaction_TieAlternateNoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_ActivateCard">
+      <wsdl:input message="tns:Transaction_ActivateCardSoapIn" />
+      <wsdl:output message="tns:Transaction_ActivateCardSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_AddValue">
+      <wsdl:input message="tns:Transaction_AddValueSoapIn" />
+      <wsdl:output message="tns:Transaction_AddValueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_CardBalance">
+      <wsdl:input message="tns:Transaction_CardBalanceSoapIn" />
+      <wsdl:output message="tns:Transaction_CardBalanceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_AdjustBalance">
+      <wsdl:input message="tns:Transaction_AdjustBalanceSoapIn" />
+      <wsdl:output message="tns:Transaction_AdjustBalanceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_Cardless">
+      <wsdl:input message="tns:Transaction_CardlessSoapIn" />
+      <wsdl:output message="tns:Transaction_CardlessSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_CardlessEx">
+      <wsdl:input message="tns:Transaction_CardlessExSoapIn" />
+      <wsdl:output message="tns:Transaction_CardlessExSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_CashOut">
+      <wsdl:input message="tns:Transaction_CashOutSoapIn" />
+      <wsdl:output message="tns:Transaction_CashOutSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_CreateCard">
+      <wsdl:input message="tns:Transaction_CreateCardSoapIn" />
+      <wsdl:output message="tns:Transaction_CreateCardSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_DeactivateCard">
+      <wsdl:input message="tns:Transaction_DeactivateCardSoapIn" />
+      <wsdl:output message="tns:Transaction_DeactivateCardSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_HostTotals">
+      <wsdl:input message="tns:Transaction_HostTotalsSoapIn" />
+      <wsdl:output message="tns:Transaction_HostTotalsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_ReplaceCard">
+      <wsdl:input message="tns:Transaction_ReplaceCardSoapIn" />
+      <wsdl:output message="tns:Transaction_ReplaceCardSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_RestaurantSale">
+      <wsdl:input message="tns:Transaction_RestaurantSaleSoapIn" />
+      <wsdl:output message="tns:Transaction_RestaurantSaleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_Sale">
+      <wsdl:input message="tns:Transaction_SaleSoapIn" />
+      <wsdl:output message="tns:Transaction_SaleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_Void">
+      <wsdl:input message="tns:Transaction_VoidSoapIn" />
+      <wsdl:output message="tns:Transaction_VoidSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_Reversal">
+      <wsdl:input message="tns:Transaction_ReversalSoapIn" />
+      <wsdl:output message="tns:Transaction_ReversalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_Generic">
+      <wsdl:input message="tns:Transaction_GenericSoapIn" />
+      <wsdl:output message="tns:Transaction_GenericSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Registration_Get">
+      <wsdl:input message="tns:Registration_GetSoapIn" />
+      <wsdl:output message="tns:Registration_GetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Registration_Set">
+      <wsdl:input message="tns:Registration_SetSoapIn" />
+      <wsdl:output message="tns:Registration_SetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Registration_SetEx">
+      <wsdl:input message="tns:Registration_SetExSoapIn" />
+      <wsdl:output message="tns:Registration_SetExSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SurveyAnswers_Set">
+      <wsdl:input message="tns:SurveyAnswers_SetSoapIn" />
+      <wsdl:output message="tns:SurveyAnswers_SetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SurveyAnswers_Get">
+      <wsdl:input message="tns:SurveyAnswers_GetSoapIn" />
+      <wsdl:output message="tns:SurveyAnswers_GetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Reporting_ByCard">
+      <wsdl:input message="tns:Reporting_ByCardSoapIn" />
+      <wsdl:output message="tns:Reporting_ByCardSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Reporting_ByTID">
+      <wsdl:input message="tns:Reporting_ByTIDSoapIn" />
+      <wsdl:output message="tns:Reporting_ByTIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Reporting_ByLID">
+      <wsdl:input message="tns:Reporting_ByLIDSoapIn" />
+      <wsdl:output message="tns:Reporting_ByLIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Reporting_ByMID">
+      <wsdl:input message="tns:Reporting_ByMIDSoapIn" />
+      <wsdl:output message="tns:Reporting_ByMIDSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ValutecWSHttpGet">
+    <wsdl:operation name="Transaction_TieAlternateNo">
+      <wsdl:input message="tns:Transaction_TieAlternateNoHttpGetIn" />
+      <wsdl:output message="tns:Transaction_TieAlternateNoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_ActivateCard">
+      <wsdl:input message="tns:Transaction_ActivateCardHttpGetIn" />
+      <wsdl:output message="tns:Transaction_ActivateCardHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_AddValue">
+      <wsdl:input message="tns:Transaction_AddValueHttpGetIn" />
+      <wsdl:output message="tns:Transaction_AddValueHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_CardBalance">
+      <wsdl:input message="tns:Transaction_CardBalanceHttpGetIn" />
+      <wsdl:output message="tns:Transaction_CardBalanceHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_AdjustBalance">
+      <wsdl:input message="tns:Transaction_AdjustBalanceHttpGetIn" />
+      <wsdl:output message="tns:Transaction_AdjustBalanceHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_Cardless">
+      <wsdl:input message="tns:Transaction_CardlessHttpGetIn" />
+      <wsdl:output message="tns:Transaction_CardlessHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_CardlessEx">
+      <wsdl:input message="tns:Transaction_CardlessExHttpGetIn" />
+      <wsdl:output message="tns:Transaction_CardlessExHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_CashOut">
+      <wsdl:input message="tns:Transaction_CashOutHttpGetIn" />
+      <wsdl:output message="tns:Transaction_CashOutHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_CreateCard">
+      <wsdl:input message="tns:Transaction_CreateCardHttpGetIn" />
+      <wsdl:output message="tns:Transaction_CreateCardHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_DeactivateCard">
+      <wsdl:input message="tns:Transaction_DeactivateCardHttpGetIn" />
+      <wsdl:output message="tns:Transaction_DeactivateCardHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_HostTotals">
+      <wsdl:input message="tns:Transaction_HostTotalsHttpGetIn" />
+      <wsdl:output message="tns:Transaction_HostTotalsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_ReplaceCard">
+      <wsdl:input message="tns:Transaction_ReplaceCardHttpGetIn" />
+      <wsdl:output message="tns:Transaction_ReplaceCardHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_RestaurantSale">
+      <wsdl:input message="tns:Transaction_RestaurantSaleHttpGetIn" />
+      <wsdl:output message="tns:Transaction_RestaurantSaleHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_Sale">
+      <wsdl:input message="tns:Transaction_SaleHttpGetIn" />
+      <wsdl:output message="tns:Transaction_SaleHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_Void">
+      <wsdl:input message="tns:Transaction_VoidHttpGetIn" />
+      <wsdl:output message="tns:Transaction_VoidHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_Reversal">
+      <wsdl:input message="tns:Transaction_ReversalHttpGetIn" />
+      <wsdl:output message="tns:Transaction_ReversalHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_Generic">
+      <wsdl:input message="tns:Transaction_GenericHttpGetIn" />
+      <wsdl:output message="tns:Transaction_GenericHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Registration_Get">
+      <wsdl:input message="tns:Registration_GetHttpGetIn" />
+      <wsdl:output message="tns:Registration_GetHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Registration_Set">
+      <wsdl:input message="tns:Registration_SetHttpGetIn" />
+      <wsdl:output message="tns:Registration_SetHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Registration_SetEx">
+      <wsdl:input message="tns:Registration_SetExHttpGetIn" />
+      <wsdl:output message="tns:Registration_SetExHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SurveyAnswers_Set">
+      <wsdl:input message="tns:SurveyAnswers_SetHttpGetIn" />
+      <wsdl:output message="tns:SurveyAnswers_SetHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SurveyAnswers_Get">
+      <wsdl:input message="tns:SurveyAnswers_GetHttpGetIn" />
+      <wsdl:output message="tns:SurveyAnswers_GetHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Reporting_ByCard">
+      <wsdl:input message="tns:Reporting_ByCardHttpGetIn" />
+      <wsdl:output message="tns:Reporting_ByCardHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Reporting_ByTID">
+      <wsdl:input message="tns:Reporting_ByTIDHttpGetIn" />
+      <wsdl:output message="tns:Reporting_ByTIDHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Reporting_ByLID">
+      <wsdl:input message="tns:Reporting_ByLIDHttpGetIn" />
+      <wsdl:output message="tns:Reporting_ByLIDHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Reporting_ByMID">
+      <wsdl:input message="tns:Reporting_ByMIDHttpGetIn" />
+      <wsdl:output message="tns:Reporting_ByMIDHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ValutecWSHttpPost">
+    <wsdl:operation name="Transaction_TieAlternateNo">
+      <wsdl:input message="tns:Transaction_TieAlternateNoHttpPostIn" />
+      <wsdl:output message="tns:Transaction_TieAlternateNoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_ActivateCard">
+      <wsdl:input message="tns:Transaction_ActivateCardHttpPostIn" />
+      <wsdl:output message="tns:Transaction_ActivateCardHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_AddValue">
+      <wsdl:input message="tns:Transaction_AddValueHttpPostIn" />
+      <wsdl:output message="tns:Transaction_AddValueHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_CardBalance">
+      <wsdl:input message="tns:Transaction_CardBalanceHttpPostIn" />
+      <wsdl:output message="tns:Transaction_CardBalanceHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_AdjustBalance">
+      <wsdl:input message="tns:Transaction_AdjustBalanceHttpPostIn" />
+      <wsdl:output message="tns:Transaction_AdjustBalanceHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_Cardless">
+      <wsdl:input message="tns:Transaction_CardlessHttpPostIn" />
+      <wsdl:output message="tns:Transaction_CardlessHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_CardlessEx">
+      <wsdl:input message="tns:Transaction_CardlessExHttpPostIn" />
+      <wsdl:output message="tns:Transaction_CardlessExHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_CashOut">
+      <wsdl:input message="tns:Transaction_CashOutHttpPostIn" />
+      <wsdl:output message="tns:Transaction_CashOutHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_CreateCard">
+      <wsdl:input message="tns:Transaction_CreateCardHttpPostIn" />
+      <wsdl:output message="tns:Transaction_CreateCardHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_DeactivateCard">
+      <wsdl:input message="tns:Transaction_DeactivateCardHttpPostIn" />
+      <wsdl:output message="tns:Transaction_DeactivateCardHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_HostTotals">
+      <wsdl:input message="tns:Transaction_HostTotalsHttpPostIn" />
+      <wsdl:output message="tns:Transaction_HostTotalsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_ReplaceCard">
+      <wsdl:input message="tns:Transaction_ReplaceCardHttpPostIn" />
+      <wsdl:output message="tns:Transaction_ReplaceCardHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_RestaurantSale">
+      <wsdl:input message="tns:Transaction_RestaurantSaleHttpPostIn" />
+      <wsdl:output message="tns:Transaction_RestaurantSaleHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_Sale">
+      <wsdl:input message="tns:Transaction_SaleHttpPostIn" />
+      <wsdl:output message="tns:Transaction_SaleHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_Void">
+      <wsdl:input message="tns:Transaction_VoidHttpPostIn" />
+      <wsdl:output message="tns:Transaction_VoidHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_Reversal">
+      <wsdl:input message="tns:Transaction_ReversalHttpPostIn" />
+      <wsdl:output message="tns:Transaction_ReversalHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_Generic">
+      <wsdl:input message="tns:Transaction_GenericHttpPostIn" />
+      <wsdl:output message="tns:Transaction_GenericHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Registration_Get">
+      <wsdl:input message="tns:Registration_GetHttpPostIn" />
+      <wsdl:output message="tns:Registration_GetHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Registration_Set">
+      <wsdl:input message="tns:Registration_SetHttpPostIn" />
+      <wsdl:output message="tns:Registration_SetHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Registration_SetEx">
+      <wsdl:input message="tns:Registration_SetExHttpPostIn" />
+      <wsdl:output message="tns:Registration_SetExHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SurveyAnswers_Set">
+      <wsdl:input message="tns:SurveyAnswers_SetHttpPostIn" />
+      <wsdl:output message="tns:SurveyAnswers_SetHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SurveyAnswers_Get">
+      <wsdl:input message="tns:SurveyAnswers_GetHttpPostIn" />
+      <wsdl:output message="tns:SurveyAnswers_GetHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Reporting_ByCard">
+      <wsdl:input message="tns:Reporting_ByCardHttpPostIn" />
+      <wsdl:output message="tns:Reporting_ByCardHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Reporting_ByTID">
+      <wsdl:input message="tns:Reporting_ByTIDHttpPostIn" />
+      <wsdl:output message="tns:Reporting_ByTIDHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Reporting_ByLID">
+      <wsdl:input message="tns:Reporting_ByLIDHttpPostIn" />
+      <wsdl:output message="tns:Reporting_ByLIDHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Reporting_ByMID">
+      <wsdl:input message="tns:Reporting_ByMIDHttpPostIn" />
+      <wsdl:output message="tns:Reporting_ByMIDHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ValutecWSSoap" type="tns:ValutecWSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Transaction_TieAlternateNo">
+      <soap:operation soapAction="https://ws.valutec.net/Transaction_TieAlternateNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_ActivateCard">
+      <soap:operation soapAction="https://ws.valutec.net/Transaction_ActivateCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_AddValue">
+      <soap:operation soapAction="https://ws.valutec.net/Transaction_AddValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_CardBalance">
+      <soap:operation soapAction="https://ws.valutec.net/Transaction_CardBalance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_AdjustBalance">
+      <soap:operation soapAction="https://ws.valutec.net/Transaction_AdjustBalance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_Cardless">
+      <soap:operation soapAction="https://ws.valutec.net/Transaction_Cardless" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_CardlessEx">
+      <soap:operation soapAction="https://ws.valutec.net/Transaction_CardlessEx" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_CashOut">
+      <soap:operation soapAction="https://ws.valutec.net/Transaction_CashOut" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_CreateCard">
+      <soap:operation soapAction="https://ws.valutec.net/Transaction_CreateCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_DeactivateCard">
+      <soap:operation soapAction="https://ws.valutec.net/Transaction_DeactivateCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_HostTotals">
+      <soap:operation soapAction="https://ws.valutec.net/Transaction_HostTotals" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_ReplaceCard">
+      <soap:operation soapAction="https://ws.valutec.net/Transaction_ReplaceCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_RestaurantSale">
+      <soap:operation soapAction="https://ws.valutec.net/Transaction_RestaurantSale" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_Sale">
+      <soap:operation soapAction="https://ws.valutec.net/Transaction_Sale" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_Void">
+      <soap:operation soapAction="https://ws.valutec.net/Transaction_Void" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_Reversal">
+      <soap:operation soapAction="https://ws.valutec.net/Transaction_Reversal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_Generic">
+      <soap:operation soapAction="https://ws.valutec.net/Transaction_Generic" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Registration_Get">
+      <soap:operation soapAction="https://ws.valutec.net/Registration_Get" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Registration_Set">
+      <soap:operation soapAction="https://ws.valutec.net/Registration_Set" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Registration_SetEx">
+      <soap:operation soapAction="https://ws.valutec.net/Registration_SetEx" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SurveyAnswers_Set">
+      <soap:operation soapAction="https://ws.valutec.net/SurveyAnswers_Set" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SurveyAnswers_Get">
+      <soap:operation soapAction="https://ws.valutec.net/SurveyAnswers_Get" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Reporting_ByCard">
+      <soap:operation soapAction="https://ws.valutec.net/Reporting_ByCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Reporting_ByTID">
+      <soap:operation soapAction="https://ws.valutec.net/Reporting_ByTID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Reporting_ByLID">
+      <soap:operation soapAction="https://ws.valutec.net/Reporting_ByLID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Reporting_ByMID">
+      <soap:operation soapAction="https://ws.valutec.net/Reporting_ByMID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ValutecWSSoap12" type="tns:ValutecWSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Transaction_TieAlternateNo">
+      <soap12:operation soapAction="https://ws.valutec.net/Transaction_TieAlternateNo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_ActivateCard">
+      <soap12:operation soapAction="https://ws.valutec.net/Transaction_ActivateCard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_AddValue">
+      <soap12:operation soapAction="https://ws.valutec.net/Transaction_AddValue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_CardBalance">
+      <soap12:operation soapAction="https://ws.valutec.net/Transaction_CardBalance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_AdjustBalance">
+      <soap12:operation soapAction="https://ws.valutec.net/Transaction_AdjustBalance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_Cardless">
+      <soap12:operation soapAction="https://ws.valutec.net/Transaction_Cardless" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_CardlessEx">
+      <soap12:operation soapAction="https://ws.valutec.net/Transaction_CardlessEx" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_CashOut">
+      <soap12:operation soapAction="https://ws.valutec.net/Transaction_CashOut" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_CreateCard">
+      <soap12:operation soapAction="https://ws.valutec.net/Transaction_CreateCard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_DeactivateCard">
+      <soap12:operation soapAction="https://ws.valutec.net/Transaction_DeactivateCard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_HostTotals">
+      <soap12:operation soapAction="https://ws.valutec.net/Transaction_HostTotals" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_ReplaceCard">
+      <soap12:operation soapAction="https://ws.valutec.net/Transaction_ReplaceCard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_RestaurantSale">
+      <soap12:operation soapAction="https://ws.valutec.net/Transaction_RestaurantSale" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_Sale">
+      <soap12:operation soapAction="https://ws.valutec.net/Transaction_Sale" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_Void">
+      <soap12:operation soapAction="https://ws.valutec.net/Transaction_Void" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_Reversal">
+      <soap12:operation soapAction="https://ws.valutec.net/Transaction_Reversal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_Generic">
+      <soap12:operation soapAction="https://ws.valutec.net/Transaction_Generic" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Registration_Get">
+      <soap12:operation soapAction="https://ws.valutec.net/Registration_Get" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Registration_Set">
+      <soap12:operation soapAction="https://ws.valutec.net/Registration_Set" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Registration_SetEx">
+      <soap12:operation soapAction="https://ws.valutec.net/Registration_SetEx" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SurveyAnswers_Set">
+      <soap12:operation soapAction="https://ws.valutec.net/SurveyAnswers_Set" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SurveyAnswers_Get">
+      <soap12:operation soapAction="https://ws.valutec.net/SurveyAnswers_Get" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Reporting_ByCard">
+      <soap12:operation soapAction="https://ws.valutec.net/Reporting_ByCard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Reporting_ByTID">
+      <soap12:operation soapAction="https://ws.valutec.net/Reporting_ByTID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Reporting_ByLID">
+      <soap12:operation soapAction="https://ws.valutec.net/Reporting_ByLID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Reporting_ByMID">
+      <soap12:operation soapAction="https://ws.valutec.net/Reporting_ByMID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ValutecWSHttpGet" type="tns:ValutecWSHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="Transaction_TieAlternateNo">
+      <http:operation location="/Transaction_TieAlternateNo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_ActivateCard">
+      <http:operation location="/Transaction_ActivateCard" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_AddValue">
+      <http:operation location="/Transaction_AddValue" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_CardBalance">
+      <http:operation location="/Transaction_CardBalance" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_AdjustBalance">
+      <http:operation location="/Transaction_AdjustBalance" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_Cardless">
+      <http:operation location="/Transaction_Cardless" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_CardlessEx">
+      <http:operation location="/Transaction_CardlessEx" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_CashOut">
+      <http:operation location="/Transaction_CashOut" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_CreateCard">
+      <http:operation location="/Transaction_CreateCard" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_DeactivateCard">
+      <http:operation location="/Transaction_DeactivateCard" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_HostTotals">
+      <http:operation location="/Transaction_HostTotals" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_ReplaceCard">
+      <http:operation location="/Transaction_ReplaceCard" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_RestaurantSale">
+      <http:operation location="/Transaction_RestaurantSale" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_Sale">
+      <http:operation location="/Transaction_Sale" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_Void">
+      <http:operation location="/Transaction_Void" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_Reversal">
+      <http:operation location="/Transaction_Reversal" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_Generic">
+      <http:operation location="/Transaction_Generic" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Registration_Get">
+      <http:operation location="/Registration_Get" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Registration_Set">
+      <http:operation location="/Registration_Set" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Registration_SetEx">
+      <http:operation location="/Registration_SetEx" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SurveyAnswers_Set">
+      <http:operation location="/SurveyAnswers_Set" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SurveyAnswers_Get">
+      <http:operation location="/SurveyAnswers_Get" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Reporting_ByCard">
+      <http:operation location="/Reporting_ByCard" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Reporting_ByTID">
+      <http:operation location="/Reporting_ByTID" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Reporting_ByLID">
+      <http:operation location="/Reporting_ByLID" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Reporting_ByMID">
+      <http:operation location="/Reporting_ByMID" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ValutecWSHttpPost" type="tns:ValutecWSHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="Transaction_TieAlternateNo">
+      <http:operation location="/Transaction_TieAlternateNo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_ActivateCard">
+      <http:operation location="/Transaction_ActivateCard" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_AddValue">
+      <http:operation location="/Transaction_AddValue" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_CardBalance">
+      <http:operation location="/Transaction_CardBalance" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_AdjustBalance">
+      <http:operation location="/Transaction_AdjustBalance" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_Cardless">
+      <http:operation location="/Transaction_Cardless" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_CardlessEx">
+      <http:operation location="/Transaction_CardlessEx" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_CashOut">
+      <http:operation location="/Transaction_CashOut" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_CreateCard">
+      <http:operation location="/Transaction_CreateCard" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_DeactivateCard">
+      <http:operation location="/Transaction_DeactivateCard" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_HostTotals">
+      <http:operation location="/Transaction_HostTotals" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_ReplaceCard">
+      <http:operation location="/Transaction_ReplaceCard" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_RestaurantSale">
+      <http:operation location="/Transaction_RestaurantSale" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_Sale">
+      <http:operation location="/Transaction_Sale" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_Void">
+      <http:operation location="/Transaction_Void" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_Reversal">
+      <http:operation location="/Transaction_Reversal" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transaction_Generic">
+      <http:operation location="/Transaction_Generic" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Registration_Get">
+      <http:operation location="/Registration_Get" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Registration_Set">
+      <http:operation location="/Registration_Set" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Registration_SetEx">
+      <http:operation location="/Registration_SetEx" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SurveyAnswers_Set">
+      <http:operation location="/SurveyAnswers_Set" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SurveyAnswers_Get">
+      <http:operation location="/SurveyAnswers_Get" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Reporting_ByCard">
+      <http:operation location="/Reporting_ByCard" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Reporting_ByTID">
+      <http:operation location="/Reporting_ByTID" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Reporting_ByLID">
+      <http:operation location="/Reporting_ByLID" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Reporting_ByMID">
+      <http:operation location="/Reporting_ByMID" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ValutecWS">
+    <wsdl:port name="ValutecWSSoap" binding="tns:ValutecWSSoap">
+      <soap:address location="https://ws.valutec.net/Valutec.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ValutecWSSoap12" binding="tns:ValutecWSSoap12">
+      <soap12:address location="https://ws.valutec.net/Valutec.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ValutecWSHttpGet" binding="tns:ValutecWSHttpGet">
+      <http:address location="https://ws.valutec.net/Valutec.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ValutecWSHttpPost" binding="tns:ValutecWSHttpPost">
+      <http:address location="https://ws.valutec.net/Valutec.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

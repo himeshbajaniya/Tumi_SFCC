@@ -1,0 +1,22 @@
+<div class="card-body">
+    <div class="location-type"><span class="caption">Location Type: </span> <span><img class="locator-marker left ctnr-locator-image removeFocusIndicator" src="${URLUtils.staticURL('/images/tumiStore.png')}"
+                alt="${Resource.msg('global.find.store', 'common', null)}" /> Store</span> <span><img class="locator-marker left ctnr-locator-image removeFocusIndicator" src="${URLUtils.staticURL('/images/tumiOutlets.png')}"
+                alt="${Resource.msg('global.find.store', 'common', null)}" /> Outlet</span> <span><img class="locator-marker left ctnr-locator-image removeFocusIndicator" src="${URLUtils.staticURL('/images/tumiRetailers.png')}"
+                alt="${Resource.msg('global.find.store', 'common', null)}" /> Retail</span></div>
+    <a type="submit" class="button button--primary detect-location w-100" data-action="${pdict.stores.actionUrl}">
+        ${Resource.msg('button.use.my.location','storeLocator',null)}
+    </a>
+    <form action="${pdict.stores.actionUrl}" class="store-locator" method="get" name="storelocator">
+        <div class="form-group required">
+           <input type="hidden" id="storeSearchRadius"
+                value="${'storeLookupMaxDistance' in dw.system.Site.getCurrent().getPreferences().getCustom() ? dw.system.Site.getCurrent()
+                       .getCustomPreferenceValue('storeLookupMaxDistance') : 50}" />
+            <input autofocus type="text" class="form-control" id="store-postal-code" name="postalCode" placeholder="Postal Code / City" value="" autocomplete="nofill" required>
+            <label class="form-control-label" for="store-postal-code">${Resource.msg('label.choose.your.location','storeLocator',null)}</label>
+            <div class="invalid-feedback"></div>
+        </div>
+        <button class="btn-block button button--secondary w-100 btn-block btn-storelocator-search" type="submit">
+            ${Resource.msg('button.find.stores','storeLocator',null)}
+        </button>
+    </form>
+</div>

@@ -1,0 +1,16 @@
+body {
+    .edq-global-intuitive-address-suggestions {
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+        border: 1px solid var(--color-grey2);
+        margin-top: -2px;
+        max-height: 260px;
+    }
+
+    .edq-global-intuitive-address-suggestion {
+        border-bottom-width: 0;
+        font-size: 15px;
+        line-height: 26px;
+        margin: 23px 14px;
+        color: var(--color-grey1);
+    }
+}

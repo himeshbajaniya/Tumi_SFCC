@@ -1,0 +1,24 @@
+<isset name="existingallpayments" value="${pdict.payment ? pdict.payment : payment}" scope="page" />
+<isloop items="${existingallpayments.selectedPaymentInstruments}" var="selectedpyament" status="paymentstatus">
+    <isif condition="${selectedpyament.paymentMethod === 'GIFT_CERTIFICATE'}">
+        <div class="gc-details-card" data-puuid="${selectedpyament.uuid}">
+            <div class="gc-detail">
+                <div class="d-flex">
+                    <p class="gc-detail-label">
+                        <isprint value="${Resource.msg('label.giftcard.applied', 'giftcard', null)}" />
+                    </p>
+                    <p class="gc-detail-currency">
+                        <isprint value="${session.currency.symbol + selectedpyament.amount}" />
+                    </p>
+                </div>
+                <p class="gc-number">
+                    <isprint value="${'#' + selectedpyament.giftCertificateCode}" />
+                </p>
+            </div>
+            <div class="gc-remove">
+                <a href="${URLUtils.url('GiftCard-RemoveGiftCard')}">${Resource.msg('label.giftcard.remove', 'giftcard', null)}
+                </a>
+            </div>
+        </div>
+    </isif>
+</isloop>

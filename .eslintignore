@@ -1,0 +1,10 @@
+cartridges/app_storefront_base/cartridge/static/
+coverage/
+doc/
+bin/
+codecept.conf.js
+cartridges/bm_app_storefront_base/cartridge/static/
+storefront-reference-architecture/test/
+
+integrations/link_experiancbu-master/cartridge/int_experian_sfra/cartridge/static/
+integrations/link_klarnapayments

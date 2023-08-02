@@ -1,0 +1,62 @@
+{
+  "customer_id": {
+    "property": "CustomerId",
+    "required": true
+  },
+  "email": {
+    "property": "Email",
+    "required": true
+  },
+  "firstName": {
+    "property": "FirstName",
+    "required": false
+  },
+  "lastName": {
+    "property": "LastName",
+    "required": false
+  },
+  "dateOfBirth": {
+    "property": "Birthday",
+    "required": false
+  },
+  "creationTime": {
+    "property": "CreationDate",
+    "required": false
+  },
+  "accountDeactivationDate": {
+    "property": "AccountDeactivationDate",
+    "required": false
+  },
+  "monogramText": {
+    "property": "MonogramText",
+    "required": false
+  },
+  "sms_Preference": {
+    "property": "SMSPreference",
+    "required": false
+  },
+  "email_preference": {
+    "property": "EmailPreference",
+    "required": false
+  },
+  "monogramAddedDate": {
+    "property": "MonogramAddedDate",
+    "required": false
+  },
+  "fontColor": {
+    "property": "FontColor",
+    "required": false
+  },
+  "fontStyle": {
+    "property": "FontStyle",
+    "required": false
+  },
+  "socialUserId": {
+    "property": "SocialUserId",
+    "required": false
+  },
+  "preferredStore": {
+    "property": "StoreId",
+    "required": false
+  }
+}

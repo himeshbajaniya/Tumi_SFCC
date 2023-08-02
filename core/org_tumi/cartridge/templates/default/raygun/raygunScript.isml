@@ -1,0 +1,3 @@
+<isif condition="${dw.system.Site.getCurrent().getCustomPreferenceValue('enableRaygun')}">
+    <isprint value="${dw.system.Site.getCurrent().getCustomPreferenceValue('raygunScript')}" encoding="off"  />
+</isif>

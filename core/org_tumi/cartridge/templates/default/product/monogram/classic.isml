@@ -1,0 +1,201 @@
+<form class="monogram-form d-none ${monogram.placementOption}">
+    <div class="modal-title">${Resource.msg('product.monogram.embossed', 'product', null)}</div>
+    <ul class="nav nav-tabs nav-fill monogram-option-tab" id="monogramOptionsTab" role="tablist">
+        <isset name="isActivePatch" value="${monogram.placementOption === 'classic-both' || monogram.placementOption === 'classic-patch'}" scope="page"/>
+        <isset name="isActiveTag" value="${monogram.placementOption === 'classic-tag'}" scope="page"/>
+        <li class="nav-item">
+            <a class="nav-link${isActivePatch ? ' active' : ''}" id="path-tab-${product.UUID || product.uuid}" data-toggle="tab" href="${'#viewpatch-' + (product.UUID || product.uuid)}" role="tab"
+                aria-controls="viewpatch" aria-selected="false">
+                ${Resource.msg('product.monogram.view.patch', 'product', null)}</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link${isActiveTag ? ' active' : ''}" id="view-tag-${product.UUID || product.uuid}" data-toggle="tab" href="${'#viewtag-' + (product.UUID || product.uuid)}" role="tab" aria-controls="viewtag"
+                aria-selected="false">
+                ${Resource.msg('product.monogram.view.tag', 'product', null)}</a>
+        </li>
+    </ul>
+    <div class="tab-content" id="monogramTabContent">
+        <isset name="labelA"
+            value="${!empty(monogram.monogramLineItem) && !empty(monogram.monogramLineItem.character) && monogram.monogramLineItem.character !== 'undefined' && !empty(monogram.monogramLineItem.character[0]) ? monogram.monogramLineItem.character.split(' ')[0] : ''}"
+            scope="page"/>
+        <isset name="labelB"
+            value="${!empty(monogram.monogramLineItem) && !empty(monogram.monogramLineItem.character) && monogram.monogramLineItem.character !== 'undefined' && !empty(monogram.monogramLineItem.character[1]) ? monogram.monogramLineItem.character.split(' ')[1] : ''}"
+            scope="page"/>
+        <isset name="labelC"
+            value="${!empty(monogram.monogramLineItem) && !empty(monogram.monogramLineItem.character) && monogram.monogramLineItem.character !== 'undefined' && !empty(monogram.monogramLineItem.character[2]) ? monogram.monogramLineItem.character.split(' ')[2] : ''}"
+            scope="page"/>
+        <isset name="labelA2" value="${labelA.replace(/[\(\)]/g, '')}" scope="page"/>
+        <isset name="labelB2" value="${labelB.replace(/[\(\)]/g, '')}" scope="page"/>
+        <isset name="labelC2" value="${labelC.replace(/[\(\)]/g, '')}" scope="page"/>
+        <isset name="font"
+            value="${!empty(monogram.monogramLineItem) && !empty(monogram.monogramLineItem.font) && (monogram.monogramLineItem.font !== 'undefined') ? monogram.monogramLineItem.font : ''}"
+            scope="page"/>
+        <isset name="fontA" value="${(labelA.length > 1) ? 'tumi_symbols' : font}" scope="page"/>
+        <isset name="fontB" value="${(labelB.length > 1) ? 'tumi_symbols' : font}" scope="page"/>
+        <isset name="fontC" value="${(labelC.length > 1) ? 'tumi_symbols' : font}" scope="page"/>
+        <isset name="currentFontColor" value="${!empty(monogram.monogramLineItem) && !empty(monogram.monogramLineItem.color) && monogram.monogramLineItem.color !== 'undefined' && !empty(monogram.monogramLineItem.color.split('_').length === 2 && monogram.monogramLineItem.color.split('_')[1]) ? monogram.monogramLineItem.color.split('_')[1] : 'FCF5F9'}" scope="page" />
+        <div class="tab-pane${isActivePatch ? ' active' : ''}" id="viewpatch-${product.UUID || product.uuid}" role="tabpanel" aria-labelledby="patch-tab">
+            <div class="image">
+                <img class="monogram-preview-img classic-patch w-100" src="${product.monoPatchImage}?fmt=jpeg&amp;layer=2&amp;src=is(Tumi/monogram_template_v2?scl=2.5)&amp;$text1=${labelA2}&amp;$text2=${labelB2}&amp;$text3=${labelC2}&amp;$monogramfonttext1=${fontA}&amp;$monogramfonttext2=${fontB}&amp;$monogramfonttext3=${fontC}&amp;$monogramcolor=${currentFontColor}&amp;$textureimage=smooth_texture" alt="monogram preview image"/>
+            </div>
+        </div>
+
+        <div class="tab-pane${isActiveTag ? ' active' : ''}" id="viewtag-${product.UUID || product.uuid}" role="tabpanel" aria-labelledby="tag-tab">
+            <div class="image">
+                <img class="monogram-preview-img classic-tag w-100"
+                    src="${product.monoTagImage}?fmt=jpeg&amp;layer=2&amp;src=is(Tumi/monogram_template_v2?scl=2.5)&amp;$text1=${labelA2}&amp;$text2=${labelB2}&amp;$text3=${labelC2}&amp;$monogramfonttext1=${fontA}&amp;$monogramfonttext2=${fontB}&amp;$monogramfonttext3=${fontC}&amp;$monogramcolor=${currentFontColor}&amp;$textureimage=smooth_texture"
+                    alt="monogram preview image"/>
+            </div>
+        </div>
+    </div>
+    <div class="monogram-content">
+        <div id="monogram_1_${product.UUID || product.uuid}"
+            class="monogram_1 personalization-monogram-preview initials active">
+            <div class="monogram-wrapper">
+                <div class="count">${Resource.msgf('product.monogram.index.one.dynamic', 'product', null, monogram.isPlacementOption ? '4' : '3')}</div>
+                <div class="initials">${Resource.msg('product.monogram.choose.initials', 'product', null)}</div>
+                <div class="content">${Resource.msg('product.monogram.classic.content', 'product', null)}</div>
+                <div class="monogram-initials">
+                    <input data-value="0" class="monogram-input selected ${(labelA.length > 1) ? 'symbol' : ''}"
+                        name="monogramText" data-input-order="1" aria-label="First initial" placeholder="A"
+                        maxlength="1" value="${labelA2}">
+                    <input data-value="0" class="monogram-input  ${(labelB.length > 1) ? 'symbol' : ''}"
+                        name="monogramText" data-input-order="2" aria-label="Middle initial" placeholder="B"
+                        maxlength="1" value="${labelB2}">
+                    <input data-value="0" class="monogram-input last ${(labelC.length > 1) ? 'symbol' : ''}"
+                        name="monogramText" data-input-order="3" aria-label="Last initial" placeholder="C" maxlength="1"
+                        value="${labelC2}">
+                </div>
+                <fieldset class="personalization-monogram-symbols">
+                    <isloop items="${monogram.monogramSymbolList ? monogram.monogramSymbolList : null}" var="symbolList"
+                        status="loopState">
+                        <legend class="sr-only">${Resource.msg('product.monogram.classic.symboloptions', 'product', null)}</legend>
+                        <input type="radio" data-input-order="${loopState.count}"
+                            id="monogram_symbol-${(product.UUID || product.uuid) + loopState.count}"
+                            name="monogram_symbol" value="${symbolList[1]}" tabindex="-1" aria-label="hash symbol">
+                        <label for="monogram_symbol-${(product.UUID || product.uuid) + loopState.count}">
+                            <span class="symbol_${symbolList[1]} symbol-size"></span>
+                        </label>
+                    </isloop>
+                </fieldset>
+            </div>
+            <div class="monogram-btn-cntr">
+                <a href="#"
+                    class="button button--primary w-100 monogram-step-button-next disabled">${Resource.msg('product.monogram.next.link', 'product', null)}</a>
+                <a href="#" class="cancelBtn w-100" data-dismiss="modal">${Resource.msg('product.monogram.cancel', 'product', null)}</a>
+            </div>
+        </div>
+        <div id="monogram_2_${product.UUID || product.uuid}"
+            class="monogram_2 personalization-monogram-preview personalization-monogram-style font-style">
+            <div class="monogram-wrapper">
+                <div class="count">${Resource.msgf('product.monogram.index.two.dynamic', 'product', null, monogram.isPlacementOption ? '4' : '3')}</div>
+                <div class="initials">${Resource.msg('product.monogram.choose.font', 'product', null)}</div>
+                <div class="content monogram-input-content">${Resource.msg('product.monogram.choose.discussion', 'product', null)}</div>
+                <div class="monogram-fonts">
+                    <isloop items="${monogram.fontList ? monogram.fontList : null}" var="fontList" status="loopState">
+                        <legend class="sr-only">${Resource.msg('product.monogram.choose.fonts.label', 'product', null)}
+                        </legend>
+                        <input type="radio" id="font_style_${loopState.count + '_' + (product.UUID || product.uuid)}"
+                            name="fontStyle" <isif condition="${monogram.monogramLineItem && !empty(monogram.monogramLineItem.font) && monogram.monogramLineItem.font === fontList}">checked</isif> value="${fontList}" data-inputOrder="${loopState.count}" tabindex="-1" aria-label="${fontList}"/>
+                        <label for="font_style_${loopState.count + '_' + (product.UUID || product.uuid)}"
+                            class="font_style_${loopState.count} font_style uppercase">
+                            <isset name="combined_text" value="${labelA + labelB + labelC}" scope="page"/>
+                            <span class="font_style_${loopState.count}"><isprint value="${!empty(combined_text) ? combined_text.replace(/\(/g, '<span class="numberFormat">').replace(/\)/g, '</span>') : Resource.msg('product.default.monogram.text', 'product', null)} " encoding="off" /></span>
+                        </label>
+                    </isloop>
+                </div>
+            </div>
+            <div class="monogram-btn-cntr">
+                <a href="#"
+                    class="button button--primary w-100 monogram-step-button-next">${Resource.msg('product.monogram.next.link', 'product', null)}</a>
+                <a href="#" class="previousBtn monogram-step-button-prev w-100">${Resource.msg('product.monogram.previous.link', 'product', null)}</a>
+            </div>
+        </div>
+        <div id="monogram_3_${product.UUID || product.uuid}"
+            class="monogram_3 personalization-monogram-preview color-style">
+            <div class="monogram-wrapper">
+                <div class="count">${Resource.msgf('product.monogram.index.three.dynamic', 'product', null, monogram.isPlacementOption ? '4' : '3')}</div>
+                <div class="initials">${Resource.msg('product.monogram.choose.color', 'product', null)}</div>
+                <div class="content color-name"></div>
+                <div class="monogram-fontColor">
+                    <isloop items="${monogram.colorData}" var="colorList" status="loopState">
+                        <legend class="sr-only">${Resource.msg('product.monogram.choose.color.label', 'product', null)}
+                        </legend>
+                        <input type="radio" id="font_color_${loopState.count + '_' + (product.UUID || product.uuid)}"
+                            name="fontColor" value="${colorList.colorDisplayValue}_${colorList.colorHex}" <isif
+                            condition="${monogram.monogramLineItem && !empty(monogram.monogramLineItem.color) && monogram.monogramLineItem.color.split('_')[0] === colorList.colorDisplayValue}">checked
+                        </isif>
+                        tabindex="-1" aria-label="${colorList.colorDisplayValue}"
+                        data-inputOrder="${loopState.count - 1}">
+                        <label for="font_color_${loopState.count + '_' + (product.UUID || product.uuid)}"
+                            style="background:${!empty(colorList.swatchURL) ? " url('" + colorList.swatchURL + "')" : '#' + colorList.colorHex}" class="font_color_${loopState.count - 1} font_style"
+                            title="${colorList.colorDisplayValue}">
+                            <span aria-hidden="true">${colorList.colorHex}</span>
+                        </label>
+                    </isloop>
+                </div>
+            </div>
+            <isif condition="${!monogram.isPlacementOption}">
+                <div class="monogram-btn-cntr">
+                    <a href="${URLUtils.url('Cart-UpdateClassicMonogram')}" data-uuid="${lineItem.UUID}"
+                        class="button button--primary w-100 monogram-step-button-apply">${Resource.msg('product.monogram.apply.link', 'product', null)}</a>
+                    <a href="#" class="previousBtn monogram-step-button-prev w-100">${Resource.msg('product.monogram.previous.link', 'product', null)}</a>
+                </div>
+            <iselse/>
+                <div class="monogram-btn-cntr">
+                    <a href="#"
+                        class="button button--primary w-100 monogram-step-button-next">${Resource.msg('product.monogram.next.link', 'product', null)}</a>
+                    <a href="#" class="previousBtn monogram-step-button-prev w-100">${Resource.msg('product.monogram.previous.link', 'product', null)}</a>
+                </div>
+            </isif>
+        </div>
+        <isif condition="${monogram.isPlacementOption}">
+            <div id="monogram_4_${product.UUID || product.uuid}"
+                class="monogram_4 personalization-monogram-preview selection-style">
+                <div class="monogram-wrapper">
+                    <div class="count">${Resource.msg('product.monogram.index.four', 'product', null)}</div>
+                    <div class="initials">${Resource.msg('product.monogram.choose.patch', 'product', null)}</div>
+                    <div class="content">${Resource.msg('product.monogram.choose.content', 'product', null)}</div>
+                    <div class="monogram-placement">
+                        <div class="row-fluid-no-gutter">
+                            <div class="mongram-types">
+
+                                <div class="placement">
+
+                                    <input type="radio" name="location" id="option-2-${product.UUID || product.uuid}"
+                                        data-inputOrder="2" value="classic-patch" <isif condition="${!empty(monogram.monogramLineItem) && monogram.monogramLineItem.location === 'MONOPATCH'}">checked</isif>/>
+                                    <label for="option-2-${product.UUID || product.uuid}" class="option option-2">
+                                        <span>${Resource.msg('product.monogram.patch.title', 'product', null)}</span>
+                                    </label>
+
+                                    <input type="radio" name="location" id="option-1-${product.UUID || product.uuid}"
+                                        data-inputOrder="1" value="classic-tag" <isif condition="${!empty(monogram.monogramLineItem) && monogram.monogramLineItem.location === 'MONOTAG'}">checked</isif>/>
+                                    <label for="option-1-${product.UUID || product.uuid}" class="option option-1">
+                                        <span>${Resource.msg('product.monogram.tag.title', 'product', null)}</span>
+                                    </label>
+
+
+                                    <input type="radio" name="location" id="option-3-${product.UUID || product.uuid}"
+                                        data-inputOrder="3" value="classic-both" <isif condition="${!empty(monogram.monogramLineItem) && monogram.monogramLineItem.location === 'BOTH'}">checked</isif>/>
+                                    <label for="option-3-${product.UUID || product.uuid}" class="option option-3">
+                                        <span>${Resource.msg('product.monogram.both.title', 'product', null)}</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="d-flex description">
+                                ${Resource.msg('product.monogram.description', 'product', null)}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="monogram-btn-cntr">
+                    <a href="${URLUtils.url('Cart-UpdateClassicMonogram')}" data-uuid="${lineItem.UUID}"
+                        class="button button--primary w-100 monogram-step-button-apply">${Resource.msg('product.monogram.apply.link', 'product', null)}</a>
+                    <a href="#" class="previousBtn monogram-step-button-prev w-100">${Resource.msg('product.monogram.previous.link', 'product', null)}</a>
+                </div>
+            </div>
+        <iselse/>
+            <input type="hidden" name="location" value="${monogram.placementOption}"/>
+        </isif>
+    </div>
+</form>

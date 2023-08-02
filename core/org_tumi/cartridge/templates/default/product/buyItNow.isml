@@ -1,0 +1,6 @@
+<isif condition="${pdict.eligibleForBuyNow}">
+    <button class="buy-it-now button button--secondary w-100 express-checkout" data-toggle="modal" data-target="#chooseBonusProductModal"
+            data-pid="${pdict.id}" data-buyurl="${URLUtils.url('Product-Buynow')}" ${!pdict.readyToOrder || !pdict.available ? "disabled" : ""}>
+        <isprint value="${Resource.msg('button.buy.it.now', 'common', null)}" />
+    </button>
+</isif>

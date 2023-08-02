@@ -1,0 +1,59 @@
+ <isset name="monogram" value="${product ? product : pdict.monogramData}" scope="page" />
+
+<div class="modal fade monogram-modal global-modal" data-uuid="${product.UUID || product.uuid}" id="monogramModal-${product.UUID || product.uuid}" tabindex="-1" role="dialog"
+    aria-labelledby="monogramModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">
+                        <img class="" src="${URLUtils.staticURL('/images/modal-close.svg')}"
+                            alt="${Resource.msg('global.search', 'common', null)}" />
+                    </span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <div class="monogram-option-selection">
+                    <div class="modal-title">${Resource.msg('product.default.monogram.makeyours', 'product', null)}</div>
+                    <isif condition="${product.monogramable}">
+                        <div class="item">
+                            <a href="#" class="classic-modal-btn"> 
+                                <div class="image">
+                                    <img src="${URLUtils.staticURL('/images/classic.jpg')}" alt="Category Image" class="img-fluid w-100" />
+                                </div>
+                                <span>${Resource.msg('product.monogram.option.classic', 'product', null)} 
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="7" height="11" viewBox="0 0 7 11" fill="none">
+                                        <path d="M1 1L6 5.5L1 10" stroke="black" />
+                                    </svg>
+                                </span>
+                                <p>${Resource.msg('product.monogram.option.classic.desc', 'product', null)}</p>
+                            </a>
+                        </div>
+                    </isif>
+                    <isif condition="${product.isPremium}">
+                        <div class="item">
+                            <a href="#" class="premium-modal-btn">
+                                <div class="image">
+                                    <img src="${URLUtils.staticURL('/images/premium.jpg')}" alt="Category Image" class="img-fluid w-100" />
+                                </div>
+                                <span>${Resource.msg('product.monogram.option.metal.title', 'product', null)} 
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="7" height="11" viewBox="0 0 7 11"
+                                        fill="none">
+                                        <path d="M1 1L6 5.5L1 10" stroke="black" />
+                                    </svg></span>
+                                <p>${Resource.msg('product.monogram.option.metal.desc', 'product', null)}
+                                <p class="not-available-premono">This monogram style is not available for in store pick up</p></p>
+                            </a>
+                        </div>
+                    </isif>
+                <button type="button" class="button button--secondary w-100" data-dismiss="modal" aria-label="Close">
+                    ${Resource.msg('product.monogram.cancel', 'product', null)}
+                </button>
+                </div>
+                <isinclude template="product/monogram/classic"/>
+                <isinclude template="product/monogram/premium"/>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,144 @@
+<form action="${URLUtils.url('Cart-GiftItem', 'uuid', lineItem.UUID, 'pid', lineItem.id)}" class="gift-box-form"
+    method="POST">
+    <div class="row">
+        <div class="col-12">
+            <div class="product-wrapper">
+                <a href="#" class="image-wrapper">
+                    <img class="gift-option-cart" src="${lineItem.images.small[0].url}"
+                        alt="${lineItem.images.small[0].alt}" title="${lineItem.images.small[0].title}" />
+                </a>
+                <div class="content">
+                    <div class="collection-name collection-name-${lineItem.uuid}">${lineItem.collection ? lineItem.collection : ''}</div>
+                    <span class="product-name gift-card-name">${lineItem.productName}</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 form-title">
+            ${Resource.msg('title.include.gift.Message', 'account', null)}
+        </div>
+
+        <!-- Receiver Name -->
+        <div class="col-12">
+            <div class="form-group
+                ${pdict.giftForm.receiverName.mandatory === true ? 'required' : ''}">
+                <input type="text" placeholder="${Resource.msg('form.placeholder.to', 'account', null)}"
+                    class="form-control" id="firstName" value="${lineItem.recipientName ? lineItem.recipientName : ""}"
+                    <isprint value="${pdict.giftForm.receiverName.attributes}" encoding="off" />
+                autocomplete="receiver-name">
+                <label class="form-control-label" for="receiverName">
+                    <isprint value="${pdict.giftForm.receiverName.label}" encoding="htmlcontent" />
+                </label>
+                <div class="invalid-feedback"></div>
+            </div>
+        </div>
+
+        <!-- Sender Name -->
+        <div class="col-12">
+            <div class="form-group
+                ${pdict.giftForm.senderName.mandatory === true ? 'required' : ''}">
+                <input type="text" placeholder="${Resource.msg('form.placeholder.from', 'account', null)}"
+                    class="form-control" id="senderName" value="${lineItem.senderName ? lineItem.senderName : ""}"
+                    <isprint value="${pdict.giftForm.senderName.attributes}" encoding="off" />
+                autocomplete="Sender-name">
+                <label class="form-control-label" for="senderName">
+                    <isprint value="${pdict.giftForm.senderName.label}" encoding="htmlcontent" />
+                </label>
+                <div class="invalid-feedback"></div>
+            </div>
+        </div>
+
+        <!-- Gift Message-->
+        <div class="col-12">
+            <div class="form-group
+                ${pdict.giftForm.giftMessage.mandatory === true ? 'required' : ''}">
+                <iscomment> <textarea placeholder="${Resource.msg('form.placeholder.gift.message', 'account', null)}"
+                        class="form-control" id="giftMessage" <isprint value="${pdict.giftForm.giftMessage.attributes}"
+                        encoding="off" />autocomplete="billing address-line2">${lineItem.giftMessage ? lineItem.giftMessage : ""}</textarea>
+                </iscomment>
+
+                <input type="text" placeholder="${Resource.msg('form.placeholder.gift.message', 'account', null)}"
+                    class="form-control" id="giftMessage" maxlength="200"  value="${lineItem.giftMessage ? lineItem.giftMessage : ""}" <isprint
+                    value="${pdict.giftForm.giftMessage.attributes}" encoding="off" />
+                autocomplete="billing address-line2">
+
+                <label class="form-control-label" for="giftMessage">
+                    <isprint value="${pdict.giftForm.giftMessage.label}" encoding="htmlcontent" />
+                </label>
+                <div class="max-char">${Resource.msg('label.gift.box.max-char', 'account', null)}</div>
+                <div class="invalid-feedback"></div>
+            </div>
+        </div>
+        <isif condition="${lineItem.giftbox === true}">
+        <div class="col-12 title-giftbox">
+            ${Resource.msg('title.add.gift.box', 'account', null)}
+        </div>
+           <div class="col-12">
+                <div class="form-group custom-control custom-checkbox pull-left" >
+                    <input type="checkbox" class="custom-control-input" name="giftBoxCart" value="true"
+                        id="${'giftBoxtrue-' + lineItem.UUID}" ${(lineItem.giftBoxEnableLineitem == true) ? 'checked' : ""} <isprint value=${pdict.giftForm.giftBoxEnable.attributes} encoding="off" />
+                    >
+                    <label class="custom-control-label" for="${'giftBoxtrue-' + lineItem.UUID}">
+                        <isprint value="${pdict.giftForm.giftBoxEnable.label}" encoding="htmlcontent" />
+                    </label>
+                    <div class="giftbox-desc">${Resource.msg('description.complimentary.giftbox', 'common', null)}</div>
+                </div>
+            </div>
+        </isif>
+        <iscomment>
+            <div class="col-12">
+                <div class="form-group radio-options">
+                    <input type="radio" class="custom-control-input" name="giftBoxCart" value="complimentaryBox"
+                        id="${'complimentaryBox-' + lineItem.UUID}" ${(lineItem.complimentaryGiftBox == true) ? 'checked' : ""} <isprint value=${pdict.giftForm.complimentaryBox.attributes} encoding="off" />
+                    >
+                    <label class="custom-control-label" for="${'complimentaryBox-' + lineItem.UUID}">
+                        <isprint value="${pdict.giftForm.complimentaryBox.label}" encoding="htmlcontent" />
+                    </label>
+                    <div class="giftbox-desc">${Resource.msg('description.complimentary.giftbox', 'common', null)}</div>
+
+                </div>
+            </div>
+            <isif condition="${pdict.premiumGBEnable}">
+                <div class="col-12">
+                    <div class="form-group radio-options">
+                        <input type="radio" class="custom-control-input" name="giftBoxCart" value="premiumBox"
+                            id="${'premiumBox-' + lineItem.UUID}" ${(lineItem.premiumGiftBox == true) ? 'checked' : ""}
+                            <isprint value=${pdict.giftForm.premiumBox.attributes} encoding="off" />
+                        >
+                        <label class="custom-control-label" for="${'premiumBox-' + lineItem.UUID}">
+                            <isprint value="${pdict.giftForm.premiumBox.label}" encoding="htmlcontent" />
+                        </label>
+                    </div>
+                </div>
+            </isif>
+
+            <div class="col-12">
+                <div class="form-group radio-options">
+                    <input type="radio" class="custom-control-input" name="giftBoxCart" value="skipBox"
+                        id="${'skipBox-' + lineItem.UUID}" ${(lineItem.noGiftBox == true) ? 'checked' : ""} <isprint
+                        value=${pdict.giftForm.skipBox.attributes} encoding="off" />
+                    >
+                    <label class="custom-control-label" for="${'skipBox-' + lineItem.UUID}">
+                        <isprint value="${pdict.giftForm.skipBox.label}" encoding="htmlcontent" />
+                    </label>
+                    <div class="giftbox-desc">${Resource.msg('description.skip.giftbox', 'common', null)}</div>
+
+                </div>
+            </div>
+        </iscomment>
+
+
+        <div class="col-12">
+            <isif condition="${lineItem.isGiftBoxEditable}">
+                <button type="submit" class="button button-secondary-dark w-100"
+                    name="save">${Resource.msg('button.update.giftbox', 'common', null)}</button>
+
+            <iselse/>
+                <button type="submit" class="button button-secondary-dark w-100"
+                    name="save">${Resource.msg('button.add.giftbox', 'common', null)}</button>
+            </isif>
+
+        </div>
+        <a href="#" class="cancelBtn w-100 pt-4 text-center" data-dismiss="modal">Cancel</a>
+    </div>
+</form>

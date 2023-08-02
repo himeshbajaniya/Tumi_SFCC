@@ -1,0 +1,1156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+    <custom-type type-id="BTBankList">
+        <staging-mode>no-staging</staging-mode>
+        <storage-scope>organization</storage-scope>
+        <key-definition attribute-id="BTBankList">
+            <type>string</type>
+            <min-length>0</min-length>
+        </key-definition>
+        <attribute-definitions>
+            <attribute-definition attribute-id="BankID">
+                <display-name xml:lang="x-default">Bank Id</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="BankName">
+                <display-name xml:lang="x-default">Bank Name</display-name>
+                <description xml:lang="x-default">UUID of the same.</description>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentType">
+                <display-name xml:lang="x-default">Payment Type</display-name>
+                <description xml:lang="x-default">Use to filter the bank options for specific bank. e.g. iDeal.</description>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+        </attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="BankList">
+                <display-name xml:lang="x-default">Bank List</display-name>
+                <attribute attribute-id="BankName"/>
+                <attribute attribute-id="BTBankList"/>
+                <attribute attribute-id="BankID"/>
+                <attribute attribute-id="paymentType"/>
+            </attribute-group>
+        </group-definitions>
+    </custom-type>
+
+    <custom-type type-id="CANotExportedOrders">
+        <staging-mode>no-staging</staging-mode>
+        <storage-scope>site</storage-scope>
+        <key-definition attribute-id="uuid">
+            <type>string</type>
+            <min-length>0</min-length>
+        </key-definition>
+        <attribute-definitions>
+            <attribute-definition attribute-id="listOfNotExportedOrders">
+                <display-name xml:lang="x-default">List Of Not Exported Orders</display-name>
+                <type>text</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+        </attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="ListOfNotExportedOrders">
+                <display-name xml:lang="x-default">ListOfNotExportedOrders</display-name>
+                <attribute attribute-id="listOfNotExportedOrders"/>
+                <attribute attribute-id="uuid"/>
+            </attribute-group>
+        </group-definitions>
+    </custom-type>
+
+    <custom-type type-id="EmarsysCatalogConfig">
+        <display-name xml:lang="x-default">Emarsys Catalog Condiguration</display-name>
+        <staging-mode>no-staging</staging-mode>
+        <storage-scope>site</storage-scope>
+        <key-definition attribute-id="EmarsysCatalogConfig">
+            <type>string</type>
+            <min-length>0</min-length>
+        </key-definition>
+        <attribute-definitions>
+            <attribute-definition attribute-id="exportType">
+                <display-name xml:lang="x-default">Export Type</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="mappedFields">
+                <display-name xml:lang="x-default">Mapped fields</display-name>
+                <type>text</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+        </attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="CatalogConfig">
+                <display-name xml:lang="x-default">Catalog Configuration</display-name>
+                <attribute attribute-id="mappedFields"/>
+                <attribute attribute-id="exportType"/>
+                <attribute attribute-id="lastModified" system="true"/>
+                <attribute attribute-id="EmarsysCatalogConfig"/>
+            </attribute-group>
+        </group-definitions>
+    </custom-type>
+
+    <custom-type type-id="EmarsysDBLoadConfig">
+        <display-name xml:lang="x-default">EmarsysDBLoadConfig</display-name>
+        <staging-mode>no-staging</staging-mode>
+        <storage-scope>site</storage-scope>
+        <key-definition attribute-id="EmarsysDBLoadConfig">
+            <type>string</type>
+            <min-length>0</min-length>
+        </key-definition>
+        <attribute-definitions>
+            <attribute-definition attribute-id="mappedFields">
+                <display-name xml:lang="x-default">Mapped fields</display-name>
+                <type>text</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+        </attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="DBLoadConfig">
+                <display-name xml:lang="x-default">Database Load Configuration</display-name>
+                <attribute attribute-id="mappedFields"/>
+                <attribute attribute-id="EmarsysDBLoadConfig"/>
+            </attribute-group>
+        </group-definitions>
+    </custom-type>
+
+    <custom-type type-id="EmarsysExternalEvents">
+        <description xml:lang="x-default">Custom object to store events related data. &#13;
+Source fields keep list of all sfcc events allowed to use. &#13;
+Result fields keeps their mapping to Emarsys side events and some additional data</description>
+        <staging-mode>no-staging</staging-mode>
+        <storage-scope>site</storage-scope>
+        <key-definition attribute-id="externalEvents">
+            <type>string</type>
+            <min-length>0</min-length>
+        </key-definition>
+        <attribute-definitions>
+            <attribute-definition attribute-id="campaignsCategory">
+                <display-name xml:lang="x-default">Campaigns category</display-name>
+                <description xml:lang="x-default">Needed to create test campaigns on Emarsys</description>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="id">
+                <display-name xml:lang="x-default">ID</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="name">
+                <display-name xml:lang="x-default">Name</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="newsletterSubscriptionResult">
+                <display-name xml:lang="x-default">Newsletter Subscription Result</display-name>
+                <description xml:lang="x-default">Description list for newsletter subscription events on Emarsys side</description>
+                <type>text</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="newsletterSubscriptionSource">
+                <display-name xml:lang="x-default">Newsletter Subscription Source</display-name>
+                <description xml:lang="x-default">Newsletter subscribtion events identifier list</description>
+                <type>text</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="otherResult">
+                <display-name xml:lang="x-default">Other Result</display-name>
+                <description xml:lang="x-default">Description list for other events on Emarsys side</description>
+                <type>text</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="otherSource">
+                <display-name xml:lang="x-default">Other Source</display-name>
+                <description xml:lang="x-default">Other events identifier list</description>
+                <type>text</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="result">
+                <display-name xml:lang="x-default">Result</display-name>
+                <description xml:lang="x-default">Stores external events</description>
+                <type>text</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+        </attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="ExternalEvent">
+                <display-name xml:lang="x-default">External Event</display-name>
+                <attribute attribute-id="id"/>
+                <attribute attribute-id="name"/>
+                <attribute attribute-id="result"/>
+                <attribute attribute-id="newsletterSubscriptionSource"/>
+                <attribute attribute-id="otherSource"/>
+                <attribute attribute-id="newsletterSubscriptionResult"/>
+                <attribute attribute-id="otherResult"/>
+                <attribute attribute-id="campaignsCategory"/>
+                <attribute attribute-id="externalEvents"/>
+            </attribute-group>
+        </group-definitions>
+    </custom-type>
+
+    <custom-type type-id="EmarsysNewsletterSubscription">
+        <description xml:lang="x-default">Custom object to store data for each subscription type. Stored data: optIn strategy, external event, external event after confirmation.</description>
+        <staging-mode>no-staging</staging-mode>
+        <storage-scope>site</storage-scope>
+        <key-definition attribute-id="EmarsysSubscriptionType">
+            <type>string</type>
+            <min-length>0</min-length>
+        </key-definition>
+        <attribute-definitions>
+            <attribute-definition attribute-id="optInExternalEvent">
+                <display-name xml:lang="x-default">External event triggered for Opt-in strategy</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="optInExternalEventAfterConfirmation">
+                <display-name xml:lang="x-default">External event triggered after Opt-in confirmation email</display-name>
+                <description xml:lang="x-default">This is an optional event that can be triggered when Double Opt-in strategy is used. The event will be triggered after the users clicks on the link from the confirmation email</description>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="optInStrategy">
+                <display-name xml:lang="x-default">Opt-in Strategy</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+        </attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="SubscriptionConfiguration">
+                <display-name xml:lang="x-default">SubscriptionConfiguration</display-name>
+                <attribute attribute-id="EmarsysSubscriptionType"/>
+                <attribute attribute-id="optInStrategy"/>
+                <attribute attribute-id="optInExternalEvent"/>
+                <attribute attribute-id="optInExternalEventAfterConfirmation"/>
+            </attribute-group>
+        </group-definitions>
+    </custom-type>
+
+    <custom-type type-id="EmarsysProfileFields">
+        <display-name xml:lang="x-default">Emarsys Profile Fields</display-name>
+        <staging-mode>no-staging</staging-mode>
+        <storage-scope>site</storage-scope>
+        <key-definition attribute-id="EmarsysProfileFields">
+            <type>string</type>
+            <min-length>0</min-length>
+        </key-definition>
+        <attribute-definitions>
+            <attribute-definition attribute-id="result">
+                <display-name xml:lang="x-default">Retrieved fields</display-name>
+                <type>text</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+        </attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="ProfileFields">
+                <display-name xml:lang="x-default">Profile Fields</display-name>
+                <attribute attribute-id="EmarsysProfileFields"/>
+                <attribute attribute-id="result"/>
+            </attribute-group>
+        </group-definitions>
+    </custom-type>
+
+    <custom-type type-id="EmarsysSmartInsightConfiguration">
+        <staging-mode>no-staging</staging-mode>
+        <storage-scope>site</storage-scope>
+        <key-definition attribute-id="SmartInsightConfig">
+            <type>string</type>
+            <min-length>0</min-length>
+        </key-definition>
+        <attribute-definitions>
+            <attribute-definition attribute-id="mappedFields">
+                <display-name xml:lang="x-default">Mapped Fields</display-name>
+                <description xml:lang="x-default">JSON object of the chosen fields and placeholders</description>
+                <type>text</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+        </attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="EmarsysSmartInsightConfiguration">
+                <display-name xml:lang="x-default">Emarsys SmartInsight Configuration</display-name>
+                <attribute attribute-id="SmartInsightConfig"/>
+                <attribute attribute-id="mappedFields"/>
+            </attribute-group>
+        </group-definitions>
+    </custom-type>
+
+    <custom-type type-id="EmarsysTransactionalEmailsConfig">
+        <staging-mode>no-staging</staging-mode>
+        <storage-scope>site</storage-scope>
+        <key-definition attribute-id="EmarsysEmailTypeConfig">
+            <type>string</type>
+            <min-length>0</min-length>
+        </key-definition>
+        <attribute-definitions>
+            <attribute-definition attribute-id="externalEvent">
+                <display-name xml:lang="x-default">External event</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="mappedFields">
+                <display-name xml:lang="x-default">Mapped fileds</display-name>
+                <type>text</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+        </attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="MailsConfiguration">
+                <display-name xml:lang="x-default">Mails Confirmation Configuration</display-name>
+                <attribute attribute-id="mappedFields"/>
+                <attribute attribute-id="EmarsysEmailTypeConfig"/>
+                <attribute attribute-id="externalEvent"/>
+            </attribute-group>
+        </group-definitions>
+    </custom-type>
+
+    <custom-type type-id="KlarnaCountries">
+        <display-name xml:lang="x-default">Klarna Countries</display-name>
+        <staging-mode>no-staging</staging-mode>
+        <storage-scope>site</storage-scope>
+        <key-definition attribute-id="country">
+            <display-name xml:lang="x-default">Country Code</display-name>
+            <description xml:lang="x-default">Two-letter country code</description>
+            <type>string</type>
+            <min-length>0</min-length>
+            <field-length>0</field-length>
+        </key-definition>
+        <attribute-definitions>
+            <attribute-definition attribute-id="credentialID">
+                <display-name xml:lang="x-default">Service Credential ID</display-name>
+                <description xml:lang="x-default">The ID of service credentials for this locale</description>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="kebCartEnabled">
+                <display-name xml:lang="x-default">Express Button Cart Enabled</display-name>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="kebCategory">
+                <display-name xml:lang="x-default">Express Button Category</display-name>
+                <description xml:lang="x-default">The Klarna Express Button category to be pre-selected on Checkout Page</description>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="kebEnvironment">
+                <display-name xml:lang="x-default">Express Button Environment</display-name>
+                <type>enum-of-string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <value-definitions>
+                    <value-definition default="true">
+                        <display xml:lang="x-default">Playground</display>
+                        <value>playground</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Production</display>
+                        <value>production</value>
+                    </value-definition>
+                </value-definitions>
+            </attribute-definition>
+            <attribute-definition attribute-id="kebLibraryUrl">
+                <display-name xml:lang="x-default">Express Button Library URL</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="kebMCEnabled">
+                <display-name xml:lang="x-default">MiniCart Express Button Enabled</display-name>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="kebMCTheme">
+                <display-name xml:lang="x-default">MiniCart Express Button Theme</display-name>
+                <type>enum-of-string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <value-definitions>
+                    <value-definition default="true">
+                        <display xml:lang="x-default">Default</display>
+                        <value>default</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Light</display>
+                        <value>light</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Dark</display>
+                        <value>dark</value>
+                    </value-definition>
+                </value-definitions>
+            </attribute-definition>
+            <attribute-definition attribute-id="kebMerchantID">
+                <display-name xml:lang="x-default">Express Button Merchant ID</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="kebMiniCartShape">
+                <display-name xml:lang="x-default">Minicart Express Button Shape</display-name>
+                <type>enum-of-string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <value-definitions>
+                    <value-definition default="true">
+                        <display xml:lang="x-default">Regular</display>
+                        <value>default</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Rectangle</display>
+                        <value>rect</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Pill</display>
+                        <value>pill</value>
+                    </value-definition>
+                </value-definitions>
+            </attribute-definition>
+            <attribute-definition attribute-id="kebShape">
+                <display-name xml:lang="x-default">Express Button Shape</display-name>
+                <type>enum-of-string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <value-definitions>
+                    <value-definition default="true">
+                        <display xml:lang="x-default">Regular</display>
+                        <value>default</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Rectangle</display>
+                        <value>rect</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Pill</display>
+                        <value>pill</value>
+                    </value-definition>
+                </value-definitions>
+            </attribute-definition>
+            <attribute-definition attribute-id="kebTheme">
+                <display-name xml:lang="x-default">Express Button Theme</display-name>
+                <type>enum-of-string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <value-definitions>
+                    <value-definition default="true">
+                        <display xml:lang="x-default">Default</display>
+                        <value>default</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Light</display>
+                        <value>light</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Dark</display>
+                        <value>dark</value>
+                    </value-definition>
+                </value-definitions>
+            </attribute-definition>
+            <attribute-definition attribute-id="klarnaLocale">
+                <display-name xml:lang="x-default">On-site Messaging Data Default Locale</display-name>
+                <description xml:lang="x-default">Fallback, if the request locale can’t be dynamically resolved, i.e., when using “default” SFCC locale</description>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="osmCartEnabled">
+                <display-name xml:lang="x-default">Cart Placement Tag Enabled</display-name>
+                <description xml:lang="x-default">To enable Cart Placement for a given locale.</description>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="osmCartTagId">
+                <display-name xml:lang="x-default">Cart Placement Data Key</display-name>
+                <description xml:lang="x-default">The Klarna On-site Messaging “data-key” of placement applicable for Cart Page for a given locale.</description>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="osmDataInlineEnabled">
+                <display-name xml:lang="x-default">Data Inline Enabled on PDP/Cart placement (Canada only)</display-name>
+                <description xml:lang="x-default">Enable this when using PayBright payment method in Canada</description>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="osmFooterEnabled">
+                <display-name xml:lang="x-default">Footer Placement Tag Enabled</display-name>
+                <description xml:lang="x-default">To enable Klarna footer Placement in a given storefront</description>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="osmFooterTagId">
+                <display-name xml:lang="x-default">Footer Placement Data Key</display-name>
+                <description xml:lang="x-default">The Klarna On-site Messaging “data-key” of placement applicable for the footer.</description>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="osmHeaderEnabled">
+                <display-name xml:lang="x-default">Header Placement Tag Enabled</display-name>
+                <description xml:lang="x-default">To enable Klarna Header Placement in a given storefront</description>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="osmHeaderTagId">
+                <display-name xml:lang="x-default">Header Placement Data Key</display-name>
+                <description xml:lang="x-default">The Klarna On-site Messaging “data-key” of placement applicable for the Header</description>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="osmInfoPageEnabled">
+                <display-name xml:lang="x-default">Info Page Placement Tag Enabled</display-name>
+                <description xml:lang="x-default">To enable Klarna Info Page Placement in a given storefront</description>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="osmInfoPageTagId">
+                <display-name xml:lang="x-default">Info Page Placement Data Key</display-name>
+                <description xml:lang="x-default">The Klarna On-site Messaging “data-key” of placement applicable for the Info Page .</description>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="osmLibraryUrl">
+                <display-name xml:lang="x-default">URL to On-Site Messaging Library URL</display-name>
+                <description xml:lang="x-default">URL to On-Site Messaging Library URL, applicable for testing and production</description>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="osmPDPEnabled">
+                <display-name xml:lang="x-default">PDP Placement Tag Enabled</display-name>
+                <description xml:lang="x-default">To enable PDP Placement for a given locale.</description>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="osmPDPTagId">
+                <display-name xml:lang="x-default">PDP Placement Data Key</display-name>
+                <description xml:lang="x-default">The Klarna On-site Messaging “data-key” of placement applicable for Product Display page for a given locale</description>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="osmUCI">
+                <display-name xml:lang="x-default">On-site messaging Data Client ID</display-name>
+                <description xml:lang="x-default">The Klarna On-site Messaging “data-client-id” applicable for a given country</description>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+        </attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="custom">
+                <display-name xml:lang="x-default">General</display-name>
+                <attribute attribute-id="country"/>
+                <attribute attribute-id="klarnaLocale"/>
+                <attribute attribute-id="credentialID"/>
+            </attribute-group>
+            <attribute-group group-id="osm">
+                <display-name xml:lang="x-default">On-site Messaging</display-name>
+                <attribute attribute-id="osmUCI"/>
+                <attribute attribute-id="osmCartEnabled"/>
+                <attribute attribute-id="osmCartTagId"/>
+                <attribute attribute-id="osmPDPEnabled"/>
+                <attribute attribute-id="osmPDPTagId"/>
+                <attribute attribute-id="osmHeaderEnabled"/>
+                <attribute attribute-id="osmHeaderTagId"/>
+                <attribute attribute-id="osmFooterEnabled"/>
+                <attribute attribute-id="osmFooterTagId"/>
+                <attribute attribute-id="osmInfoPageEnabled"/>
+                <attribute attribute-id="osmInfoPageTagId"/>
+                <attribute attribute-id="osmDataInlineEnabled"/>
+                <attribute attribute-id="osmLibraryUrl"/>
+            </attribute-group>
+            <attribute-group group-id="expressButton">
+                <display-name xml:lang="x-default">Express Button</display-name>
+                <attribute attribute-id="kebMerchantID"/>
+                <attribute attribute-id="kebEnvironment"/>
+                <attribute attribute-id="kebTheme"/>
+                <attribute attribute-id="kebShape"/>
+                <attribute attribute-id="kebCartEnabled"/>
+                <attribute attribute-id="kebLibraryUrl"/>
+                <attribute attribute-id="kebCategory"/>
+            </attribute-group>
+            <attribute-group group-id="expressMCButton">
+                <display-name xml:lang="x-default">MiniCart Express Button</display-name>
+                <attribute attribute-id="kebMCEnabled"/>
+                <attribute attribute-id="kebMCTheme"/>
+                <attribute attribute-id="kebMiniCartShape"/>
+            </attribute-group>
+        </group-definitions>
+    </custom-type>
+
+    <custom-type type-id="ListOfNotExportedOrders">
+        <display-name xml:lang="x-default">UUID</display-name>
+        <staging-mode>source-to-target</staging-mode>
+        <storage-scope>site</storage-scope>
+        <key-definition attribute-id="uuid">
+            <type>string</type>
+            <min-length>0</min-length>
+        </key-definition>
+        <attribute-definitions>
+            <attribute-definition attribute-id="listOfNotExportedOrders">
+                <display-name xml:lang="x-default">List Of Not Exported Orders</display-name>
+                <type>text</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+        </attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="ListOfNotExportedOrders">
+                <display-name xml:lang="x-default">List Of Not Exported Orders</display-name>
+                <attribute attribute-id="listOfNotExportedOrders"/>
+                <attribute attribute-id="uuid"/>
+            </attribute-group>
+        </group-definitions>
+    </custom-type>
+
+    <custom-type type-id="OrderReturns">
+        <staging-mode>no-staging</staging-mode>
+        <storage-scope>site</storage-scope>
+        <key-definition attribute-id="entryCode">
+            <type>string</type>
+            <min-length>0</min-length>
+        </key-definition>
+        <attribute-definitions>
+            <attribute-definition attribute-id="orderCode">
+                <display-name xml:lang="x-default">Order Number</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="rmaOrderNumber">
+                <display-name xml:lang="x-default">RMA Order Number</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+        </attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="custom">
+                <display-name xml:lang="x-default">custom-attributes</display-name>
+                <attribute attribute-id="lastModified" system="true"/>
+                <attribute attribute-id="entryCode"/>
+                <attribute attribute-id="creationDate" system="true"/>
+                <attribute attribute-id="orderCode"/>
+                <attribute attribute-id="rmaOrderNumber"/>
+            </attribute-group>
+        </group-definitions>
+    </custom-type>
+
+    <custom-type type-id="PayPalNewTransactions">
+        <display-name xml:lang="x-default">PayPal new transaction</display-name>
+        <description xml:lang="x-default">List of transactions, created via "New Transaction" feature</description>
+        <staging-mode>no-staging</staging-mode>
+        <storage-scope>site</storage-scope>
+        <key-definition attribute-id="orderNo">
+            <type>string</type>
+            <min-length>0</min-length>
+        </key-definition>
+        <attribute-definitions>
+            <attribute-definition attribute-id="currencyCode">
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="email">
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="firstName">
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="lastName">
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="orderDate">
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="orderTotal">
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentStatus">
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="transactionId">
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="transactionsHistory">
+                <type>set-of-string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+        </attribute-definitions>
+    </custom-type>
+
+    <custom-type type-id="SA_MerchantPost">
+        <display-name xml:lang="x-default">SA_MerchantPost</display-name>
+        <staging-mode>no-staging</staging-mode>
+        <storage-scope>site</storage-scope>
+        <key-definition attribute-id="OrderID">
+            <type>string</type>
+            <min-length>0</min-length>
+        </key-definition>
+        <attribute-definitions>
+            <attribute-definition attribute-id="postParams">
+                <display-name xml:lang="x-default">postParams</display-name>
+                <type>text</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="processed">
+                <display-name xml:lang="x-default">processed</display-name>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+        </attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="secureacceptance">
+                <attribute attribute-id="postParams"/>
+                <attribute attribute-id="processed"/>
+                <attribute attribute-id="OrderID"/>
+            </attribute-group>
+        </group-definitions>
+    </custom-type>
+
+    <custom-type type-id="SignifydFulfilmentEntriesForCA">
+        <display-name xml:lang="x-default">pliuuid</display-name>
+        <description xml:lang="x-default">This is used in job context for CA site to hit signifyd fulfilment API call. Deleted once signifyd API is called successfully.</description>
+        <staging-mode>no-staging</staging-mode>
+        <storage-scope>site</storage-scope>
+        <key-definition attribute-id="pliuuid">
+            <type>string</type>
+            <min-length>0</min-length>
+        </key-definition>
+        <attribute-definitions>
+            <attribute-definition attribute-id="orderno">
+                <display-name xml:lang="x-default">Order number</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+        </attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="Signifyd">
+                <display-name xml:lang="x-default">Signifyd</display-name>
+                <attribute attribute-id="pliuuid"/>
+                <attribute attribute-id="orderno"/>
+            </attribute-group>
+        </group-definitions>
+    </custom-type>
+
+    <custom-type type-id="SignifydFulfilmentEntriesForUS">
+        <display-name xml:lang="x-default">pliuuid</display-name>
+        <description xml:lang="x-default">This is used in job context for US site to hit signifyd fulfilment API call. Deleted once signifyd API is called successfully.</description>
+        <staging-mode>no-staging</staging-mode>
+        <storage-scope>site</storage-scope>
+        <key-definition attribute-id="pliuuid">
+            <type>string</type>
+            <min-length>0</min-length>
+        </key-definition>
+        <attribute-definitions>
+            <attribute-definition attribute-id="orderno">
+                <display-name xml:lang="x-default">order number</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+        </attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="Signifyd">
+                <display-name xml:lang="x-default">Signifyd</display-name>
+                <attribute attribute-id="pliuuid"/>
+                <attribute attribute-id="orderno"/>
+            </attribute-group>
+        </group-definitions>
+    </custom-type>
+
+    <custom-type type-id="SignifydTransactionEntriesForCA">
+        <display-name xml:lang="x-default">Order Number</display-name>
+        <description xml:lang="x-default">This is used in job context to hit Signifyd sendTransaction or cancalGuarantee API for CA site. Deleted once Signifyd API is called successfully.</description>
+        <staging-mode>no-staging</staging-mode>
+        <storage-scope>site</storage-scope>
+        <key-definition attribute-id="orderNumber">
+            <type>string</type>
+            <min-length>0</min-length>
+        </key-definition>
+        <group-definitions>
+            <attribute-group group-id="Signifyd">
+                <display-name xml:lang="x-default">Signifyd</display-name>
+                <attribute attribute-id="orderNumber"/>
+            </attribute-group>
+        </group-definitions>
+    </custom-type>
+
+    <custom-type type-id="SignifydTransactionEntriesForUS">
+        <display-name xml:lang="x-default">Order Number</display-name>
+        <description xml:lang="x-default">This is used in job context to hit Signifyd sendTransaction or cancalGuarantee API for US site. Deleted once Signifyd API is called successfully.</description>
+        <staging-mode>no-staging</staging-mode>
+        <storage-scope>site</storage-scope>
+        <key-definition attribute-id="orderNumber">
+            <type>string</type>
+            <min-length>0</min-length>
+        </key-definition>
+        <group-definitions>
+            <attribute-group group-id="Signifyd">
+                <display-name xml:lang="x-default">Signifyd</display-name>
+                <attribute attribute-id="orderNumber"/>
+            </attribute-group>
+        </group-definitions>
+    </custom-type>
+
+    <custom-type type-id="TumiTracer">
+        <display-name xml:lang="x-default">Tumi Tracer Data for APTOS Mapping</display-name>
+        <description xml:lang="x-default">Tumi Tracer Data for APTOS CSV mapping.</description>
+        <staging-mode>no-staging</staging-mode>
+        <storage-scope>organization</storage-scope>
+        <key-definition attribute-id="tumiTracerNumber">
+            <type>string</type>
+            <min-length>0</min-length>
+        </key-definition>
+        <attribute-definitions>
+            <attribute-definition attribute-id="currencyIsocode">
+                <display-name xml:lang="x-default">Currency Code</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="deliveryAddressCellphone">
+                <display-name xml:lang="x-default">Delivery Address Cell Phone Number</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="deliveryAddressCountryIsocode">
+                <display-name xml:lang="x-default">Delivery Address Country Code</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="deliveryAddressEmail">
+                <display-name xml:lang="x-default">Delivery Address Email</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="deliveryAddressFirstname">
+                <display-name xml:lang="x-default">Delivery Address First Name</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="deliveryAddressLastname">
+                <display-name xml:lang="x-default">Delivery Address Last Name</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="deliveryAddressPostalcode">
+                <display-name xml:lang="x-default">Delivery Address Postal Code</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="deliveryAddressRegionIsocode">
+                <display-name xml:lang="x-default">Delivery Address Region Code</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="deliveryAddressStreetname">
+                <display-name xml:lang="x-default">Delivery Address Street Name</display-name>
+                <description xml:lang="x-default">Address 2</description>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="deliveryAddressStreetnumber">
+                <display-name xml:lang="x-default">Delivery Address Street Number</display-name>
+                <description xml:lang="x-default">Address 1</description>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="deliveryAddressTown">
+                <display-name xml:lang="x-default">Delivery Address Town</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="languageIsocode">
+                <display-name xml:lang="x-default">Language Code</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+        </attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="custom">
+                <display-name xml:lang="x-default">custom</display-name>
+                <attribute attribute-id="deliveryAddressFirstname"/>
+                <attribute attribute-id="languageIsocode"/>
+                <attribute attribute-id="currencyIsocode"/>
+                <attribute attribute-id="deliveryAddressLastname"/>
+                <attribute attribute-id="deliveryAddressCountryIsocode"/>
+                <attribute attribute-id="deliveryAddressRegionIsocode"/>
+                <attribute attribute-id="deliveryAddressEmail"/>
+                <attribute attribute-id="deliveryAddressCellphone"/>
+                <attribute attribute-id="tumiTracerNumber"/>
+                <attribute attribute-id="deliveryAddressStreetnumber"/>
+                <attribute attribute-id="deliveryAddressTown"/>
+                <attribute attribute-id="deliveryAddressPostalcode"/>
+                <attribute attribute-id="lastModified" system="true"/>
+                <attribute attribute-id="creationDate" system="true"/>
+                <attribute attribute-id="deliveryAddressStreetname"/>
+            </attribute-group>
+        </group-definitions>
+    </custom-type>
+
+    <custom-type type-id="repLocator">
+        <display-name xml:lang="x-default">RepLocator</display-name>
+        <staging-mode>source-to-target</staging-mode>
+        <storage-scope>site</storage-scope>
+        <key-definition attribute-id="region">
+            <type>string</type>
+            <min-length>0</min-length>
+        </key-definition>
+        <attribute-definitions>
+            <attribute-definition attribute-id="address1">
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="address2">
+                <display-name xml:lang="x-default">address2</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="company">
+                <display-name xml:lang="x-default">company</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="email">
+                <display-name xml:lang="x-default">email</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="name">
+                <display-name xml:lang="x-default">name</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="phone">
+                <display-name xml:lang="x-default">phone</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="regionShortName">
+                <display-name xml:lang="x-default">regionShortName</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="repID">
+                <display-name xml:lang="x-default">repID</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+        </attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="custom">
+                <display-name xml:lang="x-default">custom</display-name>
+                <attribute attribute-id="address2"/>
+                <attribute attribute-id="phone"/>
+                <attribute attribute-id="name"/>
+                <attribute attribute-id="address1"/>
+                <attribute attribute-id="region"/>
+                <attribute attribute-id="repID"/>
+                <attribute attribute-id="company"/>
+                <attribute attribute-id="email"/>
+                <attribute attribute-id="regionShortName"/>
+            </attribute-group>
+        </group-definitions>
+    </custom-type>
+</metadata>

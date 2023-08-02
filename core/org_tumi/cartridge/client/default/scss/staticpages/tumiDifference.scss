@@ -1,0 +1,549 @@
+@import "../variables";
+@import "../util/variables";
+@import "bootstrap/scss/mixins/breakpoints";
+@import "bootstrap/scss/variables";
+@import "../base/mixins";
+
+* {
+    scroll-behavior: smooth;
+}
+
+.tumi-diffrences-container {
+    .tumi-differences-what-makes-us-different {
+        margin-top: 100px;
+
+        @include media-breakpoint-down(sm) {
+            margin-top: 60px;
+        }
+
+        .sub-hero-container {
+            .sub-hero-component {
+                .text-collection {
+                    flex: 0 0 75%;
+                    max-width: 75%;
+                    text-align: center;
+                    margin: auto;
+
+                    @include media-breakpoint-down(sm) {
+                        flex: 0 0 100%;
+                        max-width: 100%;
+                    }
+
+                    @include media-breakpoint-down(xs) {
+                        text-align: left;
+                    }
+                }
+
+                &.container {
+                    @include media-breakpoint-up(md) {
+                        max-width: 100%;
+                    }
+                }
+
+                .main-tag-line {
+                    margin-top: 0;
+                    text-align: center;
+                    @include sizeWeightLh(30px, 300, 16px);
+                }
+
+                .description {
+                    margin: 20px auto 0;
+
+                    @include media-breakpoint-down(sm) {
+                        padding: 0 71px;
+                        width: 100%;
+                        margin: 18px auto 0;
+                    }
+
+                    @include media-breakpoint-down(xs) {
+                        padding: 0;
+                        text-align: center;
+                    }
+
+                    @include media-breakpoint-up(md) {
+                        width: 89%;
+                        margin: 20px auto 0;
+                    }
+                }
+
+                .collections-next,
+                .collections-prev {
+                    display: none;
+                }
+
+                .tumi-sub-hero-collection {
+                    .swiper-wrapper {
+                        width: 100%;
+                        height: 100%;
+                        margin-top: 40px;
+
+                        @include media-breakpoint-up(sm) {
+                            margin-top: 40px;
+                        }
+
+                        @include media-breakpoint-up(md) {
+                            margin-top: 60px;
+                            display: flex;
+                            justify-content: center;
+                        }
+
+                        .swiper-slide {
+                            height: 158px;
+
+                            @include media-breakpoint-up(sm) {
+                                height: 158px;
+                            }
+
+                            @include media-breakpoint-up(md) {
+                                width: 158px !important;
+                            }
+
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            color: var(--color-white);
+                            background-color: var(--color-black);
+
+                            .image-content {
+                                margin: 0;
+                                padding: 0 20px;
+                                width: 90%;
+
+                                a {
+                                    color: var(--color-white);
+                                    @include sizeWeightLh(15px, 600, 20px);
+                                }
+
+                                p {
+                                    margin-top: 10px;
+                                    @include sizeWeightLh(15px, 600, 20px);
+                                }
+                            }
+
+                            > a {
+                                position: absolute;
+                                left: 0;
+                                right: 0;
+                                z-index: 10;
+                                width: 100%;
+                                height: 100%;
+                            }
+
+                            .anchornumber {
+                                display: block;
+                                margin-bottom: 10px;
+                                color: var(--color-white);
+                                text-decoration: none;
+                                @include sizeWeightLh(20px, 300, 24px);
+                            }
+
+                            .hypen {
+                                height: 1px;
+                                width: 20px;
+                                background-color: $white;
+                                display: inline-block;
+                            }
+
+                            &:last-child {
+                                .image-content {
+                                    position: static;
+                                    top: 0;
+                                    left: 0;
+                                    transform: unset;
+                                    display: inline-block;
+                                    max-width: 100%;
+                                    text-align: left;
+                                    padding: 0 16px;
+                                    box-sizing: border-box;
+                                    margin: 0;
+                                    width: 100%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .innovation-by-nature-container {
+        background: $lotion;
+        padding: 80px 0;
+
+        @include media-breakpoint-up(sm) {
+            padding: 60px 32px;
+        }
+
+        @include media-breakpoint-up(md) {
+            padding: 100px 120px;
+        }
+
+        .container {
+            @include media-breakpoint-up(sm) {
+                padding: 0;
+            }
+
+            .tumi-diff-innovative-component-container {
+                .tumi-diff-innovative-component {
+                    padding: 0;
+                }
+
+                .text-collection {
+                    text-align: center;
+                    margin: 0 auto;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    color: $bg-dark;
+                }
+
+                .subTagLine {
+                    letter-spacing: 2px;
+                    @include sizeWeightLh(14px, 400, 14px);
+                }
+
+                .main-tag-line {
+                    @include sizeWeightLh(54px, 300, 58px);
+
+                    width: 70%;
+                    margin: 10px auto;
+                    letter-spacing: -0.1px;
+
+                    @include media-breakpoint-between(xs, md) {
+                        width: 54%;
+                        @include sizeWeightLh(30px, 300, 34px);
+                    }
+
+                    @include media-breakpoint-down(sm) {
+                        width: 60%;
+                    }
+
+                    @include media-breakpoint-down(xs) {
+                        width: 100%;
+                    }
+                }
+
+                .description {
+                    margin: 0 auto;
+                    color: $davy-grey;
+
+                    @include sizeWeightLh(15px, 400, 20px);
+
+                    @include media-breakpoint-up(sm) {
+                        width: 85%;
+                    }
+                }
+
+                #sub-hero-collection {
+                    margin: 60px auto;
+
+                    @include media-breakpoint-up(sm) {
+                        margin: 60px auto 74px;
+                    }
+
+                    @include media-breakpoint-up(md) {
+                        margin: 80px auto 120px;
+                    }
+
+                    .tumi-diff-innovative-collection-container {
+                        width: 100%;
+                    }
+
+                    .tumi-diff-innovative-wrapper {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: row;
+                        align-items: flex-start;
+                        justify-content: space-between;
+
+                        .swiper-slide {
+                            flex-shrink: 0;
+                            width: 265px;
+                            height: 100%;
+                            display: flex;
+                            position: relative;
+                            transition-property: transform;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                            text-align: center;
+
+                            img {
+                                width: 48px !important;
+                                height: 48px;
+                            }
+                        }
+
+                        .header-description-content {
+                            .header {
+                                @include sizeWeightLh(15px, 600, 20px);
+
+                                background: none;
+                                text-align: center;
+                                padding: 0;
+                                width: 100%;
+                                display: block;
+                                height: auto;
+                                margin: 20px 0 10px;
+                                color: $bg-dark;
+                            }
+
+                            .desc {
+                                color: $davy-grey;
+                                @include sizeWeightLh(15px, 400, 20px);
+                                @include media-breakpoint-down(sm) {
+                                    margin-bottom: 40px;
+                                }
+                            }
+                        }
+
+                        @include media-breakpoint-between(xs, md) {
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+
+                            .swiper-slide {
+                                width: 66%;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .tumi-diff-two-column {
+                margin: 30px 0;
+
+                .container {
+                    @include media-breakpoint-down (xs) {
+                        padding: 0;
+                    }
+                }
+
+                .below-section {
+                    margin-top: 20px;
+
+                    .two-col-swiper-container {
+                        @include media-breakpoint-down (xs) {
+                            margin-top: 20px;
+                        }
+
+                        .two-col-swiper-wrapper {
+                            background-color: $eerie-black;
+                            height: 100%;
+                        }
+
+                        .tumi-service-swiper {
+                            width: 100%;
+                            height: 100%;
+                            background-color: var(--color-black);
+
+                            .swiper-wrapper {
+                                flex-direction: row;
+                                margin: 0;
+
+                                .swiper-slide {
+                                    text-align: center;
+                                    background: var(--color-black);
+                                    color: var(--color-white);
+                                    width: 100% !important;
+                                    height: 100% !important;
+                                    display: -webkit-box;
+                                    display: -ms-flexbox;
+                                    display: -webkit-flex;
+                                    display: flex;
+                                    -webkit-box-pack: center;
+                                    -ms-flex-pack: center;
+                                    justify-content: center;
+                                    -webkit-box-align: center;
+                                    align-items: center;
+                                    flex-direction: column;
+
+                                    @include media-breakpoint-down(xs) {
+                                        padding: 65px 16px;
+                                    }
+
+                                    .content-sub-head {
+                                        text-transform: uppercase;
+
+                                        @include sizeWeightLh(12px, 400, 16px);
+                                    }
+
+                                    .content-desc-component {
+                                        margin: 20px 0 0;
+                                        text-align: center;
+                                        @include sizeWeightLh(15px, 400, 20px);
+
+                                        @include media-breakpoint-up(sm) {
+                                            width: 65%;
+                                        }
+                                    }
+
+                                    .content-head {
+                                        @include sizeWeightLh(30px, 300, 32px);
+                                    }
+
+                                    .content-sub-head-container {
+                                        background: url('../../images/divider.svg') no-repeat 50% 100%;
+                                        text-align: center;
+                                        padding: 0 0 25px;
+                                        margin: 0 0 10px;
+                                    }
+                                }
+                            }
+
+                            .swiper-pagination {
+                                @include media-breakpoint-up(md) {
+                                    display: none;
+                                }
+                            }
+
+                            .swiper-pagination-bullet {
+                                width: 17px;
+                                height: 2px;
+                                background-color: #fff !important;
+                                border-radius: 0;
+                            }
+                        }
+
+                        .two-col-next {
+                            cursor: pointer;
+
+                            @include media-breakpoint-down(md) {
+                                display: none;
+                            }
+
+                            &.swiper-button-disabled {
+                                opacity: 0;
+                            }
+
+                            &::after {
+                                right: 0;
+                                background-color: transparent;
+                                z-index: 10;
+                                background-image: url("../../images/slide-right-arrow.svg") !important;
+                                content: " ";
+                                padding: 25px;
+                                color: var(--color-white);
+                                position: absolute;
+                                top: 38%;
+                                background-repeat: no-repeat;
+                                background-position: center;
+                            }
+                        }
+
+                        .two-col-prev {
+                            cursor: pointer;
+
+                            @include media-breakpoint-down(md) {
+                                display: none;
+                            }
+
+                            &.swiper-button-disabled {
+                                opacity: 0;
+                            }
+
+                            &::after {
+                                left: 0;
+                                background-color: transparent;
+                                z-index: 10;
+                                background-image: url("../../images/slide-left-arrow.svg") !important;
+                                content: " ";
+                                padding: 25px;
+                                color: var(--color-white);
+                                position: absolute;
+                                top: 38%;
+                                background-repeat: no-repeat;
+                                background-position: center;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .sub-hero-container {
+                padding: 0;
+                margin-bottom: 0;
+
+                .container {
+                    @include media-breakpoint-down (xs) {
+                        padding: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.tumi-diff-superior-modal {
+    .modal-dialog {
+        max-width: 864px;
+        margin: 0 auto;
+        position: relative;
+        width: 100%;
+        height: auto;
+
+        .modal-header {
+            margin: 0;
+
+            .heading {
+                color: $eerie-black;
+                margin-bottom: 40px;
+                @include sizeWeightLh(24px, 300, 16px);
+
+                @include media-breakpoint-up(sm) {
+                    @include sizeWeightLh(30px, 300, 16px);
+                }
+            }
+        }
+
+        .modal-content {
+            height: auto;
+        }
+
+        .modal-header {
+            .close {
+                margin-right: 10px;
+            }
+        }
+
+        ol {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-flow: row wrap;
+            flex-direction: row;
+            padding: 0 20px;
+            box-sizing: border-box;
+
+            li {
+                width: 100%;
+                margin: 0 0 5px;
+                color: $davy-grey;
+                @include sizeWeightLh(15px, 400, 20px);
+            }
+        }
+
+        @include media-breakpoint-up(sm) {
+            height: 450px;
+
+            ol {
+                li {
+                    width: 50%;
+                }
+            }
+        }
+
+        @include media-breakpoint-up(lg) {
+            height: 365px;
+
+            ol {
+                li {
+                    width: 33%;
+                }
+            }
+        }
+    }
+}

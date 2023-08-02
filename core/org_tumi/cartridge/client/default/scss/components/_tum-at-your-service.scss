@@ -1,0 +1,134 @@
+.tum-service {
+    margin: 80px auto;
+    color: $eerie-black;
+    padding: 0;
+
+    @include media-breakpoint-up(sm) {
+        margin: 100px auto;
+        padding: 0 32px;
+    }
+    @include media-breakpoint-up(md) {
+        padding: 0 120px;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    &.ts-background {
+        background-color: $lotion;
+        padding-bottom: 80px;
+
+        @include media-breakpoint-up(sm) {
+            padding-top: 80px;
+        }
+
+        @include media-breakpoint-up(md) {
+            padding-top: 120px;
+            padding-bottom: 120px;
+        }
+    }
+
+    .text-content {
+        padding: 40px 16px 0;
+
+        @include media-breakpoint-up(sm) {
+            max-width: 85%;
+            margin: auto;
+            padding: 0;
+        }
+
+        @include media-breakpoint-up(md) {
+            max-width: 66%;
+        }
+
+        .theme {
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            @include sizeWeightLh(12px,400,16px);
+        }
+
+        .title {
+            margin-bottom: 24px;
+            @include sizeWeightLh(30px,300,36px);
+        }
+
+        .description {
+            margin-bottom: 20px;
+            color: $davy-grey;
+            @include sizeWeightLh(15px,400,20px);
+        }
+
+        .button {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    .tumi-service-list {
+        list-style: none;
+
+        li {
+            border-bottom: 1px solid $grey3;
+            padding: 28px 0;
+
+            &:last-child {
+                border: 0;
+            }
+        }
+
+        a {
+            position: relative;
+
+            &:hover {
+                text-decoration: none;
+            }
+
+            &::after {
+                background: url("../images/black-right-arrow.svg") no-repeat 0 0;
+                width: 20px;
+                height: 12px;
+                position: absolute;
+                right: 12px;
+                top: calc(50% - 6px);
+                content: '';
+                transition: transform 0.3s ease;
+            }
+
+            &:hover::after {
+                transform: translate3d(5px, 0, 0);
+            }
+        }
+
+        .cta-link-name {
+            color: $eerie-black;
+            margin: 0;
+            margin-left: 15px;
+            text-align: left;
+            @include sizeWeightLh(15px,400,20px);
+        }
+
+        .cta-description {
+            display: block;
+            color: $davy-grey;
+        }
+
+        .img-wrapper {
+            width: 48px;
+            height: 48px;
+            background-color: $anti-flash-white;
+            border-radius: 50%;
+            flex: 0 0 auto;
+
+            img {
+                height: 24px;
+                width: 24px;
+            }
+        }
+    }
+}

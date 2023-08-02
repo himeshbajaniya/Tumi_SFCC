@@ -1,0 +1,308 @@
+<isdecorate template="tracerDecorator">
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addJs('/js/tumiTracer.js');
+        assets.addCss('/css/tumi-tracer.css');
+    </isscript>
+
+    <div class="container tumi-tracer">
+        <isif condition="${pdict.isGuestUser}">
+            <section class="repair-services-user-info">
+                <div class="repair-services-us ${pdict.action === 'Tracer-Show' ? 'border-0' : ''}">
+                    <div class="repair-content removeFocusIndicator">
+                        <div class="info">
+                            <h2 class="reg-txt-cntr section-subheading">
+                                <span class="value">
+                                    <isprint value="${Resource.msg('tracer.lost.bag.title', 'common', null)}" />
+                                </span>
+                            </h2>
+                            <div class="short-txt">
+                                <p>
+                                    <isprint value="${Resource.msg('tracer.lost.bag.description1', 'common', null)}" />
+                                </p>
+                            </div>
+                            <div class="short-txt">
+                                <p>${Resource.msg('tracer.lost.bag.description2', 'common', null)}
+                                    <a href="mailto:${Resource.msg('link.for.servicing', 'common', null)}">${Resource.msg('link.for.servicing', 'common', null)}</a>
+                                    ${Resource.msg('tracer.lost.text', 'common', null)}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="user-info">
+                    <p>
+                        <isprint value="${Resource.msg('heading.guest.tumi.tracer.form', 'common', null)}"
+                            encoding="on" />
+                    </p>
+                    <span class="signin">
+                        <a class="service-repairs-signin checkout-login button button-secondary-dark"
+                            data-login="sign-in" data-toggle="modal" data-target="#requestLoginModal"
+                            href="${URLUtils.https('Login-Create')}"
+                            aria-label="${Resource.msg('label.header.loginbutton', 'account', null)}">${Resource.msg('text.tumi.member.signin', 'cart', null)}</a>
+                    </span>
+                    <span class="create-account">
+                        <a class="service-repairs-register button button--secondary" data-login="create-account"
+                            data-toggle="modal" data-target="#requestLoginModal"
+                            href="${URLUtils.https('Login-Create')}"
+                            aria-label="${Resource.msg('label.header.loginbutton', 'account', null)}">${Resource.msg('text.tumi.member.account', 'cart', null)}</a>
+                    </span>
+                </div>
+            </section>
+        <iselse/>
+            <div class="repair-services-us">
+                <div class="repair-content removeFocusIndicator">
+                    <div class="info">
+                        <h2 class="reg-txt-cntr section-subheading">
+                            <span class="value">
+                                <isprint value="${Resource.msg('tracer.lost.bag.title', 'common', null)}" />
+                            </span>
+                        </h2>
+                        <div class="short-txt">
+                            <p>
+                                <isprint value="${Resource.msg('tracer.lost.bag.description1', 'common', null)}" />
+                            </p>
+                        </div>
+                        <div class="short-txt">
+                            <p>${Resource.msg('tracer.lost.bag.description2', 'common', null)}
+                                <a href="mailto:${Resource.msg('link.for.servicing', 'common', null)}">${Resource.msg('link.for.servicing', 'common', null)}</a>
+                                ${Resource.msg('tracer.lost.text', 'common', null)}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <form id="tracerIdForm" action="${pdict.idFormActionUrl}" method="POST" name="${pdict.form.htmlName}">
+                <div class="d-flex">
+                    <span class="step-header">1</span>
+                    <h2 class="card-header-custom">${Resource.msg('label.enter.tracer.number', 'forms', null)}</h2>
+                </div>
+                <div class="tracer-reg">
+                    <div class="tracer-registeration-label ">
+                        ${Resource.msg('label.tumi.tracer.registration', 'forms', null)}</div>
+
+                    <div class="form-group has-float-label tracer-id-selector">
+                        <select id='tracerIdCount' name="tracerIdCount" class="form-control custom-select">
+                            <isloop begin="1" end="5" step="1" status="loopstatus">
+                                <option>${loopstatus.count}</option>
+                            </isloop>
+                        </select>
+                        <span for="tracerIdCount" class="tarcer-text">(${Resource.msg('label.select.productQty', 'forms', null)})</span>
+                    </div>
+
+                    <div class="form-group has-float-label tracer-id-container">
+                        <input class='form-control tracerId tracerNumber' type="text"
+                            placeholder="${Resource.msg('label.input.tracerId', 'forms', null)}*" maxlength="20"
+                            name="tracerId1" value="${pdict.tracerID ? pdict.tracerID : ''}">
+                        <label for="form-control-label tracerId">${Resource.msg('label.input.tracerId', 'forms', null)}</label>
+                        <div style="display: block;" class="invalid-feedback"></div>
+                    </div>
+
+
+                    <div class="form-group has-float-label tracer-id-container d-none">
+                        <input class='form-control tracerId' type="text"
+                            placeholder="${Resource.msg('label.input.tracerId', 'forms', null)}*" maxlength="20"
+                            name="tracerId2">
+                        <label for="form-control-label tracerId">${Resource.msg('label.input.tracerId', 'forms', null)}</label>
+                        <div class="invalid-feedback"></div>
+                    </div>
+
+                    <div class="form-group has-float-label tracer-id-container d-none">
+                        <input class='form-control tracerId' type="text"
+                            placeholder="${Resource.msg('label.input.tracerId', 'forms', null)}*" maxlength="20"
+                            name="tracerId3">
+                        <label for="form-control-label tracerId">${Resource.msg('label.input.tracerId', 'forms', null)}</label>
+                        <div class="invalid-feedback"></div>
+                    </div>
+
+                    <div class="form-group has-float-label tracer-id-container d-none">
+                        <input class='form-control tracerId' type="text"
+                            placeholder="${Resource.msg('label.input.tracerId', 'forms', null)}*" maxlength="20"
+                            name="tracerId4">
+                        <label for="form-control-label tracerId">${Resource.msg('label.input.tracerId', 'forms', null)}</label>
+                        <div class="invalid-feedback"></div>
+                    </div>
+
+                    <div class="form-group has-float-label tracer-id-container d-none">
+                        <input class='form-control tracerId' type="text"
+                            placeholder="${Resource.msg('label.input.tracerId', 'forms', null)}*" maxlength="20"
+                            name="tracerId5">
+                        <label for="form-control-label tracerId">${Resource.msg('label.input.tracerId', 'forms', null)}</label>
+                        <div class="invalid-feedback"></div>
+                    </div>
+
+                    <button class="button button--primary" id="tracerIdsSubmit"
+                        type='submit'>${Resource.msg('button.apply.validation', 'forms', null)}</button>
+                </div>
+            </form>
+            <iscomment> ${pdict.resources.keys} </iscomment>
+            <input type="hidden" id="required" value="${pdict.resources.required}">
+            <input type="hidden" id="range" value="${pdict.resources.range}">
+            <input type="hidden" id="unexpected" value="${pdict.resources.unexpected}">
+
+            <div class="d-flex checkout-heading">
+                <span class="step-header">2</span>
+                <h2 class="card-header-custom">${Resource.msg('label.complete.your.registration', 'forms', null)}</h2>
+            </div>
+            <form id="tracerAddressForm" style="display: none" action="${pdict.actionUrl}" method="POST"
+                name="${pdict.form.htmlName}">
+                <div class="provide-information">
+                    <p>${Resource.msg('text.to.provide.the.details', 'forms', null)}</p>
+                </div>
+                <isset name="tracerDetails" value="${pdict.form.tracerDetails}" scope="page" />
+
+                <div class="form-group has-float-labels">
+                    <label class="form-control-label sr-only" for="country">${tracerDetails.country.label}</label>
+                    <select class="form-control custom-select" id='country' <isprint
+                        value=${tracerDetails.country.attributes} encoding="off" />>
+                    <isloop items=${tracerDetails.country.options} var="country" status="loopstatus">
+                        <option id="${country.id}" value="${country.htmlValue}" ${pdict.country == country.htmlValue ? 'selected' : ''}>${country.label}</option>
+                    </isloop>
+                    </select>
+                    <div class="invalid-feedback">
+                    </div>
+                </div>
+
+                <div class="form-group has-float-labels">
+                    <label class="form-control-label sr-only" for="title">${tracerDetails.title.label}</label>
+                    <div class="select-title">
+                        <select class="form-control custom-select" id='title' <isprint
+                            value=${tracerDetails.title.attributes} encoding="off" />>
+                        <isloop items=${tracerDetails.title.options} var="title" status="loopstatus">
+                            <option id="${title.id}" value="${title.htmlValue}">${title.label}</option>
+                        </isloop>
+                        </select>
+                        <div class="invalid-feedback">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group has-float-label state-label ${pdict.country === 'CA' ? 'd-none' : ''}">
+                    <label class="form-control-label sr-only"
+                        for="shippingState${lineItem ? lineItem.UUID : 'default'}">
+                        ${Resource.msg('field.shipping.address.state', 'address', null)}
+                    </label>
+                    <div class="select-state">
+                        <select class="form-control custom-select" id='state' <isprint
+                            value=${tracerDetails.states.stateCode.attributes} encoding="off" />>
+                            <isloop items=${tracerDetails.states.stateCode.options} var="state" status="loopstatus">
+                                <option id="${state.id}" value="${state.value ? state.value : (pdict.country === 'CA' ? 'none' : '')}">${state.label}</option>
+                            </isloop>
+                        </select>
+                        <div class="invalid-feedback">
+                            <isprint value="${addressFields.states.stateCode.error}" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group required">
+                    <input type="text" class="form-control" id="registration-form-fname"
+                        placeholder="${tracerDetails.firstName.label}*"
+                        data-missing-error="${Resource.msg('address.firstname.missing', 'forms', null)}"
+                        data-range-error="${Resource.msg('error.message.50orless', 'forms', null)}"
+                        aria-describedby="form-fname-error" <isprint value=${tracerDetails.firstName.attributes}
+                        encoding="off" />>
+                    <label class="form-control-label" for="registration-form-fname">
+                        <isprint value="${tracerDetails.firstName.label}" encoding="htmlcontent" />
+                    </label>
+                    <input type="hidden" id="validTracerId" <isprint value=${tracerDetails.tracerId.attributes}
+                        encoding="off" />>
+                    <input type="hidden" id="addressId" <isprint value=${tracerDetails.addressId.attributes}
+                        encoding="off" />>
+                    <div class="invalid-feedback"></div>
+                </div>
+
+                <div class="form-group required">
+                    <input type="text" class="form-control" id="registration-form-lname"
+                        placeholder="${tracerDetails.lastName.label}*"
+                        data-missing-error="${Resource.msg('address.lastname.missing', 'forms', null)}"
+                        data-range-error="${Resource.msg('error.message.50orless', 'forms', null)}"
+                        aria-describedby="form-lname-error" <isprint value=${tracerDetails.lastName.attributes}
+                        encoding="off" />>
+                    <label class="form-control-label" for="registration-form-lname">
+                        <isprint value="${tracerDetails.lastName.label}" encoding="htmlcontent" />
+                    </label>
+                    <div class="invalid-feedback"></div>
+                </div>
+                <div class="form-group required">
+                    <input type="text" class="form-control" id="registration-form-email"
+                        placeholder="${tracerDetails.email.label}*"
+                        data-missing-error="${Resource.msg('error.card.info.missing.email', 'forms', null)}"
+                        data-pattern-mismatch="${Resource.msg('error.message.parse.email.profile.form', 'forms', null)}"
+                        data-range-error="${Resource.msg('error.message.50orless', 'forms', null)}"
+                        aria-describedby="form-email-error" <isprint value=${tracerDetails.email.attributes}
+                        encoding="off" />>
+                    <label class="form-control-label" for="registration-form-email">
+                        <isprint value="${tracerDetails.email.label}" encoding="htmlcontent" />
+                    </label>
+                    <div class="invalid-feedback"></div>
+                </div>
+
+                <div class="form-group required">
+                    <input type="tel" class="form-control" id="registration-form-phone"
+                        placeholder="${tracerDetails.phone.label}*"
+                        data-missing-error="${Resource.msg('address.phone.missing', 'forms', null)}"
+                        data-pattern-mismatch="${Resource.msg('error.message.parse.phone.profile.form', 'forms', null)}"
+                        data-range-error="${Resource.msg('error.message.50orless', 'forms', null)}"
+                        aria-describedby="form-phone-error" <isprint value=${tracerDetails.phone.attributes}
+                        encoding="off" />>
+                    <label class="form-control-label" for="registration-form-phone">
+                        <isprint value="${tracerDetails.phone.label}" encoding="htmlcontent" />
+                    </label>
+                    <div class="invalid-feedback"></div>
+                </div>
+
+                <div class="form-group required">
+                    <input type="text" class="form-control billingAddressOne" id="billingAddressOne"
+                        placeholder="${Resource.msg('field.billing.address.one', 'address', null)}*"
+                        data-pattern-mismatch="${Resource.msg('address.address1.missing', 'forms', null)}"
+                        <isprint value=${tracerDetails.address1.attributes} encoding="off" />
+                    autocomplete="address-line1">
+                    <label class="form-control-label"
+                        for="billingAddressOne">${Resource.msg('field.billing.address.one', 'address', null)}</label>
+                    <div class="invalid-feedback"></div>
+                </div>
+
+                <div class="form-group">
+                    <input type="text" class="form-control billingAddressTwo" id="billingAddressTwo"
+                        placeholder="${Resource.msg('field.billing.address.two', 'address', null)}" <isprint
+                        value=${tracerDetails.address2.attributes} encoding="off" />
+                    autocomplete="address-line2">
+                    <label class="form-control-label"
+                        for="billingAddressTwo">${Resource.msg('field.billing.address.two', 'address', null)}</label>
+                    <div class="invalid-feedback"></div>
+                </div>
+
+                <div class="form-group required">
+                    <input type="text" class="form-control billingAddressCity" id="billingAddressCity"
+                        placeholder="${Resource.msg('field.billing.address.city', 'address', null)}*"
+                        data-pattern-mismatch="${Resource.msg('address.city.missing', 'forms', null)}"
+                        <isprint value=${tracerDetails.city.attributes} encoding="off" />
+                    autocomplete="address-level2">
+                    <label class="form-control-label"
+                        for="billingAddressCity">${Resource.msg('field.billing.address.city', 'address', null)}</label>
+                    <div class="invalid-feedback"></div>
+                </div>
+
+                <div class="form-group required">
+                    <input type="text" class="form-control billingZipCode" id="billingZipCode"
+                        data-pattern-mismatch="${Resource.msg('address.zipcode.missing', 'forms', null)}"
+                        placeholder="${Resource.msg('field.billing.address.zip.code', 'address', null)}*" <isprint
+                        value=${tracerDetails.postalCode.attributes} encoding="off" />
+                    autocomplete="postal-code">
+                    <label class="form-control-label"
+                        for="billingZipCode">${Resource.msg('field.billing.address.zip.code', 'address', null)}</label>
+                    <div class="invalid-feedback"></div>
+                </div>
+
+                <input type="hidden" name="${pdict.csrf.tokenName}" value="${pdict.csrf.token}" />
+                <div class="privacyPolicy">
+                    <span class="privacy-pol-link ">${Resource.msg('text.accordance.with.privacy.policy', 'forms', null)}&nbsp;<a href="${URLUtils.url('Page-Show', 'cid', 'privacy-policy')}" target="_blank" rel="noopener noreferrer"
+                            class="privacy-link">${Resource.msg('link.privacy.policy', 'forms', null)}</a></span>
+                </div>
+                <button type="submit" class="button button--primary"
+                    id="addressSubmit">${Resource.msg('button.complete.registration', 'forms', null)}</button>
+            </form>
+        </isif>
+    </div>
+</isdecorate>

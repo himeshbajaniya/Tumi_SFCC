@@ -1,0 +1,44 @@
+<ul class="header-menu-nav" role="menu">
+    <isif condition="${pdict.categories}">
+        <isloop items="${pdict.categories}" var="category">
+            <isif condition="${category.subCategories}">
+                <li class="header-menu-nav-links one" role="presentation">
+                    <a href="<isprint value=" ${category.url}" encoding="htmldoublequote" />"
+                    id="${category.id}" class="darkMode-focus" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                    tabindex="0">${category.name}</a>
+                    <isset name="menuItem" value="${category}" scope="page" />
+                    <isset name="mainMenuItem" value="${category}" scope="page" />
+                    <isif condition="${(menuItem.subCategories) && (menuItem.menuTemplateRender)}">
+                        <isset name="menuItemColl" value="${category}" scope="page" />
+                        <isinclude template="components/header/menuItemCollection" />
+                    <iselse/>
+                        <isinclude template="components/header/menuItem" />
+                    </isif>
+                    <span class="menu-close"><svg width="17" height="18" viewBox="0 0 17 18" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M0 1.20833L0.708333 0.5L8.50715 8.29881L16.0937 0.71224L16.8021 1.42057L9.21548 9.00715L17 16.7917L16.2917 17.5L8.50715 9.71548L0.921224 17.3014L0.212891 16.5931L7.79881 9.00715L0 1.20833Z"
+                            fill="black" />
+                    </svg></span>
+                </li>
+            <iselseif condition="${category.id === 'onSiteFittingProgram'}">
+                    <li class="header-menu-nav-links two" role="presentation">
+                        <a href="<isprint value=" ${category.url}" encoding="htmldoublequote" />"
+                        id="${category.id}" class="darkMode-focus ${empty(category.subCategories) ? 'no-sub-menu': ''}" role="link"
+                        tabindex="0" target="_blank">${category.name} </a>
+                    </li>
+
+                <iselse/>
+                    <li class="header-menu-nav-links two" role="presentation">
+                        <a href="<isprint value=" ${category.url}" encoding="htmldoublequote" />"
+                        id="${category.id}" class="darkMode-focus ${empty(category.subCategories) ? 'no-sub-menu': ''}" role="link"
+                        tabindex="0">${category.name}</a>
+                    </li>
+            </isif>
+        </isloop>
+    </isif>
+    <li class="mobile-bottom-section">
+        <iscontentasset aid="mobile-menu-bottom-section" />
+    </li>
+</ul>

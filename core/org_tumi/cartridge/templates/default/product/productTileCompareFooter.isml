@@ -1,0 +1,11 @@
+<div class="content ratings-compare">
+    <div class="group-header ${pdict.products[0].id === product.id ? '' : 'invisible'}">
+        <span>${Resource.msg('compare.ratings.header','product',null)}</span>
+    </div>
+    <div class="ratings">
+        <div class="stars">
+            <span class="rating-value" data-rating = ${product.rating}></span>
+        </div>
+        <div class="count">(${product.rating})</div>
+    </div>
+</div>

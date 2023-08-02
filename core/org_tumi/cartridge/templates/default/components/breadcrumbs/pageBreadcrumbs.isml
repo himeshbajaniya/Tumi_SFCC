@@ -1,0 +1,21 @@
+<div class="row hidden-xs-down product-details">
+    <div class="col" role="navigation" aria-label="Breadcrumb">
+        <ol class="breadcrumb">
+            <isloop items="${pdict.breadcrumbs}" var="breadcrumbValue" status="loopState">
+                    <isif condition="${breadcrumbValue === pdict.breadcrumbs[0]}">
+                        <li class="breadcrumb-item"><a href="${pdict.breadcrumbs[0].url}"><img src="${pdict.breadcrumbs[0].htmlValue}" alt=""/></a></li>
+                        <iselseif condition="${breadcrumbValue.htmlValue.indexOf('home-icon') === -1}" />
+                            <li class="breadcrumb-item">
+                                <isif condition="${loopState.last}">
+                                    ${breadcrumbValue.htmlValue}
+                                    <iselse/>
+                                        <a href="${breadcrumbValue.url}">
+                                            ${breadcrumbValue.htmlValue}
+                                        </a>
+                                </isif>
+                            </li>
+                    </isif>
+            </isloop>
+        </ol>
+    </div>
+</div>

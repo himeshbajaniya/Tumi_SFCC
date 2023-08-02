@@ -1,0 +1,138 @@
+<isif condition="${!pdict.ajaxCall}">
+    <isdecorate template="tracerDecorator">
+        <isscript>
+            var assets = require('*/cartridge/scripts/assets.js');
+            assets.addJs('/js/tumiTracer.js');
+            assets.addCss('/css/tumi-tracer.css');
+        </isscript>
+
+        <isinclude template="/components/modules" sf-toolkit="off" />
+        <div class="container">
+
+            <div class="row tracer-sub-header">
+                <div class="col-12 col-sm-6 col-lg-8 align-items-center d-flex">
+                    <p>
+                        <isprint value="${Resource.msg('tracer.subtitle', 'common', null)}" />
+                    </p>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-4 text-right">
+                    <form method="get" action="${URLUtils.url('Tracer-Show')}">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="tracerID" maxlength="20"
+                                placeholder="please enter 20 Digit code"
+                                data-parse-error="${Resource.msg('tracer.length.invalid.msg', 'common', null)}" />
+                            <label class="form-control-label">
+                                ${Resource.msg('label.input.tracerId', 'forms', null)}
+                            </label>
+                            <div class="invalid-feedback"></div>
+                        </div>
+
+                        <button type="submit" class="button button--primary tracer-registre-btn" name="tracer-register"
+                            value="Register" />${Resource.msg('button.register', 'common', null)}</button>
+                    </form>
+                </div>
+            </div>
+
+            <isif condition="${pdict.products}">
+                <div class="tracer-title">
+                    <isprint value="${Resoruce.msg('tracer.registered.products', 'common', null)}" />
+                    <select name="items" class="items-size">
+                        <isloop iterator="${pdict.sizeList}" var="size">
+                            <option value="${size}"
+                                data-url="${URLUtils.url('Tracer-List', 'pagestart', pdict.pageStart, 'pagesize', size)}"
+                                ${size == pdict.pageSize ? 'selected' : ''}>${size} Items</option>
+                        </isloop>
+                    </select>
+                </div>
+
+                <div class="reg-products-title">
+                    <h3>${Resource.msg('tracer.registered.products', 'common', null)}</h3>
+
+                    <div class="${pdict.products.length === 0 ? 'no-reg-products' : 'd-none'}">
+                        <p>${Resource.msg('label.tracer.empty.register.products', 'common', null)}</p>
+                    </div>
+                </div>
+
+                <div class="row tracer-products">
+                    <isloop iterator="${pdict.products}" var="product">
+                        <isset name="registeredDate" value="${new Date(Number(product.registerDate))}" scope="page" />
+                        <div class="col-md-8 tracer-product">
+                            <div class="col-md-3">
+                                <svg width="93" height="24" viewBox="0 0 93 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M92.4312 5.23438H89.6572V23.9995H92.4312V5.23438Z" fill="red" />
+                                    <path
+                                        d="M48.2709 5.23438V19.4429C48.2709 19.629 48.2709 21.2565 46.4982 21.2565H30.1616C28.3889 21.2565 28.3889 19.629 28.3889 19.4429V5.23438H15.5879V23.9994H18.3788V7.98581H25.6008V20.1452C25.6008 21.6485 26.612 23.9994 29.5256 23.9994H47.1145C50.0338 23.9994 51.0463 21.6485 51.0463 20.1452C51.0463 18.6461 51.0435 5.90425 51.0435 5.23438H48.2709Z"
+                                        fill="red" />
+                                    <path
+                                        d="M82.4777 5.23438L70.2125 21.4426L57.9446 5.23438H53.6094V23.9994H56.3961V7.73479L68.6316 23.9994H71.7949L84.0121 7.73479V23.9994H86.8058V5.23438H82.4777Z"
+                                        fill="red" />
+                                    <path d="M0 0V7.98637H10.0101V23.9986H12.7982V5.23493H2.78811V2.7317H92.432V0H0Z"
+                                        fill="red" />
+                                </svg>
+                            </div>
+                            <div class="col-md-5 registered-data">
+                                <span>
+                                    <isprint
+                                        value="${Resource.msgf('label.tracer.no', 'common', null, product.tracerId)}" />
+                                </span>
+                                <span>
+                                    <isprint value="${Resource.msgf('label.tracer.registered', 'common', null, registeredDate.getMonth() + 1, registeredDate.getDate(),
+                                                    registeredDate.getFullYear().toString().substr(2, 2))}" />
+                                </span>
+                            </div>
+                        </div>
+                    </isloop>
+                    <isif condition="${pdict.showMoreButton}">
+                        <div class="col-12 col-lg-6">
+                            <a href="javascript:void(0)" class="load-more btn btn-outline-primary w-100"
+                                data-url="${URLUtils.url('Tracer-List', 'pagestart', pdict.pageStart, 'pagesize', pdict.pageSize + pdict.pageSize)}">
+                                <isprint value="${Resource.msg('tracer.products.load.more', 'common', null)}" />
+                            </a>
+                        </div>
+                    </isif>
+                </div>
+            <iselse/>
+                <iscomment> TODO: to show data for no product registred.</iscomment>
+            </isif>
+        </div>
+    </isdecorate>
+<iselse/>
+    <div class="row tracer-products">
+        <isloop iterator="${pdict.products}" var="product">
+            <isset name="registeredDate" value="${new Date(Number(product.registerDate))}" scope="page" />
+            <div class="col-md-8 tracer-product">
+                <div class="col-md-3">
+                    <svg width="93" height="24" viewBox="0 0 93 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M92.4312 5.23438H89.6572V23.9995H92.4312V5.23438Z" fill="red" />
+                        <path
+                            d="M48.2709 5.23438V19.4429C48.2709 19.629 48.2709 21.2565 46.4982 21.2565H30.1616C28.3889 21.2565 28.3889 19.629 28.3889 19.4429V5.23438H15.5879V23.9994H18.3788V7.98581H25.6008V20.1452C25.6008 21.6485 26.612 23.9994 29.5256 23.9994H47.1145C50.0338 23.9994 51.0463 21.6485 51.0463 20.1452C51.0463 18.6461 51.0435 5.90425 51.0435 5.23438H48.2709Z"
+                            fill="red" />
+                        <path
+                            d="M82.4777 5.23438L70.2125 21.4426L57.9446 5.23438H53.6094V23.9994H56.3961V7.73479L68.6316 23.9994H71.7949L84.0121 7.73479V23.9994H86.8058V5.23438H82.4777Z"
+                            fill="red" />
+                        <path d="M0 0V7.98637H10.0101V23.9986H12.7982V5.23493H2.78811V2.7317H92.432V0H0Z" fill="red" />
+                    </svg>
+                </div>
+                <div class="col-md-5 registered-data">
+                    <span>
+                        <isprint value="${Resource.msgf('label.tracer.no', 'common', null, product.tracerId)}" />
+                    </span>
+                    <span>
+                        <isprint value="${Resource.msgf('label.tracer.registered', 'common', null, registeredDate.getMonth() + 1, registeredDate.getDate(),
+                                        registeredDate.getFullYear().toString().substr(2, 2))}" />
+                    </span>
+                </div>
+            </div>
+        </isloop>
+        <isif condition="${pdict.showMoreButton}">
+            <div class="col-12 col-lg-6">
+                <a href="javascript:void(0)" class="load-more btn btn-outline-primary w-100"
+                    data-url="${URLUtils.url('Tracer-List', 'pagestart', pdict.pageStart, 'pagesize', pdict.pageSize + pdict.pageSize)}">
+                    <isprint value="${Resource.msg('tracer.products.load.more', 'common', null)}" />
+                </a>
+            </div>
+        </isif>
+    </div>
+</isif>

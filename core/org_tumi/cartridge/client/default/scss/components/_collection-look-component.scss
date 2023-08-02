@@ -1,0 +1,197 @@
+.look-component-container {
+    @include media-breakpoint-up(sm) {
+        padding: 0 32px;
+    }
+    @include media-breakpoint-up(md) {
+        padding: 0 120px;
+    }
+
+    .container {
+        @include media-breakpoint-up(sm) {
+            padding: 0;
+        }
+    }
+
+    .collection-look-component1 {
+        margin-top: 60px;
+        @include media-breakpoint-up(sm) {
+            margin-top: 40px;
+        }
+
+        @include media-breakpoint-up(md) {
+            margin-top: 80px;
+        }
+
+        .image-container {
+            @include media-breakpoint-up(md) {
+                padding-right: 12px;
+            }
+
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .look-comp-product-tile-1 {
+            .product-tile {
+                padding: 0 20px !important;
+                margin-bottom: 0 !important;
+
+                @include media-breakpoint-up(sm) {
+                    padding-left: 0 !important;
+                    padding-right: 20px !important;
+                }
+                @include media-breakpoint-up(md) {
+                    padding-left: 12px !important;
+                    padding-right: 20px !important;
+                }
+
+                .image-container {
+                    padding: 0;
+
+                    .primary-image {
+                        .tile-image {
+                            height: 100%;
+                            width: 100%;
+                        }
+                    }
+                }
+
+                .tile-body {
+                    .product-tile-title {
+                        color: $davy-grey;
+                    }
+
+                    .pdp-link {
+                        color: $eerie-black;
+                        @include sizeWeightLh(16px, 400, 18px);
+                    }
+                }
+
+                .product-bookmark {
+                    right: 34px;
+                    top: 34px;
+                    @include media-breakpoint-up(sm) {
+                        right: 60px;
+                    }
+                }
+
+                .price {
+                    .sales {
+                        .value {
+                            color: $eerie-black;
+                            @include sizeWeightLh(14px, 400, 14px);
+                        }
+                    }
+                }
+
+                .color {
+                    button {
+                        height: 26px;
+                        width: 26px;
+                    }
+                }
+
+                .compare-products {
+                    padding-top: 8px;
+                }
+            }
+        }
+    }
+
+    .collection-look-component2 {
+        margin-top: 103px;
+        margin-bottom: 85px;
+
+        @include media-breakpoint-up(sm) {
+            margin-top: 124px;
+            margin-bottom: 150px;
+        }
+        @include media-breakpoint-up(md) {
+            margin-top: 80px;
+            margin-bottom: 120px;
+        }
+
+        .image-container {
+            @include media-breakpoint-up(md) {
+                padding-left: 12px;
+            }
+
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .look-comp-product-tile-2 {
+            .product {
+                .product-tile {
+                    padding: 0 20px !important;
+                    margin-bottom: 0 !important;
+
+                    @include media-breakpoint-up(sm) {
+                        padding-left: 20px !important;
+                        padding-right: 0 !important;
+                    }
+                    @include media-breakpoint-up(md) {
+                        padding-left: 20px !important;
+                        padding-right: 12px !important;
+                    }
+
+                    .image-container {
+                        padding: 0;
+
+                        .primary-image {
+                            .tile-image {
+                                height: 100%;
+                                width: 100%;
+                            }
+                        }
+                    }
+
+                    .tile-body {
+                        .product-tile-title {
+                            color: $davy-grey;
+                        }
+
+                        .pdp-link {
+                            color: $eerie-black;
+                            @include sizeWeightLh(16px, 400, 18px);
+                        }
+                    }
+
+                    .price {
+                        .sales {
+                            .value {
+                                color: $eerie-black;
+                                @include sizeWeightLh(14px, 400, 14px);
+                            }
+                        }
+                    }
+
+                    .product-bookmark {
+                        right: 34px;
+                        top: 34px;
+                        @include media-breakpoint-up(sm) {
+                            right: 38px;
+                        }
+                    }
+
+                    .color {
+                        button {
+                            height: 26px;
+                            width: 26px;
+                        }
+                    }
+
+                    .compare-products {
+                        padding-top: 8px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<form xmlns="http://www.demandware.com/xml/form/2008-04-19">
+       <!-- <field formid="isGift" label="check.gift" type="boolean" checked="false" default-value="false" binding="isGift" mandatory="false" /> -->
+       <field formid="receiverName" label="label.gift.box.sender.name" type="string" mandatory="true" binding="receiverName" max-length="50" missing-error="address.firstname.missing" range-error="error.message.50orless"/>
+       <field formid="senderName" label="label.gift.box.receiver.name" type="string" mandatory="true" binding="senderName" max-length="50" missing-error="address.lastname.missing" range-error="error.message.50orless"/>
+       <field formid="giftMessage" label="label.gift.box.message" type="string" binding="giftMessage" max-length="200" missing-error="address.lastname.missing" mandatory="true" />
+       <field formid="giftBoxEnable" label="label.gift.box.complimentary" type="boolean" binding="giftBoxtrue" mandatory="false" />
+       <!-- <field formid="complimentaryBox" label="label.gift.box.complimentary" type="boolean" checked="false" default-value="false" binding="complimentarBox" mandatory="false" />
+       <field formid="premiumBox" label="label.gift.box.premium" type="boolean" checked="false" default-value="false" binding="premium" mandatory="false" />
+       <field formid="skipBox" label="label.skip.gift.box" type="boolean" checked="false" default-value="false" binding="skipBox" mandatory="false" /> -->
+</form>

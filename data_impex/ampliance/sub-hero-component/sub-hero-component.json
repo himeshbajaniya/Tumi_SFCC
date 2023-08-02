@@ -1,0 +1,173 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "https://www.tumi.com/sub-hero-component",
+	"title": "Title",
+	"description": "Description",
+	"allOf": [
+		{
+			"$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+		}
+	],
+	"type": "object",
+	"properties": {
+		"content-asset-id": {
+			"title": "Content Asset ID",
+			"description": "SFCC Content Asset",
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 256,
+			"format": "text"
+		},
+		"mainTagLine": {
+			"title": "Main Tag Line",
+			"description": "Enter the Main Tag Line (optional)",
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 256
+		},
+		"description": {
+			"title": "Description",
+			"description": "Enter the Description (optional)",
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 1000
+		},
+		"loader-image-link": {
+			"title": "scene7 image link",
+			"description": "Enter the loader image link",
+			"type": "string",
+			"format": "uri",
+			"minLength": 0,
+			"maxLength": 256
+		},
+		"textPosition": {
+			"title": "Text Position To Be Shown",
+			"type": "string",
+			"enum": [
+				"Center",
+				"Left"
+			]
+		},
+		"catagories": {
+			"title": "Category",
+			"description": "add categories",
+			"type": "array",
+			"minItems": 1,
+			"maxItems": 8,
+			"items": {
+				"allOf": [
+					{
+						"type": "object",
+						"properties": {
+							"S7-image-link": {
+								"title": "scene7 image link",
+								"description": "Enter the scene7 image link",
+								"type": "string",
+								"format": "uri",
+								"minLength": 0,
+								"maxLength": 256
+							},
+							"description": {
+								"title": "description",
+								"description": "Description of the image",
+								"type": "string",
+								"minLength": 0,
+								"maxLength": 1000
+							},
+							"category-name": {
+								"title": "Category Name",
+								"description": "Enter the Category Name",
+								"type": "string",
+								"minLength": 0,
+								"maxLength": 256
+							},
+							"category-url": {
+								"title": "Category URL",
+								"description": "Enter the url to redirect landing page",
+								"type": "string",
+								"minLength": 0,
+								"maxLength": 256
+							},
+							"image-alt": {
+								"title": "image alt",
+								"description": "Enter image alt text",
+								"type": "string",
+								"minLength": 0,
+								"maxLength": 256
+							},
+							"viewAllTile": {
+								"title": "Select View All tile",
+								"type": "string",
+								"enum": [
+									"Yes",
+									"No"
+								]
+							}
+						}
+					}
+				]
+			}
+		},
+		"collections": {
+			"title": "collections",
+			"description": "add categories",
+			"type": "array",
+			"minItems": 1,
+			"maxItems": 8,
+			"items": {
+				"allOf": [
+					{
+						"type": "object",
+						"properties": {
+							"S7-image-link": {
+								"title": "scene7 image link",
+								"description": "Enter the scene7 image link",
+								"type": "string",
+								"format": "uri",
+								"minLength": 0,
+								"maxLength": 256
+							},
+							"description": {
+								"title": "description",
+								"description": "Description of the image",
+								"type": "string",
+								"minLength": 0,
+								"maxLength": 1000
+							},
+							"collection-name": {
+								"title": "Collection Name",
+								"description": "Enter the Collection Name",
+								"type": "string",
+								"minLength": 0,
+								"maxLength": 256
+							},
+							"collection-url": {
+								"title": "Collection URL",
+								"description": "Enter the url to redirect landing page",
+								"type": "string",
+								"minLength": 0,
+								"maxLength": 256
+							},
+							"image-alt": {
+								"title": "image alt",
+								"description": "Enter image alt text",
+								"type": "string",
+								"minLength": 0,
+								"maxLength": 256
+							},
+							"viewAllTile": {
+								"title": "Select View All tile",
+								"type": "string",
+								"enum": [
+									"Yes",
+									"No"
+								]
+							}
+						}
+					}
+				]
+			}
+		}
+	},
+	"propertyOrder": []
+}

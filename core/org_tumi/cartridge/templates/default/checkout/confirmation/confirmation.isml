@@ -1,0 +1,186 @@
+<isdecorate template="common/layout/page">
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addCss('/css/checkout/checkout.css');
+        assets.addJs('/js/checkoutRegistration.js');
+        var pageContext = {
+			title: 'Order Confirmation',
+			type:'orderconfirmation',
+			ns:'cart'
+		};
+    </isscript>
+
+    <isif condition="${pdict.reportingURLs && pdict.reportingURLs.length}">
+        <isinclude template="reporting/reportingUrls" />
+    </isif>
+
+    <div class="order-confirmation">
+        <div class="container-fluid bgGreyColor">
+            <div class="hero-confirmation-note">
+                <div class="icon"></div>
+                <h1>${Resource.msg('label.thankyoufororder','confirmation',null)}</h1>
+                <div class="order-number">${Resource.msg('label.order.number', 'confirmation', null)} <span>${pdict.order.orderNumber}</span></div>
+                <div class="email-confirmation">${Resource.msgf('info.receive.email.confirmationemail', 'confirmation', null)} <span class="email font-weight-bold">${pdict.order.orderEmail}</span></div>
+            </div>
+            <div class="container sms-create-account">
+                        <div class="card-item sms-section-tile">
+                            <div class="sms-section">
+                                <div class="linc-optin-widget" data-custom-class="mobile" shopper-email="${pdict.order.orderEmail}" order-id="${pdict.order.orderNumber}" locale-id="${pdict.locale}" page-ref="orderconfirmation"></div>
+                            </div>
+                        </div>
+                        <isif condition="${pdict.returningCustomer === false && pdict.order.orderEmail}">
+                            <div class="card-item become-member">
+                                <div class="become-member-section">
+                                    <h2>${Resource.msg('label.order.account.title', 'confirmation', null)}</h2>
+                                    <div class="content disclaimer">${Resource.msg('label.order.account.disclaimer', 'confirmation', null)}</div>
+                                    <isinclude template="checkout/confirmation/confirmationCreateAccountExtension">
+                                    <input type="hidden" name="${pdict.csrf.tokenName}" value="${pdict.csrf.token}"/>
+                                    <input type="hidden" id="getRegisterForm" value="${pdict.registerForm ? pdict.registerForm : null}"/>
+                                    <input type="hidden" id="createAccountUrl" value="${URLUtils.url('Order-CreateAccount', 'ID', pdict.order.orderNumber, 'UUID', pdict.orderUUID)}"/>
+                                    <button class="button button-primary btn-block w-100" id="register-form" data-login="create-account" data-toggle="modal" data-target="#requestLoginModal" aria-label="Login to your account">${Resource.msg('button.order.createaccount', 'confirmation', null)}</button>
+                                </div>
+                            </div>
+                        </isif>
+            </div>
+        </div>
+        <div class="continer-fluid bgColor">
+            <div class= "container">
+                <div class="row">
+                    <div class="col-12 col-sm-7">
+                        <div class="cart-order-review d-sm-none d-md-none"> 
+                            <div class="mobile-cart-review d-flex justify-content-between">
+                                <h4>${Resource.msg('label.order.summary', 'confirmation', null)}(<span class="number-of-items">${Resource.msgf('label.number.items.in.cart','cart', null, pdict.order.items.totalQuantity)}</span>)</h4>
+                                <p class="text-right grand-total">${pdict.order.totals.grandTotal} <span class="cart-drop-down"></span></p>
+                            </div>
+                            <div class="order-mobile d-none">
+                                <isinclude template="checkout/orderProductSummary" />
+                                <isinclude template="checkout/confirmation/confirmationOrderTotal" />
+                            </div>
+                        </div>
+
+                        <div class="item-list">
+                            <div class="cofirm-shipping d-flex">
+                                <div class="shipping-summary">
+                                    <isinclude template="checkout/shipping/confirmShippingSummary" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-item payment-section">
+                        <h3>${Resource.msg('label.order.payment.title', 'confirmation', null)}</h3>
+                        <isloop items="${pdict.order.billing.payment.selectedPaymentInstruments}" var="payment">
+                            <div class="card-detail d-flex">
+                                <isif condition="${payment.paymentMethod === 'PayPal'}">
+                                    <span class="paypal-method" data-type="${payment.paymentMethod}">${Resource.msg('label.payment.mathod.paypal', 'confirmation', null)}</span>
+                                <iselseif condition="${payment.paymentMethod === 'GIFT_CERTIFICATE'}" />
+                                    <span class="gift-method" data-type="${payment.paymentMethod}">${Resource.msg('label.payment.mathod.gift', 'confirmation', null)}</span>
+                                <iselseif condition="${payment.paymentMethod === 'KLARNA_PAYMENTS'}" />
+                                    <span class="card-number-wrapper" data-type="klarna"></span>
+                                <iselseif condition="${payment.paymentMethod === 'DW_APPLE_PAY'}" />
+                                    <div class="applepay-method" data-type="${payment.paymentMethod}">${Resource.msg('label.payment.mathod.applepay', 'confirmation', null)}</div>
+                                    <span class="cc-digits">
+                                        <isif condition="${!empty(payment.lastFour)}" >
+                                            <isprint value="${payment.lastFour}" />
+                                        </isif>
+                                    </span>
+                                <iselse/>
+                                    <div class="card-number-wrapper" data-type="${payment.type}">
+                                    </div>
+                                    <div class="credit-card">
+                                        <isif condition="${!empty(payment.lastFour)}" >
+                                            <isprint value="${payment.lastFour}" />,
+                                        </isif>
+                                        <span>${Resource.msg('label.order.confirm.exp', 'confirmation', null)} ${payment.expirationMonth}/${payment.expirationYear}</span>
+                                    </div>
+                                </isif>
+                            </div>
+                        </isloop>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-5">
+                        <div class="card-item order-summmary-details">
+                            <h2>${Resource.msg('label.order.summary', 'confirmation', null)}</h2>
+                            <isinclude template="checkout/orderProductSummary" />
+                            <isinclude template="checkout/confirmation/confirmationOrderTotal" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <isslot id="CarouselOrderConfirmation" context="global" description="Recommendation Carousel for Order Confirmation Page" />
+            <div class="container mt-4">
+                <div class="row">
+                    <div class="col-12">
+                        <a href="${URLUtils.url('Home-Show')}" class="btn btn-primary btn-block order-confirmation-continue-shopping" role="button" aria-pressed="true">
+                                ${Resource.msg('button.continue.shopping','confirmation',null)}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade enable-shipping-update global-modal" id="enable-shipping-update" tabindex="-1" role="dialog"
+    aria-labelledby="monogramModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">
+                        <iscomment> ${Resource.msg('product.default.monogram.makeyours', 'product', null)} </iscomment>
+                        ${Resource.msg('label.order.sms.title','confirmation',null)}
+                    </h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">
+                            <img class="" src="${URLUtils.staticURL('/images/modal-close.svg')}"
+                                alt="${Resource.msg('global.search', 'common', null)}" />
+                        </span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">${Resource.msg('label.order.sms.entermessage','confirmation',null)}</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="*******789"></input>
+                        </div>
+                        <div class="terms-section">
+                            <h2>${Resource.msg('label.order.terms.conditions','confirmation',null)}</h2>
+                            <div class="">
+                                ${Resource.msg('label.order.terms.condions.content','confirmation',null)}
+                            </div>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                ${Resource.msg('label.order.agree.terms.conditions','confirmation',null)}
+                            </label>
+                        </div>
+                        <a href="javascript:void(0);" class="button button--primary">${Resource.msg('label.order.sumbit','confirmation',null)}</a>
+                        <a href="javascript:void(0);" class="button button--secondary">${Resource.msg('label.order.cancel','confirmation',null)}</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <isinclude template="checkout/confirmation/orderConfirmRfkEvents" />
+    <script>
+        window.lincOptinAsyncInit = function() {
+        LincOptin.init({
+        publicId: '${dw.system.Site.getCurrent().getCustomPreferenceValue("lincShopId")}'
+        });
+        };
+        // Facebook Javascript SDK
+        (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) { return; }
+        js = d.createElement(s); http://js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+        // End of Facebook Javascript SDK
+        
+        (function(d, s, id) {
+        var js, ljs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) { return; }
+        js = d.createElement(s); http://js.id = id;
+        js.src = '${dw.system.Site.getCurrent().getCustomPreferenceValue("confirmationSrc")}';
+        ljs.parentNode.insertBefore(js, ljs);
+        } (document, 'script', 'linc-optin-js'));
+    </script>
+</isdecorate>

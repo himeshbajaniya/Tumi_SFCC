@@ -1,0 +1,115 @@
+<isset name="contentConfigs" value="${pdict.content.contentConfigs}" scope="page" />
+<isset name="pageType" value="${pdict.pageType}" scope="page" />
+<isset name="generalAttrs" value="${pdict.content.generalAttrs}" scope="page" />
+<isset name="additionalValues" value="${pdict.content.additionalValues}" scope="page" />
+<isset name="isProperties" value="${pdict.content.isProperties || false }" scope="page" />
+<isset name="selectPlacheholder" value="${pdict.content.selectPlacheholder || false }" scope="page" />
+<isset name="newLabelForPlaceholderCol" value="${pdict.content.newLabelForPlaceholderCol || false }" scope="page" />
+<isset name="newLabelForAvailableCol" value="${pdict.content.newLabelForAvailableCol || false }" scope="page" />
+
+<div hidden class="js-page-params" 
+    data-controller-url="${URLUtils.url("EmarsysAdmin-" 
+    + Resource.msg(pageType + ".name.point", "dynamicTemplate",""))}" 
+    data-general-attrs='${JSON.stringify(pdict.content.generalAttrs)}'
+    data-first-option='${Resource.msg("default.option.value", "dynamicTemplate",'')}'
+    data-error-placeholder-message='${Resource.msg("error.message.enter.placeholder", "errorMessages", "")}'
+    data-error-select-field='${Resource.msg("error.message.select.field", "errorMessages", "")}'
+    data-select-placeholder='${JSON.stringify(pdict.content.selectPlacheholder)}'>
+</div>
+
+<isloop items="${contentConfigs}" var="contentConfig" status="contentStatus">
+    <div id="${contentConfig.contentID}" class="js-tabcontent tabcontent ${contentStatus.first ? 'active' : 'hide-content'}">
+        <div class="js-main-title warning-teg">
+            <label class="border-text text-position">
+                ${Resource.msg("mapped.fields.text","dynamicTemplate",'')}
+            </label>
+            <div class="add-fields-button-container">
+                <button class="js-add-fields button-add-fields">${Resource.msg("button.add.fields.label","dynamicTemplate",'')}</button>
+            </div>
+        </div>
+        <div class="title-label-row">
+            <label class="title-available-col border-text text-position">
+                <isif condition="${newLabelForAvailableCol}">
+                    ${Resource.msg("title." + newLabelForAvailableCol + ".name.label", "dynamicTemplate", "")}
+                <iselse/>
+                    ${Resource.msg("title.available.elements.label", "dynamicTemplate", "")}
+                </isif>
+            </label>
+            <label class="title-placeholder-col border-text">
+                <isif condition="${newLabelForPlaceholderCol}">
+                    ${Resource.msg("title." + newLabelForPlaceholderCol + ".name.label", "dynamicTemplate", "")}
+                <iselse/>
+                    ${Resource.msg("title.placeholder.name.label", "dynamicTemplate", "")}
+                </isif>
+            </label>
+            <label class="title-remove-col border-text">
+                ${Resource.msg("title.remove.label", "dynamicTemplate", "")}
+            </label>
+        </div>
+        <div class="js-filds-configuration filds-configuration">
+            <isloop items="${contentConfig.mappedFields}" var="mappedFild">
+                <div class="js-fild-configuration fild-configuration text-position">
+                    <div class="selects-attr available-col">
+                        <select class="js-fields select-fields">
+                            <option value="" >${Resource.msg("default.option.value", "dynamicTemplate",'')}</option>
+                            <isloop items="${generalAttrs}" var="generalAttr">
+                                <option value="${Object.hasOwnProperty.call(generalAttr, "value") ? generalAttr.value 
+                                                : Object.hasOwnProperty.call(generalAttr, "id") ? generalAttr.id : generalAttr}" 
+                                <isif condition="${(Object.hasOwnProperty.call(generalAttr, "value") ? generalAttr.value
+                                                : Object.hasOwnProperty.call(generalAttr, "id") ? generalAttr.id : generalAttr) == mappedFild.field}">${Resource.msg("default.selected.value", "dynamicTemplate",'')}</isif>>
+                                    ${Object.hasOwnProperty.call(generalAttr, "name") ? generalAttr.name : generalAttr}
+                                </option>
+                            </isloop>
+                        </select>
+                        <label class="js-error-message-select hide-content">${Resource.msg("error.message.select.field", "errorMessages", "")}</label>
+                    </div>
+                        <div class="js-mappedFilds mappedFilds placeholder-col">
+                            <isif condition="${selectPlacheholder}">
+                                <select class=" js-placeholder select-fields"/>
+                                    <option value="" >${Resource.msg("default.option.value", "dynamicTemplate",'')}</option>
+                                    <isloop items="${selectPlacheholder}" var="availableAttr">
+                                        <option value="${availableAttr.value}" 
+                                        <isif condition="${availableAttr.value === mappedFild.placeholder}">${Resource.msg("default.selected.value", "dynamicTemplate",'')}</isif>>
+                                                ${Object.hasOwnProperty.call(availableAttr, "name") ? availableAttr.name : availableAttr}
+                                        </option>
+                                    </isloop>
+                                </select>
+                                <label class="js-error-message-input hide-content">${Resource.msg("error.message.select.field", "errorMessages", "")}</label>
+                            <iselse/>
+                                <input type="text" class="js-placeholder input-placeholder" value="${mappedFild.placeholder}" />
+                                <label class="js-error-message-input hide-content ">${Resource.msg("error.message.enter.placeholder", "errorMessages", "")}</label>
+                            </isif>
+                        </div>
+                    <div class="remove-col">
+                        <input class="js-remove-check-box remove-check-box" type="checkbox" />
+                    </div>
+                </div>
+            </isloop>
+        </div>
+        <isif condition="${additionalValues}">
+            <div class="additional-menu">
+                <div class="warning-teg">
+                    <label class="border-text text-position" for="additional-menu">
+                        ${Resource.msg(pageType + ".additional.menu.label","dynamicTemplate",'')}
+                    </label>
+                </div>
+                <div class="additional-body">
+                    <div class="border-text text-position">
+                        ${Resource.msg(pageType + ".additional.label","dynamicTemplate",'')}
+                    </div>
+                    <select class="js-additional-value select-additional-value"/>
+                        <isloop items="${additionalValues}" var="value">
+                            <option value="${value.id}" <isif condition="${value.id == contentConfig.additionalParam}">${Resource.msg("default.selected.value", "dynamicTemplate",'')}</isif>>
+                                ${isProperties ? Resource.msg(value.name, "dynamicTemplate",'') : value.name}
+                            </option>
+                        </isloop>
+                    </select>
+                </div>
+            </div>
+        </isif>
+        <div class="applay-add-fields-buttons-container">
+            <button class="js-add-fields button-add-fields">${Resource.msg("button.add.fields.label","dynamicTemplate",'')}</button>
+            <button class="js-apply-button button-apply">${Resource.msg("button.apply.label","dynamicTemplate",'')}</button>
+        </div>
+    </div>
+</isloop>

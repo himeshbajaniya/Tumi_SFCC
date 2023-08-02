@@ -1,0 +1,28 @@
+.special-markets-footer {
+    margin-bottom: 35px;
+
+    .footer-menu-links {
+        .sub-header {
+            border-bottom: unset;
+            padding: 0;
+            font-size: 14px;
+            font-family: $font-semibold;
+
+            &::after {
+                position: unset;
+                content: '';
+            }
+        }
+    }
+
+    .footer-menu-sub-links {
+        display: block;
+        border-bottom: unset;
+
+        li {
+            &:last-child {
+                margin-bottom: 32px;
+            }
+        }
+    }
+}

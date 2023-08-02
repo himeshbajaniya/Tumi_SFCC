@@ -1,0 +1,35 @@
+<isdecorate template="common/layout/page">
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('/css/account/profile.css');
+    assets.addJs('/js/profile.js');
+	assets.addJs('https://connect.letslinc.com/v1/myAccountWidget.js');
+</isscript>
+
+<div class="container-fluid account-banner purchases-banner">
+	<div class="container">
+		<div class="row align-items-end">
+			<div class="col-12">
+				<div class="bread-crumb">
+					<div class="bread-crumb-content">
+						<isif condition="${pdict.isOrderDetails}">
+							<img src="${URLUtils.absStatic('/images/home-icon.svg')}" alt="" /> / <a href="${URLUtils.https('Account-Show')}">${Resource.msg('link.header.myaccount','account',null)}</a>/<a href="${pdict.breadcrumbs[2].url}">${pdict.breadcrumbs[2].htmlValue}</a> / ${pdict.breadcrumbs[3].htmlValue}
+						<iselse/>
+							<img src="${URLUtils.absStatic('/images/home-icon.svg')}" alt="" /> / <a href="${URLUtils.https('Account-Show')}">${Resource.msg('link.header.myaccount','account',null)}</a> / ${pdict.breadcrumbs[2].htmlValue}
+						</isif>
+					</div>
+				</div>
+				<div class="back-to-account">
+					<a href="${URLUtils.https('Account-Show')}" role="menuitem">
+						<img src="${URLUtils.absStatic('/images/back-arrow.svg')}" alt="" />${Resource.msg('label.mysettings.backtomyaccount','account',null)}
+					</a>
+				</div>
+				<div class="account-title">${pdict.breadcrumbs[pdict.isOrderDetails ? 3 : 2].htmlValue}</div>
+			</div>
+        </div>
+    </div>
+</div>
+
+<isreplace/>
+
+</isdecorate>

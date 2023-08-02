@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<form xmlns="http://www.demandware.com/xml/form/2008-04-19">
+    <field formid="subscriptionType" type="string" missing-error="" mandatory="true"/>
+    <field formid="subscriptionStrategy" label="form.optin_strategy.label" type="string" missing-error="" mandatory="true" />
+    <field formid="externalEventOptin" label="form.single_optin_event.label" type="string" missing-error="" mandatory="false" />
+    <field formid="externalEventOptinAfterConfirmation" label="form.double_optin_event.label" type="string" missing-error="" mandatory="false" />
+    <action formid="applyButton" label="form.apply.label" valid-form="true" />
+</form>

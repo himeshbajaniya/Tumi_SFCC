@@ -1,0 +1,35 @@
+<div class="communication-preferences">
+        <form action="${URLUtils.url('CommunicationPreference-Save')}" class="communication-pref-form" method="POST"
+    name="communication-pref-form" ${pdict.communicationPreferenceForm.attributes}>
+            <div class="opt-email">
+                <h3>${Resource.msg('communication.preferences.title', 'account', null)}</h3>
+                <p>${Resource.msg('communication.preferences.stay.uptospeed', 'account', null)}</p>
+                <div class="form-group custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" name="optInEmail" value="true" id="emailcheckbox" <isprint
+            value="${pdict.communicationPreferenceForm.emailcheckbox.attributes}" encoding="off" />>
+                    <label class="custom-control-label" for="emailcheckbox">
+                    <isprint value="${pdict.communicationPreferenceForm.emailcheckbox.label}" encoding="htmlcontent" />
+                        <iscomment> ${Resource.msg('communication.preferences.opt.email', 'account', null)} </iscomment>
+                    </label>
+                </div>
+            </div>
+
+            <iscomment> <div class="opt-sms">
+                <h3>${Resource.msg('communication.preferences.order.information', 'account', null)}</h3>
+                <div class="text-content">
+                    <p>${Resource.msg('order.information.receive.sms.messages', 'account', null)}</p>
+                    <p>${Resource.msg('order.information.normal.sms.rates', 'account', null)} <a href="javascript:void(0)">${Resource.msg('order.information.link.see.details', 'account', null)}</a>.</p>
+                </div>
+                <div class="form-group custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" name="optInSMS"  value="true" id="smscheckbox" <isprint
+            value="${pdict.communicationPreferenceForm.smscheckbox.attributes}" encoding="off" />>
+                    <label class="custom-control-label" for="smscheckbox">
+                    <isprint value="${pdict.communicationPreferenceForm.smscheckbox.label}" encoding="htmlcontent" />
+                         ${Resource.msg('communication.preferences.opt.sms', 'account', null)}
+                    </label>
+                </div>
+            </div> </iscomment>
+                    <button type="submit" class="button button--primary button-communication-pref" name="Save">${Resource.msg('button.save.changes', 'account', null)}</button>
+            <iscomment> <a href="${URLUtils.https('CommunicationPreference-Save')}" class="button button--primary button-communication-pref">${Resource.msg('button.save.changes', 'account', null)}</a> </iscomment>
+        </form>
+</div>

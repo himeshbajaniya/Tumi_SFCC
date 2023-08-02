@@ -1,0 +1,79 @@
+[{
+    "id": "en_US",
+    "currencyCode": "USD"
+}, {
+    "id": "en_GB",
+    "currencyCode": "GBP"
+}, {
+    "id": "de_DE",
+    "currencyCode": "EUR"
+}, {
+    "id": "en_AT",
+    "currencyCode": "EUR"
+}, {
+    "id": "de_AT",
+    "currencyCode": "EUR"
+}, {
+    "id": "ja_JP",
+    "currencyCode": "JPY"
+}, {
+    "id": "zh_CN",
+    "currencyCode": "CNY"
+}, {
+    "id": "en_FR",
+    "currencyCode": "EUR"
+}, {
+    "id": "fr_FR",
+    "currencyCode": "EUR"
+}, {
+    "id": "en_CA",
+    "currencyCode": "CAD"
+}, {
+    "id": "fr_CA",
+    "currencyCode": "CAD"
+}, {
+    "id": "sv_SE",
+    "currencyCode": "SEK"
+},{
+    "id": "en_AU",
+    "currencyCode": "AUD"
+}, {
+    "id": "en_NZ",
+    "currencyCode": "NZD"
+}, {
+    "id": "en_IT",
+    "currencyCode": "EUR"
+}, {
+    "id": "it_IT",
+    "currencyCode": "EUR"
+}, {
+    "id": "en_ES",
+    "currencyCode": "EUR"
+}, {
+    "id": "es_ES",
+    "currencyCode": "EUR"
+}, {
+    "id": "en_BE",
+    "currencyCode": "EUR"
+}, {
+    "id": "nl_BE",
+    "currencyCode": "EUR"
+}, {
+    "id": "fr_BE",
+    "currencyCode": "EUR"
+}, {
+    "id": "nb_NO",
+    "currencyCode": "EUR"
+}, {
+    "id": "pl_PL",
+    "currencyCode": "PLN"
+}, {
+    "id": "en_PL",
+    "currencyCode": "PLN"
+},{
+    "id": "en_IE",
+    "currencyCode": "EUR"
+},{
+    "id": "es_MX",
+    "currencyCode": "MXN"
+}]

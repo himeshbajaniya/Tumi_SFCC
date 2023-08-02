@@ -1,0 +1,21 @@
+{
+  "name": "pally-tests",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test-pa11y": "./node_modules/.bin/pa11y-ci"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "pa11y-ci": "^3.0.1",
+    "pa11y-reporter-html": "^2.0.0",
+    "pally": "^0.2.3"
+  }
+}

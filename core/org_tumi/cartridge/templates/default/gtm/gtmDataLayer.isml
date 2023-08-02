@@ -1,0 +1,4 @@
+<script>
+   var dataLayerJson=<isprint value="${pdict.dataLayerJson}" encoding="off" />;
+   window.dataLayerJson = dataLayerJson;
+</script>

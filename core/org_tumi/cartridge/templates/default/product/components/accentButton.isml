@@ -1,0 +1,75 @@
+<div class="attribute">
+    <isif condition="${attr.swatchable}">
+        <div class="wrap-items accented-product d-flex swiper accent-scroll">
+            <iscomment>
+                <div class="wrap-items accented-product d-flex">
+            </iscomment>
+            <div class="swiper-wrapper outer-wrapper">
+                <div class="swiper-slide ">
+                    <div class="d-flex flex-nowrap inner-wrapper">
+                        <!-- Circular Swatch Image Attribute Values -->
+                        <isloop items="${attr.values}" var="attrValue">
+                            <isif condition="${!attrValue.selectable}">
+                                <iscontinue/>
+                            </isif>
+                            <isif
+                                condition="${!(isBundle && product.productType === 'variant' && !attrValue.selected) && (attrValue.isAccentable)}">
+
+                                <div class="d-none">
+                                    <img src="${attrValue.accentImageContainer}" alt="main image" />
+                                </div>
+
+                                <button
+                                    class="accents-button pseudo-item ${attrValue.selected ? 'clicked selected' : ''} d-none ${attrValue.accentable ? 'no-accent' : ''}"
+                                    aria-label="${Resource.msg('label.select', 'common', null)} ${attr.displayName} ${attrValue.displayValue}"
+                                    aria-describedby="${attrValue.id}" title='${attrValue.displayValue}'
+                                    data-url="${attrValue.url}" ${product.productType === "variant" && isBundle ? "disabled" : ""} ${!attrValue.selectable ? 'disabled' : ""}
+                                    data-coloraccentimg="${attrValue.coloraccentImg}"
+                                    data-accentprice="${attrValue.accentPriceContainer}"
+                                    data-accentmainimage="${attrValue.accentImageContainer}"
+                                    data-isAccentingSku="${attrValue.isAccentable}"
+                                    data-attr-accent-value="${attrValue.value}"
+                                    data-accentable="${attrValue.accentable}"
+                                    data-baseAccentingSku="${attrValue.baseAccentingSku}"
+                                    data-baseAccentingSku-color="${attrValue.accentingBaseSkuColor}">
+                                    <div data-attr-value="${attrValue.value}" class="
+                              ${attr.id}-value
+                              swatch-circle
+                              swatch-value
+                              accent-image-container
+                              ${attrValue.selectable ? 'selectable' : 'unselectable'}
+                          " style="background-image: url(${attrValue.coloraccentImg})">
+                                        <iscomment> <img
+                                                src="${attrValue.coloraccentImg ? attrValue.coloraccentImg : URLUtils.staticURL('/images/default-accent.png')}"
+                                                class="" /> </iscomment>
+                                        <img src="${attrValue.coloraccentImg}" class="" />
+                                        <iscomment>
+                                            <div>
+
+                                                <isif condition="${attrValue.accentPriceContainer}">
+                                                    ${attrValue.accentPriceContainer}
+                                                </isif>
+                                            </div>
+                                        </iscomment>
+                                    </div>
+
+                                    <div class="accent-price">
+                                        <isif condition="${attrValue.accentPriceContainer}">
+                                            ${attrValue.accentPriceContainer}
+                                        </isif>
+                                    </div>
+
+                                    <span id="${attrValue.id}" class="sr-only selected-assistive-text">
+                                        ${attrValue.selected ? Resource.msg('msg.assistive.selected.text', 'common', null) : ''}
+                                    </span>
+                                </button>
+
+                            </isif>
+                        </isloop>
+                    </div>
+                </div>
+            </div>
+            <div class="pseduo-track"></div>
+        </div>
+    </isif>
+</div>

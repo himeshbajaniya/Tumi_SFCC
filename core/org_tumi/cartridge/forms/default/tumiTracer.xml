@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+<form xmlns="http://www.demandware.com/xml/form/2008-04-19">
+	<group formid="tracerDetails">
+		<field formid="addressId"
+		       label="label.input.addressId"
+		       type="string"
+		       mandatory="true"
+		       binding="addressId"
+               min-length="20"
+		       max-length="20"
+		       missing-error="error.addressId.missing"
+		       range-error="error.message.length20"/>
+		<field formid="country"
+		       label="label.input.country"
+		       type="string"
+		       mandatory="true"
+		       binding="countryCode"
+		       missing-error="address.country.missing">
+			<options>
+				<option optionid="" 	label="resource.country" 		value=""/>
+				<option optionid="US"
+				        label="select.option.country.unitedstates"
+				        value="US"/>
+				<option optionid="CA"
+				        label="select.option.country.canada"
+				        value="CA"/>
+			</options>
+		</field>
+		<field formid="title"
+		       label="label.select.title"
+		       type="string"
+		       mandatory="true">
+			<options>
+				<option optionid="" 	label="resource.title" 		value=""/>
+				<option optionid="Mr" label="select.tiltle.mister" value="Mr"/>
+				<option optionid="Mrs" label="select.tiltle.missage" value="Mrs"/>
+				<option optionid="Miss" label="select.tiltle.miss" value="Miss"/>
+				<option optionid="Ms" label="select.tiltle.ms" value="Ms"/>
+				<option optionid="Dr" label="select.tiltle.doctor" value="Dr"/>
+				<option optionid="Rev" label="select.tiltle.rev" value="Rev"/>
+			</options>
+		</field>
+		<include formid="states"
+		         name="states"
+		         missing-error="address.state.missing"
+		         parse-error="error.message.required"
+		         value-error="error.message.required"/>
+		<field formid="tracerId"
+		       label="label.input.tracerId"
+		       type="string"
+		       mandatory="true"
+		       binding="tracerId"
+               min-length="20"
+		       max-length="20"
+		       missing-error="error.tracerId.missing"
+		       range-error="error.message.length20"/>
+		<field formid="firstName"
+		       label="label.input.firstname.profile"
+		       type="string"
+		       mandatory="true"
+		       binding="firstName"
+		       max-length="50"
+		       missing-error="address.firstname.missing"
+		       range-error="error.message.50orless"/>
+		<field formid="lastName"
+		       label="label.input.lastname.profile"
+		       type="string"
+		       mandatory="true"
+		       binding="lastName"
+		       max-length="50"
+		       missing-error="address.lastname.missing"
+		       range-error="error.message.50orless"/>
+		<field formid="email"
+		       label="label.input.email.profile"
+		       mandatory="true"
+		       max-length="50"
+		       missing-error="error.message.required"
+		       parse-error="error.message.parse.email.profile.form"
+		       range-error="error.message.50orless"
+		       regexp="^[\w.%+-]+@[\w.-]+\.[\w]{2,6}$"
+		       value-error="ValueErrorText"
+		       type="string"/>
+		<field formid="emailSubscription"
+		       label="label.checkbox.emailSubscription"
+		       type="boolean"
+		       value="false"/>
+		<field formid="phone"
+		       label="label.input.phone.profile"
+		       mandatory="true"
+		       regexp="^[1-9]\d{2}[-]\d{3}[-]\d{4}$"
+		       missing-error="error.message.required"
+		       parse-error="error.message.parse.phone.profile.form"
+		       type="string"/>
+		<field formid="address1"
+		       label="label.input.address1"
+		       type="string"
+		       mandatory="true"
+		       binding="address1"
+		       max-length="50"
+		       missing-error="address.address1.missing"
+		       range-error="error.message.50orless"/>
+		<field formid="address2"
+		       label="label.input.address2"
+		       type="string"
+		       mandatory="false"
+		       binding="address2"
+		       max-length="50"
+		       range-error="error.message.50orless"/>
+		<field formid="city"
+		       label="label.input.city"
+		       type="string"
+		       mandatory="true"
+		       binding="city"
+		       min-length="2"
+		       max-length="50"
+		       missing-error="address.city.missing"
+		       range-error="error.message.between2and50"/>
+		<field formid="postalCode"
+		       label="label.input.zipcode"
+		       type="string"
+		       mandatory="true"
+		       min-length="5"
+		       max-length="10"
+		       regexp="(^\d{5}(-\d{4})?$)|(^[abceghjklmnprstvxyABCEGHJKLMNPRSTVXY]{1}\d{1}[A-Za-z]{1} *\d{1}[A-Za-z]{1}\d{1}$)"
+		       binding="postalCode"
+		       range-error="error.message.between5and10"
+		       missing-error="address.zipcode.missing"
+		       parse-error="error.message.parse.zip"/>
+		<action formid="submit"
+		        valid-form="true"/>
+	</group>
+</form>

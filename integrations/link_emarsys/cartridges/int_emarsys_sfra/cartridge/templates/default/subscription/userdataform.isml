@@ -1,0 +1,177 @@
+<form
+    action="${URLUtils.continueURL()}"
+    class="subscribe-form"
+    method="POST"
+    <isprint value="${pdict.signupForm.attributes}" encoding="on" />>
+
+    <!-- Email and Gender -->
+    <div class="row">
+        <!-- Email Address -->
+        <div class="col-6">
+            <div class="form-group
+                ${pdict.signupForm.emailAddress.mandatory === true ? 'required' : ''}">
+                <label class="form-control-label" for="emailAddress">
+                    <isprint value="${pdict.signupForm.emailAddress.label}" encoding="htmlcontent" />
+                </label>
+                <input type="text" class="form-control" id="emailAddress"
+                    <isprint value="${pdict.signupForm.emailAddress.attributes}" encoding="htmlsinglequote" />
+                    autocomplete="email-address" required/>
+                <div class="invalid-feedback"></div>
+            </div>
+        </div>
+
+        <!-- Gender drop down -->
+        <div class="col-6">
+            <div class="form-group
+                ${pdict.signupForm.gender.mandatory === true ? 'required' : ''}">
+                <label class="form-control-label" for="gender">
+                    <isprint value="${pdict.signupForm.gender.label}" encoding="htmlcontent" />
+                </label>
+                <select class="form-control" id="gender"
+                    <isprint value="${pdict.signupForm.gender.attributes}" encoding="htmlsinglequote" />
+                    autocomplete="country" required>
+                    <isloop items=${pdict.signupForm.gender.options} var="gender">
+                        <option id="${gender.id}" value="${gender.htmlValue}" <isif condition="${gender.selected}">selected</isif>>${gender.label}</option>
+                    </isloop>
+                </select>
+                <div class="invalid-feedback"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Name -->
+    <div class="row">
+        <!-- First Name -->
+        <div class="col-6">
+            <div class="form-group
+                ${pdict.signupForm.firstName.mandatory === true ? 'required' : ''}">
+                <label class="form-control-label" for="firstName">
+                    <isprint value="${pdict.signupForm.firstName.label}" encoding="htmlcontent" />
+                </label>
+                <input type="text" class="form-control" id="firstName"
+                    <isprint value="${pdict.signupForm.firstName.attributes}" encoding="htmlsinglequote" />
+                    autocomplete="given-name" required/>
+                <div class="invalid-feedback"></div>
+            </div>
+        </div>
+
+        <!-- Last Name -->
+        <div class="col-6">
+            <div class="form-group
+                ${pdict.signupForm.lastName.mandatory === true ? 'required' : ''}">
+                <label class="form-control-label" for="lastName">
+                    <isprint value="${pdict.signupForm.lastName.label}" encoding="htmlcontent" />
+                </label>
+                <input type="text" class="form-control" id="lastName"
+                    <isprint value="${pdict.signupForm.lastName.attributes}" encoding="htmlsinglequote" />
+                    autocomplete="family-name" required/>
+                <div class="invalid-feedback"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Address 1 -->
+    <div class="form-group
+        ${pdict.signupForm.address1.mandatory === true ? 'required' : ''}">
+        <label class="form-control-label" for="address1">
+            <isprint value="${pdict.signupForm.address1.label}" encoding="htmlcontent" />
+        </label>
+        <input type="text" class="form-control" id="address1"
+            <isprint value="${pdict.signupForm.address1.attributes}" encoding="htmlsinglequote" />
+            autocomplete="address-line1" required/>
+        <div class="invalid-feedback"></div>
+    </div>
+
+    <!-- Country and State drop downs -->
+    <div class="row">
+        <!-- Country  -->
+        <div class="col-6">
+            <div class="form-group
+                ${pdict.signupForm.countryCode.mandatory === true ? 'required' : ''}">
+                <label class="form-control-label" for="countryCode">
+                    <isprint value="${pdict.signupForm.countryCode.label}" encoding="htmlcontent" />
+                </label>
+                <select class="form-control" id="countryCode"
+                    <isprint value="${pdict.signupForm.countryCode.attributes}" encoding="htmlsinglequote" />
+                    autocomplete="country" required>
+                    <isloop items=${pdict.signupForm.countryCode.options} var="country">
+                        <option id="${country.id}" value="${country.htmlValue}" <isif condition="${country.selected}">${Resource.msg("default.selected.value", "dynamicTemplate",'')}</isif>>${country.label}</option>
+                    </isloop>
+                </select>
+                <div class="invalid-feedback"></div>
+            </div>
+        </div>
+
+        <!-- State  -->
+        <div class="col-6">
+            <div class="form-group
+                ${pdict.signupForm.stateCode.mandatory === true ? 'required' : ''}">
+                <label class="form-control-label" for="stateCode">
+                    <isprint value="${pdict.signupForm.stateCode.label}" encoding="htmlcontent" />
+                </label>
+                <select class="form-control" id="stateCode"
+                    <isprint value="${pdict.signupForm.stateCode.attributes}" encoding="htmlsinglequote" />
+                    autocomplete="address-level1" required>
+                    <isloop items=${pdict.signupForm.stateCode.options} var="state">
+                        <option id="${state.id}" value="${state.htmlValue}" <isif condition="${state.selected}">${Resource.msg("default.selected.value", "dynamicTemplate",'')}</isif>>${state.label || ' '}</option>
+                    </isloop>
+                </select>
+                <div class="invalid-feedback"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- City and ZIP -->
+    <div class="row">
+        <div class="col-6">
+        <!-- City  -->
+            <div class="form-group
+                ${pdict.signupForm.city.mandatory === true ? 'required' : ''}">
+                <label class="form-control-label" for="city">
+                    <isprint value="${pdict.signupForm.city.label}" encoding="htmlcontent" />
+                </label>
+                <input type="text" class="form-control" id="city"
+                    <isprint value="${pdict.signupForm.city.attributes}" encoding="htmlsinglequote" />
+                    autocomplete="address-level2" required/>
+                <div class="invalid-feedback"></div>
+            </div>
+        </div>
+
+        <!-- ZIP Code -->
+        <div class="col-6">
+            <div class="form-group
+                ${pdict.signupForm.postalCode.mandatory === true ? 'required' : ''}">
+                <label class="form-control-label" for="postalCode">
+                    <isprint value="${pdict.signupForm.postalCode.label}" encoding="htmlcontent" />
+                </label>
+                <input type="text" class="form-control" id="postalCode"
+                    <isprint value="${pdict.signupForm.postalCode.attributes}" encoding="htmlsinglequote" />
+                    autocomplete="postal-code" required/>
+                <div class="invalid-feedback"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Phone Number -->
+    <div class="form-group
+        ${pdict.signupForm.phone.mandatory === true ? 'required' : ''}">
+        <label class="form-control-label" for="phone">
+            <isprint value="${pdict.signupForm.phone.label}" encoding="htmlcontent" />
+        </label>
+        <input type="text" class="form-control" id="phone"
+            <isprint value="${pdict.signupForm.phone.attributes}" encoding="htmlsinglequote" />
+            autocomplete="tel" required/>
+        <div class="invalid-feedback"></div>
+    </div>
+
+    <!-- Cancel and Save Buttons -->
+    <div class="row">
+        <div class="col-6">
+            <button type="submit" name="subscribe" class="button" value="${Resource.msg('emarsys.signupemail','forms',null)}">
+                <span>${Resource.msg('emarsys.signupemail','forms',null)}</span>
+            </button>
+        </div>
+    </div>
+
+    <input type="hidden" name="${pdict.csrf.tokenName}" value="${pdict.csrf.token}" />
+</form>

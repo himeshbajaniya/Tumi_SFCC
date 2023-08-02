@@ -1,0 +1,103 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "https://www.tumi.com/faq-staticpage",
+	"title": "FAQ Static Page",
+	"description": "Enter the details of FAQ static page",
+	"allOf": [
+		{
+			"$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+		}
+	],
+	"type": "object",
+	"properties": {
+		"content-asset-id": {
+			"title": "Content Asset ID",
+			"description": "SFCC Content Asset",
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 256,
+			"format": "text"
+		},
+		"heading": {
+			"title": "FAQ Heading",
+			"description": "Enter the main heading of the page",
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 100
+		},
+		"defaultCategoriesOfQues": {
+			"title": "Default Category",
+			"description": "Default Categories Of Questions",
+			"type": "array",
+			"minItems": 7,
+			"maxItems": 7,
+			"items": {
+				"allOf": [
+					{
+						"type":"object",
+						"properties": {
+							"categoryName": {
+								"title": "Category Name",
+								"description": "Enter Category Name",
+								"type": "string"
+							},
+							"categoryRelation": {
+								"title": "Category Relation",
+								"description": "Category Relation",
+								"type": "string"
+							}
+						}
+					}
+				]
+			}
+		},
+		"questionAnswer": {
+			"title": "Question and Answer",
+			"description": "Enter Question and Answer",
+			"type": "array",
+			"minItems": 1,
+			"maxItems": 100,
+			"items": {
+				"allOf": [
+					{
+						"type":"object",
+						"properties": {
+							"question": {
+								"title": "Question",
+								"description": "Enter Question",
+								"type": "string"
+							},
+							"answer": {
+								"title": "Answer",
+								"description": "Enter Answer",
+								"type": "string",
+								"format": "markdown"
+							},
+							"categoryOfQuestion": {
+								"title": "Category Of Question",
+								"type": "string",
+								"enum": [
+									"store-pickup-and-curbside",
+									"shipping",
+									"orders",
+									"repairs",
+									"tracer-registration",
+									"returns",
+									"product-inquiry"
+								]
+							}
+						},
+						"required": [
+							"categoryOfQuestion"
+						]
+					}
+				]
+			}
+		}
+		
+	},
+	"propertyOrder": ["content-asset-id"],
+	"required": [
+		"content-asset-id"
+	]
+}

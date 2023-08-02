@@ -1,0 +1,18 @@
+<iscontent type="text/html" charset="UTF-8" compact="true"/>
+<isinclude url="${URLUtils.url('SiteNavigationBar-IncludeFrameTop','SelectedMenuItem',pdict.SelectedMenuItem,'CurrentMenuItemId',pdict.CurrentMenuItemId)}"/>
+<iscomment>Render BM breadcrumbs</iscomment>
+<isif condition="${pdict.CurrentHttpParameterMap.CurrentMenuItemId != ''}">
+    <div class="breadcrumb">
+        <a href="${URLUtils.url('ViewApplication-SelectSite', 'MenuGroupID', 'ChannelMenu', 'ChannelID', pdict.ChannelID, 'SelectedSiteID', pdict.ChannelID)}">
+                ${Resource.msg("pageWrapper.name.merchanttools","pageTitle",'')}
+        </a>
+            >
+        <a href="${URLUtils.url('SiteNavigationBar-ShowMenuitemOverview', 'CurrentMenuItemId', pdict.CurrentHttpParameterMap.CurrentMenuItemId)}">
+                ${pdict.CurrentHttpParameterMap.mainmenuname}
+        </a>
+        > ${pdict.CurrentHttpParameterMap.menuname}
+    </div>
+</isif>
+<iscomment>Render the page</iscomment>
+<isreplace/>
+<isinclude url="${URLUtils.url('SiteNavigationBar-IncludeFrameBottom')}"/>

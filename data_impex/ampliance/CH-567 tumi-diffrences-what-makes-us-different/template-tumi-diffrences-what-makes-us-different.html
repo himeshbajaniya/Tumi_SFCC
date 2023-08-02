@@ -1,0 +1,61 @@
+<div class=" container tum-service" data-creative-name="{{content-asset-id}}">
+    <div class="row align-items-center">
+       <div class="col-md-6 col-12 order-1 order-sm-0 {{#if (eq positionOfTextContent "Right Aligned")}} order-sm-1 {{/if}}">
+          <div class="text-content d-flex flex-column align-items-center justify-content-center">
+             <div class="title">{{header}}</div>
+             <div class="sub-title">{{sub-header}}</div>
+          </div>
+          <div class="swiper tumi-service-swiper mobile-swiper">		 
+             <div class="swiper-wrapper">
+                {{#each cta-links}}
+
+                {{#if cta-landing-uri}}
+                  <a href="{{cta-landing-uri}}" class="swiper-slide" >
+                  {{/if}}
+                   <div class="cta-content d-flex flex-column align-items-center justify-content-center flex-md-row justify-content-md-between">
+                      <div class="service-content-wrapper d-flex align-items-center">
+                        {{#if cta-image}}
+                           <div class="img-wrapper d-md-flex align-items-md-center justify-content-md-center ">
+                              <img src="{{cta-image}}" alt={{cta-image-alt-text}}>
+                           </div>
+                         {{/if}}
+                         <p class="cta-link-name ">{{cta-header}}</p>
+                         <p class="cta-link-name">{{cta-name}}</p>
+                      </div>
+                      {{#if cta-landing-uri}}
+                      <svg width="21" height="12" viewBox="0 0 21 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                         <path d="M19.8539 6H0.0996094" stroke="#1B1C1E"/>
+                         <path d="M15 1L19.8544 6L15 11" stroke="#1B1C1E"/>
+                      </svg>
+                      {{/if}}
+                   </div>
+                   {{#if cta-landing-uri}}
+                  </a>
+                  {{/if}}
+                {{/each}}
+
+                {{#if onlyContent}}
+                     <div class="text-content d-flex flex-column align-items-center justify-content-centerjustify-content-md-between">
+                          <div class="service-content-wrapper d-flex align-items-center">
+                           <div class="title">{{ onlyContentHeaderText }}</div>
+                          </div>
+                          <div class="service-content-wrapper d-flex align-items-center">
+                             <p class="cta-link-name">{{ onlyContentDescriptionText }}</p>
+                          </div>
+                       </div>
+                       {{/if}}
+
+                       {{#if cta-tumi-diff-url}}
+                       <a href="{{cta-tumi-diff-url}}" class="button button--secondary w-100 service-link" >
+                        {{ cta-tumi-diff-name }}
+                       </a>
+                       {{/if}}
+             </div>
+             
+          </div>
+       </div>       
+       <div class="col-md-6  d-md-block large-img">
+         <img src="{{large-image-desktop}}" alt="{{large-image-desktop-alt}}">
+      </div>
+    </div>
+ </div>

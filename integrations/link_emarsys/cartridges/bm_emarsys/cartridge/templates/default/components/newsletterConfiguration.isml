@@ -1,0 +1,69 @@
+<isset name="newsletterSubForm" value="${pdict.newsletterSubForm}" scope="page" />
+<isset name="additionalValues" value="${pdict.additionalValues}" scope="page" />
+<isset name="storedConfigurations" value="${pdict.storedConfigurations}" scope="page" />
+
+<isloop items="${storedConfigurations}" var="subscriptionType" status="contentStatus">
+    <div id="${subscriptionType.EmarsysSubscriptionType}" class="js-tabcontent tabcontent newsletter-container ${contentStatus.first ? 'active' : 'hide-content'}">
+        <form action="${URLUtils.url('NewsletterSubscription-SaveNewsletter')}"
+                class="js-forms"
+                method="POST"
+                <isprint value="${newsletterSubForm.attributes}" encoding="htmlsinglequote" />>
+            <div class="subscribe-container">
+                <div class="subscribe-label-container">
+                    <label class="text-position border-text" for="subscriptionStrategy">
+                        <isprint value="${newsletterSubForm.subscriptionStrategy.label}" encoding="htmlcontent" />
+                    </label>
+                </div>
+                <select class="select-fields"
+                        <isprint value="${newsletterSubForm.subscriptionStrategy.attributes}" encoding="htmlsinglequote" />
+                        autocomplete="country">
+                    <option  value="1" <isif condition="${subscriptionType.optInStrategy == 1}">${Resource.msg("default.selected.value", "dynamicTemplate",'')}</isif>>
+                        ${Resource.msg("single_optin_strategy.name","newsletter",null)}
+                    </option>
+                    <option  value="2" <isif condition="${subscriptionType.optInStrategy == 2}">${Resource.msg("default.selected.value", "dynamicTemplate",'')}</isif>>
+                        ${Resource.msg("double_optin_strategy.name","newsletter",null)}
+                    </option>
+                </select>
+            </div>
+            <div class="subscribe-container">
+                <div class="subscribe-label-container ">
+                    <label class="text-position border-text" for="externalEventOptin">
+                        <isprint value="${newsletterSubForm.externalEventOptin.label}" encoding="htmlcontent" />
+                    </label>
+                </div>
+
+                <select class="select-fields"
+                        <isprint value="${newsletterSubForm.externalEventOptin.attributes}" encoding="htmlsinglequote" />
+                        autocomplete="country">
+                <option label="${Resource.msg('noevent.option', 'newsletter', null)}" value="" >${Resource.msg('noevent.option', 'newsletter', null)}</option>
+                <isloop items="${additionalValues}" var="event">
+                    <option value="${event.id}" <isif condition="${event.name == subscriptionType.optInExternalEvent}">${Resource.msg("default.selected.value", "dynamicTemplate",'')}</isif>>${event.name}</option>
+                </isloop>
+                </select>
+            </div>
+            <div class="subscribe-container">
+                <div class="subscribe-label-container">
+                    <label class="text-position border-text" for="externalEventOptinAfterConfirmation">
+                        <isprint value="${newsletterSubForm.externalEventOptinAfterConfirmation.label}" encoding="htmlcontent" />
+                    </label>
+                </div>
+                <select class="select-fields"
+                        <isprint value="${newsletterSubForm.externalEventOptinAfterConfirmation.attributes}" encoding="htmlsinglequote" />
+                        autocomplete="country">
+                <option label="${Resource.msg('noevent.option', 'newsletter', null)}" value="" >${Resource.msg('noevent.option', 'newsletter', null)}</option>
+                <isloop items="${additionalValues}" var="event">
+                    <option value="${event.id}" <isif condition="${event.name == subscriptionType.optInExternalEventAfterConfirmation}">${Resource.msg("default.selected.value", "dynamicTemplate",'')}</isif>>${event.name}</option>
+                </isloop>
+                </select>
+            </div>
+            <input hidden type="text" value="${subscriptionType.EmarsysSubscriptionType}"
+                <isprint value="${newsletterSubForm.subscriptionType.attributes}" encoding="htmlsinglequote" />
+                autocomplete="given-name"/>
+            <div class="applay-add-fields-buttons-container">
+                <button type="submit" name="${newsletterSubForm.dynamicHtmlName}" class="js-submit-button button-apply">${Resource.msg(newsletterSubForm.applyButton.label,"forms",'')}</button>
+            </div>
+
+            <input type="hidden" name="${pdict.csrf.tokenName}" value="${pdict.csrf.token}" />
+        </form>
+    </div> 
+</isloop>

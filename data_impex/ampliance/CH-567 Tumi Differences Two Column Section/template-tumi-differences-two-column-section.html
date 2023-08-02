@@ -1,0 +1,62 @@
+<div class="tumi-diff-two-column">
+    <div
+        class="container"
+        data-creative-name="{{content-asset-id}}"
+    >
+    <div class="row">
+        <div class="col-12">
+
+        {{#if (eq selectionOfTopMedia "Image")}}
+        {{#if top-image-desktop}}
+            <picture>
+                <source media="(max-width:640px)" srcset="{{top-image-mobile}}">
+                <img class="img-fluid w-100" src="{{top-image-desktop}}" alt="{{top-image-desktop-alt}}">
+                </picture>
+        {{/if}}
+        {{/if}}
+
+  
+      {{#if (eq selectionOfTopMedia "Video")}}
+      <video class="video-desktop removeFocusIndicator" autoplay="" muted="" loop="" playsinline="">
+        <source media="(max-width:640px)" src="{{s7VideoMobile}}">
+          <source src="{{s7VideoDesktop}}">
+      </video>
+      {{/if}}
+
+</div>
+</div>
+
+<div class="row below-section">
+	
+	<div class="col-md-6 col-sm-6 col-12">
+			{{#if large-image-desktop}}
+			<picture>
+			  <source media="(max-width:640px)" srcset="{{small-image-mobile}}">
+			  <img class="img-fluid w-100" src="{{large-image-desktop}}" alt="{{large-image-desktop-alt}}">
+          </picture>
+		  {{/if}}
+		</div>	
+		<div class="col-md-6 col-sm-6 col-12 order-1 order-sm-0 two-col-swiper-container">
+            <div
+                class="two-col-swiper-wrapper tab-pane position-relative"
+            >
+                <div class="swiper tumi-service-swiper mySwiper tumi-diff-two-cols-swiper">
+                    <div class="swiper-wrapper">
+                        {{#each collections}}
+                        <div class="swiper-slide">
+                            <div class="content-sub-head-container">
+								<div class="content-sub-head">{{collection-subname}}</div>
+								<div class="content-head">{{collection-name}}</div>
+							</div>
+							<div class="content-desc-component">{{description}}</div>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+                <div class="two-col-next"></div>
+                <div class="two-col-prev"></div>
+            </div>
+        </div>
+    </div>
+	</div>
+    </div>

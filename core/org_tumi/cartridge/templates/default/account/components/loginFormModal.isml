@@ -1,0 +1,63 @@
+<p class="login-info">${Resource.msg('label.login.info', 'login', null)}</p>
+<p class="bookmark-info d-none">${Resource.msg('label.login.bookmark.info', 'login', null)}</p>
+
+<form action="${pdict.actionUrl}" class="login" method="POST" name="login-form">
+    <div class="form-group has-float-label required">
+        <input type="email" id="login-form-email" placeholder="Email address*" required aria-required="true"
+            class="form-control required" aria-describedby="form-email-error" name="loginEmail"
+            data-missing-error="${Resource.msg('error.message.required','forms',null)}"
+            data-pattern-mismatch="${Resource.msg('error.message.parse.email.profile.form','forms',null)}"
+            data-range-error="${Resource.msg('error.message.50orless','forms',null)}"
+            pattern="^[\w.%+-]+@[\w.-]+\.[\w]{2,6}$" maxlength="50" 
+            value="${pdict.userName}">
+        <label class="form-control-label" for="login-form-email">
+            ${Resource.msg('label.input.login.email', 'login', null)}
+        </label>
+        <div class="invalid-feedback" id="form-email-error"></div>
+    </div>
+
+    <div class="form-group has-float-label position-relative required">
+        <input type="password" id="login-form-password" placeholder="Password*" required aria-required="true"
+            class="form-control required " aria-describedby="form-password-error" name="loginPassword">
+        <label class="form-control-label" for="login-form-password">
+            ${Resource.msg('label.input.login.password', 'login', null)}
+        </label>
+        <span class="toggle-password toggle-login-password" aria-label="login-form-password" tabindex="0">
+            <img class="eye-slash" src="" data-src="${URLUtils.staticURL('/images/eye-slash.svg')}"
+                        alt="${Resource.msg('global.hide.password', 'common', null)}" />
+            <img class="eye" src="" data-src="${URLUtils.staticURL('/images/eye.svg')}"
+                        alt="${Resource.msg('global.show.password', 'common', null)}" />
+        </span>
+        <div class="invalid-feedback" id="form-password-error"></div>
+    </div>
+
+    <div class="clearfix margin-tb">
+        <div class="form-group custom-control custom-checkbox pull-left">
+            <input type="checkbox" class="custom-control-input" id="rememberMe" name="loginRememberMe" value="true"
+                <isif condition="${pdict.rememberMe}">checked</isif>
+            >
+            <label class="custom-control-label" for="rememberMe">
+                ${Resource.msg('label.checkbox.login.rememberme', 'login', null)}
+            </label>
+        </div>
+
+        <div class="pull-right forgot-password text-right">
+            
+            <a id="password-reset" 
+                title="${Resource.msg('link.login.forgotpassword', 'login', null)}"
+                href="#">
+                ${Resource.msg('link.login.forgotpassword', 'login', null)}
+            </a>
+        </div>
+    </div>
+
+    <div class="account-verification-notification login"></div>
+    <div class="alert-message"></div>
+
+    <input type="hidden" name="${pdict.csrf.tokenName}" value="${pdict.csrf.token}" />
+
+    <button type="submit" id="button-login" class="button  button-secondary-dark w-100">${Resource.msg('button.text.loginform', 'login', null)}</button>
+    <iscomment> <button type="submit" class="btn btn-block btn-primary">${Resource.msg('button.text.loginform', 'login', null)}</button> </iscomment>
+</form>
+
+<div class="divider"><span>${Resource.msg('label.login.divider', 'login', null)}</span></div> 

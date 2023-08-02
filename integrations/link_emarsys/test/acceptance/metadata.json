@@ -1,0 +1,28 @@
+{
+    "include": {
+        "data": "./test/acceptance/metadata.json",
+        "emarsys":"./test/acceptance/pages/emarsys.js",
+        "utilities": "./test/acceptance/utilities.js"
+    },
+    "gherkin_steps": [
+        "./test/acceptance/steps/int_emarsys/emailSignup.steps.js",
+        "./test/acceptance/steps/int_emarsys/footerSubscription.steps.js",
+        "./test/acceptance/steps/utilities.steps.js"
+    ],
+    "home": {
+        "email": "test@user.com",
+        "homePage": "/on/demandware.store/Sites-RefArch-Site/en_US/Home-Show"
+    },
+    "emarsysData": {
+        "email": "jsmith@email.com",
+        "gender": "Male",
+        "fName": "John",
+        "lName": "Smith",
+        "address1": "123 Main Street",
+        "country": "United States",
+        "state": "Massachusetts",
+        "city": "Burlington",
+        "zipcode": "11111",
+        "phone": "5555555555"
+    }
+}

@@ -1,0 +1,111 @@
+    <!--- image, attributes, availability --->
+<div class="${pdict.pageType !== 'cart' ? 'col-6 col-sm-4 ' : 'col-sm-6 col-md-6 swiper-slide'}">
+    <div class="product product-info uuid-${item.UUID} pid-${item.pid}">
+        <div class="product-tile">
+        <isif condition="${pdict.pageType !== 'cart'}">
+            <div class="badge-message">
+                <isif condition="${item.activeProductBadge}">
+                        ${item.activeProductBadge}
+                </isif>
+            </div>
+            <div class="product-bookmark">
+                <a class="remove-btn remove-from-wishlist"
+                    data-url="${URLUtils.url('Wishlist-RemoveProduct','pid', item.pid)}"
+                    aria-label="remove">
+                    <img src="${URLUtils.absStatic('/images/bookmark-selected-icon.svg')}" alt="" />
+                </a>
+            </div>
+        </isif>
+            
+            <iscomment> <isinclude template="wishlist/components/wishlistProductCardHeader"> </iscomment>
+        <div class="image-container">
+            <a href="${URLUtils.url('Product-Show', 'pid', item.pid)}">
+                <div class="primary-image">
+                    <img class="tile-image"
+                        src="${item.imageObj.small[0].url}" alt="${item.imageObj.small[0].alt}" title="${item.imageObj.small[0].title}"/>
+                        <div class="dark-overlay-plp"></div>
+                </div>
+            </a>
+        </div>
+                <!--- product name--->
+        <div class="tile-body">
+            <div class="pdp-link">
+                <isif condition="${item.collection}">
+                    <span class="collection-name">
+                        ${item.collection}
+                    </span>
+                </isif>
+                <iscomment> <span>${pdict.wishlist.items.length}</span> </iscomment>
+                <a href="${URLUtils.url('Product-Show', 'pid', item.pid)}">
+                    ${item.name}
+                </a>
+                <isinclude template="wishlist/components/productListItemProductPrice" />
+            </div>
+        </div>
+        <div class="item-attributes d-flex flex-column">
+            <iscomment> <isloop items="${item.variationAttributes}" var="attribute">
+                <isloop items="${attribute.values}" var="eachValue">
+                    <isif condition="${!!eachValue.selected}" />
+                        <p class="line-item-attributes">${attribute.displayName}: ${eachValue.displayValue}</p>
+                    </isif>
+                </isloop>
+            </isloop> </iscomment>
+            <isif condition="${item.options}" />
+                <isloop items="${item.options}" var="option">
+                    <isif condition="${!!option}" />
+                        <p class="line-item-attributes">${option.displayName}:${option.displayValue}</p>
+                    </isif>
+                </isloop>
+            </isif>
+
+            
+            <isif condition=${!pdict.wishlist.publicView}>
+                <iscomment> <div class="edit-add-to-wishlist">
+                    <a href="${URLUtils.url('Wishlist-GetProduct', 'uuid', item.UUID, 'pid', item.pid)}" class="edit"
+                        data-toggle="modal" data-target="#editWishlistProductModal"
+                        title="${Resource.msg('link.edit.item','cart',null)}">${Resource.msg('link.edit.item','cart',null)}
+                    </a>
+                </div> </iscomment>
+            </isif>
+        </div>
+        <iscomment> </div> </iscomment>
+        <iscomment> <isif condition="${!item.product.master}"> </iscomment>
+        <isset name="lineItem" value="${item}" scope="page" />
+        <isinclude template="wishlist/components/addToCartButton" />
+        <iscomment> </isif> </iscomment>
+        <iscomment> <isif condition="${pdict.pageType !== 'cart'}">
+            <div class="compare-products compare">
+                <div class="custom-checkbox">
+                    <label for="compare">Compare</label>
+                    <input class="compare" type="checkbox" id="${'compare_'+ item.pid}"
+                            data-pid="${item.pid}"
+                            data-categoryname="${item.collection}"
+                            data-categorytitle="${item.name}"
+                            data-imgsrc="${item.imageObj.small[0].url}"
+                            data-alttext="${item.imageObj.small[0].alt}"/>
+                </div>
+            </div>
+        </isif> </iscomment>
+        <isif condition="${pdict.pageType !== 'cart'}">
+            <isset name="productUrl" value="${URLUtils.https('Product-Show', 'pid', item.pid)}" scope="page"/>
+            <isscript>var mailBody = escapedBody + productUrl;</isscript>
+            <div class="text-center share-cta">
+                <a class="share-icons" title="${Resource.msg('wl.socialshare.email.label', 'wishlist', null)}" data-share="email" href="mailto:?subject=${escapedTitle}&body=${encodeURIComponent(mailBody)}" target="_blank">
+                    <span>${Resource.msg('wishlist.label.share','wishlist',null)}</span>
+                </a>
+            </div>
+        </isif>
+    </div>
+    </div>
+        <!---unit price and quantity --->
+    <div class="">
+        <iscomment> <div class="col-12"><hr class="wishlist-line-item-divider line-dotted"></div> </iscomment>
+        <iscomment> <isinclude template="wishlist/components/makePublicCheckbox">
+        <isif condition="${!!item.master}">
+            <isinclude template="wishlist/components/selectAttributesButton">
+        <iselse>
+            <!-- add to Cart from Wishlist -->
+            <isinclude template="wishlist/components/addToCartButton" />
+        </isif> </iscomment>
+    </div>
+</div>

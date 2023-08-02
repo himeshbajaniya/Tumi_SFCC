@@ -1,0 +1,83 @@
+<div class="super-collection-tab-container" data-creative-name="{{content-asset-id}}" >
+
+   <div class="super-collection-tab container"data-best-seller-heading="{{best-seller-heading}}" >
+
+      <ul class="nav nav-tabs collection-sticky d-sm-flex" id="myTab" role="tablist">
+
+         {{#each tabs}}
+
+         <li class="nav-item">
+
+            <a class="nav-link categories-prev {{#compare @index "==" 0}}active{{/compare}}"
+
+               id="super-collection-tab" data-toggle="tab" data-best-seller-rfkid="{{tabRfkId}}" data-best-seller-pid="{{tabPId}}" data-hero-image-url="{{tabHeroImageURL}}"
+               href="#tab-{{@index}}" role="tab"
+
+               aria-controls="home" aria-selected="true">
+
+            {{tabName}}</a>
+
+         </li>
+
+         {{/each}}
+
+      </ul>
+
+     <div class="title">{{title}}</div>
+  <div class="tab-content" id="myTabContent">
+
+         {{#each tabs}}
+
+
+         <div class="tab-pane fade position-relative show {{#compare @index "==" 0}}active{{/compare}}" id="tab-{{@index}}" role="tabpanel"
+
+            aria-labelledby="sub-hero-category-tab">
+            <!-- other components content asset aid-->
+            $include('Page-Include','cid','{{tabContentOne}}')$
+            $include('Page-Include','cid','{{tabContentTwo}}')$
+            $include('Page-Include','cid','{{tabContentThree}}')$
+            $include('Page-Include','cid','{{tabContentFour}}')$
+            $include('Page-Include','cid','{{tabContentFive}}')$
+            
+            <!-- best seller component-->
+            <div class="best-seller-heading"></div>
+            <div class="row super-best-seller-container">
+              <div class="col-12 col-sm-6 col-md-8 left-section">
+                 <div class="image-wrapper">
+                 </div>
+                 <div class="below-section d-md-flex d-sm-block d-flex row">
+                    <div class="best-seller-tile-3  col-6 col-sm-12 col-md-6"></div>
+                    <div class="best-seller-tile-4 col-6 col-sm-12 col-md-6"></div>
+                 </div>
+              </div>
+              <div class="col-12 col-sm-6 col-md-4  right-section">
+                 <div class="d-flex d-sm-block row">
+                    <div class="best-seller-tile-1 col-6 col-sm-12"></div>
+                    <div class="best-seller-tile-2 col-6 col-sm-12"></div>
+                 </div>
+                 <div class="best-seller-tile-review">
+                    <div class="review-stars">{{reviewStars}}</div>
+                    <div class="review-descriptions">{{reviewDescription}}</div>
+                    <div class="review-author">-{{reviewAuthor}}</div>
+                    <div class="review-product-name">{{reviewProductName}}</div>
+                 </div>
+              </div>
+           </div>
+         </div>
+
+         {{/each}}
+      </div> 
+
+      <div class="row no-gutters">
+
+        <div class="col-12 show-all-cta">
+
+           <a href="{{view-al-cta-link}}"class="w-100 button button--secondary">{{view-all-cta-name}}</a>
+
+        </div>
+
+     </div>
+
+   </div>
+
+</div>

@@ -1,0 +1,247 @@
+
+.your-store {
+    margin: 80px auto;
+
+    @include media-breakpoint-up(sm) {
+        margin: 100px auto;
+        padding: 0 32px;
+    }
+    @include media-breakpoint-up(xl) {
+        padding: 0 !important;
+    }
+
+    color: $eerie-black;
+
+    .text-content {
+        .title {
+            @include sizeWeightLh(13px,400,16px);
+
+            letter-spacing: 3px;
+            text-align: center;
+            margin-top: 50px;
+            padding-bottom: 4px;
+            font-family: $font-tumi;
+
+            @include media-breakpoint-up(sm) {
+                margin-top: 0;
+                margin-bottom: 4px;
+            }
+            @include media-breakpoint-up(md) {
+                font-size: 12px;
+                letter-spacing: 2px;
+                margin-top: 0;
+                margin-bottom: 4px;
+            }
+
+            &:focus {
+                outline: none !important;
+            }
+        }
+
+        .store-location {
+            @include sizeWeightLh(30px,300,32px);
+
+            text-align: center;
+            margin: 0;
+            margin-bottom: 18px;
+
+            @include media-breakpoint-up(md) {
+                line-height: 26px;
+                margin-bottom: 24px;
+            }
+
+            &:focus {
+                outline: none !important;
+            }
+        }
+
+        .store-distance {
+            @include sizeWeightLh(15px,400,14px);
+
+            text-align: center;
+            margin-bottom: 40px;
+
+            @include media-breakpoint-up(sm) {
+                margin-bottom: 30px;
+            }
+
+            @include media-breakpoint-up(md) {
+                margin-bottom: 40px;
+            }
+
+            .mile-distance {
+                margin-right: 5px;
+                text-decoration: underline;
+            }
+
+            &:focus {
+                outline: none !important;
+            }
+        }
+
+        .all-locations {
+            @include sizeWeightLh(15px,400,14px);
+
+            text-align: center;
+            text-decoration: none;
+            @include media-breakpoint-up(md) {
+                line-height: 15px;
+            }
+        }
+
+        .appointment {
+            text-decoration: none;
+            margin-bottom: 18px;
+            width: 343px;
+
+            @include media-breakpoint-up(sm) {
+                width: 248px;
+            }
+
+            @include media-breakpoint-up(md) {
+                margin-bottom: 20px;
+                width: 334px;
+            }
+        }
+
+        .call-us {
+            margin-bottom: 40px;
+            width: 343px;
+
+            @include media-breakpoint-up(sm) {
+                width: 248px;
+            }
+
+            @include media-breakpoint-up(md) {
+                width: 334px;
+            }
+        }
+    }
+
+    .store-img {
+        @include media-breakpoint-down(xs) {
+            padding: 0;
+        }
+
+        img {
+            width: 100%;
+
+            @include media-breakpoint-down(xs) {
+                height: 262px;
+                object-fit: cover;
+            }
+            @include media-breakpoint-up(sm) {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+.your-store-no-location {
+    margin: 80px auto;
+    color: $eerie-black;
+    @include media-breakpoint-up(sm) {
+        margin: 100px auto;
+        padding: 0 32px;
+    }
+
+    @include media-breakpoint-up(xl) {
+        padding: 0 !important;
+    }
+
+    .text-content {
+        .title {
+            @include sizeWeightLh(13px,400,16px);
+
+            letter-spacing: 3px;
+            text-align: center;
+            margin-top: 50px;
+            padding-bottom: 4px;
+
+            @include media-breakpoint-up(sm) {
+                margin-top: 0;
+            }
+            @include media-breakpoint-up(md) {
+                font-size: 12px;
+                letter-spacing: 2px;
+                margin-top: 0;
+                margin-bottom: 10px;
+            }
+
+            &:focus {
+                outline: none !important;
+            }
+        }
+
+        .store-location {
+            @include sizeWeightLh(30px,300,16px);
+
+            text-align: center;
+            margin: 0;
+            margin-bottom: 18px;
+
+            @include media-breakpoint-up(md) {
+                line-height: 26px;
+                margin-bottom: 24px;
+            }
+
+            &:focus {
+                outline: none !important;
+            }
+        }
+
+        .store-distance {
+            @include sizeWeightLh(15px,400,20px);
+
+            text-align: center;
+            margin-bottom: 30px;
+            width: 333px;
+            color: $davy-grey;
+
+            @include media-breakpoint-up(md) {
+                margin-bottom: 28px;
+            }
+
+            .mile-distance {
+                margin-right: 5px;
+                text-decoration: underline;
+            }
+
+            &:focus {
+                outline: none !important;
+            }
+        }
+
+        .find-store {
+            text-decoration: none;
+            margin-bottom: 18px;
+            width: 343px;
+
+            @include media-breakpoint-up(sm) {
+                width: 248px;
+            }
+
+            @include media-breakpoint-up(md) {
+                margin-bottom: 20px;
+                width: 334px;
+            }
+        }
+    }
+
+    .store-img {
+        @include media-breakpoint-down(xs) {
+            padding: 0;
+        }
+
+        img {
+            width: 100%;
+            @include media-breakpoint-down(xs) {
+                height: 262px;
+                object-fit: cover;
+            }
+            @include media-breakpoint-up(sm) {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

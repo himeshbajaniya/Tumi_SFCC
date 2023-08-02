@@ -1,0 +1,257 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addJs('/js/product/wishlist.js');
+</isscript>
+
+<isset name="hasEmbeddedBonusProducts" value="${lineItem.bonusProductLineItemUUID === 'bonus'}" scope="page" />
+<isset name="bonusproductlineitem" value="${hasEmbeddedBonusProducts ? 'bonus-product-line-item' : ''}" scope="page" />
+<isset name="bonuslineitemrow" value="${hasEmbeddedBonusProducts ? 'bonus-line-item-row' : ''}" scope="page" />
+
+<div class="card product-info ${lineItem.isPremiumMonogrammedPLI ? ' show-store-error-msg' : ''} ${bonusproductlineitem} uuid-${lineItem.UUID}">
+    <div class="row">
+
+        <div class="col-sm-3 col-md-4 col-4 image-section">
+            <div class="item-image">
+                <isif condition="${lineItem.isGWP}">
+                    <img class="product-image" src="${lineItem.images.small[0].url}" alt="${lineItem.images.small[0].alt}"
+                        title="${lineItem.images.small[0].title}">
+                <iselse/>
+                    <a href="${URLUtils.url('Product-Show', 'pid', lineItem.id)}"><img class="product-image" src="${lineItem.images.small[0].url}" alt="${lineItem.images.small[0].alt}"
+                        title="${lineItem.images.small[0].title}"></a>
+                </isif>
+            </div>
+
+
+        </div>
+        <div class="col-sm-9 col-md-8 col-8 product-details">
+ <iscomment> <input id="accentingskusCart" type="hidden" name="${lineItem.accentingskus}" value="${lineItem.accentingskus}" />
+            <input id="baseAccentingSku" type="hidden" name="${lineItem.baseAccentingSku}" value="${lineItem.baseAccentingSku}" /> </iscomment>
+                <iscomment> <div class= "cart-accenting-skus d-none" data-accentingskus="${lineItem.accentingSKUs}">
+                    
+                </div> </iscomment>
+            <div class="item-attributes d-flex flex-column">
+                <!-- Product Header code -->
+                <div class="line-item-header">
+                    <div class="collection-name ${lineItem.grandCollection === 'Gift Card' ? 'gift-card-spacing' : ''}">${lineItem.grandCollection !== null ? lineItem.grandCollection : lineItem.collection ? lineItem.collection : ''}</div>
+                    <div class="line-item-name">
+                    <isif condition="${lineItem.isGWP}">
+                        ${lineItem.productName}
+                    <iselse/>
+                       <a href="${URLUtils.url('Product-Show', 'pid', lineItem.id)}">${lineItem.productName}</a>
+                    </isif>
+                </div>
+                    <iscomment>
+                        <isif condition="${!lineItem.isBonusProductLineItem}" />
+                        <div class="remove-line-item d-lg-none">
+                            <isinclude template="components/deleteButton" />
+                        </div>
+                        </isif>
+                    </iscomment>
+                </div>
+
+                <!-- Individual Product Pricing-->
+
+                <isif condition="${lineItem.isBonusProductLineItem}" />
+                    <isinclude template="/product/components/pricing/giftWithPurchase" />
+                </isif>
+
+                <isif condition="${!lineItem.isBonusProductLineItem}" />
+                <isset name="price" value="${lineItem.price}" scope="page" />
+                <div class="unit-price">
+                    <isinclude template="/product/components/pricing/main" />
+                </div>
+                <isif condition="${lineItem.availability.label != '' || lineItem.availability.expected != ''}">
+                    <isinclude template="cart/productCard/cartProductCardAvailability" />
+                </isif>
+            <iscomment> <input id="accentingskus" type="hidden" name="${lineItem.accentingskus}" value="${lineItem.accentingskus}" /> </iscomment>
+                <isloop items="${lineItem.variationAttributes}" var="attribute">
+                    <p class="line-item-attributes ${attribute.displayName}-${lineItem.UUID}">
+                        ${attribute.displayName}: ${attribute.displayValue}</p>
+                </isloop>
+                <isloop items="${lineItem.options}" var="option">
+                    <isif condition="${!!option}" />
+                    <div class="lineItem-options-values" data-option-id="${option.optionId}"
+                        data-value-id="${option.selectedValueId}">
+                        <p class="line-item-attributes">${option.displayName}</p>
+                    </div>
+                    </isif>
+                </isloop>
+
+                <!-- Promotions-->
+                <div class="line-item-promo item-${lineItem.UUID}">
+                    <isinclude template="checkout/productCard/productCardProductPromotions" />
+                </div>
+                </isif>
+                <!-- Product Card Availability-->
+
+                <div class="line-item-availability availability-${lineItem.UUID}">
+                    <iscomment><p class="line-item-attributes delivery">${Resource.msg('text.delivery', 'cart', null)}: ${lineItem.shipmentType ? Resource.msg('text.pickup.instore', 'cart', null) : Resource.msg('text.ship.to.home', 'cart', null)}</p></iscomment>
+                    <isif condition="${empty(lineItem.shipmentType) && !lineItem.availableForShipToHome}">
+                        <span class="item-unavailable-${lineItem.UUID}">${Resource.msg('item.oos.shiptohome', 'cart', null)}</span>
+                    <iselseif condition="${!empty(lineItem.shipmentType) && lineItem.shipmentType === 'instore' && lineItem.availableForSelectedStore !== null && !lineItem.availableForSelectedStore}">
+                        <span class="item-unavailable-${lineItem.UUID}">${Resource.msg('item.oos.selectedstore', 'cart', null)} 
+                            <isif condition="${lineItem.isGWP}">
+                                ${Resource.msg('item.oos.gwp', 'cart', null)}
+                            </isif>
+                        </span>
+                    </isif>
+                </div>
+
+                <!-- Edit Item -->
+
+                <isif condition="${!lineItem.isGWP}">
+                    <div class="product-edit product-move">
+                        <a href="${URLUtils.url('Cart-GetProduct', 'uuid', lineItem.UUID, 'storeId', lineItem.shipmentType === 'instore' ? lineItem.storeId : '')}" class="edit" data-toggle="modal"
+                            data-target="#editProductModal"
+                            aria-label="${Resource.msgf('text.edit.line.item', 'cart', null, lineItem.productName)}"
+                            title="${Resource.msg('link.edit.item', 'cart', null)}">${Resource.msg('link.edit.item', 'cart', null)}
+                        </a>
+                    </div>
+                </isif>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row justify-content-end">
+    <isset name="isStorePickupEnabled" value="${dw.system.Site.getCurrent().getCustomPreferenceValue('isStorePickupEnabled')}" scope="page" />
+    <isif condition="${isStorePickupEnabled && lineItem.storeWithInventory && !lineItem.isGWP}">
+        <div class="col-sm-9 col-md-8 store-pickup-wrap pl-sm-0">
+            <div class="store-pickup hiding-bopis d-flex justify-content-between align-items-start">
+                <div class="store-pickup-row d-flex align-items-start">
+                    <img src="${URLUtils.staticURL('/images/cart-shipping-fullfillment-icon.png')}" class="img-fluid" />
+                    <p>${lineItem.shipmentType === 'instore' ? Resource.msgf('text.pickup.at', 'cart', null, lineItem.storeName) : Resource.msg('text.ship.to.home', 'cart', null)}</p>
+                </div>
+                <a href="#" class="toggle-value stores-cta" class="simple-button">${Resource.msg('link.change', 'cart', null)}
+                <span class="sr-only">${Resource.msg('text.ship.to.home', 'cart', null)}</span></a>
+            </div>
+            <div class="delivery-options-container">
+                <div class="card-body">
+                    <div class="form-check">
+                        <input class="change-shipment form-check-input" 
+                        type="radio" name="shipment-option-${lineItem.UUID}" id="free-shiping-${loopstate.count}"
+                        data-change-shipment-url="${URLUtils.url('Cart-SelectDeliveryOption', 'uuid', lineItem.UUID, 'deliveryOption', 'home')}" <isprint value="${!lineItem.shipmentType ? 'checked=true' : ''}" encoding="on" /> value="free-shiping">
+                        <label class="form-check-label ${('availableForShipToHome' in lineItem && !lineItem.availableForShipToHome) ? 'shiptohomedisabled' : ''}" for="free-shiping-${loopstate.count}">
+                            <span>${Resource.msg('label.free.shipping.available', 'cart', null)}</span>
+                            <isif condition="${empty(lineItem.shipmentType) && ('availableForShipToHome' in lineItem && !lineItem.availableForShipToHome)}">
+                                <span class="delivery-container-item-unavailable-${lineItem.UUID}">${Resource.msg('item.oos.shiptohome', 'cart', null)}</span>
+                            </isif>
+                        </label>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="form-check d-flex justify-content-between align-items-start">
+                        <input class="change-shipment form-check-input" <isprint value="${lineItem.shipmentType === 'instore' ? 'checked=true' : 'disabled'}" encoding="on" /> type="radio" name="shipment-option-${lineItem.UUID}"
+                            id="pickup-store-${loopstate.count}" data-store-id="${lineItem.storeId}" 
+                            data-change-shipment-url="${URLUtils.url('Cart-SelectDeliveryOption', 'storeId', lineItem.storeId, 'uuid', lineItem.UUID, 'deliveryOption', 'store')}"
+                            data-find-store-url="${URLUtils.url('Cart-SelectDeliveryOption', 'uuid', lineItem.UUID, 'deliveryOption', 'store')}"  value="pickup-store-name">
+                        <label class="form-check-label pickup-instore-label" for="pickup-store-${loopstate.count}">
+                            <span>${lineItem.storeName ? lineItem.storeName : Resource.msg('text.pickup.instore', 'cart', null)}</span>
+                            <isif condition="${!empty(lineItem.shipmentType) && (lineItem.shipmentType === 'instore') && lineItem.availableForSelectedStore !== null && !lineItem.availableForSelectedStore}">
+                                <span class="delivery-container-item-unavailable-${lineItem.UUID}">${Resource.msg('item.oos.selectedstore', 'cart', null)}</span>
+                            </isif>
+                        </label>
+                        <a href="#" class="change-store simple-button" data-instore-id="${lineItem.storeId}"
+                            data-toggle="modal" data-target="#findAStore" pid="${lineItem.id}">${lineItem.shipmentType === 'instore' ? Resource.msg('text.change.store', 'cart', null) : Resource.msg('text.find.store', 'cart', null)}</a>
+                    </div>
+                </div>
+            </div>
+            <p class="store-error-msg">${Resource.msg('stores.not.available.for.premium.monogram', 'monogram', null)}</p>
+        </div>
+    </isif>
+    
+        <div class="col-sm-9 col-md-8 other-promos-section">
+
+            <iscomment> <div class="monogram d-flex justify-content-between">
+                <div>
+                    <svg width="36" height="21" viewBox="0 0 36 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M6.75 14.38L9.69983 6.87634H11.3423L14.2866 14.38H12.7925L12.2432 12.9298H8.79895L8.24414 14.38H6.75ZM9.16699 11.7708H11.8696L10.5183 8.1947L9.16699 11.7708Z"
+                            fill="#1B1C1E" />
+                        <path
+                            d="M15.0941 14.38V6.87634H18.7855C19.4557 6.87634 19.9794 7.05762 20.3566 7.42017C20.7338 7.77905 20.9224 8.23499 20.9224 8.78796C20.9224 9.2384 20.796 9.61926 20.5433 9.93054C20.2943 10.2382 19.9867 10.4304 19.6205 10.5073C20.027 10.5696 20.3694 10.7783 20.6477 11.1335C20.9297 11.4851 21.0707 11.8879 21.0707 12.342C21.0707 12.9463 20.8784 13.437 20.4939 13.8142C20.113 14.1914 19.5784 14.38 18.8899 14.38H15.0941ZM16.4125 13.2209H18.5823C18.9375 13.2209 19.2158 13.1294 19.4172 12.9463C19.6187 12.7595 19.7194 12.5032 19.7194 12.1772C19.7194 11.8806 19.6187 11.6316 19.4172 11.4302C19.2158 11.2288 18.9375 11.1281 18.5823 11.1281H16.4125V13.2209ZM16.4125 9.96899H18.5273C18.8533 9.96899 19.1096 9.8811 19.2964 9.70532C19.4832 9.52588 19.5765 9.2915 19.5765 9.0022C19.5765 8.72021 19.4832 8.4895 19.2964 8.31006C19.1096 8.12695 18.8533 8.0354 18.5273 8.0354H16.4125V9.96899Z"
+                            fill="#1B1C1E" />
+                        <path
+                            d="M22.0759 10.6337C22.0759 10.066 22.1766 9.5387 22.3781 9.05164C22.5831 8.56458 22.8615 8.15442 23.213 7.82117C23.5646 7.48425 23.9821 7.22241 24.4655 7.03564C24.9489 6.84521 25.4652 6.75 26.0145 6.75C26.7177 6.75 27.3182 6.90564 27.8163 7.21692C28.3143 7.52454 28.7153 7.9292 29.0193 8.43091L27.9042 9.01318C27.7174 8.69092 27.4537 8.42908 27.1132 8.22766C26.7726 8.02258 26.4064 7.92004 26.0145 7.92004C25.2711 7.92004 24.6541 8.17456 24.1633 8.68359C23.6726 9.19263 23.4272 9.84265 23.4272 10.6337C23.4272 11.4137 23.6726 12.0619 24.1633 12.5782C24.6541 13.0909 25.2711 13.3473 26.0145 13.3473C26.4027 13.3473 26.7671 13.2448 27.1077 13.0397C27.4519 12.8346 27.7174 12.5728 27.9042 12.2542L29.0303 12.8145C28.3088 13.9497 27.3036 14.5173 26.0145 14.5173C25.4652 14.5173 24.9489 14.4221 24.4655 14.2317C23.9821 14.0413 23.5646 13.7794 23.213 13.4462C22.8615 13.1093 22.5831 12.6973 22.3781 12.2102C22.1766 11.7231 22.0759 11.1976 22.0759 10.6337Z"
+                            fill="#1B1C1E" />
+                        <rect x="0.5" y="0.5" width="35" height="20" rx="4.5" stroke="#1B1C1E" />
+                    </svg>
+                    ${Resource.msg('title.add.your.monogram', 'cart', null)}
+                </div>
+
+                <a href="javascript:void(0)">${Resource.msg('link.add.monogram', 'cart', null)}</a>
+            </div> </iscomment>
+            <isif condition="${!lineItem.isGWP && ((lineItem.accentable && lineItem.hasAccentingProducts) || lineItem.isAccentingSku)}">
+               <isinclude template="cart/accentAddEditButton"/>
+            </isif>
+            <isif condition="${!lineItem.isGWP && (lineItem.premiumMono || lineItem.monogramable)}">
+                <isset name="product" value="${lineItem}" scope="page"/>
+                <isinclude template="product/components/monogramTile" />
+            </isif>
+            <isif condition="${!lineItem.isGWP}">
+                <div class="gift-options d-flex align-items-center justify-content-between;">
+                    <div class="icon">
+                    <img src="${URLUtils.staticURL('/images/cart-gift-options-icon.png')}" class="img-fluid" />
+                    </div>
+
+                    <div class="title-desc flex-grow-1">
+                        <div class="title">
+                        ${lineItem.giftBoxlabel}
+                        </div>
+                        <isif condition="${lineItem.isGiftBoxEditable}">
+                        <div class="desc">
+                        ${Resource.msg('label.gift.box.message.added', 'common', null)}
+                        <isif condition="${lineItem.giftBoxPrice}">
+                            &lpar;${lineItem.giftBoxPrice}&rpar;
+                            </isif>
+                        </div>
+                        </isif>
+                    </div>
+
+                    <div class="link">
+                        <div class="link-add">
+                            <iscomment> ${JSON.stringify(lineItem)} </iscomment>
+                            <isif condition="${lineItem.isGiftBoxEditable}">
+                            <a href="#" class="" data-toggle="modal"
+                            data-target="${'#giftCardModal-' + lineItem.UUID}" role="button"
+                            aria-label="">${Resource.msg('label.gift.box.edit', 'common', null)}</a>
+                            <span>&nbsp;|&nbsp;</span>
+                            <a href="${URLUtils.url('Cart-RemoveGiftItem', 'uuid', lineItem.UUID, 'pid', lineItem.id)}" data-uuid="${lineItem.UUID}" class="remove-giftItem" role="button"
+                            aria-label="">${Resource.msg('label.gift.box.remove', 'common', null)}</a>
+                            <iselse/>
+                            <a href="#" class="" data-toggle="modal"
+                            data-target="${'#giftCardModal-' + lineItem.UUID}" role="button"
+                            aria-label="">${Resource.msg('label.gift.box.add', 'common', null)}</a>
+                            </isif>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="remove-save-btn">
+                    <div class="product-move">
+                        <a href="${URLUtils.url('Wishlist-AddProduct', 'uuid', lineItem.UUID)}"
+                            class="move-to-wishlist btn-saveforlater button button--secondary" data-pid="${lineItem.id}"
+                            data-name="${lineItem.productName}" data-action="${URLUtils.url('Cart-RemoveProductLineItem')}"
+                            data-uuid="${lineItem.UUID}" title="${Resource.msg('link.move.to.saveforlater', 'cart', null)}">
+                            ${Resource.msg('link.move.to.saveforlater', 'cart', null)}</a>
+                    </div>
+                    <!--Remove Button -->
+
+                    <button type="button" class="remove-btn-lg remove-product button button--secondary" data-toggle="modal"
+                        data-target=".cart.cart-page #removeProductModal" data-pid="${lineItem.id}"
+                        data-name="${lineItem.productName}" data-action="${pdict.actionUrls.removeProductLineItemUrl}"
+                        data-uuid="${lineItem.UUID}"
+                        aria-label="${Resource.msgf('text.remove.line.item', 'cart', null, lineItem.productName)}">
+                        <span aria-hidden="true">${Resource.msg('button.remove', 'cart', null)}</span>
+                    </button>
+                </div>
+            </isif>
+        </div>
+    </div>
+</div>
+
+<isif condition="${lineItem.bonusProductLineItemUUID === 'bonus'}">
+    <isinclude template="cart/productCard/cartEmbeddedBonusProducts" />
+</isif>
+
+<isinclude template="cart/productCard/giftCardFlyout" />

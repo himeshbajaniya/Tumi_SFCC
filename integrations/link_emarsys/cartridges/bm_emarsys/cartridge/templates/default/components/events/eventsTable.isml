@@ -1,0 +1,79 @@
+<isset name="eventsType" value="${pdict.type}" scope="page" />
+<isset name="context" value="${pdict.response[pdict.type]}" scope="page" />
+
+<div class="control-block">
+    <div class="column-basic table-title-column">
+        <span class="border-text">${Resource.msg(eventsType + ".table.name", "externalEvents", null)}</span>
+    </div>
+    <div class="column-basic button-column">
+        <button class="js-add-${eventsType}-event-button button-basic">${Resource.msg("button.add.event", "externalEvents", null)}</button>
+    </div>
+    <div class="column-basic button-column">
+        <button class="js-refresh-status-${eventsType} button-basic">${Resource.msg("button.refresh.status", "externalEvents", null)}</button>
+    </div>
+</div>
+
+<div class="external-events-content">
+    <div class="js-${eventsType}-events-table events-table">
+        <div class="table-header">
+            <div class="column-basic sfcc-name-column">
+                <span class="border-text">
+                    ${Resource.msg("table.header.sfcc.name", "externalEvents", null)}
+                </span>
+            </div>
+            <div class="column-basic emarsys-name-column">
+                <span class="border-text">
+                    ${Resource.msg("table.header.emarsys.name", "externalEvents", null)}
+                </span>
+            </div>
+            <div class="column-basic button-column"></div>
+            <div class="column-basic button-column"></div>
+            <div class="column-basic button-column"></div>
+            <div class="column-basic campaign-status-column">
+                <span class="border-text">
+                    ${Resource.msg("table.header.campaign.status", "externalEvents", null)}
+                </span>
+            </div>
+        </div>
+
+        <isloop items="${context.eventsMapping}" var="event">
+            <isinclude template="/components/events/eventRow" />
+        </isloop>
+
+        <div class="js-empty-table-notification empty-notification-block hide-content">
+            <span class="empty-notification">
+                ${Resource.msg("empty.table.message", "externalEvents", null)}
+            </span>
+        </div>
+    </div>
+</div>
+
+<iscomment> hidden table data block </iscomment>
+<div class="js-page-data-block hide-content">
+    <div class="js-${eventsType}-events"
+        data-emarsys-descriptions="${JSON.stringify(context.emarsysDescriptions)}"
+        data-campaigns="${JSON.stringify(context.campaigns)}"
+        data-request-examples="${JSON.stringify(context.requestBodyExamples)}">
+
+        <select class="js-sfcc-name-select select-basic">
+            <isloop items="${context.notMappedEvents}" var="eventName">
+                <option value="${eventName}">${eventName}</option>
+            </isloop>
+        </select>
+
+        <select class="js-emarsys-name-select select-basic">
+            <isloop items="${context.emarsysDescriptions}" var="event">
+                <option value="${event.emarsysName}" data-emarsys-id="${event.emarsysId}">
+                    ${event.emarsysName}
+                </option>
+            </isloop>
+            <option  value="" data-emarsys-id="">
+                ${Resource.msg("option.none.event.title", "externalEvents", null)}
+            </option>
+        </select>
+    </div>
+
+    <div class="js-${eventsType}-forms">
+        <isinclude template="/components/events/triggerEventForm" />
+    </div>
+</div>

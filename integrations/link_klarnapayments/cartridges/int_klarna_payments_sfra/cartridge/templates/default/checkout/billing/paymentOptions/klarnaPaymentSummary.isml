@@ -1,0 +1,11 @@
+<isset name="klarnaPaymentMethodName" value="${require('*/cartridge/scripts/util/klarnaHelper').getKlarnaPaymentMethodName()}" scope="page" />
+
+<div class="method-name">
+    ${Resource.msg('paymentmethodname.klarna', 'klarnapayments', null)} <br />
+    <isif condition="${!empty(payment.categoryName)}">
+        ${payment.categoryName}    
+    </isif>
+</div>
+<div class="amount">
+    ${dw.util.StringUtils.formatMoney(new dw.value.Money(payment.amount, pdict.klarna.currency))}
+</div>

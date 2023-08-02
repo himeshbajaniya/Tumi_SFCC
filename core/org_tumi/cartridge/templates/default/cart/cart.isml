@@ -1,0 +1,190 @@
+<isdecorate template="common/layout/page">
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addCss('/css/cart.css');
+        assets.addJs('/css/monogram.css');
+        assets.addJs('js/cart.js');
+        assets.addJs('/js/monogram.js');
+        if(dw.system.Site.getCurrent().getCustomPreferenceValue('mapAPI')) {
+            assets.addJs('https://maps.googleapis.com/maps/api/js?key=' + dw.system.Site.getCurrent().getCustomPreferenceValue('mapAPI') + '&sensor=false');
+        }
+    var pageContext = {
+			title: 'Cart Page',
+			type:'cartpage',
+			ns:'cartpage'
+		};
+    </isscript>
+
+    <isif condition="${pdict.reportingURLs && pdict.reportingURLs.length}">
+        <isinclude template="reporting/reportingUrls" />
+    </isif>
+
+    <input type="hidden" name="page-name" value="cart">
+    <iscomment>
+        <div class="cart-error-messaging cart-error">
+            <isif condition="${pdict.valid.error && pdict.items.length !== 0}">
+                <div class="alert alert-danger alert-dismissible valid-cart-error fade show" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    ${pdict.valid.message}
+                </div>
+            </isif>
+        </div>
+    </iscomment>
+
+    <div class="container">
+        <div class="row cart-header">
+        </div>
+
+    </div>
+
+    <iscomment>
+        <isif condition="${pdict.items.length === 0}">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h1>${Resource.msg('info.cart.empty.msg', 'cart', null)}</h1>
+                    </div>
+                </div>
+            </div>
+        <iselse/>
+    </iscomment>
+
+    <div class="container-fluid cart <isprint value=${pdict.items.length === 0 ? " cart-empty" : "cart-page"}
+        encoding="on" />">
+    <div class="row">
+        <!---product cards--->
+        <isif condition="${pdict.items.length === 0}">
+            <div class="col-sm-7 col-md-7 update-cart">
+                <div class="cart-details ml-auto">
+                    <h1 class="your-cart-header">${Resource.msg('link.continue.shopping', 'cart', null)}
+                        <div class="opening-parenthesis">(</div>
+                        <div class="number-of-items">${Resource.msgf('label.number.items.in.cart', 'cart', null, pdict.numItems)}</div>
+                        <div>)</div>
+                    </h1>
+                    <p class="empty-msg">${Resource.msg('info.cart.empty.msg', 'cart', null)}</p>
+                    <!---totals, and checkout actions--->
+                    <div class="mobile-summary"></div>
+                    <isinclude template="wishlist/saveForLater" />
+                    <isslot id="CarouselCartPage" context="global"
+                        description="Recommendation Carousel for Cart Page" />
+                </div>
+
+            </div>
+
+        <iselse/>
+            <div class="col-sm-7 col-md-7 update-cart">
+                <div class="cart-details ml-auto">
+                    <div class="row cart-header mx-0">
+                        <h1 class="your-cart-header">${Resource.msg('link.continue.shopping', 'cart', null)}
+                            <div class="opening-parenthesis">(</div>
+                            <div class="number-of-items">${Resource.msgf('label.number.items.in.cart', 'cart', null, pdict.numItems)}</div>
+                            <div>)</div>
+                        </h1>
+                    </div>
+                    <div class="product-card">
+                        <isloop items="${pdict.items}" var="lineItem" status="loopstate">
+                            <isif condition="${lineItem.productType === 'bundle'}">
+                                <isinclude template="cart/productCard/cartBundleCard" />
+                            <iselse/>
+                                <isif condition="${lineItem.noProduct === true}">
+                                    <isinclude template="cart/productCard/uncategorizedCartProductCard" />
+                                <iselse/>
+                                    <isif
+                                        condition="${!lineItem.isPremiumMonogramLetter && !lineItem.parentProductLineItemID}">
+                                        <isinclude template="cart/productCard/cartProductCard" />
+                                        <isset name="product" value="${lineItem}" scope="page" />
+                                        <isinclude template="product/components/monogramModal" />
+                                    </isif>
+                                    <iscomment>
+                                        <isif condition="${!lineItem.parentProductLineItemID}">
+                                            <isinclude template="cart/productCard/cartProductCard" />
+                                        </isif>
+                                    </iscomment>
+                                </isif>
+                            </isif>
+                        </isloop>
+                        <isinclude template="common/findStore" />
+                        <isinclude template="cart/cartApproachingDiscount" />
+                    </div>
+                    <!---totals, and checkout actions--->
+                    <div class="mobile-summary"></div>
+                    <isinclude template="wishlist/saveForLater" />
+                    <isslot id="CarouselCartPage" context="global"
+                        description="Recommendation Carousel for Cart Page" />
+                </div>
+
+            </div>
+        </isif>
+        <!---totals, and checkout actions--->
+        <div class="col-sm-5 col-md-5 desktop-summary">
+            <div class="totals">
+                <div class="order-summary">
+                    <isinclude template="cart/cartPromoCode" />
+                    <isif condition="${pdict.items.length > 0}">
+                        <div class="coupons-and-promos">
+                            <isinclude template="cart/cartCouponDisplay" />
+                        </div>
+                    </isif>
+                    <iscomment>
+                        <div class="row">
+                            <isinclude template="cart/cartShippingMethodSelection" />
+                        </div>
+                    </iscomment>
+                    <isinclude template="cart/cartTotals" />
+                    <div class="row checkout-continue-wrap">
+                        <div class="col-12 checkout-continue">
+                            <isinclude template="cart/checkoutButtons" />
+                        </div>
+
+                        <isif condition="${pdict.items.length > 0}">
+                            <div class="col-12">
+                                <isinclude template="checkout/billing/paymentOptions/applePayContent" />
+                            </div>
+                        </isif>
+
+                        <div class="col-12">
+                            <isif condition="${pdict.paypal && pdict.paypal.cartButtonEnabled}">
+                                <isinclude template="paypal/cart/paypalCartContent" />
+                            </isif>
+                        </div>
+
+                        <isif condition="${pdict.items.length > 0}">
+                            <div class="col-12">
+                                <isinclude template="klarnapayments/modules.isml" />
+                                <iskebcart />
+                            </div>
+                            <div class="col-12">
+                                <div class="klarna-osm-cart">
+                                    <iskosmcart />
+                                </div>
+                            </div>
+                        </isif>
+                    </div>
+
+
+
+                    <a href="${URLUtils.url('Home-Show')}"
+                        class="btn-continue-shopping">${Resource.msg('text.continue.shopping', 'cart', null)}</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <isinclude template="cart/cartRemoveProductModal" />
+
+
+    </div>
+
+    <isinclude template="cart/cartRemoveCouponModal" />
+
+    <isif condition="${require('*/cartridge/scripts/reflektionHelper').getRFKEnabled()}">
+        <isinclude template="reflektion/cartStatus" />
+    </isif>
+    <isinclude template="cart/checkoutguestButtons" />
+    <isinclude template="klarnapayments/modules.isml"/>
+    <iscomment> Klarna Express Form </iscomment>
+    <iskebform />
+
+</isdecorate>

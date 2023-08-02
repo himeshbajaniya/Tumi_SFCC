@@ -1,0 +1,16 @@
+{
+    "hooks": [
+        {
+            "name": "payment.beforeHandle",
+            "script": "./hooks/emails"
+        },
+        {
+            "name": "order.afterSubmit",
+            "script": "./hooks/emails"
+        },
+        {
+            "name": "emarsys.sendOrderConfirmation",
+            "script": "./hooks/emails"
+        }
+    ]
+}

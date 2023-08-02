@@ -1,0 +1,39 @@
+<iscontent type="text/html" charset="UTF-8" compact="true"/>
+<iscomment>
+	The locale-specific portion of the minibillinginfo.isml module
+</iscomment>
+<ismodule template="klarnapayments/shippingaddresshelper.isml"
+	name="kpaddresshelper"
+	attribute="p_address"
+	attribute="p_shipment"
+/>
+
+<ismodule template="klarnapayments/kosm/cart.isml"
+	name="kosmcart"
+	attribute="p_lineitemctnr"
+/>
+
+<ismodule template="klarnapayments/kosm/pdp.isml"
+	name="kosmpdp"
+	attribute="p_product"
+/>
+
+<ismodule template="klarnapayments/kosm/footer.isml"
+	name="kosmfooter"
+/>
+
+<ismodule template="klarnapayments/kosm/header.isml"
+	name="kosmheader"
+/>
+
+<ismodule template="klarnapayments/keb/buttoncart.isml"
+	name="kebcart"
+/>
+
+<ismodule template="klarnapayments/keb/form.isml"
+	name="kebform"
+/>
+
+<ismodule template="klarnapayments/keb/minicartbutton.isml"
+	name="mckeb"
+/>

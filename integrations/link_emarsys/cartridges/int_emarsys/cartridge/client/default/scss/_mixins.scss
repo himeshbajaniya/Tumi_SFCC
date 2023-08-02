@@ -1,0 +1,52 @@
+// responsive breakpoints
+$break-small-portrait: 32rem;
+$break-medium-portrait: 48rem;
+$break-small-landscape: 75rem;
+$break-medium: 102.4rem;
+$break-large: 112.4rem;
+$landscape: landscape;
+$break-small-landscape-plus-one: 75.1rem;
+$break-medium-minus-one: 102.3rem;
+$phone-landscape-width: 64rem;
+
+@mixin respond-to($media) {
+    @if $media == small-phones {
+        @media only screen and (min-width: $break-small-portrait) { @content; }
+    }
+
+    @if $media == medium-phones {
+        @media only screen and (min-width: $break-medium-portrait) and (max-width: $break-small-landscape) { @content; }
+    }
+
+    @if $media == phones {
+        @media only screen and (min-width: $break-small-portrait) and (max-width: $break-small-landscape) { @content; }
+    }
+
+    @else if $media == tablets {
+        @media only screen and (min-width: $break-small-landscape-plus-one) and (max-width: $break-medium-minus-one) { @content; }
+    }
+
+    @else if $media == tablets-landscape {
+        @media only screen and (min-width: $break-small-landscape-plus-one) and (max-width: $break-medium) and (orientation: $landscape) { @content; }
+    }
+
+    @else if $media == phones-tablets {
+        @media only screen and (min-width: $break-small-portrait) and (max-width: $break-medium-minus-one) { @content; }
+    }
+
+    @else if $media == wide-screens {
+        @media only screen and (min-width: $break-large) { @content; }
+    }
+
+    @else if $media == custom-phones-tablets {
+        @media only screen and (min-width: $break-small-portrait) and (max-width: $break-medium) { @content; }
+    }
+
+    @else if $media == phone-landscape {
+        @media only screen and (min-width: $break-small-portrait) and (max-width: $phone-landscape-width) and (orientation: $landscape) { @content; }
+    }
+
+    @else if $media == mobile-only {
+        @media only screen and (max-width: $break-small-landscape) { @content; }
+    }
+}

@@ -1,0 +1,39 @@
+<isdecorate template="common/layout/page">
+   <isscript>
+      var assets = require('*/cartridge/scripts/assets');
+      assets.addJs('/js/serviceandrepairs.js');
+   </isscript>
+   <isinclude template="/components/modules" sf-toolkit="off" />
+   <div class="service-repairs">
+      <section class="jumbotron titlewidthBreadcrums d-flex justify-content-center flex-column">
+         <div class="container">
+            <nav>
+               <ol class="breadcrumb returnsBreadcrum" id="breads">
+                  <li class="breadcrumb-item"><a href="${URLUtils.url('Home-Show').toString()}">${Resource.msg('global.home', 'common', null)}</a></li>
+                  <isif condition="${!pdict.isFromFooter}">
+                     <li class="breadcrumb-item"><a href="${URLUtils.url('Account-Show').toString()}">${Resource.msg('page.title.myaccount', 'account', null)}</a></li>
+                  </isif>
+                  <li class="breadcrumb-item"><a href="${URLUtils.url('Page-ShowServiceAndRepairs').toString()}">${Resource.msg('heading.service.and.repair', 'common', null)}</a></li>
+               </ol>
+            </nav>
+            <div class="service-header">
+               <h1><isprint value="${Resource.msg('heading.service.and.repair', 'common', null)}" encoding="on" /></h1>
+            </div>
+         </div>
+      </section>
+      <section class="jumbotron repair-services-user-info">
+         <div class="container">
+            <div class="user-info">
+               <isinclude url="${URLUtils.url('Page-ShowServiceAndRepairsUserDetails')}"/>
+            </div>
+         </div>
+      </section>
+      <section class="container pb-5 service-repairs-content">
+         <div class="row">
+            <div class="col-md-12">
+               <iscontentasset aid="service-repairs" />
+            </div>
+         </div>
+      </section>
+   </div>
+</isdecorate>

@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<form xmlns="http://www.demandware.com/xml/form/2008-04-19">
+    <field formid="orderId" type="string"  label="ordernumber.field.text" mandatory="true" max-length="50"/>
+    <action formid="sendEmail" valid-form="false" />
+</form>
+ 

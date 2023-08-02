@@ -1,0 +1,118 @@
+
+<iscomment> <isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addJs('/js/paymentInstruments.js');
+</isscript> </iscomment>
+<isinclude template="account/payment/deletePaymentModal" />
+<iscomment>
+    <div class="hero slant-down account-image">
+        <h1 class="page-title">${Resource.msg('page.heading.payments', 'payment', null)}</h1>
+    </div>
+</iscomment>
+<div class="payments-container">
+    <!---Breadcrumbs--->
+    <iscomment>
+        <isinclude template="components/breadcrumbs/pageBreadcrumbs" />
+    </iscomment>
+    <isif condition="${!pdict.paymentInstruments}">
+        <div class="row justify-content-center">
+            <div class="col">
+                <h3>${Resource.msg('msg.no.saved.payments', 'payment', null)}</h3>
+            </div>
+        </div>
+    </isif>
+    <!-- Rows for Credit Cards -->
+    <isloop items="${pdict.paymentInstruments}" var="paymentInstrument">
+        <isif condition="${paymentInstrument.defaultPaymentCard}">
+            <div class="saved-payments" id="uuid-${paymentInstrument.UUID}">
+                <div class="card">
+                    <div class="card-header">
+                        <iscomment>
+                            <h2 class="pull-left">${paymentInstrument.creditCardHolder}</h2>
+                        </iscomment>
+                        <h2>${Resource.msg('heading.default.payment', 'forms', null)}</h2>
+                    </div>
+                    <div class="card-body card-body-positioning">
+                        <div class="card-info-group">
+                            <div class="card-number-wrapper" data-type="${paymentInstrument.creditCardDataType}">
+            
+                            </div>
+                            <div class="card-details">
+                                <p>${paymentInstrument.creditCardType} ${paymentInstrument.maskedCreditCardNumber}
+                                </p>
+                            </div>
+                            <p class="owner-name">${paymentInstrument.creditCardHolder}</p>
+                            <p>${paymentInstrument.address1 + ','}</p>
+                            <p>${paymentInstrument.city}, ${paymentInstrument.stateCode}
+                                ${paymentInstrument.postalCode}</p>
+                            <p>${Resource.msg('label.payment.ending', 'account', null)}
+                                ${paymentInstrument.creditCardExpirationMonth}/${paymentInstrument.creditCardExpirationYear.toString().substring(2,)}
+                            </p>
+                        </div>
+                        <button type="button" class="remove-btn remove-payment" data-toggle="modal"
+                            data-target="#deletePaymentModal" data-id="${paymentInstrument.UUID}"
+                            data-card="${paymentInstrument.maskedCreditCardNumber}" data-url="${pdict.actionUrl}">
+                            ${Resource.msg('label.delete', 'forms', null)}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </isif>
+    </isloop>
+
+    <isloop items="${pdict.paymentInstruments}" var="paymentInstrument">
+        <isif condition="${!paymentInstrument.defaultPaymentCard}">
+            <div class="saved-payments" id="uuid-${paymentInstrument.UUID}">
+                <div class="card">
+                    <div class="card-header">
+                        <iscomment>
+                            <h2 class="pull-left">${paymentInstrument.creditCardHolder}</h2>
+                        </iscomment>
+                        <h2>${Resource.msg('heading.saved.payment', 'forms', null)}</h2>
+                    </div>
+                    <div class="card-body card-body-positioning">
+                        <div class="card-info-group">
+                            <div class="card-number-wrapper" data-type="${paymentInstrument.creditCardDataType}">
+
+                            </div>
+                            <div class="card-details">
+                                <p>${paymentInstrument.creditCardType} ${paymentInstrument.maskedCreditCardNumber}
+                                </p>
+                            </div>
+                            <p class="owner-name">${paymentInstrument.creditCardHolder}</p>
+                            <p>${paymentInstrument.address1 + ','}</p>
+                            <p>${paymentInstrument.city}, ${paymentInstrument.stateCode}
+                                ${paymentInstrument.postalCode}
+                            </p>
+                            <p>${Resource.msg('label.payment.ending', 'account', null)}
+                                ${paymentInstrument.creditCardExpirationMonth}/${paymentInstrument.creditCardExpirationYear.toString().substring(2,)}
+                            </p>
+                        </div>
+                        <div class="cards-wrappper">
+                            <button type="button" class="remove-btn remove-payment" data-toggle="modal"
+                            data-target="#deletePaymentModal" data-id="${paymentInstrument.UUID}"
+                            data-card="${paymentInstrument.maskedCreditCardNumber}" data-url="${pdict.actionUrl}">
+                            ${Resource.msg('label.delete', 'forms', null)}
+                        </button> |
+                        <button type="button" class="set-default-paymentInstrument"
+                            data-url="${URLUtils.url('PaymentInstruments-SetDefaultPaymentInstrument', 'UUID', paymentInstrument.UUID)}">
+                            ${Resource.msg('label.makedefault', 'forms', null)}
+                        </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </isif>
+    </isloop>
+</div>
+<div class="paymentInstruments">
+    <div class="">
+        <isif condition="${pdict.paymentInstruments.length === 0}">
+            <p class="save-tumi-profile">${Resource.msg('text.make.cards.saved.your.tumi.profile', 'account', null)}</p>
+        </isif>
+        <div class="col-sm-6 add-new-payment">
+            <a href="${URLUtils.url('PaymentInstruments-AddPayment')}"
+                class="button button--primary w-100">${Resource.msg('button.addnew.payment', 'payment', null)}</a>
+        </div>
+    </div>
+</div>

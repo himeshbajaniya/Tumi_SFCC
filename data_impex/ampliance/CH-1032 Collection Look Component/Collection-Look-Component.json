@@ -1,0 +1,74 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://www.tumi.com/collection-look-component",
+  "title": "Title",
+  "description": "Description",
+  "allOf": [
+    {
+      "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+    }
+  ],
+  "type": "object",
+  "properties": {
+    "content-asset-id": {
+      "title": "Content Asset ID",
+      "description": "SFCC Content Asset",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 256,
+      "format": "text"
+    },
+    "s7ImageDesktopComponent1": {
+      "type": "string",
+      "minLength": 0,
+      "maxLength": 250,
+      "format": "uri",
+      "title": "Scene 7 Image Desktop for Component 1",
+      "description": "eg. https://tumi.scene7.com/is/image/Tumi/1232072777_main_T"
+    },
+    "imageAltDesktop1": {
+      "title": "Image alt for desktop",
+      "description": "Text to show if image is not loaded",
+      "type": "string",
+      "minLength": 0,
+      "maxLength": 255
+    },
+    "s7ImageDesktopComponent2": {
+      "type": "string",
+      "minLength": 0,
+      "maxLength": 250,
+      "format": "uri",
+      "title": "Scene 7 Image Desktop for Component 2",
+      "description": "eg. https://tumi.scene7.com/is/image/Tumi/1232072777_main_T"
+    },
+    "imageAltDesktop2": {
+      "title": "Image alt for desktop",
+      "description": "Text to show if image is not loaded",
+      "type": "string",
+      "minLength": 0,
+      "maxLength": 255
+    },
+     "dataPID": {
+      "title": "Data PId",
+      "description": "Enter the Data PId",
+      "type": "string",
+      "minLength": 0,
+      "maxLength": 255
+    },
+    "dataRfkid": {
+      "title": "Data RfkId",
+      "description": "Enter the Data RfkId",
+      "type": "string",
+      "minLength": 0,
+      "maxLength": 255
+    },
+    "dataPageId": {
+      "title": "Data Page Id",
+      "description": "Enter the Data Page Id",
+      "type": "string",
+      "minLength": 0,
+      "maxLength": 255
+    }
+  },
+  "propertyOrder": []
+}

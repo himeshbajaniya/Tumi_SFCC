@@ -1,0 +1,76 @@
+@charset "UTF-8";
+// Typography
+
+@include font-face($font-tumi, "../fonts/", "Proxima-Nova-Regular");
+@include font-face($font-tumi-light, "../fonts/", "Proxima-Nova-Light");
+@include font-face($font-tumi-sbold, "../fonts/", "Proxima-Nova-Semibold");
+@include font-face($font-tumi-monogram, "../fonts/", "tumi_symbols");
+
+@mixin font-size($size) {
+    font-size: $size;
+}
+
+@mixin letter-spacing($size) {
+    letter-spacing: $size;
+}
+
+@mixin font-styles($size, $line-height, $font-weight, $text-transform, $color) {
+    @include font-size($size);
+
+    line-height: $line-height;
+    font-weight: $font-weight;
+    text-transform: $text-transform;
+    color: $color;
+}
+
+%title-lg {
+    @include font-styles(
+        28px,
+        32px,
+        $font-tumi-light,
+        capitalize,
+        $eerie-black
+    );
+    @include media-breakpoint-up(md) {
+        @include font-styles(
+            54px,
+            58px,
+            $font-tumi-light,
+            capitalize,
+            $eerie-black
+        );
+    }
+}
+
+%title-md {
+    @include font-styles(
+        24px,
+        28px,
+        $font-tumi-light,
+        capitalize,
+        $eerie-black
+    );
+    @include media-breakpoint-up(md) {
+        @include font-styles(
+            30px,
+            34px,
+            $font-tumi-light,
+            capitalize,
+            $eerie-black
+        );
+    }
+}
+
+%subtitle {
+    @include font-styles(18px, 24px, $font-tumi, capitalize, $eerie-black);
+}
+
+%eyebrow-md {
+    @include font-styles(14px, 18px, $font-tumi, uppercase, $eerie-black);
+    @include letter-spacing(2px);
+}
+
+%eyebrow-sm {
+    @include font-styles(12px, 16px, $font-tumi, uppercase, $davy-grey);
+    @include letter-spacing(1px);
+}

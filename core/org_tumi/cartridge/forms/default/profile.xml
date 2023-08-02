@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+<form xmlns="http://www.demandware.com/xml/form/2008-04-19" secure="false">
+	<group formid="customer">
+		<field 
+			formid="firstname" 
+			label="label.input.firstname.profile" 
+			mandatory="true" 
+			max-length="50"
+			regexp="^([a-zA-Z]{1,50})$" 
+			value-error="ValueErrorText"
+			missing-error="error.message.required" 
+			range-error="error.message.50orless" 
+			type="string" />
+
+		<field 
+			formid="lastname" 
+			label="label.input.lastname.profile" 
+			mandatory="true" 
+			max-length="50" 
+			missing-error="error.message.required"
+			range-error="error.message.50orless" 
+			type="string" />
+
+		<field
+			formid="email" 
+			label="label.input.email.profile" 
+			mandatory="true" 
+			max-length="50" 
+			missing-error="error.message.required"
+			parse-error="error.message.parse.email.profile.form"
+			range-error="error.message.50orless"
+			regexp="^[\w.%+-]+@[\w.-]+\.[\w]{2,6}$" 
+			value-error="ValueErrorText"
+			type="string"/> 
+			<!-- TODO value-error not comming back from the platform -->
+
+		<field 
+			formid="emailconfirm"
+			label="label.input.emailconfirm.profile"
+			mandatory="true"
+			max-length="50"
+			missing-error="error.message.required"
+			parse-error="error.message.parse.email.profile.form"
+			range-error="error.message.50orless"
+			regexp="^[\w.%+-]+@[\w.-]+\.[\w]{2,6}$"
+			value-error="ValueErrorText"
+			type="string"/> 
+			<!-- TODO value-error not comming back from the platform -->
+			
+		<field 
+			formid="phone"
+			label="label.input.phone.profile"
+			mandatory="false"
+			regexp="^[1-9]\d{2}[-]\d{3}[-]\d{4}$"
+			max-length="12"
+			missing-error="error.message.required"
+			parse-error="error.message.parse.phone.profile.form"
+			type="string"/>
+
+		<field 
+            formid="gender" 
+            label="label.input.gender"
+            type="string" 
+            mandatory="false" 
+            binding="genderCode"
+            missing-error="address.gender.missing">
+        <options>
+            <option optionid="prefnottosay" label="select.option.gender.prefnottosay" value="3"/>
+            <option optionid="male" label="select.option.gender.male" value="1"/>
+            <option optionid="female" label="select.option.gender.female" value="2"/>
+        </options>
+    </field>
+
+		<field 
+			formid="birthday" 
+			label="label.input.birthday.profile" 
+			mandatory="false" 
+			missing-error="error.message.required"
+			regexp="^(1[0-2]|0[1-9])/(3[01]|[12][0-9]|0[1-9])$"
+			max-length="5"
+			parse-error="error.message.parse.phone.profile.form"
+			type="string" />
+
+		<field 
+			formid="addtoemaillist" 
+			label="description.checkbox.emailsignup.profile.promotion"  
+			type="boolean"/>
+	</group>
+
+	<group formid="login">
+		<field 
+			formid="password" 
+			label="label.input.password.profile"
+			mandatory="true"
+			type="string" />
+			<!-- TODO value-error -->
+
+		<field 
+			formid="passwordconfirm"
+			label="label.input.passwordconfirm.profile"
+			type="string"
+			mandatory="true"
+			min-length="8"
+			max-length="255"
+			range-error="error.message.8_255characters"
+			value-error="error.message.currentpasswordnomatch"/>
+			<!-- TODO value-error -->
+		
+		<field 
+			formid="currentpassword" 
+			label="label.input.currentpassword.profile" 
+			mandatory="true"
+			min-length="8"
+			max-length="255"
+			range-error="error.message.8_255characters"
+			value-error="error.message.currentpasswordnomatch"
+			type="string" />
+		
+		<include formid="newpasswords" name="newPasswords"/>
+	</group>
+</form>

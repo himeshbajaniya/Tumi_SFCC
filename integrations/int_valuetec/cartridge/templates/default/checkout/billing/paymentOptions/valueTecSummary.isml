@@ -1,0 +1,10 @@
+<div class="valuetec-type">
+    <span>
+        <isprint value="${payment.paymentMethod}"/>
+    </span>
+</div>
+<isif condition="${!empty(payment.maskedGiftCertificateCode)}">
+    <div class="valuetec-number">
+        <isprint value="${payment.maskedGiftCertificateCode}" />
+    </div>
+</isif>

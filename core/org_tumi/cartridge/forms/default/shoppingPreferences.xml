@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<form xmlns="http://www.demandware.com/xml/form/2008-04-19">
+       <!-- <field formid="isGift" label="check.gift" type="boolean" checked="false" default-value="false" binding="isGift" mandatory="false" /> -->
+       <field formid="luggagecheckbox" label="label.form.luggage" type="boolean" binding="luggagecheckbox" />
+       <field formid="womensbackpackscheckbox" label="label.form.Womens.bags.backpacks" type="boolean" binding="womensbackpackscheckbox" />
+       <field formid="mensbackpackscheckbox" label="label.form.mens.bags.backpacks" type="boolean" binding="mensbackpackscheckbox" />
+       <field formid="accessoriescheckbox" label="label.form.accessories" type="boolean" binding="accessoriescheckbox" />
+</form>

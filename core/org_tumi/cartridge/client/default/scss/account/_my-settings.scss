@@ -1,0 +1,473 @@
+.my-settings-wrapper {
+    margin-top: 40px;
+    margin-bottom: 50px;
+
+    @include media-breakpoint-up(md) {
+        margin-top: 50px;
+    }
+
+    .card {
+        border: none;
+
+        .card-header {
+            border: none;
+            padding: 10px 0;
+
+            @include media-breakpoint-up(sm) {
+                padding-top: 0;
+                padding-bottom: 20px;
+            }
+        }
+
+        .card-body {
+            padding: 0;
+            align-items: baseline;
+        }
+
+        .paymentInstruments {
+            .invalid-input {
+                font-size: 12px;
+                line-height: 16px;
+                color: $imperial-red;
+                margin-bottom: 16px;
+            }
+        }
+
+        .setting-slides {
+            @include media-breakpoint-up(sm) {
+                padding-right: 0;
+            }
+
+            li {
+                margin-bottom: 10px;
+                list-style: none;
+                padding: 0;
+                cursor: pointer;
+
+                @include media-breakpoint-up(sm) {
+                    padding: 10px 12px;
+                    max-width: 245px;
+                }
+
+                img {
+                    @include media-breakpoint-up(sm) {
+                        display: none;
+                    }
+                }
+
+                a {
+                    color: var(--color-black);
+                    width: 100%;
+                    @include sizeWeightLh(16px, 600, 24px);
+
+                    @include media-breakpoint-up(sm) {
+                        font-family: $font-family-base;
+                        @include sizeWeightLh(15px, 400, 20px);
+                    }
+
+                    img {
+                        display: none;
+                    }
+                }
+
+                &:last-child {
+                    @include media-breakpoint-up(sm) {
+                        margin-top: 40px;
+                    }
+
+                    @include media-breakpoint-up(md) {
+                        margin-top: 50px;
+                    }
+
+                    a {
+                        display: flex;
+                    }
+
+                    img {
+                        padding-right: 8px;
+                        display: block;
+                    }
+                }
+            }
+
+            .my-settings-active {
+                background-color: unset;
+
+                @include media-breakpoint-up(sm) {
+                    background-color: var(--color-grey3);
+                }
+            }
+        }
+    }
+
+    .my-settings {
+        .personal-info {
+            border-bottom: 1px solid var(--color-grey2);
+            padding: 0;
+            padding-top: 20px;
+            padding-bottom: 24px;
+        }
+
+        dl,
+        dd {
+            color: var(--color-black);
+            @include sizeWeightLh(15px, 400, 20px);
+        }
+
+        dt {
+            color: var(--color-grey1);
+            @include sizeWeightLh(12px, 400, 16px);
+
+            @include media-breakpoint-up(sm) {
+                line-height: 20px;
+            }
+        }
+
+        .card-header {
+            padding: 0;
+
+            h2 {
+                text-transform: capitalize;
+                color: var(--color-black);
+                font-family: $font-family-base;
+                margin-bottom: 0;
+                @include sizeWeightLh(18px, 400, 30px);
+
+                @include media-breakpoint-up(sm) {
+                    @include sizeWeightLh(18px, 400, 20px);
+                }
+            }
+        }
+
+        .password-card {
+            .card-header {
+                padding: 0;
+                margin-bottom: 18px;
+            }
+
+            .password-info {
+                padding: 0 1.25rem 0 0;
+
+                dl {
+                    margin-bottom: 40px;
+                }
+            }
+
+            margin-top: 42px;
+            margin-bottom: 0;
+        }
+
+        .password-section {
+            border-bottom: 1px solid var(--color-grey2);
+        }
+
+        .prefered-store {
+            margin-top: 40px;
+
+            .card-header {
+                padding: 0;
+            }
+
+            .card-body {
+                padding: 0;
+                margin-top: 16px;
+
+                dt {
+                    color: var(--color-black);
+                    @include sizeWeightLh(15px, 400, 20px);
+                }
+
+                dd {
+                    color: var(--color-grey1);
+                    @include sizeWeightLh(13px, 400, 18px);
+                }
+
+                a {
+                    text-decoration: underline;
+                    color: var(--color-black);
+                    @include sizeWeightLh(13px, 400, 18px);
+                }
+            }
+        }
+
+        .edit-profile {
+            margin-top: 20px;
+
+            .form-group {
+                select {
+                    border: none;
+                    border-radius: unset;
+                    padding: 8px 0;
+                    border-bottom: 1px solid $spanish-gray;
+                }
+
+                input {
+                    border-bottom: 1px solid $spanish-gray;
+                    padding: 8px 0;
+
+                    &[type="email"] {
+                        border-bottom: none;
+                        pointer-events: none;
+                        background-color: transparent;
+                    }
+                }
+
+                &.email-label {
+                    min-height: 53px;
+                }
+
+                .form-control-label {
+                    color: var(--color-grey1);
+                    margin-left: -5px;
+                    width: 100%;
+                    @include sizeWeightLh(12px, 400, 20px);
+                }
+            }
+        }
+
+        .pull-right {
+            text-decoration: underline;
+            color: var(--color-black);
+            @include sizeWeightLh(13px, 400, 18px);
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+
+        .password-form {
+            .change-password-form {
+                margin-bottom: 40px;
+            }
+        }
+    }
+
+    .saved-address {
+        .add-new-address {
+            margin-top: 20px;
+        }
+    }
+
+    .password-cancel,
+    .edit-profile,
+    .profile-cancel,
+    .password-form {
+        display: none;
+    }
+
+    .profile-view {
+        .edit-profile,
+        .profile-cancel {
+            display: block;
+        }
+
+        .personal-info,
+        .profile-edit {
+            display: none;
+        }
+
+        .password-card,
+        .prefered-store {
+            opacity: 0.5;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+    }
+
+    .password-view {
+        .password-info,
+        .password-edit {
+            display: none;
+        }
+
+        .password-cancel,
+        .password-form {
+            display: block;
+        }
+
+        .personal-info-section,
+        .prefered-store {
+            opacity: 0.5;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+    }
+
+    .delete-address-modal,
+    .delete-payment-modal {
+        .delete-confirmation-header {
+            border-bottom: none;
+            padding: 32px 32px 40px;
+
+            h4 {
+                color: var(--color-black);
+                font-family: $font-light;
+                @include sizeWeightLh(24px, 400, 16px);
+            }
+
+            button {
+                opacity: 0.75;
+                margin-top: -20.5px;
+            }
+        }
+
+        .modal-dialog {
+            top: 22%;
+        }
+
+        .modal-body {
+            padding: 0;
+            font-size: 15px;
+
+            @include media-breakpoint-up(sm) {
+                padding-left: 32px;
+                padding-bottom: 30px;
+            }
+        }
+
+        .modal-footer {
+            border-top: none;
+
+            .button {
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+
+.form-group label {
+    &::after {
+        display: contents !important;
+        position: unset;
+    }
+}
+
+.form-group.required .form-control-label::before {
+    content: "" !important;
+}
+
+.form-group.required .form-control-label::after {
+    content: "*";
+}
+
+.d-mobile {
+    .delete-address-modal,
+    .delete-payment-modal {
+        top: 0;
+
+        .modal-header {
+            padding: 0;
+            margin-bottom: 20px;
+
+            h4 {
+                margin-top: 112px;
+            }
+        }
+
+        .modal-dialog {
+            position: fixed;
+            margin: auto;
+            width: 100%;
+            height: 100%;
+            right: 0;
+        }
+
+        .modal-footer {
+            padding: 0;
+            margin-top: 40px;
+
+            .container {
+                padding: 0;
+            }
+        }
+
+        .modal-content {
+            height: 100%;
+            border-radius: 0;
+            border: none;
+            overflow: auto;
+            padding: 28px 16px;
+        }
+    }
+}
+
+.desktop-card {
+    display: block;
+}
+
+.my-settings-mobile {
+    display: none;
+}
+
+.d-mobile {
+    .my-settings-wrapper {
+        margin-top: 26px;
+
+        .desktop-card {
+            display: none;
+        }
+    }
+
+    .my-settings-mobile {
+        display: block;
+
+        > .desktop-card {
+            display: block !important;
+        }
+
+        .back-to-account {
+            margin-bottom: 33px;
+
+            a {
+                @include sizeWeightLh(14px, 400, 16px);
+
+                img {
+                    padding-right: 5px;
+                }
+            }
+
+            .adr-heading {
+                color: var(--color-black);
+                font-family: $font-light;
+                margin-top: 10px;
+                margin-bottom: 0;
+                @include sizeWeightLh(24px, 400, 24px);
+            }
+        }
+
+        .setting-slides {
+            li {
+                border-bottom: 1px solid var(--color-grey2);
+                margin-bottom: 0;
+                padding: 24px 0;
+                color: var(--color-black);
+                display: flex;
+                justify-content: space-between;
+                @include sizeWeightLh(16px, 600, 24px);
+
+                @include media-breakpoint-up(sm) {
+                    font-family: $font-family-base;
+                    @include sizeWeightLh(15px, 400, 20px);
+                }
+
+                a {
+                    display: block;
+
+                    img {
+                        padding: 7px;
+                        display: block;
+                    }
+                }
+
+                &:nth-child(6) {
+                    border-bottom: none;
+                }
+
+                &:last-child {
+                    display: none;
+                    border-bottom: none;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,267 @@
+<isscript>
+        var assets = require('*/cartridge/scripts/assets');
+        assets.addJs('/js/productDetail.js');
+        assets.addCss('/css/product/detail.css');
+    </isscript>
+<isinclude template="/components/modules" sf-toolkit="off" />
+<isif condition="${!empty(pdict.product)}">
+    <isset name="product" value="${pdict.product}" scope="page"/>
+</isif>
+<isinclude template="product/components/airlineGuide" />
+
+<ul class="nav nav-tabs nav-fill pdp-feature-tab" id="pdpFeatureTab" role="tablist">
+    <isif condition="${product.exteriorFeatures || product.interiorFeatures}">
+        <li class="nav-item">
+            <a class="nav-link" id="featuresTab" data-toggle="tab" href="#features" role="tab" aria-controls="features"
+                aria-selected="false">${Resource.msg('tab.features', 'featuresAndSpecifications', null)}</a>
+        </li>
+    </isif>
+    <isif
+        condition="${product.styleDescription || product.dimensions || product.expandable || product.netWeightLb || product.capacity || product.primaryMaterial ||(product.heightCms && product.widthCms && product.depthCms)}">
+        <li class="nav-item">
+            <a class="nav-link" id="specificationsTab" data-toggle="tab" href="#specifications" role="tab"
+                aria-controls="specifications" aria-selected="false">${Resource.msg('tab.specifications', 'featuresAndSpecifications', null)}</a>
+        </li>
+    </isif>
+    <isif
+        condition="${((product.tsaLockType !== null && product.tsaLockType !== 'FALSE') && dw.content.ContentMgr.getContent('tsaLock-PDP')) || (product.tumiTracer && dw.content.ContentMgr.getContent('tumiTracer-PDP')) || (product.warranty && dw.content.ContentMgr.getContent('warranty-PDP'))}">
+    <li class="nav-item">
+        <a class="nav-link" id="maintenanceandcareTab" data-toggle="tab" href="#maintenanceandcare" role="tab"
+            aria-controls="maintenanceandcare" aria-selected="false">${Resource.msg('tab.maintenance', 'featuresAndSpecifications', null)}</a>
+    </li>
+    </isif>
+    <li class="nav-item">
+        <a class="nav-link" id="compatibleairlineguideTab" data-toggle="tab" href="#compatibleairlineguide" role="tab"
+            aria-controls="compatibleairlineguide" aria-selected="false">${Resource.msg('tab.airlineguide', 'featuresAndSpecifications', null)}</a>
+    </li>
+</ul>
+<div class="tab-content" id="pdpTabContent">
+ <isif condition="${product.exteriorFeatures || product.interiorFeatures}">
+    <div class="tab-pane" id="features" role="tabpanel" aria-labelledby="featuresTab">
+        <div class="tab-content-wrap">
+            <div class="row">
+                <div class="col-md-6 col-12 col-sm-6">
+                    <h4>${Resource.msg('tab.exterior', 'featuresAndSpecifications', null)}</h4>
+                    <isloop items="${product.exteriorFeatures}" var="exteriorFeatures">
+                        <ul>
+                            <li>${exteriorFeatures}</li>
+                        </ul>
+                    </isloop>
+                </div>
+                <div class="col-md-6 col-12 col-sm-6">
+                    <h4>${Resource.msg('tab.interior', 'featuresAndSpecifications', null)}</h4>
+                    <isloop items="${product.interiorFeatures}" var="interiorFeatures">
+                        <ul>
+                            <li>${interiorFeatures}</li>
+                        </ul>
+                    </isloop>
+                </div>
+            </div>
+        </div>
+
+    </div>
+     </isif>
+     <isif
+        condition="${product.styleDescription || product.dimensions || product.expandable || product.netWeightLb || product.capacity || product.primaryMaterial || (product.heightCms && product.widthCms && product.depthCms) ||product.laptopSize}">
+    <div class="tab-pane" id="specifications" role="tabpanel" aria-labelledby="specificationsTab">
+        <div class="tab-content-wrap">
+            <div class="row justify-content-center">
+                    <isif condition="${product.heightCms && product.widthCms && product.depthCms}">
+                         <div class="col-20">
+                        <div class="specification-content-wrap">
+                            <img class="" src="${URLUtils.staticURL('/images/placeholder-small.svg')}"
+                                alt="${Resource.msg('global.search', 'common', null)}" />
+                            <div class="specification-content-inner">
+                                <h5>${Resource.msg('tab.dimensions', 'featuresAndSpecifications', null)}</h5>
+                                <p>
+                                    ${product.heightCms}${product.dimUnit} X ${product.widthCms}${product.dimUnit} X ${product.depthCms}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    </isif>
+                <isif condition="${product.expandable}">
+                    <div class="col-20">
+                        <div class="specification-content-wrap">
+                            <img class="" src="${URLUtils.staticURL('/images/placeholder-small.svg')}"
+                                alt="${Resource.msg('global.search', 'common', null)}" />
+                            <div class="specification-content-inner">
+                                <h5>${Resource.msg('tab.expanded.depth', 'featuresAndSpecifications', null)}</h5>
+                                <p>
+                                    ${product.expansionCms}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </isif>
+                <isif condition="${product.netWeightLb && product.weightUnit}">
+                    <div class="col-20">
+                        <div class="specification-content-wrap">
+                            <img class="" src="${URLUtils.staticURL('/images/placeholder-small.svg')}"
+                                alt="${Resource.msg('global.search', 'common', null)}" />
+                            <div class="specification-content-inner">
+                                <h5>${Resource.msg('tab.specifications.netWeightLb', 'featuresAndSpecifications', null)}
+                                </h5>
+                                <p>${parseFloat(product.netWeightLb).toFixed(1)} ${product.weightUnit}</p>
+                            </div>
+                        </div>
+                    </div>
+                </isif>
+                <isif condition="${product.volumeCapacity}">
+                    <div class="col-20">
+                        <div class="specification-content-wrap">
+                            <img class="" src="${URLUtils.staticURL('/images/placeholder-small.svg')}"
+                                alt="${Resource.msg('global.search', 'common', null)}" />
+                            <div class="specification-content-inner">
+                                <h5>${Resource.msg('tab.specifications.capacity', 'featuresAndSpecifications', null)}
+                                </h5>
+                                <p>${product.volumeCapacity} ${Resource.msg('tab.specifications.litreunit', 'featuresAndSpecifications', null)}</p>
+                            </div>
+                        </div>
+                    </div>
+                </isif>
+                <isif condition="${product.primaryMaterial}">
+                    <div class="col-20">
+                        <div class="specification-content-wrap">
+                            <img class="" src="${URLUtils.staticURL('/images/placeholder-small.svg')}"
+                                alt="${Resource.msg('global.search', 'common', null)}" />
+                            <div class="specification-content-inner">
+                                <h5>${Resource.msg('tab.specifications.primaryMaterial', 'featuresAndSpecifications', null)}
+                                </h5>
+                                <p>${product.primaryMaterial}</p>
+                            </div>
+                        </div>
+                    </div>
+                </isif>
+                <isif condition="${product.laptopSize}">
+                    <div class="col-20">
+                        <div class="specification-content-wrap">
+                            <img class="" src="${URLUtils.staticURL('/images/placeholder-small.svg')}"
+                                alt="${Resource.msg('global.search', 'common', null)}" />
+                            <div class="specification-content-inner">
+                                <h5>${Resource.msg('tab.specifications.laptopSize', 'featuresAndSpecifications', null)}
+                                </h5>
+                                <p>${product.laptopSize}</p>
+                            </div>
+                        </div>
+                    </div>
+                </isif>
+                <div class="col-20">
+                        <div class="specification-content-wrap">
+                            <div class="specification-content-inner">
+                                <h5>
+                                    <isprint value="${Resource.msg('product.style.id', 'product', null)}"/>
+                                </h5>
+                                <p class="style-description">
+                                    <isprint value="${Resource.msgf('product.style.content', 'product', null, product.styleVariant)}"/>
+                                </p>
+                            </div>
+                        </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </isif>
+    <div class="tab-pane" id="maintenanceandcare" role="tabpanel" aria-labelledby="maintenanceandcareTab">
+        <div class="tab-content-wrap">
+            <div class="row">
+                <isif condition="${(product.tsaLockType !== null && product.tsaLockType !== 'FALSE') && dw.content.ContentMgr.getContent('tsaLock-PDP')}">
+                    <div class="col-md-4 col-sm-6 col-12 feature-tsaLock"></div>
+                </isif>
+                <isif condition="${product.tumiTracer && dw.content.ContentMgr.getContent('tumiTracer-PDP')}">
+                    <div class="col-md-4 col-sm-6 col-12 feature-tumiTracer"></div>
+                </isif>
+                <isif condition="${product.warranty && dw.content.ContentMgr.getContent('warranty-PDP')}">
+                    <div class="col-md-4 col-sm-6 col-12 feature-warranty"></div>
+                </isif>
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane" id="compatibleairlineguide" role="tabpanel" aria-labelledby="compatibleairlineguideTab">
+        <div class="tab-content-wrap">
+            <div class="row">
+                <div class="col-md-12">
+                    <form class="care" name="airlines">
+                        <div class="radio-wrap">
+                            <div class="form-check form-check-inline" tabindex="1">
+                                <input type="radio" name="countryAirlines" class="form-check-input countryAirlines"
+                                    id="imperial" value="imperial" checked />
+                                <label for="imperial" class="form-check-label">${Resource.msg('label.imperial.header','product',null)}</label>
+                            </div>
+                            <div class="form-check form-check-inline" tabindex="1">
+                                <input type="radio" name="countryAirlines" class="form-check-input countryAirlines"
+                                    id="metric" value="metric" />
+                                <label for="metric" class="form-check-label">${Resource.msg('label.metric.header','product',null)}</label>
+                            </div>
+                        </div>
+                        <div class="imperial selectt">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">${Resource.msg('label.Airline.name', 'product', null)}</th>
+                                        <th scope="col">${Resource.msg('label.Airline.Size', 'product', null)}</th>
+                                        <th scope="col">${Resource.msg('label.Airline.Weight', 'product', null)}</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <isloop items="${pdict.name}" var="imperial" status="loopState">
+                                        <isif condition="${loopState.count < 7}">
+                                            <tr tabindex="1">
+                                                <td>${imperial}</td>
+                                                <td>${pdict.size[loopState.index]}</td>
+                                                <td>${pdict.weight[loopState.index]}</td>
+                                            </tr>
+                                        </isif>
+                                    </isloop>
+                                </tbody>
+                            </table>
+                            <isif condition="${pdict.name && pdict.name.length > 4}">
+                                <button type="button" class="button button--secondary w-100" data-toggle="modal"
+                                    id="airlinesModalData" data-target="#airlineGuideModal"
+                                    data-modal-html="${pdict.attributesHtml}"
+                                    data-content-url="${URLUtils.url('Product-AirlinesShow')}">
+                                    ${Resource.msg('lable.airlines.button', 'product', null)}
+                                </button>
+                            </isif>
+                        </div>
+                        <div class="metric selectt d-none">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">${Resource.msg('label.Airline.name', 'product', null)}</th>
+                                        <th scope="col">${Resource.msg('label.Airline.Size', 'product', null)}</th>
+                                        <th scope="col">${Resource.msg('label.Airline.Weight', 'product', null)}</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <isloop items="${pdict.nameMetric}" var="imperial" status="loopState">
+                                        <isif condition="${loopState.count < 7}">
+                                            <tr tabindex="1">
+                                                <td>${imperial}</td>
+                                                <td>${pdict.sizeMetric[loopState.index]}</td>
+                                                <td>${pdict.weightMetric[loopState.index]}</td>
+                                            </tr>
+                                        </isif>
+                                    </isloop>
+                                </tbody>
+                            </table>
+                            <isif condition="${pdict.nameMetric && pdict.nameMetric.length > 4}">
+                                <button type="button" class="button button--secondary w-100" data-toggle="modal"
+                                    id="airlinesModalData" data-target="#airlineGuideModal"
+                                    data-content-url="${URLUtils.url('Product-AirlinesShow')}">
+                                    ${Resource.msg('lable.airlines.button', 'product', null)}
+                                </button>
+                            </isif>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div>
+
+        </div>
+    </div>
+</div>
+

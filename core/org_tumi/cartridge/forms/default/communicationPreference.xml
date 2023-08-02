@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<form xmlns="http://www.demandware.com/xml/form/2008-04-19">
+
+    <field formid="emailcheckbox" label="label.opt.in.email" type="boolean" binding="emailcheckbox" />
+    <field formid="smscheckbox" label="label.opt.in.sms" type="boolean" binding="smscheckbox" />
+
+</form>

@@ -1,0 +1,3 @@
+<isif condition="${dw.system.Site.getCurrent().getCustomPreferenceValue('enableMonetate')}">
+    <isprint value="${dw.system.Site.getCurrent().getCustomPreferenceValue('monetateScript')}" encoding="off"  />
+</isif>

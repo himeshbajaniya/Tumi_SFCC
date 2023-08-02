@@ -1,0 +1,39 @@
+<isdecorate template="account/purchases/purchasesDecorator">
+<isscript>
+    var pageContext = {
+			title: 'Order History',
+			type:'orderhistory',
+			ns:'myaccount'
+		};
+</isscript>
+    <div class="order-list-container container">
+    <isset name="orderListingPageOrderCount" value="${dw.system.Site.getCurrent().getCustomPreferenceValue('orderListingPageOrderCount')}" scope="page" />
+        <isif condition="${pdict.orderCount.totalOrders > orderListingPageOrderCount}">
+            <div class="order-search">
+                <form role="search" action="${URLUtils.url('Order-GetSearchedOrders')}" method="get" name="orderSearch">
+                    <div class="input-group has-search order-search-input my-4">
+                        <span class="search-icon"><img src="${URLUtils.absStatic('/images/search-icon-black.svg')}" alt="" /></span>
+                        <input type="text" id="searchInputField" class="form-control order-search-field"  name="q" value=""
+                        placeholder="${Resource.msg('label.header.searchorderwatermark', 'common', null)}"
+                        role="combobox">
+                        <div class="btn-clear-sec">
+                            <button class="clear-search-button" type="button" onclick="document.getElementById('searchInputField').value = ''">${Resource.msg('button.clear.order.search', 'common', null)}</button>
+                            <div class="input-group-append">
+                                <button class="btn" type="submit" name="search-button" aria-label="${Resource.msg('label.header.search.go', 'common', null)}">
+                                    <svg width="21" height="12" viewBox="0 0 21 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M19.8539 6H0.0996094" stroke="#1B1C1E"></path>
+                                        <path d="M15 1L19.8544 6L15 11" stroke="#1B1C1E"></path>
+                                    </svg>
+                                </button>
+                                <input type="hidden" value="${pdict.locale}" name="lang"> 
+                            </div>
+                        </div>               
+                    </div>
+                </form>
+            </div>
+        </isif>
+    <isinclude template="account/order/orderList"/>
+    </div>
+    <input type="hidden" id="rfkOrderIds" value="${pdict.rfkOrderIds}"/>
+    <isslot id="CarouselOrderHistoryPage" context="global" description="Recommendation Carousel for Order History Page" />
+</isdecorate>

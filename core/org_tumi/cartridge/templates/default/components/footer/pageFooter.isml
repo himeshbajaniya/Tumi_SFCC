@@ -1,0 +1,135 @@
+<footer class="footer dark-bg">
+        <div class="container footer-section">
+            <div class="row border-b mx-0 align-items-end">
+                <div class="col-6 logo pl-0">
+                    <a href="/"><svg width="93" height="24" viewBox="0 0 93 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M92.4312 5.23438H89.6572V23.9995H92.4312V5.23438Z" fill="white"/>
+                        <path d="M48.2709 5.23438V19.4429C48.2709 19.629 48.2709 21.2565 46.4982 21.2565H30.1616C28.3889 21.2565 28.3889 19.629 28.3889 19.4429V5.23438H15.5879V23.9994H18.3788V7.98581H25.6008V20.1452C25.6008 21.6485 26.612 23.9994 29.5256 23.9994H47.1145C50.0338 23.9994 51.0463 21.6485 51.0463 20.1452C51.0463 18.6461 51.0435 5.90425 51.0435 5.23438H48.2709Z" fill="white"/>
+                        <path d="M82.4777 5.23438L70.2125 21.4426L57.9446 5.23438H53.6094V23.9994H56.3961V7.73479L68.6316 23.9994H71.7949L84.0121 7.73479V23.9994H86.8058V5.23438H82.4777Z" fill="white"/>
+                        <path d="M0 0V7.98637H10.0101V23.9986H12.7982V5.23493H2.78811V2.7317H92.432V0H0Z" fill="white"/>
+                        </svg>
+                    </a>
+                </div>
+                <div class="col-6 footer-social text-right pr-0">
+                    <ul class="footer-social-list">
+                        <li>
+                            <a href="https://www.facebook.com/TumiTravel" class="facebook" target="_blank">
+                                <img src="${URLUtils.absStatic('/images/facebook.svg')}" alt="facebook" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/Tumitravel" class="twitter" target="_blank">
+                                <img src="${URLUtils.absStatic('/images/twitter.svg')}" alt="twitter" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://in.pinterest.com/tumitravel/" class="pinterest" target="_blank">
+                                <img src="${URLUtils.absStatic('/images/pinterest.svg')}" alt="pinterest" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/tumitravel/" class="instagram" target="_blank">
+                                <img src="${URLUtils.absStatic('/images/instagram.svg')}" alt="instagram" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/user/TumiTravel" class="youtube" target="_blank">
+                                <img src="${URLUtils.absStatic('/images/youtube.svg')}" alt="youtube" />
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-md-3 col-sm-9 col-12 footer-store-info order-1 order-sm-1 order-md-1">
+                    <div class="row" id="footer-store-info">
+                      
+                    </div> 
+                   
+                </div>
+
+                <!-- Footer Menu -->
+                <div class="col-md-6 col-12 order-2 order-md-2 order-sm-3 footer-menu">
+                    <iscontentasset aid="footer-links" />
+                </div>
+
+                <div class="col-md-3  col-sm-9 col-12 order-3 order-md-3 order-sm-2">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-6 col-12">
+                            <div class="footer-latest-news">
+                                <p class="title">
+                                    ${Resource.msg('footer.news.title', 'common', null)}
+                                </p>
+                                <p>
+                                    ${Resource.msg('footer.news.description', 'common', null)}
+                                </p>
+                                <form role="form" id="emarsys-newsletter-subscription">
+					                <div class="row">
+					                    <div class="col-12">
+					                        <div class="input-group">
+					                            <input type="email" id="email-alert-address" class="form-control" name="hpEmailSignUp" 
+					                                placeholder="${Resource.msg('placeholdertext.form.emailsignup', 'common', null)}"
+					                                aria-label="${Resource.msg('placeholdertext.form.emailsignup', 'common', null)}">
+					                           <div class="input-group-append"> 
+						                           <button type="submit" class="btn btn-link" aria-label="click here to submit newsletter">
+						                           	<img src="${URLUtils.absStatic('/images/arrow_icon.svg')}" alt="" />      
+						                           </button>
+					                           </div>
+					                        </div>
+					                        <div class="email-subscription-response"></div>
+					                    </div>
+					                </div>
+            					</form>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-sm-6 col-12">
+                            <div class="footer-register">
+                                <p class="title">
+                                    ${Resource.msg('footer.register.title', 'common', null)}
+                                </p>
+                                <p>
+                                ${Resource.msg('footer.register.description', 'common', null)}
+                                </p>
+                                <form action="${URLUtils.abs('Tracer-Show')}">
+                                    <div class="input-group">
+                                        <input type="email"
+                                        maxlength="20"
+                                        placeholder="${Resource.msg('placeholdertext.form.register', 'common', null)}"
+                                        aria-label="${Resource.msg('placeholdertext.form.register', 'common', null)}"
+                                        data-missing-error="${Resource.msg('tracer.required.invalid.msg', 'common', null)}"
+                                        data-parse-error="${Resource.msg('tracer.length.invalid.msg', 'common', null)}"
+                                        data-length-error="${Resource.msg('invalid.tracer.id', 'common', null)}"
+                                        class="tracer-email form-control">
+                                        <div class="input-group-append">
+                                            <button type="submit" class="btn btn-link" aria-label="click here to register your tumi">
+                                                <img src="${URLUtils.absStatic('/images/arrow_icon.svg')}" alt="" />
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                                <div class="tumi-tracer-response"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <iscontentasset aid="footer-copyright" />
+
+        </div>
+        <isset name="isEmarsysEnabled" value="${dw.system.Site.current.preferences.custom.emarsysEnabled}" scope="page">
+        <input type="hidden" value="${isEmarsysEnabled}" class="isEmarsysEnabled"/>
+        <isif condition="${isEmarsysEnabled}">
+            <script><isinclude template="resources/emarsysresources"/></script>
+            <isinclude template="/initAnalytics"/>
+            <isinclude template="/loyaltyWallet"/>
+            <link rel="stylesheet" href="${URLUtils.staticURL('/css/stylesheet.css')}" />
+            <script src="${URLUtils.staticURL('/js/emarsys.js')}"></script>
+        <iselse>
+            <script><isinclude template="resources/emarsysresources"/></script>
+            <script src="${URLUtils.staticURL('/js/emarsys.js')}"></script>
+        </isif>
+    </footer>
+    <isinclude URL="${URLUtils.url('Reflektion-Beacon','pushCart', require('*/cartridge/scripts/reflektionHelper').pushCart())}"/>
+    <isinclude URL="${URLUtils.url('Reflektion-getPersonalizationData')}"/>

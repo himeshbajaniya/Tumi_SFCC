@@ -1,0 +1,267 @@
+.my-monogram-item {
+    margin-bottom: 0;
+    margin-top: 0;
+
+    .icon {
+        border: 1px solid $bg-dark;
+        border-radius: 5px;
+        box-sizing: border-box;
+        font-size: 11px;
+        width: 48px;
+        height: 21px;
+        //font-weight: 600;
+        margin-right: 16px;
+        text-align: center;
+
+        span {
+            width: 48px;
+            height: 28px;
+            padding: 9px;
+
+            &.numberFormat {
+                padding: 0;
+            }
+        }
+    }
+
+    .title,
+    .desc {
+        color: $eerie-black;
+        @include sizeWeightLh(13px, 600, 20px);
+    }
+
+    a {
+        color: $eerie-black;
+        width: 100%;
+        @include media-breakpoint-up(sm) {
+            width: 244px;
+        }
+    }
+
+    a:hover {
+        text-decoration: none !important;
+    }
+
+    &.add-monogram {
+        .confirmmsg,
+        .edit-block {
+            display: none;
+        }
+    }
+
+    &.edit-monogram {
+        .title,
+        .desc,
+        .add-block {
+            display: none;
+        }
+    }
+
+    .edit-block {
+        a {
+            text-decoration: underline;
+        }
+    }
+}
+
+.my-monogram {
+    .no-monogram {
+        color: $eerie-black;
+        @include sizeWeightLh(15px, 400, 19px);
+
+        margin-bottom: 47px;
+    }
+
+    .created-wrapper-monogram {
+        color: $eerie-black;
+        margin-bottom: 23px;
+
+        .created-date-monogram {
+            font-family: $font-tumi;
+            @include sizeWeightLh(18px, 400, 19px);
+            @include media-breakpoint-up(sm) {
+                @include sizeWeightLh(18px, 400, 20px);
+            }
+        }
+
+        .autoapplied-monogram {
+            margin-top: 10px;
+            font-family: $font-tumi;
+            @include sizeWeightLh(15px, 400, 20px);
+            @include media-breakpoint-up(sm) {
+                margin-top: 17px;
+            }
+        }
+    }
+}
+
+.add-monogram-modal {
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.monogram-modal {
+    &.global-modal {
+        .modal-dialog {
+            min-width: auto !important;
+        }
+
+        .modal-header {
+            margin-bottom: 0;
+            position: initial;
+            right: 43px;
+            z-index: 1002;
+        }
+    }
+
+    #monogramTabContent {
+        margin-top: 12px;
+    }
+
+    .modal-title {
+        @include sizeWeightLh(24px, 400, 24px);
+
+        color: $bg-dark;
+        margin-bottom: 33px;
+        font-family: $font-tumi;
+    }
+
+    .numberFormat {
+        font-family: $font-tumi-monogram;
+    }
+
+    .personalization-monogram-style {
+        margin-bottom: 100px;
+
+        .monogram-fonts {
+            display: flex;
+            margin-top: 20px;
+            justify-content: space-between;
+            margin-bottom: 100px;
+
+            .font_style {
+                padding-top: 25px;
+            }
+        }
+
+        label {
+            width: 173px;
+            height: 80px;
+            padding: 16px;
+            display: flex;
+            border: 1px solid $grey3;
+            color: $davy-grey;
+            align-items: center;
+            text-align: center;
+            text-transform: uppercase;
+
+            > span {
+                width: 100%;
+                display: flex;
+                justify-content: space-evenly;
+                font-size: 40px;
+                line-height: 24px;
+            }
+        }
+
+        [type="radio"]:checked + label {
+            border: 1px solid $bg-dark;
+            color: $black;
+        }
+    }
+}
+
+.my-monogram-wrapper {
+    .icon {
+        border: none;
+        padding: 0;
+        width: 100%;
+        height: auto;
+
+        @include media-breakpoint-up(md) {
+            width: 422px;
+            height: 220px;
+        }
+    }
+
+    .my-monogram-update {
+        margin-top: 40px;
+
+        .remove-monogram {
+            width: 100%;
+            text-decoration: none !important;
+            @include media-breakpoint-up(sm) {
+                width: 200px;
+            }
+        }
+
+        .edit-monogram {
+            width: 100%;
+            margin-top: 16px;
+            text-decoration: none !important;
+            @include media-breakpoint-up(sm) {
+                width: 200px;
+                margin-left: 20px;
+                margin-top: 0;
+            }
+        }
+    }
+}
+
+.monogram-modal {
+    .monogram-fontColor {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 20px;
+
+        button.premium-color-attribute,
+        [type="radio"] + label {
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            border: 1px solid $radio-circle;
+            padding-left: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        button.premium-color-attribute,
+        [type="radio"]:not(:checked) + label {
+            text-indent: -9999px;
+            margin: 0 18px 16px 0;
+            background-size: 100% !important;
+        }
+
+        button.premium-color-attribute.selected,
+        [type="radio"]:checked + label {
+            text-indent: -9999px;
+            margin: 0 18px 16px 0;
+            padding-left: 0;
+            background-size: 100% !important;
+        }
+
+        [type="radio"]:checked + label::before {
+            content: "" !important;
+            border: 3px solid #fff;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            border-radius: 100%;
+            width: 34px;
+            height: 34px;
+        }
+
+        [type="radio"]:checked + label::after {
+            content: "" !important;
+            background: transparent !important;
+        }
+
+        [type="radio"]:not(:checked) + label::before,
+        [type="radio"]:not(:checked) + label::after {
+            background-color: transparent;
+        }
+    }
+}

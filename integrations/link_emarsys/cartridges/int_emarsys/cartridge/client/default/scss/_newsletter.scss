@@ -1,0 +1,143 @@
+.email-signup-container {
+    .social-links {
+        li {
+            padding-right: 0.3em;
+        }
+    }
+
+    .footer-container {
+        h3 {
+            font-size: 1.2rem;
+        }
+    }
+}
+
+.email-signup-wrapper {
+    padding: 1rem;
+    margin-bottom: 15rem;
+
+    .required-indicator {
+        font-size: 1.2rem;
+    }
+
+    h3 {
+        text-transform: uppercase;
+    }
+
+    .form-row {
+        width: 31%;
+        float: left;
+        margin: 0 2rem 1rem 0;
+        position: relative;
+
+        @include respond-to(phones) {
+            width: 100%;
+        }
+
+        &:nth-child(3n) {
+            margin: 0 0 1rem;
+        }
+
+        span {
+            text-transform: uppercase;
+        }
+
+        span.error,
+        .error-message {
+            bottom: -1.2rem;
+            font-size: 1.1rem;
+            left: 0;
+            margin: 0;
+            position: absolute;
+            text-transform: none;
+            border: 0 none;
+            background: 0 none;
+            width: auto;
+        }
+
+        .field-wrapper {
+            position: relative;
+            text-transform: uppercase;
+        }
+
+        .input-radio {
+            margin: 1rem 2%;
+        }
+
+        .input-select {
+            border: 0.1rem solid #aaa;
+        }
+    }
+
+    .full-width {
+        width: 100%;
+        float: left;
+        margin: 2rem 0;
+
+        .button {
+            text-transform: uppercase;
+            @include respond-to(phones) {
+                width: 100%;
+            }
+        }
+    }
+
+    .emarsyssignup-wrapper {
+        .form-row:nth-child(3n) {
+            margin: 0 2rem 1rem 0;
+        }
+    }
+}
+
+#emarsys-newsletter-subscription {
+    .fa-envelope {
+        background: #aaa;
+        border: none;
+        height: 32px;
+        padding: 0;
+        width: 32px;
+
+        &:hover {
+            color: #fff;
+        }
+    }
+
+    .input-text {
+        width: 16rem;
+        float: left;
+        @include respond-to(tablets) {
+            width: 12rem;
+        }
+    }
+}
+
+.privacy-checkbox {
+    float: left;
+
+    &.input-checkbox {
+        margin: 0 1% 3% 0;
+    }
+}
+
+.registration-form-wrapper {
+    padding: 1rem;
+    min-height: 55rem;
+
+    h6 {
+        font-size: 1.1rem;
+    }
+}
+
+.show-confirmation-message {
+    padding: 1rem;
+    box-sizing: border-box;
+    min-height: 55rem;
+
+    h6 {
+        font-size: 1.1rem;
+    }
+}
+
+.error-privacy {
+    color: #900;
+}

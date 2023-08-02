@@ -1,0 +1,22 @@
+<isset name="tabsAttr" value="${pdict.tabsAttr}" scope="page" />
+<isset name="contentTemplate" value="${pdict.contentTemplate}" scope="page" />
+
+<isif condition="${tabsAttr && contentTemplate}">
+  <div class="js-tab tab">
+    <isif condition="${tabsAttr.length}">
+      <isloop items="${tabsAttr}" var="item">
+        <button class="js-tablinks tablinks ${item.id === 'footer' ? 'active' : ''}" data="${item.id}"
+                title="${Resource.msg("button.custom.object.title", "tabs", null)}">
+          ${Object.hasOwnProperty.call(item, 'label') 
+            ? item.label 
+            : Resource.msg(item.id + ".title" ,"tabs" ,null)}
+        </button>      
+      </isloop>
+    </isif>
+  </div>
+
+  <isinclude template="${'/components/' + contentTemplate}"/>
+
+<iselse/>
+    <isinclude template="/components/errorPage"/>
+</isif>

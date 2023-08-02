@@ -1,0 +1,101 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "https://www.tumi.com/super-gifting-premium-service",
+
+	"title": "Title",
+	"description": "Description",
+
+	"allOf": [
+		{
+			"$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+		}
+	],
+	
+	"type": "object",
+	"properties": {
+		"content-asset-id": {
+			"title": "Content Asset ID",
+			"description": "SFCC Content Asset",
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 256,
+			"format": "text"
+		},
+		"header": {
+			"title": "Header",
+			"description": "Enter the Header",
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 256
+		},
+		"sub-header": {
+			"title": "Sub Header",
+			"description": "Enter the Sub Header",
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 256
+		},
+		"backgroundColor": {
+			"title": "Grey Background",
+			"description": "Select Grey Background",
+			"type": "string",
+			"enum": [
+				"Yes",
+				"No"
+			]
+		},
+		"cta-links": {
+			"title": "CTA Links",
+			"description": "Add the CTA Links",
+			"type": "array",
+			"minItems": 1,
+			"maxItems": 4,
+			"items": {
+				"allOf": [
+					{
+						"type": "object",
+						"properties": {
+							"cta-image": {
+								"title": "CTA Image",
+								"description": "Enter the scene 7 link for image of cta",
+								"type": "string",
+								"format": "uri",
+								"minLength": 0,
+								"maxLength": 256
+							},
+							"cta-image-alt-text": {
+								"title": "CTA Alt Text",
+								"description": "Enter the CTA Alt Text",
+								"type": "string",
+								"minLength": 0,
+								"maxLength": 256
+							},
+							"cta-name": {
+								"title": "CTA Name",
+								"description": "Enter the CTA Name",
+								"type": "string",
+								"minLength": 0,
+								"maxLength": 256
+							},
+							"cta-copy": {
+								"title": "CTA Copy (optional)",
+								"description": "Enter the CTA Copy (optional)",
+								"type": "string",
+								"minLength": 0,
+								"maxLength": 256
+							},
+							"cta-landing-uri": {
+								"title": "CTA Landing URI",
+								"description": "Enter the CTA Landing URI",
+								"type": "string",
+								"minLength": 0,
+								"maxLength": 256
+							}
+						}
+					}
+				]
+			}
+		}
+	},
+	"propertyOrder": []
+}

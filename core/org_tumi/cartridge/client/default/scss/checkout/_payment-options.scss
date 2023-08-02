@@ -1,0 +1,444 @@
+.payment-information {
+    .nav-tabs {
+        border-bottom: none !important;
+
+        .nav-item {
+            text-align: left;
+            margin-bottom: 20px;
+            flex: 100% 0 0;
+            display: flex;
+            align-items: center;
+
+            .form-check {
+                padding-left: 0;
+                display: inline-block;
+            }
+        }
+    }
+}
+
+.is-only-gc {
+    .payment-information,
+    .credit-card-selection-new,
+    .is-gc.pay-with-giftcard .pay-giftcard-existing {
+        display: none;
+    }
+}
+
+.is-gc {
+    .valuetec-content,
+    .pay-giftcard {
+        display: none;
+    }
+
+    &.pay-with-giftcard .pay-giftcard-existing {
+        display: block;
+    }
+}
+
+.pay-with-giftcard {
+    margin-top: 12px;
+
+    .valuetec-content,
+    .pay-giftcard-existing {
+        display: none;
+    }
+
+    .gift-card-link {
+        @include sizeWeightLh(12px, 400, 20px);
+
+        text-decoration: underline;
+        margin-bottom: 30px;
+        color: $eerie-black;
+        font-family: $font-tumi;
+    }
+
+    .pay-giftcard {
+        min-height: 18px !important;
+        margin-bottom: 20px;
+        padding-left: 0;
+
+        label {
+
+            @include sizeWeightLh(15px, 400, 16px);
+
+            padding-left: 28px !important;
+            font-family: $font-tumi;
+
+            &::before {
+                left: -5px !important;
+            }
+
+            &::after {
+                left: -2px !important;
+            }
+        }
+    }
+
+    .check-balance {
+        p {
+            @include sizeWeightLh(15px, 600, 16px);
+        }
+    }
+}
+
+.credit-card-form .card-header,
+.add-billing-header {
+    @include sizeWeightLh(15px, 600, 16px);
+
+    color: $eerie-black;
+}
+
+.add-billing-header {
+    margin: 30px 0 10px;
+}
+
+.card-number-wrapper {
+    .form-control {
+        @include sizeWeightLh(15px, 400, 20px);
+
+        border: none;
+        border-bottom: 1px solid $radio-circle;
+        border-radius: 0;
+        padding: 8px 6px;
+        font-family: $font-tumi;
+    }
+}
+
+.credit-card-selection-new {
+    h4 {
+        @include sizeWeightLh(15px, 600, 16px);
+
+        font-family: $font-tumi-sbold;
+        margin-bottom: 18px;
+    }
+
+    .custom-checkbox {
+        .custom-control-label {
+            @include sizeWeightLh(15px, 400, 16px);
+
+            color: $davy-grey;
+
+            span {
+                margin-left: 4px;
+            }
+        }
+    }
+}
+
+.payment-options {
+    input[type="radio"] {
+        + label {
+            position: relative;
+            padding-left: 28px;
+            cursor: pointer;
+            line-height: 20px;
+            display: inline-block;
+            color: $eerie-black;
+
+            &::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 23px;
+                height: 23px;
+                border: 1px solid #1b1c1e;
+                border-radius: 100%;
+                background: #fff;
+            }
+
+            span.display-name {
+                margin-left: 6px;
+                font-family: $font-tumi;
+                font-size: 15px;
+
+                img {
+                    height: 25px;
+                }
+            }
+        }
+    }
+
+    .active {
+        input[type="radio"] {
+            + label {
+                position: relative;
+                padding-left: 28px;
+                cursor: pointer;
+                line-height: 20px;
+                display: inline-block;
+                color: $eerie-black;
+                font-family: $font-tumi;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 23px;
+                    height: 23px;
+                    border: 1px solid #1b1c1e;
+                    border-radius: 100%;
+                    background: #fff;
+                }
+
+                &::after {
+                    content: "";
+                    width: 11px;
+                    height: 11px;
+                    background: #1b1c1e;
+                    position: absolute;
+                    top: 6px;
+                    left: 6px;
+                    border-radius: 100%;
+                    transition: all 0.2s ease;
+                    opacity: 1;
+                    transform: scale(1);
+                }
+            }
+        }
+    }
+}
+
+.gc-details-card {
+    display: flex;
+    justify-content: space-between;
+    border-top: 3px solid $lotion;
+    padding-top: 15px;
+
+    &:first-child {
+        border-top: 0;
+        padding-top: 0;
+    }
+
+    .gc-detail {
+        @include sizeWeightLh(15px,400,26px);
+
+        color: $eerie-black;
+
+        .gc-detail-label {
+            margin: 0;
+        }
+
+        .gc-detail-currency {
+            color: $davy-grey;
+            margin: 0 0 0 5px;
+        }
+
+        .gc-number {
+            color: $davy-grey;
+        }
+    }
+
+    .gc-remove {
+        a {
+            text-decoration: underline;
+            color: $eerie-black;
+            @include sizeWeightLh(15px, 400, 20px);
+        }
+    }
+}
+
+.pay-giftcard-existing {
+    margin-bottom: 38px;
+
+    a {
+        text-decoration: underline;
+        color: $eerie-black;
+        @include sizeWeightLh(15px,400,20px);
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+
+.saved-payment-instrument {
+    border: 1px solid $grey3;
+    background-color: transparent;
+    margin-bottom: 8px;
+    color: $eerie-black;
+    width: auto;
+    @include sizeWeightLh(13px,400,23px);
+
+    @include media-breakpoint-up(sm) {
+        width: 332px;
+        @include sizeWeightLh(15px,400,19px);
+    }
+
+    @include media-breakpoint-up(md) {
+        width: 400px;
+    }
+}
+
+.choose-save-cards {
+    margin-bottom: 27px;
+    color: $eerie-black;
+    @include sizeWeightLh(15px,400,12px);
+}
+
+.card-image {
+    height: 25px;
+    width: 32px;
+}
+
+.saved-credit-card-expiration-date {
+    margin-left: 5px;
+}
+
+.selected-payment {
+    background-color: transparent !important;
+    border: 1px solid $eerie-black;
+}
+
+.add-new-payment-card {
+    color: $eerie-black !important;
+    margin-top: 22px;
+    padding: 0;
+    cursor: pointer;
+    @include sizeWeightLh(15px,400,12px);
+}
+
+.info-icon {
+    position: absolute !important;
+    right: 0;
+    top: 0;
+    height: 100%;
+    align-items: center;
+    display: flex !important;
+}
+
+.security-code-input {
+    position: relative;
+}
+
+.continue-billing {
+    margin: 20px 0 40px;
+}
+
+.btn-giftcard-redeem {
+    font-family: $font-tumi;
+}
+
+.default-payment-card {
+    .saved-payment-instrument {
+        border: transparent;
+
+        .saved-security-code {
+            margin-top: 0;
+
+            .security-code-input {
+                width: 60%;
+
+                a {
+                    position: absolute;
+                    top: 17px;
+                    right: 0;
+                }
+            }
+
+            .card-image {
+                margin-top: 0;
+            }
+        }
+
+        .saved-payment-information {
+            margin-top: 0;
+            font-family: $font-tumi;
+            flex-grow: 2;
+            margin-left: 20px;
+
+            @include sizeWeightLh(13px,400,19px);
+
+            .saved-credit-card-number,
+            .saved-credit-card-expiration-date {
+                @include sizeWeightLh(15px,400,19px);
+            }
+        }
+    }
+
+    .saved-payment-instrument {
+        width: 100%;
+
+        .saved-card-tile {
+            display: flex;
+            justify-content: space-between;
+            padding-left: -1rem;
+            padding-right: -1rem;
+        }
+    }
+}
+
+.choose-save-cards {
+    .saved-payment-instrument {
+        border: 1px solid $grey3;
+
+        &.selected-payment {
+            border: 1px solid $eerie-black;
+        }
+
+        .saved-security-code {
+            margin-top: 0;
+            min-height: auto;
+
+            .security-code-input {
+                width: 60%;
+
+                a {
+                    position: absolute;
+                    top: 17px;
+                    right: 0;
+                }
+            }
+
+            .card-image {
+                margin-top: 0;
+            }
+        }
+
+        .saved-payment-information {
+            margin-top: 0;
+            font-family: $font-tumi;
+            flex-grow: 2;
+            margin-left: 20px;
+            margin-bottom: 0;
+
+            @include sizeWeightLh(13px,400,19px);
+
+            .saved-credit-card-number,
+            .saved-credit-card-expiration-date {
+                @include sizeWeightLh(15px,400,19px);
+            }
+        }
+    }
+
+    .saved-payment-instrument {
+        width: 100%;
+
+        .saved-card-tile {
+            display: flex;
+            justify-content: space-between;
+            padding: 18px 23px;
+        }
+    }
+}
+
+.change-payment-method {
+    margin-bottom: 30px;
+}
+
+.add-new-payment-card {
+    padding-bottom: 3px;
+    text-decoration: underline;
+}
+
+.giftcard-not-allowed {
+    font-size: 12px;
+    line-height: 16px;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 400;
+    font-family: $font-tumi;
+    color: $imperial-red;
+    padding-bottom: 10px;
+}

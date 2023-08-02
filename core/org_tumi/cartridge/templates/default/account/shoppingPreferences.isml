@@ -1,0 +1,44 @@
+<div class="shopping-preferences">
+    <h3>${Resource.msg('shopping.preferences.title', 'account', null)}</h3>
+    <form action="${URLUtils.url('ShoppingPreferences-Save')}" class="shopping-preferences-form" method="POST"
+    name="shopping-preferences-form" ${pdict.shoppingPreferences && pdict.shoppingPreferences.attributes}>
+        <div class="form-group custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" name="luggagecheckbox" value="true" id="luggagecheckbox" <isprint
+            value="${pdict.shoppingPreferencesForm.luggagecheckbox.attributes}" encoding="off" />>
+            <label class="custom-control-label" for="luggagecheckbox">
+            <isprint value="${pdict.shoppingPreferencesForm.luggagecheckbox.label}" encoding="htmlcontent" />
+                <iscomment> ${Resource.msg('form.label.luggage', 'account', null)} </iscomment>
+            </label>
+        </div>
+
+        <div class="form-group custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" name="womensbackpackscheckbox" value="true" id="womensbackpackscheckbox" <isprint
+            value="${pdict.shoppingPreferencesForm.womensbackpackscheckbox.attributes}" encoding="off" />>
+            <label class="custom-control-label" for="womensbackpackscheckbox">
+                        <isprint value="${pdict.shoppingPreferencesForm.womensbackpackscheckbox.label}" encoding="htmlcontent" />
+                <iscomment> ${Resource.msg('form.label.Womens.bags.backpacks', 'account', null)} </iscomment>
+            </label>
+        </div>
+
+        <div class="form-group custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" name="mensbackpackscheckbox" value="true" id="mensbackpackscheckbox" <isprint
+            value="${pdict.shoppingPreferencesForm.mensbackpackscheckbox.attributes}" encoding="off" />>
+            <label class="custom-control-label" for="mensbackpackscheckbox">
+                    <isprint value="${pdict.shoppingPreferencesForm.mensbackpackscheckbox.label}" encoding="htmlcontent" />
+                <iscomment> ${Resource.msg('form.label.mens.bags.backpacks', 'account', null)} </iscomment>
+            </label>
+        </div>
+
+        <div class="form-group custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" name="accessoriescheckbox" value="true" id="accessoriescheckbox" <isprint
+            value="${pdict.shoppingPreferencesForm.accessoriescheckbox.attributes}" encoding="off" />>
+            <label class="custom-control-label" for="accessoriescheckbox">
+            <isprint value="${pdict.shoppingPreferencesForm.accessoriescheckbox.label}" encoding="htmlcontent" />
+                <iscomment> ${Resource.msg('form.label.accessories', 'account', null)} </iscomment>
+            </label>
+        </div>
+                <button type="submit" class="button button--primary button-shopping-pref" name="Save">${Resource.msg('button.save.changes', 'account', null)}</button>
+
+        <iscomment> <a href="${URLUtils.https('ShoppingPreferences-Save')}" class="button button--primary">${Resource.msg('button.save.changes', 'account', null)}</a> </iscomment>
+    </form>
+</div>

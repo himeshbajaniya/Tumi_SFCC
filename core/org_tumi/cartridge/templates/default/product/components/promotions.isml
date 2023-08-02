@@ -1,0 +1,18 @@
+<isset name="product" value="${typeof product === 'undefined' || empty(product) ? pdict.product : product}" scope="page" />
+<isif condition="${product.promotions}">
+    <isloop items="${product.promotions}" var="promotion" status="promdet">
+        <isif condition="${promotion.isGwp}">
+            <div class="d-flex justify-content-between align-items-center d-block" aria-expanded="false" aria-controls="collapsible-promotion-details-${promdet.index}">
+                <img class="icon gwp-image" src="${promotion.imageUrl}" alt="gift" />
+                <div class="flex-grow-1 ml-1 gwp-text">
+                    <div class="promotion-code"><isprint value="${promotion.calloutMsg}" encoding="off" /></div>
+                </div>
+            </div>
+        <iselse/>
+            <div class="promotion-code title callout btn text-left btn-block" aria-expanded="false" aria-controls="collapsible-promotion-details-${promdet.index}">
+                <isprint value="${promotion.calloutMsg}" encoding="off" />
+            </div>
+        </isif>
+    </isloop>
+</isif>
+

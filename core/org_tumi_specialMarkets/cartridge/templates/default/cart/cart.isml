@@ -1,0 +1,97 @@
+<isdecorate template="common/layout/page">
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addCss('/css/cart.css');
+        assets.addCss('/css/enquiry-form.css');
+        assets.addJs('js/cart.js');
+        
+    var pageContext = {
+			title: 'Cart Page',
+			type:'cartpage',
+			ns:'cartpage'
+		};
+    </isscript>
+
+    <isif condition="${pdict.reportingURLs && pdict.reportingURLs.length}">
+        <isinclude template="reporting/reportingUrls" />
+    </isif>
+
+    <input type="hidden" name="page-name" value="cart">
+
+    <isset name="isConfirmationPage" value="${false}" scope="page" />
+
+    <isif condition="${pdict.emptyCart}">
+        <div class="text-center sp-empty-cart">
+            <p><isprint value="${Resource.msg('label.product.inquiry', 'cart', null)}" /></p>
+            <p><isprint value="${Resource.msg('label.empty.cart.product.inquiry', 'cart', null)}" /></p>
+        </div>
+    <iselse/>
+        <div class="mobile-prod-details d-block d-sm-none">
+        </div>
+        <div class="container-fluid cart cart-page">
+            <div class="cart cart-page row">
+                <div class="inquiry-form-container col-sm-7 col-md-7">
+                    <div class="cart-details ml-auto">
+                        <div class="cart-header">
+                            <h1>
+                                <isprint value="${Resource.msg('heading.send.product.inquiry', 'cart', null)}" />
+                            </h1>
+                            <p class="subText">
+                                <isprint value="${Resource.msg('text.product.inquiry.subtext', 'cart', null)}" />
+                            </p>
+                        </div>
+                        <isinclude template="cart/cartInquiryFormInclude" />
+                    </div>
+                </div>
+                <div class="productList-container col-sm-5 col-md-5 desktop-summary d-none d-sm-block">
+                    <div class="update-cart">
+                        <div class="product-detail ml-auto">
+                            <div class="row cart-header mx-0">
+                                <h1 class="your-cart-header">${Resource.msg('link.continue.shopping', 'cart', null)}
+                                    <div class="opening-parenthesis">(</div>
+                                    <div class="number-of-items">${Resource.msgf('label.number.items.in.cart', 'cart', null, pdict.numItems)}</div>
+                                    <div>)</div>
+                                </h1>
+                            </div>
+                            <div class="product-card">
+                                <isloop items="${pdict.items}" var="lineItem" status="loopstate">
+                                    <isif condition="${lineItem.productType === 'bundle'}">
+                                        <isinclude template="cart/productCard/cartBundleCard" />
+                                    <iselse/>
+                                        <isif condition="${lineItem.noProduct === true}">
+                                            <isinclude template="cart/productCard/uncategorizedCartProductCard" />
+                                        <iselse/>
+                                            <isif
+                                                condition="${!lineItem.isPremiumMonogramLetter && !lineItem.parentProductLineItemID}">
+                                                <isinclude template="cart/productCard/cartProductCard" />
+                                                <isset name="product" value="${lineItem}" scope="page" />
+                                            </isif>
+                                            <iscomment>
+                                                <isif condition="${!lineItem.parentProductLineItemID}">
+                                                    <isinclude template="cart/productCard/cartProductCard" />
+                                                </isif>
+                                            </iscomment>
+                                        </isif>
+                                    </isif>
+                                </isloop>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <isinclude template="cart/cartRemoveProductModal" />
+            </div>
+
+        </div>
+
+        <isinclude template="cart/cartRemoveCouponModal" />
+
+        <isif condition="${require('*/cartridge/scripts/reflektionHelper').getRFKEnabled()}">
+            <isinclude template="reflektion/cartStatus" />
+        </isif>
+
+    </isif>
+
+
+</isdecorate>

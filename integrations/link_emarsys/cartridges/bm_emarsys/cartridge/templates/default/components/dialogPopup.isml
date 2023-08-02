@@ -1,0 +1,49 @@
+<div class="js-dialog-container dialog-container"></div>
+
+<iscomment> tepmlates for prompt and confirm dialogs </iscomment>
+<div class="js-dialog-templates hide-content">
+    <div class="js-prompt-dialog dialog-block">
+        <div class="dialog-header-block">
+            <span class="js-dialog-title dialog-title">
+                ${Resource.msg("span.prompt.title", "dialogPopup", null)}
+            </span>
+            <span class="js-close-button dialog-close-button"></span>
+        </div>
+        <div class="dialog-content-block">
+            <label class="js-input-lable dialog-input-label" for="promptDialogInput">
+                ${Resource.msg("input.label", "dialogPopup", null)}
+            </label>
+            <input type="text" id="promptDialogInput" class="js-dialog-input input-placeholder" />
+        </div>
+        <div class="dialog-footer-block">
+            <button class="js-cancel-button button-basic dialog-cancel-button">
+                ${Resource.msg("button.cancel.default", "dialogPopup", null)}
+            </button>
+            <button class="js-confirm-button button-basic">
+                ${Resource.msg("button.confirm.default", "dialogPopup", null)}
+            </button>
+        </div>
+    </div>
+
+    <div class="js-confirm-dialog dialog-block">
+        <div class="dialog-header-block">
+            <span class="js-dialog-title dialog-title">
+                ${Resource.msg("span.confirm.title", "dialogPopup", null)}
+            </span>
+            <span class="js-close-button dialog-close-button"></span>
+        </div>
+        <div class="dialog-content-block">
+            <span class="js-confirm-message confirm-question">
+                ${Resource.msg("span.confirm.message", "dialogPopup", null)}
+            </span>
+        </div>
+        <div class="dialog-footer-block">
+            <button class="js-cancel-button button-basic dialog-cancel-button">
+                ${Resource.msg("button.cancel.default", "dialogPopup", null)}
+            </button>
+            <button class="js-confirm-button button-basic">
+                ${Resource.msg("button.confirm.default", "dialogPopup", null)}
+            </button>
+        </div>
+    </div>
+</div>

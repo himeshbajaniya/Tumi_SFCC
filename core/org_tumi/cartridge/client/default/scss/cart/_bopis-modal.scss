@@ -1,0 +1,60 @@
+.store-pickup-wrap {
+    .store-pickup {
+        margin-bottom: 16px;
+
+        .store-pickup-row {
+            img {
+                margin-right: 20px;
+                width: 32px;
+            }
+
+            p {
+                color: $eerie-black;
+                font-family: $font-tumi-sbold;
+                margin-bottom: 0;
+                @include sizeWeightLh(13px, 600, 20px);
+            }
+        }
+    }
+
+    .simple-button {
+        color: $eerie-black;
+        font-family: $font-tumi;
+        text-decoration: underline;
+        float: right;
+        white-space: nowrap;
+        @include sizeWeightLh(13px, 400, 20px);
+    }
+
+    .delivery-options-container {
+        margin: 0;
+        height: 0;
+        overflow: hidden;
+        transition: all 0.5s ease;
+        padding-left: 50px;
+
+        &.active {
+            margin-top: 20px;
+            height: auto;
+        }
+
+        label {
+            span {
+                color: $eerie-black;
+                font-family: $font-tumi;
+                @include sizeWeightLh(13px, 400, 18px);
+            }
+        }
+
+        .card-body {
+            &:last-child {
+                label {
+                    span {
+                        margin-right: 10px;
+                        @include sizeWeightLh(13px, 400, 20px);
+                    }
+                }
+            }
+        }
+    }
+}

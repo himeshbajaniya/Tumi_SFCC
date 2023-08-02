@@ -1,0 +1,12 @@
+<div id="bopis-shipping-address">
+    <span class="ship-to-message"></span>
+    <span class="ship-to-name"></span>
+    <span class="ship-to-address1">${shippingModel[0].shippingAddress.address1}</span>
+    <span class="ship-to-address2">${shippingModel[0].shippingAddress.address2}</span>
+    <span class="ship-to-city-st-zip">
+        <span class="ship-to-city">${shippingModel[0].shippingAddress.city}</span>
+        <span class="ship-to-st">${shippingModel[0].shippingAddress.stateCode}</span>
+        <span class="ship-to-zip">${shippingModel[0].shippingAddress.postalCode}</span>
+    </span>
+    <span class="ship-to-phone"></span>
+</div>

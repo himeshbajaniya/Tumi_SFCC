@@ -1,0 +1,147 @@
+<isinclude template="checkout/orderDetailsProductSummary" />
+
+<div class="row order-details-row shipping-details">
+    <div class="col-md-6 order-detail-title">
+        ${Resource.msg('label.order.shipping.details','confirmation', null)}
+    </div>
+    <div class="col-md-6 order-detail-content">
+            <isloop var="shippingModel" items="${pdict.order.shipping}" status="shippingLoop">
+                <isif condition="${!(shippingModel.selectedShippingMethod.storePickupEnabled)}">
+                    <isif condition="${shippingModel.shippingAddress !== null}">
+                        <isset name="address" value="${shippingModel.shippingAddress}" scope="page" />
+                    <iselse/>
+                        <isset name="address" value="${{}}" scope="page" />
+                    </isif>
+                </isif>
+            </isloop>
+
+            <isinclude template="checkout/addressSummary" />
+            <div class="shipping-phone">
+                ${address && address.phone ? address.phone : ''}
+            </div>
+    </div>
+</div>
+
+<div class="row order-details-row payment-method">
+    <div class="col-md-6 order-detail-title">
+        ${Resource.msg('label.order.payment.method','confirmation', null)}
+    </div>
+    <div class="col-md-6 order-detail-content">
+        <isset name="payment" value="${pdict.order.billing.payment.selectedPaymentInstruments}" scope="page" />
+        <isloop items="${pdict.order.billing.payment.selectedPaymentInstruments}" var="payment">
+            <div class="card-details <isif condition="${payment.paymentMethod === 'GIFT_CERTIFICATE'}">d-block</isif> <isif condition="${payment.paymentMethod === 'KLARNA_PAYMENTS'}">flex-column</isif>" >
+                <isif condition="${payment.paymentMethod === 'PayPal'}">
+                    <div class="paypal-method" data-type="${payment.paymentMethod}">${Resource.msg('label.payment.mathod.paypal', 'confirmation', null)}</div>
+                <iselseif condition="${payment.paymentMethod === 'GIFT_CERTIFICATE'}" />
+                    <div class="gift-method" data-type="${payment.paymentMethod}">${Resource.msg('label.payment.mathod.gift', 'confirmation', null)}</div>
+                <iselseif condition="${payment.paymentMethod === 'KLARNA_PAYMENTS'}" />
+                    <div class="card-number-wrapper" data-type="klarna"></div>
+                    <isif condition="${(pdict.order.billing.billingAddress !== null) && (pdict.order.billing.billingAddress.address !== null)}">
+                        <isset name="address" value="${pdict.order.billing.billingAddress.address}" scope="page" />
+                    <iselse/>
+                        <isset name="address" value="${{}}" scope="page" />
+                    </isif>
+                    <div>
+                        <span class="firstName">
+                            <isif condition="${address && address.firstName}">${address.firstName}</isif>
+                        </span>
+                        <span class="lastName">
+                            <isif condition="${address && address.lastName}">${address.lastName}</isif>
+                        </span>
+                    </div>
+                    <isinclude template="checkout/billingAddressSummary" />
+                    <div class="billing-email">${Resource.msg('label.order.receipt.to', 'confirmation', null)}${pdict.customer.profile.email}</div>
+                <iselseif condition="${payment.paymentMethod === 'DW_APPLE_PAY'}" />
+                    <div class="applepay-method" data-type="${payment.paymentMethod}">${Resource.msg('label.payment.mathod.applepay', 'confirmation', null)}</div>
+                    <span class="cc-digits">
+                        <isif condition="${!empty(payment.lastFour)}" >
+                            <isprint value="${payment.lastFour}" />
+                        </isif>
+                    </span>
+                <iselse/>
+                    <span class="card-number-wrapper" data-type="${payment.type}"></span>
+                    <span class="credit-card-number">
+                        <isif condition="${!empty(payment.lastFour)}" >
+                            <isprint value="${payment.lastFour}" />, &nbsp;
+                        </isif>
+                    </span>
+                    <span class="credit-card-expiration-date">
+                        <span>${Resource.msg('label.order.confirm.exp', 'confirmation', null)} ${payment.expirationMonth}/${payment.expirationYear}</span>
+                    </span>
+                </isif>
+            </div>
+        </isloop>
+    </div>
+</div>
+
+<div class="row order-details-row summary">
+    <div class="col-sm-8 order-detail-title">
+        ${Resource.msg('label.order.summary','confirmation', null)}
+    </div>
+    <div class="col-sm-4 order-detail-content">
+        <div class="checkout-order-total-summary">
+            <div class="order-total-summary">
+                
+                <!--- Subtotal --->
+                <div class="row leading-lines subtotal-item">
+                    <div class="col-6 start-lines px-1">
+                        <p class="order-receipt-label"><span>${Resource.msg('label.order.subtotal','confirmation', null)}</span></p>
+                    </div>
+                    <div class="col-6 end-lines">
+                        <p class="text-right"><span class="sub-total">${pdict.order.totals.subTotal}</span></p>
+                    </div>
+                </div>
+
+                <!--- Order Discount --->
+                <div class="row leading-lines order-discount <isif condition="${pdict.order.totals.totalDiscount.value === 0}">hide-order-discount</isif>">
+                    <div class="col-6 start-lines px-1">
+                        <p class="order-receipt-label"><span>${Resource.msg('label.shipping.promo', 'cart', null)}</span></p>
+                    </div>
+                    <div class="col-6 end-lines">
+                        <p class="text-right"><span class="order-discount-total">- ${pdict.order.totals.totalDiscount.formatted}</span></p>
+                    </div>
+                </div>
+
+                <!--- Sales Tax --->
+                <div class="row leading-lines sales-tax-item">
+                    <div class="col-6 start-lines px-1">
+                        <p class="order-receipt-label"><span>${Resource.msg('label.order.tax','confirmation', null)}</span></p>
+                    </div>
+                    <div class="col-6 end-lines">
+                        <p class="text-right"><span class="tax-total">${pdict.order.totals.totalTax}</span></p>
+                    </div>
+                </div>
+
+                <!--- Shipping Cost --->
+                <div class="row leading-lines shipping-item">
+                    <div class="col-6 start-lines px-1">
+                        <p class="order-receipt-label"><span>${Resource.msg('label.order.shipping.cost','confirmation', null)}</span></p>
+                    </div>
+                    <div class="col-6 end-lines">
+                        <p class="text-right"><span class="shipping-total-cost">${pdict.order.totals.totalShippingCost}</span></p>
+                    </div>
+                </div>
+
+                <!--- Shipping Discount --->
+                <div class="row leading-lines shipping-discount <isif condition="${pdict.order.totals.shippingLevelDiscountTotal.value === 0}">hide-shipping-discount</isif>">
+                    <div class="col-6 start-lines px-1">
+                        <p class="order-receipt-label"><span>${Resource.msg('label.shipping.discount', 'common', null)}</span></p>
+                    </div>
+                    <div class="col-6 end-lines">
+                        <p class="text-right"><span class="shipping-discount-total">- ${pdict.order.totals.shippingLevelDiscountTotal.formatted}</span></p>
+                    </div>
+                </div>
+
+                <!--- Grand Total --->
+                <div class="row grand-total leading-lines">
+                    <div class="col-6 start-lines px-1">
+                        <p class="order-receipt-label"><span>${Resource.msg('label.order.grand.total','confirmation', null)}</span></p>
+                    </div>
+                    <div class="col-6 end-lines">
+                        <p class="text-right"><span class="grand-total-sum">${pdict.order.totals.grandTotal}</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

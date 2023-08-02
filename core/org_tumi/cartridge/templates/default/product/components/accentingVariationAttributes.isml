@@ -1,0 +1,43 @@
+<iscomment>
+
+    Template Notes:
+
+    - This template is intended to be referenced from an <isinclude> tag within an <isloop> in another
+            source template. The <isloop> is expected to have a "status" attribute, named "attributeStatus".
+                - ${attributeStatus.last} is checked to see whether a particular attribute row should include the
+                Quantity drop-down menu
+
+</iscomment>
+
+<div class="row above-underline">
+    <div class="col-12 accent-row">
+        <div class=" accent-item d-none">
+            <div class="monogram-wrapper accent-item-wrapper accent-item d-flex justify-content-between align-items-center">
+               
+                <img class="icon accent-default" src="${URLUtils.staticURL('/images/accent-empty.png')}" alt="${Resource.msg('product.default.accent.title', 'product', null)}"/>
+                <img class="icon accent-added d-none" src="${URLUtils.staticURL('/images/accent-applied.png')}" alt="${Resource.msg('product.default.accent.title', 'product', null)}"/>
+
+                <div class="flex-grow-1 ml-1">
+                    <div class="title">${Resource.msg('product.default.accent.title', 'product', null)}</div>
+                    <div class="desc">${Resource.msg('product.default.accent.description', 'product', null)}</div>
+
+                </div>
+                <div class="clickable add-block add-accent mr-3">
+                    <a href="#" class="add-accent-link" data-toggle="modal" data-target="${'#accentModal-' + product.uuid}"
+                        role="button"
+                        aria-label="${Resource.msg('label.header.loginbutton', 'account', null)}">${Resource.msg('product.default.monogram.add', 'product', null)}</a>
+                </div>
+                 <div class="clickable edit-block-accent d-none mr-3">
+                    <a class="edit-accent-link" data-toggle="modal" data-target="${'#accentModal-' + product.uuid}" href="#"
+                        role="button" aria-label="${Resource.msg('label.header.loginbutton', 'account', null)}">${Resource.msg('product.default.monogram.editlink', 'product', null)}
+                    </a>
+                    <span>&nbsp;|&nbsp;</span>
+                    <a href="${URLUtils.url('Product-Show', 'pid', product.id)}" data-uuid="${lineItem.UUID}" class="remove-accent-link" role="button"
+                        aria-label="${Resource.msg('label.header.loginbutton', 'account', null)}">${Resource.msg('product.default.monogram.removelink', 'product', null)}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,21 @@
+<div class="store-locator-container">
+    <div class="row no-gutters">
+        <div class="col-sm-12">
+            <div class="card search-form">
+                <isinclude template="storeLocator/storeLocatorFields" />
+            </div>
+        </div>
+        <input type="hidden" id="save-my-store-url" value="${URLUtils.url('Stores-SaveMyStore')}" />
+        <div class="col-sm-12">
+            <div class="card results-card">
+                <div class="card-body">
+                    <p class="text-center store-locator-no-results">${Resource.msg('error.no.results','storeLocator',null)}</p>
+                    <div class="results striped" data-search-key="${JSON.stringify(pdict.stores.searchKey)}" data-radius="${pdict.stores.radius}" 
+                    data-has-results="${pdict.stores.stores.length > 0}">
+                        <isinclude template="storeLocator/storeLocatorResults" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

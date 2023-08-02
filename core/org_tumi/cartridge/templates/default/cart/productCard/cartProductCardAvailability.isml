@@ -1,0 +1,5 @@
+<div class="availability row product-availability">
+    <div class="col-12">
+        <ul class="list-unstyled availability-msg pre-order"><span class="label">${lineItem.availability.label} </span><span class="msg">${lineItem.availability.expected}</span></ul>
+    </div>
+</div>

@@ -1,0 +1,192 @@
+@import "variables";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins/breakpoints";
+@import "bootstrap/scss/mixins";
+@import "util/variables";
+@import "base/mixins";
+
+.contact-us-banner {
+    width: 100%;
+    height: 170px;
+    background-color: $grey7;
+
+    h1 {
+        color: $white;
+        letter-spacing: 2px;
+        font-size: 36px;
+        padding-top: 68px;
+        //font-weight: 700;
+        text-transform: uppercase;
+    }
+}
+
+.contact-us-landing-page {
+    .contact-us-left {
+        @include media-breakpoint-up(sm) {
+            padding-right: 121px;
+            padding-left: 75px;
+        }
+
+        .card {
+            border: none;
+            margin-bottom: 40px;
+
+            @include media-breakpoint-up(md) {
+                width: 512px;
+                margin-bottom: 80px;
+            }
+
+            #contact-last-name {
+                padding-left: 0;
+            }
+
+            .heading {
+                p {
+                    color: $eerie-black;
+                    @include sizeWeightLh(14px, 300, 16px);
+                }
+            }
+
+            .form-group {
+                &.required {
+                    label {
+                        &::after {
+                            content: "*" !important;
+                            top: 0;
+                            right: -0.4em;
+                            left: unset;
+                            color: $error-color;
+                        }
+                    }
+                }
+
+                .subscribe-contact-us {
+                    margin-top: 20px;
+                }
+            }
+
+            .contact-us-comment {
+                margin-top: 25px;
+
+                .form-group {
+                    textarea {
+                        border: 1px solid $light-gray;
+                        height: auto;
+                    }
+
+                    label {
+                        top: -1.5em;
+                        @include sizeWeightLh(14px, 400, 16px);
+                    }
+                }
+            }
+        }
+
+        .card-body {
+            padding: 0;
+        }
+    }
+
+    .contact-us-right {
+        background-color: #fafafa;
+
+        .right-section {
+            @include media-breakpoint-up(sm) {
+                padding-left: 10px;
+            }
+
+            @include media-breakpoint-up(lg) {
+                max-width: 423px;
+                padding-left: 89px;
+            }
+
+            .heading {
+                margin-bottom: 30px;
+            }
+
+            .contact-hours-cntr,
+            .contact-no-cntr {
+                list-style: none;
+            }
+
+            .contact-hours-cntr {
+                border-bottom: 1px solid $light-gray;
+
+                h3 {
+                    //font-weight: 600;
+                    font-size: 16px;
+                    font-family: $font-semibold;
+                    color: $eerie-black;
+                }
+
+                li {
+                    margin-bottom: 30px;
+                }
+            }
+
+            .contact-no-cntr {
+                margin-bottom: 40px;
+
+                li {
+                    display: flex;
+                    margin-top: 30px;
+
+                    img {
+                        width: 30px;
+                        height: 30px;
+                    }
+
+                    > div {
+                        display: flex;
+                        flex-direction: column;
+                        margin-top: -3px;
+                        margin-left: 13px;
+
+                        span {
+                            //font-weight: 600;
+                            font-size: 16px;
+                            margin-left: 5px;
+                            font-family: $font-semibold;
+                            color: $eerie-black;
+                        }
+
+                        a {
+                            margin-left: 8px;
+                        }
+                    }
+                }
+            }
+
+            .cust-service-heading {
+                h1 {
+                    margin-top: 41px;
+                    color: $eerie-black;
+                    @include sizeWeightLh(24px, 300, 30px);
+                }
+            }
+
+            .email-icon {
+                background: $bg-dark url("../images/vector.png") no-repeat center !important;
+                width: 34px;
+                height: 34px;
+                margin-bottom: 4px;
+            }
+        }
+    }
+
+    .contact-us-left,
+    .contact-us-right {
+        padding-top: 28px;
+
+        @include media-breakpoint-up(sm) {
+            padding-top: 53px;
+        }
+
+        .heading {
+            h1 {
+                color: $eerie-black;
+                @include sizeWeightLh(24px, 300, 30px);
+            }
+        }
+    }
+}

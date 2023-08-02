@@ -1,0 +1,25 @@
+<isset name="price" value="${finalOrigPrice.sales}" scope="page" />
+<span class="sales">
+        <span class="price-gift d-flex align-items-center">
+            <del>
+                <span class="strike-through list mr-0">
+                    <span class="value" content="0">
+                        <span class="sr-only">
+                            Price reduced from
+                        </span>
+                        ${lineItem.price.sales.formatted}
+                        <span class="sr-only">
+                            to
+                        </span>
+                    </span>
+                </span>
+            </del>
+            <span class="sales ml-2">
+                <span class="value gift-item" content="{{this.price}}">$0</span>
+            </span>
+        </span>
+</span>
+<p class="line-item-attributes">Color: ${lineItem.color}</p>
+<isif condition="${lineItem.isGWP}">
+    <p class="line-item-attributes">Free Product</p>
+</isif>

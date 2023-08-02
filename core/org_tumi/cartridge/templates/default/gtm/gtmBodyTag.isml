@@ -1,0 +1,7 @@
+<isif condition="${dw.system.Site.getCurrent().getCustomPreferenceValue('EnableGTM')}">
+    <isset name="gtmContainerID" value="${dw.system.Site.getCurrent().getCustomPreferenceValue('GTMContainerID')}" scope="page" />
+    <iscomment> Google Tag Manager (noscript) </iscomment>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=${gtmContainerID}"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <iscomment> End Google Tag Manager (noscript) </iscomment>
+</isif>

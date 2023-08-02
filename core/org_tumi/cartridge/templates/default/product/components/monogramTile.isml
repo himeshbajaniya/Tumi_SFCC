@@ -1,0 +1,79 @@
+<div class="row above-underline">
+    <div class="col-12">
+        <div class="monogram-item${product.monogramLineItem ? ' classic' : ''}${product.isPremiumMonogrammedPLI ? ' premium' : ''} ${product.monogramable || product.premiumMono ? '' : 'd-none'} ${product.monogramLineItem || product.isPremiumMonogrammedPLI ? 'edit-monogram' : 'add-monogram'}" data-form="${JSON.stringify(product.monogramLineItem)}" data-uuid="${product.UUID || product.uuid}" data-mymonogram="${pdict.myMonogramData ? pdict.myMonogramData : ''}" >
+            <div class="monogram-wrapper d-flex justify-content-between align-items-center">
+                <isset name="labelMonoA" value="${!empty(product.monogramLineItem) && !empty(product.monogramLineItem.character) && product.monogramLineItem.character !== 'undefined' && !empty(product.monogramLineItem.character.split(' ')[0]) ? product.monogramLineItem.character.split(' ')[0] : ''}" scope="page" />
+                <isset name="labelMonoB" value="${!empty(product.monogramLineItem) && !empty(product.monogramLineItem.character) && product.monogramLineItem.character !== 'undefined' && !empty(product.monogramLineItem.character.split(' ')[1]) ? product.monogramLineItem.character.split(' ')[1] : ''}" scope="page" />
+                <isset name="labelMonoC" value="${!empty(product.monogramLineItem) && !empty(product.monogramLineItem.character) && product.monogramLineItem.character !== 'undefined' && !empty(product.monogramLineItem.character.split(' ')[2]) ? product.monogramLineItem.character.split(' ')[2] : ''}" scope="page" />
+                <isset name="fontcolor" value="${!empty(product.monogramLineItem) && !empty(product.monogramLineItem.color) && product.monogramLineItem.color !== 'undefined' && !empty(product.monogramLineItem.color.split('_').length === 2 && product.monogramLineItem.color.split('_')[1]) ? product.monogramLineItem.color.split('_')[1] : null}" scope="page" />
+                <isset name="labelcolor" value="${!empty(product.monogramLineItem) && !empty(product.monogramLineItem.color) && product.monogramLineItem.color !== 'undefined' && !empty(product.monogramLineItem.color.split('_').length === 2 && product.monogramLineItem.color.split('_')[0]) ? product.monogramLineItem.color.split('_')[0] : null}" scope="page" />
+
+                <isset name="monogramStyle" value="${(!empty(product.premiumMonogramData) && 'color' in product.premiumMonogramData && product.premiumMonogramData.color) ? product.premiumMonogramData.color : null}" scope="page"/>
+
+                <isif condition="${product.isPremiumMonogrammedPLI && product.associatedLetter && product.associatedLetter.length >= 2}">
+                    <isset name="labelMonoA" value="${product.associatedLetter[0]}" scope="page" />
+                    <isset name="labelMonoB" value="${product.associatedLetter[1]}" scope="page" />
+                    <isset name="labelMonoC" value="" scope="page" />
+                </isif>
+
+                <isset name="combined_text" value="${labelMonoA + labelMonoB + labelMonoC}" scope="page"/>
+
+                <div class="icon">
+                    <isprint value="${!empty(combined_text) ? combined_text.replace(/\(/g, '<span class="numberFormat">').replace(/\)/g, '</span>') : Resource.msg('product.default.monogram.text', 'product', null)} " encoding="off" />
+                </div>
+                <div class="flex-grow-1">
+                <isif condition="${pdict.pageType !== 'cart'}">
+                    <div class="title">${Resource.msg('product.default.monogram.title', 'product', null)}</div>
+                    <div class="confirmmsg">${Resource.msg('product.metal.monogram.addmessage', 'product', null)}</div>
+                    <div class="confirmmsg-premium">
+                        <isif condition="${!empty(product.monogramCost)}">
+                            <isprint value="${Resource.msg('product.metal.monogram.addmessage', 'product', null)}"/>
+                        </isif>
+                    </div>
+                    <div class="desc" data-description="${monogramStyle || Resource.msg('product.default.monogram.description', 'product', null)}" >${labelcolor || monogramStyle || Resource.msg('product.default.monogram.description', 'product', null)}</div>
+                <iselse/>
+                    <div class="title">${Resource.msg('title.add.your.monogram', 'cart', null)}</div>
+                    <div class="confirmmsg">${Resource.msg('product.metal.monogram.addmessage', 'product', null)}</div>
+                    <div class="confirmmsg-premium">
+                        <isif condition="${!empty(product.monogramCost)}">
+                            <isprint value="${Resource.msgf('product.metal.monogram.addmessage', 'product', null, '$' + product.monogramCost)}"/>
+                        </isif>
+                    </div>
+                    <div class="desc" data-description="${Resource.msg('product.default.monogram.description', 'product', null)}">
+                        <isif condition="${!empty(labelcolor)}">
+                            <isprint value="${Resource.msgf('product.classic.monogram.tile', 'product', null, labelcolor)}"/>
+                        <iselseif condition="${!empty(monogramStyle)}"/>
+                            <isprint value="${Resource.msgf('product.metal.monogram.tile', 'product', null, monogramStyle, require('dw/util/StringUtils').formatMoney(product.monogramCost))}"/>
+                        <iselse/>
+                            <span class="${pdict.pageType !== 'cart' ? 'd-block' : 'd-none'}"><isprint value="${Resource.msg('product.default.monogram.description', 'product', null)}"/></span>
+                        </isif>
+                    </div>
+                </isif>
+
+                </div>
+                <div class="clickable add-block">
+                    <a href="javascript:void(0);" class="add-monogram-modal" data-toggle="modal" data-target="${'#monogramModal-' + (product.UUID || product.uuid)}"
+                        role="button"
+                        aria-label="${Resource.msg('link.monogram', 'account', null)}">${Resource.msg('product.default.monogram.add', 'product', null)}</a>
+                </div>
+                <div class="clickable edit-block">
+                    <a class="edit-monogram ${product.isPremiumMonogrammedPLI ? 'premium' : ''}" data-toggle="modal" data-target="${'#monogramModal-' + (product.UUID || product.uuid)}" href="#"
+                        role="button" aria-label="${Resource.msg('link.monogram.edit', 'account', null)}">${Resource.msg('product.default.monogram.editlink', 'product', null)}
+                    </a>
+                    <span>&nbsp;|&nbsp;</span>
+                    <a href="${product.isPremiumMonogrammedPLI ? URLUtils.url('Cart-RemovePremiumMonogram') : URLUtils.url('Cart-RemoveClassicMonogram')}" data-uuid="${product.UUID}" class="remove-monogram" role="button"
+                        aria-label="${Resource.msg('link.monogram.remove', 'account', null)}">${Resource.msg('product.default.monogram.removelink', 'product', null)}</a>
+                </div>
+            </div>
+             <isif condition="${!empty(lineItem.premiumErrorMsg)}">
+                <div class="if-no-premiummono">
+                    <p>
+                        <isprint value="${lineItem.premiumErrorMsg}"/>
+                    </p>
+                </div>
+            </isif>
+        </div>
+      
+    </div>
+    <input type="hidden" id="pdpMonogramUrl" value="${pdict.monogramUrl}"/>
+</div>

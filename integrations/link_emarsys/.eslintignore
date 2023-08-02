@@ -1,0 +1,15 @@
+cartridges/int_emarsys/cartridge/static/
+coverage/
+doc/
+bin/
+codecept.conf.js
+cartridges/bm_emarsys/cartridge/static/
+cartridges/app_storefront_base
+cartridges/app_storefront_controllers
+cartridges/app_storefront_core
+cartridges/bm_app_storefront_base
+cartridges/emarsys_sfra_changes
+cartridges/emarsys_sg_changes
+test
+modules
+webpack.config.js

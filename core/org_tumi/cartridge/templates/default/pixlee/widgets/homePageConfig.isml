@@ -1,0 +1,13 @@
+<isif condition="${dw.system.Site.getCurrent().getCustomPreferenceValue('PixleeEnabled')}">
+	<script type="text/javascript" src="${URLUtils.staticURL('js/pixlee.js')}" ></script>
+	<isset name="pixleeApiKey" value="${dw.system.Site.getCurrent().getCustomPreferenceValue('PixleeApiKey')}" scope="page" />
+	<isset name="pixleeWidgetId" value="${dw.system.Site.getCurrent().getCustomPreferenceValue('PixleeHomePageWidgetId')}" scope="page" />
+	<isset name="pixleeWidgetAccountId" value="${dw.system.Site.getCurrent().getCustomPreferenceValue('PixleeAccountId')}" scope="page" />
+	<isif condition="${pixleeApiKey && pixleeWidgetId && pixleeWidgetAccountId}">
+		<div id="pixlee_container"
+			data-apikey="${pixleeApiKey}"
+			data-widgetid="${pixleeWidgetId}"
+			data-accountid="${pixleeWidgetAccountId}">
+		</div>
+	</isif>
+</isif>

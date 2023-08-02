@@ -1,0 +1,43 @@
+<div class="js-external-events-row row-basic"
+    data-emarsys-id="${event.emarsysId}"
+    data-emarsys-name="${event.emarsysName}"
+    data-sfcc-name="${event.sfccName}">
+    <div class="column-basic sfcc-name-column">
+        <span class="js-sfcc-name-span">${event.sfccName}</span>
+    </div>
+    <div class="column-basic emarsys-name-column">
+        <select class="js-emarsys-name-select select-basic" disabled>
+            <isif condition="${!empty(event.emarsysName)}">
+                <option value="${event.emarsysName}" data-emarsys-id="${event.emarsysId}">
+                    ${event.emarsysName}
+                </option>
+            <iselse/>
+                <option value="" data-emarsys-id="">
+                    ${Resource.msg("option.none.event.title", "externalEvents", null)}
+                </option>
+            </isif>
+        </select>
+    </div>
+    <div class="column-basic button-column">
+        <button class="js-change-button button-basic">
+            ${Resource.msg("button.change", "externalEvents", null)}
+        </button>
+    </div>
+    <div class="column-basic button-column">
+        <button class="js-example-button button-basic">
+            ${Resource.msg("button.example", "externalEvents", null)}
+        </button>
+    </div>
+    <div class="column-basic button-column">
+        <button class="js-trigger-button button-basic">
+            ${Resource.msg("button.trigger", "externalEvents", null)}
+        </button>
+    </div>
+    <div class="column-basic campaign-status-column">
+        <span class="js-campaign-status"
+            data-id="${event.emarsysId ? context.campaigns[event.emarsysId].id : ''}"
+            data-status="${event.emarsysId ? context.campaigns[event.emarsysId].status : ''}">
+            ${event.emarsysId ? context.campaigns[event.emarsysId].status : ''}
+        </span>
+    </div>
+</div>

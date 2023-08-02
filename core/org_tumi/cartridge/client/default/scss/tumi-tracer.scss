@@ -1,0 +1,376 @@
+@import "variables";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/mixins/breakpoints";
+@import "util/variables";
+@import "base/mixins";
+
+$min-width: "1024px";
+$max-width: "1280px";
+$min-alt-width: "1281px";
+
+.account-banner {
+    margin-top: 20px;
+    margin-bottom: 40px;
+
+    @include media-breakpoint-up(sm) {
+        border-bottom: 1px solid $anti-flash-white;
+        padding: 0 0 20px;
+
+        &.purchases-banner {
+            padding-top: 0;
+        }
+    }
+
+    .container {
+        padding-left: 0;
+        padding-right: 0;
+
+        @include media-breakpoint-up(sm) {
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+
+        @media (min-width: $min-width) and (max-width: $max-width) {
+            padding-left: 120px;
+            padding-right: 120px;
+        }
+
+        @media (min-width: $min-alt-width) {
+            padding-left: 72px;
+            padding-right: 72px;
+        }
+
+        .my-account {
+            border-bottom: 1px solid var(--color-grey3);
+        }
+    }
+
+    .bread-crumb {
+        display: none;
+        @include media-breakpoint-up(md) {
+            display: block;
+        }
+
+        margin-bottom: 6px;
+
+        &-content {
+            @include sizeWeightLh(12px, 400, 16px);
+
+            display: flex;
+            align-items: center;
+            color: $davy-grey;
+
+            img {
+                margin-right: 5px;
+                margin-bottom: 4px;
+            }
+
+            a {
+                color: $davy-grey;
+                padding: 0 5px;
+            }
+        }
+
+        .bread-crumb-content {
+            span {
+                margin-left: 8px;
+            }
+        }
+    }
+
+    .account-title {
+        @include sizeWeightLh(24px, 400, 24px);
+
+        @include media-breakpoint-up(md) {
+            line-height: 30px;
+        }
+
+        text-transform: capitalize;
+        color: var(--color-black);
+
+        @include media-breakpoint-up(sm) {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.tumi-tracer {
+    margin-bottom: 100px;
+
+    @include media-breakpoint-up(sm) {
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+
+    .repair-content h2,
+    .tracer-registration-successful h3 {
+        color: $bg-dark;
+        margin-bottom: 30px;
+        @include sizeWeightLh(24px, 300, 30px);
+    }
+
+    p,
+    .tarcer-text,
+    .tracer-registration-successful {
+        color: var(--color-grey1);
+        @include sizeWeightLh(15px, 400, 19px);
+    }
+
+    .signin,
+    .create-account {
+        display: inline-block;
+    }
+
+    .signin {
+        margin-right: 20px;
+    }
+
+    .tracer-reg,
+    #tracerAddressForm {
+        padding: 25px 0;
+
+        @include media-breakpoint-up(sm) {
+            padding: 25px 20px 30px 34px;
+        }
+
+        /* label {
+            margin-left: -5px;
+            text-indent: 6px;
+            width: 100%;
+            color: var(--color-grey1);
+            @include sizeWeightLh(15px, 400, 20px);
+        } */
+
+        // .required {
+        //     label {
+        //         &::after {
+        //             content: "*" !important;
+        //             display: contents !important;
+        //             position: unset;
+        //         }
+        //     }
+        // }
+
+        input {
+            width: 100%;
+            max-width: 438px;
+            cursor: text;
+        }
+
+        /* input[type="tel"] {
+            padding: 8px 6px;
+        } */
+
+        /* #registration-form-phone {
+            border: none;
+            border-radius: unset;
+        } */
+
+        .provide-information {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .privacyPolicy {
+            margin-bottom: 30px;
+            font-size: 15px;
+            color: var(--color-grey1);
+
+            a {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    #tracerIdCount {
+        width: 80px;
+    }
+
+    .tracer-id-selector {
+        display: flex;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+
+    .tarcer-text {
+        margin-left: 10px;
+    }
+
+    .step-header {
+        border: 1px solid #1b1c1e;
+        border-radius: 50%;
+        width: 28px;
+        height: 28px;
+        text-align: center;
+        background: transparent;
+        margin-right: 8px;
+        color: $bg-dark;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 1px;
+        flex: 0 0 28px;
+    }
+
+    .card-header-custom {
+        text-transform: uppercase;
+        letter-spacing: 0.025em;
+        color: $bg-dark;
+        @include sizeWeightLh(24px, 300, 33px);
+    }
+
+    .complete-reg-heading {
+        color: $bg-dark;
+    }
+
+    .tracer-registeration-label {
+        color: $bg-dark;
+        margin-bottom: 12px;
+        @include sizeWeightLh(18px, 400, 20px);
+    }
+
+    #addressSubmit {
+        padding: 0 20px;
+        margin: 0;
+        max-width: 438px;
+        width: 100%;
+        cursor: pointer;
+        height: 44px;
+    }
+
+    select {
+        width: 100%;
+        max-width: 438px;
+        border-color: $light-gray;
+    }
+
+    #tracerIdForm {
+        margin-top: 50px;
+        border-bottom: 1px solid $grey3;
+
+        #tracerIdsSubmit {
+            margin-bottom: 30px;
+            width: 100%;
+            max-width: 438px;
+        }
+    }
+
+    .checkout-heading {
+        margin-top: 50px;
+    }
+
+    .repair-services-us {
+        border-bottom: 1px solid $grey3;
+
+        .repair-content {
+            .info {
+                margin-bottom: 40px;
+            }
+        }
+    }
+}
+
+.print-page {
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+        color: $blue;
+        text-decoration: underline;
+    }
+}
+
+.tracer-sub-header {
+    display: flex;
+
+    form {
+        display: flex;
+        flex-direction: column;
+
+        @include media-breakpoint-up(sm) {
+            flex-direction: row;
+
+            .form-group {
+                min-width: 190px;
+            }
+        }
+
+        @include media-breakpoint-up(md) {
+            .form-group {
+                min-width: 250px;
+            }
+        }
+
+        .invalid-feedback {
+            text-align: initial;
+        }
+    }
+
+    p {
+        font-size: 18px;
+        font-weight: 400;
+        font-family: $font-tumi;
+        color: $bg-dark;
+        margin-bottom: 35px;
+
+        @include media-breakpoint-up(sm) {
+            margin-bottom: 25px;
+        }
+    }
+
+    button {
+        margin-bottom: 40px;
+
+        @include media-breakpoint-up(sm) {
+            margin-left: 25px;
+            margin-bottom: 0;
+        }
+    }
+}
+
+.reg-products-title {
+    margin-top: 40px;
+
+    h3 {
+        color: $bg-dark;
+        @include sizeWeightLh(24px, 300, 12px);
+    }
+
+    .no-reg-products {
+        display: block;
+        color: $bg-dark;
+        margin-top: 30px;
+        @include sizeWeightLh(18px, 300, 18px);
+    }
+}
+
+.tracer-products {
+    margin-top: 50px;
+    margin-bottom: 40px;
+
+    @include media-breakpoint-up(sm) {
+        margin-bottom: 60px;
+    }
+
+    .tracer-product {
+        display: flex;
+        margin-bottom: 40px;
+
+        .registered-data {
+            display: flex;
+            flex-direction: column;
+            color: $bg-dark;
+            @include sizeWeightLh(16px, 600, 24px);
+        }
+    }
+}
+
+.tracer-title {
+    select {
+        border: none;
+        appearance: none;
+        background: transparent url("../images/select-arrow.png") no-repeat right center;
+        padding-right: 10px;
+    }
+}

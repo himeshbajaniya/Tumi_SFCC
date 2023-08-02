@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custom-objects xmlns="http://www.demandware.com/xml/impex/customobject/2006-10-31">
+    <custom-object type-id="EmarsysTransactionalEmailsConfig" object-id="orderCancelledConf">
+        <object-attribute attribute-id="externalEvent">13652</object-attribute>
+        <object-attribute attribute-id="mappedFields">[&#13;
+	{&#13;
+		"field": "order.billingAddress.firstName",&#13;
+		"placeholder": "FirstName"&#13;
+	},&#13;
+	{&#13;
+		"field": "order.billingAddress.countryCode.displayValue",&#13;
+		"placeholder": "Country"&#13;
+	},&#13;
+	{&#13;
+		"field": "order.orderNo",&#13;
+		"placeholder": "OrderNumber"&#13;
+	},&#13;
+	{&#13;
+		"field": "order.customerEmail",&#13;
+		"placeholder": "ORDER_BILLING_ADDRESS_EMAIL"&#13;
+	},&#13;
+	{&#13;
+		"field": "order.billingAddress.lastName",&#13;
+		"placeholder": "LastName"&#13;
+	}&#13;
+]</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="EmarsysTransactionalEmailsConfig" object-id="orderReturn">
+        <object-attribute attribute-id="externalEvent">13647</object-attribute>
+        <object-attribute attribute-id="mappedFields">[]</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="EmarsysTransactionalEmailsConfig" object-id="orderconf">
+        <object-attribute attribute-id="externalEvent">13648</object-attribute>
+        <object-attribute attribute-id="mappedFields">[]</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="EmarsysTransactionalEmailsConfig" object-id="shipping">
+        <object-attribute attribute-id="externalEvent">13649</object-attribute>
+        <object-attribute attribute-id="mappedFields">[]</object-attribute>
+    </custom-object>
+</custom-objects>

@@ -1,0 +1,155 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "https://www.tumi.com/content-banner",
+	"title": "Title",
+	"description": "Description",
+	"allOf": [
+		{
+			"$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+		}
+	],
+	"type": "object",
+	"properties": {
+		"content-asset-id": {
+			"title": "Content Asset ID",
+			"description": "SFCC Content Asset",
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 256,
+			"format": "text"
+		},
+		"heading": {
+			"title": "Heading",
+			"description": "Enter the heading of the banner",
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 256
+		},
+		"sub-heading": {
+			"title": "Sub Heading",
+			"description": "Enter the sub heading of the banner",
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 256
+		},
+		"description": {
+			"title": "description",
+			"description": "Description of the image",
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 600
+		},
+		"bannerContent": {
+			"title": "Banner Content",
+			"description": "Add the banner content",
+			"type": "array",
+			"minItems": 1,
+			"maxItems": 5,
+			"items": {
+				"allOf": [
+					{
+						"type": "object",
+						"properties": {
+							"image-link-desktop": {
+								"title": "image link for desktop",
+								"description": "Enter the image link for Desktop",
+								"type": "string",
+								"format": "uri",
+								"minLength": 0,
+								"maxLength": 256
+							},
+							"image-link-mobile": {
+								"title": "image link for mobile",
+								"description": "Enter the image link for mobile",
+								"type": "string",
+								"format": "uri",
+								"minLength": 0,
+								"maxLength": 256
+							},
+							"title": {
+								"title": "Title",
+								"description": "Enter the title of the banner",
+								"type": "string",
+								"minLength": 0,
+								"maxLength": 256
+							},
+							"description-type-selection": {
+								"title": "Description Type Selection",
+								"description": "Select the description type",
+								"type": "string",
+								"enum": [
+									"Paragraph",
+									"lists"
+								]
+							},
+							"description": {
+								"title": "description (optional)",
+								"description": "Description of the image (optional)",
+								"type": "string",
+								"minLength": 0,
+								"maxLength": 256
+							},
+							"description-lists": {
+								"title": "Description Lists (optional)",
+								"description": "Add the description lists (optional)",
+								"type": "array",
+								"minItems": 1,
+								"maxItems": 4,
+								"items": {
+									"allOf": [
+										{
+											"type": "object",
+											"properties": {
+												"list-name": {
+													"title": "List Name",
+													"description": "Enter the Lists Text",
+													"type": "string",
+													"minLength": 0,
+													"maxLength": 256
+												}
+											}
+										}
+									]
+								}
+							},
+							"cta-name": {
+								"title": "CTA Name",
+								"description": "Enter the CTA Name",
+								"type": "string",
+								"minLength": 0,
+								"maxLength": 256
+							},
+							"cta-landing-uri": {
+								"title": "CTA Landing URI",
+								"description": "Enter the uri to redirect landing page",
+								"type": "string",
+								"minLength": 0,
+								"maxLength": 256
+							},
+							"image-alt": {
+								"title": "image alt",
+								"description": "Enter image alt text",
+								"type": "string",
+								"minLength": 0,
+								"maxLength": 256
+							},
+							"bg-color-code": {
+								"title": "background color code",
+								"description": "Enter background color code of the slider",
+								"type": "string",
+								"minLength": 0,
+								"maxLength": 256
+							}
+						}
+					}
+				]
+			}
+		}
+	},
+	"propertyOrder": [
+		"content-asset-id"
+	],
+	"required": [
+		"content-asset-id"
+	]
+}

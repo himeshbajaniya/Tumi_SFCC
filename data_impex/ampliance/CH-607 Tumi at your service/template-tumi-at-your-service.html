@@ -1,0 +1,32 @@
+<div class="container-fluid tum-service {{#if (eq backgroundColor "Yes")}} ts-background {{/if}}"
+    data-creative-name="{{content-asset-id}}">
+    <div class="container">
+        <div class="row align-items-center {{#if (eq textAlign "Center")}} text-center {{/if}} {{#if (eq textAlign "Right" )}} text-right {{/if}}">
+            <div class="col-12 col-sm-6 large-img {{#if (eq large-image-position "Right")}} order-sm-1 {{/if}} {{#if (eq limage-mobile-hide "Yes")}}d-none d-sm-block{{/if}}">
+                <img src="{{large-image-desktop}}" alt="{{large-image-desktop-alt}}" />
+            </div>
+
+            <div class="col-12 col-sm-6">
+                <div class="text-content {{#if (eq limage-mobile-hide "Yes")}} pt-0 {{/if}} " tabindex="0">
+                    {{#if theme}}<h5 class="theme">{{theme}}</h5>{{/if}}
+                    {{#if title}}<h3 class="title">{{title}}</h3>{{/if}}
+                    {{#if description}}<div class="description">{{description}}</div> {{/if}}
+                    <ul class="tumi-service-list">
+                        {{#each cta-links}}
+                            <li {{#if cta-landing-uri}} {{else}} class="align-items-center d-flex" {{/if}}>
+                                {{#if cta-landing-uri}}<a href="{{cta-landing-uri}}" class="align-items-center d-flex pr-5" aria-label="{{cta-name}}" role="links">{{/if}}
+                                    {{#if cta-image}}<div class="img-wrapper d-flex align-items-center justify-content-center">
+                                        <img src="{{cta-image}}" alt="{{cta-name}}" />
+                                    </div>{{/if}}
+                                    <p class="cta-link-name">{{cta-name}}{{#if cta-decs-text}}<span class="cta-description">{{cta-decs-text}}</span>{{/if}}</p>
+                                {{#if cta-landing-uri}}</a>{{/if}}
+                            </li>
+                        {{/each}}
+                    </ul>
+                    {{#if pcta-url}}<a class="button button--primary" href="{{pcta-url}}">{{pcta-name}}</a>{{/if}}
+                    {{#if scta-url}}<a class="button button--secondary" href="{{scta-url}}">{{scta-name}}</a>{{/if}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

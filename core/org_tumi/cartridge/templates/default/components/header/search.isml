@@ -1,0 +1,76 @@
+<div class="row">
+    <div class="col-md-8 col-sm-12 order-md-1 order-2 d-flex flex-column">
+        <div class="trending-items">
+            <h3 class="trending-title" data-loading="${Resource.msg('search.trending.items', 'search', null)}" data-update="${Resource.msg('search.trending.items.results', 'search', null)}" data-noresponse= "${Resource.msg('search.trending.items.noresults', 'search', null)}"><span class="sr-only">${Resource.msg('search.trending.items', 'search', null)}</span></h3>
+            <script id="searchtrending-handlebar" type="text/x-handlebars-template">
+                        {{#each content.product.value}}
+                            <div class="trending-item">
+                                <a href="{{this.url}}" data-pid="{{this.sku}}" data-index="{{@index}}">
+                                    <img src={{this.image_url}} alt="{{this.name}}"/>
+                                </a>
+                                <p>{{this.name}}</p></div>
+                        {{/each}}
+            </script>
+            <input type="hidden" id="getrfkSearchResults" value="${URLUtils.url('Reflektion-Show')}">
+            <div class="trending-items-list">
+            </div>
+        </div>
+        <a class="view-all-results button button--secondary d-none" href="${URLUtils.url('Search-Show')}" data-querystring= "${URLUtils.url('Search-Show')}">View All Results</a>
+    </div>
+
+    <div class="col-md-4 col-sm-12 order-md-2 order-1">
+        <div class="site-search">
+            <form role="search"
+                action="${URLUtils.url('Search-Show')}"
+                method="get"
+                name="simpleSearch">
+                <div class="search-input">
+                    <input class="form-control search-field-reflektion"
+                        type="text"
+                        name="q"
+                        value=""
+                        placeholder="${Resource.msg('label.header.searchwatermark', 'common', null)}"
+                        role="combobox"
+                        aria-describedby="search-assistive-text"
+                        aria-haspopup="listbox"
+                        aria-owns="search-results"
+                        aria-expanded="false"
+                        aria-autocomplete="list"
+                        aria-activedescendant=""
+                        aria-controls="search-results"
+                        aria-label="${Resource.msg('simplesearch.searchtext', 'common', null)}"
+                        data-rfkidEvent="${dw.system.Site.getCurrent().getCustomPreferenceValue('rfkid_type_ahead')}"
+                        autocomplete="off" />
+                    <button type="submit" name="search-button" aria-label="${Resource.msg('label.header.search.go', 'common', null)}"></button>
+                    <span class="clear-search-text">${Resource.msg('search.input.label.clear', 'search', null)}</span>
+                </div>
+                <button type="reset" name="reset-button" class="fa fa-times reset-button d-none" aria-label="${Resource.msg('label.header.search.clear', 'common', null)}"></button>
+                <div class="suggestions-wrapper" data-url="${URLUtils.url('SearchServices-GetSuggestions', 'q')}"></div>
+                <input type="hidden" value="${pdict.locale}" name="lang">
+            </form>
+            <script id="searchcategory-handlebar" type="text/x-handlebars-template">
+                                    <ul>
+                        {{#if suggestion.category}}
+                            {{#each suggestion.category}}
+                                <li><a href="{{this.url}}" data-index={{@index}}>{{this.text}}</a></li>
+                            {{/each}}
+                        {{else}}
+                            {{#each suggestion.keyphrase}}
+                                <li><a href="{{this.url}}" data-index={{@index}}>{{this.text}}</a></li>
+                            {{/each}}
+                        {{/if}}
+                        </ul>
+            </script>
+            <div class="popular-categories">
+                <h3 class="popular-title" data-loading="${Resource.msg('search.popular.categories', 'search', null)}" data-update="${Resource.msg('search.didyoumean.label', 'search', null)}"><span class="sr-only">${Resource.msg('search.popular.categories', 'search', null)}</span></h3>
+                <div class="listofcategories">
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 
+
+<input type="hidden" id="popularCategories" value="${Resource.msg('search.popular.categories', 'search', null)}"/>
+<input type="hidden" id="didYouMeanLabel" value="${Resource.msg('search.didyoumean.label', 'search', null)}"/>
+<input type="hidden" id="categories" value="${Resource.msg('search.categories', 'search', null)}"/>
+<div class="rfk_sbc"></div>

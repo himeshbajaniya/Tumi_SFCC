@@ -1,0 +1,37 @@
+<div class="${pdict.pageType !== 'cart' ? 'wishlistItemWrapper' : 'sfl-item-wrapper'}  ${((pdict.pageType === 'cart') && (pdict.wishlist && pdict.wishlist.items.length > 0)) ? 'swiper swiper-cart' : ''}">
+<isif condition="${pdict.wishlist && pdict.wishlist.items && pdict.wishlist.items.length > 0}">
+    <!---product cards--->
+    <div class="${pdict.pageType !== 'cart' ? 'row wishlistItemCards' : 'swiper-wrapper'}" data-error-msg="${Resource.msg('wishlist.remove.error','wishlist',null)}">
+        <isloop items="${pdict.wishlist.items}" var="item">
+            <isif condition=${(pdict.wishlist.publicView && item.publicItem) || (!pdict.wishlist.publicView)}>
+                <isif condition="${!!item.bundle}">
+                    <isinclude template="wishlist/productCard/wishlistBundleCard" />
+                <iselse/>
+                    <isinclude template="wishlist/components/wishlistProductCard" />
+                </isif>
+            </isif>
+        </isloop>
+        <isif condition="${pdict.wishlist.showMore}">
+             <div class="my-account col-12">
+                <button type="button" class="btn btn-block btn-primary btn-outline-primary more-wl-items" >
+                    ${Resource.msg('text.link.show.more.results.wl', 'wishlist', null)}
+                </button>
+            </div>
+        </isif>
+        <span class="wishlistItemCardsData" data-uuid="${pdict.wishlist.UUID}" data-href="${URLUtils.url('Wishlist-MoreList')}" data-page-number="${pdict.wishlist.pageNumber || 1}"  data-public-view=${pdict.wishlist.publicView}></span>
+    </div>
+    <div>
+        <isset name="shareLinks" value="${pdict.socialLinks}" scope="page"/>
+        <iscomment> <isinclude template="wishlist/components/socialsharing" /> </iscomment>
+    </div>
+<iselse>
+    <div class="col-12 text-center empty-wishlist">
+        <h3>${Resource.msg('wishlist.empty.text.heading','wishlist',null)}</h3>
+        <p>${Resource.msg('wishlist.empty.text','wishlist',null)}</p>
+    </div>
+</isif> 
+</div>
+<isif condition="${(pdict.pageType === 'cart') && (pdict.wishlist && pdict.wishlist.items.length > 0)}">
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+</isif>

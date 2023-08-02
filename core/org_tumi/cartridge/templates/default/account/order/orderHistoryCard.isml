@@ -1,0 +1,46 @@
+<div class="row order-list">
+    <div class="col-12">
+        <h4 class="order-no">${Resource.msg('label.orderhistory.orderno','account',null)} ${order.orderNumber}</h4>
+        <p class="date"><isprint value="${order.creationDate}" style="DATE_LONG"/></p>
+    </div>
+    <div class="col-md-4 col-sm-6">
+        <div class="order-images">
+            <img class="img-fluid" src="${order.firstLineItem.imageURL}" alt="" title="">
+            <isif condition="${order && order.secondLineItem && order.secondLineItem.imageURL}">
+                <img class="img-fluid" src="${order.secondLineItem.imageURL}" alt="" title="">
+            </isif>
+            <isif condition="${order.productQuantityTotal > 2}">
+                <span class="more-images">
+                    +<isprint value="${order.productQuantityTotal-2}" style="INTEGER"/>
+                </span>
+            </isif>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-6 process-steps-container d-flex align-items-center">
+        <isset name="dateToShowTrackingLink" value="${dw.system.Site.getCurrent().getCustomPreferenceValue('dateToShowTrackingLink')}" scope="page" />
+        <isif condition="${order.creationDate > new Date(dateToShowTrackingLink)}">
+            <div class="order-shipemnt-status-bar">
+                <iscomment> To-Do post MVP ticket for dynamic status update
+                <p class="order-status">${order.orderStatus}</p>
+
+                <div class="process-steps">
+                    <div class="step-circle">
+                        <img src="${URLUtils.absStatic('/images/step-right.svg')}" alt="" />
+                    </div>
+                    <div class="processed">
+                    </div>
+                </div>
+                </iscomment>    
+                <a href="${dw.system.Site.getCurrent().getCustomPreferenceValue('lincOrderLocatorURL')}" class="tracking-details">${Resource.msg('label.orderhistory.trackinglink','account',null)}</a>
+            </div>
+        </isif>
+    </div>
+    <div class="col-md-4 col-sm-12 d-flex flex-column align-items-end justify-content-end">
+         <isif condition="${order.productQuantityTotal === 1}">
+            <isset name="lineItem" value="${order.firstLineItem}" scope="page" />
+            <isinclude template="checkout/productCard/productCardAvailability" />
+        </isif>
+        <a href="${URLUtils.url('Order-Details', 'orderID', order.orderNumber, 'orderFilter', pdict.orderFilter)}" class="button button--secondary w-100" aria-label="${Resource.msgf('label.orderhistory.vieworderdetails', 'account', null, order.orderNumber)}">${Resource.msg('link.button.view','account',null)}</a>
+    </div>
+    <hr class="order-list-divider" />
+</div>

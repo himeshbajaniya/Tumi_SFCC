@@ -1,0 +1,31 @@
+<div class="modal fade delete-address-modal" id="deleteAddressModal" tabindex="-1" role="dialog" aria-labelledby="deleteAddressModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header delete-confirmation-header">
+                <h4 class="modal-title" id="deleteAddressModal">${Resource.msg('heading.delete.address.confirmation.modal','address',null)}</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                    aria-hidden="true"><img class="" src="${URLUtils.staticURL('/images/modal-close.svg')}"
+                        alt="${Resource.msg('global.search', 'common', null)}" />
+                </span></button>
+            </div>
+            <div class="modal-body delete-confirmation-body">
+                ${Resource.msg('msg.delete.address.confirmation.modal','address',null)}
+            </div>
+            <div class="modal-footer">
+                <div class="container">
+                    
+                    <div class="row">
+                        <div class="col-12">
+                            <button type="button" class="button button--primary w-100 delete-confirmation-btn"
+                            data-dismiss="modal"
+                            >${Resource.msg('button.confirm.delete','address',null)}</button>
+                        </div>
+                        <div class="col-12">
+                            <button type="button" class="button button--secondary w-100" data-dismiss="modal">${Resource.msg('button.cancel','address',null)}</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

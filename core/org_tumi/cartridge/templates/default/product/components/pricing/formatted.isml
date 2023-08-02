@@ -1,0 +1,2 @@
+${price.formatted ? price.formatted : Resource.msg('text.not.available.price', 'product', null)}
+

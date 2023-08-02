@@ -1,0 +1,76 @@
+
+<iscomment> <isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addJs('/js/wishlist.js');
+</isscript> </iscomment>
+<isinclude template="account/deleteAddressModal"/>
+
+<div class="saved-address">
+    <iscomment> <isinclude template="account/editAddAddress" /> </iscomment>
+    <!---Breadcrumbs--->
+    <iscomment> <isinclude template="components/breadcrumbs/pageBreadcrumbs"/> </iscomment>
+    <div class="new-address">
+        <isif condition="${pdict.addressBook.length === 0}">
+            <div class="row">
+                <div class="col">
+                    <p class="adr-text">${Resource.msg('text.make.checkout.faster','address',null)}</p>
+                </div>
+        </div>
+    </isif>
+    <!-- Rows for addresses in the Address Book -->
+    <isloop items="${pdict.addressBook}" var="address">
+        <div class="${(address.ID == pdict.addressBook[0].ID)? 'divider': ''}" id="uuid-${address.UUID}">
+            <div class="card default-adr">
+                <div class="card-header">
+                    <isif condition="${address.ID == pdict.addressBook[0].ID}">
+                        <h2 class="address-heading">${Resource.msg('label.addressbook.defaultaddress','account',null)}</h2>
+                    </isif>
+                    <isif condition="${address.ID == pdict.addressBook[1].ID}">
+                        <h2 class="saved-adr-heading address-heading">${Resource.msg('label.addressbook.savedaddresses','account',null)}</h2>
+                    </isif>
+                </div>
+                <div class="card-body card-body-positioning pull-left">
+                    <div class="address-blog">
+                        <div>${address.firstName} ${address.lastName}</div>
+                        <div>${address.address1}</div>
+                        <isif condition="${address.address2 !== null}">
+                            <div>${address.address2}</div>
+                        </isif>
+                        <div>${address.city}, ${address.stateCode} ${address.postalCode}</div>
+                        <div>
+                            <isif condition="${address.phone}">
+                                ${address.phone}
+                            </isif>
+                        </div>
+                    </div>
+                    <div class="cta-wrapper">
+                        <a href="${URLUtils.url('Address-EditAddress', 'addressId', address.ID)}" class="edit-adr-btn" aria-label="${Resource.msg('label.addressbook.editaddress','account',null)} : ${address.ID == pdict.addressBook[0].ID ? pdict.addressBook[0].ID+' ('+Resource.msg('label.addressbook.defaultaddress','account',null)+')' : address.ID}">${Resource.msg('link.edit','account',null)}</a> |
+                        <a
+                            href="javascript:void(0)"
+                            class="remove-btn remove-address btn-light"
+                            data-toggle="modal"
+                            data-target="#deleteAddressModal"
+                            data-id="${address.ID}"
+                            data-url="${pdict.actionUrls.deleteActionUrl}"
+                            aria-label="${Resource.msg('label.addressbook.deleteaddress','account',null)}"
+                            <isprint value="${address.ID == pdict.addressBook[0].ID ? 'data-default="true"' : '' }" encoding="off" />>${Resource.msg('link.delete','account',null)}
+                        </a>
+                        <isif condition="${address.ID !== pdict.addressBook[0].ID}">
+                        <div class="card-make-default-link">
+                            | <a href="javascript:void(0)" data-url="${URLUtils.url('Address-SetDefault', 'addressId', address.ID)}" class="normal address-default-link" aria-label="${Resource.msg('label.addressbook.makedefaultaddress','account',null)}">${Resource.msg('link.addressbook.makedefault','account',null)}</a>
+                        </div>
+                        </isif>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </isloop>
+    <div class="row">
+        <div class="col-sm-6">
+                <a href="${URLUtils.url('Address-AddAddress')}" class="button button--primary w-100 add-new-address" aria-label="${Resource.msg('label.addressbook.addnewaddress','account',null)}">${Resource.msg('button.addnew.address','account',null)}</a>
+        </div>
+    </div>
+    </div>
+
+</div>
+

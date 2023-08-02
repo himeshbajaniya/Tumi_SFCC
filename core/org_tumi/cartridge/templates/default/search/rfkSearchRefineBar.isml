@@ -1,0 +1,54 @@
+<!--- Close button --->
+<div class="filter-header">
+    <div class="header-bar d-sm-none clearfix">
+        <h3 class="pull-left">${Resource.msg('button.filter', 'search', null)} <span class="filter-count"></span></h3>
+        <button class="pull-right close close-filters">
+            <span><img src="${URLUtils.absStatic('/images/btn-close.svg')}" alt="" /></span>
+        </button>
+    </div>
+</div>
+
+<script id="filter-template" type="text/x-handlebars-template">
+    {{#each facet}}
+    <div class="card refinement rfk-refinement-filter refinement-{{@key}}">
+        <div class="card-header col-sm-12" id="{{@key}}">
+            <button class="title btn text-left btn-block d-md-none rfk-title" aria-controls="refinement-{{@key}}" aria-expanded="false">
+                {{this.display_name}} <span class="{{@key}}"></span>
+            </button>
+            <div aria-label="brand" class="d-none d-md-block rfk-title">{{this.display_name}} <span class="filter_{{@key}}"></span></div>
+        </div>
+        
+        <div class="card-body content value" id="refinement-{{@key}}" data-rfk-filter="{{@key}}">
+                <ul class="values content list-of-filters {{@key}}">
+                    {{#each this.value}}
+                        <li class="col-sm-12 col-md-12 {{isMoreFlag @key}}">
+                            <div class="form-group custom-control custom-checkbox pull-left {{{this.text}}} {{filterCount this.count}}">
+                                <input type="checkbox" class="custom-control-input {{filterCount this.count}} {{@../key}}{{isFormatId this.id}}" id="{{@../key}}___{{this.id}}" name="{{this.text}}" value="true">
+                                <label class="custom-control-label {{@../key}}" for="{{@../key}}___{{this.id}}">
+                                    <span class="{{isFormatId this.id}} {{{this.text}}} shownTitle" aria-hidden="true">{{{this.text}}} </span>
+                                    <span class="rfk-facet-value-count">({{this.count}})</span>
+                                    <span class="sr-only selected-assistive-text">Refine by {{@key}}: {{{this.text}}}</span>
+                                    <span class="color-filter" style="{{getColorValue @../key this.text}}"></span>
+                                </label>
+                            </div>
+                        </li>
+                    {{/each}}
+                    <span class="{{isToggleShowHide this.value.length}}">
+                        <span class="isShowMoreLink">${Resource.msg('text.show.more', 'product', null)}</span>
+                        <span class="isShowLessLink">${Resource.msg('text.show.less', 'product', null)}</span>
+                    </span>
+                </ul>
+        </div>
+    </div>
+    {{/each}}
+</script>
+<div class="refinements"></div>
+
+<div class="filter-bottom-header container">
+    <div class="pull-left result-count">
+        <button class="button button--primary close-filters">${Resource.msg('search.rfktile.show','search',null)} <span class="search-results-count">${pdict.rfkPLPSearchResults.total_item}</span> ${Resource.msg('search.rfktile.products','search',null)}</button>
+    </div>
+    <div class="bottom-filter-container">
+        <a href="#" class="clear-all rfk-reset">${Resource.msg('compare.button.clearall','product',null)}</a>
+    </div>
+</div>

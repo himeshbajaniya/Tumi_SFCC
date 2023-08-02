@@ -1,0 +1,9 @@
+<iscomment> TEMPLATENAME: subscribe.isml </iscomment>
+<iscontent type="text/html" charset="UTF-8" compact="true"/>
+
+<isdecorate template="${Resource.msg('page.decorator.default', 'emarsys', 'common/layout/page')}">
+    <div class="email-signup-wrapper">
+        <h3>${Resource.msg('emarsys.signup','forms',null)}</h3>
+        <isinclude template="subscription/userdataform"/>
+    </div>
+</isdecorate>

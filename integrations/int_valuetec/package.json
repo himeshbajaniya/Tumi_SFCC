@@ -1,0 +1,4 @@
+{
+   "init": ["./cartridge/scripts/init/ValuetecSoapServiceInit.js"],
+   "hooks": "./hooks.json"
+}

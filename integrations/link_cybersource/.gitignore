@@ -1,0 +1,14 @@
+int_cybersource_sfra/node_modules
+int_cybersource_sfra/.vscode
+**/dw.json
+node_modules
+node_modules/
+cartridges/int_cybersource_sfra/cartridge/static/default/css/
+cartridges/int_cybersource_sfra/cartridge/static/default/js/
+cartridges/int_cybersource_sfra/cartridge/static/default/fonts/
+cartridges/int_cybersource_sfra/cartridge/static/default/custom/
+
+
+cartridges/int_cybersource/cartridge/static/default/css/
+cartridges/int_cybersource/cartridge/static/default/js/
+cartridges/int_cybersource/cartridge/static/default/fonts/

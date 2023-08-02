@@ -1,0 +1,37 @@
+<div class="product-tile">
+    <div class="product-bookmark">
+        <a href="${URLUtils.url('Wishlist-AddProduct', 'uuid', product.uuid, 'plp', 'true')}"
+        class="bookmark" data-pid="${product.id}" data-wid="${product.images.medium[0].title}" data-removeurl="${URLUtils.url('Wishlist-RemoveProduct', 'uuid', product.uuid, 'plp', 'true')}">
+        </a>
+    </div>
+
+    <!-- dwMarker="product" dwContentID="${product.uuid}" -->
+    <isinclude template="product/components/productTileImage" />
+    <div class="tile-body">
+        
+        <isif condition="${product.collection}">
+            <div class="product-tile-title">
+                ${product.collection}
+                </div>
+        </isif>
+        
+        <isinclude template="product/components/productTileName" />
+
+        <isset name="price" value="${product.price}" scope="page" />
+        <isif condition="${product.productType === 'set'}">
+            <isinclude template="product/components/pricing/setPrice" />
+        <iselse/>
+            <isinclude template="product/components/pricing/main" />
+        </isif>
+
+        <isif condition="${pdict.display.swatches !== false}">
+            <isinclude template="product/components/productTileSwatch" />
+        </isif>
+        <div class="remove">
+
+            <a href="javascript:void(0);" class="compare-product-romove" data-pid="${product.id}"> ${Resource.msg('compare.product.remove', 'product', null)}</a>
+            
+        </div>
+    </div>
+    <!-- END_dwmarker -->
+</div>

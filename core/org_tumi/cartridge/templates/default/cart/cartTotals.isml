@@ -1,0 +1,76 @@
+<!--- Sub Total --->
+<div class="row subtotal">
+    <div class="col-md-8 col-sm-7 col-7">
+        <p>${Resource.msg('label.shipping.subtotal','cart',null)}</p>
+    </div>
+    <div class="col-md-4 col-sm-5 col-5">
+        <p class="text-right sub-total">${pdict.totals ? pdict.totals.subTotal : '$0.00'}</p>
+    </div>
+</div>
+<!--- Order Discount --->
+<isif condition="${pdict.items.length > 0}">
+    <div class="row promo-text ${pdict.totals.totalDiscount.value > 0 ? "" : 'd-none'}">
+        <div class="col-md-8 col-sm-7 col-7">
+            <p class="promo">${Resource.msg('label.shipping.promo','cart',null)}</p>
+        </div>
+        <div class="col-md-4 col-sm-5 col-5">
+            <p class="text-right order-discount-total">– ${pdict.totals.totalDiscount.formatted}</p>
+        </div>
+    </div>
+    <!-- Sales Tax -->
+    <div class="row subtotal-text">
+        <div class="col-md-8 col-sm-7 col-7">
+            <p>${Resource.msg('label.sales.tax','cart',null)}<a href="javascript:void(0)" 
+            data-toggle="tooltip" data-placement="bottom" title="${Resource.msg('tooltip.tax.cost','cart',null)}"><img  src="${URLUtils.staticURL('/images/info-icon.svg')}" alt="" /></a></p>
+        </div>
+        <div class="col-md-4 col-sm-5 col-5">
+            <p class="text-right tax-total">${pdict.totals.totalTax}</p>
+        </div>
+    </div>
+    <!-- Shipping Tax -->
+    <div class="row shipping-text">
+        <div class="col-md-8 col-sm-7 col-7">
+            <p>${Resource.msg('label.shipping.cost','cart',null)} <a href="javascript:void(0)" 
+            data-toggle="tooltip" data-placement="bottom" title="${Resource.msg('tooltip.shipping.cost','cart',null)}"><img  src="${URLUtils.staticURL('/images/info-icon.svg')}" alt="" /></a></p>
+        </div>
+        <div class="col-md-4 col-sm-5 col-5">
+            <p class="text-right shipping-cost">${pdict.totals.totalShippingCost}</p>
+        </div>
+    </div>
+
+    <!--- Shipping Discount --->
+    <div class="row shipping-discount <isif condition="${pdict.totals.shippingLevelDiscountTotal.value === 0}">hide-shipping-discount</isif>">
+        <div class="col-md-8 col-sm-7 col-7">
+            <p>${Resource.msg('label.shipping.discount', 'common', null)} &copy;</p>
+        </div>
+        <div class="col-md-4 col-sm-5 col-5">
+            <p class="text-right shipping-discount-total">- ${pdict.totals.shippingLevelDiscountTotal.formatted}</p>
+        </div>
+    </div>
+
+</isif>
+<hr class="m-12"/>
+<div class="row grand-total-text">
+    <div class="col-md-8 col-sm-7 col-7">
+        <span>${Resource.msg('label.estimatedtotal','cart',null)}</span>
+    </div>
+    <div class="col-md-4 col-sm-5 col-5">
+        <p class="text-right grand-total">${pdict.totals ? pdict.totals.grandTotal : '$0.00'}</p>
+    </div>
+</div>
+<isif condition="${pdict.items.length > 0}">
+    <isif condition="${!pdict.isRegisterCustomer}">
+        <div class="row content-hide guest-login">
+            <div class="col-12">
+                <div class="text-create-account">
+                    <span class="block">${Resource.msg('text.tumi.member.checkout','cart',null)}</span> 
+                    <a class="checkout-login" data-login="create-account"  data-toggle="modal" data-target="#requestLoginModal" role="button" aria-haspopup="dialog" href="${URLUtils.https('Login-Create')}"
+                aria-label="${Resource.msg('label.header.loginbutton', 'account', null)}">${Resource.msg('text.tumi.member.account','cart',null)}</a> 
+                    <span>${Resource.msg('text.or','cart',null)}</span> 
+                    <a class="checkout-login" data-login="sign-in" data-toggle="modal" data-target="#requestLoginModal" role="button" aria-haspopup="dialog" href="${URLUtils.https('Login-Create')}"
+                aria-label="${Resource.msg('label.header.loginbutton', 'account', null)}">${Resource.msg('text.tumi.member.signin','cart',null)}</a>
+                </div> 
+            </div>
+        </div>
+    </isif>
+</isif>

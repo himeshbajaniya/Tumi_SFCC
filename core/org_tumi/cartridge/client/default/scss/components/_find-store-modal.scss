@@ -1,0 +1,193 @@
+@import "../base/mixins";
+
+.findAStore {
+    h5 {
+        color: $eerie-black;
+        margin: 30px 0;
+        padding: 0 6px;
+        @include sizeWeightLh(24px, 300, 16px);
+    }
+
+    p {
+        color: $eerie-black;
+        margin-bottom: 20px;
+        padding: 0 6px;
+        @include sizeWeightLh(15px, 400, 20px);
+    }
+
+    .submit-button-abs {
+        position: absolute;
+        right: 0;
+        top: 10px;
+    }
+
+    .btn {
+        margin: 0 6px;
+    }
+
+    .button {
+        text-transform: inherit;
+    }
+
+    #cancel-store {
+        color: $black;
+        margin-top: 25px;
+        display: none;
+        text-align: center;
+        @include sizeWeightLh(15px,400,14px);
+    }
+
+    #pick-up-store {
+        display: none;
+    }
+
+    .active {
+        display: block !important;
+    }
+
+    .postalcode-msg {
+        color: $red;
+    }
+
+    .current-location {
+        display: flex;
+        margin-bottom: 41px;
+        padding: 0 6px;
+
+        img {
+            margin-right: 11px;
+        }
+
+        a {
+            color: $eerie-black;
+            border-bottom: 1px solid $eerie-black;
+            padding-bottom: 1px;
+            @include sizeWeightLh(13px,400,20px);
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+
+    .store-result {
+        min-height: 200px;
+        overflow-y: auto;
+        padding: 0 6px;
+
+        h6 {
+            color: $eerie-black;
+            margin: 0 0 30px;
+            display: none;
+            @include sizeWeightLh(15px,600,20px);
+        }
+
+        .formcheck-wrap {
+            .form-check {
+                padding-left: 0;
+                display: flex;
+                justify-content: space-between;
+
+                label {
+                    padding-left: 35px;
+
+                    span {
+                        color: $eerie-black;
+                        @include sizeWeightLh(15px,600,18px);
+                    }
+                }
+
+                span {
+                    color: $eerie-black;
+                    width: 50px;
+                    @include sizeWeightLh(13px,400,18px);
+                }
+            }
+
+            .store-details {
+                padding: 0 0 20px 38px;
+                margin-bottom: 20px;
+                border-bottom: 1px solid $grey3;
+
+                span {
+                    display: block;
+                    @include sizeWeightLh(13px,400,18px);
+                }
+
+                .show-store-link {
+                    color: $eerie-black;
+                    margin-top: 10px;
+                    margin-bottom: 20px;
+                    display: inline-block;
+                    text-decoration: underline;
+                    background-image: url('../images/show-detail-down.svg');
+                    background-repeat: no-repeat;
+                    background-position: center right;
+                    padding-right: 16px;
+                    transition: all 0.2s ease;
+                    @include sizeWeightLh(13px,400,18px);
+
+                    &.show-up-arrow {
+                        background-image: url('../images/show-detail-up.svg');
+                    }
+                }
+
+                .store-detail-row {
+                    height: 0;
+                    overflow: hidden;
+                    transition: all 0.2s ease;
+
+                    &.show-store {
+                        height: auto;
+                        transition: all 0.2s ease;
+                    }
+
+                    .address {
+                        color: $eerie-black;
+                        padding: 0;
+                        @include sizeWeightLh(15px,400,20px);
+                    }
+
+                    div {
+                        @include sizeWeightLh(15px,400,20px);
+                    }
+
+                    .col-12 {
+                        .days-and-time {
+                            margin-bottom: 0;
+                            overflow: hidden;
+                            height: 0;
+                            transition: all 0.2s ease;
+
+                            &:nth-child(1),
+                            &:nth-child(2) {
+                                height: auto;
+                                margin-bottom: 10px;
+                            }
+
+                            &.show-day-time {
+                                height: auto;
+                                margin-bottom: 10px;
+                                transition: all 0.2s ease;
+                            }
+                        }
+                    }
+
+                    #view-all-days {
+                        margin-top: 20px;
+                        color: $eerie-black;
+                        display: inline-block;
+                        text-decoration: underline;
+                        @include sizeWeightLh(15px,400,16px);
+                    }
+                }
+            }
+
+            &:last-child {
+                .store-details {
+                    border-bottom: none;
+                }
+            }
+        }
+    }
+}

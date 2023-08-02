@@ -1,0 +1,7 @@
+<div class="default-payment-card">
+    <isloop items="${pdict.customer.customerPaymentInstruments}" var="paymentInstrument" status="loopSate">
+        <isif condition="${loopSate.first}">
+            <isinclude template="checkout/billing/storedPaymentInstrumentCard" />
+        </isif>
+    </isloop>
+</div>

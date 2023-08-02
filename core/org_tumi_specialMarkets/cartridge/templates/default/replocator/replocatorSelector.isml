@@ -1,0 +1,49 @@
+<div class="replocator_selector text-center">
+    <form action="${pdict.actionUrl}" method="POST">
+        <div class="form-group">
+            <label class="form-control-label" for="country">
+                <isprint value="${pdict.addressForm.country.label}" encoding="htmlcontent" />
+            </label>
+            <select name="replocator" id="replocator_region_selector">
+                <option value="null">${Resource.msg('label.region.select', 'common', null)}</option>
+                <isloop items="${pdict.agentDetailsJSON}" var="agentDetails" status="loopstatus">
+                    <option value=${agentDetails.region}>
+                        <isprint
+                            value="${agentDetails.code + ': ' + Resource.msg('label.region.' + agentDetails.region, 'common', null)}" />
+                    </option>
+                </isloop>
+            </select>
+            <div class="invalid-feedback"></div>
+        </div>
+    </form>
+    <div class="replocator_regions retail">
+        <isloop items="${pdict.agentDetailsJSON}" var="agentDetails" status="loopstatus">
+            <div class="replocator_region ${agentDetails.region}" style="display:none">
+                <span class="region d-none">${Resource.msg('label.region.' + agentDetails.region, 'common', null)}</span>
+                <h3 class="name">${agentDetails.name}</h3>
+                <span class="company ${agentDetails.company === null ? 'd-none' : ''}">${agentDetails.company}</span>
+                <div>
+                    <span
+                        class="address1 ${agentDetails.address1 === null ? 'd-none' : ''}">${agentDetails.address1}</span>
+                    <span
+                        class="address2 ${agentDetails.address2 === null ? 'd-none' : ''}">${agentDetails.address2}</span>
+                </div>
+                <div class="repLocator-region-contacts">
+                    <isif condition="${agentDetails.phone !== null}">
+                        <div class="repLocator-contact-info">
+                            <span class="contact-lbl">PHONE</span>
+                            <span class="contact-lbl2">${agentDetails.phone}</span>
+                        </div>
+                    </isif>
+
+                    <isif condition="${agentDetails.email !== null}">
+                        <div class="repLocator-contact-info">
+                            <span class="contact-lbl">EMAIL</span><a href="mailto:${agentDetails.email}"
+                                class="contact-lbl2">${agentDetails.email}</a>
+                        </div>
+                    </isif>
+                </div>
+            </div>
+        </isloop>
+    </div>
+</div>

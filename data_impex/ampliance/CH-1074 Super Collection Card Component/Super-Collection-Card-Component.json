@@ -1,0 +1,160 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "https://www.tumi.com/super-collection-card-component",
+	"title": "Title",
+	"description": "Description",
+	"allOf": [
+		{
+			"$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+		}
+	],
+	"type": "object",
+	"properties": {
+		"content-asset-id": {
+			"title": "Content Asset ID",
+			"description": "SFCC Content Asset",
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 256,
+			"format": "text"
+		},
+		"heading": {
+			"title": "Heading",
+			"description": "Enter Heading (optional)",
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 256,
+			"format": "text"
+		},
+		"card-component-collection-image": {
+			"title": "Collection Image Link",
+			"description": "Enter Collection Image Link",
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 256,
+			"format": "text"
+		},
+		"card-component-collection-image-alt": {
+			"title": "Collection Image Alt",
+			"description": "Enter Collection Image Alt",
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 256,
+			"format": "text"
+		},
+		"collection-image-position": {
+			"title": "Position Of Collection Image ",
+			"type": "string",
+			"enum": [
+				"Left",
+				"Right",
+				"Top"
+			]
+		},
+		"tile-content-position": {
+			"title": "Position Of Tile Content ",
+			"type": "string",
+			"enum": [
+				"Left",
+				"Right"
+			]
+		},
+		"card-component-tile-image-1": {
+			"title": "Tile Image Link 1",
+			"description": "Enter Tile Image 1 Link",
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 256,
+			"format": "text"
+		},
+		"card-component-tile-pdp-link-1": {
+			"title": "Tile PDP Link 1",
+			"description": "Enter Tile PDP Link 1",
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 256,
+			"format": "text"
+		},
+		"card-component-tile-image-2": {
+			"title": "Tile Image Link 2",
+			"description": "Enter Tile Image 2 Link",
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 256,
+			"format": "text"
+		},
+		"card-component-tile-pdp-link-2": {
+			"title": "Tile PDP Link 2",
+			"description": "Enter Tile PDP Link 2",
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 256,
+			"format": "text"
+		},
+		"card-component-tile-image-3": {
+			"title": "Tile Image Link 3",
+			"description": "Enter Tile Image 3 Link",
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 256,
+			"format": "text"
+		},
+		"card-component-tile-pdp-link-3": {
+			"title": "Tile PDP Link 3",
+			"description": "Enter Tile PDP Link 3",
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 256,
+			"format": "text"
+		},
+		"card-component-title": {
+			"title": "Title",
+			"description": "Enter Title",
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 256,
+			"format": "text"
+		},
+		"card-component-description": {
+			"title": "Description",
+			"description": "Enter Description",
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 256,
+			"format": "text"
+		},
+		"card-component-cta": {
+			"title": "CTA",
+			"description": "Enter CTA Name",
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 256,
+			"format": "text"
+		},
+		"card-component-cta-link": {
+			"title": "CTA Landing URI",
+			"description": "Enter CTA Landing URI",
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 256,
+			"format": "text"
+		},
+		"card-component-characterstick-tag-1": {
+			"title": "Characterstick Tag 1",
+			"description": "Enter Characterstick Tag 1",
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 256,
+			"format": "text"
+		},
+		"card-component-characterstick-tag-2": {
+			"title": "Characterstick Tag 2",
+			"description": "Enter Characterstick Tag 2",
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 256,
+			"format": "text"
+		}
+	},
+	"propertyOrder": []
+}

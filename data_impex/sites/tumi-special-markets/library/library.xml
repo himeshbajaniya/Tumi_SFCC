@@ -1,0 +1,1648 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31">
+    <folder folder-id="root">
+        <online-flag>true</online-flag>
+        <page-attributes/>
+    </folder>
+
+    <content content-id="dev-home-banner">
+        <display-name xml:lang="x-default">Hero Component Right Aligned</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;div data-creative-name="dev-home-banner"&gt;
+    
+
+  &lt;div class="
+  container-fluid hero-banner position-relative gradient-light
+
+
+
+
+
+  "&gt;
+      &lt;picture&gt;
+          &lt;source media="(max-width:640px)" srcset="https://dev09-na01-tumi.demandware.net/on/demandware.static/Sites-tumi-us-Site/-/default/dwcd1154ad/images/hero-mobile.png"&gt;
+          &lt;img class="img-fluid w-100" src="https://dev09-na01-tumi.demandware.net/on/demandware.static/Sites-tumi-us-Site/-/default/dw741baec1/images/Hero-desktop.png" alt="Maclaren"&gt;
+          &lt;/picture&gt;
+
+   
+    
+      &lt;div class=" 
+    
+      gradient-right 
+    
+    "&gt;
+    &lt;/div&gt;
+    
+
+      
+    &lt;div class="
+     content-text text-content position-absolute d-flex align-items-end align-items-sm-center justify-content-sm-end justify-content-center bottom-padding text-align-right right-padding  
+    
+    
+    "&gt;
+      &lt;a href="https://www.tumi.com/s/mclaren/" target="_blank"class="anchorClass"&gt;
+      &lt;/a&gt;
+      &lt;div class="text-collection"&gt;
+       &lt;div&gt;
+      &lt;p class="collection-name"&gt;THE MACLAREN COLLECTION&lt;/p&gt;
+      &lt;p class="banner-header"&gt;Performance with Purpose&lt;/p&gt;
+      &lt;p class="description"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.&lt;/p&gt;
+    &lt;/div&gt;
+      
+      &lt;div class="button-redirect"&gt;
+        &lt;a class="button button--secondary"href="https://www.tumi.com/c/mclaren/"target="_blank" &gt;Primary CTA&lt;/a&gt;
+        &lt;/div&gt;
+      
+      &lt;/div&gt;
+     
+      &lt;/div&gt;
+      &lt;div class="disclaimer position-absolute d-flex align-items-center justify-content-sm-end justify-content-center right-padding"&gt;
+        Disclaimer lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      &lt;/div&gt;
+
+
+    &lt;/div&gt;
+
+    &lt;/div&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="faq">
+        <display-name xml:lang="x-default">FAQ</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;div data-creative-name="faq"&gt;
+&lt;div class="container py-5"&gt;
+  &lt;section class="faq-section"&gt;
+    &lt;h1&gt;What can we help you with?&lt;/h1&gt;
+    &lt;div class="content"&gt;
+      &lt;!--keywords section--&gt;
+      &lt;div class="faq-filter-container d-none d-md-block"&gt;
+        &lt;h3&gt;Keywords:&lt;/h3&gt;
+        &lt;ul class="categories"&gt;
+          &lt;li rel="store-pickup-and-curbside"&gt;&lt;a href="#"&gt;Store Pickup and Curbside&lt;/a&gt;&lt;/li&gt;
+          &lt;li rel="shipping"&gt;&lt;a href="#"&gt;Shipping&lt;/a&gt;&lt;/li&gt;
+          &lt;li rel="orders"&gt;&lt;a href="#"&gt;Order/Order Status&lt;/a&gt;&lt;/li&gt;
+          &lt;li rel="repairs"&gt;&lt;a href="#"&gt;Repairs&lt;/a&gt;&lt;/li&gt;
+          &lt;li rel="tracer-registration"&gt;&lt;a href="#"&gt;Tracer Registration&lt;/a&gt;&lt;/li&gt;
+          &lt;li rel="returns"&gt;&lt;a href="#"&gt;Returns/Exchanges&lt;/a&gt;&lt;/li&gt;
+          &lt;li rel="product-inquiry"&gt;&lt;a href="#"&gt;Product Inquiry&lt;/a&gt;&lt;/li&gt;
+          &lt;li rel="view-all"&gt;&lt;a href="#"&gt;View All&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+
+      &lt;!--right section--&gt;
+      &lt;div class="faq-content-container"&gt;
+        &lt;div class="qa repairs"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;How do I go about sending my bag in for repair?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;You may submit an online repair request form by visiting our Service and Repair link &lt;a href="https://www.tumi.com/repairRequestGuest"&gt;https://www.tumi.com/repairRequestGuest&lt;/a&gt; and completing the online repair request form.&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa repairs"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;What is your warranty policy for the first year of ownership?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;TUMI products damaged during the first 12 months you own it, including damage caused by normal wear and tear, airline handling, or other transit damage, TUMI will cover all repair expenses, including shipping costs to and from our repair facility. If we determine that the product is damaged beyond repair, we will replace it. If we determine that a replacement product is not available, we will provide you with a product of comparable value. Damages not covered are damage resulting from abuse, cosmetic damage and incidental or consequential damages.&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa repairs"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;What is your warranty policy for years after the 1st year of ownership?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;From the beginning of the second through the end of the fifth year when you own your TUMI travel item, business case or other bag, and for the second year of ownership for wallets, accessories, or outerwear, TUMI will repair any item that is damaged due to normal wear and tear, or defective in materials or workmanship, including any structural defects. For years two through five, we do not cover damage caused by airlines or other transit damage. Damage claims in transit cases should be filed against the carrier. Other damages not covered are damage resulting from abuse, cosmetic damage and incidental or consequential damages. Normal wear and tear for TUMI Outerwear does not include lost or missing buttons, torn fabrics or leathers or cosmetic damage as described above.&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa tracer-registration"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;Where is my Tracer Plate located ?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;You can find your 20 digit tracer number, which is located on a metal plate affixed in certain locations depending on the collection to which your product belongs to. Generally placements consist of interior pocket lining or the exterior of some travel pieces. Please note, not all products have tracer numbers.&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa orders"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;How can I check the status of my order?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;You may check the status of your most recent orders by clicking on &amp;quot;Track Orders&amp;quot; under My Account. You will be prompted to enter in your order number and either your zip code and/or email address. You are required to enter an e-mail address during Checkout, so that you may receive emails regarding the status of your order. This will bring your to the Order History page, which will provide you with detailed information about your current and past orders.Click on the tracking number located next to the item you want to track in order to view your order status and expected delivery date. If order &amp;quot;is in route,&amp;quot; you may opt to receive updates via SMS or email. If order &amp;quot;is processing,&amp;quot; you may view an expected delivery date. You may also sign into your account and click on &amp;quot;View your order status.&amp;quot; A link is also located in your confirmation email. &lt;strong&gt;Please note: order information may not appear in your order history on &lt;a href="https://www.tumi.com/"&gt;www.TUMI.com&lt;/a&gt; for up to 24 hours .&lt;/strong&gt;&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa orders"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;Can I change or cancel my order?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;After you have clicked &amp;quot;Place Order&amp;quot;, you cannot cancel or change your order. Our system is designed to process and ship orders immediately.&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa product-inquiry"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;How do I submit feedback for my Tumi products and/or experience?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;You may submit your feedback to &lt;a href="mailto:service@tumi.com"&gt;service@tumi.com&lt;/a&gt; and your information will be forwarded to the appropriate department. You may also leave a review on Tumi.com by going to the Product Detail Page, select Ratings and Reviews, and Add a Review.&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa product-inquiry"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;How do I set my TUMI lock? Where is my key?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;Please visit the Setting Your Tumi Lock section for instructions &lt;a href="https://www.tumi.com/s/tumi-lock"&gt;https://www.tumi.com/s/tumi-lock&lt;/a&gt; .&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa product-inquiry"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;How do I know if a product is available?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;A product's availability is clearly noted on the Product Detail page as In Stock, Backorder, or Pre-order. Most products on our site are In Stock and ready to ship. Some products are either not yet available (Pre-order) or temporarily out-of-stock (Backorder).&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa product-inquiry"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;What are the cleaning instructions for Tumi products?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;The TUMI nylon fabric refresher is a special spot cleaning formula that removes dirt and most stains from ballistic and micro fiber nylon fabrics. &lt;strong&gt;Directions for use:&lt;/strong&gt; Wipe excess dirt from fabric with a clean, dry cloth, bristle brush, or sponge. Gently rub into affected area. After a few seconds, wipe once more with a clean, damp cloth and air dry. The TUMI leather conditioner is a complete leather care product designed to clean, polish and protect most leathers (except suede or napped finishes). The special wax-free lotion was created for Tumi to preserve the rich luster and soft hand of its fine leather luggage, business cases, handbags and accessories. &lt;strong&gt;Directions for use:&lt;/strong&gt; Shake well. Always test on a small area before treating an entire item. Using a clean soft cloth, smooth conditioner onto leather surface, let dry, then buff gently with a soft dry cloth. For exotic and naked leather apply sparingly, work into the surface, let dry and buff with a soft absorbent cloth. For best results, apply the conditioner to product before its first use. Reapply as needed.&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa product-inquiry"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;Can I bring my TUMI | McLaren purchase into a TUMI store to be monogrammed?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;Yes. Complimentary monogramming is available for this collection. However, premium monogramming is not.&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa product-inquiry"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;Can I have the TUMI | McLaren logo monogrammed on any TUMI product?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;The TUMI | McLaren logo monogram is exclusive to the TUMI | McLaren collection.&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa product-inquiry"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;If I buy a TUMI | McLaren item in a McLaren dealership, can I return it to a TUMI store?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;TUMI | McLaren pieces purchased at a McLaren dealership cannot be returned to a TUMI store. The return policy is dependent upon the retailer where the product was originally purchased.&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa product-inquiry"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;Is the TUMI | McLaren collection available for anyone to purchase?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;All are welcome to shop the TUMI | McLaren collection. You do not need to purchase a McLaren vehicle or racecar to purchase from the collaboration.&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa product-inquiry"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;Where can I shop the TUMI | McLaren collection?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;The TUMI | McLaren collection will be available in TUMI Full-Price Retail stores, TUMI.com, select McLaren dealerships and select department and specialty locations, globally.&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa product-inquiry"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;Does the TUMI | McLaren collection fall within TUMI’s warranty policy?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;All TUMI | McLaren pieces are covered under TUMI's warranty policy. More information can be found &lt;a href="https://www.tumi.com/s/product-info-warranty/"&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa product-inquiry"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;How do I send my TUMI | McLaren piece in for repair?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;It will follow the same repair process that all other TUMI products follow. More information can be found &lt;a href="https://www.tumi.com/s/repair-services-guest/"&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa returns"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;What is your return policy?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;We want you to be fully satisfied with your TUMI products. If you aren’t, we offer complimentary returns within 30 days of receipt. TUMI Full Price Retail purchases can be returned at a TUMI Full Price Retail store. TUMI Outlet purchases can only be returned at a TUMI Outlet. TUMI.com returns can be made by mail or at our TUMI Retail stores. Please visit our &lt;a href="https://www.tumi.com/s/returns/"&gt;Return Policy&lt;/a&gt; page for more information.&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa returns"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;Does TUMI accept international returns?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;Returns can only be made within the original country of purchase.&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa returns"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;How do I make an exchange?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;While exchanges are not accepted by TUMI.com at this time, they can be made in store. You can also follow the return steps below and place a separate order on TUMI.com for the new desired item.&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa returns"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;Can I return a monogrammed product?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;Gift cards, Care Kits, and personalized products, including monogrammed and TUMI Accents are final sale.&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa returns"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;How long will it take for my refund to show?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;Refunds will be made to the original form of payment. Once we have received the return, please allow 3-5 days for inspection and processing. The time it takes for a refund to appear on your credit card statement varies from bank to bank. .&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa returns"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;How do I start my free return?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;&lt;strong&gt;Each package includes a prepaid UPS shipping label and return slip affixed to the exterior of your package. If you cannot locate or have misplaced your return shipping label, please call us at 1-800-299-8864.&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;To return an item purchased on TUMI.com, securely pack the unused item in the original packaging along with the completed return slip stating the reason for your return, all paperwork, parts, and accessories. Please remove any extra labels from the outside of the package before shipping.&lt;/li&gt;
+&lt;li&gt;You may bring the package to any UPS customer counter, authorized UPS shipping outlet or present the package to a UPS driver.&lt;/li&gt;
+&lt;li&gt;Keep the UPS return tracking number to monitor the shipment status.&lt;/li&gt;
+&lt;/ul&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa shipping"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;When should I expect to my products to be shipped?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;Make note of the Availability of the product. This tells you when we expect to ship your product from our warehouse. Once your product has left our warehouse, the shipping method you select during Checkout will determine when your order will arrive. (For example, if your product takes 1-2 full business days to leave our warehouse and you select &amp;quot;Priority&amp;quot; shipping, it may actually take 2-3 full business days for your order to arrive.) Products are only shipped during regular business days, which are Monday-Friday, excluding federal holidays within the United States. If you receive an email notifying you that your products have been shipped during a weekend or federal holiday, they will not actually be shipped until the following business day. &lt;strong&gt;Please note:&lt;/strong&gt; most items take a minimum of 1 to 2 days to leave our warehouse if in stock, before the shipping process begins. Additional time is required for monogramming and accenting of an item.&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa shipping"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;Why can&amp;#x27;t I ship an item I want from the U.S. website to another country and vice versa?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;Customers can only purchase product off their local site. Tumi does not participate in cross border shipping. If you would like to ship to a selected country, the purchaser must purchase the products from that specific country's website.&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa shipping"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;What carrier does Tumi use to ship their products?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;Tumi.com uses UPS to ship all customer orders in the U.S. and Canada.&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa shipping"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;Can items ordered ship separately?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;Items may ship separately depending on size, availability and the addition of value added services (accenting and monogramming).&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa store-pickup-and-curbside"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;How does the &amp;quot;Buy Online, Pick Up in Store&amp;quot; option work?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;You can navigate to Tumi.com to place your order and select to pick up in the store of your choice. Upon completion, you will receive an email acknowledging that we, TUMI, have received your order. As soon as we have prepared your order you will receive a confirmation email that your order is ready for pick up. &lt;strong&gt;Please note: Your order will not be ready for pick up in store until you receive an email confirmation.&lt;/strong&gt; If your order contains multiple shipments or pick-up locations, you will receive separate notifications when each has been processed. If you need a bag for your order, some TUMI stores may only provide paper bags for a nominal fee as required by law. The fee varies by location. For your convenience, we will hold your order for 14 days. If you do not pick up your order in your selected TUMI Authorized Full Price Store location, we will have to cancel your order and issue you a refund via Mail Check. In order to pick up your order, please bring the following: Driver's License or state/government issued photo ID, Credit Card or gift card used for the purchase (only the individual named on the credit card can pick up the order) and a copy of this email (optional).&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa store-pickup-and-curbside"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;When will my order be ready for pick up?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;Your order will only be ready when you receive an email confirmation telling you so. Please continue to check your email for this notice.&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa store-pickup-and-curbside"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;How long will you hold my item(s) at the store?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;For your convenience, we will hold your order for 14 days. If you do not pick up your order in your selected TUMI Authorized Full Price Store location, we will have to cancel your order and issue you a refund via Mail Check.&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa store-pickup-and-curbside"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;What do I need to bring to the store when I pick up my order?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;In order to pick up your order, please bring the following: Driver's License or state/government issued photo ID, Credit Card or gift card used for the purchase and a copy of this email (optional).&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa store-pickup-and-curbside"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;Who can pick up my order?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;Only the individual named on the credit card can pick up the order in store.&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa store-pickup-and-curbside"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;Are TUMI stores open?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;We are working tirelessly on our plan to reopen our stores and evaluating market-by-market to understand where itâ€™s safe to consider reopening. Our goal is not only to reopen, but to welcome our community back safely. As soon as we feel confident and responsible in doing so in your neighborhoodâ€”with the guidance of our local and federal governmentsâ€”youâ€™ll hear from us with further details. You can find more details regarding a store near you on our TUMI Store Locator page.&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa store-pickup-and-curbside"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;What new safety precautions will be taken?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;We are working through many initiatives including curbside pickup, social distancing considerations, enhanced cleaning and disinfecting protocols, and reduced contact during the store experience to ensure that we can operate safely. Weâ€™ll have health and safety procedures in place for our store teams, and clear guidance for you on how to shop or utilize curbside pickup. In addition, we recommend that a face mask/covering be worn to ensure the safety of yourself and others (select states required per local regulations). TUMI safety measures include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Care Stations:&lt;/strong&gt; Each store will have a dedicated sanitation space cleared of all products stocked with hand sanitizer, face masks/coverings, and disinfecting surface cleaner.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Employee Protection:&lt;/strong&gt; All TUMI employees will wear a face mask/covering, as required by state guidelines, as well as have easy access to hand sanitizer and disinfecting surface cleaner.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Social Distancing:&lt;/strong&gt; Floor decals will be present measuring six feet apart to ensure necessary social distancing requirements.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Mobile Shopping Experience:&lt;/strong&gt; Call your local TUMI store and speak with a store associate to place your order with contactless payment..&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Curbside Pickup:&lt;/strong&gt; For store purchases made online or by phone, curbside pickup will be offered in order to retrieve your purchases in a safe and timely manner.&lt;/li&gt;
+&lt;/ul&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa store-pickup-and-curbside"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;Are masks required?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;All TUMI employees will wear a face mask/covering in our stores, as required by state guidelines. We recommend that a face mask/covering be worn by our customers as well to ensure the safety of yourself and others (select states required per local regulations).&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa store-pickup-and-curbside"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;Do you offer curbside pickup?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;Yes. For store purchases made online or by phone, curbside pickup will be offered in order to retrieve your purchases in a safe and timely manner. For online orders, once you receive the confirmation email that your order is ready for pickup, please call the store phone number listed in the pickup details. For phone orders, please call your local store directly and a store associate will coordinate the purchase and pickup details with you. For both online and phone orders, a store associate will provide details and directions to schedule curbside service as it may vary per location. Please refrain from attempting to pick up or schedule curbside service for your items until you receive confirmation that your order is ready.&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa store-pickup-and-curbside"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;Where do I go for curbside pickup?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;For both online and phone orders, a store associate will provide additional details and directions via phone to schedule curbside service as it may vary per location. Please refrain from attempting to pick up or schedule curbside service for your items until you receive confirmation that your order is ready.&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qa store-pickup-and-curbside"&gt;
+          &lt;div class="question"&gt;
+            &lt;a href="#"&gt;How to set up an appointment?&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="answer"&gt;
+          &lt;p&gt;If you are interested in purchasing from a TUMI retail store, but are hesitant to visit one, TUMI is offering the option to set up an appointment with a store associate. You may schedule an appointment to Facetime/Google Duo with a store associate for a virtual shopping experience or schedule an appointment with a store associate for a private in store shopping experience. To schedule your appointment, please call your local TUMI retail store. Click &lt;a href="https://www.tumi.com/store-finder#reopened-stores-list."&gt;here&lt;/a&gt; to find more details regarding TUMI retail store openings near you.&lt;/p&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+  
+  
+  
+&lt;/div&gt;
+
+     &lt;div class="faq-footer removeFocusIndicator"&gt;
+            &lt;h2 class="haveQuestions"&gt;Still have questions?&lt;/h2&gt;
+            &lt;div class="faq-form-cntr"&gt;
+                    &lt;p class="bestway-txt"&gt;The best way to reach us is by email.&lt;/p&gt;
+                    &lt;div class="regular-options"&gt;
+                        &lt;div id="faq-next-btn-cntr"&gt;
+                            &lt;a href="/contactUsForm" class="btn faq-btn" aria-label="Contact Us"&gt;Contact Us&lt;/a&gt;
+                            &lt;/div&gt;
+                    &lt;/div&gt;
+                
+                &lt;/div&gt;
+
+        &lt;/div&gt;
+    
+&lt;/div&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="footer-copyright">
+        <display-name xml:lang="x-default">Footer Copyright</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;div class="row footer-copyright"&gt;&#13;
+&lt;div class="col-md-12 col-sm-12 col-12 order-2 order-md-1"&gt;&#13;
+&lt;ul class="footer-copyright-links"&gt;&#13;
+	&lt;li&gt;&amp;copy;2022 Tumi, Inc.&lt;/li&gt;&#13;
+	&lt;li&gt;Tumi Canada, ULC&lt;/li&gt;&#13;
+	&lt;li&gt;&lt;a href="$httpsURL('Page-Show', 'cid', 'terms-and-conditions')$"&gt;Terms &amp;amp; Conditions&lt;/a&gt;&lt;/li&gt;&#13;
+	&lt;li&gt;&lt;a href="$httpsURL('Page-Show', 'cid', 'supply-chain')$"&gt;Transparency in Supply Chain Act&lt;/a&gt;&lt;/li&gt;&#13;
+	&lt;li&gt;&lt;a href="$httpsURL('Page-Show', 'cid', 'web-accessibility-statement')$"&gt;Web Accessibility Statement&lt;/a&gt;&lt;/li&gt;&#13;
+	&lt;li&gt;&lt;a href="$httpsURL('Page-Show', 'cid', 'modern-slavery-statement')$"&gt;Modern Slavery Statement&lt;/a&gt;&lt;/li&gt;&#13;
+	&lt;li&gt;&lt;a href="$httpsURL('Page-Show', 'cid', 'privacy-policy')$"&gt;Privacy Policy&lt;/a&gt;&lt;/li&gt;&#13;
+	&lt;li&gt;&lt;a href="$httpsURL('Page-Show', 'cid', 'sitemap')$"&gt;Sitemap&lt;/a&gt;&lt;/li&gt;&#13;
+&lt;/ul&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="footer-links">
+        <display-name xml:lang="x-default">Footer Links</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;div class="row" data-creative-name="footer-links"&gt;&#13;
+    &lt;div class="col-md-4"&gt;&#13;
+      &lt;ul class="footer-menu-links"&gt;&#13;
+        &lt;li&gt;&#13;
+            &lt;a class="title" id="footer-corporate-gifing"&gt;TUMI Corporate Gifting&lt;/a&gt;&#13;
+            &lt;ul class="footer-menu-sub-links" aria-labelledby="footer-corporate-gifing"&gt;&#13;
+            &lt;li&gt;&lt;a href="$url('Search-Show', 'cgid', 'productcatalog')$"&gt;Product Catalog&lt;/a&gt;&lt;/li&gt;&#13;
+            &lt;li&gt;&lt;a href="$url('Search-Show', 'cgid', 'corporatecollection')$"&gt;Corporate Collection&lt;/a&gt;&lt;/li&gt;&#13;
+            &lt;li&gt;&lt;a href="$url('Page-Show', 'cid', 'customize')$"&gt;Customization&lt;/a&gt;&lt;/li&gt;&#13;
+            &lt;li&gt;&lt;a href="$url('RepLocator-Show')$"&gt;Rep Locator&lt;/a&gt;&lt;/li&gt;&#13;
+            &lt;li&gt;&lt;a target="_blank" href="https://s7d2.scene7.com/is/content/Tumi/Special%20Markets/TumiFittingEventBrochure.pdf"&gt;On-Site Fitting Program&lt;/a&gt;&lt;/li&gt;&#13;
+            &lt;li&gt;&lt;a href=""&gt;Plate Policy&lt;/a&gt;&lt;/li&gt;&#13;
+            &lt;/ul&gt;&#13;
+        &lt;/li&gt;&#13;
+      &lt;/ul&gt;&#13;
+    &lt;/div&gt;&#13;
+&#13;
+    &lt;div class="col-md-4"&gt;&#13;
+        &lt;ul class="footer-menu-links"&gt;&#13;
+        &lt;li&gt;&#13;
+            &lt;a class="title" id="footer-contact-us"&gt;Contact Us&lt;/a&gt;&#13;
+            &lt;ul class="footer-menu-sub-links mb" aria-labelledby="footer-contact-us"&gt;&#13;
+                &lt;li&gt;&lt;a href="tel:18006693181"&gt;1-800-669-3181&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;li&gt;&lt;a href="mailto:Renee.Sarao@tumi.com"&gt;Renee.Sarao@tumi.com&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;li&gt;&lt;a href="mailto:Elaine.Schwarz@tumi.com"&gt;Elaine.Schwarz@tumi.com&lt;/a&gt;&lt;/li&gt;&#13;
+            &lt;/ul&gt;&#13;
+        &lt;/li&gt;&#13;
+        &lt;/ul&gt;&#13;
+    &lt;/div&gt;&#13;
+    &lt;div class="col-md-4"&gt;&#13;
+        &lt;ul class="footer-menu-links"&gt;&#13;
+            &lt;li&gt;&#13;
+                &lt;a class="title" id="footer-about-tumi"&gt;Learn More&lt;/a&gt;&#13;
+                &lt;ul class="footer-menu-sub-links" aria-labelledby="footer-about-tumi"&gt;&#13;
+                    &lt;li&gt;&lt;a href="https://www.tumi.com"&gt;TUMI.com&lt;/a&gt;&lt;/li&gt;&#13;
+                    &lt;li&gt;&lt;a href="https://www.tumi.com/s/about/"&gt;About TUMI&lt;/a&gt;&lt;/li&gt;&#13;
+                    &lt;li&gt;&lt;a href=""&gt;Setting Your TUMI Lock&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;/ul&gt;&#13;
+            &lt;/li&gt;&#13;
+        &lt;/ul&gt;&#13;
+    &lt;/div&gt;&#13;
+  &lt;/div&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="grid-breaker-component-1">
+        <display-name xml:lang="x-default">Grid Breaker Component one</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;div class="slot-1 col-12 col-sm-4 d-none"&gt;&#13;    &lt;div class="grid-breaker-component &#13;     theme-dark  &#13;     "&gt;&#13;        &lt;div class="content"&gt;&#13;            &lt;div class="title"&gt;SPRING SALE&lt;/div&gt;&#13;            &lt;h3 class="description"&gt;Get 10% off on Select bags&lt;/h3&gt;&#13;            &lt;a href="javascript:void(0);" class="button"&gt;Shop Now&lt;/a&gt;&#13;        &lt;/div&gt;&#13;    &lt;/div&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="grid-breaker-component-2">
+        <display-name xml:lang="x-default">Grid Breaker Component two</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;div class="slot-2 col-12 col-sm-8 d-none"&gt;&#13;    &lt;div class="grid-breaker-component &#13;     theme-dark  &#13;     "&gt;&#13;        &lt;div class="content"&gt;&#13;            &lt;div class="title"&gt;SPRING SALE&lt;/div&gt;&#13;            &lt;h3 class="description"&gt;Get 10% off on Select bags&lt;/h3&gt;&#13;            &lt;a href="javascript:void(0);" class="button"&gt;Shop Now&lt;/a&gt;&#13;        &lt;/div&gt;&#13;    &lt;/div&gt;&#13;&lt;/div&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="grid-breaker-component-3">
+        <display-name xml:lang="x-default">Grid Breaker Component three</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;div class="slot-3 col-12 col-sm-12 d-none"&gt;&#13;    &lt;div class="grid-breaker-component &#13;     &#13;     theme-light   "&gt;&#13;        &lt;div class="content"&gt;&#13;            &lt;div class="title"&gt;SPRING SALE&lt;/div&gt;&#13;            &lt;h3 class="description"&gt;Get 10% off on Select bags&lt;/h3&gt;&#13;            &lt;a href="javascript:void(0);" class="button"&gt;Shop Now&lt;/a&gt;&#13;        &lt;/div&gt;&#13;    &lt;/div&gt;&#13;&lt;/div&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="grid-breaker-component-4">
+        <display-name xml:lang="x-default">Grid Breaker Component four</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;div class="slot-4 h-100 d-none"&gt;&#13;    &lt;div class="grid-breaker-component &#13;     theme-dark  &#13;     "&gt;&#13;        &lt;div class="content"&gt;&#13;            &lt;div class="title"&gt;SPRING SALE&lt;/div&gt;&#13;            &lt;h3 class="description"&gt;Get 10% off on Select bags&lt;/h3&gt;&#13;            &lt;a href="javascript:void(0);" class="button"&gt;Shop Now&lt;/a&gt;&#13;        &lt;/div&gt;&#13;    &lt;/div&gt;&#13;&lt;/div&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="grid-breaker-component-5">
+        <display-name xml:lang="x-default">Grid Breaker Component five</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;div class="slot-5 col-12 col-sm-12 d-none"&gt;&#13;    &lt;div class="grid-breaker-component &#13;     &#13;     theme-light   "&gt;&#13;        &lt;div class="content"&gt;&#13;            &lt;div class="title"&gt;SPRING SALE&lt;/div&gt;&#13;            &lt;h3 class="description"&gt;Get 10% off on Select bags&lt;/h3&gt;&#13;            &lt;a href="javascript:void(0);" class="button"&gt;Shop Now&lt;/a&gt;&#13;        &lt;/div&gt;&#13;    &lt;/div&gt;&#13;&lt;/div&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="hero-component">
+        <display-name xml:lang="x-default">Hero Component</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;div data-creative-name="hero-component"&gt;
+
+    
+    &lt;div id="hero-component-carousel" class=" hero-carousel carousel slide" data-ride="carousel"&gt;
+    
+        &lt;div class="carousel-inner"&gt;
+            &lt;div class="carousel-item  active "&gt;
+                &lt;div class="
+    
+      container-fluid hero-banner position-relative gradient-dark
+    
+    
+    
+    
+      "&gt;
+          &lt;picture&gt;
+              &lt;source media="(max-width:640px)" srcset="https://dev09-na01-tumi.demandware.net/on/demandware.static/Sites-tumi-us-Site/-/default/dwcd1154ad/images/hero-mobile.png"&gt;
+              &lt;img class="img-fluid w-100" src="https://dev09-na01-tumi.demandware.net/on/demandware.static/Sites-tumi-us-Site/-/default/dw741baec1/images/Hero-desktop.png" alt="Maclaren"&gt;
+              &lt;/picture&gt;
+    
+       
+        
+          &lt;div class="gradient 
+          gradient-left 
+        
+        
+          gradient-top 
+      
+        "&gt;
+        &lt;/div&gt;
+        
+    
+        &lt;div class="
+          
+        
+         content-text text-content position-absolute d-flex align-items-start align-items-sm-center justify-content-sm-start justify-content-center text-align-left 
+        "&gt;
+          &lt;a href="https://www.tumi.com/s/mclaren/" target="_blank"class="anchorClass"&gt;
+          &lt;/a&gt;
+          &lt;div class="text-collection"&gt;
+           &lt;div&gt;
+          &lt;p class="collection-name"&gt;THE MACLAREN COLLECTION&lt;/p&gt;
+          &lt;p class="banner-header"&gt;Performance with Purpose&lt;/p&gt;
+          &lt;p class="description"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.&lt;/p&gt;
+        &lt;/div&gt;
+          
+      &lt;div class="button-redirect"&gt;
+        &lt;a class="button button--primary"href="https://www.tumi.com/c/mclaren/"target="_blank" &gt;Primary CTA&lt;/a&gt;
+        &lt;a class="button button--secondary"href="https://www.tumi.com/c/mclaren/"target="_blank" &gt;Secondary CTA&lt;/a&gt;
+        &lt;/div&gt;
+      
+      
+    
+    
+          &lt;/div&gt;
+          
+          &lt;/div&gt;
+          &lt;div class="disclaimer position-absolute d-flex align-items-center justify-content-sm-start justify-content-center"&gt;
+            Disclaimer lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          &lt;/div&gt;
+          
+    
+    
+        &lt;/div&gt;
+          &lt;a class="carousel-control-prev" href="#hero-component-carousel" role="button" data-slide="prev"&gt;
+               
+      
+    
+    
+    
+    
+                    &lt;svg width="21" height="12" viewBox="0 0 21 12" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;
+                      &lt;path d="M1.24572 6H21" stroke="white"/&gt;
+                      &lt;path d="M6.09961 1L1.24523 6L6.09961 11" stroke="white"/&gt;
+                      &lt;/svg&gt;
+                      
+    
+    
+    
+                    
+             
+      
+      
+      
+              &lt;/a&gt;
+      
+      
+              &lt;a class="carousel-control-next" href="#hero-component-carousel" role="button" data-slide="next"&gt;
+      
+    
+    
+    
+    
+    
+                    &lt;svg width="21" height="12" viewBox="0 0 21 12" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;
+                        &lt;path d="M19.7543 6H0" stroke="#1B1C1E"/&gt;
+                        &lt;path d="M14.9004 1L19.7548 6L14.9004 11" stroke="#1B1C1E"/&gt;
+                        &lt;/svg&gt;
+                      
+    
+    
+    
+    
+              &lt;/a&gt;
+              &lt;/div&gt;
+             
+            &lt;div class="carousel-item "&gt;
+                &lt;div class="
+      container-fluid hero-banner position-relative gradient-light
+    
+    
+    
+    
+    
+      "&gt;
+          &lt;picture&gt;
+              &lt;source media="(max-width:640px)" srcset="https://dev09-na01-tumi.demandware.net/on/demandware.static/Sites-tumi-us-Site/-/default/dwcd1154ad/images/hero-mobile.png"&gt;
+              &lt;img class="img-fluid w-100" src="https://dev09-na01-tumi.demandware.net/on/demandware.static/Sites-tumi-us-Site/-/default/dw741baec1/images/Hero-desktop.png" alt=""&gt;
+              &lt;/picture&gt;
+    
+       
+        
+          &lt;div class="gradient 
+        
+          gradient-right 
+        
+        
+        gradient-bottom 
+        "&gt;
+        &lt;/div&gt;
+        
+    
+          
+        &lt;div class="
+         content-text text-content position-absolute d-flex align-items-end align-items-sm-center justify-content-sm-end justify-content-center bottom-padding text-align-right right-padding  
+        
+        
+        "&gt;
+          &lt;a href="https://www.tumi.com/s/mclaren/" target="_blank"class="anchorClass"&gt;
+          &lt;/a&gt;
+          &lt;div class="text-collection"&gt;
+           &lt;div&gt;
+          &lt;p class="collection-name"&gt;THE MACLAREN COLLECTION SECOND&lt;/p&gt;
+          &lt;p class="banner-header"&gt;EXPLORE MACLAREN&lt;/p&gt;
+          &lt;p class="description"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.&lt;/p&gt;
+        &lt;/div&gt;
+          
+      &lt;div class="button-redirect"&gt;
+        &lt;a class="button button--primary"href="https://www.tumi.com/c/mclaren/"target="_blank" &gt;Primary CTA&lt;/a&gt;
+        &lt;a class="button button--secondary"href="https://www.tumi.com/c/mclaren/"target="_blank" &gt;Secondary CTA&lt;/a&gt;
+        &lt;/div&gt;
+      
+          
+          &lt;/div&gt;
+         
+          &lt;/div&gt;
+          &lt;div class="disclaimer position-absolute d-flex align-items-center justify-content-sm-end justify-content-center right-padding"&gt;
+            Disclaimer lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          &lt;/div&gt;
+    
+    
+        &lt;/div&gt;
+          &lt;a class="carousel-control-prev" href="#hero-component-carousel" role="button" data-slide="prev"&gt;
+               
+      
+    
+    
+    
+                    &lt;svg width="21" height="12" viewBox="0 0 21 12" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;
+                      &lt;path d="M1.24572 6H21" stroke="white"/&gt;
+                      &lt;path d="M6.09961 1L1.24523 6L6.09961 11" stroke="white"/&gt;
+                      &lt;/svg&gt;
+                      
+    
+    
+    
+             
+      
+      
+      
+              &lt;/a&gt;
+      
+      
+              &lt;a class="carousel-control-next" href="#hero-component-carousel" role="button" data-slide="next"&gt;
+      
+    
+    
+    
+    
+                    &lt;svg width="21" height="12" viewBox="0 0 21 12" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;
+                        &lt;path d="M19.7543 6H0" stroke="#1B1C1E"/&gt;
+                        &lt;path d="M14.9004 1L19.7548 6L14.9004 11" stroke="#1B1C1E"/&gt;
+                        &lt;/svg&gt;
+                      
+    
+    
+    
+    
+    
+              &lt;/a&gt;
+              &lt;/div&gt;
+             
+          
+    
+            
+    
+            &lt;/div&gt;
+    
+    &lt;/div&gt;
+    
+    
+          &lt;/div&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="home-carousel">
+        <display-name xml:lang="x-default">Hero Component Left Aligned</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;div data-creative-name="home-carousel"&gt;
+    
+
+  &lt;div class="
+  container-fluid hero-banner position-relative gradient-light
+
+
+
+
+
+  "&gt;
+      &lt;picture&gt;
+          &lt;source media="(max-width:640px)" srcset="https://dev09-na01-tumi.demandware.net/on/demandware.static/Sites-tumi-us-Site/-/default/dwcd1154ad/images/hero-mobile.png"&gt;
+          &lt;img class="img-fluid w-100" src="https://dev09-na01-tumi.demandware.net/on/demandware.static/Sites-tumi-us-Site/-/default/dw741baec1/images/Hero-desktop.png" alt="Maclaren"&gt;
+          &lt;/picture&gt;
+
+   
+    
+      &lt;div class=" 
+      gradient-left 
+    
+    
+    "&gt;
+    &lt;/div&gt;
+    
+
+    &lt;div class="
+      content-text text-content position-absolute d-flex align-items-end align-items-sm-center justify-content-sm-start justify-content-center bottom-padding text-align-left  
+    
+    
+    "&gt;
+      &lt;a href="https://www.tumi.com/s/mclaren/" target="_blank"class="anchorClass"&gt;
+      &lt;/a&gt;
+      &lt;div class="text-collection"&gt;
+       &lt;div&gt;
+      &lt;p class="collection-name"&gt;THE MACLAREN COLLECTION&lt;/p&gt;
+      &lt;p class="banner-header"&gt;Performance with Purpose&lt;/p&gt;
+      &lt;p class="description"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.&lt;/p&gt;
+    &lt;/div&gt;
+      
+      &lt;div class="button-redirect"&gt;
+        &lt;a class="button button--secondary"href="https://www.tumi.com/c/mclaren/"target="_blank" &gt;Primary CTA&lt;/a&gt;
+        &lt;/div&gt;
+  
+
+
+      &lt;/div&gt;
+      
+      &lt;/div&gt;
+      &lt;div class="disclaimer position-absolute d-flex align-items-center justify-content-sm-start justify-content-center"&gt;
+        Disclaimer lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      &lt;/div&gt;
+      
+
+
+    &lt;/div&gt;
+
+    &lt;/div&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="modern-slavery-statement">
+        <display-name xml:lang="x-default">Modern Slavery Statement</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;div class="container static-page"&gt;&#13;    &lt;h2&gt;MODERN SLAVERY AND HUMAN TRAFFICKING STATEMENT 2020&lt;/h2&gt;&#13;    &lt;p&gt;Samsonite International S.A. (the "Company"), together with our consolidated subsidiaries &#13;(the "Group"), is the world's best-known and largest lifestyle bag and travel luggage &#13;company, with a heritage dating back over 110 years. We are committed to conducting &#13;business in a way that is consistent with our traditional values – acting responsibly, honestly &#13;and ethically at all times and complying with the laws of the various countries where we do &#13;business.&lt;/p&gt;&#13;&lt;p&gt;This statement is made pursuant to Section 54 of the UK Modern Slavery Act of 2015 and &#13;the California Transparency in Supply Chains Act of 2010 (SB 657) and constitutes the &#13;Group's modern slavery statement for the financial year ended December 31, 2020.&lt;/p&gt; &#13;&lt;p&gt;This statement sets out the steps we are taking to identify and mitigate risks of modern &#13;slavery in our business operations and supply chains.&lt;/p&gt;&#13;&lt;h3&gt;Business Structure, Activities &amp; Supply Chain&lt;/h3&gt;&#13;&lt;p&gt;The Group is principally engaged in the design, manufacture, sourcing and distribution of &#13;luggage, business and computer bags, women’s bags, outdoor and casual bags, travel &#13;accessories and slim protective cases for personal electronic devices throughout the world. &#13;We sell our products primarily under the Samsonite®, Tumi®, American Tourister®, &#13;Speck®, High Sierra®, Gregory®, Lipault®, Kamiliant®, Hartmann® and ebags® brand &#13;names, as well as under other owned and licensed brand names.&lt;/p&gt;&#13;&lt;p&gt;As of December 31, 2020, the Group's products were sold in more than 100 countries.&lt;/p&gt; &#13;&lt;p&gt;The Company operates using a primarily decentralized structure across four key regions: &#13;Asia, Europe, Latin America and North America. We sell our products through a variety of &#13;wholesale distribution channels, through company-operated retail stores, and through e-commerce. Our principal wholesale distribution customers are department and specialty &#13;retail stores, mass merchants, catalog showrooms, and warehouse clubs.&lt;/p&gt; &#13;&lt;p&gt;The Company owns and operates manufacturing facilities in Oudenaarde, Belgium; &#13;Szekszárd, Hungary; Nashik, India; and, Cuautitlán Izcalli, Mexico. The remainder of our &#13;products are manufactured by independently owned and operated facilities. Most of the &#13;Company's third- party manufacturers are located in Asia, including Taiwan, China,&#13;Cambodia, Vietnam and Thailand.&lt;/p&gt;&#13;&lt;p&gt;To find out more about our company, please see: &lt;a href="https://corporate.samsonite.com/en/home.html"&gt;http://www.samsonite.com/investors&lt;/a&gt;&lt;/p&gt;&#13;&lt;h3&gt;Our commitment&lt;/h3&gt;&#13;&lt;p&gt;Modern slavery in any of its forms – whether as forced, bonded, or compulsory labor, or as &#13;human trafficking – represents some of the gravest forms of human rights abuse. The &#13;Group has a zero-tolerance approach to these illegal activities. &lt;/p&gt;&#13;&lt;p&gt;We are committed to maintaining systems that are designed to reduce the possibility of &#13;modern slavery occurring in our operations and supply chain.&lt;/p&gt;&#13;&lt;h3&gt;Our policies&lt;/h3&gt;&#13;&lt;p&gt;We uphold this commitment through our policies: our Employee Code of Conduct, &#13;Samsonite Ethical Charter and Tumi Standards of Engagement, in addition to our &#13;governance process which is supported by our leadership team.&lt;/p&gt; &#13;&lt;p&gt;The Company's employee Code of Conduct is mandatory and extends to every person &#13;working at the Group. Included in it is the Company's corporate commitment to legal &#13;compliance, ethical behavior, and support for labor standards enshrined by the International &#13;Labor Organization (ILO). The Code of Conduct acknowledges the Company's support for &#13;the ILO's central tenant: that people throughout the world should be able to undertake &#13;decent and productive work in conditions of freedom, equality, security and human dignity. &#13;The Company's policies explicitly include a prohibition on the use of forced or other &#13;compulsory labor across our business, as well as our supply chain. Employees who fail to &#13;abide by the Group's policies are subject to discipline and dismissal, if warranted.&lt;/p&gt; &#13;&lt;p&gt;We work to ensure that our global supply chain partners follow socially responsible and &#13;ethically acceptable practices. The Samsonite Ethical Charter guides our approach to &#13;minimum standards in the supply chain. Samsonite requires all suppliers and their &#13;subcontractors to accept this commitment. The first clause of this charter states that:&lt;/p&gt; &#13;&lt;p&gt;“The use of forced labor is forbidden, and employees shall not be kept in locked premises &#13;nor shall their freedom be restricted in any other way. No compulsory deposits of money or &#13;identity cards etc. shall be demanded from employees as security against work, and they &#13;shall be free to resign their employment within a reasonable term. (ILO Conventions 29 and &#13;105)”&lt;/p&gt;&#13;&lt;p&gt;In the case of the Company’s TUMI brand, a suppliers’ code of conduct, known as the &#13;Standards of Engagement, is in effect for its supply chain partners.&lt;/p&gt;&#13;&lt;p&gt;Collectively, these standards set forth the vision for acceptable business practices related to &#13;workers’ rights, working conditions, terms of employment, decent work, supplier systems, &#13;and worker protections. They are consistent with the ILO covenants, such as prohibitions &#13;against forced labor and child labor. The Company uses these standards as an integral &#13;component of our sourcing strategies, including how we evaluate supplier performance, and &#13;determine with which factories we will continue to engage and grow our business.&lt;/p&gt;&#13;&lt;h3&gt;Due Diligence Processes &amp; Risk Management&lt;/h3&gt;&#13;&lt;p&gt;The Group does not support or knowingly maintain relationships with any business involved &#13;or connected in any way with modern slavery. Nevertheless, the Group understands that the &#13;greatest risk of modern slavery is in our product supply chain; as such, we have undertaken &#13;activities to identify and minimize those risks with our direct and indirect final assembly &#13;suppliers, and with raw material or component suppliers with whom we have a direct &#13;contract.&lt;/p&gt; &#13;&lt;p&gt;The Company conducts due diligence checks of new and existing suppliers with whom we &#13;have a direct contractual relationship in the form of either self-assessment questionnaires or &#13;a compliance audit conducted by or on behalf of the Company. If evidence of modern &#13;slavery is found, the Group will examine the circumstances and develop the best possible &#13;strategy for resolution. The Group may act against those suppliers that do not demonstrate &#13;sufficient commitment to the supplier codes of conduct or are in breach of it; subsequent &#13;actions can include terminating the supplier.&lt;/p&gt; &#13;&lt;p&gt;The Group seeks to ensure that all new and existing third-party suppliers with whom we &#13;contract abide by the Company’s policies. Supply contracts require compliance, and the &#13;Group’s social compliance audit personnel visit suppliers on a regular basis and audit their &#13;compliance. Failure to remedy violations of the policy may result in termination of the &#13;relationship with the supplier. Monitoring and verification activities are carried out by a team &#13;of trained professionals based in China and in India.&lt;/p&gt;&#13;&lt;p&gt;135 audits were conducted in 2020 compared to 314 in 2019. The reduction in the number &#13;of audits was due to reduced production activity corresponding to reduced consumer &#13;demand as a result of the Covid-19 pandemic.&lt;/p&gt;&#13;&lt;p&gt;For more information, please refer to the Company’s 2020 ESG Report. [LINK]&lt;/p&gt;&#13;&lt;h3&gt;Training&lt;/h3&gt;&#13;&lt;p&gt;The Company's employees are introduced to the Code of Conduct during their induction &#13;orientation. We educate our suppliers about the prohibition on human trafficking, child &#13;labor, and other violations of our standards through the process of requiring adherence to &#13;the Code of Conduct and through our on-site monitoring and verification processes.&lt;/p&gt;&#13;&lt;h3&gt;Grievance Mechanisms and Remedy&lt;/h3&gt;&#13;&lt;p&gt;The Group maintains and enforces internal accountability procedures for employees and &#13;suppliers who fail to meet our standards to prevent the incidence of modern-day slavery in &#13;our operations and/or supply chain.&lt;/p&gt; &#13;&lt;p&gt;We provide the opportunity for everyone who works in the Group to report suspected &#13;breaches of the Employee Code of Conduct, including via an anonymous confidential hotline &#13;and website reporting service. Members of the Group's management team in the finance, &#13;legal, human resources and internal audit departments review any information that is &#13;submitted via the hotline. The hotline is available toll-free and is publicized to employees &#13;electronically, in our Code of Conduct, and through posters and in worker handbooks &#13;throughout our operations.&lt;/p&gt; &#13;&lt;p&gt;Employees may use this hotline, anonymously if desired, if they have any workplace concern &#13;that they wish to report. Employees using the hotline are protected against retaliation. &#13;Reports are investigated and appropriate remedial actions taken as needed.&lt;/p&gt; &#13;&lt;h3&gt;Program Evaluation&lt;/h3&gt;&#13;&lt;p&gt;Evaluation of the effectiveness of our efforts to ensure that no human trafficking or modern &#13;slavery is present in the Company or in our supply chain rests with the country and regional &#13;management for employees, and with sourcing and production staff in the supply chain; this &#13;process is reviewed periodically by the internal audit team.&lt;/p&gt;&#13;&lt;p&gt;We know that our work to ensure we are appropriately tackling the issue of modern slavery &#13;requires our ongoing commitment. We are committed to playing our part to identify and &#13;tackle issues of modern slavery that touch our business.&lt;/p&gt;&#13;&lt;p&gt;Approved by the Board on March 17, 2021.&lt;/p&gt;&#13;&lt;p&gt;Signed on behalf of the Board of SAMSONITE INTERNATIONAL S.A.&lt;/p&gt; &#13;&lt;p&gt;Kyle Francis Gendreau Chief Executive Officer&lt;/p&gt;&#13;    &lt;/div&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="privacy-policy">
+        <display-name xml:lang="x-default">Privacy Policy</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;div class="content removeFocusIndicator"&gt;&lt;style type="text/css"&gt;&#13;
+@media only screen and (min-width: 100px) and (max-width: 568px) {  /* Mobile */&#13;
+	.MOBILEtumi_privacy{&#13;
+		margin:0 0 40px 0;&#13;
+	}&#13;
+	.MOBILEcontent{&#13;
+	  border-bottom: 1px solid #555555;&#13;
+	  margin: 0px 8px; &#13;
+	}&#13;
+	.hide{&#13;
+	  display: none;&#13;
+	}&#13;
+	.read-more-toggle{&#13;
+	    color:#555555;&#13;
+	}&#13;
+	.read-more-toggle.active{&#13;
+	    color:#c41e3a;&#13;
+	}&#13;
+	.read-more-toggle:visited, .read-more-toggle:hover{&#13;
+	    color:#c41e3a;&#13;
+	    cursor: pointer;&#13;
+	}&#13;
+	.tumi_privacy{&#13;
+		display: none;&#13;
+	}&#13;
+	#underline{&#13;
+		text-decoration: underline;&#13;
+	}&#13;
+	.MOBILEtopHeader{&#13;
+		width: 100%;&#13;
+		height: 170px;&#13;
+		background-color: #222222;&#13;
+		padding: 5px 0px 8px 20px;&#13;
+	}&#13;
+	.MOBILEtopHeader h1{&#13;
+		color:#FFFFFF;&#13;
+		letter-spacing: .095em;&#13;
+		font-size: 36px;&#13;
+		padding-top: 68px;&#13;
+		padding-bottom: 20px;&#13;
+		font-weight: 800;&#13;
+	}&#13;
+	#privacyDescription{&#13;
+		padding: 0px 8px 10px 8px; &#13;
+	}&#13;
+	.icon-openarrow-right:before{&#13;
+		margin-bottom: 6px;&#13;
+	}&#13;
+	.icon-openarrow-down:before{&#13;
+		margin-bottom: 6px;&#13;
+	}&#13;
+}&#13;
+@media only screen and (min-width: 569px) { /* Tablet &amp; Desktop */&#13;
+	.tumi_privacy{&#13;
+		margin:0 0 40px 0;&#13;
+	}&#13;
+	.MOBILEtumi_privacy{&#13;
+		display: none;&#13;
+	}&#13;
+	.privacyContent{&#13;
+		margin: 40px 70px;&#13;
+	}&#13;
+	h1, h2, h3, h4, h5, h6 {&#13;
+		font-family:'proxima-nova', sans-serif;&#13;
+		font-color:#555555;&#13;
+		font-weight: 800;&#13;
+		margin: 0px;&#13;
+		padding: 0px;&#13;
+	}&#13;
+	.privacyContent h1{&#13;
+		font-size: 16px;&#13;
+		padding: 40px 0px 20px 0px;&#13;
+		position: relative;&#13;
+		text-transform: uppercase;&#13;
+	}&#13;
+	h2{&#13;
+		font-size: 20px;&#13;
+		padding: 20px 0px 5px 0px;&#13;
+		font-family:'proxima-nova', sans-serif;&#13;
+		font-weight:800;&#13;
+		letter-spacing:.025em;&#13;
+		line-height:1.25;&#13;
+		color:#222222;&#13;
+		text-transform: uppercase;&#13;
+	}&#13;
+	h3{&#13;
+		font-size:16px;&#13;
+		position: relative;&#13;
+		padding: 20px 0px 5px 0px;&#13;
+		font-family:'proxima-nova', sans-serif;&#13;
+		font-weight:800;&#13;
+		letter-spacing:.025em;&#13;
+		line-height:1.25;&#13;
+		color:#222222;&#13;
+		text-transform: uppercase;&#13;
+	}&#13;
+	p{&#13;
+		margin: 0;&#13;
+		padding-bottom: 15px;&#13;
+		font-family:'adobe-caslon-pro', serif; &#13;
+		font-size:16px; &#13;
+		font-weight:400;&#13;
+		letter-spacing:.025em;&#13;
+		line-height:1.75;&#13;
+		font-color:#555555;&#13;
+	}&#13;
+	#links{&#13;
+		color: #be0f34;&#13;
+		text-decoration: none;&#13;
+	}&#13;
+	a.redLink {&#13;
+		color: #be0f34;&#13;
+		line-height: 2.5;&#13;
+		font-size: 12px;&#13;
+		font-weight: 500;&#13;
+	}&#13;
+	#underline{&#13;
+		text-decoration: underline;&#13;
+	}&#13;
+	.topHeader{&#13;
+		width: 100%;&#13;
+		height: 170px;&#13;
+		background-color: #222222;&#13;
+		padding: 5px 0px 8px 70px;&#13;
+	}&#13;
+	.topHeader h1{&#13;
+		color:#FFFFFF;&#13;
+		letter-spacing: .095em;&#13;
+		font-size: 36px;&#13;
+		padding-top: 68px;&#13;
+		padding-bottom: 20px;&#13;
+	}&#13;
+}&#13;
+&lt;/style&gt;&#13;
+&#13;
+&lt;div class="tumi_privacy removeFocusIndicator"&gt;&#13;
+	&lt;div class="topHeader"&gt;&#13;
+		&lt;h1&gt;Privacy Policy &lt;/h1&gt;&#13;
+	&lt;/div&gt;&#13;
+&lt;div class="privacyContent removeFocusIndicator"&gt;&#13;
+&lt;p class="removeFocusIndicator"&gt;This Privacy Policy is Effective as of 7/15/2010.&lt;/p&gt;&#13;
+&#13;
+&#13;
+&lt;p&gt;Tumi Europe Ecommerce GmbH ("Tumi", "we" or "us") recognizes that the users and customers of this Web site, www.tumi.com (this "Site") and all other Tumi customers ("you"), care how information about you is used and shared. We have created this Privacy Policy to inform you of our information collection, use and sharing practices for this Web Site and for "Tumi's Off-line Channels", which include any Tumi retail sales location and any Tumi-sponsored event.&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;Please be advised that the practices described in this Privacy Policy apply not only to personal information gathered through this Site but also to all personal information collected from or submitted by you at any of Tumi's Off-line Channels, through the Tumi Tracer® program, to any Tumi employee, affiliate or agent and, where applicable, through this Site's Customer Service Department in connection with this Site, and do not necessarily reflect our practices with respect to information gathered through other Web sites that we operate.&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;If you have any questions regarding this Privacy Policy, you should contact our Site's Customer Service Department by email at &lt;a id="underline" href="mailto:service@tumi.com"&gt;service@tumi.com&lt;/a&gt;.&lt;/p&gt;&#13;
+&#13;
+&#13;
+&lt;h2&gt;What Information About Me Is Collected and Stored?&lt;/h2&gt;&#13;
+&#13;
+&lt;p&gt;We collect and store personal information that you enter into this Site or that you provide through your dealings with Tumi's Offline Channels, the Tumi Tracer® program, to any Tumi employee, affiliate or agent. &lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;Personal Information is information you provide that lets us know specific facts about you so that we can fulfill your orders and/or customize information we deliver to you. The personal information that we collect from you and store or that is submitted by you when you open an account, place an order, or otherwise transact business with us may include, but is not limited to: (i) your name; (ii) your address; (ii) your email address; (iv) your telephone number; and/or (v) your credit card or other payment information. This personal information is used to provide the products and services that you have ordered or requested, to process and ship orders, to send order and shipping confirmations and to provide customer service. Some of this information also may be used to contact you about sales, special offers and new site features, unless you have opted not to receive promotional communications from Tumi.&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;By choosing to provide Tumi with your personal information, you consent to the use of your personal information as provided in this Privacy Policy and as may be further identified at the time of collection. You may withdraw or limit your consent at any time by following the steps set forth in "&lt;strong&gt;Can I Indicate Whether or Not I Want To Receive Promotional Communications?&lt;/strong&gt;" below or by contacting our Customer Service Department by email at &lt;a id="underline" href="mailto:service@tumi.com"&gt;service@tumi.com&lt;/a&gt;.&lt;/p&gt;&#13;
+  &#13;
+&lt;p&gt;We collect and store certain other information automatically whenever you interact with this Site. For example, we collect your IP address, browser information and reference site domain name every time you visit this Site. We also collect information regarding customer traffic patterns and site usage. This information is used to analyze and improve this Site and to provide our customers with a fulfilling shopping experience.&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;Also, like many Web sites, we use "cookies", which are files stored on your computer's hard drive by your browser. Cookies help us to identify account holders and to optimize their shopping experience. Cookies also allow us to hold selections in a shopping cart when a user leaves this Site without checking out. Most browsers accept cookies automatically but allow you to disable them. We recommend that you leave cookies "turned on" so that we can offer you a better shopping experience on this Site. European rules on all website operators' use of cookies changed on 26 May 2011. We have always told our customers how we use cookies, but whilst we used to tell you how to opt out of their use, from 26 May 2011, you now need to opt-in. The UK government would like you to be able to do this using your browser settings and is currently working with browser manufacturers on a solution. Until then, we'd ask you to indicate your consent by continuing to access our website and/or by ticking the cookies acceptance box when prompted. If you do not consent, we cannot authorize you to use our website. &lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;We also may collect and store information about you that we receive from other sources, to enable us to update and correct the information contained in our database and to provide product recommendations and special offers that we think will interest you.&lt;/p&gt;&#13;
+&#13;
+&lt;h2&gt;Is Information Collected From Children?&lt;/h2&gt;&#13;
+&#13;
+&lt;p&gt;We do not sell or ship any items ordered through this Site directly to anyone who we know to be under the age of 18, nor do we collect any personal information from anyone who we know to be under the age of 18. If you are under the age of 18, you should use this Site only with the involvement of a parent or guardian and should not submit any personal information to us.&lt;/p&gt;&#13;
+&#13;
+&lt;h2&gt;With Whom Do You Share Information?&lt;/h2&gt;&#13;
+&#13;
+&lt;p&gt;We do not share with others any personal information that you provide to us through this Site or through this Site's Customer Service Department, except with your consent or as described in this Privacy Policy.&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;We may share personal information that you provide to us through this Site or through this Site's Customer Service Department with our affiliates and service providers. In turn, our service providers may share this personal information with their affiliates and with service providers whom they engage to perform services related to this Site or the operation of our business. Examples of these services include Web Site operation, payment processing and authorization, fraud protection and credit risk reduction, product customization, order fulfilment and shipping, customer service, marketing and promotional material distribution, data analysis and, where applicable, data cleansing. These service providers are authorized to use this personal information only in connection with the services they are engaged to perform.&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;We may use the services of one or more third parties to help us measure the effectiveness of our advertising and determine how customers use this Site. To do this, we may use web beacons and cookies provided by third parties, which enable us to collect information such as product codes and prices for merchandise that customers purchase and the pages visited. This information helps us to learn things like what pages are most attractive to our customers, which of our products most interest our customers and what kinds of offers our customers like to see.&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;Our site may, from time to time, include third party advertising. We do not provide personal information to these third party advertisers; however, they may use technology to send the advertisements that appear on our Site to your browser. In this process, the third party advertiser automatically receives your IP address. They may also employ cookies and web beacons to measure the effectiveness of their own advertisements and personalize your interaction with them. We do not have access to or control over the cookies, web beacons or other technology they may use, and the information collected by these third party advertisers are not covered by this Privacy Policy. Please contact them directly for further information regarding their information privacy policies. For your reference, the Network Advertising Initiative offers useful information about internet advertising companies, including methods of "opting-out" of their information collection practices.&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;We also may offer you the opportunity to purchase products and services provided by third parties. If you purchase any of these products or services, we will provide your personal information to the third parties that provide them for that purpose.&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;We may release personal information if we believe in good faith that: the law or legal process requires it; we have received a valid administrative request from a law enforcement agency or court; or such release is necessary to protect the rights, property or safety of Tumi, or any of our affiliates, service providers, customers or others.&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;We may share non-personal information with our marketing partners, advertisers and others from time to time. Examples of such non-personal information include the number of users who visited this Site during a specific time period or purchased a specific product through this Site. This information generally is shared in an aggregated form.&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;As with any business, it is possible that as our business develops, we might sell or buy online stores or other assets. In such transactions, information about customers often is among the transferred assets. Accordingly, in the unlikely event that Tumi, or substantially all of its assets related to this Site, is acquired by a third party, such information may be one of the transferred assets. Under such circumstances, Tumi would to the extent possible require the acquiring party to follow the practices described in this Privacy Policy, as it may be amended from time to time.&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;By using this Site, you acknowledge and consent to the fact that personal information provided by you or collected by us through your use of the Site is stored and processed by us in the United States where data protection laws may not afford the same level of protection as those of the country in which you are located (this is the case for users located in the European Economic Area ("EEA")). You also acknowledge and consent to the fact that we may, at our discretion, store and process such data in other countries (including countries outside the EEA) where data protection laws may not afford the same level of protection as those of the country in which you are located.&lt;/p&gt;&#13;
+&#13;
+&lt;h2&gt;What Steps Are Taken To Keep Personal Information Secure?&lt;/h2&gt;&#13;
+&#13;
+&lt;p&gt;Various security measures, including Secure Socket Layer (SSL) encryption technology, are used to protect personal information that we collect. If you place an order through this Site, you will be asked to set up an account and provide an email address and password. You must provide, among other information, an appropriate email address and password in order to access account information. Please note that while we have endeavoured to create a secure and reliable site for users, the confidentiality of any communication or material transmitted to/from this Site cannot be guaranteed. In order to help protect your personal information further, you should be careful about providing your password to others. If you wish to cancel your password, or if you become aware of any loss, theft or unauthorized use of your password, please contact this Site's Customer Service Department by email at &lt;a id="underline" href="mailto:service@tumi.com"&gt;service@tumi.com&lt;/a&gt;.&lt;/p&gt;&#13;
+&#13;
+&lt;h2&gt;How Can I Access, Correct and Update Personal Information?&lt;/h2&gt;&#13;
+&#13;
+&lt;p&gt;You can access, correct and update certain personal information that you have provided to us by clicking on "Manage Your Account" within the Help Desk area of this Site.&lt;/p&gt;&#13;
+  &#13;
+&lt;h2&gt;Can I Indicate Whether or Not I Want To Receive Promotional Communications?&lt;/h2&gt;&#13;
+&#13;
+&lt;p&gt;There are several ways in which you can tell us whether or not you want to receive promotional communications from us. At certain locations on the Site, you will have choices to opt-out or opt-in to receive various types of communications. When you set up an account, or click on "Manage Your Account" within the Help Desk area, or place an order, you will have an opportunity to make or change your selections in this regard. You also will have an opportunity to change these selections by clicking on an "unsubscribe" hyperlink contained in promotional emails we send you.&lt;/p&gt;&#13;
+&#13;
+&lt;h2&gt;What Happens When I Link To or From Another Site?&lt;/h2&gt;&#13;
+&#13;
+&lt;p&gt;This Site may contain links to other Web sites operated by affiliates of Tumi or third parties. Please be advised that the practices described in this Privacy Policy do not apply to information gathered through these other Web sites and that we are not responsible for the privacy policies, practices or contents of these other Web sites. We encourage you to be aware of when you leave this Site and to read the privacy policies of each and every Web site that you visit.&lt;/p&gt;&#13;
+&#13;
+&lt;h2&gt;What About Contests and Sweepstakes?&lt;/h2&gt;&#13;
+&lt;p&gt;When we run a contest or sweepstakes relating to this Site, it will be accompanied by a set of rules. The rules for each contest/sweepstakes will specify how the information gathered from you for entry will be used and disclosed, if different than as described in this Privacy Policy.&lt;/p&gt;&#13;
+&#13;
+&lt;h2&gt;How Will I Be Informed About Changes Regarding This Privacy Policy?&lt;/h2&gt;&#13;
+&#13;
+&lt;p&gt;Should we decide to amend this Privacy Policy, we will provide reasonable prior notice of such changes to you. All amended terms will automatically take effect 30 days after we provide such notice, or on a date that we specify in the notice. While in some instances we may provide notice by email or other means, you agree that notice on the Site about changes to this Privacy Policy shall be deemed sufficient notice to you. Your continued use of the Site after the effective date of the changes to this Privacy Policy shall mean that you accept and agree to be bound by those changes.&lt;/p&gt;&#13;
+&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&#13;
+&lt;script&gt;&#13;
+&#13;
+$(document).ready(function(){&#13;
+	$('.read-more-content').addClass('hide');&#13;
+	$('.read-more-toggle').addClass('icon-openarrow-right');&#13;
+	$('.MOBILEcontent').each(function(){&#13;
+		var $accordian = $(this);&#13;
+		$accordian.find('.read-more-toggle').on('click', function(){&#13;
+&#13;
+			$(this).removeClass('icon-openarrow-down').addClass('icon-openarrow-right');&#13;
+			$accordian.find('.read-more-content').slideUp(1000);&#13;
+&#13;
+			if(!$(this).next().is(':visible')){&#13;
+				&#13;
+				$(this).removeClass('icon-openarrow-right').addClass('icon-openarrow-down');&#13;
+				$(this).next().slideDown(1000);&#13;
+			}&#13;
+		});&#13;
+	});&#13;
+});&#13;
+&lt;/script&gt;&#13;
+&#13;
+&lt;div class="MOBILEtumi_privacy"&gt;&#13;
+	&lt;div class="MOBILEtopHeader"&gt;&#13;
+		&lt;h1&gt;Privacy Policy&lt;/h1&gt;&#13;
+	&lt;/div&gt;&#13;
+&lt;div&gt;&#13;
+&lt;p id="privacyDescription"&gt;This Privacy Policy is Effective as of 7/15/2010.&lt;/p&gt;&#13;
+&#13;
+&lt;p id="privacyDescription"&gt;Tumi Europe Ecommerce GmbH ("Tumi", "we" or "us") recognizes that the users and customers of this Web site, www.tumi.com (this "Site") and all other Tumi customers ("you"), care how information about you is used and shared. We have created this Privacy Policy to inform you of our information collection, use and sharing practices for this Web Site and for "Tumi's Off-line Channels", which include any Tumi retail sales location and any Tumi-sponsored event.&lt;/p&gt;&#13;
+&#13;
+&lt;p id="privacyDescription"&gt;Please be advised that the practices described in this Privacy Policy apply not only to personal information gathered through this Site but also to all personal information collected from or submitted by you at any of Tumi's Off-line Channels, through the Tumi Tracer® program, to any Tumi employee, affiliate or agent and, where applicable, through this Site's Customer Service Department in connection with this Site, and do not necessarily reflect our practices with respect to information gathered through other Web sites that we operate.&lt;/p&gt;&#13;
+&#13;
+&lt;p id="privacyDescription"&gt;If you have any questions regarding this Privacy Policy, you should contact our Site's Customer Service Department by email at &lt;a id="underline" href="mailto:service@tumi.com"&gt;service@tumi.com&lt;/a&gt;.&lt;/p&gt;&#13;
+&#13;
+&lt;/div&gt;&#13;
+&lt;div class="MOBILEcontent"&gt;&#13;
+  &lt;p class="read-more-toggle icon-openarrow-right"&gt;   What Information About Me Is Collected and Stored?&lt;/p&gt;&#13;
+    &lt;p class="read-more-content hide"&gt; We collect and store personal information that you enter into this Site or that you provide through your dealings with Tumi's Offline Channels, the Tumi Tracer® program, to any Tumi employee, affiliate or agent.&#13;
+    &lt;br&gt;&lt;br&gt;&#13;
+    Personal Information is information you provide that lets us know specific facts about you so that we can fulfill your orders and/or customize information we deliver to you. The personal information that we collect from you and store or that is submitted by you when you open an account, place an order, or otherwise transact business with us may include, but is not limited to: (i) your name; (ii) your address; (ii) your email address; (iv) your telephone number; and/or (v) your credit card or other payment information. This personal information is used to provide the products and services that you have ordered or requested, to process and ship orders, to send order and shipping confirmations and to provide customer service. Some of this information also may be used to contact you about sales, special offers and new site features, unless you have opted not to receive promotional communications from Tumi.&#13;
+    &lt;br&gt;&lt;br&gt;&#13;
+    By choosing to provide Tumi with your personal information, you consent to the use of your personal information as provided in this Privacy Policy and as may be further identified at the time of collection. You may withdraw or limit your consent at any time by following the steps set forth in "&lt;strong&gt;Can I Indicate Whether or Not I Want To Receive Promotional Communications?&lt;/strong&gt;" below or by contacting our Customer Service Department by email at &lt;a id="underline" href="mailto:service@tumi.com"&gt;service@tumi.com&lt;/a&gt;.&#13;
+    &lt;br&gt;&lt;br&gt;&#13;
+   	We collect and store certain other information automatically whenever you interact with this Site. For example, we collect your IP address, browser information and reference site domain name every time you visit this Site. We also collect information regarding customer traffic patterns and site usage. This information is used to analyze and improve this Site and to provide our customers with a fulfilling shopping experience.&#13;
+    &lt;br&gt;&lt;br&gt;&#13;
+    Also, like many Web sites, we use "cookies", which are files stored on your computer's hard drive by your browser. Cookies help us to identify account holders and to optimize their shopping experience. Cookies also allow us to hold selections in a shopping cart when a user leaves this Site without checking out. Most browsers accept cookies automatically but allow you to disable them. We recommend that you leave cookies "turned on" so that we can offer you a better shopping experience on this Site. European rules on all website operators' use of cookies changed on 26 May 2011. We have always told our customers how we use cookies, but whilst we used to tell you how to opt out of their use, from 26 May 2011, you now need to opt-in. The UK government would like you to be able to do this using your browser settings and is currently working with browser manufacturers on a solution. Until then, we'd ask you to indicate your consent by continuing to access our website and/or by ticking the cookies acceptance box when prompted. If you do not consent, we cannot authorize you to use our website. &#13;
+    &lt;br&gt;&lt;br&gt;&#13;
+    We also may collect and store information about you that we receive from other sources, to enable us to update and correct the information contained in our database and to provide product recommendations and special offers that we think will interest you.&#13;
+    &lt;br&gt;&lt;br&gt;&#13;
+    &lt;/p&gt;&#13;
+&lt;/div&gt;&#13;
+&#13;
+&lt;div class="MOBILEcontent"&gt;&#13;
+  &lt;p class="read-more-toggle icon-openarrow-right"&gt;   Is Information Collected From Children?&lt;/p&gt;&#13;
+    &lt;p class="read-more-content hide"&gt;We do not sell or ship any items ordered through this Site directly to anyone who we know to be under the age of 18, nor do we collect any personal information from anyone who we know to be under the age of 18. If you are under the age of 18, you should use this Site only with the involvement of a parent or guardian and should not submit any personal information to us.&lt;/p&gt;&#13;
+&lt;/div&gt;&#13;
+&#13;
+&lt;div class="MOBILEcontent"&gt;&#13;
+  &lt;p class="read-more-toggle icon-openarrow-right"&gt;   With Whom Do You Share Information?&lt;/p&gt;&#13;
+    &lt;p class="read-more-content hide"&gt;&#13;
+    We do not share with others any personal information that you provide to us through this Site or through this Site's Customer Service Department, except with your consent or as described in this Privacy Policy.&#13;
+    &lt;br&gt;&lt;br&gt;&#13;
+    We may share personal information that you provide to us through this Site or through this Site's Customer Service Department with our affiliates and service providers. In turn, our service providers may share this personal information with their affiliates and with service providers whom they engage to perform services related to this Site or the operation of our business. Examples of these services include Web Site operation, payment processing and authorization, fraud protection and credit risk reduction, product customization, order fulfilment and shipping, customer service, marketing and promotional material distribution, data analysis and, where applicable, data cleansing. These service providers are authorized to use this personal information only in connection with the services they are engaged to perform.&#13;
+    &lt;br&gt;&lt;br&gt;&#13;
+    We may use the services of one or more third parties to help us measure the effectiveness of our advertising and determine how customers use this Site. To do this, we may use web beacons and cookies provided by third parties, which enable us to collect information such as product codes and prices for merchandise that customers purchase and the pages visited. This information helps us to learn things like what pages are most attractive to our customers, which of our products most interest our customers and what kinds of offers our customers like to see.&#13;
+    &lt;br&gt;&lt;br&gt;&#13;
+    Our site may, from time to time, include third party advertising. We do not provide personal information to these third party advertisers; however, they may use technology to send the advertisements that appear on our Site to your browser. In this process, the third party advertiser automatically receives your IP address. They may also employ cookies and web beacons to measure the effectiveness of their own advertisements and personalize your interaction with them. We do not have access to or control over the cookies, web beacons or other technology they may use, and the information collected by these third party advertisers are not covered by this Privacy Policy. Please contact them directly for further information regarding their information privacy policies. For your reference, the Network Advertising Initiative offers useful information about internet advertising companies, including methods of "opting-out" of their information collection practices. &#13;
+    &lt;br&gt;&lt;br&gt;&#13;
+    We also may offer you the opportunity to purchase products and services provided by third parties. If you purchase any of these products or services, we will provide your personal information to the third parties that provide them for that purpose. &#13;
+	&lt;br&gt;&lt;br&gt;&#13;
+    We may release personal information if we believe in good faith that: the law or legal process requires it; we have received a valid administrative request from a law enforcement agency or court; or such release is necessary to protect the rights, property or safety of Tumi, or any of our affiliates, service providers, customers or others.&#13;
+    &lt;br&gt;&lt;br&gt;&#13;
+    We may share non-personal information with our marketing partners, advertisers and others from time to time. Examples of such non-personal information include the number of users who visited this Site during a specific time period or purchased a specific product through this Site. This information generally is shared in an aggregated form.&#13;
+    &lt;br&gt;&lt;br&gt;&#13;
+    As with any business, it is possible that as our business develops, we might sell or buy online stores or other assets. In such transactions, information about customers often is among the transferred assets. Accordingly, in the unlikely event that Tumi, or substantially all of its assets related to this Site, is acquired by a third party, such information may be one of the transferred assets. Under such circumstances, Tumi would to the extent possible require the acquiring party to follow the practices described in this Privacy Policy, as it may be amended from time to time.&#13;
+    &lt;br&gt;&lt;br&gt;&#13;
+    By using this Site, you acknowledge and consent to the fact that personal information provided by you or collected by us through your use of the Site is stored and processed by us in the United States where data protection laws may not afford the same level of protection as those of the country in which you are located (this is the case for users located in the European Economic Area ("EEA")). You also acknowledge and consent to the fact that we may, at our discretion, store and process such data in other countries (including countries outside the EEA) where data protection laws may not afford the same level of protection as those of the country in which you are located.&lt;/p&gt;&#13;
+&lt;/div&gt;&#13;
+&#13;
+&lt;div class="MOBILEcontent"&gt;&#13;
+  &lt;p class="read-more-toggle icon-openarrow-right"&gt;   What Steps Are Taken To Keep Personal Information Secure?&lt;/p&gt;&#13;
+    &lt;p class="read-more-content hide"&gt;Various security measures, including Secure Socket Layer (SSL) encryption technology, are used to protect personal information that we collect. If you place an order through this Site, you will be asked to set up an account and provide an email address and password. You must provide, among other information, an appropriate email address and password in order to access account information. Please note that while we have endeavoured to create a secure and reliable site for users, the confidentiality of any communication or material transmitted to/from this Site cannot be guaranteed. In order to help protect your personal information further, you should be careful about providing your password to others. If you wish to cancel your password, or if you become aware of any loss, theft or unauthorized use of your password, please contact this Site's Customer Service Department by email at &lt;a id="underline" href="mailto:service@tumi.com"&gt;service@tumi.com&lt;/a&gt;.&lt;/p&gt;&#13;
+&lt;/div&gt;&#13;
+&#13;
+&lt;div class="MOBILEcontent"&gt;&#13;
+  &lt;p class="read-more-toggle icon-openarrow-right"&gt;   How Can I Access, Correct and Update Personal Information?&lt;/p&gt;&#13;
+    &lt;p class="read-more-content hide"&gt;You can access, correct and update certain personal information that you have provided to us by clicking on "Manage Your Account" within the Help Desk area of this Site.&lt;/p&gt;&#13;
+&lt;/div&gt;&#13;
+&#13;
+&lt;div class="MOBILEcontent"&gt;&#13;
+  &lt;p class="read-more-toggle icon-openarrow-right"&gt;   Can I Indicate Whether or Not I Want To Receive Promotional Communications?&lt;/p&gt;&#13;
+    &lt;p class="read-more-content hide"&gt;There are several ways in which you can tell us whether or not you want to receive promotional communications from us. At certain locations on the Site, you will have choices to opt-out or opt-in to receive various types of communications. When you set up an account, or click on "Manage Your Account" within the Help Desk area, or place an order, you will have an opportunity to make or change your selections in this regard. You also will have an opportunity to change these selections by clicking on an "unsubscribe" hyperlink contained in promotional emails we send you.&lt;/p&gt;&#13;
+&lt;/div&gt;&#13;
+&#13;
+&lt;div class="MOBILEcontent"&gt;&#13;
+  &lt;p class="read-more-toggle icon-openarrow-right"&gt;   What Happens When I Link To or From Another Site?&lt;/p&gt;&#13;
+    &lt;p class="read-more-content hide"&gt;This Site may contain links to other Web sites operated by affiliates of Tumi or third parties. Please be advised that the practices described in this Privacy Policy do not apply to information gathered through these other Web sites and that we are not responsible for the privacy policies, practices or contents of these other Web sites. We encourage you to be aware of when you leave this Site and to read the privacy policies of each and every Web site that you visit.&lt;/p&gt;&#13;
+&lt;/div&gt;&#13;
+&#13;
+&lt;div class="MOBILEcontent"&gt;&#13;
+  &lt;p class="read-more-toggle icon-openarrow-right"&gt;   What About Contests and Sweepstakes?&lt;/p&gt;&#13;
+    &lt;p class="read-more-content hide"&gt;When we run a contest or sweepstakes relating to this Site, it will be accompanied by a set of rules. The rules for each contest/sweepstakes will specify how the information gathered from you for entry will be used and disclosed, if different than as described in this Privacy Policy.&lt;/p&gt;&#13;
+&lt;/div&gt;&#13;
+&#13;
+&lt;div class="MOBILEcontent" style="border-bottom:none;"&gt;&#13;
+  &lt;p class="read-more-toggle icon-openarrow-right"&gt;   How Will I Be Informed About Changes Regarding This Privacy Policy?&lt;/p&gt;&#13;
+    &lt;p class="read-more-content hide"&gt;Should we decide to amend this Privacy Policy, we will provide reasonable prior notice of such changes to you. All amended terms will automatically take effect 30 days after we provide such notice, or on a date that we specify in the notice. While in some instances we may provide notice by email or other means, you agree that notice on the Site about changes to this Privacy Policy shall be deemed sufficient notice to you. Your continued use of the Site after the effective date of the changes to this Privacy Policy shall mean that you accept and agree to be bound by those changes.&lt;/p&gt;&#13;
+&lt;/div&gt;&#13;
+&#13;
+&lt;/div&gt; &lt;!--MOBILEtumi_privacy--&gt;&#13;
+&lt;/div&gt;</custom-attribute>
+        </custom-attributes>
+        <content-detail-page-meta-tag-rules>
+            <page-meta-tag-rule rule-id="Content Detail Page Title"/>
+        </content-detail-page-meta-tag-rules>
+    </content>
+
+    <content content-id="product-highlight-features">
+        <display-name xml:lang="x-default">Product Highlight And Features</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;div class="product-highlight &#13;
+            fifty-fifty&#13;
+            " data-creative-name="product-highlight-features"&gt;&#13;
+    &lt;div class="row no-gutters  align-items-center&#13;
+            theme-light&#13;
+    "&gt;&#13;
+    &lt;div class="&#13;
+            col-12 col-sm-6 col-md-6 &#13;
+            s7-image"&gt;&#13;
+            &#13;
+                &lt;a href="#" target="_blank"&gt;&#13;
+                    &lt;img src="https://tumi.scene7.com/is/image/Tumi/1420651041_alt4?wid&amp;#x3D;650&amp;amp;amp;hei&amp;#x3D;598" alt="https://tumi.scene7.com/is/image/Tumi/1420651041_alt4?wid&amp;#x3D;650&amp;amp;amp;hei&amp;#x3D;598" /&gt;&#13;
+               &lt;/a&gt;&#13;
+    &lt;/div&gt;&#13;
+    &lt;div class="&#13;
+        col-12 col-sm-6 col-md-6 dynamic-space&#13;
+    product-highlight-content"&gt;&#13;
+        &lt;h3&gt;Handles that can handle just about anything&lt;/h3&gt;&#13;
+        &lt;p&gt;Telescopic handles are one of the most vunerable parts of a heavily-used carry-on bag. At TUMI, we get it. That’s why we designed the X-Brace 45® Handle System. This patented, innovative handle tube protects this bag’s telescopic handle.&lt;/p&gt;&#13;
+        &lt;div class="row button-inline"&gt;&#13;
+            &lt;div class="col-12 col-md-6"&gt;&#13;
+                    &lt;a href="#" target="_blank" class="button button--primary w-100"&gt;primary&lt;/a&gt;&#13;
+            &lt;/div&gt;&#13;
+            &lt;div class="col-12 col-md-6"&gt;&#13;
+                &lt;a href="#" target="_blank" class="button button--secondary w-100"&gt;secondary&lt;/a&gt;&#13;
+            &lt;/div&gt;&#13;
+        &lt;/div&gt;&#13;
+    &lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="product-highlight-features2">
+        <display-name xml:lang="x-default">Product Highlight And Features2</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;div class="product-highlight &#13;
+            fifty-fifty&#13;
+            " data-creative-name="product-highlight-features2"&gt;&#13;
+    &lt;div class="row no-gutters  align-items-center&#13;
+            theme-dark&#13;
+    "&gt;&#13;
+    &lt;div class="&#13;
+            col-12 col-sm-6 col-md-6 &#13;
+            s7-image"&gt;&#13;
+            &#13;
+                &lt;a href="#" target="_blank"&gt;&#13;
+                    &lt;img src="https://tumi.scene7.com/is/image/Tumi/1420651041_alt4?wid&amp;#x3D;650&amp;amp;amp;hei&amp;#x3D;598" alt="https://tumi.scene7.com/is/image/Tumi/1420651041_alt4?wid&amp;#x3D;650&amp;amp;amp;hei&amp;#x3D;598" /&gt;&#13;
+               &lt;/a&gt;&#13;
+    &lt;/div&gt;&#13;
+    &lt;div class="&#13;
+        col-12 col-sm-6 col-md-6 dynamic-space&#13;
+    product-highlight-content"&gt;&#13;
+        &lt;h3&gt;Lorem ipsum dolor sit amet elit consectur.&lt;/h3&gt;&#13;
+        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.&lt;/p&gt;&#13;
+        &lt;div class="row button-inline"&gt;&#13;
+            &lt;div class="col-12 col-md-6"&gt;&#13;
+                    &lt;a href="#" target="_blank" class="button button--primary w-100"&gt;primary&lt;/a&gt;&#13;
+            &lt;/div&gt;&#13;
+            &lt;div class="col-12 col-md-6"&gt;&#13;
+                &lt;a href="#" target="_blank" class="button button--secondary w-100"&gt;secondary&lt;/a&gt;&#13;
+            &lt;/div&gt;&#13;
+        &lt;/div&gt;&#13;
+    &lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="services-header-content">
+        <display-name xml:lang="x-default">Services Header</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;div class="container nav-service"&gt;&#13;        &lt;div class="row"&gt;&#13;            &lt;div class="col-12 col-md-4"&gt;&#13;                &lt;ul class="nav-service--menu"&gt;&#13;                    &lt;h3&gt;WHY TUMI&lt;/h3&gt;&#13;                    &lt;li class="nav-service--menu--links"&gt;&#13;                        &lt;div class="image"&gt;&#13;                            &lt;img alt="" src="test-image.png?$staticlink$" title="" /&gt;&#13;                        &lt;/div&gt;&#13;                        &lt;div class="content"&gt;&#13;                            &lt;a href="$httpsURL('Page-Show', 'cid', 'warranty-service')$"&gt;Our Warranty&lt;/a&gt;&#13;                            &lt;p&gt;Lorem Ipsum is not simply random text.&lt;/p&gt;&#13;                        &lt;/div&gt;&#13;                    &lt;/li&gt;&#13;                     &lt;li class="nav-service--menu--links"&gt;&#13;                        &lt;div class="image"&gt;&#13;                            &lt;img alt="" src="test-image.png?$staticlink$" title="" /&gt;&#13;                        &lt;/div&gt;&#13;                        &lt;div class="content"&gt;&#13;                            &lt;a href=""&gt;TUMI Tracer&lt;/a&gt;&#13;                            &lt;p&gt;Lorem Ipsum is not simply random text.&lt;/p&gt;&#13;                        &lt;/div&gt;&#13;                    &lt;/li&gt;&#13;                     &lt;li class="nav-service--menu--links"&gt;&#13;                        &lt;div class="image"&gt;&#13;                            &lt;img alt="" src="test-image.png?$staticlink$" title="" /&gt;&#13;                        &lt;/div&gt;&#13;                        &lt;div class="content"&gt;&#13;                            &lt;a href=""&gt;Our Warranty&lt;/a&gt;&#13;                            &lt;p&gt;Lorem Ipsum is not simply random text.&lt;/p&gt;&#13;                        &lt;/div&gt;&#13;                    &lt;/li&gt;&#13;                     &lt;li class="nav-service--menu--links"&gt;&#13;                        &lt;div class="image"&gt;&#13;                            &lt;img alt="" src="test-image.png?$staticlink$" title="" /&gt;&#13;                        &lt;/div&gt;&#13;                        &lt;div class="content"&gt;&#13;                            &lt;a href=""&gt;Our Warranty&lt;/a&gt;&#13;                            &lt;p&gt;Lorem Ipsum is not simply random text.&lt;/p&gt;&#13;                        &lt;/div&gt;&#13;                    &lt;/li&gt;&#13;                &lt;/ul&gt;&#13;            &lt;/div&gt;&#13;            &lt;div class="col-12 col-md-4"&gt;&#13;                &lt;ul class="nav-service--menu"&gt;&#13;                    &lt;h3&gt;WE'RE HERE TO HELP&lt;/h3&gt;&#13;                    &lt;li class="nav-service--menu--links"&gt;&#13;                        &lt;div class="image"&gt;&#13;                            &lt;img alt="" src="test-image.png?$staticlink$" title="" /&gt;&#13;                        &lt;/div&gt;&#13;                        &lt;div class="content"&gt;&#13;                            &lt;a href=""&gt;FAQ&lt;/a&gt;&#13;                            &lt;p&gt;Lorem Ipsum is not simply random text.&lt;/p&gt;&#13;                        &lt;/div&gt;&#13;                    &lt;/li&gt;&#13;                    &#13;                    &lt;li class="nav-service--menu--links"&gt;&#13;                        &lt;div class="image"&gt;&#13;                            &lt;img alt="" src="test-image.png?$staticlink$" title="" /&gt;&#13;                        &lt;/div&gt;&#13;                        &lt;div class="content"&gt;&#13;                            &lt;a href=""&gt;FAQ&lt;/a&gt;&#13;                            &lt;p&gt;Lorem Ipsum is not simply random text.&lt;/p&gt;&#13;                        &lt;/div&gt;&#13;                    &lt;/li&gt;&#13;                    &#13;                    &lt;li class="nav-service--menu--links"&gt;&#13;                        &lt;div class="image"&gt;&#13;                            &lt;img alt="" src="test-image.png?$staticlink$" title="" /&gt;&#13;                        &lt;/div&gt;&#13;                        &lt;div class="content"&gt;&#13;                            &lt;a href=""&gt;FAQ&lt;/a&gt;&#13;                            &lt;p&gt;Lorem Ipsum is not simply random text.&lt;/p&gt;&#13;                        &lt;/div&gt;&#13;                    &lt;/li&gt;&#13;                    &#13;                    &lt;li class="nav-service--menu--links"&gt;&#13;                        &lt;div class="image"&gt;&#13;                            &lt;img alt="" src="test-image.png?$staticlink$" title="" /&gt;&#13;                        &lt;/div&gt;&#13;                        &lt;div class="content"&gt;&#13;                            &lt;a href=""&gt;FAQ&lt;/a&gt;&#13;                            &lt;p&gt;Lorem Ipsum is not simply random text.&lt;/p&gt;&#13;                        &lt;/div&gt;&#13;                    &lt;/li&gt;&#13;                &lt;/ul&gt;&#13;            &lt;/div&gt;&#13;            &lt;div class="col-12 col-md-4"&gt;&#13;                &lt;div class="store-locator"&gt;&#13;                    &lt;h3&gt;YOUR TUMI STORE&lt;/h3&gt;&#13;                   &lt;img alt="" src="header-image-placeholder.svg?$staticlink$" title="" /&gt;&#13;                    &lt;div class="address"&gt;&#13;                        &lt;p class="title"&gt;&#13;                            TUMI at Perimeter Mall&#13;                            &lt;a href=""&gt;change&lt;/a&gt;&#13;                        &lt;/p&gt;&#13;                        &lt;p&gt;5 miles away&lt;/p&gt;&#13;                        &lt;p&gt;open now until 8pm today&lt;/p&gt;&#13;                    &lt;/div&gt;&#13;                    &lt;a href="/" class="button d-block button--primary"&gt;&#13;                        Store Hours and Servies&#13;                    &lt;/a&gt;&#13;                    &lt;a href="/" class="button d-block button--secondary"&gt;&#13;                        Get Directions&#13;                    &lt;/a&gt;&#13;                &lt;/div&gt;&#13;            &lt;/div&gt;&#13;        &lt;/div&gt;&#13;    &lt;/div&gt;</custom-attribute>
+            <custom-attribute attribute-id="customCSSFile">services.css</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="terms-and-conditions">
+        <display-name xml:lang="x-default">Terms and Conditions</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;div class="content removeFocusIndicator"&gt;                    &lt;style type="text/css"&gt;&#13;
+#maincontent{&#13;
+    font-family: proxima-nova,sans-serif;&#13;
+    font-weight: 400;&#13;
+    font-size: 16px;&#13;
+    letter-spacing: .025em;}&#13;
+ol{&#13;
+padding: 0 0 0 40px;}&#13;
+dl, h3, menu, ol, p, pre, ul {&#13;
+    margin: 1em 0;&#13;
+}&#13;
+li {&#13;
+list-style-type: none;}&#13;
+                            @media only screen and (min-width: 100px) and (max-width: 568px) {  /* Mobile */&#13;
+                                .MOBILEtumi_terms{&#13;
+                                    margin:0 0 40px 0;&#13;
+                                }&#13;
+                                .MOBILEcontent{&#13;
+                                  border-bottom: 1px solid #555555;&#13;
+                                  margin: 0px 8px; &#13;
+                                }&#13;
+                                .hide{&#13;
+                                  display: none;&#13;
+                                }&#13;
+                                .read-more-toggle{&#13;
+                                    color:#555555;&#13;
+                                }&#13;
+                                .read-more-toggle.active{&#13;
+                                    color:#c41e3a;&#13;
+                                }&#13;
+                                .read-more-toggle:visited, .read-more-toggle:hover{&#13;
+                                    color:#c41e3a;&#13;
+                                    cursor: pointer;&#13;
+                                }&#13;
+                                .tumi_terms{&#13;
+                                    display: none;&#13;
+                                }&#13;
+                                .underline{&#13;
+                                    text-decoration: underline;&#13;
+                                }&#13;
+                                .MOBILEtopHeader{&#13;
+                                    width: 100%;&#13;
+                                    height: 170px;&#13;
+                                    background-color: #222222;&#13;
+                                    padding: 5px 0px 8px 20px;&#13;
+                                }&#13;
+                                .MOBILEtopHeader h1{&#13;
+                                    color:#FFFFFF;&#13;
+                                    letter-spacing: .095em;&#13;
+                                    font-size: 26px;&#13;
+                                    padding-top: 68px;&#13;
+                                    padding-bottom: 20px;&#13;
+                                    font-weight: 700;&#13;
+                                }&#13;
+                            }&#13;
+                            @media only screen and (min-width: 569px) { /* Tablet &amp; Desktop */&#13;
+                                .tumi_terms{&#13;
+                                    margin:0 0 40px 0;&#13;
+                                }&#13;
+                                .MOBILEtumi_terms{&#13;
+                                    display: none;&#13;
+                                }&#13;
+                                .termsContent{&#13;
+                                    margin: 40px 70px;&#13;
+                                }&#13;
+                                h1, h2, h3, h4, h5, h6 {&#13;
+                                    font-family:'proxima-nova', sans-serif;&#13;
+                                    font-color:#555555;&#13;
+                                    font-weight: 700;&#13;
+                                    margin: 0px;&#13;
+                                    padding: 0px;&#13;
+                                }&#13;
+                                .termsContent h1{&#13;
+                                    font-size: 16px;&#13;
+                                    padding: 40px 0px 20px 0px;&#13;
+                                    position: relative;&#13;
+                                    text-transform: uppercase;&#13;
+                                }&#13;
+                                h2{&#13;
+                                    font-size: 18px;&#13;
+                                    padding: 20px 0px 5px 0px;&#13;
+                                    font-family:'proxima-nova', sans-serif;&#13;
+                                    font-weight:700;&#13;
+                                    letter-spacing:.025em;&#13;
+                                    line-height:1.25;&#13;
+                                    color:#222222;&#13;
+                                    text-transform: uppercase;&#13;
+                                }&#13;
+                                h3{&#13;
+                                    font-size:16px;&#13;
+                                    position: relative;&#13;
+                                }&#13;
+                                p{&#13;
+                                    margin: 0;&#13;
+                                    padding: 0;&#13;
+                                    font-family:'proxima-nova', sans-serif; &#13;
+                                    font-size:16px; &#13;
+                                    font-weight:400;&#13;
+                                    letter-spacing:.025em;&#13;
+                                    line-height:1.75;&#13;
+                                    font-color:#555555;&#13;
+                                }&#13;
+                                .lists li{&#13;
+                                    margin: 0;&#13;
+                                    font-family:'proxima-nova', sans-serif; &#13;
+                                    font-size:16px; &#13;
+                                    font-weight:400;&#13;
+                                    letter-spacing:.025em;&#13;
+                                    line-height:1.75;&#13;
+                                    font-color:#555555;&#13;
+                                    padding-bottom: 20px;&#13;
+                                }&#13;
+                                #links{&#13;
+                                    color: #be0f34;&#13;
+                                    text-decoration: none;&#13;
+                                }&#13;
+                                a.redLink{&#13;
+                                    color: #be0f34;&#13;
+                                    line-height: 2.5;&#13;
+                                }&#13;
+                                .topHeader{&#13;
+                                    width: 100%;&#13;
+                                    height: 170px;&#13;
+                                    background-color: #222222;&#13;
+                                    padding: 5px 0px 8px 70px;&#13;
+                                }&#13;
+                                .topHeader h1{&#13;
+                                    color:#FFFFFF;&#13;
+                                    letter-spacing: .095em;&#13;
+                                    font-size: 36px;&#13;
+                                    padding-top: 68px;&#13;
+                                    padding-bottom: 20px;&#13;
+                                }&#13;
+                                .underline{&#13;
+                                    text-decoration: underline;&#13;
+                                }&#13;
+                            }&#13;
+                    &lt;/style&gt;&#13;
+&#13;
+                    &lt;div class="tumi_terms removeFocusIndicator"&gt;&#13;
+                        &lt;div class="topHeader"&gt;&#13;
+                            &lt;h1&gt;TERMS AND CONDITIONS&lt;/h1&gt;&#13;
+                        &lt;/div&gt;&#13;
+&#13;
+                        &lt;div class="termsContent removeFocusIndicator"&gt;&#13;
+                            &lt;p class="removeFocusIndicator"&gt;PLEASE READ THESE TERMS AND CONDITIONS CAREFULLY BEFORE USING THIS WEB SITE. YOUR USE OF THIS WEB SITE CONFIRMS YOUR UNCONDITIONAL ACCEPTANCE OF THESE TERMS AND CONDITIONS. IF YOU DO NOT ACCEPT THESE TERMS AND CONDITIONS, DO NOT USE THIS WEB SITE.&lt;/p&gt;&#13;
+&#13;
+                            &lt;ol class="lists"&gt;&#13;
+                                &lt;li&gt;&lt;u&gt;Products, Content and Specifications.&lt;/u&gt; All features, content, specifications, products and prices of products and services described or depicted on this Web site, www.TUMI.com (this "Web Site"), are subject to change at any time without notice. Certain weights, measures and similar descriptions are approximate and are provided for convenience purposes only. TUMI, Inc. ("TUMI" or “we”) makes all reasonable efforts to accurately display the attributes of our products, including the applicable colors; however, the actual color you see will depend on your computer system, and we cannot guarantee that your computer will accurately display such colors. The inclusion of any products or services on this Web Site at a particular time does not imply or warrant that these products or services will be available at any time. It is your responsibility to ascertain and obey all applicable local, state, federal and international laws (including minimum age requirements) in regard to the possession, use and sale of any item purchased from this Web Site. By placing an order, you represent that the products ordered will be used only in a lawful manner. &lt;/li&gt;&#13;
+                                                               &#13;
+                                &lt;li&gt;&lt;u&gt;Accuracy of Information.&lt;/u&gt; We attempt to ensure that information on this Web Site is complete, accurate and current. Despite our efforts, the information on this Web Site may occasionally be inaccurate, incomplete or out of date. We make no representation as to the completeness, accuracy or currentness of any information on this Web Site. For example, products included on this Web Site may be unavailable, may have different attributes than those listed, or may actually carry a different price than that stated on this Web Site. In addition, we may make changes in information about price and availability without notice. While it is our practice to confirm orders by email, the receipt of an email order confirmation does not constitute our acceptance of an order or our confirmation of an offer to sell a product or service. We reserve the right, without prior notice, to limit the order quantity on any product or service and/or to refuse service to any customer. We also may require verification of information prior to the acceptance and/or shipment of any order.&lt;/li&gt;&#13;
+                                &#13;
+                                &lt;li&gt;&lt;u&gt;Use of this Web Site.&lt;/u&gt; The design of this Web Site and all text, graphics, information, content, and other material displayed on or that can be downloaded from this Web Site are protected by copyright, trademark and other laws and may not be used except as permitted in these Terms and Conditions or with prior written permission of the owner of such material. The content, software and other technology components of this Web Site are © 2016, TUMI, Inc.  All rights reserved. You may not modify the information or materials displayed on or that can be downloaded from this Web Site in any way or reproduce or publicly display, perform, or distribute or otherwise use any such information or materials for any public or commercial purpose. Any unauthorized use of any such information or materials may violate copyright laws, trademark laws, laws of privacy and publicity, and other laws and regulations.&lt;/li&gt;&#13;
+                                &#13;
+                                &lt;li&gt;&lt;u&gt;Trademarks.&lt;/u&gt; Certain trademarks, trade names, service marks and logos used or displayed on this Web Site are registered and unregistered trademarks, trade names and service marks of TUMI and its affiliates. Other trademarks, trade names and service marks used or displayed on this Web Site are the registered and unregistered trademarks, trade names and service marks of their respective owners. Nothing contained on this Web Site grants or should be construed as granting, by implication, estoppel, or otherwise, any license or right to use any trademarks, trade names, service marks or logos displayed on this Web Site without the written permission of TUMI or such other owner. &lt;/li&gt;&#13;
+                                &#13;
+                                &lt;li&gt;&lt;u&gt;Linking to this Web Site.&lt;/u&gt; Creating or maintaining any link from another Web site to any page on this Web Site without our prior written permission is prohibited. Running or displaying this Web Site or any information or material displayed on this Web Site in frames or through similar means on another Web site without our prior written permission is prohibited. Any permitted links to this Web Site must comply with all applicable laws, rule and regulations.&lt;/li&gt; &#13;
+                                &#13;
+                                &lt;li&gt;&lt;u&gt;Third Party Links.&lt;/u&gt; From time to time, this Web Site may contain links to Web sites that are not owned, operated or controlled by TUMI. All such links are provided solely as a convenience to you. If you use these links, you will leave this Web Site. Neither TUMI nor any of its affiliates are responsible for any content, materials or other information located on or accessible from any other Web site. Neither TUMI nor any of its affiliates endorse, guarantee, or make any representations or warranties regarding any other Web sites, or any content, materials or other information located or accessible from any other Web sites, or the results that you may obtain from using any other Web sites. If you decide to access any other Web sites linked to or from this Web Site, you do so entirely at your own risk.&lt;/li&gt;&#13;
+                                &#13;
+                                &lt;li&gt;&lt;u&gt;Inappropriate Material.&lt;/u&gt; You are prohibited from posting or transmitting any unlawful, threatening, defamatory, libelous, obscene, pornographic or profane material or any material that could constitute or encourage conduct that would be considered a criminal offense or give rise to civil liability, or otherwise violate any law. In addition to any remedies that we may have at law or in equity, if we determine, in our sole discretion, that you have violated or are likely to violate the foregoing prohibitions, we may take any action we deem necessary to cure or prevent the violation, including without limitation, the immediate removal of the related materials from this Web Site. We will fully cooperate with any law enforcement authorities or court order or subpoena requesting or directing us to disclose the identity of anyone posting such materials. &lt;/li&gt;&#13;
+                                &#13;
+                                &lt;li&gt;&lt;u&gt;User Information.&lt;/u&gt; Any material, information, suggestions, ideas, concepts, know-how, techniques, questions, comments or other communication you transmit or post to this Web Site in any manner ("User Communications") is, and will be considered, non-confidential and non-proprietary, except that you consent to the use and handling of your Personal Information as provided in this  Web Site's Privacy Policy. We and our affiliates and our or their designees may use any or all User Communications for any purpose whatsoever, including, without limitation, reproduction, transmission, disclosure, publication, broadcast, development, manufacturing and/or marketing in any manner whatsoever for any or all commercial or non-commercial purposes. We may, but are not obligated to, monitor or review any User Communications, unless otherwise required by law. We will have no obligation to use, return, review, or respond to any User Communications, unless otherwise required by law. To the fullest extent permitted by law, we will have no liability related to the content of any such User Communications, whether or not arising under the laws of copyright, libel, privacy, obscenity, or otherwise. We retain the right to remove any or all User Communications that includes any material we deem inappropriate or unacceptable.&lt;/li&gt;&#13;
+                                &#13;
+                                &lt;li&gt;&lt;p&gt;&lt;u&gt;DISCLAIMERS.&lt;/u&gt; YOUR USE OF THIS SITE IS AT YOUR RISK. THE INFORMATION, MATERIALS AND SERVICES PROVIDED ON OR THROUGH THIS WEB SITE ARE PROVIDED "AS IS" WITHOUT ANY WARRANTIES OF ANY KIND INCLUDING WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT OF INTELLECTUAL PROPERTY. NEITHER TUMI NOR ANY OF ITS AFFILIATES WARRANT THE ACCURACY OR COMPLETENESS OF THE INFORMATION, MATERIALS OR SERVICES PROVIDED ON OR THROUGH THIS WEB SITE. THE INFORMATION, MATERIALS AND SERVICES PROVIDED ON OR THROUGH THIS WEB SITE MAY BE OUT OF DATE, AND NEITHER TUMI NOR ANY OF ITS AFFILIATES MAKES ANY COMMITMENT OR VOLUNTARILY ASSUMES ANY DUTY TO UPDATE SUCH INFORMATION, MATERIALS OR SERVICES. THE FOREGOING EXCLUSIONS OF IMPLIED WARRANTIES DO NOT APPLY TO THE EXTENT PROHIBITED BY LAW. PLEASE REFER TO YOUR LOCAL LAWS FOR ANY SUCH PROHIBITIONS.&lt;/p&gt;&lt;br&gt;&#13;
+                                    &#13;
+                                &lt;p&gt;TO THE FULLEST EXTENT PERMISSIBLE BY LAW, ALL PRODUCTS AND SERVICES PURCHASED ON OR THROUGH THIS WEB SITE ARE SUBJECT ONLY TO ANY APPLICABLE WARRANTIES OF THEIR RESPECTIVE MANUFACTURERS, DISTRIBUTORS AND SUPPLIERS, IF ANY. TO THE FULLEST EXTENT PERMISSIBLE BY LAW, WE HEREBY DISCLAIM ALL WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING, ANY IMPLIED WARRANTIES WITH RESPECT TO THE PRODUCTS AND SERVICES LISTED OR PURCHASED ON OR THROUGH THIS WEB SITE. WITHOUT LIMITING THE GENERALITY OF THE FOREGOING AND TO THE FULLEST EXTENT PERMISSIBLE BY LAW, WE HEREBY EXPRESSLY DISCLAIM ALL LIABILITY FOR PRODUCT DEFECT OR FAILURE, CLAIMS THAT ARE DUE TO NORMAL WEAR, PRODUCT MISUSE, ABUSE, PRODUCT MODIFICATION, IMPROPER PRODUCT SELECTION, NON-COMPLIANCE WITH ANY CODES, OR MISAPPROPRIATION. WE MAKE NO WARRANTIES TO THOSE DEFINED AS "CONSUMERS" IN THE MAGNUSON-MOSS WARRANTY-FEDERAL TRADE COMMISSION IMPROVEMENTS ACT. THE FOREGOING EXCLUSIONS OF IMPLIED WARRANTIES ARE BINDING IN THE STATE OF NEW JERSEY TO THE FULLEST EXTENT PERMITTED BY LAW BUT MAY NOT APPLY IN OTHER STATES TO THE EXTENT PROHIBITED BY LAW. PLEASE REFER TO YOUR LOCAL LAWS FOR ANY SUCH LIMITATIONS OR PROHIBITIONS&lt;/p&gt;&lt;/li&gt;&#13;
+                                &#13;
+                                &lt;li&gt;&lt;p&gt;&lt;u&gt;LIMITATIONS OF LIABILITY.&lt;/u&gt; TUMI assumes no voluntary responsibility or liability for any damages to, or any viruses that may infect, your computer, telecommunication equipment, or other property caused by or arising from your access to, use of, or browsing this Web Site, or your downloading of any information or materials from this Web Site. TO THE FULLEST EXTENT PERMITTED BY LAW, IN NO EVENT WILL TUMI OR ANY OF ITS OFFICERS, DIRECTORS, EMPLOYEES, SHAREHOLDERS, AFFILIATES, AGENTS, SUCCESSORS OR ASSIGNS, NOR ANY PARTY INVOLVED IN THE CREATION, PRODUCTION OR TRANSMISSION OF THIS WEB SITE, BE LIABLE TO YOU OR ANYONE ELSE FOR ANY INDIRECT, SPECIAL, PUNITIVE, INCIDENTAL OR CONSEQUENTIAL DAMAGES (INCLUDING, WITHOUT LIMITATION, THOSE RESULTING FROM LOST PROFITS, LOST DATA OR BUSINESS INTERRUPTION) ARISING OUT OF THE USE, INABILITY TO USE, OR THE RESULTS OF USE OF THIS WEB SITE, ANY WEB SITES LINKED TO THIS WEB SITE, OR THE MATERIALS, INFORMATION OR SERVICES CONTAINED ON ANY OR ALL SUCH WEB SITES, WHETHER BASED ON WARRANTY, CONTRACT, TORT OR ANY OTHER LEGAL THEORY AND WHETHER OR NOT ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. THE FOREGOING LIMITATIONS OF LIABILITY ARE BINDING IN THE STATE OF NEW JERSEY TO THE FULLEST EXTENT PERMITTED BY LAW BUT MAY NOT APPLY TO THE EXTENT PROHIBITED BY LAW. PLEASE REFER TO YOUR LOCAL LAWS FOR ANY SUCH LIMITATIONS OR PROHIBITIONS&lt;/p&gt;&lt;br&gt;&#13;
+                                    &#13;
+                                &lt;p&gt;IN THE EVENT OF ANY PROBLEM WITH THIS WEB SITE OR ANY CONTENT, YOU AGREE THAT YOUR SOLE REMEDY IS TO CEASE USING THIS WEB SITE, EXCEPT AS OTHERWISE PERMITTED BY LAW. IN THE EVENT OF ANY PROBLEM WITH THE PRODUCTS OR SERVICES THAT YOU HAVE PURCHASED ON OR THROUGH THIS WEB SITE, YOU AGREE THAT YOUR SOLE REMEDY, IF ANY, IS FROM THE MANUFACTURER OF SUCH PRODUCTS OR SUPPLIER OF SUCH SERVICES, IN ACCORDANCE WITH SUCH MANUFACTURER'S OR SUPPLIER'S WARRANTY, OR TO SEEK A RETURN AND REFUND FOR SUCH PRODUCT OR SERVICES IN ACCORDANCE WITH THE RETURNS AND REFUNDS POLICIES POSTED ON THIS WEB SITE, EXCEPT AS OTHERWISE PERMITTED BY LAW.&lt;/p&gt;&lt;/li&gt;&#13;
+                                &#13;
+                                &lt;li&gt;&lt;u&gt;Revisions to these Terms and Conditions.&lt;/u&gt; These Terms and Conditions may be revised at any time and from time to time by updating this posting. You should visit this page from time to time to review the then current Terms and Conditions. Certain provisions of these Terms and Conditions may be superseded by legal notices or terms located on particular pages of this Web Site. &lt;/li&gt;&#13;
+                                &#13;
+                                &lt;li&gt;&lt;u&gt;Choice of Law; Jurisdiction.&lt;/u&gt; These Terms and Conditions supersede any other agreement between you and TUMI to the extent necessary to resolve any inconsistency or ambiguity between them. These Terms and Conditions will be governed by and construed in accordance with the laws of the State of New Jersey, without giving effect to any principles of conflicts of laws. Any action seeking legal or equitable relief arising out of or relating to this Web Site will be brought only in the courts of the State of New Jersey or the United States District Court for the District of New Jersey. A printed version of these Terms and Conditions will be admissible in judicial and administrative proceedings based upon or relating to these Terms and Conditions to the same extent and subject to the same conditions as other business documents and records originally generated and maintained in printed form.&lt;/li&gt;&#13;
+                                &#13;
+                                &lt;li&gt;&lt;u&gt;Termination.&lt;/u&gt; You or we may suspend or terminate your account or your use of this Web Site at any time, for any reason or for no reason. You are personally liable for any orders placed or charges incurred through your account prior to termination. We reserve the right to change, suspend, or discontinue all or any aspect of this Web Site at any time without notice.&lt;/li&gt;&#13;
+                                &#13;
+                                &lt;li&gt;&lt;u&gt;Severability.&lt;/u&gt; If any provision of the foregoing Terms and Conditions shall be held to be invalid or unenforceable for any reason, the remaining provisions shall continue to be valid and enforceable to the greatest extent permitted by law. If a provision deemed invalid or unenforceable may become valid or enforceable by limitation, then the invalid or unenforceable provision will be replaced by a provision that comes closest to the original intent of the invalid or unenforceable provision or will be modified  to conform to the most expansive permissible reading allowable under the law consistent with the intention of the invalid or unenforceable provision&lt;/li&gt;&#13;
+&#13;
+                                &lt;li&gt;&lt;u&gt;Filtering.&lt;/u&gt; Pursuant to 47 U.S.C. Section 230(d) as amended, we hereby notify you that parental control protections (such as computer hardware, software or filtering services) are commercially available that may assist you in limiting access to material that is harmful to minors. Information identifying current providers of such protections is available on the two web sites GetNetWise (&lt;a class="underline" href="http://getnetwise.org/"&gt;http://getnetwise.org//&lt;/a&gt;) and OnGuard Online (&lt;a class="underline" href="http://onguardonline.gov"&gt;http://onguardonline.gov/&lt;/a&gt;). Please note that Tumi does not endorse any of the products or services listed at such site.&lt;/li&gt;&#13;
+&#13;
+                                &lt;li&gt;&lt;u&gt;Information or Complaints.&lt;/u&gt; Under California Civil Code Section 1789.3, California users are entitled to the following consumer rights notice: If you have a question or complaint regarding the Site, please send an e-mail to &lt;a class="underline" href="mailto:service@tumi.com"&gt;service@tumi.com&lt;/a&gt;. You may also contact us by writing to Customer Service at 2501 Matthews Industrial Circle Suite 1 Vidalia GA 30474, or by calling us at &lt;a class="underline" href="tel:1-800-299-8864"&gt;1-800-299-8864 (TUMI)&lt;/a&gt;. California residents may reach the Complaint Assistance Unit of the Division of Consumer Services of the California Department of Consumer Affairs by mail at 1625 North Market Blvd., Sacramento, CA 95834, or by telephone at &lt;a class="underline" href="tel:1-916-445-1254"&gt;(916) 445-1254&lt;/a&gt; or &lt;a class="underline" href="tel:1-800-952-5210"&gt;(800) 952-5210&lt;/a&gt;.&lt;/li&gt;&#13;
+                                &#13;
+                                &lt;li&gt;&lt;u&gt;Additional Assistance.&lt;/u&gt; If you do not understand any of the foregoing Terms and Conditions or if you have any questions or comments, we invite you to contact our Customer Service Department by email at &lt;a class="underline" href="mailto:service@tumi.com"&gt;service@tumi.com&lt;/a&gt;.&lt;/li&gt;&#13;
+                                &#13;
+                            &lt;/ol&gt;&#13;
+                            &lt;/div&gt;&#13;
+                        &lt;/div&gt;&#13;
+&#13;
+&#13;
+                    &lt;script&gt;&#13;
+                    $(document).ready(function(){&#13;
+                        $('.read-more-content').addClass('hide');&#13;
+                        &#13;
+                    $('.read-more-toggle').on('click', function() {&#13;
+                      $(this).next('.read-more-content').slideToggle(1000);&#13;
+                        &#13;
+                      $('.read-more-toggle').removeClass('active'); &#13;
+                           $(this).addClass('active');&#13;
+                       &#13;
+                     }); &#13;
+                    });&#13;
+                    &lt;/script&gt;&#13;
+&#13;
+                    &lt;div class="MOBILEtumi_terms"&gt;&#13;
+                        &lt;div class="MOBILEtopHeader"&gt;&#13;
+                            &lt;h1&gt;TERMS AND CONDITIONS&lt;/h1&gt;&#13;
+                        &lt;/div&gt;&#13;
+&#13;
+                        &lt;div&gt;&#13;
+                            &lt;p style="padding-left:8px;"&gt;PLEASE READ THESE TERMS AND CONDITIONS CAREFULLY BEFORE USING THIS WEB SITE. YOUR USE OF THIS WEB SITE CONFIRMS YOUR UNCONDITIONAL ACCEPTANCE OF THESE TERMS AND CONDITIONS. IF YOU DO NOT ACCEPT THESE TERMS AND CONDITIONS, DO NOT USE THIS WEB SITE.&lt;/p&gt;&#13;
+                        &lt;/div&gt;&#13;
+                        &lt;div class="MOBILEcontent"&gt;&#13;
+                          &lt;p class="read-more-toggle"&gt;1. Products, Content and Specifications.&lt;/p&gt;&#13;
+                            &lt;p class="read-more-content hide"&gt; All features, content, specifications, products and prices of products and services described or depicted on this Web site, www.TUMI.com (this "Web Site"), are subject to change at any time without notice. Certain weights, measures and similar descriptions are approximate and are provided for convenience purposes only. TUMI, Inc. ("TUMI" or “we”) makes all reasonable efforts to accurately display the attributes of our products, including the applicable colors; however, the actual color you see will depend on your computer system, and we cannot guarantee that your computer will accurately display such colors. The inclusion of any products or services on this Web Site at a particular time does not imply or warrant that these products or services will be available at any time. It is your responsibility to ascertain and obey all applicable local, state, federal and international laws (including minimum age requirements) in regard to the possession, use and sale of any item purchased from this Web Site. By placing an order, you represent that the products ordered will be used only in a lawful manner.&lt;/p&gt;&#13;
+                        &lt;/div&gt;&#13;
+&#13;
+                        &lt;div class="MOBILEcontent"&gt;&#13;
+                          &lt;p class="read-more-toggle"&gt;2. Accuracy of Information. &lt;/p&gt;&#13;
+                            &lt;p class="read-more-content hide"&gt;We attempt to ensure that information on this Web Site is complete, accurate and current. Despite our efforts, the information on this Web Site may occasionally be inaccurate, incomplete or out of date. We make no representation as to the completeness, accuracy or currentness of any information on this Web Site. For example, products included on this Web Site may be unavailable, may have different attributes than those listed, or may actually carry a different price than that stated on this Web Site. In addition, we may make changes in information about price and availability without notice. While it is our practice to confirm orders by email, the receipt of an email order confirmation does not constitute our acceptance of an order or our confirmation of an offer to sell a product or service. We reserve the right, without prior notice, to limit the order quantity on any product or service and/or to refuse service to any customer. We also may require verification of information prior to the acceptance and/or shipment of any order.&lt;/p&gt;&#13;
+                        &lt;/div&gt;&#13;
+&#13;
+                        &lt;div class="MOBILEcontent"&gt;&#13;
+                          &lt;p class="read-more-toggle"&gt;3. Use of this Web Site.&lt;/p&gt;&#13;
+                            &lt;p class="read-more-content hide"&gt;The design of this Web Site and all text, graphics, information, content, and other material displayed on or that can be downloaded from this Web Site are protected by copyright, trademark and other laws and may not be used except as permitted in these Terms and Conditions or with prior written permission of the owner of such material. The content, software and other technology components of this Web Site are © 2016, TUMI, Inc.  All rights reserved. You may not modify the information or materials displayed on or that can be downloaded from this Web Site in any way or reproduce or publicly display, perform, or distribute or otherwise use any such information or materials for any public or commercial purpose. Any unauthorized use of any such information or materials may violate copyright laws, trademark laws, laws of privacy and publicity, and other laws and regulations.&lt;/p&gt;&#13;
+                        &lt;/div&gt;&#13;
+&#13;
+                        &lt;div class="MOBILEcontent"&gt;&#13;
+                          &lt;p class="read-more-toggle"&gt;4. Trademarks.&lt;/p&gt;&#13;
+                            &lt;p class="read-more-content hide"&gt;Certain trademarks, trade names, service marks and logos used or displayed on this Web Site are registered and unregistered trademarks, trade names and service marks of TUMI and its affiliates. Other trademarks, trade names and service marks used or displayed on this Web Site are the registered and unregistered trademarks, trade names and service marks of their respective owners. Nothing contained on this Web Site grants or should be construed as granting, by implication, estoppel, or otherwise, any license or right to use any trademarks, trade names, service marks or logos displayed on this Web Site without the written permission of TUMI or such other owner.&lt;/p&gt;&#13;
+                        &lt;/div&gt;&#13;
+&#13;
+                        &lt;div class="MOBILEcontent"&gt;&#13;
+                          &lt;p class="read-more-toggle"&gt;5. Linking to this Web Site.&lt;/p&gt;&#13;
+                            &lt;p class="read-more-content hide"&gt;Creating or maintaining any link from another Web site to any page on this Web Site without our prior written permission is prohibited. Running or displaying this Web Site or any information or material displayed on this Web Site in frames or through similar means on another Web site without our prior written permission is prohibited. Any permitted links to this Web Site must comply with all applicable laws, rule and regulations.&lt;/p&gt;&#13;
+                        &lt;/div&gt;&#13;
+&#13;
+                        &lt;div class="MOBILEcontent"&gt;&#13;
+                          &lt;p class="read-more-toggle"&gt;6. Third Party Links.&lt;/p&gt;&#13;
+                            &lt;p class="read-more-content hide"&gt;From time to time, this Web Site may contain links to Web sites that are not owned, operated or controlled by TUMI. All such links are provided solely as a convenience to you. If you use these links, you will leave this Web Site. Neither TUMI nor any of its affiliates are responsible for any content, materials or other information located on or accessible from any other Web site. Neither TUMI nor any of its affiliates endorse, guarantee, or make any representations or warranties regarding any other Web sites, or any content, materials or other information located or accessible from any other Web sites, or the results that you may obtain from using any other Web sites. If you decide to access any other Web sites linked to or from this Web Site, you do so entirely at your own risk.&lt;/p&gt;&#13;
+                        &lt;/div&gt;&#13;
+&#13;
+                        &lt;div class="MOBILEcontent"&gt;&#13;
+                          &lt;p class="read-more-toggle"&gt;7. Inappropriate Material.&lt;/p&gt;&#13;
+                            &lt;p class="read-more-content hide"&gt;You are prohibited from posting or transmitting any unlawful, threatening, defamatory, libelous, obscene, pornographic or profane material or any material that could constitute or encourage conduct that would be considered a criminal offense or give rise to civil liability, or otherwise violate any law. In addition to any remedies that we may have at law or in equity, if we determine, in our sole discretion, that you have violated or are likely to violate the foregoing prohibitions, we may take any action we deem necessary to cure or prevent the violation, including without limitation, the immediate removal of the related materials from this Web Site. We will fully cooperate with any law enforcement authorities or court order or subpoena requesting or directing us to disclose the identity of anyone posting such materials.&lt;/p&gt;&#13;
+                        &lt;/div&gt;&#13;
+&#13;
+                        &lt;div class="MOBILEcontent"&gt;&#13;
+                          &lt;p class="read-more-toggle"&gt;8. User Information.&lt;/p&gt;&#13;
+                            &lt;p class="read-more-content hide"&gt;Any material, information, suggestions, ideas, concepts, know-how, techniques, questions, comments or other communication you transmit or post to this Web Site in any manner ("User Communications") is, and will be considered, non-confidential and non-proprietary, except that you consent to the use and handling of your Personal Information as provided in this  Web Site's Privacy Policy. We and our affiliates and our or their designees may use any or all User Communications for any purpose whatsoever, including, without limitation, reproduction, transmission, disclosure, publication, broadcast, development, manufacturing and/or marketing in any manner whatsoever for any or all commercial or non-commercial purposes. We may, but are not obligated to, monitor or review any User Communications, unless otherwise required by law. We will have no obligation to use, return, review, or respond to any User Communications, unless otherwise required by law. To the fullest extent permitted by law, we will have no liability related to the content of any such User Communications, whether or not arising under the laws of copyright, libel, privacy, obscenity, or otherwise. We retain the right to remove any or all User Communications that includes any material we deem inappropriate or unacceptable.&lt;/p&gt;&#13;
+                        &lt;/div&gt;&#13;
+&#13;
+                        &lt;div class="MOBILEcontent"&gt;&#13;
+                          &lt;p class="read-more-toggle"&gt;9. DISCLAIMERS.&lt;/p&gt;&#13;
+                            &lt;p class="read-more-content hide"&gt;YOUR USE OF THIS SITE IS AT YOUR RISK. THE INFORMATION, MATERIALS AND SERVICES PROVIDED ON OR THROUGH THIS WEB SITE ARE PROVIDED "AS IS" WITHOUT ANY WARRANTIES OF ANY KIND INCLUDING WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT OF INTELLECTUAL PROPERTY. NEITHER TUMI NOR ANY OF ITS AFFILIATES WARRANT THE ACCURACY OR COMPLETENESS OF THE INFORMATION, MATERIALS OR SERVICES PROVIDED ON OR THROUGH THIS WEB SITE. THE INFORMATION, MATERIALS AND SERVICES PROVIDED ON OR THROUGH THIS WEB SITE MAY BE OUT OF DATE, AND NEITHER TUMI NOR ANY OF ITS AFFILIATES MAKES ANY COMMITMENT OR VOLUNTARILY ASSUMES ANY DUTY TO UPDATE SUCH INFORMATION, MATERIALS OR SERVICES. THE FOREGOING EXCLUSIONS OF IMPLIED WARRANTIES DO NOT APPLY TO THE EXTENT PROHIBITED BY LAW. PLEASE REFER TO YOUR LOCAL LAWS FOR ANY SUCH PROHIBITIONS.&lt;br&gt;&lt;br&gt;TO THE FULLEST EXTENT PERMISSIBLE BY LAW, ALL PRODUCTS AND SERVICES PURCHASED ON OR THROUGH THIS WEB SITE ARE SUBJECT ONLY TO ANY APPLICABLE WARRANTIES OF THEIR RESPECTIVE MANUFACTURERS, DISTRIBUTORS AND SUPPLIERS, IF ANY. TO THE FULLEST EXTENT PERMISSIBLE BY LAW, WE HEREBY DISCLAIM ALL WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING, ANY IMPLIED WARRANTIES WITH RESPECT TO THE PRODUCTS AND SERVICES LISTED OR PURCHASED ON OR THROUGH THIS WEB SITE. WITHOUT LIMITING THE GENERALITY OF THE FOREGOING AND TO THE FULLEST EXTENT PERMISSIBLE BY LAW, WE HEREBY EXPRESSLY DISCLAIM ALL LIABILITY FOR PRODUCT DEFECT OR FAILURE, CLAIMS THAT ARE DUE TO NORMAL WEAR, PRODUCT MISUSE, ABUSE, PRODUCT MODIFICATION, IMPROPER PRODUCT SELECTION, NON-COMPLIANCE WITH ANY CODES, OR MISAPPROPRIATION. WE MAKE NO WARRANTIES TO THOSE DEFINED AS "CONSUMERS" IN THE MAGNUSON-MOSS WARRANTY-FEDERAL TRADE COMMISSION IMPROVEMENTS ACT. THE FOREGOING EXCLUSIONS OF IMPLIED WARRANTIES ARE BINDING IN THE STATE OF NEW JERSEY TO THE FULLEST EXTENT PERMITTED BY LAW BUT MAY NOT APPLY IN OTHER STATES TO THE EXTENT PROHIBITED BY LAW. PLEASE REFER TO YOUR LOCAL LAWS FOR ANY SUCH LIMITATIONS OR PROHIBITIONS&lt;/p&gt;&#13;
+                        &lt;/div&gt;&#13;
+&#13;
+                        &lt;div class="MOBILEcontent"&gt;&#13;
+                          &lt;p class="read-more-toggle"&gt;10. LIMITATIONS OF LIABILITY.&lt;/p&gt;&#13;
+                            &lt;p class="read-more-content hide"&gt;TUMI assumes no voluntary responsibility or liability for any damages to, or any viruses that may infect, your computer, telecommunication equipment, or other property caused by or arising from your access to, use of, or browsing this Web Site, or your downloading of any information or materials from this Web Site. TO THE FULLEST EXTENT PERMITTED BY LAW, IN NO EVENT WILL TUMI OR ANY OF ITS OFFICERS, DIRECTORS, EMPLOYEES, SHAREHOLDERS, AFFILIATES, AGENTS, SUCCESSORS OR ASSIGNS, NOR ANY PARTY INVOLVED IN THE CREATION, PRODUCTION OR TRANSMISSION OF THIS WEB SITE, BE LIABLE TO YOU OR ANYONE ELSE FOR ANY INDIRECT, SPECIAL, PUNITIVE, INCIDENTAL OR CONSEQUENTIAL DAMAGES (INCLUDING, WITHOUT LIMITATION, THOSE RESULTING FROM LOST PROFITS, LOST DATA OR BUSINESS INTERRUPTION) ARISING OUT OF THE USE, INABILITY TO USE, OR THE RESULTS OF USE OF THIS WEB SITE, ANY WEB SITES LINKED TO THIS WEB SITE, OR THE MATERIALS, INFORMATION OR SERVICES CONTAINED ON ANY OR ALL SUCH WEB SITES, WHETHER BASED ON WARRANTY, CONTRACT, TORT OR ANY OTHER LEGAL THEORY AND WHETHER OR NOT ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. THE FOREGOING LIMITATIONS OF LIABILITY ARE BINDING IN THE STATE OF NEW JERSEY TO THE FULLEST EXTENT PERMITTED BY LAW BUT MAY NOT APPLY TO THE EXTENT PROHIBITED BY LAW. PLEASE REFER TO YOUR LOCAL LAWS FOR ANY SUCH LIMITATIONS OR PROHIBITIONS&lt;br&gt;&lt;br&gt;N THE EVENT OF ANY PROBLEM WITH THIS WEB SITE OR ANY CONTENT, YOU AGREE THAT YOUR SOLE REMEDY IS TO CEASE USING THIS WEB SITE, EXCEPT AS OTHERWISE PERMITTED BY LAW. IN THE EVENT OF ANY PROBLEM WITH THE PRODUCTS OR SERVICES THAT YOU HAVE PURCHASED ON OR THROUGH THIS WEB SITE, YOU AGREE THAT YOUR SOLE REMEDY, IF ANY, IS FROM THE MANUFACTURER OF SUCH PRODUCTS OR SUPPLIER OF SUCH SERVICES, IN ACCORDANCE WITH SUCH MANUFACTURER'S OR SUPPLIER'S WARRANTY, OR TO SEEK A RETURN AND REFUND FOR SUCH PRODUCT OR SERVICES IN ACCORDANCE WITH THE RETURNS AND REFUNDS POLICIES POSTED ON THIS WEB SITE, EXCEPT AS OTHERWISE PERMITTED BY LAW.&lt;/p&gt;&#13;
+                        &lt;/div&gt;&#13;
+&#13;
+                        &lt;div class="MOBILEcontent"&gt;&#13;
+                          &lt;p class="read-more-toggle"&gt;11. Revisions to these Terms and Conditions.&lt;/p&gt;&#13;
+                            &lt;p class="read-more-content hide"&gt;These Terms and Conditions may be revised at any time and from time to time by updating this posting. You should visit this page from time to time to review the then current Terms and Conditions. Certain provisions of these Terms and Conditions may be superseded by legal notices or terms located on particular pages of this Web Site. &lt;/p&gt;&#13;
+                        &lt;/div&gt;&#13;
+&#13;
+                        &lt;div class="MOBILEcontent"&gt;&#13;
+                          &lt;p class="read-more-toggle"&gt;12. Choice of Law; Jurisdiction.&lt;/p&gt;&#13;
+                            &lt;p class="read-more-content hide"&gt;These Terms and Conditions supersede any other agreement between you and TUMI to the extent necessary to resolve any inconsistency or ambiguity between them. These Terms and Conditions will be governed by and construed in accordance with the laws of the State of New Jersey, without giving effect to any principles of conflicts of laws. Any action seeking legal or equitable relief arising out of or relating to this Web Site will be brought only in the courts of the State of New Jersey or the United States District Court for the District of New Jersey. A printed version of these Terms and Conditions will be admissible in judicial and administrative proceedings based upon or relating to these Terms and Conditions to the same extent and subject to the same conditions as other business documents and records originally generated and maintained in printed form.&lt;/p&gt;&#13;
+                        &lt;/div&gt;&#13;
+&#13;
+                        &lt;div class="MOBILEcontent"&gt;&#13;
+                          &lt;p class="read-more-toggle"&gt;13. Termination.&lt;/p&gt;&#13;
+                            &lt;p class="read-more-content hide"&gt;You or we may suspend or terminate your account or your use of this Web Site at any time, for any reason or for no reason. You are personally liable for any orders placed or charges incurred through your account prior to termination. We reserve the right to change, suspend, or discontinue all or any aspect of this Web Site at any time without notice.&lt;/p&gt;&#13;
+                        &lt;/div&gt;&#13;
+&#13;
+                        &lt;div class="MOBILEcontent"&gt;&#13;
+                          &lt;p class="read-more-toggle"&gt;14. Severability.&lt;/p&gt;&#13;
+                            &lt;p class="read-more-content hide"&gt;If any provision of the foregoing Terms and Conditions shall be held to be invalid or unenforceable for any reason, the remaining provisions shall continue to be valid and enforceable to the greatest extent permitted by law. If a provision deemed invalid or unenforceable may become valid or enforceable by limitation, then the invalid or unenforceable provision will be replaced by a provision that comes closest to the original intent of the invalid or unenforceable provision or will be modified  to conform to the most expansive permissible reading allowable under the law consistent with the intention of the invalid or unenforceable provision&lt;/p&gt;&#13;
+                        &lt;/div&gt;&#13;
+&#13;
+                        &lt;div class="MOBILEcontent"&gt;&#13;
+                          &lt;p class="read-more-toggle"&gt;15. Filtering.&lt;/p&gt;&#13;
+                            &lt;p class="read-more-content hide"&gt;Pursuant to 47 U.S.C. Section 230(d) as amended, we hereby notify you that parental control protections (such as computer hardware, software or filtering services) are commercially available that may assist you in limiting access to material that is harmful to minors. Information identifying current providers of such protections is available on the two web sites GetNetWise (&lt;a class="underline" href="http://getnetwise.org/"&gt;http://getnetwise.org//&lt;/a&gt;) and OnGuard Online (&lt;a class="underline" href="http://onguardonline.gov"&gt;http://onguardonline.gov/&lt;/a&gt;). Please note that Tumi does not endorse any of the products or services listed at such site.&lt;/p&gt;&#13;
+                        &lt;/div&gt;&#13;
+&#13;
+                        &lt;div class="MOBILEcontent"&gt;&#13;
+                          &lt;p class="read-more-toggle"&gt;16. Information or Complaints.&lt;/p&gt;&#13;
+                            &lt;p class="read-more-content hide"&gt;Under California Civil Code Section 1789.3, California users are entitled to the following consumer rights notice: If you have a question or complaint regarding the Site, please send an e-mail to &lt;a class="underline" href="mailto:service@tumi.com"&gt;service@tumi.com&lt;/a&gt;. You may also contact us by writing to Customer Service at 1001 Durham Avenue South Plainfield NJ 07080, or by calling us at &lt;a class="underline" href="tel:1-800-299-8864"&gt;1-800-299-8864 (TUMI)&lt;/a&gt;. California residents may reach the Complaint Assistance Unit of the Division of Consumer Services of the California Department of Consumer Affairs by mail at 1625 North Market Blvd., Sacramento, CA 95834, or by telephone at &lt;a class="underline" href="tel:1-916-445-1254"&gt;(916) 445-1254&lt;/a&gt; or &lt;a class="underline" href="tel:1-800-952-5210"&gt;(800) 952-5210&lt;/a&gt;.&lt;/p&gt;&#13;
+                        &lt;/div&gt;&#13;
+&#13;
+&#13;
+                        &lt;div class="MOBILEcontent" style="border-bottom:none;"&gt;&#13;
+                          &lt;p class="read-more-toggle"&gt;17. Additional Assistance.&lt;/p&gt;&#13;
+                            &lt;p class="read-more-content hide"&gt;If you do not understand any of the foregoing Terms and Conditions or if you have any questions or comments, we invite you to contact our Customer Service Department by email at &lt;a class="underline" href="mailto:service@tumi.com"&gt;service@tumi.com&lt;/a&gt; or by phone at &lt;a class="underline" href="tel:1-800-299-8864"&gt;1-800-299-8864 (TUMI)&lt;/a&gt;.&lt;/p&gt;&#13;
+                        &lt;/div&gt;&#13;
+                    &lt;/div&gt; &lt;!--MOBILEtumi_terms--&gt;&lt;/div&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="web-accessibility-statement">
+        <display-name xml:lang="x-default">Web Accessibility Statement</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;div class="web-accessibility container"&gt;&#13;        &lt;h2&gt;Tumi Accessibility Statement&lt;/h2&gt;&#13;        &lt;p class="removeFocusIndicator"&gt; Tumi is committed to digital accessibility, and to conforming to the &lt;a&#13;                title="https://www.essentialaccessibility.com/blog/web-content-accessibility-guidelines-wcag/"&#13;                href="https://www.essentialaccessibility.com/blog/web-content-accessibility-guidelines-wcag/" target=""&#13;                rel="noopener noreferrer nofollow"&gt;Web Content Accessibility Guidelines (WCAG)&lt;/a&gt;2.1, Level A and AA&#13;            and complying with &lt;a &#13;                title="https://www.essentialaccessibility.com/blog/ada-guidelines-compliance/"&#13;                href="https://www.essentialaccessibility.com/blog/ada-guidelines-compliance/" target=""&#13;                rel="noopener noreferrer nofollow"&gt;Americans with Disabilities Act (ADA)&lt;/a&gt; effective communication&#13;            requirements, and other applicable regulations. &lt;/p&gt;&#13;        &lt;p&gt; To accomplish this, we have partnered with eSSENTIAL Accessibility to administer our accessibility program&#13;            and oversee its governance. Their accessibility program evaluates our digital products on an ongoing basis&#13;            in accordance with best practices and is supported by a diverse team of accessibility professionals,&#13;            including users of assistive technologies. The platform, moreover, goes beyond minimum compliance&#13;            requirements by making an &lt;a &#13;                title="https://www.essentialaccessibility.com/tumi?utm_source=tumihomepage&amp;amp;utm_medium=iconlarge&amp;amp;utm_term=eachannelpage&amp;amp;utm_content=header&amp;amp;utm_campaign=tumi"&#13;                href="https://www.essentialaccessibility.com/tumi?utm_source=tumihomepage&amp;amp;utm_medium=iconlarge&amp;amp;utm_term=eachannelpage&amp;amp;utm_content=header&amp;amp;utm_campaign=tumi"&#13;                target="" rel="noopener noreferrer nofollow"&gt;assistive CX technology application&lt;/a&gt; available to&#13;            customers who have trouble typing, gesturing, moving a mouse, or reading. The application is free to&#13;            download, and it incorporates tools such as mouse and keyboard replacements, voice recognition, speech&#13;            enablement, hands-free/touch-free navigation, and more. &lt;/p&gt;&#13;        &lt;p&gt; We want to hear from you if you encounter any accessibility barriers on our digital properties. Please contact our Customer Support at &lt;a href="mailto:service@tumi.com."&gt;&lt;u&gt;service@tumi.com&lt;/u&gt;.&lt;/a&gt;&lt;/p&gt;&#13;    &#13;    &lt;svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 115.68 43.51"&#13;        class="removeFocusIndicator"&gt;&#13;        &lt;defs&gt;&#13;            &lt;style&gt;&#13;                .cls-1 {&#13;                    fill: #221f1f;&#13;                }&#13;            &lt;/style&gt;&#13;        &lt;/defs&gt;&#13;        &lt;path class="cls-1" d="M153.4,121v-2h-.72v-.41h1.92V119h-.71v2Z" transform="translate(-42.06 -77.95)"&gt;&lt;/path&gt;&#13;        &lt;path class="cls-1" d="M154.91,121v-2.41h.73l.44,1.65.43-1.65h.73V121h-.45v-1.9l-.48,1.9h-.47l-.48-1.9V121Z"&#13;            transform="translate(-42.06 -77.95)"&gt;&lt;/path&gt;&#13;        &lt;path class="cls-1"&#13;            d="M85.68,99.7a14.57,14.57,0,0,1,9.41-13.62A21.68,21.68,0,0,0,78.15,78H63.81a21.75,21.75,0,0,0,0,43.5H78.15a21.7,21.7,0,0,0,16.94-8.12A14.58,14.58,0,0,1,85.68,99.7ZM66.78,85.58a2.21,2.21,0,1,1-2.24,2.21A2.22,2.22,0,0,1,66.78,85.58Zm7.41,20.76h0a9.19,9.19,0,0,1-6,6.11A9,9,0,0,1,57,106.36h0a9.6,9.6,0,0,1-.35-4.22,9.33,9.33,0,0,1,5-7h0a1.17,1.17,0,0,1,.74-.12,1.31,1.31,0,0,1,1.08,1.49,1.28,1.28,0,0,1-.79,1l0,0a6.63,6.63,0,0,0-3.35,4.93,6.89,6.89,0,0,0,.22,2.91h0a6.59,6.59,0,0,0,1.18,2.26l.08.1L61,108l.28.28.06.07a7,7,0,0,0,3.52,1.7h0a6,6,0,0,0,2.65-.22,6.5,6.5,0,0,0,4.22-4.14l0,0a1.29,1.29,0,0,1,.87-1,1.29,1.29,0,0,1,1.57,1.65Zm8.54,1.51-2.55,1.42-.06,0-.07,0a1.07,1.07,0,0,1-.39.07h0a1.46,1.46,0,0,1-.22,0,1.23,1.23,0,0,1-.73-.5l-3.55-5.36H67a1.69,1.69,0,0,1-.32,0,1.62,1.62,0,0,1-1.45-1.58V92.72a1.58,1.58,0,0,1,3.16,0v2.9h4.88a1.4,1.4,0,0,1,0,2.79H68.36v2.24h7a1.33,1.33,0,0,1,1.14.69L80.27,107l1.48-.83a1,1,0,0,1,1.35.37A1,1,0,0,1,82.73,107.85Z"&#13;            transform="translate(-42.06 -77.95)"&gt;&lt;/path&gt;&#13;        &lt;path class="cls-1" d="M106.18,96.94l-11.61-6c0,2.48.28,4.09,2,5l5.83,3Z" transform="translate(-42.06 -77.95)"&gt;&#13;        &lt;/path&gt;&#13;        &lt;path class="cls-1"&#13;            d="M107.69,97.73l-3.79,2h0l-7.3,3.8c-1.67.9-2,2.86-2,5L105.11,103c2.33-1.27,2.58-2.82,2.58-5.29Z"&#13;            transform="translate(-42.06 -77.95)"&gt;&lt;/path&gt;&#13;        &lt;path class="cls-1"&#13;            d="M124.12,100.82h14.27a.17.17,0,0,0,.16-.18V88.37a.17.17,0,0,0-.16-.18H124.12a.17.17,0,0,0-.16.18v12.27A.17.17,0,0,0,124.12,100.82Z"&#13;            transform="translate(-42.06 -77.95)"&gt;&lt;/path&gt;&#13;        &lt;path class="cls-1"&#13;            d="M136,78H121.65a21.68,21.68,0,0,0-16.78,7.92,14.58,14.58,0,0,1,0,27.67,21.7,21.7,0,0,0,16.78,7.91H136A21.75,21.75,0,0,0,136,78Zm-14.66,7.7a.21.21,0,0,1,.19-.22h19.36a.2.2,0,0,1,.18.22v18.23a.19.19,0,0,1-.18.21H121.52a.2.2,0,0,1-.19-.21Zm20.23,27.11a.25.25,0,0,1-.25.25H121.09a.25.25,0,0,1-.25-.25v-7.38a.25.25,0,0,1,.25-.25h20.22a.25.25,0,0,1,.25.25Z"&#13;            transform="translate(-42.06 -77.95)"&gt;&lt;/path&gt;&#13;        &lt;path class="cls-1"&#13;            d="M124.63,109.37h-2a.21.21,0,0,0-.21.21v2a.21.21,0,0,0,.21.21h2a.21.21,0,0,0,.22-.21v-2A.21.21,0,0,0,124.63,109.37Z"&#13;            transform="translate(-42.06 -77.95)"&gt;&lt;/path&gt;&#13;        &lt;path class="cls-1"&#13;            d="M86.35,28.27h2a.21.21,0,0,1,.21.21v2a.22.22,0,0,1-.22.22h-2a.22.22,0,0,1-.22-.22v-2A.22.22,0,0,1,86.35,28.27Z"&gt;&#13;        &lt;/path&gt;&#13;        &lt;path class="cls-1"&#13;            d="M124.63,108.65h2a.22.22,0,0,0,.22-.22v-2a.22.22,0,0,0-.22-.22h-2a.21.21,0,0,0-.21.22v2A.21.21,0,0,0,124.63,108.65Z"&#13;            transform="translate(-42.06 -77.95)"&gt;&lt;/path&gt;&#13;        &lt;path class="cls-1"&#13;            d="M90.14,28.27h2a.21.21,0,0,1,.21.21v2a.22.22,0,0,1-.22.22h-2a.21.21,0,0,1-.21-.21v-2A.22.22,0,0,1,90.14,28.27Z"&gt;&#13;        &lt;/path&gt;&#13;        &lt;path class="cls-1"&#13;            d="M93.92,28.27h2a.21.21,0,0,1,.21.21v2a.22.22,0,0,1-.22.22h-2a.21.21,0,0,1-.21-.21v-2A.22.22,0,0,1,93.92,28.27Z"&gt;&#13;        &lt;/path&gt;&#13;        &lt;path class="cls-1"&#13;            d="M95.7,31.42h2a.21.21,0,0,1,.21.21v2a.21.21,0,0,1-.21.21h-2a.21.21,0,0,1-.21-.21v-2A.22.22,0,0,1,95.7,31.42Z"&gt;&#13;        &lt;/path&gt;&#13;        &lt;path class="cls-1"&#13;            d="M132.19,109.37h-2a.21.21,0,0,0-.22.21v2a.21.21,0,0,0,.22.21h2a.21.21,0,0,0,.22-.21v-2A.21.21,0,0,0,132.19,109.37Z"&#13;            transform="translate(-42.06 -77.95)"&gt;&lt;/path&gt;&#13;        &lt;path class="cls-1"&#13;            d="M128.41,109.37h-2a.21.21,0,0,0-.21.21v2a.21.21,0,0,0,.21.21h2a.21.21,0,0,0,.22-.21v-2A.21.21,0,0,0,128.41,109.37Z"&#13;            transform="translate(-42.06 -77.95)"&gt;&lt;/path&gt;&#13;        &lt;path class="cls-1"&#13;            d="M91.92,31.42h2a.21.21,0,0,1,.21.21v2a.21.21,0,0,1-.21.21h-2a.22.22,0,0,1-.22-.22v-2A.22.22,0,0,1,91.92,31.42Z"&gt;&#13;        &lt;/path&gt;&#13;    &lt;/svg&gt;&#13;    &lt;/div&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+</library>

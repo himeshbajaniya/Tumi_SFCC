@@ -1,0 +1,43 @@
+.privacy-policy {
+    word-wrap: break-word;
+
+    a {
+        text-decoration: underline;
+    }
+
+    ol,
+    ul,
+    li {
+        list-style: none;
+        padding-left: 20px;
+    }
+
+    .jumbotron {
+        height: 170px;
+    }
+
+    .titlewidthBreadcrums {
+        background-color: #222;
+        border-radius: 0;
+        margin-bottom: 0;
+
+        h1 {
+            color: #fff;
+            text-transform: uppercase;
+        }
+    }
+
+    h3 {
+        text-transform: uppercase;
+    }
+
+    a {
+        color: #222;
+
+        &:hover {
+            color: #c41e3a;
+            text-decoration: underline;
+            transition: 0.1s;
+        }
+    }
+}

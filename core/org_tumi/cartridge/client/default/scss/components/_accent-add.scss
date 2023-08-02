@@ -1,0 +1,304 @@
+.accent-row {
+    padding: 0;
+    margin: 0;
+
+    .accent-item {
+        margin-bottom: 16px;
+
+        .icon {
+            box-sizing: border-box;
+            font-size: 15px;
+            width: 48px;
+            height: 28px;
+            margin-right: 16px;
+            margin-left: 12px;
+
+            span {
+                width: 48px;
+                height: 28px;
+                padding: 9px;
+
+                &.numberFormat {
+                    font-family: $font-tumi-monogram;
+                    padding: 0;
+                }
+            }
+        }
+
+        .title {
+            color: $bg-dark;
+            @include sizeWeightLh(15px, 600, 20px);
+        }
+
+        .desc {
+            color: $davy-grey;
+            @include sizeWeightLh(15px, 400, 20px);
+        }
+
+        .add-accent {
+            color: $eerie-black;
+            @include sizeWeightLh(13px, 400, 20px);
+        }
+
+        .edit-block-accent {
+            a {
+                color: $eerie-black;
+                @include sizeWeightLh(13px, 400, 20px);
+            }
+        }
+
+        a:hover {
+            text-decoration: none !important;
+        }
+
+        &.add-monogram {
+            .confirmmsg,
+            .edit-block {
+                display: none;
+            }
+        }
+
+        &.edit-monogram {
+            .title,
+            .desc,
+            .add-block {
+                display: none;
+            }
+        }
+
+        .edit-block {
+            a {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.accent-content {
+    .color {
+        color: $eerie-black;
+        font-family: $font-tumi;
+        margin-top: 4px;
+        margin-bottom: 4px;
+        @include sizeWeightLh(18px, 400, 20px);
+    }
+
+    .selected-accent-option {
+        color: $davy-grey;
+        font-family: $font-tumi;
+        margin-top: 4px;
+        @include sizeWeightLh(15px, 400, 20px);
+    }
+
+    .selected-accent-price {
+        color: $davy-grey;
+        font-family: $font-tumi;
+        margin-top: 4px;
+        @include sizeWeightLh(15px, 400, 20px);
+    }
+}
+
+.accented-product {
+    // .swiper-wrapper {
+    //     height: 130px;
+    //     margin-bottom: 25px !important;
+
+    //     .swiper-slide {
+    //         width: auto;
+    //         overflow: auto;
+    //     }
+
+    //     .swiper-scrollbar {
+    //         .swiper-scrollbar-drag {
+    //             width: 308px !important;
+    //         }
+    //     }
+
+    //     .view-more-btn {
+    //         display: none;
+    //     }
+
+    //     .no-accents-button {
+    //         width: 90px;
+    //     }
+
+    //     button {
+    //         max-width: 100px !important;
+    //         max-height: 130px !important;
+    //         border: none;
+    //         background: transparent;
+    //         margin-right: 10px;
+    //         padding: 0 5px;
+
+    //         &:focus {
+    //             outline: none;
+    //         }
+
+    //         .accent-image-container {
+    //             height: 92px !important;
+    //             width: 82.93px !important;
+    //             border: none !important;
+    //         }
+
+    //         .accent-price {
+    //             margin-top: 8px;
+    //             color: $eerie-black;
+    //             font-family: $font-tumi;
+    //             padding-bottom: 14px;
+    //             @include sizeWeightLh(14px, 400, 14px);
+    //         }
+
+    //         img {
+    //             width: 82.93px;
+    //             height: 92px;
+    //             //margin: 0 5px;
+    //         }
+    //     }
+    // }
+
+    .outer-wrapper {
+        max-width: 100vw;
+        overflow-x: scroll;
+        position: relative;
+        /* stylelint-disable */
+        scrollbar-width: thin;
+        -ms-overflow-style: none;
+        /* stylelint-enable */
+
+        &::-webkit-scrollbar-thumb {
+            height: 3px;
+            background-color: $bg-dark;
+        }
+
+        /* stylelint-disable */
+        &::-webkit-scrollbar:vertical {
+            display: none;
+        }
+        /* stylelint-enable */
+
+        &::-webkit-scrollbar {
+            height: 5px;
+        }
+
+        button {
+            max-width: 100px !important;
+            max-height: 130px !important;
+            border: none;
+            background: transparent;
+            margin-right: 10px;
+            padding: 0 5px;
+
+            &:focus {
+                outline: none;
+            }
+
+            .accent-image-container {
+                height: 92px !important;
+                width: 82.93px !important;
+                border: none !important;
+            }
+
+            .accent-price {
+                margin-top: 8px;
+                color: $eerie-black;
+                font-family: $font-tumi;
+                padding-bottom: 14px;
+                @include sizeWeightLh(14px, 400, 14px);
+            }
+
+            img {
+                width: 82.93px;
+                height: 92px;
+            }
+        }
+
+        .view-more-btn {
+            display: none;
+        }
+    }
+
+    .pseduo-track {
+        background-color: $grey3;
+        height: 2px;
+        width: 100%;
+        position: absolute;
+        top: 141px;
+    }
+
+    .inner-wrapper {
+        display: flex;
+        padding-bottom: 10px;
+    }
+}
+
+.accent-modal {
+    .modal-dialog {
+        width: 100%;
+
+        @include media-breakpoint-up(sm) {
+            width: 455px;
+        }
+
+        .modal-header {
+            margin-bottom: 22px;
+        }
+
+        .modal-title {
+            color: $eerie-black;
+            font-family: $font-tumi;
+            @include sizeWeightLh(24px, 400, 24px);
+        }
+
+        .accent-btn-cntr {
+            margin-top: 28.5px;
+
+            .disabled {
+                color: $grey3;
+                background-color: $grey3;
+                pointer-events: none;
+            }
+
+            .accent-step-button-next {
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+
+            .accent-cancel-btn {
+                text-align: center;
+                margin-top: 24px;
+
+                .cancelBtn {
+                    color: $bg-dark;
+                    @include sizeWeightLh(15px, 400, 14px);
+                }
+            }
+        }
+
+        .default-accent-img {
+            height: 46px;
+            width: 46px;
+            margin-top: 30px;
+        }
+    }
+
+    .image-accent {
+        max-width: 280px;
+        margin: auto;
+    }
+
+    .wrap-items.accented-product {
+        margin-top: 22px;
+    }
+}
+
+.accent-scroll {
+    cursor: pointer;
+    user-select: none;
+}
+
+.wrap-items {
+    .selected {
+        border: 1px solid $eerie-black !important;
+    }
+}

@@ -1,0 +1,68 @@
+<div class="tumi-diff-innovative-component-container">
+    <div
+        class="tumi-diff-innovative-component container"
+        data-creative-name="{{content-asset-id}}"
+    >
+        <div class="row">
+            <div class="text-collection col-md-9">
+				{{#if subTagLine}}
+                <div class="subTagLine">{{subTagLine}}</div>
+                {{/if}}
+                {{#if mainTagLine}}
+                <div class="main-tag-line">{{mainTagLine}}</div>
+                {{/if}} {{#if description}}
+                <div class="description">{{description}}</div>
+                {{/if}}
+            </div>
+        </div>
+		
+		{{#if collections}}
+        <div
+            class="tab-pane fade position-relative show active"
+            id="sub-hero-collection"
+            role="tabpanel"
+            aria-labelledby="sub-hero-collection-tab"
+        >
+            <div class="tumi-diff-innovative-collection-container">
+                <div class="tumi-diff-innovative-wrapper">
+                    {{#each collections}}
+                    <div class="swiper-slide">
+                            <img
+                                src="{{S7-image-link}}"
+                                alt="{{image-alt}}"
+                                class="w-100"
+                            />
+                        <div class="header-description-content">
+                            <p class="header"> {{collection-name}} </p>
+                            <p class="desc">{{description}}</p>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+
+        {{/if}}
+        {{#if (eq selectionOfMedia "Image")}}
+            {{#if s7ImageDesktop}}
+                <div class="banner-section">
+                    <div class="image">
+                        <img class="img-fluid w-100" src="{{s7ImageDesktop}}" alt="{{imageAltDesktop}}">
+                    </div>
+                </div>
+            {{/if}}
+        {{/if}}
+
+        {{#if (eq selectionOfMedia "Video")}}
+            {{#if s7VideoDesktop}}
+                <div class="banner-section">
+                    <div class="Video">
+                        <video class="video-desktop removeFocusIndicator" autoplay="" muted="" loop="" playsinline="">
+                              <source src="{{s7VideoDesktop}}">
+                          </video>
+                    </div>
+                </div>
+            {{/if}}
+        {{/if}}
+    </div>
+</div>

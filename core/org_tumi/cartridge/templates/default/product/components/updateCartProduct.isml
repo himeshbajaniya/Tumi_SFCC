@@ -1,0 +1,16 @@
+<div class="row cart-and-ipay">
+<div class="col-sm-12 mt-2 modal-footer-error"></div>
+
+    <div class="col-sm-12 cart-update">
+        <input type="hidden" class="update-cart-url" value="${pdict.updateCartUrl}"
+            data-selected-quantity="${pdict.selectedQuantity}" data-selected-option="${pdict.selectedOptionValueId}"
+            data-uuid="${pdict.uuid}">
+        <a class="update-cart-product-global button button--primary w-100" data-pid="${product.id}"
+            ${!product.readyToOrder || !product.available ? "disabled" : ""}>
+            ${Resource.msg('button.update.cart', 'cart', null)}
+        </a>
+    </div>
+    <div class="accent-cancel-btn w-100 mt-3">
+        <a href="#" class="cancelBtn w-100" data-dismiss="modal">${Resource.msg('product.monogram.cancel', 'product', null)}</a>
+    </div>
+</div>

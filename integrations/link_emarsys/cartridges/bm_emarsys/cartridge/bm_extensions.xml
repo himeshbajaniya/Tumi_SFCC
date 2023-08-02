@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<extensions xmlns="http://www.demandware.com/xml/bmmodules/2007-12-11" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://www.demandware.com/xml/bmmodules/2007-12-11 bmext.xsd">
+
+    <menuitem id="emarsys_integration" position="1999" site="true">
+        <name xml:lang="x-default">Emarsys Integration</name>
+        <short_description xml:lang="x-default">Emarsys integration settings.</short_description>
+        <description xml:lang="x-default">Emarsys integration settings.</description>
+        <icon>icons/logo.png</icon>
+    </menuitem>
+
+    <menuaction id="emarsys-newsletter" menupath="emarsys_integration" position="500" site="true">
+        <name xml:lang="x-default">Newsletter Subscriptions</name>
+        <short_description xml:lang="x-default">Configure newsletter subscription methods</short_description>
+        <description xml:lang="x-default">Configure newsletter subscription methods.</description>
+        <exec pipeline="NewsletterSubscription" node="ShowNewsletterSubscription" />
+        <sub-pipelines>
+            <pipeline name="NewsletterSubscription-ShowNewsletterSubscription" />
+            <pipeline name="NewsletterSubscription-SaveNewsletter" />
+        </sub-pipelines>
+        <parameters>
+            <parameter name="menuname" value="Newsletter Subscriptions" />
+            <parameter name="mainmenuname" value="Emarsys Integration" />
+        </parameters>
+        <icon>icons/logo.png</icon>
+    </menuaction>
+
+    <menuaction id="emarsys-catalog-configurations" menupath="emarsys_integration" position="500" site="true">
+        <name xml:lang="x-default">Export Catalog Configurations</name>
+        <short_description xml:lang="x-default">Configure Emarsys Export Catalog.</short_description>
+        <description xml:lang="x-default">Configure emarsys export catalog.</description>
+        <exec pipeline="EmarsysAdmin" node="ShowCatalogConfigurations" />
+        <sub-pipelines>
+            <pipeline name="EmarsysAdmin-ShowCatalogConfigurations" />
+            <pipeline name="EmarsysAdmin-SaveCatalogConfigurations" />
+        </sub-pipelines>
+        <parameters>
+            <parameter name="menuname" value="Export Catalog Configuration" />
+            <parameter name="mainmenuname" value="Emarsys Integration" />
+        </parameters>
+        <icon>icons/logo.png</icon>
+    </menuaction>
+
+    <menuaction id="emarsys-emails-orderconfirmation" menupath="emarsys_integration" position="501" site="true">
+        <name xml:lang="x-default">Order Confirmation Configuration</name>
+        <short_description xml:lang="x-default">Configure order confirmation integration.</short_description>
+        <description xml:lang="x-default">Configure order confirmation integration.</description>
+        <exec pipeline="EmarsysAdmin" node="ShowOrderConfirmation" />
+        <sub-pipelines>
+            <pipeline name="EmarsysAdmin-ShowOrderConfirmation" />
+            <pipeline name="EmarsysAdmin-SaveTransactionalEmailsConfig" />
+        </sub-pipelines>
+            <parameters>
+            <parameter name="menuname" value="Order Confirmation Configuration" />
+            <parameter name="mainmenuname" value="Emarsys Integration" />
+        </parameters>
+        <icon>icons/logo.png</icon>
+    </menuaction>
+
+    <menuaction id="emarsys-shipping-confirmation" menupath="emarsys_integration" position="502" site="true">
+        <name xml:lang="x-default">Shipping Confirmation Configuration</name>
+        <short_description xml:lang="x-default">Configure shipping confirmation email fields.</short_description>
+        <description xml:lang="x-default">Configure shipping confirmation email fields.</description>
+        <exec pipeline="EmarsysAdmin" node="ShowShippingConfirmation" />
+        <sub-pipelines>
+            <pipeline name="EmarsysAdmin-ShowShippingConfirmation" />
+            <pipeline name="EmarsysAdmin-SaveTransactionalEmailsConfig" />
+        </sub-pipelines>
+            <parameters>
+            <parameter name="menuname" value="Shipping Confirmation Configuration" />
+            <parameter name="mainmenuname" value="Emarsys Integration" />
+        </parameters>
+        <icon>icons/logo.png</icon>
+    </menuaction>
+
+        <menuaction id="emarsys-order-cancelled-confirmation" menupath="emarsys_integration" position="502" site="true">
+        <name xml:lang="x-default">Order Cancelled Confirmation Configuration</name>
+        <short_description xml:lang="x-default">Configure order cancelled confirmation email fields.</short_description>
+        <description xml:lang="x-default">Configure order cancelled confirmation email fields.</description>
+        <exec pipeline="EmarsysAdmin" node="ShowOrderCancelledConfigurations" />
+        <sub-pipelines>
+            <pipeline name="EmarsysAdmin-ShowOrderCancelledConfigurations" />
+            <pipeline name="EmarsysAdmin-SaveTransactionalEmailsConfig" />
+        </sub-pipelines>
+            <parameters>
+            <parameter name="menuname" value="Order Cancelled Confirmation Configuration" />
+            <parameter name="mainmenuname" value="Emarsys Integration" />
+        </parameters>
+        <icon>icons/logo.png</icon>
+    </menuaction>
+
+    <menuaction id="emarsys-dbload-configuration" menupath="emarsys_integration" position="505" site="true">
+        <name xml:lang="x-default">Database Load Configuration</name>
+        <short_description xml:lang="x-default">Database Load Configuration.</short_description>
+        <description xml:lang="x-default">Configure database load.</description>
+        <exec pipeline="EmarsysAdmin" node="ShowDBLoad" />
+        <sub-pipelines>
+            <pipeline name="EmarsysAdmin-ShowDBLoad" />
+            <pipeline name="EmarsysAdmin-SaveDBLoad" />
+        </sub-pipelines>
+            <parameters>
+            <parameter name="menuname" value="Database Load Configuration" />
+            <parameter name="mainmenuname" value="Emarsys Integration" />
+        </parameters>
+        <icon>icons/logo.png</icon>
+    </menuaction>
+
+    <menuaction id="emarsys-smartinsight-configuration" menupath="emarsys_integration" position="700" site="true">
+        <name xml:lang="x-default">SmartInsight Configuration</name>
+        <short_description xml:lang="x-default">Configure SmartInsight fields.</short_description>
+        <description xml:lang="x-default">Configure smartInsight fields.</description>
+        <exec pipeline="EmarsysAdmin" node="ShowSmartInsight" />
+        <sub-pipelines>
+            <pipeline name="EmarsysAdmin-ShowSmartInsight" />
+            <pipeline name="EmarsysAdmin-SaveSmartInsight" />
+        </sub-pipelines>
+            <parameters>
+            <parameter name="menuname" value="SmartInsight Configuration" />
+            <parameter name="mainmenuname" value="Emarsys Integration" />
+        </parameters>
+        <icon>icons/logo.png</icon>
+    </menuaction>
+
+    <menuaction id="emarsys-emails-orderconfirmation-send-email" menupath="emarsys_integration" position="503" site="true">
+        <name xml:lang="x-default">Send Order Confirmation Email</name>
+        <short_description xml:lang="x-default">Send Order Confirmation Email.</short_description>
+        <description xml:lang="x-default">Send order confirmation email.</description>
+        <exec pipeline="EmarsysAdmin" node="ShowOrderConfirmationEmail" />
+        <sub-pipelines>
+            <pipeline name="EmarsysAdmin-ShowOrderConfirmationEmail" />
+            <pipeline name="EmarsysAdmin-SendOrderConfirmationEmail" />
+        </sub-pipelines>
+        <parameters>
+            <parameter name="menuname" value="Send Order Confirmation Email" />
+            <parameter name="mainmenuname" value="Emarsys Integration" />
+        </parameters>
+        <icon>icons/logo.png</icon>
+    </menuaction>
+
+    <menuaction id="external-events" menupath="emarsys_integration" position="701" site="true">
+		<name xml:lang="x-default">External Events</name>
+		<short_description xml:lang="x-default">Manage external events</short_description>
+		<description xml:lang="x-default">Manage external events</description>
+		<exec pipeline="ExternalEvents" node="Show" />
+		<sub-pipelines>
+            <pipeline name="ExternalEvents-Show" />
+            <pipeline name="ExternalEvents-Add" />
+            <pipeline name="ExternalEvents-Update" />
+            <pipeline name="ExternalEvents-Trigger" />
+            <pipeline name="ExternalEvents-CampaignStatus" />
+		</sub-pipelines>
+        <parameters>
+            <parameter name="menuname" value="External Events" />
+            <parameter name="mainmenuname" value="Emarsys Manager" />
+        </parameters>
+		<icon>icons/logo.png</icon>
+	</menuaction>
+</extensions>

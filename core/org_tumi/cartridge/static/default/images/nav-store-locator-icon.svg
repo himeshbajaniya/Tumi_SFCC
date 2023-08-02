@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="15px" height="21px" viewBox="0 0 15 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="background: #FFFFFF;">
+    <!-- Generator: Sketch 56.2 (81672) - https://sketch.com -->
+    <title>Store Locator Icon</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Store-Locator-Icon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect fill="#1b1c1e" x="0" y="0" width="15" height="21"></rect>
+        <path d="M7.54089308,18 C3.84696436,13.893588 2,10.7858117 2,8.67667121 C2,5.51296044 4.45358494,3 7.54089308,3 C10.6282012,3 13,5.51296044 13,8.67667121 C13,10.7858117 11.1802977,13.893588 7.54089308,18 Z" id="Path-2" stroke="#FFFFFF" stroke-width="1.5"></path>
+        <circle id="Oval" fill="#FFFFFF" cx="7.5" cy="8.5" r="2.5"></circle>
+    </g>
+</svg>

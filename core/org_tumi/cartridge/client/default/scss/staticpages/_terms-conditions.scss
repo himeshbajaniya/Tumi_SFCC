@@ -1,0 +1,52 @@
+.terms-conditons {
+    a {
+        text-decoration: underline;
+    }
+
+    .titlewidthBreadcrums {
+        background-color: #222;
+        border-radius: 0;
+        margin-bottom: 0;
+        height: 170px;
+
+        h1 {
+            color: #fff;
+            text-transform: uppercase;
+        }
+    }
+
+    h3 {
+        text-transform: uppercase;
+    }
+
+    a {
+        color: #222;
+
+        &:hover {
+            color: #c41e3a;
+            text-decoration: underline;
+            transition: 0.1s;
+        }
+    }
+
+    .covid-msg {
+        background-color: #ebebeb;
+
+        p {
+            color: #222;
+            text-align: center;
+            margin-bottom: 0;
+
+            a {
+                text-decoration: underline;
+                color: #222;
+
+                &:hover {
+                    color: #c41e3a;
+                    text-decoration: underline;
+                    transition: 0.1s;
+                }
+            }
+        }
+    }
+}

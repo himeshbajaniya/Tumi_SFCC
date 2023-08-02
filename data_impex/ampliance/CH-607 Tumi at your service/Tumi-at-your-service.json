@@ -1,0 +1,166 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "https://www.tumi.com/tumi-at-your-service",
+	"title": "Title",
+	"description": "Description",
+	"allOf": [
+		{
+			"$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+		}
+	],
+	"type": "object",
+	"properties": {
+		"content-asset-id": {
+			"title": "Content Asset ID",
+			"description": "SFCC Content Asset",
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 256,
+			"format": "text"
+		},
+		"large-image-desktop": {
+			"title": "Large Image",
+			"description": "Enter the scene 7 link for large image",
+			"type": "string",
+			"format": "uri",
+			"minLength": 0,
+			"maxLength": 256
+		},
+		"large-image-desktop-alt": {
+			"title": "Large Image Alt Text",
+			"description": "Enter the Large Image Alt Text",
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 256
+		},
+
+		"large-image-position": {
+			"title": "Large Image Position",
+			"description": "Select Large Image position",
+			"type": "string",
+			"enum": [
+				"Left",
+				"Right"
+			]
+		},
+		"theme": {
+			"title": "Title Theme",
+			"description": "Enter the Title",
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 256
+		},
+		"title": {
+			"title": "Title",
+			"description": "Enter the Title",
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 256
+		},
+		"description": {
+			"title": "Description",
+			"description": "Enter the Description",
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 1000
+		},
+		"textAlign": {
+			"title": "Text alignment",
+			"description": "Select Text alignment",
+			"type": "string",
+			"enum": [
+				"Left",
+				"Center",
+				"Right"
+			]
+		},
+		"backgroundColor": {
+			"title": "Grey Background",
+			"description": "Select Grey Background",
+			"type": "string",
+			"enum": [
+				"Yes",
+				"No"
+			]
+		},
+		"pcta-name": {
+			"title": "Primary CTA Name",
+			"description": "Enter the Primary CTA Name",
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 256
+		},
+		"pcta-url": {
+			"title": "Primary CTA URL",
+			"description": "Enter the Primary CTA URL",
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 256
+		},
+		"scta-name": {
+			"title": "Secondary CTA Name",
+			"description": "Enter the Secondary CTA Name",
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 256
+		},
+		"scta-url": {
+			"title": "Secondary CTA URL",
+			"description": "Enter the Secondary CTA URL",
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 256
+		},
+		"cta-links": {
+			"title": "CTA Links",
+			"description": "Add the CTA Links",
+			"type": "array",
+			"minItems": 1,
+			"maxItems": 4,
+			"items": {
+				"allOf": [
+					{
+						"type": "object",
+						"properties": {
+							"cta-image": {
+								"title": "Icon Image URL",
+								"description": "Enter the scene 7 link for Icon image URL",
+								"type": "string",
+								"format": "uri",
+								"minLength": 0,
+								"maxLength": 256
+							},
+							"cta-name": {
+								"title": "CTA Name",
+								"description": "Enter the CTA Name",
+								"type": "string",
+								"minLength": 0,
+								"maxLength": 256
+							},
+							"cta-decs-text": {
+								"title": "CTA description Text",
+								"description": "Enter the CTA description Text",
+								"type": "string",
+								"minLength": 0,
+								"maxLength": 256
+							},
+							"cta-landing-uri": {
+								"title": "CTA Landing URL",
+								"description": "Enter the CTA Landing URL",
+								"type": "string",
+								"minLength": 0,
+								"maxLength": 256
+							}
+						}
+					}
+				]
+			}
+		}
+	},
+	"propertyOrder": [
+		"content-asset-id"
+	],
+	"required": [
+		"content-asset-id"
+	]
+}

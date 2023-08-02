@@ -1,0 +1,22 @@
+<iscontent type="text/html" charset="UTF-8">
+
+<html>
+<head></head>
+<body>
+ <div style="font-family: Verdana, Geneva, Arial, Helvetica, sans-serif; font-size: x-small; color: Black;">
+ ${Resource.msg('sendContactUsEmail.first.name','sendContactUsEmail',null)}&nbsp;<isprint value="${param.firstName}">
+ <br/><br/>
+ ${Resource.msg('sendContactUsEmail.last.name','sendContactUsEmail',null)}&nbsp;<isprint value="${pdict.lastName}">
+ <br /><br />
+ <isif condition="${pdict.contactPhone}">
+ ${Resource.msg('sendContactUsEmail.contact.phone','sendContactUsEmail',null)}&nbsp;<isprint value="${pdict.contactPhone}">
+ <br /><br />
+ </isif>
+ ${Resource.msg('sendContactUsEmail.contact.subject','sendContactUsEmail',null)}&nbsp;<isprint value="${pdict.contactSubject}">
+ <br /><br />
+ ${Resource.msg('sendContactUsEmail.contact.message','sendContactUsEmail',null)}&nbsp;<isprint value="${pdict.contactMessage}">
+ <br /><br />
+ &nbsp;
+ </div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<div class="best-seller-container">
+   <div class="best-seller-component container" data-creative-name="{{content-asset-id}}">
+      <ul class="nav nav-tabs d-none d-sm-flex collection-sticky" id="myTab" role="tablist">
+         {{#each tabs}}
+         <li class="nav-item">
+            <a class="nav-link categories-prev {{#compare @index "==" 0}}active{{/compare}}"
+               id="sub-hero-category-tab" data-toggle="tab" data-best-seller-rfkid="{{tabRfkId}}" data-best-seller-pid="{{tabPId}}" data-hero-image-url="{{tabHeroImageURL}}" href="#{{tabName}}" role="tab"
+               aria-controls="home" aria-selected="true">
+            {{tabName}}</a>
+         </li>
+         {{/each}}
+      </ul>
+      <div class="tab-content" id="myTabContent">
+         {{#each tabs}}
+         <div class="tab-pane fade position-relative show {{#compare @index "==" 0}}active dom-created{{/compare}}" id="{{tabName}}" role="tabpanel"
+            aria-labelledby="sub-hero-category-tab">
+            <div class="row best-seller-products-container">
+               <div class="col-12 col-sm-6 col-md-8 left-section">
+                  <div class="image-wrapper">
+                  </div>
+                  <div class="below-section d-md-flex d-sm-block d-flex row">
+                     <div class="best-seller-tile-3  col-6 col-sm-12 col-md-6"></div>
+                     <div class="best-seller-tile-4 col-6 col-sm-12 col-md-6"></div>
+                  </div>
+               </div>
+               <div class="col-12 col-sm-6 col-md-4  right-section">
+                  <div class="d-flex d-sm-block row">
+                     <div class="best-seller-tile-1 col-6 col-sm-12"></div>
+                     <div class="best-seller-tile-2 col-6 col-sm-12"></div>
+                  </div>
+                  <div class="best-seller-tile-review">
+                     <div class="review-stars">{{reviewStars}}</div>
+                     <div class="review-descriptions">{{reviewDescription}}</div>
+                     <div class="review-author">-{{reviewAuthor}}</div>
+                     <div class="review-product-name">{{reviewProductName}}</div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         {{/each}}  
+         <div class="row">
+            <div class="col-12 show-all-cta">
+               <a href="{{viewAllCTALandingURI}}"class="w-100 button button--secondary">{{viewAllCTA}}</a>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

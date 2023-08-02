@@ -1,0 +1,6 @@
+<li class="nav-item" data-method-id="${paymentOption.ID}">
+    <a class="nav-link valuetec-tab" data-toggle="tab" href="#valuetec-content" role="tab">
+        <img class="credit-card-option" src="${URLUtils.staticURL('/images/valuetec_mark_logo.png')}" height="32"
+            alt="${paymentOption.name}" title="${paymentOption.name}" />
+    </a>
+</li>

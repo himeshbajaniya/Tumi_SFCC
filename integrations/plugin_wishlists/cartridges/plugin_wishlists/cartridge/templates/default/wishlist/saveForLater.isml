@@ -1,0 +1,10 @@
+    <isscript>
+        assets.addCss('/css/wishlist.css');
+        assets.addJs('/js/wishlist.js');
+    </isscript>
+
+    <iscomment> <div class="container ${pdict.loggedIn ? '' : 'login-page'}"> </iscomment>
+
+        <iscomment> <isif condition="${pdict.loggedIn}"> </iscomment>
+            <isinclude template="wishlist/components/wishlist" />
+    <iscomment> </div>  </iscomment>

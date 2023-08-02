@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<form xmlns="http://www.demandware.com/xml/form/2008-04-19">
+	<field formid="stateCode" label="label.input.state" type="string" mandatory="true" binding="stateCode" missing-error="address.state.missing" value-error="address.field.invalid" parse-error="error.message.required">
+		<options>
+			<option optionid="" 	label="resource.select" 		value=""/>
+
+			<!-- regular FR states -->
+			<option optionid="ARA" label="state.fr.ara" value="ARA"/>
+			<option optionid="BFC" label="state.fr.bfc" value="BFC"/>
+			<option optionid="BRE" label="state.fr.bre" value="BRE"/>
+			<option optionid="CVL" label="state.fr.cvl" value="CVL"/>
+			<option optionid="20R" label="state.fr.20r" value="20R"/>
+			<option optionid="GES" label="state.fr.ges" value="GES"/>
+			<option optionid="GP" label="state.fr.gp" value="GP"/>
+			<option optionid="GF" label="state.fr.gf" value="GF"/>
+			<option optionid="HDF" label="state.fr.hdf" value="HDF"/>
+			<option optionid="IDF" label="state.fr.idf" value="IDF"/>
+			<option optionid="MQ" label="state.fr.mq" value="MQ"/>
+			<option optionid="YT" label="state.fr.yt" value="YT"/>
+			<option optionid="NOR" label="state.fr.nor" value="NOR"/>
+			<option optionid="NAQ" label="state.fr.naq" value="NAQ"/>
+			<option optionid="OCC" label="state.fr.occ" value="OCC"/>
+			<option optionid="PDL" label="state.fr.pdl" value="PDL"/>
+			<option optionid="PAC" label="state.fr.pac" value="PAC"/>
+			<option optionid="RE" label="state.fr.re" value="RE"/>
+		</options>
+	</field>
+</form>

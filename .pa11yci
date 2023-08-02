@@ -1,0 +1,15 @@
+{
+    "defaults": {
+        "timeout": 100000
+    },
+    "reporters": [
+        ["json", { "fileName": "./results.json" }] 
+    ],
+    "urls": [
+        "https://development-na01-tumi.demandware.net/on/demandware.store/Sites-tumi-us-Site/default/Home-Show",
+        "https://development-na01-tumi.demandware.net/on/demandware.store/Sites-tumi-us-Site/default/Page-Show?cid=terms-and-conditions",
+        "https://development-na01-tumi.demandware.net/on/demandware.store/Sites-tumi-us-Site/en_US/Product-Show?pid=142065",
+        "https://development-na01-tumi.demandware.net/on/demandware.store/Sites-tumi-us-Site/default/Page-Show?cid=returns"
+        
+    ]
+}

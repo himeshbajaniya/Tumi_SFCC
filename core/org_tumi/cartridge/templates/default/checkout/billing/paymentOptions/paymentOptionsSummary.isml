@@ -1,0 +1,19 @@
+<div class="payment-details">
+    <isloop items="${pdict.order.billing.payment.selectedPaymentInstruments}" var="payment">
+        <isif condition="${payment.paymentMethod === 'CREDIT_CARD'}">
+            <isinclude template="checkout/billing/paymentOptions/creditCardSummary" />
+        </isif>
+        <isif condition="${payment.paymentMethod === 'PayPal'}">
+            <isinclude template="paypal/checkout/paypalSummary" />
+        </isif>
+        <isif condition="${payment.paymentMethod === 'DW_APPLE_PAY'}">
+            <isinclude template="checkout/billing/paymentOptions/applePaySummary" />
+        </isif>
+        <isif condition="${payment.paymentMethod === 'GIFT_CERTIFICATE'}">
+            <isinclude template="checkout/billing/paymentOptions/valueTecSummary" />
+        </isif>
+        <isif condition="${payment.paymentMethod === 'KLARNA_PAYMENTS'}">
+            <isinclude template="checkout/billing/paymentOptions/klarnaPaymentSummary" />
+        </isif>
+    </isloop>
+</div>

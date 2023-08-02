@@ -1,0 +1,6 @@
+{
+  "customer_ID": {
+    "property": "CustomerId",
+    "required": true
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "customer_id": {
+    "property": "CustomerId",
+    "required": true
+  },
+  "firstName": {
+    "property": "FirstName",
+    "required": false
+  },
+  "lastName": {
+    "property": "LastName",
+    "required": false
+  },
+  "preferredStore": {
+    "property": "StoreId",
+    "required": false
+  }
+}

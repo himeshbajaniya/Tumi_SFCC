@@ -1,0 +1,138 @@
+<form id="premium-monogram-form" class="premium-monogram-form d-none" autocomplete="off">
+    <div class="modal-title">${Resource.msg('product.monogram.metal', 'product', null)}</div>
+    <ul class="nav nav-tabs nav-fill monogram-option-tab${!product.isPremiumMonogramSelectable ? ' d-none' : ''}" id="monogramOptionsTab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="premium-path-tab-${product.UUID || product.uuid}" data-toggle="tab" href="${'#premium-viewpatch-' + (product.UUID || product.uuid)}" role="tab"
+                aria-controls="viewpatch" aria-selected="false">
+                ${Resource.msg('product.monogram.view.patch', 'product', null)}</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="premium-view-tag-${product.UUID || product.uuid}" data-toggle="tab" href="${'#premium-viewtag-' + (product.UUID || product.uuid)}" role="tab" aria-controls="viewtag"
+                aria-selected="false">
+                ${Resource.msg('product.monogram.view.tag', 'product', null)}</a>
+        </li>
+    </ul>
+    <div class="tab-content" id="monogramTabContent">
+        <div class="tab-pane${product.isPremiumMonogramSelectable || product.isPremiumPatch ? ' active' : ''}" id="premium-viewpatch-${product.UUID || product.uuid}" role="tabpanel" aria-labelledby="patch-tab">
+            <div class="image">
+                <img class="monogram-preview-img premium-patch w-100" src="${product.monoPatchImage}?fmt=jpeg&amp;layer=2&amp;src=is(Tumi/premiummonogram_template?scl=2)&amp;$text1=${labelA2}&amp;$text2=${labelB2}&amp;$text3=${labelC2}&amp;" alt="monogram preview image"/>
+            </div>
+        </div>
+
+        <div class="tab-pane${(!product.isPremiumMonogramSelectable && product.isPremiumTag) ? ' active' : ''}" id="premium-viewtag-${product.UUID || product.uuid}" role="tabpanel" aria-labelledby="tag-tab">
+            <div class="image">
+                <img class="monogram-preview-img premium-tag w-100"
+                    src="${product.monoTagImage}?fmt=jpeg&amp;layer=2&amp;src=is(Tumi/premiummonogram_template?scl=2)&amp;$text1=${labelA2}&amp;$text2=${labelB2}&amp;$text3=${labelC2}&amp;"
+                    alt="monogram preview image"/>
+            </div>
+        </div>
+    </div>
+    <div class="monogram-content">
+        <div id="monogram_1_${product.UUID || product.uuid}"
+            class="monogram_1 personalization-monogram-preview initials active">
+            <div class="monogram-wrapper" data-url="${URLUtils.url('Product-CheckPremiumMonogramAvalibility')}">
+                <div class="count">
+                <isif condition="${product.isPremiumMonogramSelectable}">
+                    <isprint value="${Resource.msg('product.metal.monogram.index.one.three', 'product', null)}"/>
+                <iselse/>
+                    <isprint value="${Resource.msg('product.metal.monogram.index.one', 'product', null)}"/>
+                </isif>
+                </div>
+                <div class="initials">${Resource.msg('product.monogram.choose.initials', 'product', null)}</div>
+                <div class="content">
+                    <isprint value="${product.premiumMonogramLetterCost}"/>
+                </div>
+                <div class="monogram-initials">
+                    <isif condition="${!empty(product.UUID)}">
+                        <input type="hidden" name="uuid" value="${product.UUID}"/>
+                    </isif>
+                    <input data-value="0" class="monogram-input selected"
+                        name="monogramText" data-input-order="1" aria-label="First initial"
+                        maxlength="1" value="${product.associatedLetter ? product.associatedLetter[0] : ''}"/>
+                    <input data-value="0" class="monogram-input"
+                        name="monogramText" data-input-order="2" aria-label="Middle initial"
+                        maxlength="1" value="${product.associatedLetter ? product.associatedLetter[1] : ''}"/>
+                </div>
+                <div class="error-msg d-none">
+                    <span>${Resource.msg('product.monogram.metal.minimum.initial', 'product', null)}</span>
+                </div>
+            </div>
+            <div class="monogram-btn-cntr">
+                <a href="#"
+                    class="button button--primary w-100 monogram-step-button-next disabled">${Resource.msg('product.monogram.next.link', 'product', null)}</a>
+                <a href="#" class="cancelBtn w-100" data-dismiss="modal">${Resource.msg('product.monogram.cancel', 'product', null)}</a>
+            </div>
+        </div>
+        <div id="monogram_2_${product.UUID || product.uuid}"
+            class="monogram_2 personalization-monogram-preview personalization-monogram-style font-style${product.isPremiumTag ? ' premium-tag' : ''}${product.isPremiumPatch ? ' premium-patch' : ''}">
+            <div class="monogram-wrapper">
+                <div class="count">
+                    <isif condition="${product.isPremiumMonogramSelectable}">
+                        <isprint value="${Resource.msg('product.metal.monogram.index.two.three', 'product', null)}"/>
+                    <iselse/>
+                        <isprint value="${Resource.msg('product.metal.monogram.index.two', 'product', null)}"/>
+                    </isif>
+                </div>
+                <div class="initials">${Resource.msg('product.metal.monogram.choose.finish', 'product', null)}</div>
+                <div class="monogram-colors-wrapper">
+                    <button class="premium-color-attribute d-none mockup">
+                        <div data-attr-value="" class="color-value swatch-circle swatch-value"></div>
+                    </button>
+                    <span class="content color-name"></span>
+                    <div class="monogram-colors monogram-fontColor" data-style-id="${product.associatedStyle || ''}"></div>
+                </div>
+                <div class="monogram-disclaimer">
+                    <isprint value="${Resource.msg('product.metal.monogram.disclaimer', 'product', null)}"/>
+                </div>
+            </div>
+            <div class="monogram-btn-cntr">
+                <a href="${URLUtils.url('Cart-UpdatePremiumMonogram')}" data-uuid="${product.UUID || product.uuid}"
+                    class="button button--primary w-100 premium-monogram-step-button-apply disabled">${Resource.msg('product.monogram.next.link', 'product', null)}</a>
+                <a href="#" class="previousBtn monogram-step-button-prev w-100">${Resource.msg('product.monogram.previous.link', 'product', null)}</a>
+            </div>
+        </div>
+        <isif condition="${product.isPremiumMonogramSelectable}">
+            <div id="monogram_3_${product.UUID || product.uuid}" class="monogram_3 personalization-monogram-preview selection-style">
+                <div class="monogram-wrapper">
+                    <div class="count">${Resource.msg('product.monogram.index.create.three', 'product', null)}</div>
+                    <div class="initials">${Resource.msg('product.monogram.choose.patch', 'product', null)}</div>
+                    <div class="content">${Resource.msg('product.monogram.choose.content', 'product', null)}</div>
+                    <div class="monogram-placement">
+                        <div class="row-fluid-no-gutter">
+                            <div class="premium-mongram-types">
+                                <div class="placement personalization-monogram-style">
+                                    <input type="radio" name="premiumLocation" id="premium-option-2-${product.UUID || product.uuid}"
+                                        <isif condition="${!product.premiumMonogramType || (product.premiumMonogramType && product.premiumMonogramType === 'patch')}">checked</isif>
+                                        data-inputOrder="2" value="PATCH" />
+                                    <label for="premium-option-2-${product.UUID || product.uuid}" class="option option-2">
+                                        <span>${Resource.msg('product.monogram.patch.title', 'product', null)}</span>
+                                    </label>
+                                    <input type="radio" name="premiumLocation" id="premium-option-1-${product.UUID || product.uuid}"
+                                        <isif condition="${product.premiumMonogramType && product.premiumMonogramType === 'tag'}">checked</isif>
+                                        data-inputOrder="1" value="TAG" />
+                                    <label for="premium-option-1-${product.UUID || product.uuid}" class="option option-1">
+                                        <span>${Resource.msg('product.monogram.tag.title', 'product', null)}</span>
+                                    </label>
+                                    <input type="radio" name="premiumLocation" id="premium-option-3-${product.UUID || product.uuid}"
+                                        <isif condition="${product.premiumMonogramType && product.premiumMonogramType === 'both'}">checked</isif>
+                                        data-inputOrder="3" value="BOTH" />
+                                    <label for="premium-option-3-${product.UUID || product.uuid}" class="option option-3">
+                                        <span>${Resource.msg('product.monogram.both.title', 'product', null)}</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="d-flex description">
+                                ${Resource.msg('product.monogram.description', 'product', null)}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="monogram-btn-cntr">
+                    <a href="${URLUtils.url('Cart-UpdatePremiumMonogram')}" data-uuid="${product.UUID || product.uuid}"
+                        class="button button--primary w-100 premium-monogram-step-button-apply">${Resource.msg('product.monogram.apply.link', 'product', null)}</a>
+                    <a href="#" class="previousBtn monogram-step-button-prev w-100">${Resource.msg('product.monogram.previous.link', 'product', null)}</a>
+                </div>
+            </div>
+        </isif>
+    </div>
+</form>

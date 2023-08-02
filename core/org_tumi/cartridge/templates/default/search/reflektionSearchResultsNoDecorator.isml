@@ -1,0 +1,115 @@
+<isslot id="plp-hero-component" context="global" description="plp hero banner" />
+<isif condition="${pdict.rfkPLPSearchResults.total_item !== 0}">
+<div class="container-fluid search-container category-banner">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-5">
+				<div class="bread-crumb">
+					<div class="bread-crumb-content">
+						<!--Breadcrumbs-->
+						<div class="row">
+							<div class="product-breadcrumb col hidden-sm-down">
+								<isinclude template="components/breadcrumbs/pageBreadcrumbsforPLP" />
+							</div>
+						</div>
+					</div>
+				</div>
+				<h1 class="category-title">  
+					<isif condition="${pdict.category && pdict.category.displayName}">
+						${pdict.category.displayName}
+					</isif>
+					<isinclude template="search/rfkResultsCount" />
+				</h1>
+			</div>
+			<isif condition="${pdict.rfkPLPSearchResults.total_item !== 0 && !pdict.rfkPLPSearchResults.errors}">
+				<div class="col-sm-7 filters">
+					<div class="filter">
+						<span class="btn-filter-text">Show Filters</span> <span class="filter-count"></span> 
+						<img src="${URLUtils.absStatic('/images/filter-icon.svg')}" alt="" />
+					</div>
+					<div class="sortby">
+						Sort by:
+						<isinclude template="search/rfkSortOrderMenu" />
+					</div>
+				</div>
+			</isif>
+		</div>
+	</div>
+</div>
+</isif>
+
+<isif condition="${pdict.reportingURLs && pdict.reportingURLs.length}">
+    <isinclude template="reporting/reportingUrls" />
+</isif>
+
+<div class="container search-results">
+		<div class="tab-content">
+			<div class="tab-pane active" id="product-search-results" role="tabpanel" aria-labelledby="product-tab">
+
+
+				<iscomment> <isif condition="${pdict.productSearch.productIds.length > 0}"> </iscomment>
+					<div class="selected-filter-container">
+						<div class="selected-filter-wrapper">
+							<span class="selected-filter-tile"></span><span><a href="#" class="clear-all rfk-reset">${Resource.msg('compare.button.clearall','product',null)}</a></span>
+						</div>
+					</div>
+					<!--- Refinement bar --->
+					<div class="row">
+						<div class="refinement-bar col-sm-3 d-none">
+							<div class="rb-desktop-scroll"><isinclude template="search/rfkSearchRefineBar" /></div>
+						</div>
+
+						<div class="product-tiles-container col-sm-12">
+								<!--- Product Grid --->
+								<isif condition="${pdict.rfkPLPSearchResults.total_item !== 0 && !pdict.rfkPLPSearchResults.errors}">
+								<div class="product-grid" itemtype="http://schema.org/SomeProducts" itemid="#product">
+									<isinclude template="search/rfkProductGrid" />
+								</div>
+								<iselse/>
+									<isif condition="${pdict.rfkPLPSearchResults.total_item === 0 || pdict.rfkPLPSearchResults.errors}">
+										<isif condition="${!pdict.query.cgid}">
+											<div class="empty-search text-center">
+												${Resource.msgf('label.rfkresultLabel', 'search', null, pdict.query.q)}											
+											</div>
+											<iselseif condition="${pdict.query.cgid}"/>
+												<div class="no-product-available text-center">${Resource.msgf('message.page.not.found', 'common', null)}</div>
+												<div class="no-product-found-plp">	
+												</div>
+										</isif>
+									</isif>
+								</isif>
+						</div>
+					</div>
+				<iscomment> </isif> </iscomment>
+			</div>
+			<!--- Content Grid --->
+			<div class="tab-pane container" id="content-search-results-pane" role="tabpanel" aria-labelledby="articles-tab">
+				<div id="content-search-results" class="content-grid-header"></div>
+			</div>
+		</div>
+</div>
+
+<div class="container-fluid compare-bar-wrapper">
+        <div class="container compare-bar"
+            data-max-slots= "3"
+            data-min-products-msg="${Resource.msg('text.productcompare.select2', 'product', null)}">
+            <form method="GET" class="compare-products-form" name="compare-products" action="${URLUtils.url('Compare-Show')}">
+                <div class="row align-items-center">
+                    <div class="col-6 col-sm-9">
+                        <div class="row align-items-center product-slots"></div>
+                    </div>
+                    <div class="col-6 col-sm-3 action d-flex align-items-right flex-column">
+                        <button type="submit" class="compare button">${Resource.msg('compare.button.compare','product',null)}</button>
+                        <a href="${'#'}" class="clear-all">${Resource.msg('compare.button.clearall','product',null)}</a>
+                    </div>
+                </div>
+				<isif condition="${pdict.query && pdict.query.cgid}">
+                	<input type="hidden" id="cgidName" name="cgid" value="${pdict.query.cgid}" />
+					<iselse/>
+						<input type="hidden" id="qName" name="q" value="${pdict.query.q}" />
+				</isif>
+                <input type="hidden" name="backUrl" />
+            </form>
+        </div>
+</div>
+<input type="hidden" id="noProductFound" value="${Resource.msg('reflektion.product.notfound','common',null)}"/>

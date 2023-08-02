@@ -1,0 +1,128 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "https://www.tumi.com/tumi-differences-innovative-sustainable-component",
+	"title": "Title",
+	"description": "Description",
+	"allOf": [
+		{
+			"$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+		}
+	],
+	"type": "object",
+	"properties": {
+		"content-asset-id": {
+			"title": "Content Asset ID",
+			"description": "SFCC Content Asset",
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 257,
+			"format": "text"
+		},
+		"subTagLine": {
+			"title": "Sub Tag Line",
+			"description": "Enter the Sub Tag Line (optional)",
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 256
+		},
+		
+		"mainTagLine": {
+			"title": "Main Tag Line",
+			"description": "Enter the Main Tag Line (optional)",
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 256
+		},
+		"description": {
+			"title": "Description",
+			"description": "Enter the Description (optional)",
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 1000
+		},
+		"selectionOfMedia": {
+			"title": "Selection Of Media",
+			"type": "string",
+			"enum": [
+			  "Image",
+			  "Video"
+			]
+		},
+		"s7ImageDesktop": {
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 250,
+			"format": "uri",
+			"title": "Scene 7 Image Desktop",
+			"description": "eg. https://tumi.scene7.com/is/image/Tumi/1232072777_main_T"
+		  },
+		  "imageAltDesktop": {
+			"title": "Image alt for desktop",
+			"description": "Text to show if image is not loaded",
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 255
+		  },
+		  "s7VideoDesktop": {
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 250,
+			"format": "uri",
+			"title": "Scene 7 Video Desktop",
+			"description": "eg. https://tumi.scene7.com/is/image/Tumi/1232072777_main_T"
+		  },
+		  "videoAltDesktop": {
+			"title": "Video alt for desktop",
+			"description": "Text to show if video is not loaded",
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 255
+		},
+		"collections": {
+			"title": "collections",
+			"description": "add categories",
+			"type": "array",
+			"minItems": 1,
+			"maxItems": 3,
+			"items": {
+				"allOf": [
+					{
+						"type": "object",
+						"properties": {
+							"S7-image-link": {
+								"title": "scene7 image link",
+								"description": "Enter the scene7 image link",
+								"type": "string",
+								"format": "uri",
+								"minLength": 0,
+								"maxLength": 256
+							},
+							"description": {
+								"title": "description",
+								"description": "Description of the image",
+								"type": "string",
+								"minLength": 0,
+								"maxLength": 1000
+							},
+							"collection-name": {
+								"title": "Collection Name",
+								"description": "Enter the Collection Name",
+								"type": "string",
+								"minLength": 0,
+								"maxLength": 256
+							},
+							"image-alt": {
+								"title": "image alt",
+								"description": "Enter image alt text",
+								"type": "string",
+								"minLength": 0,
+								"maxLength": 256
+							}
+						}
+					}
+				]
+			}
+		}
+	},
+	"propertyOrder": []
+}

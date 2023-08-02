@@ -1,0 +1,60 @@
+<div class="product-highlight 
+{{#if (eq componentvariationSelection "FiftyFifty")}}
+            fifty-fifty
+            {{/if}}
+            {{#if (eq componentvariationSelection "SixtyForty")}}
+            sixty-forty
+            {{/if}}
+            " data-creative-name="{{content-asset-id}}">
+    <div class="row no-gutters 
+            {{#if (eq backgroundSelection "Dark")}}
+            theme-dark
+            {{/if}}
+            {{#if (eq backgroundSelection "Light")}}
+            theme-light
+            {{/if}}
+
+            {{#if (eq imagePositionToBeShown "Left")}}
+            flex-sm-row
+            {{/if}}
+            {{#if (eq imagePositionToBeShown "Right")}}
+            flex-sm-row-reverse
+            {{/if}}
+    ">
+    <div class="
+            {{#if (eq componentvariationSelection "FiftyFifty")}}
+            col-12 col-sm-6 col-md-6 
+            {{/if}}
+            {{#if (eq componentvariationSelection "SixtyForty")}}
+            col-12 col-sm-5 col-md-5
+            {{/if}}
+            s7-image">
+            
+            {{#if imageCtaLandingURI}}<a href="{{imageCtaLandingURI}}" target="_blank">{{/if}}
+                <img src="{{s7Image}}" alt="{{s7ImageAltTag}}" />
+            {{#if imageCtaLandingURI}}</a>{{/if}}
+    </div>
+    <div class="
+        {{#if (eq componentvariationSelection "FiftyFifty")}}
+        col-12 col-sm-6 col-md-6 dynamic-space
+        {{/if}}
+        {{#if (eq componentvariationSelection "SixtyForty")}}
+        col-12 col-sm-6 col-md-7 dynamic-space2
+        {{/if}}
+    product-highlight-content"> <div>
+        <h3>{{mainTagLine}}</h3>
+        <p>{{description}}</p>
+        <div class="row button-inline">
+            <div class="col-12 d-flex">
+                {{#if cta1LandingURI}}
+                    <a href="{{cta1LandingURI}}" target="_blank" class="button button--primary w-100">{{cta1}}</a>
+                {{/if}}
+                {{#if cta2LandingURI}}
+                    <a href="{{cta2LandingURI}}" target="_blank" class="button button--secondary w-100 {{#if cta1LandingURI}}ml-3{{/if}}">{{cta2}}</a>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+</div>

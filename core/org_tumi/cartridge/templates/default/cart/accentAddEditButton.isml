@@ -1,0 +1,83 @@
+<div class="accent-container">
+    <div class="accent-row">
+        <div class="accent-item">
+            <div
+                class="monogram-wrapper accent-item-wrapper accent-item d-flex justify-content-between align-items-center">
+            <isif condition="${lineItem.accentPriceContainer}">
+              <img class="icon" src="${URLUtils.staticURL('/images/accent-cart-added.svg')}" />
+
+              <iselse>
+               <img class="icon" src="${URLUtils.staticURL('/images/accent-cart.svg')}" />
+                </isif>
+                <div class="flex-grow-1 ml-1">
+                <isif condition="${lineItem.accentPriceContainer}">
+                    <div class="title">${Resource.msg('product.default.accent.added.edit', 'product', null)}</div>
+                    <iselse>
+                    <div class="title">${Resource.msg('product.default.accent.title.edit', 'product', null)}</div>
+                    <div class="desc ${pdict.pageType !== 'cart' ? 'd-block' : 'd-none'}">${Resource.msg('product.default.accent.description', 'product', null)}</div>
+                    </isif>
+                <isif condition="
+                ${lineItem.accentPriceContainer}">
+               <isloop items="${lineItem.variationAttributes}" var="attribute">
+                    <span class="line-item-attributes ">
+                       ${attribute.displayValue}</span>
+                </isloop>
+                <span class="line-item-attributes ">(+ ${lineItem.accentPriceContainerMoneyFormat})</span>
+                </isif>
+                </div>
+                <iscomment> <div class="clickable add-block add-accent">
+                    <a href="#" class="add-accent-modal" data-toggle="modal"
+                        data-target="${'#accentModal-' + product.uuid}" role="button"
+                        aria-label="${Resource.msg('label.header.loginbutton', 'account', null)}">${Resource.msg('product.default.monogram.add', 'product', null)}</a>
+                </div> </iscomment>
+                <isif condition="${lineItem.accentable}">
+                <div class="clickable add-block add-accent">
+                    <a href="${URLUtils.url('Cart-GetProduct', 'uuid', lineItem.UUID)}" class="edit add-accent-link" data-toggle="modal"
+                        data-target="#editProductModal"
+                        data-skuid="${lineItem.id}"
+                        aria-label="${Resource.msgf('text.edit.line.item', 'cart', null, lineItem.productName)}"
+                        title="${Resource.msg('link.edit.item', 'cart', null)}">
+                        Add
+                    </a>
+                </div>
+                <iselse/>
+                <div class="clickable add-block add-accent">
+                    <a href="${URLUtils.url('Cart-GetProduct', 'uuid', lineItem.UUID)}" class="edit edit-accent-link" data-toggle="modal"
+                        data-target="#editProductModal"
+                        data-skuid="${lineItem.id}"
+                        aria-label="${Resource.msgf('text.edit.line.item', 'cart', null, lineItem.productName)}"
+                        title="${Resource.msg('link.edit.item', 'cart', null)}">${Resource.msg('cart.link.edit', 'accent', null)}
+                    </a>
+                    <span>&nbsp;|&nbsp;</span>
+                    <a href="${URLUtils.url('Cart-EditProductLineItem')}" class="accent-remove remove-accent-link" data-toggle="modal"
+                        data-target="#editProductModal"
+                        data-uuid="${lineItem.UUID}"
+                        data-skuid="${lineItem.baseaccentingSKU}"
+                        aria-label="${Resource.msgf('text.remove.line.item', 'cart', null, lineItem.productName)}"
+                        title="${Resource.msg('link.edit.item', 'cart', null)}">${Resource.msg('cart.link.remove', 'accent', null)}
+                    </a>
+                </div>
+                    <iscomment> <div class="clickable edit-block-accent ">
+                    <a class="edit-accent" data-toggle="modal" data-target="${'#accentModal-' + product.uuid}" href="#"
+                        role="button" aria-label="${Resource.msg('label.header.loginbutton', 'account', null)}">
+                        Edit Product
+                    </a>
+                    <a href="${URLUtils.url('Product-Show', 'pid', product.id)}" data-uuid="${lineItem.UUID}"
+                        class="remove-accent" role="button"
+                        aria-label="${Resource.msg('label.header.loginbutton', 'account', null)}">${Resource.msg('product.default.monogram.removelink', 'product', null)}</a>
+                </div> </iscomment>
+                </isif>
+                <iscomment> <div class="clickable edit-block-accent d-none">
+                    <a class="edit-accent" data-toggle="modal" data-target="${'#accentModal-' + product.uuid}" href="#"
+                        role="button" aria-label="${Resource.msg('label.header.loginbutton', 'account', null)}">
+                        ${Resource.msg('product.default.monogram.editlink', 'product', null)}
+                    </a>
+                    <a href="${URLUtils.url('Product-Show', 'pid', product.id)}" data-uuid="${lineItem.UUID}"
+                        class="remove-accent" role="button"
+                        aria-label="${Resource.msg('label.header.loginbutton', 'account', null)}">${Resource.msg('product.default.monogram.removelink', 'product', null)}</a>
+                </div> </iscomment>
+                
+            </div>
+        </div>
+    </div>
+</div>

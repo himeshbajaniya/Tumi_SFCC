@@ -1,0 +1,11 @@
+<div class="product-number-rating clearfix">
+    <!-- Product Number -->
+    <iscomment> <div class="product-number pull-left">
+        <isinclude template="product/components/productNumber" />
+    </div> </iscomment>
+
+    <!-- Product Rating -->
+    <div class="ratings pull-right">
+        <isinclude template="turnto/components/ttTeasers"/>
+    </div>
+</div>

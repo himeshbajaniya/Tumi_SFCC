@@ -1,0 +1,124 @@
+<div class="signed-in">
+    <h3 class="welcome-user">${Resource.msg('modal.heading.signed.in', 'account', null)} ${pdict.name}</h3>
+
+    <ul class="account-list" role="menu" aria-label="${Resource.msg('label.profile.myaccountlink', 'account', null)}"
+        aria-hidden="true">
+        <li>
+            <div class="content-wrapper d-flex align-items-center">
+                <div class="image">
+                    <img src="${URLUtils.staticURL('/images/account-settings.png')}"
+                        alt="${Resource.msg('global.storename', 'common', null)}" />
+                </div>
+
+                <div class="content">
+                    <a href="${URLUtils.https('Account-MySettings')}" role="menuitem" class="mobile-redirect"
+                        data-mhref="${URLUtils.https('Account-MySettingsMenu')}">${Resource.msg('link.header.myaccount.my.settings', 'account', null)}</a>
+                </div>
+            </div>
+        </li>
+
+        <li role="presentation">
+            <div class="content-wrapper d-flex align-items-center">
+                <div class="image">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="32" height="32" fill="white" />
+                        <path
+                            d="M21.0225 9.245V9.42H21.1975H25.2575V28.985H6.7425V9.42H10.8025H10.9775V9.245V8.0725C10.9775 5.26338 13.2274 3.015 16 3.015C18.7734 3.015 21.0225 5.26415 21.0225 8.0375V9.245ZM19.465 9.42H19.64V9.245V7.8975C19.64 6.02868 18.0169 4.415 16.0175 4.415C14.0128 4.415 12.395 6.05142 12.395 8.0375V9.245V9.42H12.57H19.465ZM8.1425 27.41V27.585H8.3175H23.7H23.7266H23.902L23.9016 27.4095L23.8575 10.9945L23.857 10.82H23.6825H21.18H21.005V10.995V13.1825H19.605V10.995V10.82H19.43H12.5525H12.3775V10.995V13.1825H10.9775V10.995V10.82H10.8025H8.3175H8.1425V10.995V27.41Z"
+                            fill="#1B1C1E" stroke="white" stroke-width="0.35" />
+                        <rect x="2.25" y="2.25" width="27.5" height="27.5" stroke="white" stroke-width="0.5" />
+                    </svg>
+                </div>
+
+                <div class="content">
+                    <a href="${URLUtils.url('Order-History')}"
+                        role="menuitem">${Resource.msg('label.orderhistory.Signin.mypurchases', 'account', null)}</a>
+                </div>
+            </div>
+        </li>
+
+        <li role="presentation">
+            <div class="content-wrapper d-flex align-items-center">
+                <div class="image">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="32" height="32" fill="white" />
+                        <path
+                            d="M16.0783 24.1035L16 24.0643L15.9218 24.1035L5.95503 29.0868V3.365H26.045V29.0868L16.0783 24.1035ZM24.3394 26.6041L24.5925 26.7304V26.4475V4.9925V4.8175H24.4175H7.58253H7.40753V4.9925V26.4475V26.7304L7.66066 26.6041L16 22.4431L24.3394 26.6041Z"
+                            fill="#1B1C1E" stroke="white" stroke-width="0.35" />
+                    </svg>
+                </div>
+
+                <div class="content">
+                    <a href="${URLUtils.url('Wishlist-Show')}" id="business-outerwear" role="menuitem"
+                        class="dropdown-link">${Resource.msg('link.header.myaccount.my.saved.items', 'account', null)}</a>
+                </div>
+            </div>
+        </li>
+
+        <li role="presentation">
+            <div class="content-wrapper d-flex align-items-center">
+                <div class="image">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="32" height="32" fill="white" />
+                        <path
+                            d="M24.7063 19.99V14.9762C24.7063 14.46 24.5051 13.9612 24.1288 13.5937C23.7438 13.2175 23.2363 13.0075 22.6938 13.0075C22.6238 13.0075 22.5625 12.9812 22.5188 12.9375C22.4925 12.9112 22.4575 12.8587 22.4575 12.7887V8.43124C22.4575 6.61999 20.9525 5.14999 19.115 5.14999H17.5838C17.3738 3.82874 16.2363 2.82249 14.8625 2.82249C13.4888 2.82249 12.3513 3.83749 12.1413 5.14999H10.61C8.7638 5.14999 7.26755 6.61999 7.26755 8.43124V12.7887C7.26755 12.9112 7.16255 13.0075 7.0138 13.0075C5.9113 13.0075 5.0188 13.9 5.0188 14.9762V23.9887C5.0188 24.8375 5.7188 25.5287 6.58505 25.5287H7.2763C7.3288 26.5437 8.14255 27.3487 9.1488 27.3487H18.1963C19.1151 28.46 20.4975 29.1687 22.0463 29.1687C24.7938 29.1687 27.0338 26.9287 27.0338 24.1812C27.0338 22.4225 26.115 20.8737 24.7325 19.99H24.7063ZM22.6938 13.8825C23 13.8825 23.2888 14.005 23.5075 14.215C23.7176 14.4162 23.8313 14.6875 23.8313 14.9762V19.5437C23.4025 19.3775 22.9388 19.2637 22.4575 19.22V13.8387C22.5363 13.8562 22.615 13.8825 22.6938 13.8825ZM14.8538 3.69749C15.7463 3.69749 16.4901 4.31874 16.6913 5.14999H13.0163C13.2175 4.31874 13.9613 3.69749 14.8538 3.69749ZM5.86755 23.9975V14.985C5.86755 14.3812 6.37505 13.8912 7.0138 13.8912C7.09255 13.8912 7.16255 13.865 7.2413 13.8475V24.6625H6.5588C6.1738 24.6625 5.86755 24.365 5.86755 23.9975ZM9.1138 26.4825C8.56255 26.4825 8.1163 26.01 8.1163 25.4412V8.43124C8.1163 7.10999 9.22755 6.02499 10.5838 6.02499H19.0976C20.4626 6.02499 21.5651 7.10124 21.5651 8.43124V11.5812V19.2287C20.8213 19.29 20.1213 19.5262 19.5088 19.885V16.7525C19.5088 15.4837 18.6775 14.4512 17.6538 14.4512H12.0188C10.995 14.4512 10.1638 15.4837 10.1638 16.7525V22.3262H11.0388V16.7525C11.0388 15.9825 11.485 15.3262 12.0188 15.3262H17.6538C18.1875 15.3262 18.6338 15.9825 18.6338 16.7525V20.5237C17.6451 21.4337 17.015 22.7375 17.015 24.19C17.015 24.3825 17.0326 24.575 17.0501 24.7587C17.0501 24.7937 17.0588 24.8375 17.0675 24.8725C17.0938 25.03 17.12 25.1875 17.155 25.345C17.155 25.3712 17.1638 25.3887 17.1726 25.415C17.2688 25.7912 17.4 26.15 17.575 26.4912H9.12255L9.1138 26.4825ZM22.0113 28.3025C20.6726 28.3025 19.4913 27.6462 18.7388 26.6487C18.625 26.4912 18.5201 26.3337 18.4326 26.1675C18.4063 26.115 18.3713 26.0625 18.345 26.0187C18.2751 25.8787 18.2138 25.7387 18.1613 25.59C18.1175 25.4762 18.0913 25.3712 18.0563 25.2575C18.0301 25.1525 17.9951 25.0387 17.9776 24.9337C17.9338 24.6975 17.8988 24.4525 17.8988 24.1987C17.8988 21.9325 19.7451 20.0862 22.0113 20.0862C22.2476 20.0862 22.475 20.1212 22.7025 20.1562C22.79 20.1737 22.8863 20.1912 22.9738 20.2087C23.0788 20.235 23.175 20.27 23.2713 20.305C23.5338 20.3925 23.7875 20.4975 24.0413 20.6462L24.3388 20.8125C25.4151 21.5562 26.1238 22.79 26.1238 24.1987C26.1238 26.465 24.2775 28.3112 22.0113 28.3112V28.3025Z"
+                            fill="#1B1C1E" />
+                        <path
+                            d="M21.075 25.3187L19.7625 24.0062L19.1412 24.6275L21.075 26.5612L24.89 22.7462L24.2687 22.125L21.075 25.3187Z"
+                            fill="#1B1C1E" />
+                        <path d="M16.4112 9.2975H13.2875V10.1725H16.4112V9.2975Z" fill="#1B1C1E" />
+                    </svg>
+
+                </div>
+
+                <div class="content">
+                    <a href="${URLUtils.url('Tracer-List', 'pagestart', 0, 'pagesize', 5)}" id="business-outerwear" role="menuitem"
+                        class="dropdown-link">${Resource.msg('label.orderhistory.Signin.registermytumi', 'account', null)}</a>
+                </div>
+            </div>
+        </li>
+
+        <li role="presentation">
+            <div class="content-wrapper d-flex align-items-center">
+                <div class="image">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="32" height="32" fill="white" />
+                        <path
+                            d="M29.2387 8.75499C29.2037 8.60625 29.0987 8.48375 28.9587 8.43124C28.8187 8.37875 28.6525 8.40499 28.5387 8.50125L24.8287 11.45L22.4312 8.43124L26.1412 5.4825C26.2637 5.38625 26.325 5.2375 26.2987 5.08875C26.2725 4.94 26.185 4.80875 26.045 4.7475C24.085 3.855 21.8362 4.12625 20.1737 5.4475C18.5025 6.7775 17.7237 8.93875 18.1525 11.03L10.6537 16.9887C8.71999 16.0962 6.43623 16.3675 4.76499 17.6975C3.10249 19.0187 2.33248 21.1537 2.76123 23.2625C2.78749 23.4112 2.90124 23.5337 3.04124 23.5862C3.18999 23.6387 3.34748 23.6125 3.46123 23.5162L7.17123 20.5675L9.56873 23.5862L5.85873 26.535C5.73623 26.6312 5.67498 26.78 5.70124 26.9287C5.72748 27.0775 5.81499 27.2087 5.95498 27.27C6.72499 27.62 7.52998 27.7862 8.33498 27.7862C9.58623 27.7862 10.8112 27.375 11.8262 26.57C13.4975 25.24 14.2762 23.0787 13.8475 20.9875L21.3462 15.0287C23.28 15.9125 25.5637 15.65 27.235 14.32C28.8975 12.9987 29.6675 10.8637 29.2387 8.75499ZM26.6837 13.6375C25.205 14.81 23.1662 15.0025 21.4862 14.1275C21.3375 14.0487 21.145 14.0662 21.0137 14.1712L13.0775 20.48C12.9462 20.585 12.885 20.7687 12.9287 20.935C13.4012 22.7725 12.7537 24.715 11.275 25.8875C10.0675 26.85 8.48373 27.1475 7.00498 26.7362L10.4525 23.9975C10.54 23.9275 10.6012 23.8225 10.6187 23.7087C10.6275 23.595 10.6012 23.4812 10.5225 23.385L7.58248 19.6837C7.43373 19.4912 7.15373 19.465 6.96998 19.6137L3.52249 22.3525C3.45249 20.8212 4.09999 19.3512 5.30749 18.3887C6.78623 17.2162 8.82499 17.0237 10.505 17.8987C10.6625 17.9775 10.8462 17.96 10.9775 17.855L18.9137 11.5462C19.045 11.4412 19.1062 11.2575 19.0625 11.0912C18.59 9.25375 19.2375 7.31125 20.7162 6.13875C21.9237 5.17625 23.5075 4.87875 24.9862 5.29L21.5387 8.02875C21.3462 8.1775 21.32 8.4575 21.4687 8.64125L24.4087 12.3425C24.4787 12.43 24.5837 12.4912 24.6975 12.5087C24.8112 12.5262 24.925 12.4912 25.0212 12.4212L28.4687 9.6825C28.5387 11.2137 27.8912 12.6837 26.6837 13.6462V13.6375Z"
+                            fill="#1B1C1E" />
+                        <path d="M19.8304 12.3609L11.9006 18.6685L12.4453 19.3533L20.3751 13.0457L19.8304 12.3609Z"
+                            fill="#1B1C1E" />
+                    </svg>
+                </div>
+
+                <div class="content">
+                    <a href="${URLUtils.url('Page-ShowServiceAndRepairs')}" id="business-phone-cases" role="menuitem"
+                        class="dropdown-link">${Resource.msg('label.orderhistory.Signin.repairs', 'account', null)}</a>
+                </div>
+            </div>
+        </li>
+
+    </ul>
+
+
+    <a class="button button--secondary w-100" href="${URLUtils.https('Account-Show')}"
+        role="menuitem">${Resource.msg('link.header.myaccount', 'account', null)}</a>
+
+    <a class="signout-button" href="${URLUtils.url('Login-Logout')}"
+        role="menuitem">${Resource.msg('link.header.signout', 'account', null)}</a>
+
+</div>
+
+
+<iscomment>
+    <div class="popover popover-bottom">
+        <ul class="nav" role="menu" aria-label="${Resource.msg('label.profile.myaccountlink', 'account', null)}"
+            aria-hidden="true">
+            <li class="nav-item" role="presentation"><a href="${URLUtils.https('Account-Show')}" role="menuitem"
+                    tabindex="-1">${Resource.msg('link.header.myaccount', 'account', null)}</a></li>
+            <li class="nav-item" role="presentation"><a href="${URLUtils.url('Order-History')}" role="menuitem"
+                    tabindex="-1">${Resource.msg('label.myorders', 'account', null)}</a></li>
+            <li class="nav-item" role="presentation"><a href="${URLUtils.url('Login-Logout')}" role="menuitem"
+                    tabindex="-1">${Resource.msg('link.header.logout', 'account', null)}</a></li>
+        </ul>
+    </div>
+</iscomment>

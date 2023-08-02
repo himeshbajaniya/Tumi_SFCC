@@ -1,0 +1,73 @@
+<isscript>
+    var reflektionHelper = require('*/cartridge/scripts/reflektionHelper');  
+</isscript>
+<script type="text/javascript" src="${reflektionHelper.getBeaconSrc()}" ></script>
+<script type="text/javascript" src="${URLUtils.staticURL('/js/reflektionEvents.js')}" ></script>
+<script>
+    var rfkCountry = '${reflektionHelper.getCountry()}';
+    var rfkLanguage = '${reflektionHelper.getLanguage()}';
+    var rfkDomain = '${reflektionHelper.getDomain()}';
+    var rfkCurrency = '${reflektionHelper.getCurrency()}';
+    var cartGetURL='${dw.web.URLUtils.https('Cart-Get')}';
+    var pathName = window.location.pathname;
+    var currentInstanceHostName = window.currentInstanceHostName;
+    var customerUUID = <isprint value="${JSON.stringify(reflektionHelper.getCustomerUUID())}" encoding="htmlsinglequote"/>;
+    rfk.push({
+        "locale_country": rfkCountry,
+        "locale_language": rfkLanguage
+    });
+
+    <isif condition="${pdict.customer !== null}">
+        rfk.push(["trackEvent", {
+            "type": "user",
+            "name": "login",
+            "uuid": customerUUID,
+            "value": {
+                "context": {
+                    "user": {
+                        "id": "${pdict.customer.profile.customerNo}",
+                        "email": "${pdict.customer.profile.email}",
+                        "eid": "hash_of_email",
+                        "fbid": "facebook_id",
+                        "address": {
+                            "address_line_1": "${pdict.customer.addressBook.preferredAddress.address1 || ''}",
+                            "address_line_2": "${pdict.customer.addressBook.preferredAddress.address2 || ''}",
+                            "state": "${pdict.customer.addressBook.preferredAddress.stateCode || ''}",
+                            "zip": "${pdict.customer.addressBook.preferredAddress.postalCode || ''}",
+                            "country": "${pdict.customer.addressBook.preferredAddress.countryCode.value || ''}"
+                        }
+                    },
+                    "page": {
+                        "locale_country": rfkCountry,
+                        "locale_language": rfkLanguage,
+                        "locale_currency": rfkCurrency,
+                        "uri": pathName
+                    }
+                }
+            }
+        }]);
+    </isif>
+    <isif condition="${pdict.pushCart == 'true'}">
+        rfk.push({
+            "product_ids": <isprint value="${reflektionHelper.getSKUs(pdict.currentBasket)}" encoding="htmldoublequote" />
+        });
+    </isif>
+
+    rfk.push(["trackEvent", {
+        "type": "view",
+        "name": "page",
+        "uuid": customerUUID,
+        "value": {
+            "context": {
+                "page": {
+                    "uri": '${session.custom.rfkUri}',
+                    "title": pathName,
+                    "referrer": currentInstanceHostName, 
+                    "locale_country": rfkCountry,
+                    "locale_language": rfkLanguage,
+                    "locale_currency": rfkCurrency
+                }
+            }
+        }
+    }]);
+</script>

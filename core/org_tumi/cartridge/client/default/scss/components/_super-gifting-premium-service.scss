@@ -1,0 +1,111 @@
+.gifting-premium-service {
+    margin: 80px auto;
+    color: $eerie-black;
+
+    @include media-breakpoint-up(sm) {
+        margin: 100px auto;
+    }
+
+    .ts-background {
+        background: $lotion;
+        padding: 60px 0 100px;
+    }
+
+    .swiper {
+        margin: 0 !important;
+
+        .swiper-wrapper {
+            flex-direction: row;
+            @include media-breakpoint-up(sm) {
+                justify-content: center;
+            }
+
+            .swiper-slide {
+                &:last-child {
+                    @include media-breakpoint-up(sm) {
+                        margin-right: 0 !important;
+                    }
+                }
+
+                border: 1px solid black !important;
+                height: 160px;
+                text-decoration: none;
+                max-width: 146px;
+                max-height: 160px;
+
+                @include media-breakpoint-up(sm) {
+                    max-width: 158px !important;
+                    max-height: 158px !important;
+                    margin-right: 45px !important;
+                }
+
+                @include media-breakpoint-up(md) {
+                    margin-right: 38px !important;
+                }
+            }
+        }
+
+        .cta-content {
+            height: 100%;
+
+            .cta-link-name {
+                @include sizeWeightLh(15px,400,20px);
+
+                padding-top: 16px;
+                text-align: center;
+                width: 92px;
+                color: $eerie-black;
+                margin-bottom: 0;
+            }
+
+            .cta-link-copy {
+                color: $davy-grey;
+                text-align: center;
+                @include sizeWeightLh(15px,400,20px);
+            }
+
+            .service-content-wrapper {
+                flex-direction: column;
+
+                @include media-breakpoint-up(sm) {
+                    flex-direction: column;
+                }
+
+                .img-wrapper {
+                    img {
+                        height: 32px;
+                        width: 32px;
+                    }
+                }
+            }
+        }
+    }
+
+    .text-content {
+        .title {
+            text-align: center;
+            margin-bottom: 18px;
+            text-transform: capitalize;
+            @include sizeWeightLh(30px,300,30px);
+            @include media-breakpoint-up(sm) {
+                @include sizeWeightLh(30px,300,16px);
+            }
+        }
+
+        .sub-title {
+            @include sizeWeightLh(15px,400,20px);
+
+            text-align: center;
+            width: 100%;
+            margin-bottom: 40px;
+            color: $davy-grey;
+
+            @include media-breakpoint-up(sm) {
+                width: 60%;
+            }
+            @include media-breakpoint-up(md) {
+                width: 33%;
+            }
+        }
+    }
+}

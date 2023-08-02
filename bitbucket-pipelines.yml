@@ -1,0 +1,356 @@
+image: "node:14.18.2"
+definitions:
+  caches:
+    sfra: storefront-reference-architecture/node_modules
+    sfra-webpack-builder: sfra-webpack-builder/node_modules
+    link-cybersource: integrations/link_cybersource/node_modules
+    link-emarsys: integrations/link_emarsys/node_modules
+    link-paypal: integrations/link_paypal/node_modules
+    plugin-wishlists: integrations/plugin_wishlists/node_modules
+    link-klarnapayments: integrations/link_klarnapayments/node_modules
+    link-signified: integrations/link_signified/node_modules
+    plugin-instorepickup: integrations/plugin_instorepickup/node_modules
+    plugin-pixlee: integrations/plugin_pixlee/node_modules
+    plugin-productcompare-master: integrations/plugin_productcompare-master/node_modules
+    plugin-turnto: integrations/plugin_turnto/node_modules
+    plugin-applepay-master: integrations/plugin_applepay-master/node_modules
+  steps:
+       - step: &build-setup
+           name: Build and setup
+           script:
+             - npm install npm@latest -g
+             - (cd sfra-webpack-builder && npm install)
+             - (cd sfra-webpack-builder && npm run postinstall)
+             - npm install
+             - npm run npmInstall
+ 
+       - step: &build-validate
+           name: Build and Validate
+           script:
+             - npm run dev
+             - npm run lint:js
+
+pipelines:
+  branches:
+
+    feature/*:       
+       - step:
+           name: Validate and compile
+           caches:
+             - node
+             - sfra
+             - sfra-webpack-builder
+             - link-cybersource
+             - link-emarsys
+             - link-paypal
+             - plugin-wishlists
+             - link-klarnapayments
+             - link-signified
+             - plugin-instorepickup
+             - plugin-pixlee
+             - plugin-productcompare-master
+             - plugin-turnto
+             - plugin-applepay-master
+           script:
+             - npm install npm@latest -g
+             - (cd sfra-webpack-builder && npm install)
+             - (cd sfra-webpack-builder && npm run postinstall)
+             - npm install
+             - npm run npmInstall
+             - npm run dev
+             - npm run lint:css   
+           after-script:
+             - "curl -H Content-Type:application/json -d ' {\"text\":\"Validation Failed\"}' https://publicisgroupe.webhook.office.com/webhookb2/a221fcfc-ba0b-4bde-95e0-580f3c0180ce@d52c9ea1-7c21-47b1-82a3-33a74b1f74b8/BitbucketServer/3c1ce94cef7f4ff8922a7cabf74c9d72/63becca2-a5da-4b2e-ab1b-82e9830c8e58"                       
+
+       
+      
+       - step:
+           name: Deploy to demo-na01
+           deployment: demo-na01
+           trigger : manual
+           caches:
+             - node
+             - sfra
+             - sfra-webpack-builder
+             - link-cybersource
+             - link-emarsys
+             - link-paypal
+             - plugin-wishlists
+             - link-klarnapayments
+             - link-signified
+             - plugin-instorepickup
+             - plugin-pixlee
+             - plugin-productcompare-master
+             - plugin-turnto
+             - plugin-applepay-master
+           script:
+             - npm install npm@latest -g
+             - (cd sfra-webpack-builder && npm install)
+             - (cd sfra-webpack-builder && npm run postinstall)
+             - npm install
+             - npm run npmInstall
+             - npm run prod
+             - npm run lint:css             
+             - echo $BITBUCKET_BUILD_NUMBER
+             - echo $BUILD_NAME
+             - echo $SFCC_OAUTH_CLIENT_ID
+             - echo $SFCC_OAUTH_CLIENT_SECRET
+             - RELEASE=$BUILD_NAME-$BITBUCKET_BUILD_NUMBER
+             - echo $RELEASE
+             - echo $CONFIG_FILE
+             - echo $ENV_HOST
+             - npm run code:zip -- -cfg $CONFIG_FILE -r $RELEASE -e $ENV_HOST -cid $SFCC_OAUTH_CLIENT_ID -cs $SFCC_OAUTH_CLIENT_SECRET
+             - npm run code:deploy -- -cfg $CONFIG_FILE -r $RELEASE -e $ENV_HOST -cid $SFCC_OAUTH_CLIENT_ID -cs $SFCC_OAUTH_CLIENT_SECRET
+             - npm run pally:ci
+           after-script:
+             - "curl -H Content-Type:application/json -d ' {\"text\":\"Hello World\"}' https://publicisgroupe.webhook.office.com/webhookb2/a221fcfc-ba0b-4bde-95e0-580f3c0180ce@d52c9ea1-7c21-47b1-82a3-33a74b1f74b8/BitbucketServer/3c1ce94cef7f4ff8922a7cabf74c9d72/63becca2-a5da-4b2e-ab1b-82e9830c8e58"
+    develop:
+       - step:
+           name: Validate and compile
+           caches:
+             - node
+             - sfra
+             - sfra-webpack-builder
+             - link-cybersource
+             - link-emarsys
+             - link-paypal
+             - plugin-wishlists
+             - link-klarnapayments
+             - link-signified
+             - plugin-instorepickup
+             - plugin-pixlee
+             - plugin-productcompare-master
+             - plugin-turnto
+             - plugin-applepay-master
+           script:
+             - npm install npm@latest -g
+             - (cd sfra-webpack-builder && npm install)
+             - (cd sfra-webpack-builder && npm run postinstall)
+             - npm install
+             - npm run npmInstall
+             - npm run dev
+       
+      
+       - step:
+           name: Deploy to demo-na01
+           deployment: demo-na01
+           caches:
+             - node
+             - sfra
+             - sfra-webpack-builder
+             - link-cybersource
+             - link-emarsys
+             - link-paypal
+             - plugin-wishlists
+             - link-klarnapayments
+             - link-signified
+             - plugin-instorepickup
+             - plugin-pixlee
+             - plugin-productcompare-master
+             - plugin-turnto
+             - plugin-applepay-master
+           script:
+             - echo $BITBUCKET_BUILD_NUMBER
+             - echo $BUILD_NAME
+             - echo $SFCC_OAUTH_CLIENT_ID
+             - echo $SFCC_OAUTH_CLIENT_SECRET
+             - RELEASE=$BUILD_NAME-$BITBUCKET_BUILD_NUMBER
+             - echo $RELEASE
+             - npm install npm@latest -g
+             - (cd sfra-webpack-builder && npm install)
+             - (cd sfra-webpack-builder && npm run postinstall)
+             - npm install
+             - npm run npmInstall
+             - npm run prod             
+             - echo $BITBUCKET_BUILD_NUMBER
+             - echo $BUILD_NAME
+             - echo $SFCC_OAUTH_CLIENT_ID
+             - echo $SFCC_OAUTH_CLIENT_SECRET
+             - RELEASE=$BUILD_NAME-$BITBUCKET_BUILD_NUMBER
+             - echo $RELEASE
+             - echo $CONFIG_FILE
+             - echo $ENV_HOST
+             - npm run code:zip -- -cfg $CONFIG_FILE -r $RELEASE -e $ENV_HOST -cid $SFCC_OAUTH_CLIENT_ID -cs $SFCC_OAUTH_CLIENT_SECRET
+             - npm run code:deploy -- -cfg $CONFIG_FILE -r $RELEASE -e $ENV_HOST -cid $SFCC_OAUTH_CLIENT_ID -cs $SFCC_OAUTH_CLIENT_SECRET
+       - step:
+           name: Deploy to development-na01
+           deployment: development-na01
+           trigger : manual
+           caches:
+             - node
+             - sfra
+             - sfra-webpack-builder
+             - link-cybersource
+             - link-emarsys
+             - link-paypal
+             - plugin-wishlists
+             - link-klarnapayments
+             - link-signified
+             - plugin-instorepickup
+             - plugin-pixlee
+             - plugin-productcompare-master
+             - plugin-turnto
+             - plugin-applepay-master
+           script:
+             - echo $BITBUCKET_BUILD_NUMBER
+             - echo $BUILD_NAME
+             - echo $SFCC_OAUTH_CLIENT_ID
+             - echo $SFCC_OAUTH_CLIENT_SECRET
+             - RELEASE=$BUILD_NAME-$BITBUCKET_BUILD_NUMBER
+             - echo $RELEASE
+             - npm install npm@latest -g
+             - (cd sfra-webpack-builder && npm install)
+             - (cd sfra-webpack-builder && npm run postinstall)
+             - npm install
+             - npm run npmInstall
+             - npm run prod
+             - echo $BITBUCKET_BUILD_NUMBER
+             - echo $BUILD_NAME
+             - echo $SFCC_OAUTH_CLIENT_ID
+             - echo $SFCC_OAUTH_CLIENT_SECRET
+             - RELEASE=$BUILD_NAME-$BITBUCKET_BUILD_NUMBER
+             - echo $RELEASE
+             - echo $CONFIG_FILE
+             - echo $ENV_HOST
+             - npm run code:zip -- -cfg $CONFIG_FILE -r $RELEASE -e $ENV_HOST -cid $SFCC_OAUTH_CLIENT_ID -cs $SFCC_OAUTH_CLIENT_SECRET
+             - npm run code:deploy -- -cfg $CONFIG_FILE -r $RELEASE -e $ENV_HOST -cid $SFCC_OAUTH_CLIENT_ID -cs $SFCC_OAUTH_CLIENT_SECRET             
+           after-script:
+             - "curl -H Content-Type:application/json -d ' {\"text\":\"$RELEASE Deployed to $ENV_HOST\"}' https://publicisgroupe.webhook.office.com/webhookb2/a221fcfc-ba0b-4bde-95e0-580f3c0180ce@d52c9ea1-7c21-47b1-82a3-33a74b1f74b8/BitbucketServer/3c1ce94cef7f4ff8922a7cabf74c9d72/63becca2-a5da-4b2e-ab1b-82e9830c8e58"                                    
+       - step:
+           name: Deploy to Staging
+           deployment: cert-staging
+           trigger : manual
+           caches:
+             - node
+             - sfra
+             - sfra-webpack-builder
+             - link-cybersource
+             - link-emarsys
+             - link-paypal
+             - plugin-wishlists
+             - link-klarnapayments
+             - link-signified
+             - plugin-instorepickup
+             - plugin-pixlee
+             - plugin-productcompare-master
+             - plugin-turnto
+             - plugin-applepay-master
+           script:
+             - echo $BITBUCKET_BUILD_NUMBER
+             - echo $BUILD_NAME
+             - echo $SFCC_OAUTH_CLIENT_ID
+             - echo $SFCC_OAUTH_CLIENT_SECRET
+             - RELEASE=$BUILD_NAME-$BITBUCKET_BUILD_NUMBER
+             - echo $RELEASE
+             - npm install npm@latest -g
+             - (cd sfra-webpack-builder && npm install)
+             - (cd sfra-webpack-builder && npm run postinstall)
+             - npm install
+             - npm run npmInstall
+             - npm run prod             
+             - echo $BITBUCKET_BUILD_NUMBER
+             - echo $BUILD_NAME
+             - echo $SFCC_OAUTH_CLIENT_ID
+             - echo $SFCC_OAUTH_CLIENT_SECRET
+             - RELEASE=$BUILD_NAME-$BITBUCKET_BUILD_NUMBER
+             - echo $RELEASE
+             - echo $CONFIG_FILE
+             - echo $ENV_HOST
+             - npm run code:zip -- -cfg $CONFIG_FILE -r $RELEASE -e $ENV_HOST -cid $SFCC_OAUTH_CLIENT_ID -cs $SFCC_OAUTH_CLIENT_SECRET
+             - npm run code:deploy -- -cfg $CONFIG_FILE -r $RELEASE -e $ENV_HOST -cid $SFCC_OAUTH_CLIENT_ID -cs $SFCC_OAUTH_CLIENT_SECRET -pfx deploy/config/build-tumi.p12 -ps 123456789                       
+    default:
+       - step:
+           name: Deploy to Staging
+           deployment: cert-staging
+           caches:
+             - node
+             - sfra
+             - sfra-webpack-builder
+             - link-cybersource
+             - link-emarsys
+             - link-paypal
+             - plugin-wishlists
+             - link-klarnapayments
+             - link-signified
+             - plugin-instorepickup
+             - plugin-pixlee
+             - plugin-productcompare-master
+             - plugin-turnto
+             - plugin-applepay-master
+           script:
+             - echo $BITBUCKET_BUILD_NUMBER
+             - echo $BUILD_NAME
+             - echo $SFCC_OAUTH_CLIENT_ID
+             - echo $SFCC_OAUTH_CLIENT_SECRET
+             - RELEASE=$BUILD_NAME-$BITBUCKET_BUILD_NUMBER
+             - echo $RELEASE
+             - npm install npm@latest -g
+             - (cd sfra-webpack-builder && npm install)
+             - (cd   sfra-webpack-builder && npm run postinstall)
+             - npm install
+             - npm run npmInstall
+             - npm run prod
+             - echo $BITBUCKET_BUILD_NUMBER
+             - echo $BUILD_NAME
+             - echo $SFCC_OAUTH_CLIENT_ID
+             - echo $SFCC_OAUTH_CLIENT_SECRET
+             - RELEASE=$BUILD_NAME-$BITBUCKET_BUILD_NUMBER
+             - echo $RELEASE
+             - echo $CONFIG_FILE
+             - echo $ENV_HOST
+             - npm run code:zip -- -cfg $CONFIG_FILE -r $RELEASE -e $ENV_HOST -cid $SFCC_OAUTH_CLIENT_ID -cs $SFCC_OAUTH_CLIENT_SECRET
+             - npm run code:deploy -- -cfg $CONFIG_FILE -r $RELEASE -e $ENV_HOST -cid $SFCC_OAUTH_CLIENT_ID -cs $SFCC_OAUTH_CLIENT_SECRET -pfx deploy/config/build-tumi.p12 -ps 123456789                       
+  custom:
+    custom-deploy-to-development: 
+
+       - step:
+           name: Deploy to development-na01
+           deployment: development-na01
+           caches:
+             - node
+             - sfra
+             - sfra-webpack-builder
+             - link-cybersource
+             - link-emarsys
+             - link-paypal
+             - plugin-wishlists
+             - link-klarnapayments
+             - link-signified
+             - plugin-instorepickup
+             - plugin-pixlee
+             - plugin-productcompare-master
+             - plugin-turnto
+             - plugin-applepay-master
+           script:
+             - echo $BITBUCKET_BUILD_NUMBER
+             - echo $BUILD_NAME
+             - echo $SFCC_OAUTH_CLIENT_ID
+             - echo $SFCC_OAUTH_CLIENT_SECRET
+             - RELEASE=$BUILD_NAME-$BITBUCKET_BUILD_NUMBER
+             - echo $RELEASE
+             - npm install npm@latest -g
+             - (cd sfra-webpack-builder && npm install)
+             - (cd sfra-webpack-builder && npm run postinstall)
+             - npm install
+             - npm run npmInstall
+             - npm run prod
+             - echo $BITBUCKET_BUILD_NUMBER
+             - echo $BUILD_NAME
+             - echo $SFCC_OAUTH_CLIENT_ID
+             - echo $SFCC_OAUTH_CLIENT_SECRET
+             - RELEASE=$BUILD_NAME-$BITBUCKET_BUILD_NUMBER
+             - echo $RELEASE
+             - echo $CONFIG_FILE
+             - echo $ENV_HOST
+             - npm run code:zip -- -cfg $CONFIG_FILE -r $RELEASE -e $ENV_HOST -cid $SFCC_OAUTH_CLIENT_ID -cs $SFCC_OAUTH_CLIENT_SECRET
+             - npm run code:deploy -- -cfg $CONFIG_FILE -r $RELEASE -e $ENV_HOST -cid $SFCC_OAUTH_CLIENT_ID -cs $SFCC_OAUTH_CLIENT_SECRET a true            
+             - pipe: atlassian/trigger-pipeline:5.0.0
+               variables:
+                 BITBUCKET_USERNAME: 'iam_taushif'
+                 BITBUCKET_APP_PASSWORD: '4Z9f5GbttZepgW4qggJS'
+                 REPOSITORY: 'tumi-sfcc-tests'
+                 ACCOUNT: 'tumiadmin'
+               
+           after-script:
+             - "curl -H Content-Type:application/json -d ' {\"text\":\"$RELEASE Deployed to $ENV_HOST\"}' https://publicisgroupe.webhook.office.com/webhookb2/a221fcfc-ba0b-4bde-95e0-580f3c0180ce@d52c9ea1-7c21-47b1-82a3-33a74b1f74b8/BitbucketServer/3c1ce94cef7f4ff8922a7cabf74c9d72/63becca2-a5da-4b2e-ab1b-82e9830c8e58"                                    
+

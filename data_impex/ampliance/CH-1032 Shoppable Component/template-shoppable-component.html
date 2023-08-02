@@ -1,0 +1,56 @@
+<style>
+    .left-section {
+        height: 1040px;
+        background-color : #aaa;
+        padding: 0;
+    }
+
+    .top-section {
+        background-color : #1B1C1E;
+        height : 510px;
+        margin-bottom: 20px;
+    }
+
+    .bottom-section {
+        background-color : #eee;
+        padding: 0;
+        height : 510px;
+    }
+</style>
+<div data-creative-name="{{content-asset-id}}">
+    <div class="container">
+        <div class="row shoppable-component">
+            <div class="col-md-6 left-section">
+                <a href="{{leftBottomLandingURI}}">
+                    <picture>
+                        <source media="(max-width:640px)" srcset="{{s7LeftImageMobile}}">
+                        <img class="img-fluid w-100" src="{{s7LeftImageDesktop}}" alt="{{leftImageAltDesktop}}">
+                    </picture>
+                </a>
+                <div class="image-content">
+                    <a href="{{leftBottomLandingURI}}"> {{leftBottomCTA}} </a>
+                    <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1.33301 1L7.99967 7L1.33301 13" stroke="black"></path>
+                    </svg>
+                </div>
+            </div>
+            <div class="col-md-6 right-section">
+                <div class="row top-section">test</div>
+                <div class="row bottom-section">
+                    <a href="{{rightBottomLandingURI}}">
+                        <picture>
+                            <source media="(max-width:640px)" srcset="{{s7RightImageMobile}}">
+                            <img class="img-fluid w-100" src="{{s7RightImageDesktop}}" alt="{{rightImageAltDesktop}}">
+                        </picture>
+                    </a>
+                    <div class="image-content">
+                        <a href="{{rightBottomLandingURI}}"> {{rightBottomCTA}} </a>
+                        <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1.33301 1L7.99967 7L1.33301 13" stroke="black"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

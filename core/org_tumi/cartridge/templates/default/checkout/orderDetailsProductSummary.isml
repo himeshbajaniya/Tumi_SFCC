@@ -1,0 +1,130 @@
+        <div class="order-product-summary">
+            <div class="product-summary-block">
+                <isloop items="${pdict.order.shipping}" var="shippingModel">
+                    <isif condition="${pdict.order.shipping.length > 1}">
+                        <div class="shipment-block">
+                    </isif>
+
+                    <isloop items="${shippingModel.productLineItems.items}" var="lineItem">
+                        <isif condition="${lineItem.isPremiumMonogramLetter || lineItem.parentProductLineItemID}">
+                            <iscontinue/>
+                        </isif>
+                        <div class="row">
+                            <div class="col-12 col-md-8">
+
+                        <div class="lineitem d-flex" data-pid="${lineItem.id}">
+                            <div class="item-image">
+                                <img class="product-image w-100" src="${lineItem.images.small[0].url}"
+                                    alt="${lineItem.images.small[0].alt}" title="${lineItem.images.small[0].title}" />
+                            </div>
+                            <div class="item-attributes">
+                                <div class="collection-name">${lineItem.collection ? lineItem.collection : ''}</div>
+                                <div class="line-item-header">
+                                    <div class="line-item-name">
+                                        <span>${lineItem.productName}</span>
+                                    </div>
+                                </div>
+                                <isset name="price" value="${lineItem.price}" scope="page" />
+                                <div class="unit-price">
+                                    <isinclude template="/product/components/pricing/main" />
+                                </div>
+                                <isif condition="${lineItem.isAccentingSku}">
+                                    <isloop items="${lineItem.variationAttributes}" var="attribute">
+                                        <isif condition="${attribute.displayName === "Color"}">
+                                            <p class="line-item-attributes">${attribute.displayName}:
+                                                ${lineItem.baseaccentingSKUColor}</p>
+                                            <p class="line-item-attributes-accent"><isprint value="${Resource.msgf('label.accent.details', 'checkout', null, attribute.displayValue, lineItem.accentPriceContainerMoneyFormat)}"/></p>
+                                        </isif>
+                                    </isloop>
+                                <iselse/>
+                                    <isloop items="${lineItem.variationAttributes}" var="attribute">
+                                        <isif condition="${attribute.displayName === "Color"}">
+                                            <p class="line-item-attributes">${attribute.displayName}:
+                                                ${attribute.displayValue}</p>
+                                        </isif>
+                                    </isloop>
+                                </isif>
+                                <isif condition="${lineItem.isGiftBoxEditable}">
+                                    ${lineItem.giftBoxlabel}
+                                    ${Resource.msg('label.gift.box.message.added', 'common', null)}
+                                     <isif condition="${lineItem.giftBoxPrice}">
+                                        ${lineItem.giftBoxPrice}
+                                    </isif>
+                                </isif>
+                                <isif condition="${!empty(lineItem.monogramLineItem) && !empty(lineItem.monogramLineItem.vasField1)}">
+                                    <p class="line-item-attributes monogram">${Resource.msg('msg.product.monogram.text', 'checkout', null)}
+                                    <isset name="labelMonoA"
+                                        value="${!empty(lineItem.monogramLineItem) && !empty(lineItem.monogramLineItem.vasField1) && lineItem.monogramLineItem.vasField1 !== 'undefined' && !empty(lineItem.monogramLineItem.vasField1.split(' ')[0]) ? lineItem.monogramLineItem.vasField1.split(' ')[0] : ''}"
+                                        scope="page" />
+                                    <isset name="labelMonoB"
+                                        value="${!empty(lineItem.monogramLineItem) && !empty(lineItem.monogramLineItem.vasField1) && lineItem.monogramLineItem.vasField1 !== 'undefined' && !empty(lineItem.monogramLineItem.vasField1.split(' ')[1]) ? lineItem.monogramLineItem.vasField1.split(' ')[1] : ''}"
+                                        scope="page" />
+                                    <isset name="labelMonoC"
+                                        value="${!empty(lineItem.monogramLineItem) && !empty(lineItem.monogramLineItem.vasField1) && lineItem.monogramLineItem.vasField1 !== 'undefined' && !empty(lineItem.monogramLineItem.vasField1.split(' ')[2]) ? lineItem.monogramLineItem.vasField1.split(' ')[2] : ''}"
+                                        scope="page" />
+                                    <isset name="combined_text" value="${labelMonoA + labelMonoB + labelMonoC}"
+                                        scope="page" />
+                                    <isset name="fontcolor"
+                                        value="${!empty(lineItem.monogramLineItem) && !empty(lineItem.monogramLineItem.vasField2) && lineItem.monogramLineItem.vasField2 !== 'undefined' && !empty(lineItem.monogramLineItem.vasField2.split('_').length === 2 && lineItem.monogramLineItem.vasField2.split('_')[1]) ? lineItem.monogramLineItem.vasField2.split('_')[1] : null}"
+                                        scope="page" />
+                                    <span class="icon">
+                                        <isprint value="${!empty(combined_text) ? combined_text.replace(/\(/g, '<span class="numberFormat">').replace(/\)/g, '</span>') : Resource.msg('product.default.monogram.text', 'product', null)} " encoding="off" />
+                                    </span>
+                                    <isprint value="${Resource.msg('msg.order.monogram.price', 'checkout', null)}"/>
+                                    </p>
+                                </isif>
+
+                                <iscomment> Premium Monogram </iscomment>
+                                <isif condition="${lineItem.isPremiumMonogrammedPLI && lineItem.associatedLetter && lineItem.associatedLetter.length >= 2 }">
+                                    <p class="line-item-attributes-monogram">
+                                        <isprint value="${Resource.msg('msg.product.monogram.text', 'checkout', null)}"/>
+                                        <isset name="labelMonoA" value="${lineItem.associatedLetter[0]}" scope="page" />
+                                        <isset name="labelMonoB" value="${lineItem.associatedLetter[1]}" scope="page" />
+                                        <isset name="combined_text" value="${labelMonoA + labelMonoB}" scope="page" />
+                                        <isif condition="${combined_text}">
+                                            <span class="icon">
+                                                <isprint value="${combined_text.replace(/\(/g, '<span class=" numberFormat">').replace(/\)/g, ' < /span>')}" encoding="off" />
+                                            </span>
+                                        </isif>
+                                        <isif condition="${!empty(lineItem.monogramCost)}">
+                                            <isprint value="${Resource.msgf('msg.order.metal.price', 'checkout', null, lineItem.monogramCost)}"/>
+                                        </isif>
+                                    </p>
+                                </isif>
+
+                                <isset name="isStorePickupEnabled"
+                                    value="${shippingModel.selectedShippingMethod.storePickupEnabled}" scope="page" />
+                                <div class="delivery">
+                                    <isif condition="${isStorePickupEnabled}">
+                                        <isif condition="${shippingModel.shippingAddress !== null}">
+                                            <isset name="address" value="${shippingModel.shippingAddress}"
+                                                scope="page" />
+                                        <iselse/>
+                                            <isset name="address" value="${{}}" scope="page" />
+                                        </isif>
+                                        <span>${Resource.msg('label.order.storedelivery', 'confirmation', null)}</span><br>
+                                        <span><b>${lineItem.storeName}</b></span>
+                                        ${Resource.msg('label.order.storeDetails', 'confirmation', null)}
+                                    <iselse/>
+                                        ${Resource.msg('label.order.shipping.subtitle', 'confirmation', null)}
+                                    </isif>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="col-12 col-md-4 orderstatus-wrapper">
+                            <isif condition="${!empty(lineItem.shippingStatusMsg)}">
+                                <p class='order-status'><isprint value="${lineItem.shippingStatusMsg}"/></p>
+                            <iselseif condition="${lineItem.warranty}"/>
+                                <p class='warranty'><isprint value="${Resource.msgf('warranty.coverage.until', 'common', null, lineItem.warranty)}"/></p>
+                            </isif>
+                        </div>
+                    </div>
+                    </isloop>
+
+                    <isif condition="${pdict.order.shipping.length > 1}">
+                        </div>
+                    </isif>
+                </isloop>
+            </div>
+</div>

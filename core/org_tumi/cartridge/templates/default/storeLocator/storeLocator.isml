@@ -1,0 +1,29 @@
+<isdecorate template="common/layout/page">
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        if (pdict.stores.googleMapsApi) {
+            assets.addJs(pdict.stores.googleMapsApi);
+        }
+        
+        assets.addCss('/css/storeLocator.css');
+    </isscript>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6 col-lg-9">
+                <div class="map-canvas" data-has-google-api="${pdict.stores.googleMapsApi ? true : false}" data-locations="${pdict.stores.locations}"
+                        data-tumistore="${URLUtils.staticURL('/images/tumiStore.png').toString()}" 
+                        data-tumioutlet="${URLUtils.staticURL('/images/tumiOutlets.png').toString()}" 
+                        data-tumiretaiil="${URLUtils.staticURL('/images/tumiRetailers.png').toString()}">
+                    <div class="container">
+                        <div class="row">
+                            <p class="store-locator-no-apiKey alert alert-danger">${Resource.msg('error.no.api.key','storeLocator',null)}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+                <isinclude template="storeLocator/storeLocatorNoDecorator" />
+            </div>
+        </div>
+    </div>
+</isdecorate>

@@ -1,0 +1,43 @@
+<hr class="product-tile-divider" />
+<div class="tile-footer">
+    <div class="color-swatches">
+        <div class="swatches">
+            <isif condition="${product.variationAttributes && product.variationAttributes.length > 0}">
+                <isloop items="${product.variationAttributes[0].values}" var="swatch" status="loopState">
+                    <isif condition="${loopState.count < 4
+                                    && swatch.images != null
+                                    && swatch.images.swatch[0] != null
+                                    && swatch.images.swatch[0].url != null}">
+                        <a href="${swatch.url}">
+                            <span>
+                                <img class="swatch swatch-circle"
+                                    data-index="${loopState.count-1}"
+                                    style="background-image: url(${swatch.images.swatch[0].url})"
+                                    src="${swatch.images.swatch[0].url}"
+                                    alt="${swatch.images.swatch[0].alt}"/>
+                            </span>
+                        </a>
+                    <iselse/>
+                        <span>
+                            <a href="${pdict.urls.product}">...</a>
+                        </span>
+                        <isbreak>
+                    </isif>
+                </isloop>
+            </isif>
+        </div>
+    </div>
+
+    <div class="compare-products compare">
+        <div class="custom-checkbox">
+            <label for="compare">Compare</label>
+            <input class="compare" type="checkbox" 
+                            id="${'compare_'+ product.id}" 
+                            data-pid="${product.id}"
+                            data-categoryname="${product.collection}" 
+                            data-categorytitle="${product.productName}"
+                            data-imgsrc="${product.images.medium[0].url}"
+                            data-alttext="${product.productName}" name="" value=""/>
+        </div>
+    </div>
+</div>

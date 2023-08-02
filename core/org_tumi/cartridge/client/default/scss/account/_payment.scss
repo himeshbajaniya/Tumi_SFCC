@@ -1,0 +1,193 @@
+@import "../components/creditCardField";
+
+.payment-section {
+    h2 {
+        text-transform: capitalize;
+        color: var(--color-black);
+        @include sizeWeightLh(15px, 600, 20px);
+
+        @include media-breakpoint-up(sm) {
+            font-weight: 400;
+            font-family: $font-tumi;
+            @include sizeWeightLh(18px, 400, 20px);
+        }
+    }
+
+    .billing-adr-heading {
+        margin-top: 41px;
+        margin-bottom: 20px;
+
+        @include media-breakpoint-up(sm) {
+            margin-top: 56px;
+        }
+    }
+
+    .form-group {
+        label {
+            margin-left: -5px;
+            text-indent: 6px;
+            width: 100%;
+            color: var(--color-grey1);
+            @include sizeWeightLh(15px, 400, 20px);
+
+            &::after {
+                content: "" !important;
+            }
+        }
+
+        input {
+            border-bottom: 1px solid $spanish-gray;
+        }
+
+        .custom-select {
+            border: none;
+            border-radius: unset;
+            border-bottom: 1px solid $spanish-gray;
+            height: 50px;
+            background-image: url("../../images/down-arrow.svg");
+            text-transform: capitalize;
+        }
+
+        .cvv-tooltip {
+            display: inline-block;
+            top: 12px;
+            position: absolute;
+            right: 0;
+            cursor: pointer;
+        }
+    }
+
+    .btn-wrapper {
+        .button {
+            text-transform: inherit;
+        }
+
+        .button--secondary {
+            margin-top: 20px;
+
+            @include media-breakpoint-up(sm) {
+                margin-top: 0;
+            }
+        }
+    }
+}
+
+.payments-container {
+    h2 {
+        text-transform: capitalize;
+        color: var(--color-black);
+        margin-bottom: 0;
+        @include sizeWeightLh(15px, 600, 20px);
+
+        @include media-breakpoint-up(sm) {
+            font-weight: 400;
+            font-family: $font-tumi;
+            @include sizeWeightLh(18px, 400, 20px);
+        }
+    }
+
+    .card-header {
+        padding: 0;
+    }
+
+    .saved-payments {
+        &:first-child {
+            border-bottom: 1px solid var(--color-grey2);
+            margin-bottom: 40px;
+        }
+
+        &:first-child,
+        &:nth-child(2) {
+            h2 {
+                display: block !important;
+            }
+        }
+
+        h2 {
+            display: none;
+        }
+    }
+
+    .card-body-positioning {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        margin-bottom: 20px;
+
+        @include media-breakpoint-up(sm) {
+            flex-direction: row;
+        }
+
+        .card-info-group {
+            color: var(--color-black);
+            @include sizeWeightLh(15px, 400, 20px);
+
+            @include media-breakpoint-up(sm) {
+                line-height: 26px;
+            }
+
+            p {
+                margin-bottom: 0;
+            }
+
+            .owner-name {
+                margin-bottom: 10px;
+            }
+
+            .card-details {
+                display: flex;
+                color: var(--color-black);
+                margin-left: 53px;
+                margin-bottom: 12px;
+                @include sizeWeightLh(15px, 600, 20px);
+            }
+        }
+
+        button {
+            border: 0;
+            outline: none;
+            box-shadow: none;
+        }
+
+        a,
+        button {
+            color: var(--color-black);
+            text-decoration: underline;
+            margin-top: 16px;
+            @include sizeWeightLh(13px, 400, 18px);
+
+            @include media-breakpoint-up(sm) {
+                margin-top: 0;
+                outline: none;
+                border: 0;
+                box-shadow: none;
+                background: transparent;
+
+                &:focus,
+                &:active,
+                &:visited {
+                    outline: none;
+                    border: 0;
+                    box-shadow: none;
+                    background: transparent;
+                }
+            }
+        }
+    }
+
+    .remove-payment {
+        text-decoration-line: underline !important;
+        color: var(--color-black);
+        @include sizeWeightLh(13px, 400, 18px);
+    }
+}
+
+.save-tumi-profile {
+    color: var(--color-black);
+    @include sizeWeightLh(15px, 400, 20px);
+}
+
+.add-new-payment {
+    padding: 0;
+    margin-top: 47px;
+}

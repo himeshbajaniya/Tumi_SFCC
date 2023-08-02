@@ -1,0 +1,63 @@
+<isloop items="${product.groupAttributes}" var="group" status="loopstatus">
+
+    <div class="content ${group.ID.toLowerCase()}">
+        <div class="group-header ${(productloopstatus.count !== 1) ? 'invisible' : ''}">
+            <span>${group.name}</span>
+
+            <isif condition="${group.name === 'Basic Specifications'}">
+                <div class="measurement-selection">
+                    <div class="form-check radio-small">
+                        <input type="radio" class="form-check-input compare-imparial measurement" id="imperial" data-id="inch" name="measurement" value="inch" checked/>
+                        <label class="form-check-label" for="imperial">
+                                ${Resource.msg('compare.selection.imperial','product',null)}
+                        </label>
+                    </div>
+                    <div class="form-check radio-small">
+                        <input type="radio" class="form-check-input compare-metric" id="metric" data-id="cm" name="measurement" value="metric"/>
+                        <label class="form-check-label" for="metric">
+                                ${Resource.msg('compare.selection.metric','product',null)}
+                        </label>
+                    </div>
+                </div>
+            </isif>
+        </div>
+
+        <div class="content-attr">
+            <isloop items="${group.attributes}" var="attr">
+                <div class="label ${(productloopstatus.count !== 1) ? 'invisible' : ''}">
+                    <isif condition="${(group.ID.toLowerCase() === 'basicspecifications' || group.ID.toLowerCase() === 'basicspecificationsmetric')}">
+                        <isprint value="${Resource.msg('compare.label.' + attr.label.replace(' ', '-'), 'common', attr.label)}" encoding="on" />
+                    <iselse/>
+                        ${attr.label}
+                    </isif>
+                    <isif condition="${!empty(attr.helpText)}">
+                        <a href="javascript:void(0)" data-toggle="tooltip" data-placement="bottom" title="${attr.helpText}">
+                            <img src="/on/demandware.static/Sites-tumi-us-Site/-/default/dw92a479d1/images/info-icon.svg" alt="">
+                        </a>
+                    </isif>
+                </div>
+                <isset name="productValue" value="${typeof attr.value === 'boolean' ? (attr.value ? 'Yes' : 'No') : attr.value}" scope="page" />
+                <div class="value product-value">
+                    <isif condition="${(group.ID.toLowerCase() === 'basicspecifications' || group.ID.toLowerCase() === 'basicspecificationsmetric') && productValue !== '-' && productValue !== ''}">
+                        <isprint value="${Resource.msgf('compare.' + group.ID.toLowerCase() + '.'+ attr.label.replace(' ', '-'), 'common', productValue, productValue)}" encoding="on" />
+                    <iselse/>
+                        <isprint value="${productValue}" encoding="on" />
+                    </isif>
+                </div>
+            </isloop>
+            <isif condition="${group.ID.toLowerCase() == 'alternateviews'}">
+                <div class="item-alternate-image swiper alternate-image-swiper">
+                    <div class="swiper-wrapper alternate-image-swiper-wrapper">
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </isif>
+        </div>
+        <div class="basic-specification-help">
+            <span class="${(productloopstatus.count !== 1) ? 'invisible' : ''}">
+                ${Resource.msg('compare.basic.specification.help', 'product', null)}
+            </span>
+            <a href="${'https://s7d2.scene7.com/is/content/Tumi/Documents/How_do_we_measure.pdf'}" class="${(productloopstatus.count !== 1) ? 'invisible' : ''}" target="_blank" rel="noopener noreferrer">${Resource.msg('compare.basic.specification.help.how', 'product', null)}</a>
+        </div>
+    </div>
+</isloop>

@@ -1,0 +1,6 @@
+<div class="choose-save-cards d-none">
+    <isloop items="${pdict.customer.customerPaymentInstruments}" var="paymentInstrument" status="loopSate">
+        <isinclude template="checkout/billing/storedPaymentInstrumentCard" />
+    </isloop>
+</div>
+<a class="btn add-payment add-new-payment-card checkout-hidden">+ Add a New Card</a>

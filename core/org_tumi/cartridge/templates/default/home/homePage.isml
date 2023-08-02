@@ -1,0 +1,48 @@
+<isdecorate template="common/layout/page">
+    <iscomment>
+        remove pixlee js include from homepageconfig and move it to this place, check if pixlee enabled before
+        loading it in isscript
+    </iscomment>
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addJs('/js/productTile.js');
+        assets.addCss('/css/homePage.css');
+        var pageContext = {
+            title: 'Home Page',
+            type:'homepage',
+            ns:'homepage'
+        };
+    </isscript>
+    <isinclude template="/components/modules" sf-toolkit="off" />
+    <isslot id="home-slot-A" context="global" description="First slot" />
+    <isslot id="home-slot-B" context="global" description="Second slot" />
+    <isslot id="home-slot-C" context="global" description="Third slot" />
+    <div class="home-page-one" id="homePageOne" data-url="${URLUtils.url('Home-LoadSlots')}"></div>
+    <iscomment>
+        <isinclude template="product/compareBar" />
+    </iscomment>
+    <div class="container-fluid compare-bar-wrapper">
+        <div class="container compare-bar" data-max-slots="3"
+            data-min-products-msg="${Resource.msg('text.productcompare.select2', 'product', null)}">
+            <form method="GET" class="compare-products-form" name="compare-products"
+                action="${URLUtils.url('Compare-Show')}">
+                <div class="row align-items-center">
+                    <div class="col-6 col-sm-9">
+                        <div class="row align-items-center product-slots"></div>
+                    </div>
+                    <div class="col-6 col-sm-3 action d-flex align-items-right flex-column">
+                        <button type="submit"
+                            class="compare button">${Resource.msg('compare.button.compare', 'product', null)}</button>
+                        <a href="${'#'}" class="clear-all">${Resource.msg('compare.button.clearall', 'product', null)}</a>
+                    </div>
+                </div>
+                <isif condition="${pdict.query && pdict.query.cgid}">
+                    <input type="hidden" id="cgidName" name="cgid" value="${pdict.query.cgid}" />
+                <iselseif condition="${pdict.query && pdict.query.q}"/>
+                    <input type="hidden" id="qName" name="q" value="${pdict.query.q}" />
+                </isif>
+                <input type="hidden" name="backUrl" />
+            </form>
+        </div>
+    </div>
+</isdecorate>

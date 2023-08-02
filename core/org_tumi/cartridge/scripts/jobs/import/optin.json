@@ -1,0 +1,14 @@
+{
+  "customer_id": {
+    "property": "CustomerId",
+    "required": true
+  },
+  "email_preference": {
+    "property": "EmailPreference",
+    "required": true
+  },
+  "lastUpdateDate": {
+    "property": "LastUpdateDate",
+    "required": false
+  }
+}

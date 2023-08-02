@@ -1,0 +1,55 @@
+<form class="care" name="airlines">
+    <div class="radio-wrap">
+        <div class="form-check form-check-inline" tabindex="1">
+            <input type="radio" name="countryAirlines" class="countryAirlinesPopup" id="imperialPopup"
+                value="imperialPopup" checked />
+            <label for="imperialPopup">${Resource.msg('label.imperial.header','product',null)}</label>
+        </div>
+        <div class="form-check form-check-inline" tabindex="1">
+            <input type="radio" name="countryAirlines" class="countryAirlinesPopup" id="metricPopup"
+                value="metricPopup" />
+            <label for="metricPopup">${Resource.msg('label.metric.header','product',null)}</label>
+        </div>
+    </div>
+    <div class="imperialPopup selectt">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">${Resource.msg('label.Airline.name','product',null)}</th>
+                    <th scope="col">${Resource.msg('label.Airline.Size','product',null)}</th>
+                    <th scope="col">${Resource.msg('label.Airline.Weight','product',null)}</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <isloop items="${pdict.name}" var="imperial" status="loopState">
+                    <tr tabindex="1">
+                        <td>${imperial}</td>
+                        <td>${pdict.size[loopState.index]}</td>
+                        <td>${pdict.weight[loopState.index]}</td>
+                    </tr>
+                </isloop>
+            </tbody>
+        </table>
+    </div>
+    <div class="metricPopup selectt d-none">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">${Resource.msg('label.Airline.name','product',null)}</th>
+                    <th scope="col">${Resource.msg('label.Airline.Size','product',null)}</th>
+                    <th scope="col">${Resource.msg('label.Airline.Weight','product',null)}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <isloop items="${pdict.nameMetric}" var="matric" status="loopState">
+                    <tr tabindex="1">
+                        <td>${matric}</td>
+                        <td>${pdict.sizeMetric[loopState.index]}</td>
+                        <td>${pdict.weightMetric[loopState.index]}</td>
+                    </tr>
+                </isloop>
+            </tbody>
+        </table>
+    </div>
+</form>

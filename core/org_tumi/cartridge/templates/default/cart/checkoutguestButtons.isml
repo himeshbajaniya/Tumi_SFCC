@@ -1,0 +1,23 @@
+<div class="modal fade global-modal" id="guestCheckoutModal" tabindex="-1" role="dialog"
+    aria-labelledby="guestCheckoutModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="checkout-and-applepay">
+                    <form class="cart-action-checkout" action="${URLUtils.continueURL()}" method="post" id="checkout-form">
+                        <a href="${URLUtils.https('Checkout-Begin')}"
+                            data-toggle="modal" data-target="#requestLoginModal"
+                            data-login="sign-in"
+                            class="button button-secondary-dark btn-block checkout-btn signin-memeber-checkout ${pdict.valid.error ? 'disabled' : ''}" role="button"  aria-haspopup="dialog">
+                            <isprint value="${Resource.msg('button.memeber.guest.checkout', 'cart', null)}" />
+                        </a>
+                        <a href="${URLUtils.https('Checkout-Begin')}"
+                            class="${pdict.valid.error ? 'disabled' : ''} button btn-block checkout-btn <isprint value=${pdict.items.length === 0 ? "button--disabled" : "button-secondary-dark"} encoding="on" />">
+                             ${Resource.msg('button.checkout.guest', 'cart', null)}
+                        </a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

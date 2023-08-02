@@ -1,0 +1,330 @@
+<isdecorate template="common/layout/page">
+
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets');
+        assets.addJs('/js/productDetail.js');
+        assets.addCss('/css/product/detail.css');
+        var pageContext = {
+			title: 'Product Details',
+			type:'productdetail',
+			ns:'productdetail'
+		};
+    </isscript>
+    <link rel="stylesheet" href="${URLUtils.staticURL('/csspages/review.css')}" />
+    <isset name="product" value="${pdict.product}" scope="page" />
+    <isset name="isQuickView" value="${false}" scope="page" />
+    <isset name="isProductSet" value="${pdict.product.productType === 'set'}" scope="page" />
+    <input class="d-none" id="getDefaultVariationUrl" value="${product.getDefaultVariationUrl}" />
+    <isobject object="${product.raw}" view="detail" />
+
+    <isset name="isStorePickupEnabled" value="${dw.system.Site.getCurrent().getCustomPreferenceValue('isStorePickupEnabled')}" scope="page" />
+    <input type="hidden" value="${isStorePickupEnabled}" id="isStorePickupEnabled"/>
+    <div class="container product-detail product-wrapper" data-pid="${product.id}"
+        data-selected-variant-pid="${product.selectedVariantUrl || ''}">
+        <div class="row">
+            <div class="col-12">
+                <!--Breadcrumbs-->
+                <div class="product-breadcrumb d-md-none">
+                    <isinclude template="components/breadcrumbs/pageBreadcrumbs" />
+                </div>
+            </div>
+        </div>
+        <!--Breadcrumbs-->
+        <div class="row">
+            <div class="product-breadcrumb col hidden-sm-down">
+                <isinclude template="components/breadcrumbs/pageBreadcrumbs" />
+            </div>
+        </div>
+        <div class="row">
+            <!-- Product Images Carousel -->
+            <isinclude template="product/components/imageCarousel" />
+            <div class="d-sm-none col-md-1 d-lg-block"></div>
+            <div class="col-12 col-sm-5">
+                <div class="sub-container" id="sub-container">
+                        <div class="row">
+                            <div class="col-12 collections">
+                                <isif condition="${product.grandCollection}">
+                                    <h6 class="collection-name">${product.grandCollection}</h6>
+                                </isif>
+                            </div>
+                        </div>
+                <!-- Product Name -->
+                <div class="row below-underline">
+                    <div class="col">
+                        <h1 class="product-name" tabindex="0">${product.productName}</h1>
+                    </div>
+                </div>
+                <div class="mobile-border-line"></div>
+
+                <iscomment>
+                    <div class="row below-underline">
+                        <div class="col">
+                            <isinclude template="product/components/pidRating" />
+                        </div>
+                    </div>
+                    <div class="mobile-border-line"></div>
+                </iscomment>
+
+                <!-- Product Price -->
+                <div class="row below-underline">
+                    <div class="col-12">
+                        <div class="prices-add-to-cart-actions">
+                            <div class="promo-prices">
+                                <!-- Prices -->
+                                <div class="prices" tabindex="0">
+                                    <isset name="price" value="${product.price}" scope="page" />
+                                    <div class="ratings-and-price">
+                                        <div class="price">
+                                            <isinclude template="product/components/pricing/main" />
+                                        </div>
+                                        <isset name="reviewsEnableFlag" value="${true}" scope="page" />
+                                        <isloop items="${dw.system.Site.getCurrent().getCustomPreferenceValue('collectionNames')}" var="collection" status="loopstatus">
+                                            <isif condition="${product.grandCollection.toUpperCase() === collection.toUpperCase()}">
+                                                <isset name="reviewsEnableFlag" value="${false}" scope="page" />
+                                                <isbreak/>
+                                            </isif>
+                                        </isloop>
+                                        <isif condition="${reviewsEnableFlag}">
+                                            <div class="ratings">
+                                                <div class="stars">
+                                                    <a href="#pdp-review-section">
+                                                        <span class="rating-value" data-rating = ${product.rating}></span>
+                                                    </a>
+                                                </div>
+                                                <div class="count"><a href="#pdp-review-section">(${product.rating})</a></div>
+                                            </div>
+                                        </isif>
+                                    </div>
+                                    <!-- Applicable Promotions -->
+                                    <div class="promo-section">
+                                        <isinclude template="product/components/promotions" />
+                                    </div>
+                                    <!-- Product Availability -->
+                                     <isinclude template="product/components/productAvailability" />
+                                    <div
+                                        class="product-inventory ${((pdict.limitedInventoryThreshold >= product.availableToSell) && (product.availableToSell > 0)) ? ' ' : 'd-none'}">
+                                        ${Resource.msgf('product.limited.inventory.text.msg', 'product', null, product.availableToSell)}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobile-border-line"></div>
+                <isset name="loopState" value="${{
+                                               count: 1}}" scope="page" />
+                <isinclude template="product/components/description" />
+                <div class="attributes">
+                    <!-- Attributes and Quantity -->
+                    <isinclude template="product/components/mainAttributes" />
+
+                    <isset name="isBundle" value="${false}" scope="page" />
+                    <isloop items="${product.variationAttributes}" var="attr" status="attributeStatus">
+                        <div class="row  ${attr.id}-section ${(attr.id === 'size' ? 'above-underline' : '' )}" data-attr="${attr.id}">
+                            <div class="col-12">
+                                <isinclude template="product/components/variationAttribute" />
+                            </div>
+                        </div>
+                        <div class="mobile-border-line"></div>
+                    </isloop>
+
+                    <isif condition="${product.accentable}">
+                        <isinclude template="product/components/accentingVariationAttributes" />
+                    </isif>
+
+                    <isif condition="${!product.variationAttributes}">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="simple-quantity">
+                                    <isinclude template="product/components/quantity" />
+                                </div>
+                            </div>
+                        </div>
+                    </isif>
+
+                    <div class="product-options">
+                        <isif condition="${product.options && product.options.length > 0}">
+                            <isinclude template="product/components/options" />
+                        </isif>
+                    </div>
+
+                    <!-- Size Chart -->
+                    <isif condition="${product.variationAttributes && product.sizeChartId}">
+                        <div class="product-btn-wrapper">
+                            <!-- Product Availability -->
+                            <isif condition="${isStorePickupEnabled}">
+                                <div class="delivery-options-container">
+                                    <div class="card-body">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="shipment-option" id="ship-to-me"
+                                                checked="true" value="ship-to-me">
+                                            <label class="form-check-label" for="ship-to-me">
+                                                <span>${Resource.msg('label.ship.to.me', 'product', null)}</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="shipment-option"
+                                                id="pickup-in-store" data-store-id="" disabled="true" value="instore-pickup">
+                                            <label class="form-check-label pickup-instore-label" for="pickup-in-store">
+                                                <span>${Resource.msg('label.pickup.in.store', 'product', null)}</span>
+                                            </label>
+                                            <a href="" class="find-store-btn" style="text-decoration: underline;" data-toggle="modal" data-target="#findAStore">${Resource.msg('btn.find.store', 'product', null)}</a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </isif>
+                            <div class="clickable-section">
+                                <!-- Cart and [Optionally] Apple Pay -->
+                                <isinclude template="product/components/addToCartProduct" />
+                            </div>
+                        </div>
+                    </isif>
+
+
+                    <iscomment>TurnTo Top Comment Include</iscomment>
+                    <isset name="topCommentSkus" value="${product.id}" scope="page" />
+                    <isinclude template="product/components/ttTopComment" />
+
+                    <!-- Monogram -->
+                    <!-- Hiding this section as per CH-3291 -->
+                    <iscomment> <isif condition="${product.premiumMono || product.monogramable}">
+                        <isinclude template="product/components/monogramTile" />
+                    </isif> </iscomment>
+                    <div class="product-btn-wrapper">
+                        <!-- Product Availability -->
+                        <div class="delivery-options-container d-none">
+                            <div class="card-body">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="shipment-option" id="ship-to-me"
+                                        checked="true" value="ship-to-me">
+                                    <label class="form-check-label" for="ship-to-me">
+                                        <span>${Resource.msg('label.ship.to.me', 'product', null)}</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="shipment-option"
+                                        id="pickup-in-store" data-store-id="" disabled="true" value="instore-pickup">
+                                    <label class="form-check-label pickup-instore-label" for="pickup-in-store">
+                                        <span>${Resource.msg('label.pickup.in.store', 'product', null)}</span>
+                                    </label>
+                                    <a href="" class="find-store-btn" style="text-decoration: underline;"
+                                        data-toggle="modal" data-target="#findAStore">${Resource.msg('btn.find.store', 'product', null)}</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clickable-section">
+                            <!-- Cart and [Optionally] Apple Pay -->
+                            <isinclude template="product/components/addToCartProduct" />
+                              <div class="error-msg-add-to-cart"></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- features and specification tab -->
+    <div class="row">
+        <div class="col-md-12 feature-tab">
+            <isinclude template="product/components/featuresAndSpecifications" />
+        </div>
+    </div>
+    <isinclude template="product/components/tumi360Scene7" />
+
+    <div class="sticky-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-6 left-wrapper">
+                    <div class="collection-name">${product.collection}</div>
+                    <div class="product-name">${product.productName}</div>
+                </div>
+                <div class="col-6 right-wrapper">
+                    <div class="view-options">
+                        <button class="button button--secondary w-100">
+                            <a href="#sub-container">${Resource.msg('product.images.view.options', 'product', null)}</a>
+                        </button>
+                    </div>
+                    <div class="add-to-cart">
+                        <div class="cart-and-ipay">
+                            <input type="hidden" class="add-to-cart-url" value="${pdict.addToCartUrl}">
+                            <isinclude url="${URLUtils.url('Product-IncludeBuyNow', 'pid', product.id)}" />
+                            <button class="add-to-cart button button--primary w-100" data-pid="${product.id}"
+                                ${!product.readyToOrder || !product.available ? "disabled" : ""}>
+                                <span>${Resource.msg('button.addtocart', 'common', null)}</span>
+                                <iscomment> ${!product.readyToOrder || !product.available ? "sravani" : ""}>
+                                ${Resource.msg('button.addtocart', 'common', null)} </iscomment>
+                                <span class="prices">
+                                    <isset name="price" value="${product.price}" scope="page" />
+                                    <isinclude template="product/components/pricing/main" />
+                                </span>
+                            </button>
+                            <isinclude template="product/components/addToCartButtonExtension" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <iscomment> PDP | Product Info | Content Video </iscomment>
+    <div class="autoplay-video">
+        <div id="product-video" data-vid="${pdict.product.images.vid}"></div>
+    </div>
+    <!-- Purchase Component Swiper -->
+    <div class="swiper purchase-component-wrapper" id="services-included-with-purchase" tabindex="0">
+    </div>
+
+    <iscomment> Innovations Web Content </iscomment>
+    <isif condition="${product.innovationsWebContent && product.innovationsWebContent.length > 0}">
+        <isloop items="${product.innovationsWebContent}" var="item">
+            <isif condition="${dw.content.ContentMgr.getContent(item)}">
+                <iscontentasset aid="${item}" />
+            </isif>
+        </isloop>
+    </isif>
+
+    <div>
+        <isslot id="cts-recommendations-m" description="Complete the set products" context="global"
+            context-object="${pdict.product.raw}" />
+    </div>
+
+    <div class="container mb-24">
+        <iscomment>TurnTo Visual Content Gallery Row</iscomment>
+        <isinclude template="product/components/ttVCGallery" />
+    </div>
+    <div class="pdp-review-section" id="pdp-review-section">
+        <div class="container mb-24 review-section">
+            <iscomment>TurnTo Widgets</iscomment>
+            <isinclude template="product/widgets" />
+        </div>
+    </div>
+    <div class="container mb-24">
+        <iscomment>TurnTo JS Include</iscomment>
+        <isinclude template="turnto/productPageAssets" />
+    </div>
+    <div class="maintenanceandcaredetails d-none">
+        <div class="maintenance-tsaLock">
+            <iscontentasset aid="tsaLock-PDP" />
+        </div>
+        <div class="maintenance-tumiTracer">
+            <iscontentasset aid="tumiTracer-PDP" />
+        </div>
+        <div class="maintenance-warranty">
+            <iscontentasset aid="warranty-PDP" />
+        </div>
+    </div>
+
+
+    <!-- popup modals -->
+
+    <isinclude template="product/components/cartFlyout" />
+
+    <isinclude template="product/components/accentModal" />
+    </isobject>
+</isdecorate>

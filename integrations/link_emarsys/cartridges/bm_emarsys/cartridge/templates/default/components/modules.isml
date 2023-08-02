@@ -1,0 +1,4 @@
+<ismodule template="/components/tabs"
+	name="tabs"
+	attribute="tabsAttr"
+/>
